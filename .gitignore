@@ -79,4 +79,6 @@ coverage.xml
 pip-log.txt
 download/
 *.iso
-linux\download
+doc/
+/download/
+.config*
