@@ -1,9 +1,12 @@
 # installation du site WORDPRESS sur 2 instances aws EC2 et sur 2 instances en local
 # Installation
 Pour configurer l'application, utilisez les identifiants suivants :
+Les identifaints ci-dessous seront remplacés par les valeurs issue du fichier .env et le fichier .md sera renommé en _securised.md
+nom: ${name}
+root: ${root}
+mot de passe: ${password}
+utilisateur: ${user}
 
-- Login : `${NOM_UTILISATEUR}`
-- Mot de passe : `${MOT_DE_PASSE}`
 
 
 ## AWS EC2 au niveau des instances aws groupe de securité il faut autorier SSh HTTP et MySQL/Aurora
@@ -180,7 +183,7 @@ sudo nano /var/www/html/wp-config.php
 
 #// ** Database settings - You can get this info from your web host ** //
 #/** The name of the database for WordPress */
-define( 'DB_NAME', 'wordpress' );
+define( 'DB_NAME', $DEBIAN_NAME );
 
 #/** Database username */
 define( 'DB_USER', 'franck' );
