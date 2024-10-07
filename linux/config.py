@@ -16,7 +16,7 @@ def get_env_variable(var_name, default=None):
 
 
 # Informations pour la VM debian (connexion avec mot de passe)
-DEBIAN = {
+DEBIAN_BDD = {
     'hostname': get_env_variable('DEBIAN_HOSTNAME'),
     'ip': get_env_variable('DEBIAN_IP'),
     'port': int(get_env_variable('DEBIAN_PORT', 22)),
@@ -30,7 +30,7 @@ DEBIAN = {
 }
 
 # Informations pour la VM debian2 (connexion avec mot de passe)
-DEBIAN2 = {
+DEBIAN_WEB = {
     'hostname': get_env_variable('DEBIAN2_HOSTNAME'),
     'ip': get_env_variable('DEBIAN2_IP'),
     'port': int(get_env_variable('DEBIAN2_PORT', 22)),
