@@ -30,6 +30,7 @@ Source : 3.128.29.116/32 (adresse IP de l'instance WordPress) ou 0.0.0.0/0 (moin
 - Accès SSH à l'instance.
 
 ## 1. Mise à Jour du Système
+
 ```bash
 sudo apt update && sudo apt upgrade -y
 
@@ -328,6 +329,7 @@ ssh -i ~/.ssh/keyfranck2.pem -L 3306:localhost:3306 franck@3.135.226.41
 ```
 
 ## instance wordpress locale bdd sur 192.168.1.189, instance site wordpress 192.168.1.188
+
 ```bash
 USE wordpress;
 SELECT option_name, option_value FROM wp_options WHERE option_name IN ('siteurl', 'home');
@@ -336,3 +338,5 @@ UPDATE wp_options SET option_value = 'http://192.168.1.188:9500' WHERE option_na
 # Pour tester le site en local:
 http://192.168.1.188:9500/wp-admin/install.php
 ```
+
+

@@ -7,7 +7,7 @@ logger = logging.getLogger('vm_injector')
 logger.setLevel(logging.DEBUG)
 
 # Configurer le gestionnaire de fichiers pour enregistrer les logs dans 'vm_injection.log'
-file_handler = logging.FileHandler('vm_injection.log')
+file_handler = logging.FileHandler('log\\vm_injection.log')
 file_handler.setLevel(logging.DEBUG)
 
 # Configurer le gestionnaire de flux pour afficher les logs dans la console
