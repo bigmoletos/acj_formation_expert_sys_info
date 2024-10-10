@@ -84,3 +84,6 @@ doc/
 .config*
 copie_ecran/
 *_securised.md
+*.jpg
+*.png
+*.webp
