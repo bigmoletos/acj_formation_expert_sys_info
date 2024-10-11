@@ -3,8 +3,10 @@ name: Trigger Ansible on Push
 # Déclenchement du workflow dès qu'un push est fait sur le fichier creationUser.sh
 on:
   push:
+    branches:
+    - dev # uniquement sur la branche dev
     paths:
-      - creationUser.sh
+      - algorithmie/creationUser.ssh
 
 jobs:
   ansible:
