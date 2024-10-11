@@ -154,13 +154,46 @@ Fin
 ### Exercice 6.8
 Écrivez un algorithme permettant à l’utilisateur de saisir un nombre quelconque de valeurs, qui devront être stockées dans un tableau. L’utilisateur doit donc commencer par entrer le nombre de valeurs qu’il compte saisir. Il effectuera ensuite cette saisie. Enfin, une fois la saisie terminée, le programme affichera le nombre de valeurs négatives et le nombre de valeurs positives.
 ```sh
+Tableau Tab[] en Numérique
+Variable i en Entier
+Variable nb , nbrPositive, nbrNegative en Numérique
+Début
+  nb <- 0
+  nbrPositive ← 0
+  nbrNegative ← 0
 
+  Ecrire "Combien de valeurs souhaitez-vous saisir ?"
+  Lire nb
+  Redim Tab[nb-1]
 
+  Pour i ← 0 à nb-1
+    Ecrire "Saisissez la valeur", i + 1
+    Lire Tad[i]
+    Si Tab[i] >= 0 Alors
+      nbrPositive ← nbrPositive + 1
+    Sinon
+      nbrNegative ← nbrNegative + 1
+    FinSi
+  i suivant
+  Ecrire "Le nombre de valeurs positives est :", nbrPositive
+  Ecrire "Le nombre de valeurs négatives est :", nbrNegative
+Fin
 ```
 
 ### Exercice 6.9
 Écrivez un algorithme calculant la somme des valeurs d’un tableau (on suppose que le tableau a été préalablement saisi).
 ```sh
+Tableau Tab1[5] en Numérique
+Tab1=("5" "7" "9" "2" "11" )
+Variable i en Entier
+Variable  som en Numerique
+Début
+  Pour i ← 0 à 5
+    som <- som + Tab[i]
+  i suivant
+
+  Ecrire "La somme des valeurs du tableau est  ", som
+Fin
 
 ```
 
@@ -175,23 +208,48 @@ Fin
 
 **Tableau à constituer** :
 11  14  12  11  2  8  11  10
+
 ```sh
+Tableau Tab1[], Tab2[], Tab3[] en Numérique
+Variable i en Entier
+Début
+
+  Tab1=(4 ; 8 ; 7 ; 9 ; 1 ; 5 ; 4 ; 6)
+  Tab2=( 7 ; 6 ; 5 ; 2 ; 1 ; 3 ; 7 ; 4)
+
+  Pour i ← 0 à n-1
+    Tab3[i] ←  Tab1[i] + Tab2[i]
+  i suivant
+
+Fin
 
 ```
 
 ### Exercice 6.11
 Toujours à partir de deux tableaux précédemment saisis, écrivez un algorithme qui calcule le schtroumpf des deux tableaux. Pour calculer le schtroumpf, il faut multiplier chaque élément du tableau 1 par chaque élément du tableau 2, et additionner le tout.
 
-**Tableau 1** :
-4  8  7  12
+**Tableau 1** : 4  8  7  12
 
-**Tableau 2** :
-3  6
+**Tableau 2** : 3  6
 
-Le Schtroumpf sera :
-3 * 4 + 3 * 8 + 3 * 7 + 3 * 12 + 6 * 4 + 6 * 8 + 6 * 7 + 6 * 12 = 279
+Le **Schtroumpf** sera : 3 * 4 + 3 * 8 + 3 * 7 + 3 * 12 + 6 * 4 + 6 * 8 + 6 * 7 + 6 * 12 = 279
+
 ```sh
+Tableau Tab1[], Tab2[], en Numérique
+Variable i, j en Entier
+Variable schtroumpf, res1, res2 en Numérique
+Début
+  schtroumpf ← 0
+  Tab1=( 4 ; 8 ; 7 ; 9 ; 1 ; 5 ; 4 ; 6 )
+  Tab2=( 7 ; 6 ; 5 ; 2 ; 1 ; 3 ; 7 ; 4 )
 
+  Pour i ← 0 à n-1
+    Pour j ← 0 à n-1
+        schtroumpf ← schtroumpf + ( Tab1[i] * Tab2[j] )
+    j suivant
+  i suivant
+Ecrire "Le Schtroumpf des 2 tableaux est:", schtroumpf
+Fin
 ```
 
 ### Exercice 6.12
