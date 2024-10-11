@@ -4,8 +4,13 @@
 # si ce programme ne fonctionne vous pouvez le convertir au format unix avec les commandes suivantes:
 # sudo apt install dos2unix
 # dos2unix creationUser.ssh
+
+# ajout d'un help
+
+
 # liste des options pour quitter le programme
-optionQuitter=("Yes" "Y" "O" "Oui" "yes" "y" "o" "oui")
+optionQuitter=("yes" "y" "o" "Oui" )
+
 # utilisateur de la machine
 utilisateur=$(whoami)
 
@@ -47,8 +52,10 @@ while true;do
     if [ "$option" == "3" ]; then
         # echo "souhaitez-vous quitter le programme (Yes/No) ?"
         read -p "Souhaitez-vous quitter le programme (Yes/No) ? " confirmation
-
+        confirmation=$(echo "$confirmation" | tr '[:upper:]' '[:lower:]')
+        # echo "confirmation: $confirmation"
         for opt in "${optionQuitter[@]}"; do
+
             if [ "$confirmation" == "$opt" ]; then
                 echo "À bientôt $user !"
                 exit 0
