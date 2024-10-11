@@ -1,0 +1,11 @@
+---
+- name: Mettre à jour le fichier creationUser.sh sur toutes les VM
+  hosts: mes_vms
+  tasks:
+    - name: Copier le fichier creationUser.sh dans le répertoire /script_perso
+      copy:
+        # src: /chemin/local/vers/creationUser.sh
+        src: C:/AJC_formation/algorithmie/creationUser.ssh
+        dest: /script_perso/creationUser.sh
+        owner: vboxuser
+        mode: '0755'

@@ -79,4 +79,13 @@ coverage.xml
 pip-log.txt
 download/
 *.iso
-linux\download
+doc/
+/download/
+.config*
+copie_ecran/
+*_securised.md
+*.jpg
+*.png
+*.webp
+algorithmie\listeWord.csv
+*.ini

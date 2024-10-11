@@ -1,0 +1,139 @@
+#!/bin/bash
+
+# Fonction d'aide
+show_help() {
+    echo "Usage: ./findFileByWords.sh <log_level> <option>"
+    echo ""
+    echo "Arguments:"
+    echo "  log_level     Niveau de débogage à utiliser (DEBUG, INFO, WARNING)"
+    echo "  option        Option de sortie (choisir parmi les options ci-dessous)"
+    echo "               -l   : Afficher les 3 lignes (précédente, courante, suivante)"
+    echo "               -w   : Afficher uniquement le mot qui suit 'password' ou 'mot de passe'"
+    echo ""
+    echo "Exemples :"
+    echo "  ./findFileByWords.sh DEBUG -l    # Afficher les 3 lignes avec un niveau de débogage DEBUG"
+    echo "  ./findFileByWords.sh WARNING -w  # Afficher seulement le mot suivant avec un niveau de débogage WARNING"
+    echo "  ./findFileByWords.sh -help       # Afficher cette aide"
+}
+
+# Vérification de l'argument pour l'aide
+if [[ "$1" == "-help" ]]; then
+    show_help
+    exit 0
+fi
+
+# Vérification des arguments pour le mode de débogage et l'option de format (-l ou -w)
+DEBUG_LEVEL="$1"
+OPTION="$2"
+
+if [[ -z "$DEBUG_LEVEL" ]]; then
+    DEBUG_LEVEL="INFO"  # Valeur par défaut si aucun argument n'est fourni
+fi
+
+if [[ -z "$OPTION" ]]; then
+    OPTION="-l"  # Valeur par défaut : afficher les 3 lignes
+fi
+
+# Fonction de logging en fonction du niveau de débogage
+log() {
+    local level="$1"
+    local message="$2"
+
+    case "$DEBUG_LEVEL" in
+        DEBUG)
+            echo "[$level] $message"
+            ;;
+        INFO)
+            if [[ "$level" == "INFO" || "$level" == "WARNING" ]]; then
+                echo "[$level] $message"
+            fi
+            ;;
+        WARNING)
+            if [[ "$level" == "WARNING" ]]; then
+                echo "[$level] $message"
+            fi
+            ;;
+    esac
+}
+
+# Définir les variables
+start_dir="/"    # Démarrer à partir de la racine
+output_file="listeWord.csv"   # Fichier de sortie
+search_terms="password|mot de passe"  # Termes à rechercher
+nopath=("lib" "sbin" "run" "sys" "proc" "dev" "bin" "usr/lib" "usr/bin" "usr/sbin") # Liste des répertoires à éviter
+listeExtension=("json" "yml" "xml" "html" "py" "sh" "bash" "txt" "csv" "xls" "xlsx" "doc" "md" "docx" "ppt" "pptx") # Liste des extensions de fichiers à tester
+notFichier=("manual" "help" "readme") # Liste des fichiers à exclure
+
+# Début du script
+log "INFO" "Démarrage du script de recherche de mots sensibles dans les fichiers..."
+
+# Créer le fichier CSV avec les en-têtes
+log "INFO" "Création du fichier CSV : $output_file"
+echo "Ligne précédente,Ligne contenant le mot,Ligne suivante,Chemin complet,Nom du fichier" > "$output_file"
+
+# Construire la chaîne pour exclure les chemins de `nopath`
+log "INFO" "Construction de la liste des répertoires à exclure..."
+exclude_paths=""
+for dir in "${nopath[@]}"; do
+    log "DEBUG" "Exclusion du répertoire : $dir"
+    exclude_paths+=" -not -path '*/$dir/*'"
+done
+log "INFO" "Exclusions complétées : $exclude_paths"
+
+# Construire la chaîne des extensions à inclure
+log "INFO" "Construction de la liste des extensions à tester..."
+include_extensions=""
+for ext in "${listeExtension[@]}"; do
+    log "DEBUG" "Ajout de l'extension .$ext à la recherche"
+    include_extensions+=" -name '*.$ext' -o"
+done
+include_extensions="${include_extensions::-3}" # Supprime le dernier -o inutile
+log "INFO" "Extensions à inclure : $include_extensions"
+
+# Construire la chaîne pour exclure certains fichiers par nom
+log "INFO" "Construction de la liste des fichiers à exclure..."
+exclude_files=""
+for fichier in "${notFichier[@]}"; do
+    log "DEBUG" "Exclusion du fichier contenant : $fichier"
+    exclude_files+=" -not -iname '*$fichier*'"
+done
+log "INFO" "Exclusion des fichiers complétée : $exclude_files"
+
+# Exécuter la commande `find` et parcourir les fichiers avec les extensions sélectionnées et les exclusions de répertoires et fichiers
+log "INFO" "Lancement de la recherche à partir du répertoire : $start_dir"
+find_cmd="find \"$start_dir\" \( $include_extensions \) -type f $exclude_paths $exclude_files \( ! -perm /111 \)"
+log "DEBUG" "Commande exécutée : $find_cmd"
+eval "$find_cmd 2>/dev/null" | while read -r file; do
+    log "DEBUG" "Fichier trouvé : $file"
+
+    # Rechercher les occurrences des termes "password" ou "mot de passe" dans chaque fichier
+    grep -EIn -A 1 -B 1 "$search_terms" "$file" 2>/dev/null | while read -r result; do
+        log "INFO" "Terme trouvé dans le fichier : $file"
+        log "DEBUG" "Ligne trouvée : $result"
+
+        if [[ "$OPTION" == "-l" ]]; then
+            # Si l'option est -l, afficher les 3 lignes (précédente, courante, suivante)
+            prev_line=$(grep -EIn -B 1 "$search_terms" "$file" | head -n 1 | cut -d: -f2)
+            current_line=$(grep -EIn "$search_terms" "$file" | head -n 1 | cut -d: -f2)
+            next_line=$(grep -EIn -A 1 "$search_terms" "$file" | tail -n 1 | cut -d: -f2)
+            log "DEBUG" "Ligne précédente : $prev_line"
+            log "DEBUG" "Ligne contenant le terme : $current_line"
+            log "DEBUG" "Ligne suivante : $next_line"
+            echo "\"$prev_line\",\"$current_line\",\"$next_line\",\"$(realpath "$file")\",\"$(basename "$file")\"" >> "$output_file"
+
+        elif [[ "$OPTION" == "-w" ]]; then
+            # Si l'option est -w, afficher uniquement le mot suivant "password" ou "mot de passe"
+            grep -Ei "$search_terms" "$file" | awk -v RS="[Pp]assword|mot de passe" 'NR>1 {print $1}' | while read -r word; do
+                log "DEBUG" "Mot trouvé après 'password' ou 'mot de passe' dans le fichier : $word"
+                if [[ -n "$word" ]]; then
+                    echo "\"$word\",\"$(realpath "$file")\",\"$(basename "$file")\"" >> "$output_file"
+                else
+                    log "DEBUG" "Aucun mot trouvé après 'password' ou 'mot de passe' dans le fichier $file"
+                fi
+            done
+        fi
+    done
+done
+
+# Fin du script
+log "INFO" "Script terminé. Résultats enregistrés dans : $output_file"
