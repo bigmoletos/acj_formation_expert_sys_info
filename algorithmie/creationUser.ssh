@@ -20,7 +20,7 @@ echo "--------------------------------"
 clear
 while true; do
     echo "--------------------------------"
-    echo "--------------------------------"
+    echo ""
     echo "Menu de gestion des utilisateurs"
     echo "--------------------------------"
     echo "1. Créer un utilisateur"
@@ -35,7 +35,7 @@ while true; do
         # echo "Entrez le nom de l'utilisateur à créer :"
         # read user
         read -p "Entrez le nom de l'utilisateur à créer : " user
-            # Vérifier si l'utilisateur existe déjà
+        # Vérifier si l'utilisateur existe déjà
         if id "$user" &>/dev/null; then
             echo "L'utilisateur $user existe déjà."
         else
@@ -53,11 +53,16 @@ while true; do
         # echo "Entrez le nom de l'utilisateur à supprimer :"
         # read user
         read -p "Entrez le nom de l'utilisateur à supprimer : " user
-        sudo deluser "$user"
-        if [ $? -eq 0 ]; then
-            echo "Utilisateur $user supprimé avec succès."
+        # Vérifier que l'utilisateur existe
+        if id "$user" &>/dev/null; then
+            echo "L'utilisateur $user n'existe pas."
         else
-            echo "Échec de la suppression de l'utilisateur $user."
+            sudo deluser "$user"
+            if [ $? -eq 0 ]; then
+                echo "Utilisateur $user supprimé avec succès."
+            else
+                echo "Échec de la suppression de l'utilisateur $user."
+            fi
         fi
 
 
