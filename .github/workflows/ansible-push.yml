@@ -21,13 +21,18 @@ jobs:
       # Étape 2 : Installer Ansible
       - name: Install Ansible
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ansible
+          sudo apt update
+          sudo apt install software-properties-common
+          sudo add-apt-repository --yes --update ppa:ansible/ansible
+          sudo apt update
+          sudo apt install ansible
+          sudo apt install sshpass 
 
       # Étape 3 : Exécuter le playbook Ansible pour copier le fichier sur les VMs
       - name: Run Ansible Playbook
         run: |
-          ansible-playbook -i ansible/playbooks/hosts.ini ansible/playbooks/update_creationuser.yml
+          ansible-playbook -i ansible/playbooks/hosts.ini ansible/playbooks/update_creationuser.yml --ssh-extra-args="-o StrictHostKeyChecking=no"
+
 
       # Optionnel : Ajouter des secrets pour les accès SSH ou mots de passe
       # Si nécessaire, utiliser secrets pour les identifiants SSH
