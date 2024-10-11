@@ -1,0 +1,126 @@
+#!/bin/bash
+
+# Ce programme pernet de créer ou supprimer un utilisateur
+# si ce programme ne fonctionne vous pouvez le convertir au format unix avec les commandes suivantes:
+# sudo apt install dos2unix
+# dos2unix creationUser.ssh
+
+# faire script ansible pour mettre à jour le script sur toutes les vm
+
+
+# ajout d'un help
+# Fonction pour afficher l'aide
+function afficher_aide() {
+    echo "Usage: creationUser.sh [option]"
+    echo ""
+    echo "Options disponibles :"
+    echo "  -h, --help             Afficher l'aide."
+    echo "  1                      Créer un utilisateur."
+    echo "  2                      Supprimer un utilisateur."
+    echo "  3                      Quitter le programme."
+    echo ""
+    echo "Description:"
+    echo "  Ce script permet de gérer les utilisateurs sur la machine."
+    echo "  1. Créer un utilisateur : Saisissez le nom de l'utilisateur à créer."
+    echo "  2. Supprimer un utilisateur : Saisissez le nom de l'utilisateur à supprimer."
+    echo "  3. Quitter le programme."
+    echo ""
+}
+
+# Si une option est passée au script
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    afficher_aide
+    exit 0
+fi
+
+# liste des options pour quitter le programme
+optionQuitter=("yes" "y" "o" "oui" )
+
+# utilisateur de la machine
+utilisateur=$(whoami)
+
+echo "Bonjour, $utilisateur ! Bienvenue dans ce script "
+echo "--------------------------------"
+
+clear
+while true; do
+    echo "--------------------------------"
+    echo ""
+    echo ""
+    echo "Menu de gestion des utilisateurs"
+    echo ""
+    echo ""
+    echo "--------------------------------"
+    echo "1. Créer un utilisateur"
+    echo "2. Supprimer un utilisateur"
+    echo "3. Quitter"
+    echo "--------------------------------"
+    echo -n "Choisissez une option : "
+    read option
+
+    if [ "$option" == "1" ]; then
+
+        # echo "Entrez le nom de l'utilisateur à créer :"
+        # read user
+        read -p "Entrez le nom de l'utilisateur à créer : " user
+        # Vérifier si l'utilisateur existe déjà
+        if id "$user" &>/dev/null; then
+            echo "L'utilisateur $user existe déjà."
+        else
+            #ajout user sur vm
+            # ssh ip_vm "sudo adduser $user"
+            #ajout user en local
+            sudo adduser "$user"
+            if [ $? -eq 0 ]; then
+                echo "Utilisateur $user créé avec succès."
+            else
+                echo "Échec de la création de l'utilisateur $user."
+            fi
+        fi
+
+
+    elif [ "$option" == "2" ]; then
+        # echo "Entrez le nom de l'utilisateur à supprimer :"
+        # read user
+        read -p "Entrez le nom de l'utilisateur à supprimer : " user
+        # Vérifier que l'utilisateur existe
+        if id "$user" &>/dev/null; then
+            echo "L'utilisateur $user n'existe pas."
+        else
+            # suppression user sur une vm
+            # ssh ip_vm "sudo deluser $user"
+            # suppression user en local
+            sudo deluser "$user"
+            if [ $? -eq 0 ]; then
+                echo "Utilisateur $user supprimé avec succès."
+            else
+                echo "Échec de la suppression de l'utilisateur $user."
+            fi
+        fi
+
+
+    elif [ "$option" == "3" ]; then
+        # echo "souhaitez-vous quitter le programme (Yes/No) ?"
+        read -p "Souhaitez-vous quitter le programme (Yes/No) ? " confirmation
+        confirmation=$(echo "$confirmation" | tr '[:upper:]' '[:lower:]')
+        # echo "confirmation: $confirmation"
+        for opt in "${optionQuitter[@]}"; do
+
+            if [ "$confirmation" == "$opt" ]; then
+                echo "À bientôt $user !"
+                exit 0
+            else
+                echo "--------------------------------"
+                echo "Veuillez ressaisir votre demande"
+                echo "--------------------------------"
+            fi
+        done
+
+    else
+    # Gestion erreur de saisie
+    echo "--------------------------------"
+    echo "Option non valide. Veuillez choisir une option entre 1, 2 et 3."
+    echo "--------------------------------"
+    fi
+
+done
