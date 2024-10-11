@@ -17,8 +17,12 @@ utilisateur=$(whoami)
 echo "Bonjour, $utilisateur ! Bienvenue dans ce script "
 echo "--------------------------------"
 
-while true;do
+while true; do
+    clear
+    echo "--------------------------------"
+    echo "--------------------------------"
     echo "Menu de gestion des utilisateurs"
+    echo "--------------------------------"
     echo "1. Créer un utilisateur"
     echo "2. Supprimer un utilisateur"
     echo "3. Quitter"
@@ -36,9 +40,9 @@ while true;do
         else
             echo "Échec de la création de l'utilisateur $user."
         fi
-    fi
 
-    if [ "$option" == "2" ]; then
+
+    elif [ "$option" == "2" ]; then
         echo "Entrez le nom de l'utilisateur à supprimer :"
         read user
         sudo deluser "$user"
@@ -47,9 +51,9 @@ while true;do
         else
             echo "Échec de la suppression de l'utilisateur $user."
         fi
-    fi
 
-    if [ "$option" == "3" ]; then
+
+    elif [ "$option" == "3" ]; then
         # echo "souhaitez-vous quitter le programme (Yes/No) ?"
         read -p "Souhaitez-vous quitter le programme (Yes/No) ? " confirmation
         confirmation=$(echo "$confirmation" | tr '[:upper:]' '[:lower:]')
@@ -59,8 +63,18 @@ while true;do
             if [ "$confirmation" == "$opt" ]; then
                 echo "À bientôt $user !"
                 exit 0
+            else
+                echo "--------------------------------"
+                echo "Veuillez ressaisir votre demande"
+                echo "--------------------------------"
             fi
         done
+
+    else
+    # Gestion erreur de saisie
+    echo "--------------------------------"
+    echo "Option non valide. Veuillez choisir une option entre 1, 2 et 3."
+    echo "--------------------------------"
     fi
 
 done
