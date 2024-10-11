@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Ce programme pernet de créer ou supprimer un utilisateur
-
+# si ce programme ne fonctionne vous pouvez le convertir au format unix avec les commandes suivantes:
+# sudo apt install dos2unix
+# dos2unix creationUser.ssh
 # liste des options pour quitter le programme
 optionQuitter=("Yes" "Y" "O" "Oui" "yes" "y" "o" "oui")
 # utilisateur de la machine
