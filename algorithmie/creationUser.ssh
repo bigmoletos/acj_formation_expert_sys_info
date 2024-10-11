@@ -23,7 +23,7 @@ while true;do
 
         echo "Entrez le nom de l'utilisateur à créer :"
         read user
-        ssh  "sudo adduser $user"
+        sudo adduser "$user"
         if [ $? -eq 0 ]; then
             echo "Utilisateur $user créé avec succès."
         else
@@ -34,7 +34,7 @@ while true;do
     if [ "$option" == "2" ]; then
         echo "Entrez le nom de l'utilisateur à supprimer :"
         read user
-        ssh  "sudo deluser $user"
+        sudo deluser "$user"
         if [ $? -eq 0 ]; then
             echo "Utilisateur $user supprimé avec succès."
         else
