@@ -9,7 +9,29 @@
 
 
 # ajout d'un help
+# Fonction pour afficher l'aide
+function afficher_aide() {
+    echo "Usage: creationUser.sh [option]"
+    echo ""
+    echo "Options disponibles :"
+    echo "  -h, --help             Afficher l'aide."
+    echo "  1                      Créer un utilisateur."
+    echo "  2                      Supprimer un utilisateur."
+    echo "  3                      Quitter le programme."
+    echo ""
+    echo "Description:"
+    echo "  Ce script permet de gérer les utilisateurs sur la machine."
+    echo "  1. Créer un utilisateur : Saisissez le nom de l'utilisateur à créer."
+    echo "  2. Supprimer un utilisateur : Saisissez le nom de l'utilisateur à supprimer."
+    echo "  3. Quitter le programme."
+    echo ""
+}
 
+# Si une option est passée au script
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    afficher_aide
+    exit 0
+fi
 
 # liste des options pour quitter le programme
 optionQuitter=("yes" "y" "o" "oui" )
