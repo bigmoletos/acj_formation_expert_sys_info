@@ -7,7 +7,8 @@
 
 # faire script ansible pour mettre à jour le script sur toutes les vm
 
-## test3 git action worflows ansible
+## test4 git action worflows ansible
+
 # ajout d'un help
 # Fonction pour afficher l'aide
 function afficher_aide() {
