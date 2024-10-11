@@ -46,10 +46,6 @@ while true;do
         # echo "souhaitez-vous quitter le programme (Yes/No) ?"
         read -p "Souhaitez-vous quitter le programme (Yes/No) ? " confirmation
 
-        # if [ "$confirmation" =~ "$optionQuitter"]; then
-        #     echo "A bientot $user "
-        #     exit 0
-        # fi
         for opt in "${optionQuitter[@]}"; do
             if [ "$confirmation" == "$opt" ]; then
                 echo "À bientôt $user !"
