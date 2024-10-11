@@ -9,7 +9,7 @@
 
 
 # liste des options pour quitter le programme
-optionQuitter=("yes" "y" "o" "Oui" )
+optionQuitter=("yes" "y" "o" "oui" )
 
 # utilisateur de la machine
 utilisateur=$(whoami)
