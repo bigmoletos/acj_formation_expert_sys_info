@@ -1,6 +1,9 @@
 ---
 - name: Mettre à jour le fichier creationUser.sh sur toutes les VM
   hosts: mes_vms
+  vars:
+  # Ajout des variables SSH dans le playbook
+    ansible_ssh_extra_args: '-o StrictHostKeyChecking=no'
   tasks:
     - name: Copier le fichier creationUser.sh dans le répertoire /script_perso
       copy:
