@@ -1,0 +1,52 @@
+#!/bin/bash
+
+optionQuitter=("Yes" "Y" "O" "Oui")
+
+utilisateur=$(whoami)
+
+echo "Bonjour, $utilisateur ! Bienvenue dans ce script "
+echo "--------------------------------"
+
+while true;do
+    echo "Menu de gestion des utilisateurs"
+    echo "1. Créer un utilisateur"
+    echo "2. Supprimer un utilisateur"
+    echo "3. Quitter"
+    echo "--------------------------------"
+    echo -n "Choisissez une option : "
+    read option
+
+    if [ "$option" == "1" ]; then
+
+        echo "Entrez le nom de l'utilisateur à créer :"
+        read user
+        ssh  "sudo adduser $user"
+        if [ $? -eq 0 ]; then
+            echo "Utilisateur $user créé avec succès."
+        else
+            echo "Échec de la création de l'utilisateur $user."
+        fi
+    fi
+
+    if [ "$option" == "2" ]; then
+        echo "Entrez le nom de l'utilisateur à supprimer :"
+        read user
+        ssh  "sudo deluser $user"
+        if [ $? -eq 0 ]; then
+            echo "Utilisateur $user supprimé avec succès."
+        else
+            echo "Échec de la suppression de l'utilisateur $user."
+        fi
+    fi
+
+    if [ "$option" == "3" ]; then
+        # echo "souhaitez-vous quitter le programme (Yes/No) ?"
+        read -p "Souhaitez-vous quitter le programme (Yes/No) ? " confirmation
+
+        if [ "$confirmation" =~ "$optionQuitter"]; then
+            echo "A bientot $user "
+            exit 0
+        fi
+    fi
+
+done
