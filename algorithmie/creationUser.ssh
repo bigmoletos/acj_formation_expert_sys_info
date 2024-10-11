@@ -17,8 +17,8 @@ utilisateur=$(whoami)
 echo "Bonjour, $utilisateur ! Bienvenue dans ce script "
 echo "--------------------------------"
 
+clear
 while true; do
-    clear
     echo "--------------------------------"
     echo "--------------------------------"
     echo "Menu de gestion des utilisateurs"
@@ -35,11 +35,17 @@ while true; do
         # echo "Entrez le nom de l'utilisateur à créer :"
         # read user
         read -p "Entrez le nom de l'utilisateur à créer : " user
-        sudo adduser "$user"
-        if [ $? -eq 0 ]; then
-            echo "Utilisateur $user créé avec succès."
+            # Vérifier si l'utilisateur existe déjà
+        if id "$user" &>/dev/null; then
+            echo "L'utilisateur $user existe déjà."
         else
-            echo "Échec de la création de l'utilisateur $user."
+            #ajout user
+            sudo adduser "$user"
+            if [ $? -eq 0 ]; then
+                echo "Utilisateur $user créé avec succès."
+            else
+                echo "Échec de la création de l'utilisateur $user."
+            fi
         fi
 
 
