@@ -32,8 +32,9 @@ while true; do
 
     if [ "$option" == "1" ]; then
 
-        echo "Entrez le nom de l'utilisateur à créer :"
-        read user
+        # echo "Entrez le nom de l'utilisateur à créer :"
+        # read user
+        read -p "Entrez le nom de l'utilisateur à créer : " user
         sudo adduser "$user"
         if [ $? -eq 0 ]; then
             echo "Utilisateur $user créé avec succès."
@@ -43,8 +44,9 @@ while true; do
 
 
     elif [ "$option" == "2" ]; then
-        echo "Entrez le nom de l'utilisateur à supprimer :"
-        read user
+        # echo "Entrez le nom de l'utilisateur à supprimer :"
+        # read user
+        read -p "Entrez le nom de l'utilisateur à supprimer : " user
         sudo deluser "$user"
         if [ $? -eq 0 ]; then
             echo "Utilisateur $user supprimé avec succès."
