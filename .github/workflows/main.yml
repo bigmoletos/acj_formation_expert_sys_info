@@ -1,0 +1,35 @@
+name: Trigger Ansible on Push
+
+# Déclenchement du workflow dès qu'un push est fait sur le fichier creationUser.sh
+on:
+  push:
+    paths:
+      - creationUser.sh
+
+jobs:
+  ansible:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Cloner le dépôt GitHub
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Étape 2 : Installer Ansible
+      - name: Install Ansible
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ansible
+
+      # Étape 3 : Exécuter le playbook Ansible pour copier le fichier sur les VMs
+      - name: Run Ansible Playbook
+        run: |
+          ansible-playbook -i ansible/playbooks/hosts.ini ansible/playbooks/update_creationuser.yml
+
+      # Optionnel : Ajouter des secrets pour les accès SSH ou mots de passe
+      # Si nécessaire, utiliser secrets pour les identifiants SSH
+      # - name: Configure SSH access
+      #   run: |
+      #     echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     ssh-keyscan -H <IP_VM> >> ~/.ssh/known_hosts
