@@ -1,7 +1,10 @@
 #!/bin/bash
 
-optionQuitter=("Yes" "Y" "O" "Oui")
+# Ce programme pernet de créer ou supprimer un utilisateur
 
+# liste des options pour quitter le programme
+optionQuitter=("Yes" "Y" "O" "Oui" "yes" "o" "oui")
+# utilisateur de la machine
 utilisateur=$(whoami)
 
 echo "Bonjour, $utilisateur ! Bienvenue dans ce script "
@@ -43,10 +46,16 @@ while true;do
         # echo "souhaitez-vous quitter le programme (Yes/No) ?"
         read -p "Souhaitez-vous quitter le programme (Yes/No) ? " confirmation
 
-        if [ "$confirmation" =~ "$optionQuitter"]; then
-            echo "A bientot $user "
-            exit 0
-        fi
+        # if [ "$confirmation" =~ "$optionQuitter"]; then
+        #     echo "A bientot $user "
+        #     exit 0
+        # fi
+        for opt in "${optionQuitter[@]}"; do
+            if [ "$confirmation" == "$opt" ]; then
+                echo "À bientôt $user !"
+                exit 0
+            fi
+        done
     fi
 
 done
