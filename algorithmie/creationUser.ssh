@@ -3,7 +3,7 @@
 # Ce programme pernet de créer ou supprimer un utilisateur
 
 # liste des options pour quitter le programme
-optionQuitter=("Yes" "Y" "O" "Oui" "yes" "o" "oui")
+optionQuitter=("Yes" "Y" "O" "Oui" "yes" "y" "o" "oui")
 # utilisateur de la machine
 utilisateur=$(whoami)
 
