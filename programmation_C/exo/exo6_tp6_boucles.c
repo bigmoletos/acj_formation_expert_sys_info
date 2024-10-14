@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
 #include <time.h>
 
 
 /* Enoncé
 
-Nous allons créer un petit jeu de type “Pierre Feuille Ciseaux”. Le joueur vas jouer contre l’ordinateur.
+Nous allons créer un petit jeu de type “Pierre Feuille Ciseaux”. Le joueur va jouer contre l’ordinateur.
 Cela signifie donc que l’on vas générer aléatoirement ce que joue l’ordinateur.
 Pour simplifier les choses, le jeu se fait en 3 manches gagnantes. De plus, pour la saisie utilisateur nous
 allons lire un entier (1- Pierre, 2- Papier, 3- Ciseaux)
@@ -39,10 +38,7 @@ Aide
 */
 
 // Déclaration et intialisation des variables globales avec des valeurs appropriées
-int nbre1=0 ;
-int nbre2=0 ;
-int resultat=0 ;
-char operateur_type;
+
 
 int main()
 {
@@ -52,14 +48,65 @@ int main()
 
     // declaration d'un chiffre aléatoire
     srand(time(NULL));
-    // declaration de nos variables
-    int jeu_ordinateur = 0, jeu_utilisateur = 0;
+    // declaration et intialisation de nos variables
+    int victoire_player1=0 ;
+    int victoire_ordinateur=0 ;
+    int jeu_joueur=0 ;
+    int jeu_ordinateur = 0;
+    // int compteur = 0;
+    char resultat[]="X" ;
     const int VALEUR_MIN = 1, VALEUR_MAX = 3;
+
     // generation d'un nombre aleatoire
     jeu_ordinateur = (rand() % VALEUR_MAX) + VALEUR_MIN;
 
-    // saisies
+
+// le jeu ne peut se faire qu'en 3 manches
+    while (victoire_ordinateur<VALEUR_MAX && victoire_player1<VALEUR_MAX){
+
+        // saisies
+        printf("Que voulez vous jouer (1- Pierre, 2- Papier, 3- Ciseaux) ?\n\n");
+        scanf("%d", &jeu_joueur);
+
+        if (!jeu_joueur==1 || !jeu_joueur==2 || !jeu_joueur==3){
+            printf("Vous avez avez fait une erreur de saise, vous ne pouvez saisir que 1,2 ou 3");
+
+        }else{
+
+            if (jeu_joueur==jeu_ordinateur)
+            {
+                strcpy(resultat, "match nul");
+                // printf("%s\n",resultat);
+            // le joueur gagne si papier-2 sur pierre-1, ciseaux-3 sur papier-2, pierre-1 sur ciseaux-3
+            }else if ((jeu_joueur==1 && jeu_ordinateur==3) || (jeu_joueur==2 && jeu_ordinateur==1) || (jeu_joueur==3 && jeu_ordinateur==2))
+            {
+                strcpy(resultat, "le joueur gagne la partie");
+                // printf("%s\n",resultat);
+                victoire_player1++;
+            }else
+            {
+                strcpy(resultat, "l'ordinateur gagne la partie");
+                victoire_ordinateur++;
+                // printf("%s\n",resultat);
+            }
 
 
+            printf("Joueur joue %d et ordinateur joue %d >>>> %s", jeu_joueur, jeu_ordinateur, resultat);
+        }
+        if (victoire_ordinateur < victoire_player1)
+        {
+            strcpy(resultat, "l'ordinateur gagne le match");
+            printf("%s\n",resultat);
+        }else {
+            strcpy(resultat, "le joueur gagne le match");
+            printf("%s\n",resultat);
+
+        }
+
+
+    printf("%s\n",resultat);
+    printf(" Points: Ordi: %d et joueur: %d", victoire_ordinateur, victoire_player1);
+            // compteur++;
+    }
 
 }
