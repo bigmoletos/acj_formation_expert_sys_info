@@ -110,6 +110,7 @@ Si GCC n'est pas installé, voici les étapes pour l'installer :
 
 ## Variables
 
+```bash
 #include <stdio.h>
 
 int main() {
@@ -155,3 +156,4 @@ int main() {
     return 0;
 }
 
+---
