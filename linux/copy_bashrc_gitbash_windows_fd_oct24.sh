@@ -106,3 +106,6 @@ alias meminfo="free -m -l -t"  # Afficher les informations sur la memoire
 
 # Charger la configuration
 alias reload="source ~/.bashrc"
+
+# Accés aux repertoires AJC
+alias mnt="cd /mnt/c/AJC_formation"
