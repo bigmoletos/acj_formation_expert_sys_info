@@ -32,13 +32,14 @@ int addition(int a, int b) {
  *      Hello, World!
  *      La somme de 3 et 4 est: 7
  */
+// Définir deux entiers à additionner
+int x = 3;
+int y = 4;
+
 int main() {
     // Afficher "Hello, World!"
     printf("Hello, World!\n");
 
-    // Définir deux entiers à additionner
-    int x = 3;
-    int y = 4;
 
     // Calculer la somme à l'aide de la fonction addition
     int somme = addition(x, y);
