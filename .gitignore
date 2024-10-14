@@ -89,3 +89,6 @@ copie_ecran/
 *.webp
 algorithmie\listeWord.csv
 *.ini
+*.pdf
+*.pptx
+
