@@ -1,4 +1,3 @@
-// saisie.c
 #include <stdio.h>
 #include <ctype.h>  // Pour la fonction tolower()
 #include  "prototypes.h"

@@ -36,7 +36,6 @@ int main()
 
    do
    {
-
     // Affiche le titre du programme
     printf("\n\n=====================================\n");
     printf("tp10-les fonctions\n");
@@ -47,7 +46,7 @@ int main()
     int valeur1 = 0, valeur2 = 0;
 
 
-    // Saisie des valeurs avec contrôle
+    // Saisie des valeurs avec contrôle, appel à la fonction importée
     valeur1 = saisir_entier(100);
     valeur2 = saisir_entier(100);
 
@@ -62,9 +61,9 @@ int main()
     // Affichage des valeurs après l'inversion
     printf("************************************************\n");
     printf("Après inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
-
     printf("************************************************\n");
-    // Gestion de la sortie (Oui/Non)
+
+    // Gestion de la sortie (Oui/Non) avec appel à la fonction importée
     if (demander_quitter() == 'o') {
         printf("Vous avez choisi de quitter le programme. Au revoir !\n");
         quitter = 'o';
