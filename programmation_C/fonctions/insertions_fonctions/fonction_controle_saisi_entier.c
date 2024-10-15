@@ -1,4 +1,3 @@
-// fonction_controle_saisi_entier.c
 #include <stdio.h>
 #include <ctype.h>
 #include  "prototypes.h"
