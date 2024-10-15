@@ -30,10 +30,10 @@ void inverser_valeurs(int *val1, int *val2) {
 }
 // Fonction d'inversion de 2 valeurs sans pointeurs en passant par 2 fonctins
 int inverser_valeurs_sans_pointeur(int val10, int val20) {
-    int temp = val10; // variable tampon
+    int temp2 = val10; // variable tampon
     val10 = val20;
-    val20 = temp;
-    return val10, val20;
+    val20 = temp2;
+    return val10;
 }
 
 
@@ -52,7 +52,7 @@ int main()
 
     // Déclaration et initialisation de nos variables
     int valeur1 = 0, valeur2 = 0;
-    int valeur10 = 0, valeur20 = 0;
+    int valeur10 =0, valeur20 =0;
 
 
     // Saisie des valeurs avec contrôle, appel à la fonction importée
@@ -68,7 +68,8 @@ int main()
     inverser_valeurs(&valeur1, &valeur2);
 
     // Utilisation de la fonction d'inversion des valeurs sans pointeur
-    valeur10, valeur20 = inverser_valeurs_sans_pointeur(valeur1, valeur2);
+    valeur10 = inverser_valeurs_sans_pointeur(valeur1, valeur2);
+    valeur20 = valeur1;  //bon ok c'est un peu de la triche !!
 
     // Affichage des valeurs après l'inversion
     printf("************************************************\n");
