@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <time.h>
 #include <stdbool.h>
-#include "prototypes.h"  //integration du header contenant la fonction controle de saisi
+#include "prototypes.h"  //integration du header contenant les fonctions controle de saisi et sortie prog
 
 
 /* Enoncé
@@ -50,6 +50,7 @@ int main()
     // Saisie des valeurs avec contrôle
     valeur1 = saisir_entier(100);
     valeur2 = saisir_entier(100);
+
     // Affichage des valeurs avant inversion
     printf("Avant inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
 
@@ -63,6 +64,7 @@ int main()
     // Gestion de la sortie (Oui/Non)
     if (demander_quitter() == 'o') {
         printf("Vous avez choisi de quitter le programme. Au revoir !\n");
+        quitter = 'o';
     } else {
         printf("Vous avez choisi de continuer.\n");
     }
