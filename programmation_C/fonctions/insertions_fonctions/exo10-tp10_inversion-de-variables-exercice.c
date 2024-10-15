@@ -38,9 +38,9 @@ int main()
    {
 
     // Affiche le titre du programme
-    printf("\n\n====================================\n");
-    printf("tp10-les fonctinos\n");
-    printf("Inversion des valeurs\n");
+    printf("\n\n=====================================\n");
+    printf("tp10-les fonctions\n");
+    printf("Inversion de 2 valeurs\n");
     printf("========================================\n\n");
 
     // Déclaration et initialisation de nos variables
@@ -52,6 +52,7 @@ int main()
     valeur2 = saisir_entier(100);
 
     // Affichage des valeurs avant inversion
+    printf("*************************************************\n");
     printf("Avant inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
 
 
@@ -59,8 +60,10 @@ int main()
     inverser_valeurs(&valeur1, &valeur2);
 
     // Affichage des valeurs après l'inversion
+    printf("************************************************\n");
     printf("Après inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
 
+    printf("************************************************\n");
     // Gestion de la sortie (Oui/Non)
     if (demander_quitter() == 'o') {
         printf("Vous avez choisi de quitter le programme. Au revoir !\n");
