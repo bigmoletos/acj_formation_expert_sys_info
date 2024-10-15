@@ -1,7 +1,7 @@
 // fonction_controle_saisi_entier.c
 #include <stdio.h>
 #include <ctype.h>
-// #include  "fonction_controle_saisi_entier.h"
+#include  "prototypes.h"
 
 // int saisir_entier(int max_valeur);
 // char demander_quitter();

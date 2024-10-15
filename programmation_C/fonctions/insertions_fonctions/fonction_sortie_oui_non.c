@@ -1,6 +1,7 @@
 // saisie.c
 #include <stdio.h>
 #include <ctype.h>  // Pour la fonction tolower()
+#include  "prototypes.h"
 
 // Fonction pour demander si l'utilisateur veut continuer ou quitter
 char demander_quitter() {
