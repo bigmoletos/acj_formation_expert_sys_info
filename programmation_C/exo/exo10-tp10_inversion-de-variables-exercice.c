@@ -29,11 +29,12 @@ var1 = 9 et var2 = 12
 int temp;
 
 // Fonction d'inversion de 2 valeurs
-void inverser(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+void inverser_valeurs(int *val1, int *val2) {
+    int temp = *val1; // variable tampon
+    *val1 = *val2;
+    *val2 = temp;
 }
+
 
 int main()
 {
@@ -73,8 +74,17 @@ int main()
     // Affichage des valeurs avant inversion
     printf("Avant inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
 
-    // Inversion des valeurs
-    inverser(&valeur1, &valeur2);
+
+    printf("Valeur de val1 : %d\n", valeur1);// Affiche la valeur de 'val1'
+
+
+    printf("Adresse de val1 : %p\n", (void*)&valeur1); // Affiche l'adresse de 'a'
+    printf("Adresse stockée dans pointeur : %p\n", (void*)valeur1);  // Affiche l'adresse stockée dans le pointeur
+    printf("Valeur pointée par pointeur : %d\n", *valeur1); // Affiche la valeur pointée par le pointeur
+
+
+    // Utilisation de la fonction d'inversion des valeurs
+    inverser_valeurs(&valeur1, &valeur2);
 
     // Affichage des valeurs après l'inversion
     printf("Après inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);

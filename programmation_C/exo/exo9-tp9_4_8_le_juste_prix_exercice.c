@@ -80,15 +80,13 @@ int main()
     const int VALEUR_MIN = 1, VALEUR_MAX = 100;
 
     // Génération d'un nombre aléatoire entre 1 et 100
-    srand(time(NULL));
+    srand(time(NULL)); //reinitialisation du seed de la valeur aléatoire
     nombre_mystere = (rand() % (VALEUR_MAX - VALEUR_MIN + 1)) + VALEUR_MIN;
 
     printf("Devinez quel est mon nombre mystère.\nIndice: c'est un nombre entre %d et %d\n", VALEUR_MIN, VALEUR_MAX);
 
     while (nbre_tentatives < max_tentatives && quit == 'n')
     {
-
-
         // Saisie clavier des variables
         printf("Quel est votre choix de nombre : ");
 
