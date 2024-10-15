@@ -1,0 +1,11 @@
+https://github.com/bigmoletos/acj_formation_expert_sys_info/blob/dev/programmation_C/fonctions/insertions_fonctions/lien_github.txt
+
+// Fonction qui retourne la premeire valeur inversée
+int inverser_premiere_valeur(int val10, int val20) {
+    return val20;  // Retourne la seconde valeur
+}
+
+// Fonction qui retourne la deuxième valeur inversée
+int inverser_deuxieme_valeur(int val10, int val20) {
+    return val10;  // Retourne la première valeur
+}
