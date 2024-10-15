@@ -68,20 +68,21 @@ int main()
     printf("Table de %d par %d\n",nbre,multiplicateur);
     printf("\n------------------------------------\n\n");
 
-    for (int i = 0; i < multiplicateur+1; i++)
+    // impression de toutes les tables de 1 à x
+    for (int i = 0; i < nbre+1 ; i++)
     {
-            resultat = nbre * i;
-            printf("%d x %d = %d\n", nbre, i, resultat);
-        for (int j = 1; j < nbre; j++)
+            printf("\n****************************\n");
+            printf("\nAffichage de la table de %d par %d\n", i, multiplicateur);
+            printf("\n****************************\n");
+
+        for (int j = 0; j <= multiplicateur; j++)
         {
-            // contrairement à ce qui est dit dans l'aide, je ne vois pas à quoi peut servir la 2éme boucle dans notre cas !!
-            // resultat = nbre * i;
-            // printf("%d x %d = %d\n", nbre, i, resultat);
+            // covir la 2éme boucle dans notre cas !!
+            resultat = i * j;
+            printf("%d x %d = %d\n", i, j, resultat);
         }
 
 }
-
-
 
 
     printf("\n========================================\n\n");
