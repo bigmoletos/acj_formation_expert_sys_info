@@ -22,12 +22,20 @@ var1 = 9 et var2 = 12
 // Déclaration et intialisation des variables globales avec des valeurs appropriées
 int temp;
 
-// Fonction d'inversion de 2 valeurs
+// Fonction d'inversion de 2 valeurs avec pointeurs
 void inverser_valeurs(int *val1, int *val2) {
     int temp = *val1; // variable tampon
     *val1 = *val2;
     *val2 = temp;
 }
+// Fonction d'inversion de 2 valeurs sans pointeurs en passant par 2 fonctins
+int inverser_valeurs_sans_pointeur(int val10, int val20) {
+    int temp = val10; // variable tampon
+    val10 = val20;
+    val20 = temp;
+    return val10, val20;
+}
+
 
 
 int main()
@@ -44,6 +52,7 @@ int main()
 
     // Déclaration et initialisation de nos variables
     int valeur1 = 0, valeur2 = 0;
+    int valeur10 = 0, valeur20 = 0;
 
 
     // Saisie des valeurs avec contrôle, appel à la fonction importée
@@ -55,12 +64,16 @@ int main()
     printf("Avant inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
 
 
-    // Utilisation de la fonction d'inversion des valeurs
+    // Utilisation de la fonction d'inversion des valeurs avec pointeur
     inverser_valeurs(&valeur1, &valeur2);
+
+    // Utilisation de la fonction d'inversion des valeurs sans pointeur
+    valeur10, valeur20 = inverser_valeurs_sans_pointeur(valeur1, valeur2);
 
     // Affichage des valeurs après l'inversion
     printf("************************************************\n");
-    printf("Après inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
+    printf("Avec pointeur\nAprès inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
+    printf("Sans Pointeur\nAprès inversion : valeur1 = %d, valeur2 = %d\n", valeur10, valeur20);
     printf("************************************************\n");
 
     // Gestion de la sortie (Oui/Non) avec appel à la fonction importée
