@@ -4,6 +4,7 @@
 #include <ctype.h>
 #include <time.h>
 #include <stdbool.h>
+#include "prototypes.h"  //integration du header contenant la fonction controle de saisi
 
 
 /* Enoncé
@@ -15,13 +16,6 @@ Objectifs
 var1 = 12 et var2 = 9
 Inversion ...
 var1 = 9 et var2 = 12
-
-*/
-
-
-/* SPOIL
-
-
 
 */
 
@@ -38,6 +32,11 @@ void inverser_valeurs(int *val1, int *val2) {
 
 int main()
 {
+    char quitter = 'n';  // Initialisation pour que le programme commence
+
+   do
+   {
+
     // Affiche le titre du programme
     printf("\n\n====================================\n");
     printf("tp10-les fonctinos\n");
@@ -47,40 +46,12 @@ int main()
     // Déclaration et initialisation de nos variables
     int valeur1 = 0, valeur2 = 0;
 
-    // Saisie clavier des variables
-    printf("Quel est votre choix de votre 1 er valeur : ");
 
-        // Contrôle de saisie
-        if (scanf("%d", &valeur1) != 1 || valeur1 >= 100)
-        {
-            printf("Veuillez saisir une valeur positive et inférieure à 100.\n");
-            // Vider le buffer en cas de mauvaise saisie
-            while (getchar() != '\n');
-            return 1;
-        }
-
-    // Saisie clavier des variables
-    printf("Quel est votre choix de votre 2éme valeur : ");
-
-        // Contrôle de saisie
-        if (scanf("%d", &valeur2) != 1 || valeur2 >= 100)
-        {
-            printf("Veuillez saisir une valeur positive et inférieure à 100.\n");
-            // Vider le buffer en cas de mauvaise saisie
-            while (getchar() != '\n');
-            return 1;
-        }
-
+    // Saisie des valeurs avec contrôle
+    valeur1 = saisir_entier(100);
+    valeur2 = saisir_entier(100);
     // Affichage des valeurs avant inversion
     printf("Avant inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
-
-
-    printf("Valeur de val1 : %d\n", valeur1);// Affiche la valeur de 'val1'
-
-
-    printf("Adresse de val1 : %p\n", (void*)&valeur1); // Affiche l'adresse de 'a'
-    printf("Adresse stockée dans pointeur : %p\n", (void*)valeur1);  // Affiche l'adresse stockée dans le pointeur
-    printf("Valeur pointée par pointeur : %d\n", *valeur1); // Affiche la valeur pointée par le pointeur
 
 
     // Utilisation de la fonction d'inversion des valeurs
@@ -89,6 +60,15 @@ int main()
     // Affichage des valeurs après l'inversion
     printf("Après inversion : valeur1 = %d, valeur2 = %d\n", valeur1, valeur2);
 
+    // Gestion de la sortie (Oui/Non)
+    if (demander_quitter() == 'o') {
+        printf("Vous avez choisi de quitter le programme. Au revoir !\n");
+    } else {
+        printf("Vous avez choisi de continuer.\n");
+    }
+   } while (quitter == 'n');
+
     return 0;
+
 
 }
