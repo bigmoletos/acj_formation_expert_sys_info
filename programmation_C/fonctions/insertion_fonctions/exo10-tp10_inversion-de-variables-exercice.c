@@ -23,12 +23,13 @@ var1 = 9 et var2 = 12
 int temp;
 
 // Fonction d'inversion de 2 valeurs avec pointeurs
-void inverser_valeurs(int *val1, int *val2) {
+void inverser_valeurs_avec_pointeur(int *val1, int *val2) {
     int temp = *val1; // variable tampon
     *val1 = *val2;
     *val2 = temp;
 }
 // Fonction d'inversion de 2 valeurs sans pointeurs en passant par 2 fonctins
+//Une fonction ne peut retourner qu'une seule valeur
 int inverser_valeurs_sans_pointeur(int val10, int val20) {
     int temp2 = val10; // variable tampon
     val10 = val20;
@@ -65,7 +66,7 @@ int main()
 
 
     // Utilisation de la fonction d'inversion des valeurs avec pointeur
-    inverser_valeurs(&valeur1, &valeur2);
+    inverser_valeurs_avec_pointeur(&valeur1, &valeur2);
 
     // Utilisation de la fonction d'inversion des valeurs sans pointeur
     valeur10 = inverser_valeurs_sans_pointeur(valeur1, valeur2);
