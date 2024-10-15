@@ -64,7 +64,7 @@ int main()
 // le jeu ne peut se faire qu'en 3 manches
     while (victoire_ordinateur<VALEUR_MAX && victoire_player1<VALEUR_MAX){
 
-        // saisies
+        // saisies et controle de saisie
         printf("Que voulez vous jouer (1- Pierre, 2- Papier, 3- Ciseaux) ?\n\n");
         scanf("%d", &jeu_joueur);
 
