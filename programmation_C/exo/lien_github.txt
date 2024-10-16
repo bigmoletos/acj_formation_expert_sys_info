@@ -1,0 +1,1 @@
+https://github.com/bigmoletos/acj_formation_expert_sys_info/blob/dev/programmation_C/exo/exo6-1_bis_tp6_1_bis_affichage_de_tableaux_exercices.c
