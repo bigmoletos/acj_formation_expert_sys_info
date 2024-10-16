@@ -10,6 +10,13 @@ Ce document explique comment compiler et exécuter un programme C sous WSL en ut
 - Avoir installé **WSL** (Windows Subsystem for Linux) sur votre machine.
 - Avoir installé **GCC** dans l'environnement WSL.
 
+- pour **connaitre la version** de son compilateur et de son C
+
+```bash
+gcc --version
+gcc -dM -E - < /dev/null | grep __STDC_VERSION__
+```
+
 ### Installation de GCC sous WSL
 
 Si GCC n'est pas installé, voici les étapes pour l'installer :
