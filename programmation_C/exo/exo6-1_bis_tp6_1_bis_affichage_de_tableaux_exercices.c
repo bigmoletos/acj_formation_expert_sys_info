@@ -20,6 +20,7 @@ size_t taille_tableau = 0;
 
 void affichage_tableau(int *tab, size_t taille_tableau){
 
+    printf("\n");
     printf("Tableau: ");
     for (size_t i = 0; i < taille_tableau; i++)
     {
@@ -35,11 +36,15 @@ void affichage_tableau(int *tab, size_t taille_tableau){
 int main()
 {
     int tableau[TAILLE_TAB]={1,2,3,4,5,6,7,8,9,10,11};
-    taille_tableau=sizeof(tableau)/sizeof(*tableau);
+    int tableau2[]={1,2,3,4,5,6,7,8,9,10,11};
+
+    // taille du 2éme tableau
+    taille_tableau=sizeof(tableau2)/sizeof(*tableau2);
 
     printf("taille_tableau: %d\n", taille_tableau);
-
-        printf("[ ");
+    printf("\n");
+    // affichage tableau version classique
+    printf("[ ");
     for ( i = 0; i < TAILLE_TAB; i++)
     {
         printf("%d",  tableau[i]);
@@ -63,12 +68,12 @@ int main()
 //************************************************************************************************ */
     // idem avec utilisation d'une fonction popur afficher le tableau
     // printf(" Modification du tableau :\n");
-    affichage_tableau(tableau, taille_tableau);
+    affichage_tableau(tableau2, taille_tableau);
 
-    printf(" Modification du tableau :\n");
+    printf("Modification du tableau :\n");
     tableau[5] = 455555;
 
-    affichage_tableau(tableau, taille_tableau);
+    affichage_tableau(tableau2, taille_tableau);
 
 
     return 0;
