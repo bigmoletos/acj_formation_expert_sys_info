@@ -66,7 +66,7 @@ void double_valeur_tableau(int *tab, size_t taille_tableau){
             printf(", ");
 
         }
-        *(tab + i) =*(tab + i)*2;
+        *(tab + i) *=2;
 
     }
     printf("\n\n");
@@ -75,23 +75,23 @@ void double_valeur_tableau(int *tab, size_t taille_tableau){
 int main()
 {
     int tableau[TAILLE_TAB]={1,2,3,4,5,6,7,8,9,10,11};
-    int tableau2[TAILLE_TAB];
-    int tableau3[TAILLE_TAB];
+    int tableau2[TAILLE_TAB]; // initialisation tableau vide
+    int tableau3[TAILLE_TAB]; // initialisation tableau vide
 
     // taille du 2éme tableau
     taille_tableau=sizeof(tableau2)/sizeof(*tableau2);
 
     printf("taille_tableau: %d\n", taille_tableau);
 
-    //  affichage tableau 1
-    affichage_tableau(tableau2, taille_tableau);
+    // //  affichage tableau 1
+    // affichage_tableau(tableau2, taille_tableau);
 
-    printf("Tableau1 :\n");
-    //  copie du tableau 1 dans le tableau2 tableau 1
-    copie_tableau(tableau, tableau2, taille_tableau);
-    //  affichage tableau 2
-    printf("Tableau2 :\n");
-    affichage_tableau(tableau2, taille_tableau);
+    // printf("Tableau1 :\n");
+    // //  copie du tableau 1 dans le tableau2 tableau 1
+    // copie_tableau(tableau, tableau2, taille_tableau);
+    // //  affichage tableau 2
+    // printf("Tableau2 :\n");
+    // affichage_tableau(tableau2, taille_tableau);
 
     //  copie le tableau vers le tableau 3
     copie_tableau(tableau, tableau3, taille_tableau);
