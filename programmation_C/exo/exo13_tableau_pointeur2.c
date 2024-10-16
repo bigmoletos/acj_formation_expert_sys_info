@@ -40,36 +40,18 @@ void affichage_tableau(int *tab, size_t taille_tableau){
 
 void copie_tableau(int *tab1, int *tab2,size_t taille_tableau){
 
-    printf("\n");
-    printf("Tableau: ");
     for (size_t i = 0; i < taille_tableau; i++)
     {
-        printf("%d", *(tab1 +i));
-        if (i < taille_tableau - 1) {
-            printf(", ");
-
-        }
         *(tab2 + i) =*(tab1 + i);
-
     }
-    printf("\n\n");
 }
 
 void double_valeur_tableau(int *tab, size_t taille_tableau){
 
-    printf("\n");
-    printf("Tableau: ");
     for (size_t i = 0; i < taille_tableau; i++)
     {
-        printf("%d", *(tab +i));
-        if (i < taille_tableau - 1) {
-            printf(", ");
-
-        }
         *(tab + i) *=2;
-
     }
-    printf("\n\n");
 }
 
 int main()
@@ -95,13 +77,15 @@ int main()
 
     //  copie le tableau vers le tableau 3
     copie_tableau(tableau, tableau3, taille_tableau);
-    printf("Tableau3 :\n");
+
     //  affichage tableau 3
+    printf("Tableau3 :\n");
     affichage_tableau(tableau3, taille_tableau);
+
     //  double les valeurs du tableau 3
     double_valeur_tableau(tableau3, taille_tableau);
-    printf("Tableau3 doublé :\n");
     //  affichage tableau 3
+    printf("Tableau3 doublé :\n");
     affichage_tableau(tableau3, taille_tableau);
 
     return 0;
