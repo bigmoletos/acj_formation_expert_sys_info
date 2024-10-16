@@ -1,1 +1,7 @@
+exo affichage tableau par pointeur
 https://github.com/bigmoletos/acj_formation_expert_sys_info/blob/dev/programmation_C/exo/exo6-1_bis_tp6_1_bis_affichage_de_tableaux_exercices.c
+
+exos_tableau pointeur1
+https://github.com/bigmoletos/acj_formation_expert_sys_info/blob/dev/programmation_C/exo/exo12_tableau_pointeur1.c
+
+
