@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
-#include <sys/resource.h>
+// #include <sys/resource.h>
 #include <stdbool.h>
 #include "prototypes.h"  //intégration du header contenant les fonctions de contrôle de saisie et sortie prog
 
@@ -38,7 +38,9 @@ int inverser_valeur2_sans_pointeur(int val1, int val2) {
 int main() {
         // Capturer le temps de début
     clock_t start = clock();
-    struct rusage usage;
+    #ifdef __linux__  // Cette partie ne fonctionne que sous Linux/Unix
+        struct rusage usage; // pour la mesure de la cahrge
+    #endif
     char quitter = 'n';  // Initialisation pour que le programme commence
 
     do {
@@ -101,7 +103,11 @@ int main() {
 
     printf("Le programme a pris %f ms pour s'exécuter\n", time_taken);
 
+// la mesure de la charge ram et proc ne fonctionne que sous linux
+#ifdef __linux__  // Cette partie ne fonctionne que sous Linux/Unix
         // Récupérer les statistiques d'utilisation des ressources
+    getrusage(RUSAGE_SELF, &usage);
+    // Récupérer les statistiques d'utilisation des ressources
     getrusage(RUSAGE_SELF, &usage);
 
     // Afficher l'utilisation de la CPU en microsecondes (user et system time)
@@ -109,6 +115,7 @@ int main() {
            usage.ru_utime.tv_sec, usage.ru_utime.tv_usec);
     printf("Temps CPU utilisé (system) : %ld.%06ld secondes\n",
            usage.ru_stime.tv_sec, usage.ru_stime.tv_usec);
+#endif
 
     return 0;
 }
