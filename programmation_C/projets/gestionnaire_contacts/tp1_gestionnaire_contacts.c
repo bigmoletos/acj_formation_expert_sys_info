@@ -3,8 +3,9 @@
 #include "proto.h"
 #define TAILLE_NOM 20
 #define TAILLE_TEL 10
-/* Enoncé
 
+
+/* Enoncé
 
 --- Gestionnaire de Contacts ---
 1. Ajouter un contact
