@@ -20,7 +20,8 @@ int main(){
 
 
     printf("Entrez une chainbe de caractères sans espace: \n");
-    scanf(" %s", sentence);
+    // scanf(" %s", sentence);
+    scanf(" %[^\n]", sentence); //pour compter aussi les espaces
 
 
     while (sentence[taille_chaine] != '\0' && sentence[taille_chaine] != '\n') {
