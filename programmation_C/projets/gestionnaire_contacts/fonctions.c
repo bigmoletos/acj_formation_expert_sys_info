@@ -60,62 +60,6 @@ int saisir_char() {
     return 0;
 }
 
-//***************GESTIONNNAIRE CONTACT************** */
-// Fonction pour le contrôle de la saisie d'une chaine de caracteres
-char* saisir_contact(char* tab, size_t taille_chaine) {
-    // char chaine[20];
-    while (1) {
-        printf("Veuillez entrer le nom et prenom du contact (%zu caracteres max ): \n", taille_chaine-1);
-
-        // Vérifier la saisie et les conditions
-           if (scanf(" %19[^\n]", tab) == 1 && strlen(tab) <  taille_chaine) {
-            while (getchar() != '\n'); //vide le buffer
-            return tab;  //  renvoyer la chaine sasie
-        } else {
-            printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max .\n", taille_chaine);
-            // Vider le buffer en cas de mauvaise saisie
-            while (getchar() != '\n');
-        }
-    }
-
-}
-// Fonction pour le contrôle de la saisie d'un numero de tel
-char* saisir_numero_tel(char* tab, size_t taille_chaine) {
-    // char chaine[20];
-    while (1) {
-        printf("Veuillez entrer le numero de telephone du contact sans les espaces (%zu caracteres max) : \n", taille_chaine-1);
-
-        // Vérifier la saisie et les conditions
-           if (scanf(" %9[^\n]", tab) == 1 && strlen(tab) <  taille_chaine) {
-            while (getchar() != '\n'); //vide le buffer
-            return tab;  //  renvoyer la chaine sasie
-        } else {
-            printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max .\n", taille_chaine);
-            // Vider le buffer en cas de mauvaise saisie
-            while (getchar() != '\n');
-        }
-    }
-
-}
-
-void affichage_liste_contact(char tab[][20], size_t taille_tableau) {
-    printf("Liste des contacts :\n");
-    for (size_t i = 0; i < taille_tableau; i++) {
-        printf("Contact %zu : %s\n", i + 1, tab[i]);
-    }
-}
-
-void affichage_liste_telephone(char tab[][10], size_t taille_tableau) {
-    printf("Liste des telephones :\n");
-    for (size_t i = 0; i < taille_tableau; i++) {
-        printf("Contact %zu : %s\n", i + 1, tab[i]);
-    }
-}
-
-
-
-
-//***************FIN  GESTIONNNAIRE CONTACT************** */
 
 void affichage_tableau(int *tab, size_t taille_tableau){
 
@@ -193,3 +137,60 @@ int compter_minuscule(const char tableau[]) {
     }
     return compteur;
 }
+
+//***************GESTIONNNAIRE CONTACT************** */
+// Fonction pour le contrôle de la saisie d'une chaine de caracteres
+char* saisir_contact(char* tab, size_t taille_chaine) {
+    // char chaine[20];
+    while (1) {
+        printf("Veuillez entrer le nom et prenom du contact (%zu caracteres max ): \n", taille_chaine-1);
+
+        // Vérifier la saisie et les conditions
+           if (scanf(" %19[^\n]", tab) == 1 && strlen(tab) <  taille_chaine) {
+            while (getchar() != '\n'); //vide le buffer
+            return tab;  //  renvoyer la chaine sasie
+        } else {
+            printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max .\n", taille_chaine);
+            // Vider le buffer en cas de mauvaise saisie
+            while (getchar() != '\n');
+        }
+    }
+
+}
+// Fonction pour le contrôle de la saisie d'un numero de tel
+char* saisir_numero_tel(char* tab, size_t taille_chaine) {
+    // char chaine[20];
+    while (1) {
+        printf("Veuillez entrer le numero de telephone du contact sans les espaces (%zu caracteres max) : \n", taille_chaine-1);
+
+        // Vérifier la saisie et les conditions
+           if (scanf(" %9[^\n]", tab) == 1 && strlen(tab) <  taille_chaine) {
+            while (getchar() != '\n'); //vide le buffer
+            return tab;  //  renvoyer la chaine sasie
+        } else {
+            printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max .\n", taille_chaine);
+            // Vider le buffer en cas de mauvaise saisie
+            while (getchar() != '\n');
+        }
+    }
+
+}
+
+void affichage_liste_contact(char tab[][20], size_t taille_tableau) {
+    printf("Liste des contacts :\n");
+    for (size_t i = 0; i < taille_tableau; i++) {
+        printf("Contact %zu : %s\n", i + 1, tab[i]);
+    }
+}
+
+void affichage_liste_telephone(char tab[][10], size_t taille_tableau) {
+    printf("Liste des telephones :\n");
+    for (size_t i = 0; i < taille_tableau; i++) {
+        printf("Contact %zu : %s\n", i + 1, tab[i]);
+    }
+}
+
+
+
+
+//***************FIN  GESTIONNNAIRE CONTACT************** */

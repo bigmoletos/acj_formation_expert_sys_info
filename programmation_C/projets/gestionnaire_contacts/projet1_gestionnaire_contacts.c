@@ -91,31 +91,48 @@ int main()
     size_t taille_chaine2 = 10;
 
     // Affiche le titre du programme
-    printf("\n\n================================\n");
-    printf("Projet Tableaux - String\n");
-    printf("----Gestionnaire de contact------\n");
-    printf("================================\n\n");
+    printf("\n\n=================================\n");
+    printf("    Projet Tableaux - String     \n");
+    printf("----Gestionnaire de  contact------\n");
+    printf("=====================================\n\n");
 
-    printf("Combien de contacts souhaitez-vous saisir %d\n", nombre_contacts);
-    scanf("%d", &nombre_contacts);
-    // affichage tableau contact
-    //  printf("%d\n", TAILLE_NOM);
-
-    for (size_t i = 0; i < nombre_contacts; i++)
+    while (quitter == 'n')
     {
-        saisir_contact(contacts[i], TAILLE_NOM);
-        saisir_numero_tel(telephones[i], TAILLE_TEL);
-}
 
-    affichage_liste_contact( contacts, nombre_contacts);
-    affichage_liste_telephone( telephones, nombre_contacts);
-    // affichage tableau telephones
 
-    // saisie du contact------
-    // saisir_chaine( TAILLE_NOM);
+        printf("Combien de contacts souhaitez-vous saisir (%d maximum)\n", NBRE_CONTACT);
+        // scanf("%d", &nombre_contacts);
+        if (scanf("%d", &nombre_contacts) ==1 && nombre_contacts <= NBRE_CONTACT )
+        {
 
-    // quitter=demander_quitter();
+        // saisir_entier(int nombre_contacts),
 
-    return 0;
+        // affichage tableau contact
+        //  printf("%d\n", TAILLE_NOM);
 
+        for (size_t i = 0; i < nombre_contacts; i++)
+        {
+            saisir_contact(contacts[i], TAILLE_NOM);
+            saisir_numero_tel(telephones[i], TAILLE_TEL);
+    }
+
+        affichage_liste_contact( contacts, nombre_contacts);
+        affichage_liste_telephone( telephones, nombre_contacts);
+        // affichage tableau telephones
+
+        // saisie du contact------
+        // saisir_chaine( TAILLE_NOM);
+
+        } else {
+                printf("Saisie incorrecte. Veuillez entrer un nombre entre 1 et %d qui est la taille maximale de votre repertoire\n", NBRE_CONTACT);
+                // Vider le buffer en cas de mauvaise saisie
+                while (getchar() != '\n');
+            }
+        quitter=demander_quitter();
+        printf("quitter: %d\n", quitter);
+
+
+    }
+        printf("quitter: %d\n", quitter);
+        return 0;
 }
