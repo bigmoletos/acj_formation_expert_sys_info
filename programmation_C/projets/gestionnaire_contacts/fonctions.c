@@ -146,11 +146,11 @@ char* saisir_contact(char* tab, size_t taille_chaine) {
         printf("Veuillez entrer le nom et prenom du contact (%zu caracteres max ): \n", taille_chaine-1);
 
         // Vérifier la saisie et les conditions
-           if (scanf(" %19[^\n]", tab) == 1 && strlen(tab) >  4 && strlen(tab) <  taille_chaine) {
+           if (scanf(" %19[^\n]", tab) == 1 && strlen(tab) >  2 && strlen(tab) <  taille_chaine) {
             while (getchar() != '\n'); //vide le buffer
             return tab;  //  renvoyer la chaine sasie
         } else {
-            printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max et 4 mini .\n", taille_chaine);
+            printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max et 2 mini .\n", taille_chaine);
             // Vider le buffer en cas de mauvaise saisie
             while (getchar() != '\n');
         }
@@ -161,10 +161,10 @@ char* saisir_contact(char* tab, size_t taille_chaine) {
 char* saisir_numero_tel(char* tab, size_t taille_chaine) {
     // char chaine[20];
     while (1) {
-        printf("Veuillez entrer le numero de telephone du contact sans les espaces (%zu caracteres max) : \n", taille_chaine-1);
+        printf("Veuillez entrer le numero de telephone du contact sans les espaces (%zu caracteres max) : \n", taille_chaine);
 
         // Vérifier la saisie et les conditions
-           if (scanf(" %9[^\n]", tab) == 1  && strlen(tab) == taille_chaine) {
+           if (scanf(" %10s]", tab) == 1  && strlen(tab) == taille_chaine) {
             while (getchar() != '\n'); //vide le buffer
             return tab;  //  renvoyer la chaine sasie
         } else {
@@ -183,16 +183,16 @@ void affichage_liste_contact(char tab[][20], size_t taille_tableau) {
     }
 }
 // fonction pour afficher  la liste des numeros de telephones
-void affichage_liste_telephone(char tab[][10], size_t taille_tableau) {
+void affichage_liste_telephone(char tab[][11], size_t taille_tableau) {
     printf("Liste des telephones :\n");
     for (size_t i = 0; i < taille_tableau; i++) {
-        printf("Contact %zu : %s\n", i + 1, tab[i]);
+        printf("Telephone :%zu : %s\n", i + 1, tab[i]);
     }
 }
 
 
-// Fonction pour supprimer un contact dans un tableau de contacts
-void suppression_contact(char tab[][20], size_t taille_tableau, int numero_contact) {
+// Fonction pour supprimer un contact dans un tableau de contacts et telephoone associé
+void suppression_contact(char contact[][20], char tel[][10],size_t taille_tableau, int numero_contact) {
     if (numero_contact < 1 || numero_contact > taille_tableau) {
         printf("Numéro de contact invalide.\n");
         return;
@@ -202,11 +202,13 @@ void suppression_contact(char tab[][20], size_t taille_tableau, int numero_conta
 
     // Décaler les contacts après le contact à supprimer
     for (size_t i = numero_contact - 1; i < taille_tableau - 1; i++) {
-        strcpy(tab[i], tab[i + 1]);
+        strcpy(contact[i], contact[i + 1]);
+        strcpy(tel[i], tel[i + 1]);
     }
 
     // Mettre la dernière position à vide (car le contact a été décalé)
-    tab[taille_tableau - 1][0] = '\0';  // Remplace la dernière chaîne par une chaîne vide
+    contact[taille_tableau - 1][0] = '\0';  // Remplace la dernière chaîne par une chaîne vide
+    tel[taille_tableau - 1][0] = '\0';  // Remplace la dernière chaîne par une chaîne vide
 }
 
 // afficher menu
