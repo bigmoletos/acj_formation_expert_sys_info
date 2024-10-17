@@ -25,13 +25,17 @@ int main(){
 
     while (sentence[taille_chaine] != '\0' && sentence[taille_chaine] != '\n') {
         taille_chaine++;
+
     }
     printf("taille de la chainer de caractères, sans espace: %zu\n", taille_chaine);
 
-for (size_t i = taille_chaine ; i =0; i--)
-{
-    /* code */
-}
+
+
+    printf("La chaîne à l'envers :\n ");
+    for (size_t i = taille_chaine; i > 0; i--) {
+        printf("%c", sentence[i - 1]);  // i-1 car les indices commencent à 0
+    }
+    printf("\n");
 
 // // autre solution avec sizeof
 //     size_t taille_chaine2=sizeof(sentence)/sizeof(sentence[0]);
