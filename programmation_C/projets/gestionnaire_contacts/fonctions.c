@@ -65,10 +65,11 @@ int saisir_char() {
 char* saisir_contact(char* tab, size_t taille_chaine) {
     // char chaine[20];
     while (1) {
-        printf("Veuillez entrer le nom et prenom du contact (%zu caracteres max ): ", taille_chaine-1);
+        printf("Veuillez entrer le nom et prenom du contact (%zu caracteres max ): \n", taille_chaine-1);
 
         // Vérifier la saisie et les conditions
            if (scanf(" %19[^\n]", tab) == 1 && strlen(tab) <  taille_chaine) {
+            while (getchar() != '\n'); //vide le buffer
             return tab;  //  renvoyer la chaine sasie
         } else {
             printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max .\n", taille_chaine);
@@ -82,10 +83,11 @@ char* saisir_contact(char* tab, size_t taille_chaine) {
 char* saisir_numero_tel(char* tab, size_t taille_chaine) {
     // char chaine[20];
     while (1) {
-        printf("Veuillez entrer le numero de telephone du contact sans les espaces (%zu caracteres max) : )", taille_chaine-1);
+        printf("Veuillez entrer le numero de telephone du contact sans les espaces (%zu caracteres max) : \n", taille_chaine-1);
 
         // Vérifier la saisie et les conditions
            if (scanf(" %9[^\n]", tab) == 1 && strlen(tab) <  taille_chaine) {
+            while (getchar() != '\n'); //vide le buffer
             return tab;  //  renvoyer la chaine sasie
         } else {
             printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max .\n", taille_chaine);
