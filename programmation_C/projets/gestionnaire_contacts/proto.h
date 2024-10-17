@@ -14,12 +14,12 @@ int saisir_entier(int ma_valeur);
 // Fonction pour le contrôle de la saisie d'un seul caractère
 int saisir_char(void);
 
-// Fonction pour le contrôle de la saisie d'une chaîne de caractères
-int saisir_chaine(size_t taille_chaine);
+// Fonction pour le contrôle de la saisie d'une chaîne de caractères de contac
+char* saisir_contact(char* tab, size_t taille_chaine);
 
 // Fonctions liées aux tableaux
 void affichage_tableau(int *tab, size_t taille_tableau);
-void affichage_liste_contact(char *tab, size_t taille_tableau);
+void affichage_liste_contact(char **tab, size_t taille_tableau);
 void copie_tableau(int *tab1, int *tab2, size_t taille_tableau);
 void double_valeur_tableau(int *tab, size_t taille_tableau);
 
