@@ -5,5 +5,5 @@ exos_tableau pointeur1
 https://github.com/bigmoletos/acj_formation_expert_sys_info/blob/dev/programmation_C/exo/exo12_tableau_pointeur1.c
 
 
-exo tableu pointeur2
+exo tableur pointeur2
 https://github.com/bigmoletos/acj_formation_expert_sys_info/blob/dev/programmation_C/exo/exo13_tableau_pointeur2.c
