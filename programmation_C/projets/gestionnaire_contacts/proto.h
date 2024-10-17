@@ -1,10 +1,34 @@
 #ifndef HEADER_H  // Si la macro HEADER_H n'est pas encore définie
 #define HEADER_H  // Définition de la macro
 
-// HEADER types des fonctions
-int saisir_entier(int max_valeur);
-char demander_quitter();
-void affichage(int *valeur);  // Affichage d'une seule valeur
-void affichage2valeur(int *valeur1, int *valeur2);  // Affichage de deux valeurs
+#include <stddef.h>  // Pour la taille (size_t)
+
+// Prototypes des fonctions
+
+// Fonction pour demander si l'utilisateur veut continuer ou quitter
+char demander_quitter(void);
+
+// Fonction pour le contrôle de la saisie d'un entier avec une limite
+int saisir_entier(int ma_valeur);
+
+// Fonction pour le contrôle de la saisie d'un seul caractère
+int saisir_char(void);
+
+// Fonction pour le contrôle de la saisie d'une chaîne de caractères
+int saisir_chaine(size_t taille_chaine);
+
+// Fonctions liées aux tableaux
+void affichage_tableau(int *tab, size_t taille_tableau);
+void affichage_liste_contact(char *tab, size_t taille_tableau);
+void copie_tableau(int *tab1, int *tab2, size_t taille_tableau);
+void double_valeur_tableau(int *tab, size_t taille_tableau);
+
+// Fonctions de conversion de chaîne
+void convertir_en_majuscules(char tableau[]);
+void convertir_en_minuscules(char tableau[]);
+
+// Fonctions pour compter les majuscules et minuscules dans une chaîne
+int compter_majuscule(const char tableau[]);
+int compter_minuscule(const char tableau[]);
 
 #endif  // Fin de la protection contre l'inclusion multiple
