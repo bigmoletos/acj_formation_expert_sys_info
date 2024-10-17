@@ -20,7 +20,7 @@ void affichage2valeur(int *valeur1, int *valeur2){
 void affichage_tableau(int *tab, size_t taille_tableau){
 // Déclaration et intialisation des variables globales avec des valeurs appropriées
 int i = 0;
-size_t taille_tableau = 0;
+taille_tableau = 0;
 
     printf("Tableau: ");
     for (size_t i = 0; i < taille_tableau; i++)
