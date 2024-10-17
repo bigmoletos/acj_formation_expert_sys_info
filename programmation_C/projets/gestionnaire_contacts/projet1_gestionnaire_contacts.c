@@ -85,6 +85,8 @@ int main()
 // Déclaration et intialisation des variables locales avec des valeurs
     char contacts[NBRE_CONTACT][TAILLE_NOM];
     char telephones[NBRE_CONTACT][TAILLE_TEL] ;
+    int choix_menu = 0;
+    int choix_numero_contact = 0; //pour les suppressions
     // char* telephones[NBRE_CONTACT] ;
     // char* contacts[NBRE_CONTACT] ;
     size_t taille_chaine = 20;
@@ -93,46 +95,78 @@ int main()
     // Affiche le titre du programme
     printf("\n\n=================================\n");
     printf("    Projet Tableaux - String     \n");
-    printf("----Gestionnaire de  contact------\n");
+    printf("----Gestionnaire de contact------\n");
     printf("=====================================\n\n");
 
-    while (quitter == 'n')
+    do
     {
+        afficher_menu();
+        choix_menu = saisir_entier(6);
+        printf("choix_menu: %d\n", choix_menu);
 
-
-        printf("Combien de contacts souhaitez-vous saisir (%d maximum)\n", NBRE_CONTACT);
-        // scanf("%d", &nombre_contacts);
-        if (scanf("%d", &nombre_contacts) ==1 && nombre_contacts <= NBRE_CONTACT )
+        switch (choix_menu)
         {
+            case 1: //ajouter contact et telephone
 
-        // saisir_entier(int nombre_contacts),
+                printf("Combien de contacts souhaitez-vous ajouter (%d maximum)\n", NBRE_CONTACT);
+                // scanf("%d", &nombre_contacts);
+                    if (scanf("%d", &nombre_contacts) ==1 && nombre_contacts <= NBRE_CONTACT )
+                    {
+                        for (size_t i = 0; i < nombre_contacts; i++)
+                        {
+                            saisir_contact(contacts[i], TAILLE_NOM);
+                            saisir_numero_tel(telephones[i], TAILLE_TEL);
+                        }
+                    } else
+                    {
+                            printf("Saisie incorrecte. Veuillez entrer un nombre entre 1 et %d qui est la taille maximale de votre repertoire\n", NBRE_CONTACT);
+                            while (getchar() != '\n'); // Vider le buffer en cas de mauvaise saisie
+                    }
 
-        // affichage tableau contact
-        //  printf("%d\n", TAILLE_NOM);
+                break;
 
-        for (size_t i = 0; i < nombre_contacts; i++)
-        {
-            saisir_contact(contacts[i], TAILLE_NOM);
-            saisir_numero_tel(telephones[i], TAILLE_TEL);
+            case 2: //supprimer contact
+                choix_numero_contact = saisir_entier(NBRE_CONTACT);
+                suppression_contact( contacts, TAILLE_NOM,  choix_numero_contact);
+
+                break;
+            case 3: //rechercher contact
+                // printf("Entrez le nom du contact à rechercher : ");
+                // char nom[TAILLE_NOM];
+
+                // // Utilisation de scanf avec une limite de taille pour éviter les dépassements de mémoire
+                // scanf("%19s", nom);  // %19s limite l'entrée à 19 caractères (1 caractère pour le '\0')
+
+                // int index = rechercher_contact(contacts, nombre_contacts, nom);
+                // if (index != -1) {
+                //     printf("Contact trouvé : %s, Téléphone : %s\n", contacts[index], telephones[index]);
+                // } else {
+                //     printf("Contact non trouvé.\n");
+                // }
+
+                break;
+
+            case 4: // afficher tous les contacts
+                affichage_liste_contact( contacts, nombre_contacts);
+                affichage_liste_telephone( telephones, nombre_contacts);
+
+
+                break;
+
+            case 5: // quitter le menus
+                quitter = demander_quitter();
+                break;
+
+            default:
+                printf("Choix non valide. Veuillez réessayer.\n");
+                break;
     }
+        if (quitter == 'n') {
+            quitter = demander_quitter();
+        // printf("quitter: %c\n", quitter);
+        }
 
-        affichage_liste_contact( contacts, nombre_contacts);
-        affichage_liste_telephone( telephones, nombre_contacts);
-        // affichage tableau telephones
-
-        // saisie du contact------
-        // saisir_chaine( TAILLE_NOM);
-
-        } else {
-                printf("Saisie incorrecte. Veuillez entrer un nombre entre 1 et %d qui est la taille maximale de votre repertoire\n", NBRE_CONTACT);
-                // Vider le buffer en cas de mauvaise saisie
-                while (getchar() != '\n');
-            }
-        quitter=demander_quitter();
-        printf("quitter: %d\n", quitter);
-
-
-    }
-        printf("quitter: %d\n", quitter);
+    } while (quitter == 'n');
+        // printf("quitter: %c\n", quitter);
         return 0;
 }
