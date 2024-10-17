@@ -37,4 +37,8 @@ void affichage_liste_contact(char tab[][20], size_t taille_tableau);
 char* saisir_numero_tel(char* tab, size_t taille_chaine);
 void affichage_liste_telephone(char tab[][10], size_t taille_tableau);
 
+void suppression_contact(char tab[][20], size_t taille_tableau, int numero_contact);
+int rechercher_contact(char contacts[][20], size_t taille_tableau, const char *nom);
+
+void afficher_menu(void);
 #endif  // Fin de la protection contre l'inclusion multiple
