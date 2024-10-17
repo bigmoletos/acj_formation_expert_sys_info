@@ -14,12 +14,9 @@ int saisir_entier(int ma_valeur);
 // Fonction pour le contrôle de la saisie d'un seul caractère
 int saisir_char(void);
 
-// Fonction pour le contrôle de la saisie d'une chaîne de caractères de contac
-char* saisir_contact(char* tab, size_t taille_chaine);
 
 // Fonctions liées aux tableaux
 void affichage_tableau(int *tab, size_t taille_tableau);
-void affichage_liste_contact(char **tab, size_t taille_tableau);
 void copie_tableau(int *tab1, int *tab2, size_t taille_tableau);
 void double_valeur_tableau(int *tab, size_t taille_tableau);
 
@@ -30,5 +27,14 @@ void convertir_en_minuscules(char tableau[]);
 // Fonctions pour compter les majuscules et minuscules dans une chaîne
 int compter_majuscule(const char tableau[]);
 int compter_minuscule(const char tableau[]);
+
+//*********fonctions specifiques à la gestion des contacts***************
+
+// Fonction pour le contrôle de la saisie et de l'affichage des contact et numero de tel
+char* saisir_contact(char* tab, size_t taille_chaine);
+void affichage_liste_contact(char tab[][20], size_t taille_tableau);
+
+char* saisir_numero_tel(char* tab, size_t taille_chaine);
+void affichage_liste_telephone(char tab[][10], size_t taille_tableau);
 
 #endif  // Fin de la protection contre l'inclusion multiple

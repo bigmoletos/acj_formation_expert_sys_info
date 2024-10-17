@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "proto.h"
-#define TAILLE_NOM 20
-#define TAILLE_TEL 10
+#define TAILLE_NOM 20 //taille d'un contact
+#define TAILLE_TEL 10 //taille d'un num de tel
+#define NBRE_CONTACT 5 //nombre de contact possibles
 
 
 /*mini_projet1
@@ -73,18 +74,20 @@ int compter_minuscule(const char tableau[]);
 
 // Déclaration et intialisation des variables globales avec des valeurs appropriées
 int i = 0;
-int taille = 0;
+// int taille = 0;
 char quitter = 'n';
 
 
 int main()
 {
 
-// Déclaration et intialisation des variables avec des valeurs
-    char* contacts[TAILLE_NOM] ;
-    char* telephones[TAILLE_TEL] ;
-    size_t taille_chaine = 0;
-    size_t taille_chaine2 = 0;
+// Déclaration et intialisation des variables locales avec des valeurs
+    char contacts[NBRE_CONTACT][TAILLE_NOM];
+    char telephones[NBRE_CONTACT][TAILLE_TEL] ;
+    // char* telephones[NBRE_CONTACT] ;
+    // char* contacts[NBRE_CONTACT] ;
+    size_t taille_chaine = 20;
+    size_t taille_chaine2 = 10;
 
     // Affiche le titre du programme
     printf("\n\n================================\n");
@@ -93,14 +96,16 @@ int main()
     printf("================================\n\n");
 
 //affichage tableau contact
-    printf("%d\n", TAILLE_NOM);
+    // printf("%d\n", TAILLE_NOM);
 
-    for (size_t i = 0; i < TAILLE_NOM; i++)
+    for (size_t i = 0; i < NBRE_CONTACT; i++)
     {
         saisir_contact(contacts[i], TAILLE_NOM);
+        saisir_numero_tel(telephones[i], TAILLE_TEL);
 }
 
-    affichage_liste_contact( contacts, taille_chaine);
+    affichage_liste_contact( contacts, NBRE_CONTACT);
+    affichage_liste_telephone( telephones, NBRE_CONTACT);
     // affichage tableau telephones
 
     // saisie du contact------
