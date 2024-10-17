@@ -35,9 +35,9 @@ char* saisir_contact(char* tab, size_t taille_chaine);
 void affichage_liste_contact(char tab[][20], size_t taille_tableau);
 
 char* saisir_numero_tel(char* tab, size_t taille_chaine);
-void affichage_liste_telephone(char tab[][10], size_t taille_tableau);
+void affichage_liste_telephone(char tab[][11], size_t taille_tableau);
 
-void suppression_contact(char tab[][20], size_t taille_tableau, int numero_contact);
+void suppression_contact(char contact[][20], char tel[][10], size_t taille_tableau, int numero_contact);
 int rechercher_contact(char contacts[][20], size_t taille_tableau, const char *nom);
 
 void afficher_menu(void);

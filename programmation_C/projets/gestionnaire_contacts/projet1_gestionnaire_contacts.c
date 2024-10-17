@@ -116,6 +116,7 @@ int main()
                         {
                             saisir_contact(contacts[i], TAILLE_NOM);
                             saisir_numero_tel(telephones[i], TAILLE_TEL);
+                            while (getchar() != '\n');// vide le buffer
                         }
                     } else
                     {
@@ -127,22 +128,22 @@ int main()
 
             case 2: //supprimer contact
                 choix_numero_contact = saisir_entier(NBRE_CONTACT);
-                suppression_contact( contacts, TAILLE_NOM,  choix_numero_contact);
+                suppression_contact( contacts, telephones, TAILLE_NOM,  choix_numero_contact);
 
                 break;
             case 3: //rechercher contact
-                // printf("Entrez le nom du contact à rechercher : ");
-                // char nom[TAILLE_NOM];
+                printf("Entrez le nom du contact à rechercher : ");
+                char nom[TAILLE_NOM];
 
-                // // Utilisation de scanf avec une limite de taille pour éviter les dépassements de mémoire
-                // scanf("%19s", nom);  // %19s limite l'entrée à 19 caractères (1 caractère pour le '\0')
+                // Utilisation de scanf avec une limite de taille pour éviter les dépassements de mémoire
+                scanf("%19s", nom);  // %19s limite l'entrée à 19 caractères (1 caractère pour le '\0')
 
-                // int index = rechercher_contact(contacts, nombre_contacts, nom);
-                // if (index != -1) {
-                //     printf("Contact trouvé : %s, Téléphone : %s\n", contacts[index], telephones[index]);
-                // } else {
-                //     printf("Contact non trouvé.\n");
-                // }
+                int index = rechercher_contact(contacts, nombre_contacts, nom);
+                if (index != -1) {
+                    printf("Contact trouvé : %s, Téléphone : %s\n", contacts[index], telephones[index]);
+                } else {
+                    printf("Contact non trouvé.\n");
+                }
 
                 break;
 
@@ -161,10 +162,10 @@ int main()
                 printf("Choix non valide. Veuillez réessayer.\n");
                 break;
     }
-        if (quitter == 'n') {
-            quitter = demander_quitter();
+        // if (quitter == 'n') {
+        //     quitter = demander_quitter();
         // printf("quitter: %c\n", quitter);
-        }
+        // }
 
     } while (quitter == 'n');
         // printf("quitter: %c\n", quitter);
