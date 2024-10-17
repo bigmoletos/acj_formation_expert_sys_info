@@ -76,6 +76,7 @@ int compter_minuscule(const char tableau[]);
 int i = 0;
 // int taille = 0;
 char quitter = 'n';
+int nombre_contacts = 0;
 
 
 int main()
@@ -95,17 +96,19 @@ int main()
     printf("----Gestionnaire de contact------\n");
     printf("================================\n\n");
 
-//affichage tableau contact
-    // printf("%d\n", TAILLE_NOM);
+    printf("Combien de contacts souhaitez-vous saisir %d\n", nombre_contacts);
+    scanf("%d", &nombre_contacts);
+    // affichage tableau contact
+    //  printf("%d\n", TAILLE_NOM);
 
-    for (size_t i = 0; i < NBRE_CONTACT; i++)
+    for (size_t i = 0; i < nombre_contacts; i++)
     {
         saisir_contact(contacts[i], TAILLE_NOM);
         saisir_numero_tel(telephones[i], TAILLE_TEL);
 }
 
-    affichage_liste_contact( contacts, NBRE_CONTACT);
-    affichage_liste_telephone( telephones, NBRE_CONTACT);
+    affichage_liste_contact( contacts, nombre_contacts);
+    affichage_liste_telephone( telephones, nombre_contacts);
     // affichage tableau telephones
 
     // saisie du contact------
