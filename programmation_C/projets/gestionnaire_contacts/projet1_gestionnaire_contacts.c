@@ -55,7 +55,7 @@ int saisir_entier(int ma_valeur);
 int saisir_char(void);
 
 // Fonction pour le contrôle de la saisie d'une chaîne de caractères
-int saisir_chaine(size_t taille_chaine);
+char* saisir_contact(char* tab, size_t taille_chaine);
 
 // Fonctions liées aux tableaux
 void affichage_tableau(int *tab, size_t taille_tableau);
@@ -81,8 +81,8 @@ int main()
 {
 
 // Déclaration et intialisation des variables avec des valeurs
-    char contacts[TAILLE_NOM] ;
-    char telephones[TAILLE_TEL] ;
+    char* contacts[TAILLE_NOM] ;
+    char* telephones[TAILLE_TEL] ;
     size_t taille_chaine = 0;
     size_t taille_chaine2 = 0;
 
@@ -93,6 +93,13 @@ int main()
     printf("================================\n\n");
 
 //affichage tableau contact
+    printf("%d\n", TAILLE_NOM);
+
+    for (size_t i = 0; i < TAILLE_NOM; i++)
+    {
+        saisir_contact(contacts[i], TAILLE_NOM);
+}
+
     affichage_liste_contact( contacts, taille_chaine);
     // affichage tableau telephones
 
