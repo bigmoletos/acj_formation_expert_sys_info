@@ -75,6 +75,7 @@ int compter_chaine_char(const char tableau[], const char find_chaine[]) {
 }
 
 
+
 int main() {
     char chaine[] = "Exemple de chaîne avec des caractères spéciaux!";
     char caractere_a_chercher = 'e';
