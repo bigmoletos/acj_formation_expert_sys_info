@@ -82,7 +82,7 @@ gcc hello.c -o hello
 3. Compiler un exe fonctionnant sous windows :
 
 ```bash
-
+export LANG=C.UTF-8 # pour assurer que l'encodage du fichier sera en utf8
 x86_64-w64-mingw32-gcc -o mon_prog.exe fichier_source.c
 
 ```
