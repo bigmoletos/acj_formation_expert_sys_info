@@ -21,6 +21,7 @@ int main(){
 
     printf("Entrez une chainbe de caractères sans espace: \n");
     scanf(" %s", sentence);
+    // scanf("%[^\n]", sentence); // pour lire aussi les aspaces avec un regex
 
 
     while (sentence[taille_chaine] != '\0' && sentence[taille_chaine] != '\n') {

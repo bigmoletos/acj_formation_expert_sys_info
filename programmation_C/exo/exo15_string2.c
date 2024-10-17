@@ -5,9 +5,9 @@
 
 
 /*
- Exercice 1 : Calculer la longueur d'une chaîne de caractères
+Exercice 2 : Inverser une chaîne de caractères
 
-Énoncé : Écris un programme qui demande à l'utilisateur d'entrer une chaîne de caractères, puis calcule et affiche sa longueur sans utiliser la fonction strlen().
+Énoncé : Écris un programme qui demande à l'utilisateur d'entrer une chaîne de caractères, puis affiche la chaîne inversée sans utiliser de bibliothèque supplémentaire.
  */
 
 
@@ -28,6 +28,10 @@ int main(){
     }
     printf("taille de la chainer de caractères, sans espace: %zu\n", taille_chaine);
 
+for (size_t i = taille_chaine ; i =0; i--)
+{
+    /* code */
+}
 
 // // autre solution avec sizeof
 //     size_t taille_chaine2=sizeof(sentence)/sizeof(sentence[0]);
