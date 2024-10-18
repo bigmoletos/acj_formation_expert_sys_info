@@ -56,15 +56,14 @@ int compter_minuscule(const char tableau[]);
 //***** */ version avec structure *******
 // Fonction pour le contrôle de la saisie et de l'affichage des contact et numero de tel
 
-char* saisir_contact(Contact *c, size_t taille_chaine);// avec struct
-
-char* saisir_numero_tel(Contact *c, size_t taille_chaine);// avec struct
+void saisir_repertoire(Contact *c); // avec struct
 
 void affichage_repertoire(Contact contacts[], size_t taille_tableau);// avec struct
 
 void suppression_repertoire(Contact contacts[], size_t taille_tableau, int numero_contact); // avec struct
 
-int rechercher_repertoire(Contact contacts[], size_t taille_tableau, const char *nom);// avec struct
+int rechercher_repertoire(Contact contacts[], size_t taille_tableau, const char* nom) ;// avec struct
+
 void afficher_menu(void);
 #endif  // Fin de la protection contre l'inclusion multiple
 
