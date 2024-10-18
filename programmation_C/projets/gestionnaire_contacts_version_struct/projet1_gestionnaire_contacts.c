@@ -83,14 +83,18 @@ int main()
 {
 
 // Déclaration et intialisation des variables locales avec des valeurs
-    char contacts[NBRE_CONTACT][TAILLE_NOM];
-    char telephones[NBRE_CONTACT][TAILLE_TEL] ;
+    // char contacts[NBRE_CONTACT][TAILLE_NOM];
+    // char telephones[NBRE_CONTACT][TAILLE_TEL] ;
+
+    // Déclaration d'un tableau de structures Contact
+    Contact contacts[NBRE_CONTACT];
+
     int choix_menu = 0;
     int choix_numero_contact = 0; //pour les suppressions
-    // char* telephones[NBRE_CONTACT] ;
-    // char* contacts[NBRE_CONTACT] ;
     size_t taille_chaine = 20;
     size_t taille_chaine2 = 10;
+
+
 
     // Affiche le titre du programme
     printf("\n\n=================================\n");
@@ -114,8 +118,8 @@ int main()
                     {
                         for (size_t i = 0; i < nombre_contacts; i++)
                         {
-                            saisir_contact(contacts[i], TAILLE_NOM);
-                            saisir_numero_tel(telephones[i], TAILLE_TEL);
+                            saisir_contact(&contacts[i].nom, TAILLE_NOM);
+                            saisir_numero_tel(&contacts[i].telephone, TAILLE_TEL);
                             while (getchar() != '\n');// vide le buffer
                         }
                     } else
@@ -128,7 +132,7 @@ int main()
 
             case 2: //supprimer contact
                 choix_numero_contact = saisir_entier(NBRE_CONTACT);
-                suppression_contact( contacts, telephones, TAILLE_NOM,  choix_numero_contact);
+                suppression_repertoire( contacts, TAILLE_NOM,  choix_numero_contact);
 
                 break;
             case 3: //rechercher contact
@@ -140,7 +144,7 @@ int main()
 
                 int index = rechercher_contact(contacts, nombre_contacts, nom);
                 if (index != -1) {
-                    printf("Contact trouvé : %s, Téléphone : %s\n", contacts[index], telephones[index]);
+                    printf("Contact trouvé : %s, Téléphone : %s\n", contacts[index].nom, contacts[index].telephone);
                 } else {
                     printf("Contact non trouvé.\n");
                 }
@@ -148,9 +152,9 @@ int main()
                 break;
 
             case 4: // afficher tous les contacts
-                affichage_liste_contact( contacts, nombre_contacts);
-                affichage_liste_telephone( telephones, nombre_contacts);
-
+                // affichage_liste_contact( contacts, nombre_contacts);
+                // affichage_liste_telephone( telephones, nombre_contacts);
+                affichage_repertoire(contacts, nombre_contacts);
 
                 break;
 

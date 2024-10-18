@@ -6,15 +6,15 @@
 
 //***************GESTIONNNAIRE CONTACT************** */
 // Fonction pour le contrôle de la saisie d'une chaine de caracteres
-char* saisir_contact(char* tab, size_t taille_chaine) {
+char* saisir_contact(Contact *c, size_t taille_chaine) {
     // char chaine[20];
     while (1) {
         printf("Veuillez entrer le nom et prenom du contact (%zu caracteres max ): \n", taille_chaine-1);
 
         // Vérifier la saisie et les conditions
-           if (scanf(" %19[^\n]", tab) == 1 && strlen(tab) >  2 && strlen(tab) <  taille_chaine) {
+           if (scanf(" %19[^\n]", c->nom) == 1 && strlen(c->nom) >  2 && strlen(c->nom) <  taille_chaine) {
             while (getchar() != '\n'); //vide le buffer
-            return tab;  //  renvoyer la chaine sasie
+            return c->nom;  //  renvoyer la chaine sasie
         } else {
             printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max et 2 mini .\n", taille_chaine);
             // Vider le buffer en cas de mauvaise saisie
@@ -24,15 +24,15 @@ char* saisir_contact(char* tab, size_t taille_chaine) {
 
 }
 // Fonction pour le contrôle de la saisie d'un numero de tel
-char* saisir_numero_tel(char* tel, size_t taille_chaine) {
+char* saisir_numero_tel(Contact *c, size_t taille_chaine) {
     // char chaine[20];
     while (1) {
         printf("Veuillez entrer le numero de telephone du contact sans les espaces (%zu caracteres max) : \n", taille_chaine);
 
         // Vérifier la saisie et les conditions
-           if (scanf("%10s", tel) == 1  && strlen(tel) == taille_chaine-1) {
+           if (scanf("%10s", c->telephone) == 1  && strlen(c->telephone) == taille_chaine-1) {
             while (getchar() != '\n'); //vide le buffer
-            return tel;  //  renvoyer la chaine sasie
+            return c->telephone;  //  renvoyer la chaine sasie
         } else {
             printf("Saisie incorrecte. Veuillez entrer un numero de %zu characteres .\n", taille_chaine-1);
             // Vider le buffer en cas de mauvaise saisie
@@ -43,6 +43,14 @@ char* saisir_numero_tel(char* tel, size_t taille_chaine) {
 }
 
 // fonction pour afficher la liste des contacs
+//fonctions avec la struct
+void affichage_repertoire(Contact contacts[], size_t taille_tableau) {
+    printf("Liste des contacts :\n");
+    for (size_t i = 0; i < taille_tableau; i++) {
+         printf("Contact %zu : %s, Téléphone : %s\n", i + 1, contacts[i].nom, contacts[i].telephone);
+    }
+}
+
 void affichage_liste_contact(char tab[][TAILLE_NOM], size_t taille_tableau) {
     printf("Liste des contacts :\n");
     for (size_t i = 0; i < taille_tableau; i++) {
@@ -57,6 +65,18 @@ void affichage_liste_telephone(char tab[][TAILLE_TEL], size_t taille_tableau) {
     }
 }
 
+// Fonction pour supprimer un contact tel et nom en  même temps avec struct
+void suppression_repertoire(Contact contacts[], size_t taille_tableau, int numero_contact) {
+    if (numero_contact < 1 || numero_contact > taille_tableau) {
+        printf("Numéro de contact invalide.\n");
+        return;
+    }
+
+    printf("Suppression du contact numéro %d :\n", numero_contact);
+    for (size_t i = numero_contact - 1; i < taille_tableau - 1; i++) {
+        contacts[i] = contacts[i + 1];  // Décale les contacts
+    }
+}
 
 // Fonction pour supprimer un contact dans un tableau de contacts et telephoone associé
 void suppression_contact(char contact[][TAILLE_NOM], char tel[][TAILLE_TEL],size_t taille_tableau, int numero_contact) {
@@ -78,6 +98,7 @@ void suppression_contact(char contact[][TAILLE_NOM], char tel[][TAILLE_TEL],size
     tel[taille_tableau - 1][0] = '\0';  // Remplace la dernière chaîne par une chaîne vide
 }
 
+
 // afficher menu
 void afficher_menu(void)
 {
@@ -92,10 +113,21 @@ void afficher_menu(void)
 }
 
 // Fonction pour rechercher un contact par nom
-int rechercher_contact(char contacts[][20], size_t taille_tableau, const char* nom)
+// int rechercher_contact(char contacts[][20], size_t taille_tableau, const char* nom)
+// {
+//     for (size_t i = 0; i < taille_tableau; i++) {
+//         if (strcmp(contacts[i], nom) == 0) {
+//             return i;  // Contact trouvé, retourner l'index
+//         }
+//     }
+//     return -1;  // Contact non trouvé
+// }
+
+//fonction recherche avec struc
+int rechercher_repertoire(Contact contacts[], size_t taille_tableau, const char* nom)
 {
     for (size_t i = 0; i < taille_tableau; i++) {
-        if (strcmp(contacts[i], nom) == 0) {
+        if (strcmp(contacts[i].nom, nom) == 0) {
             return i;  // Contact trouvé, retourner l'index
         }
     }

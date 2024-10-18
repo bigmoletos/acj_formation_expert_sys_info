@@ -7,6 +7,7 @@
 
 
 #include <stddef.h>  // Pour la taille (size_t)
+
 // Déclaration de la structure Contact
 typedef struct {
     char nom[TAILLE_NOM];
@@ -42,16 +43,28 @@ int compter_minuscule(const char tableau[]);
 
 //*********fonctions specifiques à la gestion des contacts***************
 
+// // Fonction pour le contrôle de la saisie et de l'affichage des contact et numero de tel
+// char* saisir_contact(char* tab, size_t taille_chaine);
+// void affichage_liste_contact(char tab[][TAILLE_NOM], size_t taille_tableau);
+
+// char* saisir_numero_tel(char* tab, size_t taille_chaine);
+// void affichage_liste_telephone(char tab[][TAILLE_TEL], size_t taille_tableau);
+
+// void suppression_contact(char contact[][TAILLE_NOM], char tel[][TAILLE_TEL], size_t taille_tableau, int numero_contact);
+// int rechercher_contact(char contacts[][TAILLE_NOM], size_t taille_tableau, const char *nom);
+
+//***** */ version avec structure *******
 // Fonction pour le contrôle de la saisie et de l'affichage des contact et numero de tel
-char* saisir_contact(char* tab, size_t taille_chaine);
-void affichage_liste_contact(char tab[][TAILLE_NOM], size_t taille_tableau);
 
-char* saisir_numero_tel(char* tab, size_t taille_chaine);
-void affichage_liste_telephone(char tab[][TAILLE_TEL], size_t taille_tableau);
+char* saisir_contact(Contact *c, size_t taille_chaine);// avec struct
 
-void suppression_contact(char contact[][TAILLE_NOM], char tel[][TAILLE_TEL], size_t taille_tableau, int numero_contact);
-int rechercher_contact(char contacts[][TAILLE_NOM], size_t taille_tableau, const char *nom);
+char* saisir_numero_tel(Contact *c, size_t taille_chaine);// avec struct
 
+void affichage_repertoire(Contact contacts[], size_t taille_tableau);// avec struct
+
+void suppression_repertoire(Contact contacts[], size_t taille_tableau, int numero_contact); // avec struct
+
+int rechercher_repertoire(Contact contacts[], size_t taille_tableau, const char *nom);// avec struct
 void afficher_menu(void);
 #endif  // Fin de la protection contre l'inclusion multiple
 
