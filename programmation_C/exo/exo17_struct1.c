@@ -11,17 +11,24 @@ Exercice Exercice 1 : Définir et afficher une structure de personne
  */
 
 
-struct Personne
+typedef struct Personne
 {
     char name[TAILLE_NAME];
     int age;
     float taille;
-} Agent1;
+} Agent;
+
+//fonction pour creer un agent type
+void create_agent_type(Agent *a) {
+    strcpy(a->name, "ELDUE");
+    a->age = 123;
+    a->taille = 2.28;
+};
 
 int main(void){
 
-    // struct Personne Agent1;
-    // Agent Agent1 ;
+    // struct Personne Agent;
+    Agent Agent1 ;
 
     printf("veuillez saisir le nom de l'agent: ");
     scanf("%[^\n]", Agent1.name);
@@ -33,9 +40,15 @@ int main(void){
 
 
 
-    // Agent Agent1 = {"luis", "91", "2.26"};
+
 
     printf("Carte de l'agent: \nNom: %s\nAge: %d\nTaille: %0.2f\n",Agent1.name,Agent1.age,Agent1.taille);
+
+    //utilization de la focntion create_agent
+    Agent Agent2;
+    create_agent_type(&Agent2);
+
+    printf("Carte de l'agent type : \nNom: %s\nAge: %d\nTaille: %0.2f\n",Agent2.name,Agent2.age,Agent2.taille);
 
     return 0;
  }
