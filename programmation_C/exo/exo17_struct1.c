@@ -16,11 +16,11 @@ struct Personne
     char name[TAILLE_NAME];
     int age;
     float taille;
-} Agent;
+} Agent1;
 
 int main(void){
 
-    struct Personne Agent1;
+    // struct Personne Agent1;
     // Agent Agent1 ;
 
     printf("veuillez saisir le nom de l'agent: ");
