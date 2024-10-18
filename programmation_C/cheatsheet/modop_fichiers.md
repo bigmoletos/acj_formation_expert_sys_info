@@ -3,7 +3,7 @@
 ## Ouverture et Fermeture de Fichier
 
 ### `fopen` : Ouvrir un fichier
-```c
+```bash
 FILE *fopen(const char *nomFichier, const char *mode);
 nomFichier : Nom du fichier à ouvrir.
 mode : Mode d'ouverture du fichier :
@@ -13,17 +13,22 @@ mode : Mode d'ouverture du fichier :
 "r+" : Lecture/Écriture
 "w+" : Écriture/Lecture
 "a+" : Ajout/Lecture
-Exemple :
+```
 
+- Exemple :
 
+```bash
 FILE *fp = fopen("mon_fichier.txt", "r");
 fclose : Fermer un fichier
 
 int fclose(FILE *fp);
-Ferme le fichier ouvert.
-Renvoie 0 en cas de succès.
-Exemple :
 
+//Ferme le fichier ouvert.
+//Renvoie 0 en cas de succès.
+```
+- Exemple :
+
+```bash
 
 fclose(fp);
 Lecture de Fichiers
@@ -31,8 +36,11 @@ fscanf : Lire du contenu formaté
 
 int fscanf(FILE *fp, const char *format, ...);
 Lit des données formatées à partir d'un fichier.
-Exemple :
+```
 
+- Exemple :
+
+```bash
 
 int age;
 fscanf(fp, "%d", &age);
@@ -40,9 +48,11 @@ fgets : Lire une ligne
 
 char *fgets(char *str, int n, FILE *fp);
 Lit une chaîne de caractères de longueur maximale n à partir du fichier fp.
-Exemple :
+```
 
+- Exemple :
 
+```bash
 char ligne[100];
 fgets(ligne, 100, fp);
 Écriture dans des Fichiers
@@ -50,17 +60,20 @@ fprintf : Écrire du contenu formaté
 
 int fprintf(FILE *fp, const char *format, ...);
 Écrit des données formatées dans un fichier.
-Exemple :
+```
+- Exemple :
 
-
+```bash
 fprintf(fp, "Nom: %s, Âge: %d\n", nom, age);
 fputs : Écrire une chaîne de caractères
 
 int fputs(const char *str, FILE *fp);
 Écrit une chaîne de caractères dans un fichier.
+```
+
 Exemple :
 
-
+```bash
 fputs("Bonjour, monde !", fp);
 Autres Fonctions Utiles
 fseek : Déplacer le pointeur de fichier
@@ -79,14 +92,21 @@ ftell : Obtenir la position actuelle du pointeur de fichier
 
 long ftell(FILE *fp);
 Renvoie la position actuelle dans le fichier.
-Exemple :
+```
+
+- Exemple
+
+```bash :
 
 
 long pos = ftell(fp);
 rewind : Remettre le pointeur au début du fichier
 
 void rewind(FILE *fp);
-Exemple :
+```
+- Exemple
+
+```bash :
 
 
 rewind(fp);
@@ -94,7 +114,10 @@ feof : Vérifier la fin d'un fichier
 
 int feof(FILE *fp);
 Renvoie une valeur non nulle si la fin du fichier est atteinte.
-Exemple :
+```
+- Exemple
+
+```bash :
 
 
 if (feof(fp)) {
@@ -104,14 +127,19 @@ ferror : Vérifier les erreurs
 
 int ferror(FILE *fp);
 Renvoie une valeur non nulle si une erreur s'est produite.
-Exemple :
+```
+- Exemple
+
+```bash :
 
 
 if (ferror(fp)) {
     printf("Erreur lors de la lecture du fichier.\n");
 }
-Exemples Complet d'Utilisation
-Lecture d'un fichier ligne par ligne
+```
+## Exemple Complet d'Utilisation Lecture d'un fichier ligne par ligne
+
+```bash
 
 FILE *fp = fopen("mon_fichier.txt", "r");
 if (fp == NULL) {
@@ -136,3 +164,5 @@ if (fp == NULL) {
 fprintf(fp, "Ceci est un exemple de texte.\n");
 
 fclose(fp);
+
+```
