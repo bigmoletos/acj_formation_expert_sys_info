@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#define TAILLE_NAME 20
 
 
 /*
@@ -13,30 +13,29 @@ Exercice Exercice 1 : Définir et afficher une structure de personne
 
 struct Personne
 {
-    char* name;
+    char name[TAILLE_NAME];
     int age;
-    int taille;
-    printf("veuillez saisir le nom de l'agent");
-    scanf("%[^\n]", &name);
-    printf("veuillez saisir l'age de l'agent");
-    scanf("%[^\n]", &age);
-
-    printf("veuillez saisir la taille de l'agent");
-    scanf("%[^\n]", &taille);
+    float taille;
 } Agent;
 
-int main(){
-    // char *nom;
-    // int age;
-    // int taille;
+int main(void){
+
+    struct Personne Agent1;
+    // Agent Agent1 ;
+
+    printf("veuillez saisir le nom de l'agent\n");
+    scanf("%[^\n]", Agent1.name);
+    printf("veuillez saisir l'age de l'agent\n");
+    scanf("%d", &Agent1.age);
+
+    printf("veuillez saisir la taille de l'agent\n");
+    scanf("%f", &Agent1.taille);
 
 
 
+    // Agent Agent1 = {"luis", "91", "2.26"};
 
-    Agent Agent1 = {"luis", "91", "2.26"};
-    Agent Agent1 = {"luis", "91", "2.26"};
-
-    printf("Carte de l'agent. \nNom: %s\nAge: %d\nTaille: %d8n",Agent1.name,Agent1.age,Agent1.taille);
+    printf("Carte de l'agent. \nNom: %s\nAge: %d\nTaille: %f8n",Agent1.name,Agent1.age,Agent1.taille);
 
     return 0;
  }

@@ -1,3 +1,6 @@
+exo struct {}
+https://github.com/bigmoletos/acj_formation_expert_sys_info/blob/dev/programmation_C/exo/exo17_struct1.c
+
 exo string1
 https://github.com/bigmoletos/acj_formation_expert_sys_info/blob/dev/programmation_C/exo/exo14_string1.c
 
