@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "proto.h"
-#define TAILLE_NOM 20 //taille d'un contact
-#define TAILLE_TEL 10 //taille d'un num de tel
-#define NBRE_CONTACT 5 //nombre de contact possibles
+
 
 
 /*mini_projet1

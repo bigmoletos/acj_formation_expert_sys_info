@@ -1,6 +1,11 @@
 #ifndef HEADER_H  // Si la macro HEADER_H n'est pas encore définie
 #define HEADER_H  // Définition de la macro
 
+#define TAILLE_NOM 20 //taille d'un contact
+#define TAILLE_TEL 11 //taille d'un num de tel
+#define NBRE_CONTACT 5 //nombre de contact possibles
+
+
 #include <stddef.h>  // Pour la taille (size_t)
 
 // Prototypes des fonctions
@@ -32,13 +37,13 @@ int compter_minuscule(const char tableau[]);
 
 // Fonction pour le contrôle de la saisie et de l'affichage des contact et numero de tel
 char* saisir_contact(char* tab, size_t taille_chaine);
-void affichage_liste_contact(char tab[][20], size_t taille_tableau);
+void affichage_liste_contact(char tab[][TAILLE_NOM], size_t taille_tableau);
 
 char* saisir_numero_tel(char* tab, size_t taille_chaine);
-void affichage_liste_telephone(char tab[][11], size_t taille_tableau);
+void affichage_liste_telephone(char tab[][TAILLE_TEL], size_t taille_tableau);
 
-void suppression_contact(char contact[][20], char tel[][11], size_t taille_tableau, int numero_contact);
-int rechercher_contact(char contacts[][20], size_t taille_tableau, const char *nom);
+void suppression_contact(char contact[][TAILLE_NOM], char tel[][TAILLE_TEL], size_t taille_tableau, int numero_contact);
+int rechercher_contact(char contacts[][TAILLE_NOM], size_t taille_tableau, const char *nom);
 
 void afficher_menu(void);
 #endif  // Fin de la protection contre l'inclusion multiple

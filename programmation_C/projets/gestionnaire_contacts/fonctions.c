@@ -164,7 +164,7 @@ char* saisir_numero_tel(char* tel, size_t taille_chaine) {
         printf("Veuillez entrer le numero de telephone du contact sans les espaces (%zu caracteres max) : \n", taille_chaine);
 
         // Vérifier la saisie et les conditions
-           if (scanf(" %10s", tel) == 1  && strlen(tel) == taille_chaine) {
+           if (scanf("%10s", tel) == 1  && strlen(tel) == taille_chaine-1) {
             while (getchar() != '\n'); //vide le buffer
             return tel;  //  renvoyer la chaine sasie
         } else {
@@ -177,14 +177,14 @@ char* saisir_numero_tel(char* tel, size_t taille_chaine) {
 }
 
 // fonction pour afficher la liste des contacs
-void affichage_liste_contact(char tab[][20], size_t taille_tableau) {
+void affichage_liste_contact(char tab[][TAILLE_NOM], size_t taille_tableau) {
     printf("Liste des contacts :\n");
     for (size_t i = 0; i < taille_tableau; i++) {
         printf("Contact %zu : %s\n", i + 1, tab[i]);
     }
 }
 // fonction pour afficher  la liste des numeros de telephones
-void affichage_liste_telephone(char tab[][11], size_t taille_tableau) {
+void affichage_liste_telephone(char tab[][TAILLE_TEL], size_t taille_tableau) {
     printf("Liste des telephones :\n");
     for (size_t i = 0; i < taille_tableau; i++) {
         printf("Telephone :%zu : %s\n", i + 1, tab[i]);
@@ -193,7 +193,7 @@ void affichage_liste_telephone(char tab[][11], size_t taille_tableau) {
 
 
 // Fonction pour supprimer un contact dans un tableau de contacts et telephoone associé
-void suppression_contact(char contact[][20], char tel[][11],size_t taille_tableau, int numero_contact) {
+void suppression_contact(char contact[][TAILLE_NOM], char tel[][TAILLE_TEL],size_t taille_tableau, int numero_contact) {
     if (numero_contact < 1 || numero_contact > taille_tableau) {
         printf("Numéro de contact invalide.\n");
         return;
