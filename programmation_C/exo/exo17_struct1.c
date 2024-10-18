@@ -31,7 +31,16 @@ int main(void){
     Agent Agent1 ;
 
     printf("veuillez saisir le nom de l'agent: ");
-    scanf("%[^\n]", Agent1.name);
+    // scanf("%[^\n]", Agent1.name);
+    // Vérifier la saisie et les conditions
+    if (scanf(" %19[^\n]", Agent1.name) == 1 && strlen(Agent1.name) >  2 && strlen(Agent1.name) <  TAILLE_NAME) {
+        while (getchar() != '\n'); //vide le buffer
+        return Agent1.name;  //  renvoyer la chaine sasie
+    } else {
+        printf("Saisie incorrecte. Veuillez entrer une chaine  de %zu characteres max et 2 mini .\n", TAILLE_NAME);
+        // Vider le buffer en cas de mauvaise saisie
+        while (getchar() != '\n');
+    }
 
     printf("veuillez saisir l'age de l'agent: ");
     scanf("%d", &Agent1.age);
