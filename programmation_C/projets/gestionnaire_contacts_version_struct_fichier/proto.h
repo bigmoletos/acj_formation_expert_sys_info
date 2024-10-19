@@ -17,53 +17,20 @@ typedef struct {
 
 // Prototypes des fonctions
 
-//*********Fonctions générales***************
-// Fonction pour demander si l'utilisateur veut continuer ou quitter
-char demander_quitter(void);
-
-// Fonction pour le contrôle de la saisie d'un entier avec une limite
-int saisir_entier(int ma_valeur);
-
-// Fonction pour le contrôle de la saisie d'un seul caractère
-int saisir_char(void);
-
-
-// Fonctions liées aux tableaux
-void affichage_tableau(int *tab, size_t taille_tableau);
-void copie_tableau(int *tab1, int *tab2, size_t taille_tableau);
-void double_valeur_tableau(int *tab, size_t taille_tableau);
-
-// Fonctions de conversion de chaîne
-void convertir_en_majuscules(char tableau[]);
-void convertir_en_minuscules(char tableau[]);
-
-// Fonctions pour compter les majuscules et minuscules dans une chaîne
-int compter_majuscule(const char tableau[]);
-int compter_minuscule(const char tableau[]);
-
 //*********fonctions specifiques à la gestion des contacts***************
-
-// // Fonction pour le contrôle de la saisie et de l'affichage des contact et numero de tel
-// char* saisir_contact(char* tab, size_t taille_chaine);
-// void affichage_liste_contact(char tab[][TAILLE_NOM], size_t taille_tableau);
-
-// char* saisir_numero_tel(char* tab, size_t taille_chaine);
-// void affichage_liste_telephone(char tab[][TAILLE_TEL], size_t taille_tableau);
-
-// void suppression_contact(char contact[][TAILLE_NOM], char tel[][TAILLE_TEL], size_t taille_tableau, int numero_contact);
-// int rechercher_contact(char contacts[][TAILLE_NOM], size_t taille_tableau, const char *nom);
-
-//***** */ version avec structure *******
-// Fonction pour le contrôle de la saisie et de l'affichage des contact et numero de tel
 
 void saisir_repertoire(Contact *c); // avec struct
 
-void affichage_repertoire(Contact contacts[], size_t taille_tableau);// avec struct
+// void affichage_repertoire(Contact contacts[], size_t taille_tableau);// avec struct
 
 void suppression_repertoire(Contact contacts[], size_t taille_tableau, int numero_contact); // avec struct
 
-int rechercher_repertoire(Contact contacts[], size_t taille_tableau, const char* nom) ;// avec struct
+void rechercher_repertoire(Contact contacts[], size_t taille_tableau, const char* nom) ;// avec struct
 
 void afficher_menu(void);
+
+void enregistrement_repertoire_fichier(Contact c);
+void lire_repertoire_fichier();
+
 #endif  // Fin de la protection contre l'inclusion multiple
 
