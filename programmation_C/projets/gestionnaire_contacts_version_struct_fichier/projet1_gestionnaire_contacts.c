@@ -154,7 +154,7 @@ int main()
             case 4: // afficher tous les contacts
                 // affichage_liste_contact( contacts, nombre_contacts);
                 // affichage_liste_telephone( telephones, nombre_contacts);
-                affichage_repertoire(contacts, nombre_contacts);
+                lire_repertoire_fichier(contacts, nombre_contacts);
 
                 break;
 
