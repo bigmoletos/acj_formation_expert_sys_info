@@ -108,6 +108,7 @@ docker network rm mon_reseau-bridge
 
 ```
 ## lancer une image sur un reseau particulier, par ex apache2
+dans le repertoire mettre un fichier Dockerfile
 ```Dockerfile
 
 sudo docker run -dit --name mytest --network mon_reseau_bridge httpd
@@ -116,6 +117,13 @@ sudo docker run -dit --name mytest --network mon_reseau_bridge httpd
 ```
 
 
+# Construire une image
+
+```Dockerfile
+
+docker build -t mon-wordpress .
+
+```
 
 
 
