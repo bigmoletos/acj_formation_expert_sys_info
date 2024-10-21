@@ -74,6 +74,17 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo docker run hello-world
 ```
 
+
+## WSL il faut crée un fichier .wslconfig dans C:\Users\User
+et rajouter ces lignes :
+
+```bash
+
+[wsl2]
+memory=16GB (+ ou - à votre convenance)
+kernelCommandLine = cgroup_no_v1=all
+
+```
 # Dockerfile
 
 ## Structure de base d'un Dockerfile
@@ -83,7 +94,7 @@ sudo docker run hello-world
 FROM python:3.9
 
 # Définir le répertoire de travail dans le conteneur
-WORKDIR /app
+WORKDIR /appya un
 
 # Copier les fichiers nécessaires
 COPY . /app

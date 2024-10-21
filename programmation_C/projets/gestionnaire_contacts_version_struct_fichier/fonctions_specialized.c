@@ -61,7 +61,7 @@ void lire_repertoire_fichier() {
     }
     fclose(fp);
 }
-// Fonction pour supprimer un contact tel et nom en  même temps avec struct et fichier
+// Fonction pour supprimer un contact tel et nom en  même temps avec struct dans un  fichier
 void suppression_repertoire(Contact contacts[], size_t taille_tableau, int numero_contact) {
     if (numero_contact < 1 || numero_contact > taille_tableau) {
         printf("Numéro de contact invalide.\n");
