@@ -83,9 +83,43 @@ docker run -it debian /bin/bash
 ```Dockerfile
 docker run  debian ls /etc
 ```
+# Volume
+## Créer un volume apache2 pour pesister les données
+```Dockerfile
+docker run -d -p 8080:80 -v /root/html:/usr/local/apache2/htdocs httpd
+# ou en general mon_dossier=root/html
+
+docker run -d -p 8080:80 -v /mon_dossier/html:/usr/local/apache2/htdocs httpd
+# ou
+sudo docker volume create --name my_data_volume
+sudo docker run  -dti -v my_data_volume
+```
+
+# Reseau
+## Créer un nouveau réseau bridge
+```Dockerfile
+sudo docker network ls
+sudo docker network create --driver bridge mon_reseau-bridge
+sudo docker network ls
+
+sudo docker network inspect
+# pour supprimer le reseau
+docker network rm mon_reseau-bridge
+
+```
+## lancer une image sur un reseau particulier, par ex apache2
+```Dockerfile
+
+sudo docker run -dit --name mytest --network mon_reseau_bridge httpd
+
+
+```
 
 
 
+
+
+# Commandes
 1. Gestion des conteneurs
 -------------------------
 - docker run <image>                  : Démarrer un nouveau conteneur à partir d'une image.
