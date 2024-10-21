@@ -316,6 +316,9 @@ mysql -h 3.135.226.41 -P 3306 -u franck -p
 
 ```bash
 ssh -i  C:/AJC_formation/linux/doc/debian12/keyfranck2.pem  -L 3306:localhost:3306 franck@3.135.226.41
+# ou aller dans le repertoire de la clé -v pourle mode verbeux
+ssh -i key2.pem -v -L 3306:localhost:3306 admin@3.135.226.41
+
 mkdir -p ~/.ssh
 cp /path/to/keyfile.pem ~/.ssh/
 chmod 600 ~/.ssh/keyfile.pem

@@ -3,8 +3,11 @@
 
 ## Ajouter votre utilisateur au groupe Docker
 ```Dockerfile
+sudo groupadd docker && sudo usermod -aG docker franck
+# ou
 sudo usermod -aG docker vboxuser
 newgrp docker
+# autre vm
 sudo usermod -aG docker franck
 newgrp docker
 ```
@@ -55,6 +58,22 @@ docker pull nginx
 docker run -d httpd
 
 ```
+## Démarrer le conteneur HTTPD (apache)  en arriere plan et le rediriger vers le port
+
+```Dockerfile
+docker run -d -p 80:80 httpd
+```
+ Pour amazon ec2 comme leport 80 et déja utilisé pour mon wordpress on redirege sur un autre port par ex 8080
+```Dockerfile
+docker run -d -p 8080:80 httpd
+```
+pour tester dans chrome on prend l'ip de la vm (eth0 ou enp0), ci dessous l'ip de wsl windows
+```Dockerfile
+ip a
+http://172.21.238.49/
+```
+
+
 ## Pour rentrer dans mon image Debian il faut Lancer un contener  en lancant un terminal bash
 ```Dockerfile
 docker run -it debian /bin/bash
@@ -142,9 +161,16 @@ docker run  debian ls /etc
 ## telecharger les  images
 
 ```Dockerfile
+docker pull jupyter/scipy-notebook
 docker pull tensorflow/tensorflow
 docker pull pytorch/pytorch
 docker pull ollama/ollama
+docker pull opencv/opencv
+docker pull nvidia/cuda
+docker pull huggingface/transformers-pytorch-cpu
+docker pull mxnet/python
+docker pull horovod/horovod
+docker pull tiangolo/uvicorn-gunicorn-fastapi
 
 
 ```
