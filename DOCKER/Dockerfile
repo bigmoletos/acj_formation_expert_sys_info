@@ -2,7 +2,8 @@
 FROM httpd:2.4
 
 # Copier les fichiers HTML dans le répertoire par défaut de l'Apache
-COPY root/html/ /usr/local/apache2/htdocs/
+# COPY root/html/ /usr/local/apache2/htdocs/
+COPY /home/vboxuser/Templates/html /usr/local/apache2/htdocs/
 
 # Installer les dépendances nécessaires pour PHP (si vous utilisez PHP avec Apache)
 RUN apt-get update && apt-get install -y \
