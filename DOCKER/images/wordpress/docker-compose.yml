@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80  # Expose le port 8080 de l'hôte vers le port 80 du conteneur WordPress
+    environment:
+      WORDPRESS_DB_HOST: db  # L'hôte de la base de données, ici le service 'db'
+      WORDPRESS_DB_USER: vboxuser  # L'utilisateur de la base de données MySQL pour WordPress
+      WORDPRESS_DB_PASSWORD: 1234  # Mot de passe pour l'utilisateur MySQL
+      WORDPRESS_DB_NAME: wordpress  # Nom de la base de données utilisée par WordPress
+      WORDPRESS_DEBUG: 1  # Activer le mode debug pour WordPress
+    volumes:
+      - wordpress:/var/www/html  # Volume persistant pour les fichiers WordPress
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress  # Nom de la base de données MySQL à créer
+      MYSQL_USER: vboxuser  # Utilisateur MySQL
+      MYSQL_PASSWORD: 1234  # Mot de passe pour l'utilisateur MySQL
+      MYSQL_ROOT_PASSWORD: pointerouge  # Mot de passe pour l'utilisateur root de MySQL
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db:/var/lib/mysql  # Volume persistant pour les données MySQL
+
+volumes:
+  wordpress:
+  db:
