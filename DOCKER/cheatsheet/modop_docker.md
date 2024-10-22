@@ -260,11 +260,11 @@ CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 # Construire et démarrer vos conteneurs
 docker compose up --build
 # Arrêter les conteneurs (sans les supprimer) :
-docker-compose stop
+docker compose stop
 # Arrêter et supprimer les conteneurs (et les réseaux associés) :
-docker-compose down
+docker compose down
 # Vérifier les logs des conteneurs :
-docker-compose logs -f
+docker compose logs -f
 
 ```
 
@@ -287,16 +287,91 @@ docker run -d -p 8001:8000 my-fastapi-meteo
 ## Exemples utiles
 
 - Démarrer des services :
-  ```bash
-  docker-compose up
-  ```
+```bash
+docker compose up -d
+```
 
 - Arrêter des services :
-  ```bash
-  docker-compose down
-  ```
+```bash
+docker compose down
+```
 
 - Construire des images :
-  ```bash
-  docker-compose build
-  ```
+```bash
+docker compose up -d
+# ou pour voir les logs en direct
+docker compose up --build
+```
+
+
+- voir les images en cours :
+```bash
+docker compose ps
+```
+
+- supprimer un container :
+```bash
+docker rm -f gitlab
+#  pour partir propre on peutr aussi faire un cumul
+docker rm -f gitlab &&  docker compose down && docker compose up -d
+
+```
+# Installer git lab sur sa VM par ex 192.168.1.97
+
+- sur l'instance créer les repertoires necessaires à gitlab :
+```bash
+cd ~
+cd srv/
+sudo mkdir gitlab
+sudo mkdir data
+cd gitlab/
+sudo mkdir config logs
+
+#  dans un repertoire de l'instance créer un dossier pour y déposer le docker compose
+
+cd /mnt/c/AJC_formation/DOCKER/images
+sudo mkdir gitlab
+cd gitlab
+sudo touch docker-compose.yml
+#  dans nano saisir
+
+version: '3.7'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce
+    container_name: gitlab
+    restart: always
+    hostname: 'gitlab'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        # Add any other gitlab.rb configuration here, each on its own line
+        external_url 'http://192.168.1.97/'
+    ports:
+      - '8085:80'
+      - '22000:22'
+    volumes:
+      - '/srv/gitlab/config:/etc/gitlab'
+      - '/srv/gitlab/logs:/var/log/gitlab'
+      - '/srv/gitlab/data:/var/opt/gitlab'
+    shm_size: '256m'
+
+# lancer le build
+docker compose up -d
+
+# verfier le status  on doit être : "Up 13 minutes (healthy)"
+#  en general cela prend environ 7 à 8 min pour que gitlab soit totalement installé
+# on peut verifier avec htop qu'il n'y a plus de processus gitlb ruby à plus de 90% de cpu
+docker compose ps
+
+
+# aller dans le navigateur
+http://192.168.1.97:8085
+
+# ip a me donne finalement cette ip: 172.21.238.49
+
+http://172.21.238.49:8085
+
+
+
+```
