@@ -99,6 +99,9 @@ WORKDIR /appya un
 # Copier les fichiers nécessaires
 COPY . /app
 
+# Désactiver les interactions lors des mises à jour et installations
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Installer les dépendances
 RUN pip install -r requirements.txt
 
@@ -130,6 +133,93 @@ CMD ["python", "app.py"]
   ENV VARIABLE_NAME=value
   ```
 
+## Docker file pour faire une image ubuntu
+```yaml
+FROM ubuntu
+# Désactiver les interactions lors des mises à jour et installations cela evite de mettre les -y
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt upgrade
+# ou
+RUN export DEBIAN_FRONTEND=noninteractive && apt update && apt upgrade
+
+RUN apt install apache2
+ADD index.html /var/www/html
+
+WORKDIR /var/www/html
+EXPOSE 80
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+```
+## Docker file toutes les commandes
+```yaml
+Commandes Dockerfile courantes :
+FROM : Définit l'image de base à utiliser pour créer l'image Docker. C'est la première instruction dans un Dockerfile.
+
+Exemple : FROM ubuntu:latest
+MAINTAINER : (Déprécié au profit de LABEL) Définit le nom du créateur ou du mainteneur de l'image. Aujourd'hui, on utilise plutôt l'instruction LABEL pour cette information.
+
+Exemple : LABEL maintainer="Nom Prénom <email@domaine.com>"
+RUN : Exécute une commande lors de la création de l'image. Utilisé pour installer des paquets ou effectuer des configurations dans l'image.
+
+Exemple : RUN apt-get update && apt-get install -y apache2
+CMD : Définit la commande par défaut à exécuter lorsque le conteneur démarre. Elle est utilisée pour définir le processus principal à exécuter dans le conteneur.
+
+Exemple : CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+EXPOSE : Indique quel port sera exposé par le conteneur pour la communication avec l'extérieur.
+
+Exemple : EXPOSE 80
+ENV : Définit une variable d'environnement à utiliser dans le conteneur.
+
+Exemple : ENV APP_HOME /usr/src/app
+ARG : Similaire à ENV, mais utilisé uniquement lors de la construction de l'image (pas pendant le runtime). Utilisé pour passer des variables lors du build.
+
+Exemple : ARG VERSION=1.0
+COPY : Copie des fichiers ou répertoires depuis l'hôte vers l'image Docker.
+
+Exemple : COPY ./app /usr/src/app
+ADD : Semblable à COPY, mais peut également décompresser des fichiers ou copier des fichiers depuis une URL.
+
+Exemple : ADD https://example.com/file.tar.gz /usr/src/app/
+LABEL : Ajoute des méta-données à l'image. Cela peut inclure des informations telles que le mainteneur ou la version de l'image.
+
+Exemple : LABEL version="1.0" description="Une image Docker pour une application web"
+ENTRYPOINT : Définit la commande principale à exécuter lors du démarrage du conteneur, mais contrairement à CMD, elle n'est pas remplacée par des arguments supplémentaires.
+
+Exemple : ENTRYPOINT ["/docker-entrypoint.sh"]
+VOLUME : Crée un volume qui est monté dans le conteneur et persiste même si le conteneur est détruit.
+
+Exemple : VOLUME /data
+```
+
+## Docker file pour faire une image ubuntu avec toutes les commandes
+```yaml
+# Choisir l'image de base Ubuntu
+FROM ubuntu:20.04
+# Informations sur le créateur de l'image (anciennement MAINTAINER, maintenant avec LABEL)
+LABEL maintainer="John Doe <johndoe@example.com>"
+LABEL version="1.0"
+LABEL description="Image Docker pour une application web simple avec Apache et PHP."
+# Définir une variable d'environnement pour l'emplacement de l'application
+ENV APP_HOME /var/www/html
+# Définir une variable ARG utilisée uniquement lors du build (pas en runtime)
+ARG APP_VERSION=1.0
+# Mettre à jour le système et installer Apache, PHP, et des dépendances sans interaction
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt upgrade -y && apt install -y apache2 php libapache2-mod-php
+# Copier un fichier index.html dans le répertoire web de l'image
+COPY ./html/index.html $APP_HOME
+# Utiliser ADD pour ajouter un fichier depuis une URL
+ADD https://example.com/logo.tar.gz /tmp/logo.tar.gz
+RUN tar -xzf /tmp/logo.tar.gz -C $APP_HOME
+# Créer un volume pour les fichiers persistants
+VOLUME /var/log/apache2
+# Exposer le port 80 pour l'application web
+EXPOSE 80
+# Définir l'entrée principale du conteneur (point d'entrée)
+ENTRYPOINT ["/usr/sbin/apache2ctl"]
+# Définir la commande par défaut lors du démarrage du conteneur
+CMD ["-D", "FOREGROUND"]
+
+```
 # Docker Compose
 
 ## Fichier docker-compose.yml de base
@@ -149,6 +239,26 @@ services:
       - .:/app
     environment:
       - FLASK_ENV=development
+```
+
+## pour builder
+
+```bash
+# Construire et démarrer vos conteneurs
+docker compose up --build
+# Arrêter les conteneurs (sans les supprimer) :
+docker-compose stop
+# Arrêter et supprimer les conteneurs (et les réseaux associés) :
+docker-compose down
+# Vérifier les logs des conteneurs :
+docker-compose logs -f
+
+```
+
+## pour le lancer
+
+```bash
+docker run -d -p 8001:8000 my-fastapi-meteo
 ```
 
 ## Commandes principales

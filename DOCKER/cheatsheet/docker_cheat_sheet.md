@@ -29,6 +29,11 @@ sudo service docker start
 sudo docker ps
 
 ```
+## pour arreter tous les conteneurs qui tournent
+```Dockerfile
+docker stop $(docker ps -q)
+
+```
 ## telecharger une image
 
 ```Dockerfile
@@ -107,7 +112,22 @@ sudo docker network inspect
 docker network rm mon_reseau-bridge
 
 ```
+## suite probleme sur wordpress
+```Dockerfile
+# on supprime les docker compose
+docker compose down
+#  on supprime les volumes
+ocker volume ls
+docker volume remove wordpress_db wordpress_wordpress
+ocker volume ls
+#  on relance le build
+docker compose up -d
+```
+
+
+
 ## lancer une image sur un reseau particulier, par ex apache2
+dans le repertoire mettre un fichier Dockerfile
 ```Dockerfile
 
 sudo docker run -dit --name mytest --network mon_reseau_bridge httpd
@@ -116,6 +136,13 @@ sudo docker run -dit --name mytest --network mon_reseau_bridge httpd
 ```
 
 
+# Construire une image
+
+```Dockerfile
+
+docker build -t mon-wordpress .
+
+```
 
 
 

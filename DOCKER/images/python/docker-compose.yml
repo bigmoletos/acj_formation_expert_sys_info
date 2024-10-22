@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  fastapi:
+    image: python:3.9-slim  # Utilisation d'une image Python légère
+    container_name: fastapi-meteo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app  # Monter le dossier local contenant l'application
+      - ./data:/app/data  # Monter le dossier local contenant le fichier JSON
+    ports:
+      - "8000:8000"  # Exposer FastAPI sur le port 8000
+    command: uvicorn main:app --host 0.0.0.0 --port 8000  # Démarrer FastAPI
+    environment:
+      - FICHIER_JSON=/app/data/meteo_marseille_10ans_1minute.json  # Variable d'environnement pour le fichier JSON
+    depends_on:
+      - jsondata
+
+  jsondata:
+    image: busybox  # Conteneur minimal pour stocker les données JSON
+    container_name: jsondata
+    volumes:
+      - ./data:/app/data  # Monter le dossier contenant le fichier JSON
+    command: tail -f /dev/null  # Garder le conteneur en exécution
