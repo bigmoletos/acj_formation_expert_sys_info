@@ -99,6 +99,9 @@ WORKDIR /appya un
 # Copier les fichiers nécessaires
 COPY . /app
 
+# Désactiver les interactions lors des mises à jour et installations
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Installer les dépendances
 RUN pip install -r requirements.txt
 
@@ -149,6 +152,19 @@ services:
       - .:/app
     environment:
       - FLASK_ENV=development
+```
+## Docker file pour faire une image ubuntu
+```yaml
+FROM ubuntu
+# Désactiver les interactions lors des mises à jour et installations cela evite de mettre les -y
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt upgrade
+RUN apt install apache2
+ADD index.html /var/www/html
+
+WORKDIR /var/www/html
+EXPOSE 80
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 ```
 
 ## Commandes principales
