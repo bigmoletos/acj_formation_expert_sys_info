@@ -1,26 +1,34 @@
-version: '3'
+volumes:
+  config:
+    driver: local
+  data:
+    driver: local
+  runner:
+    driver: local
+  logs:  # Ajout du volume manquant pour les logs
+    driver: local
 
 services:
   gitlab:
-    image: gitlab/gitlab-ce:latest  # Utilisez la dernière version de l'édition communautaire (CE)
+    restart: unless-stopped
+    image: gitlab/gitlab-ce:latest
     container_name: gitlab
-    hostname: 'gitlab.example.com'  # Remplacez par le nom d'hôte que vous voulez utiliser
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://localhost'  # Remplacez par l'URL que vous souhaitez utiliser pour accéder à GitLab
         gitlab_rails['gitlab_shell_ssh_port'] = 2222
     ports:
-      - '80:80'     # Pour HTTP
-      - '443:443'   # Pour HTTPS
-      - '2222:22'   # Pour SSH (facultatif)
+      - '8085:80'
+      - '2222:22'
     volumes:
-      - gitlab-config:/etc/gitlab    # Configuration GitLab persistante
-      - gitlab-logs:/var/log/gitlab  # Logs persistants
-      - gitlab-data:/var/opt/gitlab  # Données GitLab persistantes
-    restart: always
+      - 'data:/var/opt/gitlab'
+      - 'config:/etc/gitlab'
+      - 'logs:/var/log/gitlab'  # Volume des logs maintenant défini
 
-volumes:
-  gitlab-config:
-  gitlab-logs:
-  gitlab-data:
-
+  gitlab-runner:
+    restart: unless-stopped
+    image: gitlab/gitlab-runner
+    container_name: gitlab-runner
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - 'runner:/etc/gitlab-runner'
+      - 'config:/etc/gitlab'
