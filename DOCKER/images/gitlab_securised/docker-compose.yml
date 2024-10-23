@@ -1,3 +1,5 @@
+version: '3.8'  # Ajoutez la version de Docker Compose
+
 services:
   gitlab:
     image: gitlab/gitlab-ce
@@ -8,7 +10,6 @@ services:
       - .env
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        # Add any other gitlab.rb configuration here, each on its own line
         external_url 'http://172.21.238.49:8088/'
       GITLAB_ROOT_PASSWORD: ${GITLAB_ROOT_PASSWORD}
       GITLAB_DB_USER: ${GITLAB_DB_USER}
