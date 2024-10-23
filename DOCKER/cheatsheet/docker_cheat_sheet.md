@@ -275,3 +275,9 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 USER user
 COPY --link --chown=1000 ./ /code
 ```
+
+# creer une cle SSh pour se connecter à GitLab
+```Ssh
+ssh-keygen -t rsa -b 4096 -C "romaru@yopmail.com" -f ~/.ssh/key_gitlab
+
+```
