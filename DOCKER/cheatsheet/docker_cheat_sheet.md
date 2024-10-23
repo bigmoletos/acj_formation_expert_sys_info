@@ -117,11 +117,36 @@ docker network rm mon_reseau-bridge
 # on supprime les docker compose
 docker compose down
 #  on supprime les volumes
-ocker volume ls
+docker volume ls
 docker volume remove wordpress_db wordpress_wordpress
-ocker volume ls
+docker volume ls
 #  on relance le build
 docker compose up -d
+```
+
+## Nettoyer Docker
+###  Pour faire de la place sur la vm
+```Dockerfile
+#  voir la place dispo sur la vm
+df -h
+#  suppression des fichiers et apt inutiles
+sudo apt-get autoremove
+sudo apt-get clean
+#  suppresion des anciens kernel
+dpkg --list | grep linux-image
+sudo apt-get purge linux-image-x.x.x-xx
+
+# suppression des fichiers temporaires
+sudo rm -rf /tmp/*
+#  verifier la taille des fichiers log
+sudo du -h /var/log
+
+#  nettoyage dedocker
+docker system prune -a
+
+# relance du container
+docker exec -it gitlab gitlab-ctl restart
+
 ```
 
 
@@ -277,7 +302,30 @@ COPY --link --chown=1000 ./ /code
 ```
 
 # creer une cle SSh pour se connecter à GitLab
-```Ssh
+
+```bash
 ssh-keygen -t rsa -b 4096 -C "romaru@yopmail.com" -f ~/.ssh/key_gitlab
+# creation du fichier de config
+sudo nano ~/.ssh/config
+
+# GitLab.com
+Host gitlab.com
+  User git
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/key_gitlab
+
+
+#  instazll de xclip
+sudo apt install xclip
+
+xclip -sel clip ~/.ssh/key_gitlab.pub
+
+#  test connection SSH depuis la vm
+ssh -T git@gitlab.com
+
+#  pour verifier que le .env fonctionne et que les variables sont bien passées au docker-compose
+
+docker exec -it gitlab env
+
 
 ```
