@@ -6,17 +6,17 @@
 - **C++** : `.cpp`
 
 ## 2. Basic Compilation
-- **C** : 
+- **C** :
   ```bash
   gcc file.c -o output
   ```
-- **C++** : 
+- **C++** :
   ```bash
   g++ file.cpp -o output
   ```
 
 ## 3. Input/Output
-- **C** : 
+- **C** :
   ```c
   #include <stdio.h>
 
@@ -25,7 +25,7 @@
       return 0;
   }
   ```
-- **C++** : 
+- **C++** :
   ```cpp
   #include <iostream>
 
@@ -36,39 +36,39 @@
   ```
 
 ## 4. Comments
-- **C** : 
+- **C** :
   ```c
   // Single-line comment
-  /* Multi-line 
+  /* Multi-line
      comment */
   ```
-- **C++** : 
+- **C++** :
   ```cpp
   // Single-line comment
-  /* Multi-line 
+  /* Multi-line
      comment */
   ```
 
 ## 5. Memory Allocation
-- **C** : 
+- **C** :
   ```c
   int* p = (int*)malloc(sizeof(int));
   free(p);
   ```
-- **C++** : 
+- **C++** :
   ```cpp
   int* p = new int;
   delete p;
   ```
 
 ## 6. Functions
-- **C** : 
+- **C** :
   ```c
   int add(int a, int b) {
       return a + b;
   }
   ```
-- **C++** : 
+- **C++** :
   ```cpp
   int add(int a, int b) {
       return a + b;
@@ -77,7 +77,7 @@
 
 ## 7. Classes (C++ only)
 - **C** : No support for classes
-- **C++** : 
+- **C++** :
   ```cpp
   class MyClass {
   public:
@@ -89,7 +89,7 @@
 
 ## 8. Namespaces (C++ only)
 - **C** : No namespaces
-- **C++** : 
+- **C++** :
   ```cpp
   namespace myNamespace {
       int x = 10;
@@ -98,7 +98,7 @@
 
 ## 9. Exception Handling (C++ only)
 - **C** : No built-in exception handling
-- **C++** : 
+- **C++** :
   ```cpp
   try {
       // Code that may throw an exception
@@ -108,12 +108,12 @@
   ```
 
 ## 10. Headers
-- **C** : 
+- **C** :
   ```c
   #include <stdio.h>
   #include <stdlib.h>
   ```
-- **C++** : 
+- **C++** :
   ```cpp
   #include <iostream>
   #include <cstdlib>
@@ -124,14 +124,14 @@
 - **C++** : Standard libraries include `iostream`, `vector`, `string`, `algorithm`, etc.
 
 ## 12. Structure Declaration
-- **C** : 
+- **C** :
   ```c
   struct MyStruct {
       int a;
       float b;
   };
   ```
-- **C++** : 
+- **C++** :
   ```cpp
   struct MyStruct {
       int a;
@@ -142,3 +142,38 @@
 ## 13. Object-Oriented Programming (C++ only)
 - **C** : No OOP support
 - **C++** : C++ supports object-oriented programming with classes, inheritance, polymorphism, and encapsulation.
+
+
+
+## compiler et lancer en controlant les erreurs :
+- **-Wunused-const-variable Wunused-parameter -Werror -Wsign-compare**
+```cpp
+g++ exo1.cpp -o exo1 -Wunused-const-variable Wunused-parameter -Werror && ./exo1
+
+```
+- **-creation fichier Makefile (sans extension) et dans le même dossier que le oules fichiers à compiler pour capter les erreurs et les warning au moment du build**
+```cpp
+// fichier Makefile
+# Variables
+CC = g++
+CFLAGS = -Wall -Wextra -Wunused-const-variable -Wunused-parameter -Werror
+
+# Règle générique pour compiler n'importe quel fichier .cpp
+%: %.cpp
+	$(CC) $(CFLAGS) $< -o $@
+
+# Nettoyer tous les exécutables générés
+clean:
+	rm -f *.o $(wildcard *.exe) $(wildcard *.out) $(wildcard *.obj)
+
+```
+pour l'utiliser il suffit de faire :
+```cpp
+make nom_fichier
+// ex
+make exo2
+
+//  pour supprimer les fichiers exe
+make clean exo3
+
+```
