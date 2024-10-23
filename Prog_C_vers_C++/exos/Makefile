@@ -6,6 +6,16 @@ CFLAGS = -Wall -Wextra -Wunused-const-variable -Wunused-parameter -Werror
 %: %.cpp
 	$(CC) $(CFLAGS) $< -o $@
 
-# Nettoyer les fichiers objets et exécutables
+# Nettoyer un fichier spécifique
 clean:
-	rm -f *.o $(wildcard exo*) $(wildcard test*) $(wildcard mon_programme*)
+	@if [ "$(TARGET)" ]; then \
+		rm -f $(TARGET); \
+		echo "$(TARGET) supprimé."; \
+	else \
+		echo "Spécifiez un fichier à supprimer, par exemple : make clean-exo5"; \
+		echo "Ne pas oublier le - entre clean et le nom du fichier"; \
+	fi
+
+# Pour spécifier la cible du nettoyage via un argument
+clean-%:
+	$(MAKE) clean TARGET=$*
