@@ -177,3 +177,20 @@ make exo2
 make clean exo3
 
 ```
+
+
+## Debugger  gdb   (GNU Debug)
+
+```bash
+sudo apt install gdb
+
+(gdb) break main       # Définir un point d'arrêt à la fonction main
+(gdb) run              # Lancer le programme jusqu'au point d'arrêt
+(gdb) next             # Avancer à la prochaine ligne
+(gdb) print variable   # Afficher la valeur d'une variable
+(gdb) quit             # Quitter GDB
+
+gdb ./exo3
+```
+
+
