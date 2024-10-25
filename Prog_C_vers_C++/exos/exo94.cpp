@@ -84,7 +84,7 @@ int main(int argc, char** argv) {
     }
 
     // Résultat final
-    if (sontIdentiques) {
+    if (i==j) {
         cout << "Les fichiers " << namefichier << " et " << namefichier2 << " sont identiques." << endl;
     }
 
@@ -95,11 +95,20 @@ int main(int argc, char** argv) {
     fstream file2(namefichier2, fstream::out | fstream::app);
     if (!file2.is_open()) {
         cout << "Erreur : Impossible d'ouvrir " << namefichier2 << " pour l'écriture." << endl;
-        namefichier2.close();  // Fermer file1 si file2 échoue à s'ouvrir
+        f2.close();  // Fermer file1 si file2 échoue à s'ouvrir
         return 1;
     }
 
+if(f1.is_open()){
+    string line{""};
+    /// lecture d'une ligne avec option ws(WhiteSpace) pour supprimer les espaces
+    getline(f1 >> ws, line);
+    // affichage de la ligne
+    cout << line << endl;
 
+    getline(f1 >> ws, line);
+    cout << line << endl;
+}
 
     // Fermeture des fichiers
     f1.close();
