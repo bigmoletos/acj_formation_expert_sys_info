@@ -1,26 +1,16 @@
 #include <iostream>
 #include <fstream>
-// #include <string>
 #include <iomanip>
+#include <algorithm>
+#include <cctype> // Pour isalpha, toupper, tolower
 
 using namespace std;
 
-/* MISSION FAIRE DES FONCTIONS
-Copier le fichier sans le modifier
-Mettre tout le texte en majuscules /
-minuscules
-Capitaliser ce qui commence par une majuscule
-Changement de casse des caractères alphabétiques
-Justification à droite du contenu sur 85 caractères
-Justification à gauche du contenu sur 85 caractères
-Alignement au centre
-*/
-
 // Fonction pour copier le fichier sans le modifier
-void copier_fichier(const string &fichier_initial, const string &fichier_corrected)
+void copier_fichier(const string &inputFile, const string &outputFile)
 {
-    ifstream inFile(fichier_initial);
-    ofstream outFile(fichier_corrected);
+    ifstream inFile(inputFile);
+    ofstream outFile(outputFile);
 
     if (inFile && outFile)
     {
@@ -37,97 +27,215 @@ void copier_fichier(const string &fichier_initial, const string &fichier_correct
     }
 }
 
-void printCentered(const string &text, int width)
+// Fonction pour mettre le texte en majuscules
+void mettre_majuscule(const string &inputFile, const string &outputFile)
 {
-    int padding = (width - text.size()) / 2; // Calculer combien d'espaces il faut de chaque côté
+    ifstream inFile(inputFile);
+    ofstream outFile(outputFile);
 
-    if (padding > 0)
+    if (inFile && outFile)
     {
-        cout << setw(padding + text.size()) << right << text << endl;
+        string line;
+        while (getline(inFile, line))
+        {
+            transform(line.begin(), line.end(), line.begin(), ::toupper);
+            outFile << line << endl;
+        }
+        cout << "Texte converti en majuscules.\n";
     }
     else
     {
-        cout << text << endl; // Si la chaîne est plus longue que la largeur spécifiée
+        cerr << "Erreur: impossible d'ouvrir le fichier.\n";
+    }
+}
+// Fonction pour mettre le texte en minuscules
+void mettre_minuscules(const string &inputFile, const string &outputFile)
+{
+    ifstream inFile(inputFile);
+    ofstream outFile(outputFile);
+
+    if (inFile && outFile)
+    {
+        string line;
+        while (getline(inFile, line))
+        {
+            transform(line.begin(), line.end(), line.begin(), ::tolower);
+            outFile << line << endl;
+        }
+        cout << "Texte converti en majuscules.\n";
+    }
+    else
+    {
+        cerr << "Erreur: impossible d'ouvrir le fichier.\n";
+    }
+}
+
+// Fonction pour capitaliser les premières lettres de chaque mot
+void capitaliser_premieres_lettres(const string &inputFile, const string &outputFile)
+{
+    ifstream inFile(inputFile);
+    ofstream outFile(outputFile);
+
+    if (inFile && outFile)
+    {
+        string line;
+        while (getline(inFile, line))
+        {
+            bool capitalizeNext = true;
+            for (char &ch : line)
+            {
+                if (capitalizeNext && isalpha(ch))
+                {
+                    ch = toupper(ch);
+                    capitalizeNext = false;
+                }
+                else if (isspace(ch))
+                {
+                    capitalizeNext = true;
+                }
+            }
+            outFile << line << endl;
+        }
+        cout << "Les premières lettres ont été capitalisées.\n";
+    }
+    else
+    {
+        cerr << "Erreur: impossible d'ouvrir le fichier.\n";
+    }
+}
+void inverser_casse(const string &inputFile, const string &outputFile)
+{
+    ifstream inFile(inputFile);
+    ofstream outFile(outputFile);
+
+    if (inFile && outFile)
+    {
+        string line;
+        while (getline(inFile, line))
+        {
+            for (char &ch : line)
+            {
+                if (islower(ch))
+                {
+                    ch = toupper(ch);
+                }
+                else if (isupper(ch))
+                {
+                    ch = tolower(ch);
+                }
+            }
+            outFile << line << endl;
+        }
+        cout << "Casse des caractères inversée.\n";
+    }
+    else
+    {
+        cerr << "Erreur: impossible d'ouvrir le fichier.\n";
+    }
+}
+
+// Fonction pour justifier le texte à droite
+void justifier_droite_85car(const string &inputFile, const string &outputFile)
+{
+    ifstream inFile(inputFile);
+    ofstream outFile(outputFile);
+
+    if (inFile && outFile)
+    {
+        string line;
+        while (getline(inFile, line))
+        {
+            outFile << setw(85) << right << line << endl;
+        }
+        cout << "Texte justifié à droite.\n";
+    }
+    else
+    {
+        cerr << "Erreur: impossible d'ouvrir le fichier.\n";
     }
 }
 
 int main()
 {
-    string text = "Bonjour";
-    int width = 20; // Spécifier la largeur totale pour centrer
-
-    printCentered(text, width); // Appeler la fonction pour centrer le texte
-
-    return 0;
-}
-int main()
-{
-
     string fichier_initial = "fichier_initial.txt";     // Nom du fichier d'entrée
     string fichier_corrected = "fichier_corrected.txt"; // Fichier de sortie selon l'opération
-    // string ligne;
-    int taille_ligne{0};
-    // Menu avec les choix
     int menu_choix{0};
+
+    // Menu avec les choix
     cout << "Choisissez votre option:\n"
          << "1. Copier le fichier sans le modifier\n"
          << "2. Mettre tout le texte en majuscules\n"
          << "3. Mettre tout le texte en minuscules\n"
          << "4. Capitaliser les premières lettres\n"
          << "5. Inverser la casse des caractères\n"
-         << "6. Justifier à droite sur 85 catractéres\n"
-         << "7. Justifier à gauche 85 catractéres\n"
+         << "6. Justifier à droite sur 85 caractères\n"
+         << "7. Justifier à gauche sur 85 caractères\n"
          << "8. Centrer le texte\n"
-         << "9. Sortir du programme O/N \n";
+         << "9. Sortir du programme\n";
+
     cin >> menu_choix;
 
     switch (menu_choix)
     {
     case 1:
-        cout << "Vous avez choisi de copier le texte sans le modifier" << menu_choix;
+        cout << "Vous avez choisi de copier le fichier sans le modifier\n";
         copier_fichier(fichier_initial, fichier_corrected);
         break;
     case 2:
-
+        cout << "Mettre tout le texte en majuscules\n";
+        mettre_majuscule(fichier_initial, fichier_corrected);
         break;
     case 3:
-
+        cout << "Mettre tout le texte en minuscules\n";
+        mettre_minuscules(fichier_initial, fichier_corrected);
         break;
     case 4:
-
+        cout << "Capitaliser les premières lettres de chaque mot\n";
+        capitaliser_premieres_lettres(fichier_initial, fichier_corrected);
         break;
     case 5:
-
+        cout << "Inverser la casse\n";
+        inverser_casse(fichier_initial, fichier_corrected);
         break;
     case 6:
-
+        cout << "Justifer à droite de 85 caractéres\n";
+        justifier_droite_85car(fichier_initial, fichier_corrected);
         break;
     case 7:
-        while (getline(fichier_initial, ligne))
+    {
+        ifstream inFile(fichier_initial);
+        ofstream outFile(fichier_corrected);
+        string ligne;
+        if (inFile && outFile)
         {
-            /* code */
-            size_t first = ligne.find_first_not_of(" \t\n\r\v");
-            if (first != string::npos)
-                ligne = ligne.substr(first);
-            cout << "first =  " << first << endl;
-            if (taille_ligne < 85)
+            while (getline(inFile, ligne))
             {
-                ligne += (string(85 - taille_ligne, ' '));
+                size_t first = ligne.find_first_not_of(" \t\n\r\v");
+                if (first != string::npos)
+                {
+                    ligne = ligne.substr(first);
+                }
+                if (ligne.length() < 85)
+                {
+                    ligne += string(85 - ligne.length(), ' '); // Remplir avec des espaces
+                }
+                outFile << ligne << endl;
             }
-            fichier_corrected << ligne << end;
+            cout << "Texte justifié à gauche sur 85 caractères.\n";
         }
-
-        break;
-    case 8:
-        cout << "Au revoir à Bientot" << menu_choix;
-        return 0;
-
-        break;
-    case 9:
-        break;
-
-    default:
+        else
+        {
+            cerr << "Erreur: impossible d'ouvrir le fichier.\n";
+        }
         break;
     }
+    case 9:
+        cout << "Au revoir, à bientôt.\n";
+        return 0;
+    default:
+        cerr << "Choix invalide.\n";
+        break;
+    }
+
     return 0;
 }
