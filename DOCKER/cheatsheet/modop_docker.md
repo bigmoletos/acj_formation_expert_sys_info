@@ -348,7 +348,7 @@ services:
         # Add any other gitlab.rb configuration here, each on its own line
         external_url 'http://192.168.1.97/'
     ports:
-      - '8085:80'
+      - '8088:80'
       - '22000:22'
     volumes:
       - '/srv/gitlab/config:/etc/gitlab'
@@ -366,7 +366,7 @@ docker compose ps
 
 
 # aller dans le navigateur
-http://192.168.1.97:8085
+http://192.168.1.97:8088
 
 # ip a me donne finalement cette ip: 172.21.238.49
 

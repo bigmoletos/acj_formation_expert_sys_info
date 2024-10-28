@@ -327,5 +327,13 @@ ssh -T git@gitlab.com
 
 docker exec -it gitlab env
 
+#  pour aller dans le repertoire des clés
+cd ~/.ssh/
 
+```
+
+## pour renitialiser le password root de gitlab
+
+```bash
+docker exec -it gitlab gitlab-rake "gitlab:password:reset[root]"
 ```

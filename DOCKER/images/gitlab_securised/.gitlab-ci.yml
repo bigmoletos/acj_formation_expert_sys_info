@@ -1,0 +1,93 @@
+# build-job:
+#   stage: build
+#   script:
+#     - echo "Hello, $GITLAB_USER_LOGIN!"
+
+# test-job1:
+#   stage: test
+#   script:
+#     - echo "This job tests something"
+
+# test-job2:
+#   stage: test
+#   script:
+#     - echo "This job tests something, but takes more time than test-job1."
+#     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+#     - echo "which simulates a test that runs 20 seconds longer than test-job1"
+#     - sleep 20
+
+# deploy-prod:
+#   stage: deploy
+#   script:
+#     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+#   environment: production
+####---------------other-------------------
+
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Bash.gitlab-ci.yml
+
+# See https://docs.gitlab.com/ee/ci/yaml/index.html for all available options
+
+# you can delete this line if you're not using Docker
+# image: busybox:latest
+
+# before_script:
+#   - echo "Before script section"
+#   - echo "For example you might run an update here or install a build dependency"
+#   - echo "Or perhaps you might print out some debugging details"
+
+# after_script:
+#   - echo "After script section"
+#   - echo "For example you might do some cleanup here"
+
+# build1:
+#   stage: build
+#   script:
+#     - echo "Do your build here"
+
+# test1:
+#   stage: test
+#   script:
+#     - echo "Do a test here"
+#     - echo "For example run a test suite"
+
+# test2:
+#   stage: test
+#   script:
+#     - echo "Do another parallel test here"
+
+####---------------other-------------------
+
+image: node:alpine
+
+variables:
+  GIT_STRATEGY: none
+
+before_script:
+  - apk add --no-cache git  # Installe git sur Alpine
+  - git init
+  - git remote add origin http://192.168.1.97:8088/ajc/ajc1.git
+  - git fetch origin
+  - git checkout -b master --track origin/master
+
+stages:
+  - build
+  - test
+
+build1:
+  stage: build
+  script:
+    - echo "Do your build here"
+
+test1:
+  stage: test
+  script:
+    - echo "Do a test here"
+    - echo "For example run a test suite"
+
+test2:
+  stage: test
+  script:
+    - echo "Do another parallel test here"
+
+

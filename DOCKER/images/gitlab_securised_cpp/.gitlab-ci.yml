@@ -1,0 +1,12 @@
+image: gcc
+
+build:
+  stage: build
+  tags:
+    - cpp
+  script:
+    - mkdir -p myprogrammes
+    - g++ main.cpp -o myprogrammes/prog.exe
+  artifacts:
+    paths:
+      - myprogrammes

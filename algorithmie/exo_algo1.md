@@ -39,5 +39,5 @@ Début
 Fin
 ## exo 1.8
 C = "42312"
-## exo 1.9
+## exo 1.9 
 provoque une erreur car les variables sont en caracteres
