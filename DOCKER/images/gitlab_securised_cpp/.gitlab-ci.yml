@@ -1,12 +1,27 @@
 image: gcc
 
+variables:
+  GIT_STRATEGY: none  # Désactive le clonage automatique
+
+before_script:
+  - git clone http://192.168.1.97:8088/ajc/ajc_cpp.git .
+  - git remote set-url origin http://192.168.1.97:8088/ajc/ajc_cpp.git
+
 build:
   stage: build
   tags:
     - cpp
   script:
     - mkdir -p myprogrammes
-    - g++ main.cpp -o myprogrammes/prog.exe
+    - g++ main.cpp -o myprogrammes/prog
   artifacts:
     paths:
       - myprogrammes
+test:
+  stage: test
+  tags:
+    - ci
+  script:
+    - echo "Running tests"
+    - echo "Test suite example"
+

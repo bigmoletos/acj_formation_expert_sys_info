@@ -12,6 +12,7 @@ docker image prune -a -f
 uname -r
 sudo apt remove --purge linux-image-6.1.0-25-amd64
 sudo apt autoremove
+sudo apt autoremove gnome-session gnome gnome-shell
 #  test
 df -h
 ```

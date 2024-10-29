@@ -94,4 +94,4 @@ algorithmie\listeWord.csv
 *.json
 
 
-docker\images\exo_python\calculator
+*calculator

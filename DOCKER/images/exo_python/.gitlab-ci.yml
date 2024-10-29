@@ -1,0 +1,61 @@
+# Étape 1: Image Docker
+image: python:latest
+
+# Variables
+variables:
+  VIRTUAL_ENV: calculator  # Nom de l'environnement virtuel
+  GIT_STRATEGY: none  # Désactive le clonage GitLab Runner, car un clone manuel est effectué
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+# Mise en cache des packages pip
+cache:
+  paths:
+    - .cache/pip
+    - $VIRTUAL_ENV/
+
+# Étape 2: Installation de l'environnement virtuel et des dépendances
+before_script:
+  - git init
+  - git remote add origin http://192.168.1.97:8088/ajc/exo_python.git  # ajout du remote pour éviter les erreurs
+  - git fetch origin
+  - git checkout -b main --track origin/main
+  - python -m venv $VIRTUAL_ENV
+  - source $VIRTUAL_ENV/bin/activate
+  - pip install --upgrade pip
+  - pip install flake8 pytest pytest-cov  # Installation de flake8 et pytest
+
+# Étape 3: Exécution du linter
+lint:
+  stage: lint
+  tags:
+    - python
+  script:
+    - echo "Lancement du linter flake8"
+    - flake8 --statistics --exclude=lib --exit-zero > flake_test.txt
+  artifacts:
+    paths:
+      - flake_test.txt  # Ajout du fichier de sortie flake8 comme artefact
+    expire_in: 1 day
+
+# Étape 4: Exécution des tests unitaires
+test:
+  stage: test
+  tags:
+    - python
+  dependencies:
+    - lint  # Pour s'assurer que le linter est passé en premier
+  script:
+    - echo "Lancement des tests unitaires avec pytest"
+    - pytest -v --cov=$VIRTUAL_ENV  > py_test.txt # Crée le rapport de test
+    - echo "Affichage des lignes non couvertes par le test:"
+    - pytest --cov=$VIRTUAL_ENV --cov-report=html --cov-report=term-missing  # Affiche les lignes non couvertes directement dans le terminal
+  artifacts:
+    paths:
+      - py_test.txt
+      - htmlcov/  # Assurez-vous que le rapport HTML est généré et enregistré
+    expire_in: 1 day
+
+# Phases du pipeline GitLab CI
+stages:
+  - lint
+  - test

@@ -120,6 +120,8 @@ ssh -F ~/.ssh/config -T git@gitlab-server-2
 ssh -F ~/.ssh/config -T git@gitlab-server-1
 
 # Welcome to GitLab, @root!
+# pour se connecter et faire des clones sur le repo au lieu d'utiliser l'IP on va passer par l'alias
+git remote set-url origin git@gitlab-server-1:ajc/projetAjcPython.git
 
 
 ```
@@ -163,5 +165,14 @@ docker run --rm -v $(pwd):/workspace -w /workspace gcc g++ main.cpp -o myprogram
 ```bash
 
 sudo gitlab-runner uninstall
+
+```
+
+### Redemmarrage du runner
+
+```bash
+
+sudo systemctl restart gitlab-runner
+
 
 ```
