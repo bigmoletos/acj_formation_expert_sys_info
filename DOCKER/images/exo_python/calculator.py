@@ -15,7 +15,7 @@ def addition(first_term: float = 5, second_term: float = 10) -> float:
         float: The sum of the two numbers.
     """
     result = first_term + second_term
-    print(f"\nresult :\n{result} \n")
+    print(f"\nresultat addition :\n{result} \n")
     return result
 
 
@@ -31,5 +31,17 @@ def soustraction(first_term: float = 80, second_term: float = 5) -> float:
         float: The result of the subtraction.
     """
     result = first_term - second_term
-    print(f"\nresult :\n{result} \n")
+    print(f"\nresultat soustraction :\n{result} \n")
     return result
+
+
+def main():
+    """
+    Main function to execute calculator operations.
+    """
+    addition()
+    soustraction()
+
+
+if __name__ == "__main__":
+    main()
