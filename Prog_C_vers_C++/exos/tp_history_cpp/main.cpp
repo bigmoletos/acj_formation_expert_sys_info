@@ -31,6 +31,7 @@ mise à jour éventuelle du fichier de commandes
 int main()
 {
     int menu_choix{0};
+    bool affichage_choix{true};
     //----------DEPART CHRONO--------------
     //------ Point de départ pour le chronométrage
     std::chrono::high_resolution_clock::time_point start_time;
