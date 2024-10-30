@@ -92,7 +92,8 @@ algorithmie\listeWord.csv
 *.pdf
 *.pptx
 *.json
-
+*.targz
+*.bz2
 
 docker\images\exo_python\calculatorcling.tar.bz2
-cling.tar.bz2
+cling.tar.bz2cling.tar.bz2
