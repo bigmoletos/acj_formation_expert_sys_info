@@ -41,7 +41,13 @@ fi
 ##### alias fd ###
 #----------------------------
 
-export PATH="$HOME/script_perso:$PATH"
+# export PATH="$HOME/script_perso:$PATH"
+export PATH="/script_perso:$PATH"
+
+# Ajouter /script_perso au PATH globalement si ce n'est pas déjà fait
+if ! grep -Fxq 'export PATH="/script_perso:$PATH"' /etc/profile; then
+    echo 'export PATH="/script_perso:$PATH"' | sudo tee -a /etc/profile
+fi
 
 # Alias de navigation
 alias ..="cd .."

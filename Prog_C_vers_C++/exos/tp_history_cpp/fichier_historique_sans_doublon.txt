@@ -1,0 +1,7 @@
+histo.sh 10
+./histo.sh 10
+./histo.sh -h
+history
+cat history 2
+./histo.sh
+history -a

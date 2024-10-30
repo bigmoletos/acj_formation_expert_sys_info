@@ -1,0 +1,19 @@
+./histo.sh
+chmod +x histo.sh
+./histo.sh
+histo.sh
+chmod 777 histo.sh
+ll
+histo.sh
+./histo.sh
+dos2unix histo.sh
+sudo install dos2unix
+sudo apt install dos2unix
+./histo.sh
+dos2unix histo.sh
+./histo.sh
+ll
+./histo.sh
+history 20 | awk '{$1=""; print substr($0,2)}' | head -n -1 > histo.txt
+history
+ll
