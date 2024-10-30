@@ -1,0 +1,20 @@
+# Déclaration des fichiers objets nécessaires pour la compilation
+obj = by_val.o by_ptr.o by_ref.o helping_functions.o
+
+# Règle pour compiler l'exécutable principal 'prgm'
+# clean est appelé avant de compiler l'exécutable pour s'assurer qu'il n'y ait pas de conflits
+prgm: $(obj)
+    clang++ parameters_passing.cpp $(obj) -o $@
+
+# Règle générique pour compiler des fichiers objets (*.o) à partir de fichiers source (*.cpp)
+%.o: %.cpp
+    clang++ -g -c $< -o $@
+
+# Règle pour nettoyer les fichiers objets et l'exécutable généré
+clean:
+    rm -f *.o prgm
+
+# Indication que 'clean' est une cible factice (qui ne génère pas de fichier spécifique)
+.PHONY: clean
+
+	$(MAKE) clean TARGET=$*
