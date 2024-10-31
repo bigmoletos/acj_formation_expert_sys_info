@@ -1,3 +1,10 @@
+./histo.sh 400
+history 10
+tail -n 20 histor
+./histo.sh 400
+histo.sh 
+./histo.sh 400
+history 10
 histo.sh 10
 ./histo.sh 10
 ./histo.sh -h
@@ -8,3 +15,184 @@ cat history 2
 ./histo.sh 10
 ./histo.sh
 history -a
+~
+ll
+..
+ll
+..
+ll
+sudo nano ~/.bashrc 
+cd home/
+ll
+cd ..
+sudo nano ~/.bashrc 
+sudo mkdir script_perso 
+cd script_perso/
+sudo nano histo_fd.sh
+ll
+mnt
+cd prog_C_vers_C++/exos/tp_history_cpp/
+histo_FD.sh
+reload
+histo_FD.sh
+./histo_FD.sh
+./histo_fd.sh
+histo_fd.sh
+cd ~
+ll
+..
+pwd
+ll
+cd script_perso/
+sudo chmod 777 histo_fd.sh 
+export PATH=$(echo "$PATH" | awk -v RS=':' '!seen[$0]++' | paste -sd ':' -)
+sudo nano clean_path.sh
+reload
+sudo chmod 777 clean_path.sh
+clean_path.sh
+dos2unix clean_path.sh 
+sudo dos2unix clean_path.sh 
+ll
+dos2unix ./histo_fd.sh 
+sudo dos2unix ./histo_fd.sh 
+histo_fd.sh 
+ll
+..
+ll
+cd script_perso/
+histo_fd.sh 
+sudo nano histo_fd.sh 
+sudo chmod 777  histo_fd.sh 
+ll
+sudo nano ~/.bashrc 
+reload
+export PATH="${PATH//\/home\/franck\/script_perso/}:/script_perso"
+eco $PATH
+echo $PATH
+clean_path.sh 
+export PATH=$(echo "$PATH" | awk -v RS=: -v ORS=: '!seen[$0]++' | sed 's/:$//; s/::/:/g')
+clean_path.sh 
+sudo nano ~/.bashrc 
+reload
+sudo nano /etc/profile
+sudo source /etc/profile
+source /etc/profile
+reload
+sudo nano ~/.bashrc 
+reload
+sudo cat histo_fd.sh 
+./histo.sh 
+histo.sh 
+sudo nano  histo_fd.sh 
+history 10
+./histo.sh
+./histo.sh 10
+./histo_fd.sh 10
+histo_fd.sh 10
+ll
+make main
+make
+./prog.exe
+make
+./prog.exe
+make
+./prog.exe
+./histo.sh 400
+history 10
+tail -n 20 histor
+./histo.sh 400
+histo.sh 
+./histo.sh 400
+history 10
+histo.sh 10
+./histo.sh 10
+./histo.sh -h
+./histo.sh 10
+history
+./histo.sh 10
+cat history 2
+./histo.sh 10
+./histo.sh
+history -a
+~
+ll
+..
+ll
+..
+ll
+sudo nano ~/.bashrc 
+cd home/
+ll
+cd ..
+sudo nano ~/.bashrc 
+sudo mkdir script_perso 
+cd script_perso/
+sudo nano histo_fd.sh
+ll
+mnt
+cd prog_C_vers_C++/exos/tp_history_cpp/
+histo_FD.sh
+reload
+histo_FD.sh
+./histo_FD.sh
+./histo_fd.sh
+histo_fd.sh
+cd ~
+ll
+..
+pwd
+ll
+cd script_perso/
+sudo chmod 777 histo_fd.sh 
+export PATH=$(echo "$PATH" | awk -v RS=':' '!seen[$0]++' | paste -sd ':' -)
+sudo nano clean_path.sh
+reload
+sudo chmod 777 clean_path.sh
+clean_path.sh
+dos2unix clean_path.sh 
+sudo dos2unix clean_path.sh 
+ll
+dos2unix ./histo_fd.sh 
+sudo dos2unix ./histo_fd.sh 
+histo_fd.sh 
+ll
+..
+ll
+cd script_perso/
+histo_fd.sh 
+sudo nano histo_fd.sh 
+sudo chmod 777  histo_fd.sh 
+ll
+sudo nano ~/.bashrc 
+reload
+export PATH="${PATH//\/home\/franck\/script_perso/}:/script_perso"
+eco $PATH
+echo $PATH
+clean_path.sh 
+export PATH=$(echo "$PATH" | awk -v RS=: -v ORS=: '!seen[$0]++' | sed 's/:$//; s/::/:/g')
+clean_path.sh 
+sudo nano ~/.bashrc 
+reload
+sudo nano /etc/profile
+sudo source /etc/profile
+source /etc/profile
+reload
+sudo nano ~/.bashrc 
+reload
+sudo cat histo_fd.sh 
+./histo.sh 
+histo.sh 
+sudo nano  histo_fd.sh 
+history 10
+./histo.sh
+./histo.sh 10
+./histo_fd.sh 10
+histo_fd.sh 10
+ll
+make main
+make
+./prog.exe
+make
+./prog.exe
+make
+./prog.exe

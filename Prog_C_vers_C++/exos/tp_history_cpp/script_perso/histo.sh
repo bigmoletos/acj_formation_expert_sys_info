@@ -29,10 +29,10 @@ nombre_ligne=${1:-100}
 history -a
 
 # Lire les dernières lignes de ~/.bash_history et ajouter dans le fichier de sortie
-tail -n "$nombre_ligne" ~/.bash_history | sed 's/^[[:space:]]*[0-9]\+[[:space:]]\+//' | grep . >> "$output_file$extension"
+tail -n "$nombre_ligne" ~/.bash_history | sed 's/^[[:space:]]*[0-9]\+[[:space:]]\+//' | grep . >> "./data/""$output_file$extension"
 
 # Supprimer les doublons en gardant l'ordre d'apparition et écrire dans le fichier sans doublons
-awk '!seen[$0]++' "$output_file$extension" > "$output_file_sans_doublon$extension"
+awk '!seen[$0]++' "./data/""$output_file$extension" > "./data/""$output_file_sans_doublon$extension"
 
 # Message de confirmation
 echo "Fichiers: '$output_file$extension' et '$output_file_sans_doublon$extension' sauvegardés."
