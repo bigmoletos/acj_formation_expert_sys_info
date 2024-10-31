@@ -5,7 +5,7 @@
 #include <cstdlib> // Pour rand() et srand()
 #include <ctime>   // Pour initialiser srand() avec l'heure actuelle
 #include <chrono>  // Pour les fonctions de chronométrage
-#include "header.hpp"
+// #include "header.hpp"
 #include "menu.hpp"
 #include "chrono.hpp"
 #include "charge_fichier_txt.hpp"
@@ -62,6 +62,13 @@ int main()
     //----------CHARGEMENT FICHIER--------------
     // Création de l'objet ChargeFichierTxt
     ChargeFichierTxt chargeur(cheminFichier);
+
+    // Charger le fichier avant d'utiliser son contenu
+    if (!chargeur.charger())
+    {
+        std::cerr << "Le chargement du fichier a échoué." << std::endl;
+        exit (1); // Quitter si le chargement échoue
+    }
 
     //----------OCCURRENCES--------------
     // Compter les occurrences des commandes
