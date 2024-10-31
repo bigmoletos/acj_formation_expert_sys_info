@@ -57,3 +57,9 @@ xml = pytesseract.image_to_alto_xml(copie_texte_png)
 # currently supports mix and match of the following: txt, pdf, hocr, box, tsv
 text, boxes = pytesseract.run_and_get_multiple_output(
     copie_texte_png, extensions=['txt', 'box'])
+
+
+
+# pytesseract.image_to_string(img).replace(" ",
+#                                          "").replace("\n",
+#                                                      "").replace("\r", "")
