@@ -17,7 +17,7 @@ SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 
 # Nom de l'exécutable
-TARGET = $(BIN_DIR)/mon_programme
+TARGET = $(BIN_DIR)/mon_programme.exe
 
 # Règle par défaut
 all: $(TARGET)

@@ -1,6 +1,8 @@
 #include "menu.hpp"
 #include <iostream>
 #include <limits>
+#include <algorithm> // Pour std::transform
+#include <cctype>    // Pour std::tolower
 
 Menu::Menu()
     : optionsMessages{
@@ -49,7 +51,12 @@ void Menu::afficherMessageChoix(int choix) const
 {
     if (choix >= 1 && choix <= static_cast<int>(optionsMessages.size()))
     {
-        std::cout << "Vous avez choisi l'option " << choix << " pour " << optionsMessages[choix - 1] << std::endl;
+        // Copie du message en minuscule
+        std::string message = optionsMessages[choix - 1];
+        std::transform(message.begin(), message.end(), message.begin(), [](unsigned char c)
+                       { return std::tolower(c); });
+
+        std::cout << "Vous avez choisi l'option " << choix << " \"" << message << "\" " << std::endl;
     }
     else
     {
