@@ -7,8 +7,8 @@
 class Menu
 {
 public:
-    // Constructeur
-    Menu();
+    // Constructeur prenant un reference constante vers les messages d'options
+    Menu(const std::vector<std::string>& optionsMessages);
 
     // Méthode pour afficher le menu des options
     void afficherMenu() const;
@@ -20,8 +20,7 @@ public:
     void afficherMessageChoix(int choix) const;
 
 private:
-    // Vector pour stocker les messages de chaque option
-    std::vector<std::string> optionsMessages;
+    const std::vector<std::string> &optionsMessages; // reference constante vers les messages d'options
 };
 
 #endif // __MENU_HPP__
