@@ -1,30 +1,57 @@
-# Variables
-CC = g++
-CFLAGS = -Wall -Wextra -Wunused-const-variable -Wunused-parameter -Werror
-TARGET = prog.exe
-SRC = $(wildcard *.cpp)  # Trouver tous les fichiers .cpp dans le répertoire
-OBJ = $(SRC:.cpp=.o)     # Convertir les noms de fichiers .cpp en .o
+# Makefile pour le projet
 
-# Règle principale pour compiler tous les fichiers en un exécutable
+# Compilateur et options de compilation
+CXX = g++
+CXXFLAGS = -Wall -Iinclude
+
+# Dossiers
+SRC_DIR = src
+INCLUDE_DIR = include
+BUILD_DIR = build
+BIN_DIR = bin
+DATA_DIR = data
+SCRIPT_DIR = script_perso
+
+# Fichiers source et objets
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
+OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
+
+# Nom de l'exécutable
+TARGET = $(BIN_DIR)/mon_programme
+
+# Règle par défaut
 all: $(TARGET)
 
-$(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(TARGET)
+# Compilation de l'exécutable
+$(TARGET): $(OBJS) | $(BIN_DIR)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Règle générique pour compiler les fichiers .cpp en .o
-%.o: %.cpp %.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+# Compilation des fichiers objets
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp | $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Nettoyage de tous les fichiers objets et de l'exécutable
+# Création des dossiers
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
+# Nettoyage des fichiers générés
 clean:
-	rm -f $(OBJ) $(TARGET)
-	@echo "Nettoyage des fichiers objets et de $(TARGET) terminé."
+	rm -rf $(BUILD_DIR)/*.o $(TARGET)
 
-# Nettoyer un fichier spécifique
-clean-%:
-	@if [ "$*" ]; then \
-		rm -f $*; \
-		echo "$* supprimé."; \
-	else \
-		echo "Spécifiez un fichier à supprimer, par exemple : make clean-fichier.o"; \
-	fi
+# Affichage de l'aide
+help:
+	@echo "Utilisation du Makefile :"
+	@echo "  make all       : Compile le projet et génère l'exécutable dans $(BIN_DIR)"
+	@echo "  make clean     : Supprime les fichiers objets et l'exécutable"
+	@echo "  make help      : Affiche cette aide"
+	@echo ""
+	@echo "Dossiers du projet :"
+	@echo "  $(SRC_DIR)     : Contient les fichiers source (.cpp)"
+	@echo "  $(INCLUDE_DIR) : Contient les fichiers d'en-tête (.hpp)"
+	@echo "  $(BUILD_DIR)   : Contient les fichiers objets générés (.o)"
+	@echo "  $(BIN_DIR)     : Contient l'exécutable final"
+	@echo "  $(DATA_DIR)    : Contient les fichiers de données"
+	@echo "  $(SCRIPT_DIR)  : Contient les scripts auxiliaires"

@@ -1,4 +1,5 @@
-#include "header.hpp"
+// #include "header.hpp"
+#include "charge_fichier_txt.hpp"
 #include <iostream>
 #include <fstream>
 #include <sys/stat.h> // Pour vérifier l'existence du fichier
