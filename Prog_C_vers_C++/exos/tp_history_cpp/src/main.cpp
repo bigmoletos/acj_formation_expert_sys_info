@@ -5,7 +5,6 @@
 #include <cstdlib> // Pour rand() et srand()
 #include <ctime>   // Pour initialiser srand() avec l'heure actuelle
 #include <chrono>  // Pour les fonctions de chronométrage
-// #include "header.hpp"
 #include "menu.hpp"
 #include "chrono.hpp"
 #include "charge_fichier_txt.hpp"
@@ -14,38 +13,38 @@
 #include "fichier_historique.hpp"
 #include "logger.hpp"
 
-/*
-1- coder une commande shell nommée hist_stats
-2 -celle-ci calcule la répartition des commandes shell utilisées
-3 - ajouter cette commande hist_stats à votre PATH
+/**
+ * @file main.cpp
+ * @brief Programme principal qui gère un menu pour différentes actions sur des fichiers de commandes shell.
+ *
+ * Ce programme charge et analyse des fichiers de commandes shell, calcule des occurrences de commandes,
+ * et affiche les résultats selon le choix de l'utilisateur dans un menu interactif. Il utilise une classe
+ * Logger pour gérer les affichages à différents niveaux de log.
+ */
 
-Arguments de la ligne de commande :
-
-hstF : fichier texte contenant l'historique des commandes shell
-vldF : fichier texte contenant les commandes shell à considérer
-genF : fichier texte généré enregistrant la répartition
-sudo : prise en considération des commandes exécutées en tant qu’administrateur
-verb : affichage de toutes les informations au cours du traitement
-updt : mise à jour éventuelle du fichier de commandes
-Résultats :
-
-affichage des messages d’erreurs éventuels et des informations à l’écran
-enregistrement de la répartition dans un fichier texte
-mise à jour éventuelle du fichier de commandes
-*/
-
+/**
+ * @brief Fonction principale du programme.
+ *
+ * Cette fonction :
+ * 1. Initialise des variables pour le chargement de fichiers et les messages de menu.
+ * 2. Démarre le chronométrage pour mesurer le temps d'exécution.
+ * 3. Crée un objet Logger pour gérer les messages d'affichage.
+ * 4. Charge un fichier d'historique de commandes shell.
+ * 5. Affiche un menu interactif permettant à l'utilisateur de sélectionner une option.
+ * 6. Exécute des actions selon le choix de l'utilisateur (par ex., calcul d'occurrences, affichage de commandes).
+ * 7. Affiche le temps d'exécution.
+ *
+ * @return 0 en cas de succès, 1 si le chargement initial du fichier échoue.
+ */
 int main()
 {
     //----------INIT VARIABLES--------------
-    int menu_choix{0};
-    bool affichage_choix{true};
-    // Chemin du fichier à charger
-    std::string cheminFichier = "data/fichier_historique.txt";
-    // Chemin du fichier des commandes usuelles
-    std::string cheminFichierCOmmandesUsuelles = "data/commande_shell_usuelles.txt";
-    // Chemin des scripts SH
-    std::string cheminScriptSh = "./script_perso/histo.sh";
-    // Initialisation des messages d'options
+    int menu_choix{0};                                                               // Choix de l'utilisateur pour le menu
+    std::string cheminFichier = "data/fichier_historique.txt";                       // Chemin du fichier d'historique de commandes
+    std::string cheminFichierCOmmandesUsuelles = "data/commande_shell_usuelles.txt"; // Chemin du fichier des commandes usuelles
+    std::string cheminScriptSh = "./script_perso/histo.sh";                          // Chemin du script shell pour créer un historique
+
+    // Messages à afficher dans le menu
     std::vector<std::string> optionsMenuMessages{
         "Creer le fichier historique des commandes shell",
         "Lecture du fichier des commandes shell usuelles",
@@ -56,95 +55,101 @@ int main()
         "Sortir du programme"};
 
     //----------DEPART CHRONO--------------
-    //------ Point de départ pour le chronométrage
+    // Démarrage du chronométrage pour mesurer le temps d'exécution de tout le programme
     std::chrono::high_resolution_clock::time_point start_time;
-    // Démarrage du chronométrage
     chrono_start(start_time);
 
     //----------LOGGER-------------
-    Logger logger(LogLevel::DEBUG); // Niveau de log initialisé à DEBUG
+    std::string niveau_logger = "DEBUG";
+    Logger logger(LogLevel::niveau_logger); // Initialisation du logger avec un niveau de log à DEBUG
+
     //----------CHARGEMENT FICHIER--------------
-    // Création de l'objet ChargeFichierTxt
+    // Chargement du fichier d'historique de commandes
     ChargeFichierTxt chargeur(cheminFichier);
-    // Création de l'objet ChargeFichierTxt
     ChargeFichierTxt chargeur2(cheminFichierCOmmandesUsuelles);
 
-    // Charger le fichier avant d'utiliser son contenu
+    // Si le chargement du fichier échoue, affiche un message d'erreur et quitte le programme
     if (!chargeur.charger())
     {
-        std::cerr << "Le chargement du fichier a échoué." << std::endl;
-        exit(1); // Quitter si le chargement échoue
+        logger.error("Le chargement du fichier a échoué.");
+        exit(1);
     }
 
     //----------OCCURRENCES--------------
-    // Compter les occurrences des commandes
+    // Initialisation de l'objet NombreOccurrence pour calculer les occurrences de commandes
     NombreOccurrence nombreOccur(chargeur.getLignes());
-    // std::vector<std::string> sudoCommandes;
 
     //-------MENU-------------
-    // Affichage et gestion du menu
-
+    // Affichage et gestion du menu interactif
     Menu menu(optionsMenuMessages);
     menu.afficherMenu();
     menu_choix = menu.obtenirChoix();
     menu.afficherMessageChoix(menu_choix);
 
+    //----------SWITCH SUR LE CHOIX--------------
+    // Exécution de l'action correspondant au choix de l'utilisateur
     switch (menu_choix)
     {
     case 1:
-        // Appeler la méthode pour créer le fichier historique
+        // Option 1 : Création du fichier historique via un script shell
+        logger.info("Création du fichier historique en cours...");
         creerFichierHistorique(cheminScriptSh);
         break;
 
     case 2:
-        // Chargement du fichier
+        // Option 2 : Chargement et affichage du fichier des commandes usuelles
         if (chargeur2.charger())
         {
-            // Affichage du contenu si le chargement est réussi
-            std::cout << "Contenu du fichier " << cheminFichierCOmmandesUsuelles << " :" << std::endl;
+            logger.info("Contenu du fichier des commandes usuelles chargé avec succès :");
             for (const auto &ligne : chargeur2.getLignes())
             {
-                std::cout << ligne << std::endl;
+                logger.debug(ligne); // Affichage de chaque ligne pour vérification en mode DEBUG
             }
         }
         else
         {
-            std::cerr << "Le chargement du fichier a échoué." << std::endl;
+            logger.error("Le chargement du fichier des commandes usuelles a échoué.");
         }
         break;
 
     case 3:
-
-        // Compter les occurrences des commandes
+        // Option 3 : Calcul et affichage des occurrences de chaque commande
+        logger.info("Calcul des occurrences des commandes...");
         nombreOccur.calculerOccurrences();
         nombreOccur.afficherOccurrences();
         break;
 
     case 4:
     {
+        // Option 4 : Affichage des commandes qui commencent par 'sudo'
         nombreOccur.calculerOccurrences();
         std::vector<std::string> sudoCommandes = nombreOccur.getCommandesAvecSudo();
-        std::cout << "Commandes qui commencent par 'sudo' :" << std::endl;
+        logger.info("Commandes qui commencent par 'sudo' :");
         for (const auto &cmd : sudoCommandes)
         {
-            std::cout << cmd << std::endl;
+            logger.debug(cmd); // Affiche chaque commande en mode DEBUG
         }
         break;
     }
-        break;
+
     case 5:
+        // Option 5 : Traitement sans affichage console
+        logger.info("Traitement sans affichage console démarré.");
         break;
 
     case 6:
+        // Option 6 : Mise à jour du fichier des commandes shell
+        logger.info("Mise à jour du fichier des commandes shell en cours...");
         break;
 
     case 7:
-        break;
-
-    case 8:
+        // Option 7 : Sortie du programme
+        logger.info("Sortie du programme.");
         return 0;
 
     default:
+        // Option non reconnue
+        logger.warning("Option non reconnue.");
         break;
     }
 
