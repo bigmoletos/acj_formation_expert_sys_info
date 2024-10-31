@@ -62,32 +62,15 @@ int main()
     menu.afficherMenu();
     menu_choix = menu.obtenirChoix();
     menu.afficherMessageChoix(menu_choix);
-    // // Menu avec les choix
-    // std::cout << "Choisissez votre option:\n"
-    //           << "1. Creer le fichier historique des commandes shell\n"
-    //           << "2. Lecture du fichier des commandes shell usuelles\n"
-    //           << "3. Affichage du nombres d'occurences des commandes shell\n"
-    //           << "4. Prise en compte des commandes sudo\n"
-    //           << "5. Inverser la casse des caractères\n"
-    //           << "6. Traitement sans affichage console\n"
-    //           << "7. Mise à jour du fichier des commandes shell\n"
-    //           << "8. Sortir du programme\n";
-    // std::cin >> menu_choix;
+
     switch (menu_choix)
     {
     case 1:
-        // std::cout << "Vous avez choisi l'option:" << menu_choix << std::endl;
-        // menu.afficherMessageChoix(menu_choix);
-        // menu.creerFichierHistorique();
-        creerFichierHistorique(cheminScriptSh);
         // Appeler la méthode pour créer le fichier historique
-        // MenuOptions::creerFichierHistorique();
-        // MenuOptions::creerFichierHistorique(cheminScriptSh);
+        creerFichierHistorique(cheminScriptSh);
         break;
 
     case 2:
-        std::cout << "Vous avez choisi l'option:" << menu_choix << std::endl;
-
         // Chargement du fichier
         if (chargeur.charger())
         {
@@ -105,7 +88,6 @@ int main()
         break;
 
     case 3:
-        std::cout << "Vous avez choisi l'option:" << menu_choix << std::endl;
 
         // Compter les occurrences des commandes
         nombreOccur.calculerOccurrences();
@@ -113,27 +95,22 @@ int main()
         break;
 
     case 4:
-        std::cout << "Vous avez choisi l'option: " << menu_choix << std::endl;
+
         break;
 
     case 5:
-        std::cout << "Vous avez choisi l'option: " << menu_choix << std::endl;
         break;
 
     case 6:
-        std::cout << "Vous avez choisi l'option:" << menu_choix << std::endl;
         break;
 
     case 7:
-        std::cout << "Vous avez choisi l'option:" << menu_choix << std::endl;
         break;
 
     case 8:
-        std::cout << "Sortie du programme." << std::endl;
         return 0;
 
     default:
-        std::cerr << "Option non reconnue." << std::endl;
         break;
     }
 
