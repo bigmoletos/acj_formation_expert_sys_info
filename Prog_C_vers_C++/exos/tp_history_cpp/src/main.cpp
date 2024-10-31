@@ -12,6 +12,7 @@
 #include "nombre_occurence.hpp"
 #include "tableau_depuis_fichier.hpp"
 #include "fichier_historique.hpp"
+#include "logger.hpp"
 
 /*
 1- coder une commande shell nommée hist_stats
@@ -37,7 +38,7 @@ int main()
 {
     //----------INIT VARIABLES--------------
     int menu_choix{0};
-    // bool affichage_choix{true};
+    bool affichage_choix{true};
     // Chemin du fichier à charger
     std::string cheminFichier = "data/fichier_historique.txt";
     // Chemin du fichier des commandes usuelles
@@ -50,7 +51,6 @@ int main()
         "Lecture du fichier des commandes shell usuelles",
         "Affichage du nombre d'occurrences des commandes shell",
         "Prise en compte des commandes sudo",
-        "Inverser la casse des caractères",
         "Traitement sans affichage console",
         "Mise à jour du fichier des commandes shell",
         "Sortir du programme"};
@@ -61,6 +61,8 @@ int main()
     // Démarrage du chronométrage
     chrono_start(start_time);
 
+    //----------LOGGER-------------
+    Logger logger(LogLevel::DEBUG); // Niveau de log initialisé à DEBUG
     //----------CHARGEMENT FICHIER--------------
     // Création de l'objet ChargeFichierTxt
     ChargeFichierTxt chargeur(cheminFichier);
