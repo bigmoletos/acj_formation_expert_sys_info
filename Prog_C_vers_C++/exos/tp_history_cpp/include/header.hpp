@@ -35,23 +35,23 @@
 //     bool estFichierTexteOuCSV() const; // Vérifie si le fichier est de type .txt ou .csv
 //     };
 
-    // -------Fonctions nombre d'occurences-------------
-    class NombreOccurrence
-    {
-    public:
-        // Constructeur qui prend les lignes d'un fichier d'historique en entrée
-        NombreOccurrence(const std::vector<std::string> &lignes);
+    // // -------Fonctions nombre d'occurences-------------
+    // class NombreOccurrence
+    // {
+    // public:
+    //     // Constructeur qui prend les lignes d'un fichier d'historique en entrée
+    //     NombreOccurrence(const std::vector<std::string> &lignes);
 
-        // Méthode pour calculer les occurrences des commandes
-        void calculerOccurrences();
+    //     // Méthode pour calculer les occurrences des commandes
+    //     void calculerOccurrences();
 
-        // Méthode pour afficher les commandes et leur nombre d'occurrences, triées par ordre décroissant
-        void afficherOccurrences() const;
+    //     // Méthode pour afficher les commandes et leur nombre d'occurrences, triées par ordre décroissant
+    //     void afficherOccurrences() const;
 
-    private:
-        std::unordered_map<std::string, int> occurrences; // Map pour stocker le nombre d'occurrences de chaque commande
-        std::vector<std::string> lignesFichier;           // Contenu du fichier d'historique
-    };
+    // private:
+    //     std::unordered_map<std::string, int> occurrences; // Map pour stocker le nombre d'occurrences de chaque commande
+    //     std::vector<std::string> lignesFichier;           // Contenu du fichier d'historique
+    // };
 
     // // -------Fonctions pour mesurer le temps-----------------
     // // Déclaration des fonctions pour mesurer le temps

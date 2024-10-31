@@ -42,6 +42,16 @@ int main()
     std::string cheminFichier = "data/fichier_historique.txt";
     // Chemin des scripts SH
     std::string cheminScriptSh = "./script_perso/histo.sh";
+    // Initialisation des messages d'options
+    std::vector<std::string> optionsMenuMessages{
+        "Creer le fichier historique des commandes shell",
+        "Lecture du fichier des commandes shell usuelles",
+        "Affichage du nombre d'occurrences des commandes shell",
+        "Prise en compte des commandes sudo",
+        "Inverser la casse des caractères",
+        "Traitement sans affichage console",
+        "Mise à jour du fichier des commandes shell",
+        "Sortir du programme"};
 
     //----------DEPART CHRONO--------------
     //------ Point de départ pour le chronométrage
@@ -53,12 +63,14 @@ int main()
     // Création de l'objet ChargeFichierTxt
     ChargeFichierTxt chargeur(cheminFichier);
 
+    //----------OCCURRENCES--------------
     // Compter les occurrences des commandes
     NombreOccurrence nombreOccur(chargeur.getLignes());
 
     //-------MENU-------------
     // Affichage et gestion du menu
-    Menu menu;
+
+    Menu menu(optionsMenuMessages);
     menu.afficherMenu();
     menu_choix = menu.obtenirChoix();
     menu.afficherMessageChoix(menu_choix);
@@ -112,11 +124,11 @@ int main()
 
     default:
         break;
+        }
+
+        //----------FIN CHRONO--------------
+        // Fin du chronométrage et affichage du temps écoulé
+        chrono_end(start_time, "Temps d'exécution de la tâche simulée");
+
+        return 0;
     }
-
-    //----------FIN CHRONO--------------
-    // Fin du chronométrage et affichage du temps écoulé
-    chrono_end(start_time, "Temps d'exécution de la tâche simulée");
-
-    return 0;
-}
