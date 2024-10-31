@@ -31,17 +31,24 @@ void NombreOccurrence::calculerOccurrences()
 {
     for (const auto &ligne : lignesFichier)
     {
-        // Crée un flux de chaîne pour analyser la ligne
-        std::istringstream iss(ligne);
-        std::string commande;
-
-        // Extrait la première "commande" de la ligne
-        iss >> commande;
-
-        // Si la commande n'est pas vide, incrémente son compteur dans la map
-        if (!commande.empty())
+        // Vérifie si la ligne commence par "sudo"
+        if (ligne.rfind("sudo", 0) == 0)
         {
-            occurrences[commande]++; // Enregistre ou incrémente l'occurrence de la commande
+            occurrences[ligne]++; // Stocke la ligne entière en tant que clé
+            std::cout << "Commande lue (sudo) : " << ligne << " (" << occurrences[ligne] << " occurrences)" << std::endl;
+        }
+        else
+        {
+            // Traite normalement les autres lignes pour extraire la commande
+            std::istringstream iss(ligne);
+            std::string commande;
+            iss >> commande;
+
+            if (!commande.empty())
+            {
+                occurrences[commande]++;
+                std::cout << "Commande lue : " << commande << " (" << occurrences[commande] << " occurrences)" << std::endl;
+            }
         }
     }
 }
@@ -71,4 +78,29 @@ void NombreOccurrence::afficherOccurrences() const
     {
         std::cout << pair.first << " : " << pair.second << std::endl;
     }
+}
+
+/**
+ * @brief Renvoie la liste des commandes qui commencent par "sudo".
+ *
+ * Cette méthode parcourt toutes les commandes stockées dans `occurrences`
+ * et collecte celles dont le nom commence par "sudo".
+ *
+ * @return Vecteur de chaînes de caractères contenant les commandes qui commencent par "sudo".
+ */
+std::vector<std::string> NombreOccurrence::getCommandesAvecSudo() const
+{
+    std::vector<std::string> commandesAvecSudo;
+
+    for (const auto &pair : occurrences)
+    {
+        // Vérifie si la commande commence par "sudo"
+        if (pair.first.rfind("sudo", 0) == 0)
+        {
+            commandesAvecSudo.push_back(pair.first);
+            std::cout << "Ajout de la commande avec sudo : " << pair.first << std::endl;
+        }
+    }
+
+    return commandesAvecSudo;
 }

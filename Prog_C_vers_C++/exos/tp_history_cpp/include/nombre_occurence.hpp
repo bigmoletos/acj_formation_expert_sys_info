@@ -17,6 +17,9 @@ public:
     // Méthode pour afficher les commandes et leur nombre d'occurrences, triées par ordre décroissant
     void afficherOccurrences() const;
 
+    // Méthode pour obtenir la liste des commandes qui commencent par "sudo"
+    std::vector<std::string> getCommandesAvecSudo() const;
+
 private:
     std::vector<std::string> lignesFichier;           // Contient les lignes du fichier
     std::unordered_map<std::string, int> occurrences; // Map pour stocker les occurrences des commandes

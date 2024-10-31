@@ -40,6 +40,8 @@ int main()
     // bool affichage_choix{true};
     // Chemin du fichier à charger
     std::string cheminFichier = "data/fichier_historique.txt";
+    // Chemin du fichier des commandes usuelles
+    std::string cheminFichierCOmmandesUsuelles = "data/commande_shell_usuelles.txt";
     // Chemin des scripts SH
     std::string cheminScriptSh = "./script_perso/histo.sh";
     // Initialisation des messages d'options
@@ -62,17 +64,20 @@ int main()
     //----------CHARGEMENT FICHIER--------------
     // Création de l'objet ChargeFichierTxt
     ChargeFichierTxt chargeur(cheminFichier);
+    // Création de l'objet ChargeFichierTxt
+    ChargeFichierTxt chargeur2(cheminFichierCOmmandesUsuelles);
 
     // Charger le fichier avant d'utiliser son contenu
     if (!chargeur.charger())
     {
         std::cerr << "Le chargement du fichier a échoué." << std::endl;
-        exit (1); // Quitter si le chargement échoue
+        exit(1); // Quitter si le chargement échoue
     }
 
     //----------OCCURRENCES--------------
     // Compter les occurrences des commandes
     NombreOccurrence nombreOccur(chargeur.getLignes());
+    // std::vector<std::string> sudoCommandes;
 
     //-------MENU-------------
     // Affichage et gestion du menu
@@ -91,11 +96,11 @@ int main()
 
     case 2:
         // Chargement du fichier
-        if (chargeur.charger())
+        if (chargeur2.charger())
         {
             // Affichage du contenu si le chargement est réussi
-            std::cout << "Contenu du fichier " << cheminFichier << " :" << std::endl;
-            for (const auto &ligne : chargeur.getLignes())
+            std::cout << "Contenu du fichier " << cheminFichierCOmmandesUsuelles << " :" << std::endl;
+            for (const auto &ligne : chargeur2.getLignes())
             {
                 std::cout << ligne << std::endl;
             }
@@ -114,9 +119,17 @@ int main()
         break;
 
     case 4:
-
+    {
+        nombreOccur.calculerOccurrences();
+        std::vector<std::string> sudoCommandes = nombreOccur.getCommandesAvecSudo();
+        std::cout << "Commandes qui commencent par 'sudo' :" << std::endl;
+        for (const auto &cmd : sudoCommandes)
+        {
+            std::cout << cmd << std::endl;
+        }
         break;
-
+    }
+        break;
     case 5:
         break;
 
@@ -131,11 +144,11 @@ int main()
 
     default:
         break;
-        }
-
-        //----------FIN CHRONO--------------
-        // Fin du chronométrage et affichage du temps écoulé
-        chrono_end(start_time, "Temps d'exécution de la tâche simulée");
-
-        return 0;
     }
+
+    //----------FIN CHRONO--------------
+    // Fin du chronométrage et affichage du temps écoulé
+    chrono_end(start_time, "Temps d'exécution de la tâche simulée");
+
+    return 0;
+}
