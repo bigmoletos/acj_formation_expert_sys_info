@@ -40,7 +40,7 @@ int main()
 {
     //----------LOGGER-------------
     // Configurer le niveau de log
-    std::string level_log = "DEBUG"; //  niveau de log
+    std::string level_log = "WARNING"; //  niveau de log
 
     if (level_log == "DEBUG")
     {
