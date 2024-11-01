@@ -9,7 +9,9 @@ enum class LogLevel
     INFO,
     WARNING,
     ERROR,
-    DEBUG
+    DEBUG,
+    CRITICAL,
+    DEFAULT // Niveau par défaut
 };
 
 class Logger
@@ -22,6 +24,7 @@ public:
     void warning(const std::string &message) const;
     void error(const std::string &message) const;
     void debug(const std::string &message) const;
+    void critical(const std::string &message) const;
 
     // Méthode pour définir le niveau de log
     void setLevel(LogLevel level);
@@ -35,5 +38,8 @@ private:
     // Méthode pour obtenir le préfixe coloré en fonction du niveau
     std::string getLevelPrefix(LogLevel level) const;
 };
+
+// Déclaration d'un logger global
+extern Logger logger;
 
 #endif // LOGGER_HPP

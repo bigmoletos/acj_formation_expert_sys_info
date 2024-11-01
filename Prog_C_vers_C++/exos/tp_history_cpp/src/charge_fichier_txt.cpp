@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <sys/stat.h> // Pour vérifier l'existence du fichier
+#include "logger.hpp" // Inclusion du fichier logger
+
 
 // Constructeur
 ChargeFichierTxt::ChargeFichierTxt(const std::string &chemin)
@@ -29,14 +31,17 @@ bool ChargeFichierTxt::charger()
     // Vérification du fichier
     if (!verifierFichier())
     {
-        std::cerr << "Erreur : Le fichier " << cheminFichier << " n'existe pas ou n'est pas accessible." << std::endl;
+        // std::cerr << "Erreur : Le fichier " << cheminFichier << " n'existe pas ou n'est pas accessible." << std::endl;
+        logger.error("Erreur : Le fichier " + cheminFichier + " n'existe pas ou n'est pas accessible.");
         return false;
     }
 
     // Vérification du type de fichier
     if (!estFichierTexteOuCSV())
     {
-        std::cerr << "Erreur : Le fichier doit être au format .txt ou .csv." << std::endl;
+        // std::cerr << "Erreur : Le fichier doit être au format .txt ou .csv." << std::endl;
+        logger.error("Erreur : Le fichier doit être au format .txt ou .csv.");
+
         return false;
     }
 
@@ -44,7 +49,8 @@ bool ChargeFichierTxt::charger()
     std::ifstream fichier(cheminFichier);
     if (!fichier.is_open())
     {
-        std::cerr << "Erreur : Impossible d'ouvrir le fichier " << cheminFichier << std::endl;
+        // std::cerr << "Erreur : Impossible d'ouvrir le fichier " << cheminFichier << std::endl;
+        logger.error("Erreur : Impossible d'ouvrir le fichier " + cheminFichier);
         return false;
     }
 
