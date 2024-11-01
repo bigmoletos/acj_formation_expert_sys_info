@@ -1,5 +1,6 @@
-# Installation kubernetes
-* Recommandations :
+# Installation kubernetes sur VM UBUNTU
+
+## Recommandations
 
 ```bash
 2 Gb ram
@@ -9,6 +10,7 @@ Ports master : 6443 2379-2380 10250 10251 10252
 Ports node : 10250 30000-32767
 pas de swap
 ```
+
 ## ajout droit sudo au user
 
 ```bash
@@ -26,6 +28,9 @@ exit
 ```bash
 # mettre master sur une des machines et worker sur l'autre
 sudo nano /etc/hostname
+# pour appliquer le nouveau hostname
+exec bash
+
 #  rajouter les ip master et worker dans le fichier hosts à faire sur les 2 VM
 sudo nano /etc/hosts
 
@@ -44,7 +49,9 @@ sudo nano /etc/hosts
 # ff02::2 ip6-allrouters
 
 ```
+
 ## installation docker
+
 ```bash
 curl -fsSL https://get.docker.com | sh;
 sudo usermod -aG docker $USER
@@ -225,7 +232,7 @@ sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNA
 
 ```
 
-# -----------------DEBUG pour le init fonctionnel -------------------------
+## -----------------DEBUG pour le init fonctionnel -------------------------
 
 ```Shell
 
@@ -243,13 +250,23 @@ sudo kubeadm reset
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.1.79
 
 ```
-## l'init nous donne
 
-kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 \
-        --discovery-token-ca-cert-hash sha256:3945b98fc1eefdd9bb6c1b8279de39d96de7f98d1994e25c949def994c6fd7f8
-# ----------------- FIN DEBUG OK -------------------------
+### l'init nous donne
 
-# Configuration de kubectl
+```Shell
+kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 --discovery-token-ca-cert-hash sha256:3945b98fc1eefdd9bb6c1b8279de39d96de7f98d1994e25c949def994c6fd7f8
+
+# Pour obtenir le token et le hash :
+kubeadm token list
+# Pour creer un nouveau token :
+kubeadm token create --print-join-command
+# Pour obtenir le hash :
+openssl x509 -in /etc/kubernetes/pki/ca.crt -noout -pubkey | openssl rsa -pubin -outform DER 2>/dev/null | sha256sum | cut -d' ' -f1
+```
+
+## ----------------- FIN DEBUG OK -------------------------
+
+### Configuration de kubectl
 
 ```Shell
 mkdir -p $HOME/.kube
@@ -259,12 +276,15 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 ## 8. Installation d'un plugin réseau (par exemple Flannel)
-bash
+
 ```Shell
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
+
 ## 9 Ajout des Worker Nodes au Cluster
+
 -  Sur chaque nœud worker, exécutez la commande fournie à la fin de l'initialisation du master :
+
 ```Shell
 sudo kubeadm join <IP_MASTER>:6443 --token <TOKEN> --discovery-token-ca-cert-hash sha256:<HASH>
 # Remplacez <TOKEN> et <HASH> par les valeurs fournies lors de l'initialisation.
@@ -272,8 +292,9 @@ sudo kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 --discovery-
 ```
 
 ## 10 Vérification de l'installation
+
 - Pour vérifier que le cluster fonctionne correctement :
-bash
+
 ```Shell
 kubectl get nodes
 kubectl get pods --all-namespaces
@@ -281,7 +302,6 @@ kubectl get pods --all-namespaces
 
 ## Déploiement d'une application simple
 - Pour tester votre cluster, déployez une application simple comme Nginx :
-bash
 ```Shell
 kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --port=80 --type=NodePort

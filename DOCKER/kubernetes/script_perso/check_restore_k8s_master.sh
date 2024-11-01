@@ -4,76 +4,10 @@
 LOG_FILE="k8s_master_install.log"
 SUMMARY_FILE="k8s_master_install_summary.md"
 
-# Fonction d'aide
-show_help() {
-    cat << EOF
-Usage: $0 [options]
-
-Script d'installation de Kubernetes Master
-
-Options:
-    -h, --help      Affiche cette aide
-    -y, --yes       Mode automatique (pas de demande de confirmation)
-
-Description:
-    Ce script effectue l'installation complète d'un nœud master Kubernetes.
-    Il réalise les actions suivantes :
-    - Vérifie les droits d'administration
-    - Configure le hostname
-    - Installe les prérequis et Docker
-    - Configure Kubernetes
-    - Initialise le cluster
-    - Génère un résumé des actions
-
-Prérequis:
-    - Ubuntu Server
-    - Droits root
-    - Connexion Internet
-
-Exemple:
-    sudo ./$(basename $0)         # Mode interactif
-    sudo ./$(basename $0) -y      # Mode automatique
-
-Logs:
-    - Journal détaillé : $LOG_FILE
-    - Résumé : $SUMMARY_FILE
-EOF
-    exit 0
-}
-
-# Traitement des arguments
-while [[ $# -gt 0 ]]; do
-    case $1 in
-        -h|--help)
-            show_help
-            ;;
-        -y|--yes)
-            AUTO_APPROVE=true
-            shift
-            ;;
-        *)
-            echo "Option invalide: $1"
-            show_help
-            ;;
-    esac
-done
-
 # Fonction pour logger les actions
 log_action() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a $LOG_FILE
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> $SUMMARY_FILE
-}
-
-# Fonction pour demander confirmation
-confirm() {
-    if [ "$AUTO_APPROVE" = true ]; then
-        return 0
-    fi
-    read -p "$1 (o/n): " response
-    case "$response" in
-        [oO]) return 0 ;;
-        *) return 1 ;;
-    esac
 }
 
 # Vérification des droits root
@@ -82,24 +16,30 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-# Initialisation du fichier de résumé
-cat > $SUMMARY_FILE << EOF
-# Installation de Kubernetes Master - Résumé
+# Configuration du hostname
+read -p "Entrez le nouveau hostname (master/worker1/worker2) : " new_hostname
 
-## Informations système
-- Date: $(date)
-- Hostname: $(hostname)
-- IP: $(ip route get 1 | awk '{print $7}')
-- Mode: $([[ "$AUTO_APPROVE" = true ]] && echo "Automatique" || echo "Interactif")
+# Validation du hostname
+case $new_hostname in
+    master|worker1|worker2)
+        # Modification du hostname
+        hostnamectl set-hostname $new_hostname
+        echo "127.0.0.1 $new_hostname" >> /etc/hosts
+        log_action "Hostname configuré : $new_hostname"
 
-## Actions réalisées
-EOF
+        echo "Hostname configuré. Le shell va être rechargé."
+        exec bash
+        ;;
+    *)
+        echo "Hostname invalide. Utilisez master, worker1 ou worker2"
+        exit 1
+        ;;
+esac
 
-# Installation via snap
-install_kubernetes_components() {
-    log_action "Installation des composants Kubernetes via snap..."
+install_kubernetes_snap() {
+    log_action "Installation de Kubernetes via snap..."
 
-    # Installation de snap si nécessaire
+    # Vérification/Installation de snap
     if ! command -v snap &> /dev/null; then
         apt-get update
         apt-get install -y snapd
@@ -164,7 +104,7 @@ log_action "Début de l'installation du master Kubernetes"
 
 # Installation des composants
 install_docker
-install_kubernetes_components
+install_kubernetes_snap
 
 # Configuration du master
 setup_master
@@ -172,4 +112,4 @@ setup_master
 log_action "Installation du master terminée"
 
 # Rechargement du shell
-exec bash
+exec bash 
