@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <cctype>
 #include <cstdio> // pour printf
+#include "logger.hpp" // Inclusion du fichier logger
 
 /**
  * @class Menu

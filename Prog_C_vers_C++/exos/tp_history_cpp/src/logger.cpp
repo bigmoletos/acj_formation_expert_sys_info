@@ -1,5 +1,7 @@
 #include "logger.hpp"
 
+// Initialisation du logger global avec le niveau par défaut
+Logger logger(LogLevel::DEFAULT);
 /**
  * @brief Constructeur de la classe Logger
  * @param level Niveau de log initial
@@ -41,6 +43,14 @@ void Logger::error(const std::string &message) const
 {
     logMessage(message, LogLevel::ERROR);
 }
+/**
+ * @brief Affiche un message d'erreur si le niveau est suffisant
+ * @param message Message à afficher
+ */
+void Logger::critical(const std::string &message) const
+{
+    logMessage(message, LogLevel::CRITICAL);
+}
 
 /**
  * @brief Affiche un message de débogage si le niveau est suffisant
@@ -81,6 +91,8 @@ std::string Logger::getLevelPrefix(LogLevel level) const
         return "\033[31m[ERROR] "; // Rouge
     case LogLevel::DEBUG:
         return "\033[34m[DEBUG] "; // Bleu
+    case LogLevel::CRITICAL:
+        return "\033[41m[CRITICAL] "; // rouge sur fond rouge
     default:
         return "[UNKNOWN] ";
     }

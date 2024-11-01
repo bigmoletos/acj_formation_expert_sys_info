@@ -38,6 +38,35 @@
  */
 int main()
 {
+    //----------LOGGER-------------
+    // Configurer le niveau de log
+    std::string level_log = "DEBUG"; //  niveau de log
+
+    if (level_log == "DEBUG")
+    {
+        logger.setLevel(LogLevel::DEBUG);
+    }
+    else if (level_log == "INFO")
+    {
+        logger.setLevel(LogLevel::INFO);
+    }
+    else if (level_log == "WARNING")
+    {
+        logger.setLevel(LogLevel::WARNING);
+    }
+    else if (level_log == "ERROR")
+    {
+        logger.setLevel(LogLevel::ERROR);
+    }
+    else if (level_log == "CRITICAL")
+    {
+        logger.setLevel(LogLevel::CRITICAL);
+    }
+    else
+    {
+        // Niveau par défaut si aucune correspondance n'est trouvée
+        logger.setLevel(LogLevel::DEFAULT);
+    }
     //----------INIT VARIABLES--------------
     int menu_choix{0};                                                               // Choix de l'utilisateur pour le menu
     std::string cheminFichier = "data/fichier_historique.txt";                       // Chemin du fichier d'historique de commandes
@@ -59,9 +88,6 @@ int main()
     std::chrono::high_resolution_clock::time_point start_time;
     chrono_start(start_time);
 
-    //----------LOGGER-------------
-    std::string niveau_logger = "DEBUG";
-    Logger logger(LogLevel::niveau_logger); // Initialisation du logger avec un niveau de log à DEBUG
 
     //----------CHARGEMENT FICHIER--------------
     // Chargement du fichier d'historique de commandes
