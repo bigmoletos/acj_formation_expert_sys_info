@@ -25,7 +25,6 @@ exit
 ## pre-requis Installation kubernetes
 
 ```bash
-```bash
 # mettre master sur une des machines et worker sur l'autre
 sudo nano /etc/hostname
 # pour appliquer le nouveau hostname
@@ -232,7 +231,7 @@ sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNA
 
 ```
 
-## -----------------DEBUG pour le init fonctionnel -------------------------
+## -----------------DEBUG OK pour le init fonctionnel -------------------------
 
 ```Shell
 
@@ -280,6 +279,45 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```Shell
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
+## -----------------  DEBUG FLANNEL OK -------------------------
+
+```Shell
+kubectl delete -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+# Suppression du namespace
+kubectl delete namespace kube-flannel
+# Nettoyage des fichiers Flannel
+sudo rm -rf /etc/cni/net.d/10-flannel*
+sudo rm -rf /run/flannel
+# Suppression de Calico
+kubectl delete -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
+# Suppression des CRDs Calico
+kubectl delete crd felixconfigurations.crd.projectcalico.org
+kubectl delete crd bgpconfigurations.crd.projectcalico.org
+kubectl delete crd ippools.crd.projectcalico.org
+kubectl delete crd ipamblocks.crd.projectcalico.org
+kubectl delete crd blockaffinities.crd.projectcalico.org
+kubectl delete crd hostendpoints.crd.projectcalico.org
+kubectl delete crd clusterinformations.crd.projectcalico.org
+kubectl delete crd networkpolicies.crd.projectcalico.org
+kubectl delete crd networksets.crd.projectcalico.org
+# Suppression des configurations CNI existantes
+sudo rm -rf /etc/cni/net.d/*
+sudo rm -rf /var/lib/cni/
+# Application de la configuration Flannel
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+sudo systemctl restart kubelet
+# Vérification des pods
+kubectl get pods -n kube-flannel
+# Vérification des logs
+kubectl get nodes -o wide
+# Vérifiez que le DaemonSet Flannel est correctement déployé
+kubectl get daemonset -n kube-flannel
+
+```
+
+## ----------------- FIN DEBUG FLANNEL OK -------------------------
+
+
 
 ## 9 Ajout des Worker Nodes au Cluster
 
