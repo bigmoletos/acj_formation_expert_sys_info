@@ -1,0 +1,12 @@
+ansible
+apt-transport-https
+conntrack
+containerd.io
+cri-tools
+docker-buildx-plugin
+docker-ce
+docker-ce-cli
+docker-ce-rootless-extras
+docker-compose-plugin
+ebtables
+socat

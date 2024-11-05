@@ -9,6 +9,7 @@ NODE_TYPE=""
 MASTER_IP=""
 MASTER_HOSTNAME="master"
 WORKER_HOSTNAME="worker"
+IP_MASTER="192.168.1.79"
 
 # Fonction d'aide
 show_help() {
@@ -83,6 +84,12 @@ check_prerequisites() {
     if ! grep -q "kubernetes" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
         log_action "Ajout du dépôt Kubernetes..."
         curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+        if [ $? -ne 0 ]; then
+            log_action "Erreur lors de l'ajout de la clé GPG. Tentative de résolution..."
+            apt-get install -y gnupg
+            curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+            check_command_success
+        fi
         cat <<EOF | tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
@@ -91,14 +98,11 @@ EOF
 
     # Vérifier la présence des dépendances nécessaires et leurs versions spécifiques
     local dependencies=(
-        "conntrack:1:1.4.5-2"
-        "ethtool:1:5.4-1"
-        "crictl:required"
+        "conntrack"
+        "ethtool"
+        "crictl"
     )
-    for dep_info in "${dependencies[@]}"; do
-        local dep=$(echo $dep_info | cut -d: -f1)
-        local required_version=$(echo $dep_info | cut -d: -f2)
-
+    for dep in "${dependencies[@]}"; do
         if ! command -v $dep &> /dev/null; then
             log_action "Dépendance manquante: $dep. Installation..."
             apt_output=$(apt-get update 2>&1)
@@ -118,14 +122,6 @@ EOF
                 handle_apt_errors "$apt_output"
             fi
             check_command_success
-        else
-            local installed_version=$(dpkg -s $dep | grep Version | awk '{print $2}')
-            if [ "$required_version" != "required" ] && [ "$installed_version" != "$required_version" ]; then
-                log_action "Version différente pour $dep. Installation de la version requise..."
-                apt_output=$(apt-get install -y $dep=$required_version 2>&1)
-                handle_apt_errors "$apt_output"
-                check_command_success
-            fi
         fi
     done
 
@@ -134,8 +130,7 @@ EOF
         log_action "Le port 10250 est déjà utilisé. Tentative de libération du port..."
         fuser -k 10250/tcp
         if lsof -i:10250 &> /dev/null; then
-            log_action "Impossible de libérer le port 10250. Abandon du script."
-            exit 1
+            log_action "Impossible de libérer le port 10250. Tentative de continuer avec --ignore-preflight-errors=Port-10250..."
         fi
     fi
 }

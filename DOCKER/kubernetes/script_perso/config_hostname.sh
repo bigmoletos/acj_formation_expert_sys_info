@@ -3,6 +3,8 @@
 # Variables globales
 LOG_FILE="hostname_config.log"
 SUMMARY_FILE="hostname_config_summary.md"
+# Récupérer l'adresse IP actuelle de l'interface réseau
+CURRENT_IP=$(ip -4 addr show enp0s3 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 
 # Fonction pour logger les actions
 log_action() {
@@ -24,7 +26,7 @@ case $new_hostname in
     master|worker1|worker2)
         # Modification du hostname
         hostnamectl set-hostname $new_hostname
-        echo "127.0.0.1 $new_hostname" >> /etc/hosts
+        echo $CURRENT_IP $new_hostname" >> /etc/hosts
         log_action "Hostname configuré : $new_hostname"
 
         echo "Hostname configuré. Le shell va être rechargé."
@@ -34,4 +36,4 @@ case $new_hostname in
         echo "Hostname invalide. Utilisez master, worker1 ou worker2"
         exit 1
         ;;
-esac 
+esac

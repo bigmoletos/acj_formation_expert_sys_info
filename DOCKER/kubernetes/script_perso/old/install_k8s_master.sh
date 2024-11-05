@@ -94,6 +94,14 @@ cat > $SUMMARY_FILE << EOF
 
 ## Actions réalisées
 EOF
+# Installation de Docker
+install_docker() {
+    log_action "Installation de Docker..."
+    apt-get update
+    apt-get install -y docker.io
+    systemctl enable docker
+    systemctl start docker
+}
 
 # Installation via snap
 install_kubernetes_components() {
@@ -134,14 +142,6 @@ EOF
     systemctl start kubelet
 }
 
-# Installation de Docker
-install_docker() {
-    log_action "Installation de Docker..."
-    apt-get update
-    apt-get install -y docker.io
-    systemctl enable docker
-    systemctl start docker
-}
 
 # Configuration du master
 setup_master() {

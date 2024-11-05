@@ -8,83 +8,66 @@ show_help() {
     echo
     echo "Options:"
     echo "  -h, --help     Affiche cette aide"
-    echo "  -i, --ip       Spécifie l'IP du master (par défaut: détection automatique)"
-    echo "  -t, --token    Spécifie le token (par défaut: extrait du master)"
-    echo "  --hash         Spécifie le hash (par défaut: calculé depuis le certificat)"
-    echo
-    echo "Exemple:"
-    echo "  $0"
-    echo "  $0 -i 192.168.1.100"
-    echo "  $0 -i 192.168.1.100 -t abcdef.0123456789abcdef"
 }
 
+# Fichier de sortie
+OUTPUT_FILE="kubeadm_join.txt"
+
+# Demande si on est sur le master ou le worker
+read -p "Êtes-vous sur le master (m) ou le worker (w)? " NODE_TYPE
+
 # Valeurs par défaut
-MASTER_IP=$(kubectl config view -o jsonpath='{.clusters[0].cluster.server}' | cut -d'/' -f3 | cut -d':' -f1)
-TOKEN=$(kubeadm token list | awk 'NR==2 {print $1}')
-HASH=$(openssl x509 -in /etc/kubernetes/pki/ca.crt -noout -pubkey | openssl rsa -pubin -outform DER 2>/dev/null | sha256sum | cut -d' ' -f1)
+MASTER_IP="192.168.1.79"
+TOKEN=""
+HASH=""
 
-# Traitement des arguments
-while [[ $# -gt 0 ]]; do
-    case $1 in
-        -h|--help)
-            show_help
-            exit 0
-            ;;
-        -i|--ip)
-            MASTER_IP="$2"
-            shift 2
-            ;;
-        -t|--token)
-            TOKEN="$2"
-            shift 2
-            ;;
-        --hash)
-            HASH="$2"
-            shift 2
-            ;;
-        *)
-            echo "Option invalide: $1"
-            show_help
-            exit 1
-            ;;
-    esac
-done
+if [[ "$NODE_TYPE" == "m" ]]; then
+    # Si on est sur le master, récupérer le token et le hash
+    TOKEN=$(kubeadm token list | awk 'NR==2 {print $1}')
+    HASH=$(openssl x509 -in /etc/kubernetes/pki/ca.crt -noout -pubkey | openssl rsa -pubin -outform DER 2>/dev/null | sha256sum | cut -d' ' -f1)
 
-# Vérification des valeurs
-echo "Configuration actuelle:"
-echo "IP du master: $MASTER_IP"
-echo "Token: $TOKEN"
-echo "Hash: $HASH"
-echo
-echo "Voulez-vous modifier ces valeurs? (o/N)"
-read -r response
+    # Génération de la commande
+    JOIN_CMD="sudo kubeadm join ${MASTER_IP}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash sha256:${HASH}"
 
-if [[ "$response" =~ ^[Oo]$ ]]; then
-    echo "Entrez l'IP du master [$MASTER_IP]: "
-    read -r new_ip
-    MASTER_IP=${new_ip:-$MASTER_IP}
+    # Enregistrement des informations dans le fichier
+    echo "IP du master: $MASTER_IP" > "$OUTPUT_FILE"
+    echo "Token: $TOKEN" >> "$OUTPUT_FILE"
+    echo "Hash: $HASH" >> "$OUTPUT_FILE"
+    echo "Commande: $JOIN_CMD" >> "$OUTPUT_FILE"
 
-    echo "Entrez le token [$TOKEN]: "
-    read -r new_token
-    TOKEN=${new_token:-$TOKEN}
+    echo "Informations enregistrées dans $OUTPUT_FILE."
+    echo "Voici la commande à exécuter sur un worker :"
+    echo "$JOIN_CMD"
 
-    echo "Entrez le hash [$HASH]: "
-    read -r new_hash
-    HASH=${new_hash:-$HASH}
-fi
+elif [[ "$NODE_TYPE" == "w" ]]; then
+    # Si on est sur le worker, vérifier si le fichier existe
+    if [[ -f "$OUTPUT_FILE" ]]; then
+        # Lire les informations du fichier
+        source "$OUTPUT_FILE"
 
-# Génération de la commande
-JOIN_CMD="sudo kubeadm join ${MASTER_IP}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash sha256:${HASH}"
+        # Génération de la commande
+        JOIN_CMD="sudo kubeadm join ${MASTER_IP}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash sha256:${HASH}"
 
-echo
-echo "Commande qui sera exécutée:"
-echo "$JOIN_CMD"
-echo
-echo "Voulez-vous exécuter cette commande? (o/N)"
-read -r execute
+        echo "Informations récupérées depuis $OUTPUT_FILE :"
+        echo "IP du master: $MASTER_IP"
+        echo "Token: $TOKEN"
+        echo "Hash: $HASH"
+        echo
+        echo "Commande qui sera exécutée:"
+        echo "$JOIN_CMD"
+        echo
+        echo "Voulez-vous exécuter cette commande? (o/N)"
+        read -r execute
 
-if [[ "$execute" =~ ^[Oo]$ ]]; then
-    eval "$JOIN_CMD"
+        if [[ "$execute" =~ ^[Oo]$ ]]; then
+            eval "$JOIN_CMD"
+        else
+            echo "Commande non exécutée. Vous pouvez la copier et l'exécuter manuellement."
+        fi
+    else
+        echo "Le fichier $OUTPUT_FILE n'existe pas. Veuillez exécuter le script sur le master d'abord."
+    fi
 else
-    echo "Commande non exécutée. Vous pouvez la copier et l'exécuter manuellement."
-fi 
+    echo "Option invalide. Veuillez choisir 'm' pour master ou 'w' pour worker."
+    exit 1
+fi

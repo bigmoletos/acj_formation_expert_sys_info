@@ -240,10 +240,11 @@ sudo systemctl disable kubelet
 sudo fuser -k 10250/tcp
 sudo systemctl stop kubelet
 sudo systemctl disable kubelet
-sudo systemctl list-units --type=service --state=running
+# sudo systemctl list-units --type=service --state=running
 sudo kubeadm reset
 sudo systemctl stop snap.kubelet.daemon.service
 sudo systemctl disable snap.kubelet.daemon.service
+sudo fuser -k 10250/tcp
 sudo fuser -k 10250/tcp
 sudo kubeadm reset
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.1.79
@@ -253,6 +254,7 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address
 ### l'init nous donne
 
 ```Shell
+
 kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 --discovery-token-ca-cert-hash sha256:3945b98fc1eefdd9bb6c1b8279de39d96de7f98d1994e25c949def994c6fd7f8
 
 # Pour obtenir le token et le hash :
@@ -277,8 +279,11 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ## 8. Installation d'un plugin réseau (par exemple Flannel)
 
 ```Shell
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+# kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f https://github.com/flannel-io/flannel/raw/master/Documentation/kube-flannel.yml
+
 ```
+
 ## -----------------  DEBUG FLANNEL OK -------------------------
 
 ```Shell
@@ -324,9 +329,10 @@ kubectl get daemonset -n kube-flannel
 -  Sur chaque nœud worker, exécutez la commande fournie à la fin de l'initialisation du master :
 
 ```Shell
+sudo systemctl enable kubelet
 sudo kubeadm join <IP_MASTER>:6443 --token <TOKEN> --discovery-token-ca-cert-hash sha256:<HASH>
 # Remplacez <TOKEN> et <HASH> par les valeurs fournies lors de l'initialisation.
-sudo kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 --discovery-token-ca-cert-hash sha256:3945b98fc1eefdd9bb6c1b8279de39d96de7f98d1994e25c949def994c6fd7f8
+sudo kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 --discovery-token-ca-cert-hash sha256:3945b98fc1eefdd9bb6c1b8279de39d96de7f98d1994e25c949def994c6fd7f8 --timeout=10m0s
 ```
 
 ## 10 Vérification de l'installation
@@ -336,16 +342,71 @@ sudo kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 --discovery-
 ```Shell
 kubectl get nodes
 kubectl get pods --all-namespaces
+# pour voir en live l'evolution des pods on peut aussi faire
+watch kubectl get pods --all-namespaces
 ```
 
 ## Déploiement d'une application simple
+
 - Pour tester votre cluster, déployez une application simple comme Nginx :
+
 ```Shell
 kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --port=80 --type=NodePort
 kubectl get svc
 ```
 
+### Debug probleme de connexion cela vient surement du modprobe br_netfilter
 
 ```Shell
+# errreur E1104 09:19:34.403049       1 main.go:267] Failed to check br_netfilter: stat /proc/sys/net/bridge/bridge-nf-call-iptables: no such file or directory
+
+sudo modprobe br_netfilter
+lsmod | grep br_netfilter
+echo "br_netfilter" | sudo tee /etc/modules-load.d/k8s.conf
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
+EOF
+sudo sysctl --system
+sudo systemctl restart kubelet
+kubectl delete pod kube-flannel-ds-lztxk -n kube-flannel
+kubectl get pods -n kube-system
+kubectl get pods -n kube-flannel
+
+```
+
+### Nettoyage
+
+```Shell
+sudo fuser -k 10250/tcp | sudo fuser -k 10250/tcp  | sudo kubeadm reset
+
+sudo fuser -k 10250/tcp
+sudo kubeadm reset
+sudo rm -rf /etc/kubernetes
+sudo rm -rf /var/lib/etcd
+sudo rm -rf /var/lib/kubelet
+sudo rm -rf /var/lib/dockershim
+sudo rm -rf /etc/cni/net.d
+sudo iptables -F
+sudo iptables -t nat -F
+sudo iptables -t mangle -F
+sudo iptables -X
+sudo ipvsadm --clear
+sudo ip link delete cni0
+sudo ip link delete flannel.1
+ps aux | grep kube
+sudo pkill kubelet
+sudo pkill kube-proxy
+sudo pkill kube
+sudo docker rm -f $(sudo docker ps -a -q)
+CONTAINERS=$(sudo docker ps -a -q)
+if [ -n "$CONTAINERS" ]; then   sudo docker rm -f $CONTAINERS; else   echo "Aucun conteneur à supprimer."; fi
+sudo systemctl stop kubelet
+sudo systemctl disable kubelet
+sudo fuser -k 10250/tcp
+sudo fuser -k 10250/tcp
+
+
 ```
