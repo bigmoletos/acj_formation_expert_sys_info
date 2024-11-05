@@ -52,60 +52,117 @@ sudo nano /etc/hosts
 ## installation docker
 
 ```bash
-curl -fsSL https://get.docker.com | sh;
+# suppression des apts qu pourraient entrer en conflit
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+
+# curl -fsSL https://get.docker.com | sh;
 sudo usermod -aG docker $USER
 sudo chmod 644 /etc/group
-echo "dockremap:500000:65536" >> /etc/subuid && echo "dockremap:500000:65536" >>/etc/subgid
+
+echo "dockremap:500000:65536" >> /etc/subuid && echo "dockremap:500000:65536" >> sudo /etc/subgid
 echo "dockremap:500000:65536" | sudo tee -a /etc/subuid
 echo "dockremap:500000:65536" | sudo tee -a /etc/subgid
+
 sudo nano /etc/docker/daemon.json
 systemctl daemon-reload && systemctl restart docker
 
 sudo nano /etc/docker/daemon.json
+
 {
 "exec-opts":["native.cgroupdriver=systemd"]
 }
 
 
 systemctl daemon-reload && systemctl restart docker
-```
-
-## installation kubernetes
-
-
-```bash
-sudo nano /etc/fstab
 sudo swapoff -a
 
 sudo nano /etc/fstab
 # commenter la ligne
 #/swapfile                                 none            swap    sw              0       0
 
+# Avant l’init.
+# Edition sur les deux machines :
+sudo nano /etc/containerd/config.toml
+# Changer disabled_plugins = ["cri"] par
+enabled_plugins = ["cri"]
+sudo  systemctl restart containerd.service
+
+
+
+
+```
+
+## installation kubernetes
+
+
+```bash
+#  install kube
 sudo apt-get update && sudo apt-get install -y apt-transport-https curl
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo add-apt-repository "https://apt.kubernetes.io/ kubernetes-xenial main"
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
+
+# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+# sudo add-apt-repository "https://apt.kubernetes.io/ kubernetes-xenial main"
+
 sudo nano /etc/apt/sources.list.d/kubernetes.list
 ll /etc/apt/sources.list
 sudo nano /etc/apt/sources.list
-sudo nano /etc/apt/sources.list.d/kubernetes.list
 
-sudo rm /etc/apt/sources.list.d/kubernetes.list
-sudo nano /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get install -y kubectl
 
-sudo nano /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update
+echo 'source <(kubectl completion bash)' >> ~/.bashrc
+echo 'alias k=kubectl' >> ~/.bashrc
+echo 'complete -o default -F __start_kubectl k' >> ~/.bashrc
+source ~/.bashrc
+
 sudo apt-get install -y kubelet kubeadm kubectl
+# sudo nano /etc/apt/sources.list.d/kubernetes.list
+
+# sudo rm /etc/apt/sources.list.d/kubernetes.list
+# sudo nano /etc/apt/sources.list.d/kubernetes.list
+# sudo apt-get update
+# sudo apt-get install -y apt-transport-https ca-certificates curl
+
+# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+# echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+# sudo nano /etc/apt/sources.list.d/kubernetes.list
+```
+
+### Autre solution pour installer kubelet on peut utiliser snap
+
+```shell
+
+# sudo apt-get update
 kubectl version --client
 kubeadm version
 kubelet --version
+
 sudo snap install kubectl
 sudo snap install kubectl --classic
 sudo snap install kubeadm --classic
 sudo snap install kubelet --classic
+export PATH=$PATH:/snap/bin
+echo 'export PATH=$PATH:/snap/bin' >> ~/.bashrc
+source ~/.bashrc
+
+
 kubectl version --client
 kubeadm version
 kubelet --version
@@ -121,7 +178,7 @@ sudo snap start kubelet && sudo snap services kubelet
 # Edition sur les deux machines :
 sudo nano /etc/containerd/config.toml
 # Changer disabled_plugins = ["cri"] par
-enabled_plugins = [« cri »]
+enabled_plugins = ["cri"]
 # Puis restart :
 sudo systemctl restart containerd.service
 # Ensuite INIT : SUR LE MASTER
@@ -129,9 +186,6 @@ sudo systemctl restart containerd.service
 sudo snap start kubelet && sudo snap services kubelet
 # initialiser la sessio kubadmin
 sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNAME --pod-network-cidr=10.244.0.0/16
-
-
-
 
 
 # 192.168.1.79 etant l’ip de mon master
@@ -151,7 +205,8 @@ sudo systemctl daemon-reload
 sudo modprobe br_netfilter
 sudo sysctl net.bridge.bridge-nf-call-iptables=1
 # SUR LA MASTER :
-kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml (installation protocole reseaux des pods)
+#(installation protocole reseaux des pods)
+kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
 
 # Pour vérifier sur le master qui est notre machine de control :
 kubectl get pods --all-namespaces
@@ -177,7 +232,8 @@ echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
-sudo snap start kubelet && sudo snap services kubelet
+
+# sudo snap start kubelet && sudo snap services kubelet
 
 # ajouter dans /var/lib/kubelet/config.yaml
 sudo nano /var/lib/kubelet/config.yaml
@@ -200,6 +256,24 @@ cgroupDriver: systemd
 containerRuntimeEndpoint: "unix:///var/run/containerd/containerd.sock"
 podInfraContainerImage: "k8s.gcr.io/pause:3.8"
 "
+#sudo mkdir -p /etc/systemd/system/kubelet.service.d/  #si le fichier n'existe pas il faut le créer
+
+sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+[Service]
+Environment="KUBELET_EXTRA_ARGS=--node-ip=192.168.1.178 --cgroup-driver=systemd"
+Environment="KUBELET_KUBECONFIG_ARGS=--kubeconfig=/etc/kubernetes/kubelet.conf"
+Environment="KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml"
+Environment="KUBELET_NETWORK_PLUGIN_ARGS=--network-plugin=cni"
+ExecStart=
+ExecStart=/usr/bin/kubelet $KUBELET_EXTRA_ARGS $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELE>
+
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+sudo systemctl status kubelet
+
+
+
 
 sudo chown root:root /var/lib/kubelet/config.yaml
 sudo chmod 644 /var/lib/kubelet/config.yaml
@@ -225,9 +299,114 @@ sudo systemctl stop kubelet
 sudo systemctl disable kubelet
 
 sudo systemctl restart kubelet
+
+# install etcd
+sudo apt-get update
+sudo apt-get install -y etcd
+sudo mkdir -p /var/lib/etcd/default
+sudo chown -R etcd:etcd /var/lib/etcd
+sudo dpkg --configure -a
+
+sudo nano /etc/etcd/etcd.conf.yml
+
+'
+name: 'master'
+data-dir: /var/lib/etcd
+initial-cluster-state: 'new'
+initial-cluster-token: 'etcd-cluster'
+initial-cluster: 'master=https://192.168.1.79:2380'
+initial-advertise-peer-urls: 'https://192.168.1.79:2380'
+listen-peer-urls: 'https://192.168.1.79:2380'
+listen-client-urls: 'https://127.0.0.1:2379,https://192.168.1.79:2379'
+advertise-client-urls: 'https://192.168.1.79:2379'
+
+'
+sudo systemctl enable etcd
+sudo systemctl start etcd
+sudo systemctl status etcd
+sudo systemctl restart kubelet
+sudo systemctl restart etcd
+
+sudo systemctl status etcd
+
+
+
 sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNAME --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml,Port-10250
 
 ###-- FIN INIT KO ------------------
+
+# si echec de l'init il faut nettoyer tout ce que la tentative à créée
+sudo rm -f /etc/kubernetes/manifests/kube-apiserver.yaml
+sudo rm -f /etc/kubernetes/manifests/kube-controller-manager.yaml
+sudo rm -f /etc/kubernetes/manifests/kube-scheduler.yaml
+sudo rm -f /etc/kubernetes/manifests/etcd.yaml
+sudo lsof -i :2379
+sudo lsof -i :2380
+sudo lsof -i :10250
+sudo fuser -k 10250/tcp
+sudo systemctl stop etcd
+sudo systemctl stop kubelet
+sudo rm -rf /var/lib/etcd/*
+sudo kubeadm reset -f
+
+# relancer le init
+sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNAME --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml,Port-10250
+
+
+
+# WORKER
+# depuis le master copier le fichier config sur le worker
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+# sur le worker le config doit ressembler à :
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://192.168.1.79:6443
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    user: system:node:worker1
+  name: system:node:worker1@kubernetes
+current-context: system:node:worker1@kubernetes
+kind: Config
+users:
+- name: system:node:worker1
+  user:
+    client-certificate-data: ...
+    client-key-data: ...
+
+# sur le worker
+sudo nano /var/lib/kubelet/config.yaml
+sudo nano /var/lib/kubelet/config.yaml
+containerRuntimeEndpoint: "unix:///var/run/containerd/containerd.sock"  # Ajouté
+podInfraContainerImage: "k8s.gcr.io/pause:3.8"  # Ajouté
+#---  Pour modifier le fichier yaml on peut aussi le faire automatiquement ---
+# Met à jour ou ajoute containerRuntimeEndpoint
+sudo sed -i '/^containerRuntimeEndpoint:/c\containerRuntimeEndpoint: "unix:///var/run/containerd/containerd.sock"' /var/lib/kubelet/config.yaml
+# Met à jour ou ajoute podInfraContainerImage
+sudo sed -i '/^podInfraContainerImage:/c\podInfraContainerImage: "k8s.gcr.io/pause:3.8"' /var/lib/kubelet/config.yaml
+# Met à jour ou ajoute cgroupDriver
+sudo sed -i '/^cgroupDriver:/c\cgroupDriver: systemd' /var/lib/kubelet/config.yaml
+#  verification
+cat /var/lib/kubelet/config.yaml | grep -E 'containerRuntimeEndpoint|podInfraContainerImage|cgroupDriver'
+# /var/lib/kubelet/config.yaml:
+"
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+cgroupDriver: systemd
+containerRuntimeEndpoint: "unix:///var/run/containerd/containerd.sock"
+podInf
+"
+
+sudo nano /etc/kubernetes/kubelet.conf
+# copie le fichier kubeconfig depuis le maître ou exécute kubeadm join pour le créer automatiquement.
+
+
+
 
 ```
 
@@ -407,6 +586,35 @@ sudo systemctl stop kubelet
 sudo systemctl disable kubelet
 sudo fuser -k 10250/tcp
 sudo fuser -k 10250/tcp
+
+# suppression de kube via apt et snap
+
+sudo apt-get purge -y kubelet kubeadm kubectl
+sudo apt-get autoremove -y
+sudo apt-get clean
+sudo rm -rf /etc/kubernetes
+sudo rm -rf /var/lib/kubelet
+sudo rm /etc/systemd/system/kubelet.service
+sudo rm -rf /etc/systemd/system/kubelet.service.d/
+sudo rm /usr/local/bin/kubectl
+sudo rm /usr/local/bin/kubeadm
+sudo rm /usr/local/bin/kubelet
+
+#snap
+sudo rm -rf /etc/kubernetes
+sudo rm -rf /var/lib/kubelet
+sudo rm -rf /var/lib/etcd
+sudo rm -rf /etc/cni
+sudo snap remove kubelet
+sudo snap remove kubectl
+sudo snap remove kubeadm
+sudo snap remove kubelet
+
+ls /etc/systemd/system/ | grep kubelet
+sudo systemctl daemon-reload
+which kubectl
+which kubeadm
+which kubelet
 
 
 ```
