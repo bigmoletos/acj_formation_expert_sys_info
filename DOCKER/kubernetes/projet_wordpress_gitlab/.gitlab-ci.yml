@@ -1,0 +1,21 @@
+# .gitlab-ci.yml
+stages:
+  - deploy
+
+variables:
+  KUBECONFIG: "/root/.kube/config" # chemin vers le fichier kubeconfig
+
+before_script:
+  # Installe kubectl et configure l'accès
+  - apt-get update -y && apt-get install -y kubectl
+  - mkdir -p ~/.kube
+  - echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
+
+deploy_wordpress:
+  stage: deploy
+  script:
+    # Applique les fichiers de configuration pour MySQL et WordPress
+    - kubectl apply -f k8s/mysql-deployment.yaml
+    - kubectl apply -f k8s/wordpress-deployment.yaml
+  environment:
+    name: production
