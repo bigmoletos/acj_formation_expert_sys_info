@@ -61,6 +61,7 @@ sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
+# https://docs.docker.com/engine/install/ubuntu/
 # Add the repository to Apt sources:
 echo  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
@@ -105,7 +106,6 @@ sudo  systemctl restart containerd.service
 ```
 
 ## installation kubernetes
-
 
 ```bash
 #  install kube
@@ -303,9 +303,6 @@ ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELE
 sudo systemctl daemon-reload
 sudo systemctl restart kubelet
 sudo systemctl status kubelet
-
-
-
 
 sudo chown root:root /var/lib/kubelet/config.yaml
 sudo chmod 644 /var/lib/kubelet/config.yaml
