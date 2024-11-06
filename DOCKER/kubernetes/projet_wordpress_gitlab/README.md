@@ -134,3 +134,96 @@ Si ton cluster est configuré pour exposer des services externes, tu pourras acc
 ---
 
 Ce pipeline GitLab CI/CD déploie WordPress et MySQL sur deux nœuds chacun, garantissant la haute disponibilité des services.
+
+## Infrastructure
+
+Pour un déploiement haute disponibilité de WordPress avec MySQL sur Kubernetes, voici la configuration d'infrastructure recommandée. Cette configuration garantit que les services sont répartis sur plusieurs nœuds pour assurer la résilience et la disponibilité.
+
+### Configuration de l'Infrastructure
+
+#### Nœud Maître Kubernetes : 1 VM
+
+- **Rôle** : Gère le plan de contrôle Kubernetes, incluant les composants API server, scheduler, controller manager, etcd.
+- **Ressources** : Minimum 2 vCPU et 4 Go de RAM.
+- **Détails** : Le nœud maître orchestre les déploiements et gère l’état du cluster. Il ne doit pas exécuter d’applications pour éviter toute surcharge.
+
+#### Nœuds Workers Kubernetes : 4 VM
+
+- **Rôle** : Héberger les pods d'applications, comme WordPress et MySQL.
+- **Ressources par VM** : Minimum 2 vCPU et 4 Go de RAM (à ajuster selon les besoins de charge).
+- **Détails** :
+  - 2 VM pour WordPress : Pour héberger l'application WordPress et répartir la charge de manière redondante.
+  - 2 VM pour MySQL : Pour héberger la base de données MySQL en configuration de réplication (ou cluster si nécessaire) pour assurer la haute disponibilité.
+
+#### Stockage Persistant : 2 volumes de stockage externe (ou persistent volumes si le stockage est intégré au cluster)
+
+- **Rôle** : Fournir un stockage persistant pour MySQL et WordPress.
+- **Détails** : Utilisé pour conserver les données de la base MySQL et les fichiers de WordPress même en cas de redémarrage des pods.
+
+#### Réseau
+
+- **Ingress ou Load Balancer** : Pour exposer WordPress de manière sécurisée en externe.
+- **IP Statique** : Associe une IP statique au service Ingress pour un accès constant à l’application.
+
+### Résumé de l'Infrastructure
+
+| Type de VM | Rôle                | Quantité | CPU | RAM  | Exemple de Pods Hébergés         |
+|------------|---------------------|----------|-----|------|-----------------------------------|
+| Maître     | Nœud de contrôle    | 1        | 2+  | 4G+  | Aucun (plan de contrôle)          |
+| Worker     | Nœud applicatif     | 2        | 2+  | 4G+  | WordPress pods (2 réplicas)      |
+| Worker     | Nœud applicatif     | 2        | 2+  | 4G+  | MySQL pods (2 réplicas)          |
+
+### Points Clés pour le Déploiement
+
+- **Stockage Persistant** : Configure un stockage persistant (Persistent Volume Claims - PVC) pour MySQL et WordPress pour ne pas perdre les données en cas de redémarrage des pods.
+- **Réplication MySQL** : Si nécessaire, configure MySQL en mode réplication pour assurer la haute disponibilité et la synchronisation des données entre les instances.
+- **Service Ingress** : Utilise un Ingress Controller pour gérer l’accès public de manière sécurisée et centralisée.
+- **Surveillance et Résilience** : Utilise des outils comme Prometheus et Grafana pour surveiller la santé du cluster, et configure des stratégies de redémarrage pour les pods pour qu’ils redémarrent en cas de panne.
+
+Avec cette infrastructure, tu pourras garantir la haute disponibilité de WordPress et MySQL, en assurant une répartition des services sur plusieurs nœuds pour la résilience et l’évolutivité.
+
+## Installation des Paquets sur Chaque VM
+
+### Installation de Docker
+
+Pour installer Docker sur chaque VM, utilise les commandes suivantes :
+
+```shell
+# Ajouter la clé GPG officielle de Docker
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Ajouter le dépôt à la liste des sources Apt
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Mettre à jour les paquets et installer Docker
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+
+### Installation de Kubernetes
+
+Pour installer Kubernetes, tu peux utiliser `snap`. Voici les commandes à exécuter sur chaque VM :
+
+```shell
+# Installer snapd si ce n'est pas déjà fait
+sudo apt update
+sudo apt install snapd
+
+# Installer Kubernetes
+sudo snap install kubectl --classic
+```
+
+### Configuration de Kubernetes
+
+Après l'installation, tu devras configurer Kubernetes sur chaque nœud worker. Assure-toi que les nœuds peuvent communiquer entre eux et que le nœud maître est configuré correctement.
+
+---
+
+Avec ces étapes, tu devrais être en mesure de déployer WordPress et MySQL sur Kubernetes avec GitLab CI/CD, tout en garantissant une infrastructure robuste et hautement disponible.
