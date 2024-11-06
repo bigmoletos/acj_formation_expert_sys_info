@@ -125,6 +125,10 @@ sudo nano /etc/apt/sources.list
 
 sudo apt-get update
 sudo apt-get install -y kubectl
+sudo apt-get install -y ipvsadm
+
+sudo apt-get install -y etcd # install etcd uniquement sur le master
+
 
 echo 'source <(kubectl completion bash)' >> ~/.bashrc
 echo 'alias k=kubectl' >> ~/.bashrc
@@ -206,7 +210,12 @@ sudo modprobe br_netfilter
 sudo sysctl net.bridge.bridge-nf-call-iptables=1
 # SUR LA MASTER :
 #(installation protocole reseaux des pods)
-kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
+# kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+sudo systemctl restart kubelet
+# Pour verifier
+kubectl get pods -A
 
 # Pour vérifier sur le master qui est notre machine de control :
 kubectl get pods --all-namespaces
@@ -222,10 +231,11 @@ kubeadm join 192.168.1.200:6443 ………
 ```Sh
 ###-- Si INIT ne se fait pas ------------
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
-sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
 sudo mkdir -p /etc/apt/keyrings
+sudo mkdir -p /var/lib/etcd/default
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
+sudo apt-get install -y kubelet kubeadm kubectl
 curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
@@ -259,14 +269,36 @@ podInfraContainerImage: "k8s.gcr.io/pause:3.8"
 #sudo mkdir -p /etc/systemd/system/kubelet.service.d/  #si le fichier n'existe pas il faut le créer
 
 sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
-
+# ou
+sudo /usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf
+# pour le worker
 [Service]
-Environment="KUBELET_EXTRA_ARGS=--node-ip=192.168.1.178 --cgroup-driver=systemd"
-Environment="KUBELET_KUBECONFIG_ARGS=--kubeconfig=/etc/kubernetes/kubelet.conf"
+Environment="KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf"
 Environment="KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml"
-Environment="KUBELET_NETWORK_PLUGIN_ARGS=--network-plugin=cni"
+# IP de la VM
+Environment="KUBELET_EXTRA_ARGS=--node-ip=192.168.1.178 --cgroup-driver=systemd"
+
+# This is a file that "kubeadm init" and "kubeadm join" generates at runtime, populating the KUBELET_KUBEADM_ARGS variable dynamically
+EnvironmentFile=-/var/lib/kubelet/kubeadm-flags.env
+# This is a file that the user can use for overrides of the kubelet args as a last resort. Preferably, the user should use
+# the .NodeRegistration.KubeletExtraArgs object in the configuration files instead. KUBELET_EXTRA_ARGS should be sourced from this file.
+EnvironmentFile=-/etc/default/kubelet
 ExecStart=
-ExecStart=/usr/bin/kubelet $KUBELET_EXTRA_ARGS $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELE>
+ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS
+# pour le master
+[Service]
+Environment="KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf"
+Environment="KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml"
+# IP de la VM
+Environment="KUBELET_EXTRA_ARGS=--node-ip=192.168.1.79 --cgroup-driver=systemd"
+# This is a file that "kubeadm init" and "kubeadm join" generates at runtime, populating the KUBELET_KUBEADM_ARGS variable dynamically
+EnvironmentFile=-/var/lib/kubelet/kubeadm-flags.env
+# This is a file that the user can use for overrides of the kubelet args as a last resort. Preferably, the user should use
+# the .NodeRegistration.KubeletExtraArgs object in the configuration files instead. KUBELET_EXTRA_ARGS should be sourced from this file.
+EnvironmentFile=-/etc/default/kubelet
+ExecStart=
+ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS
+
 
 sudo systemctl daemon-reload
 sudo systemctl restart kubelet
@@ -300,7 +332,7 @@ sudo systemctl disable kubelet
 
 sudo systemctl restart kubelet
 
-# install etcd
+# install etcd uniquement sur le master
 sudo apt-get update
 sudo apt-get install -y etcd
 sudo mkdir -p /var/lib/etcd/default
@@ -321,6 +353,15 @@ listen-client-urls: 'https://127.0.0.1:2379,https://192.168.1.79:2379'
 advertise-client-urls: 'https://192.168.1.79:2379'
 
 '
+sudo nano /etc/containerd/config.toml
+'
+enable_plugins = ["cri"]
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+  SystemdCgroup = true
+'
+sudo systemctl restart containerd
+
+
 sudo systemctl enable etcd
 sudo systemctl start etcd
 sudo systemctl status etcd
@@ -328,8 +369,6 @@ sudo systemctl restart kubelet
 sudo systemctl restart etcd
 
 sudo systemctl status etcd
-
-
 
 sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNAME --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml,Port-10250
 
@@ -340,14 +379,37 @@ sudo rm -f /etc/kubernetes/manifests/kube-apiserver.yaml
 sudo rm -f /etc/kubernetes/manifests/kube-controller-manager.yaml
 sudo rm -f /etc/kubernetes/manifests/kube-scheduler.yaml
 sudo rm -f /etc/kubernetes/manifests/etcd.yaml
+sudo rm -rf /etc/cni/net.d
+sudo iptables -F
+sudo iptables -t nat -F
+sudo iptables -t mangle -F
+sudo iptables -X
+sudo ipvsadm --clear
+
+rm -f $HOME/.kube/config
+sudo systemctl stop kubelet
+sudo systemctl disable kubelet
+# sudo systemctl mask kubelet
+sudo snap stop kubelet
+sudo snap disable kubelet
+#  verifications
+ps aux | grep kubelet
+#  si besoin
+sudo kill -9
+
 sudo lsof -i :2379
 sudo lsof -i :2380
 sudo lsof -i :10250
+sudo fuser -k 10250/tcp
 sudo fuser -k 10250/tcp
 sudo systemctl stop etcd
 sudo systemctl stop kubelet
 sudo rm -rf /var/lib/etcd/*
 sudo kubeadm reset -f
+# sudo systemctl unmask kubelet
+sudo systemctl enable kubelet
+sudo systemctl start kubelet
+
 
 # relancer le init
 sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNAME --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml,Port-10250
@@ -433,8 +495,9 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address
 ### l'init nous donne
 
 ```Shell
+kubeadm join 192.168.1.79:6443 --token e9zz1w.iggiezqrhun1p6f9 --discovery-token-ca-cert-hash sha256:e7bd809ae319f2a6b5cf5d575e2d42cf8357246f37b8004f6bba543d0aa15537
 
-kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 --discovery-token-ca-cert-hash sha256:3945b98fc1eefdd9bb6c1b8279de39d96de7f98d1994e25c949def994c6fd7f8
+# kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 --discovery-token-ca-cert-hash sha256:3945b98fc1eefdd9bb6c1b8279de39d96de7f98d1994e25c949def994c6fd7f8
 
 # Pour obtenir le token et le hash :
 kubeadm token list
@@ -502,10 +565,9 @@ kubectl get daemonset -n kube-flannel
 ## ----------------- FIN DEBUG FLANNEL OK -------------------------
 
 
-
 ## 9 Ajout des Worker Nodes au Cluster
 
--  Sur chaque nœud worker, exécutez la commande fournie à la fin de l'initialisation du master :
+- Sur chaque nœud worker, exécutez la commande fournie à la fin de l'initialisation du master :
 
 ```Shell
 sudo systemctl enable kubelet
@@ -514,26 +576,6 @@ sudo kubeadm join <IP_MASTER>:6443 --token <TOKEN> --discovery-token-ca-cert-has
 sudo kubeadm join 192.168.1.79:6443 --token 6aep37.psqrv7j4g1bytql3 --discovery-token-ca-cert-hash sha256:3945b98fc1eefdd9bb6c1b8279de39d96de7f98d1994e25c949def994c6fd7f8 --timeout=10m0s
 ```
 
-## 10 Vérification de l'installation
-
-- Pour vérifier que le cluster fonctionne correctement :
-
-```Shell
-kubectl get nodes
-kubectl get pods --all-namespaces
-# pour voir en live l'evolution des pods on peut aussi faire
-watch kubectl get pods --all-namespaces
-```
-
-## Déploiement d'une application simple
-
-- Pour tester votre cluster, déployez une application simple comme Nginx :
-
-```Shell
-kubectl create deployment nginx --image=nginx
-kubectl expose deployment nginx --port=80 --type=NodePort
-kubectl get svc
-```
 
 ### Debug probleme de connexion cela vient surement du modprobe br_netfilter
 
@@ -617,4 +659,123 @@ which kubeadm
 which kubelet
 
 
+```
+
+### JOIN KO SUR LE WORKER
+
+```shell
+# si l'installation kube via snap et non via apt
+sudo snap remove kubelet
+sudo snap install kubelet --classic
+sudo snap start kubelet
+sudo snap enable kubelet
+sudo snap services kubelet
+sudo snap set kubelet daemon.restart=true
+sudo snap restart kubelet
+sudo snap set kubelet daemon.restart=true
+
+echo "--node-ip=192.168.1.178" | sudo tee /var/snap/kubelet/3439/args
+
+sudo reboot
+# Controler
+sudo nano /var/lib/kubelet/config.yaml
+'
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+address: 192.168.1.178
+clusterDNS:
+  - "10.96.0.10"  # Adresse du service DNS par défaut
+cgroupDriver: "systemd"
+'
+sudo nano /var/snap/kubelet/3439/args
+'
+--node-ip=192.168.1.178 # adresse du worker
+--cgroup-driver=systemd
+--kubeconfig=/var/snap/kubelet/current/credentials/kubelet.config
+
+
+'
+sudo mkdir -p /etc/systemd/system/kubelet.service.d/
+sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+# Controler le fichier 10-kubeadm.conf doit être comme sur le master, juste changer l'IP en mettant celle de la VM worker
+sudo mkdir -p /etc/systemd/system/kubelet.service.d/
+sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+'
+[Service]
+Environment="KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf"
+Environment="KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml"
+# IP de la VM
+Environment="KUBELET_EXTRA_ARGS=--node-ip=192.168.1.178 --cgroup-driver=systemd"
+
+# This is a file that "kubeadm init" and "kubeadm join" generates at runtime, populating the KUBELET_KUBEADM_ARGS variable dynamically
+EnvironmentFile=-/var/lib/kubelet/kubeadm-flags.env
+# This is a file that the user can use for overrides of the kubelet args as a last resort. Preferably, the user should use
+# the .NodeRegistration.KubeletExtraArgs object in the configuration files instead. KUBELET_EXTRA_ARGS should be sourced from this file.
+EnvironmentFile=-/etc/default/kubelet
+ExecStart=
+ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS
+'
+
+# copier le fichier kubelet.conf dans /.kube/conf
+mkdir -p ~/.kube
+sudo cp /etc/kubernetes/kubelet.conf /.kube/config
+# assigner aux groupe master et  worker le fichier
+sudo chown $(id -u):$(id -g) /.kube/config
+
+# -rw-------  1 worker master 2,0K nov.    6 15:04 config
+
+#  changer les droits du fichier
+sudo chown worker /var/lib/kubelet/pki/kubelet-client-current.pem
+sudo chmod 644 /var/lib/kubelet/pki/kubelet-client-current.pem
+
+# test
+kubectl get nodes
+
+
+
+# sur le master il faut si le worker n'a pas de role worker sur le node
+master@master kubectl get nodes
+NAME      STATUS   ROLES           AGE    VERSION
+master    Ready    control-plane   4h7m   v1.31.2
+worker1   Ready    <none>          45m    v1.30.6
+
+kubectl label node worker1 node-role.kubernetes.io/worker=worker
+kubectl get nodes
+NAME      STATUS   ROLES           AGE     VERSION
+master    Ready    control-plane   4h10m   v1.31.2
+worker1   Ready    worker          48m     v1.30.6
+
+
+```
+
+## 10 Vérification de l'installation
+
+- Pour vérifier que le cluster fonctionne correctement :
+
+```Shell
+kubectl get nodes
+kubectl get pods --all-namespaces
+# pour voir en live l'evolution des pods on peut aussi faire
+watch kubectl get pods --all-namespaces
+```
+
+## Déploiement d'une application simple
+
+- Pour tester votre cluster, déployez une application simple comme Nginx :
+
+```Shell
+# depuis la VM master car depuis le worker il faut rajouter des droits specifiques
+kubectl create deployment nginx --image=nginx
+kubectl expose deployment nginx --port=80 --type=NodePort
+kubectl get svc
+
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP        4h54m
+nginx        NodePort    10.107.55.63   <none>        80:32135/TCP   9s
+
+# dans mon navigateur avec l'IP du master:
+http://192.168.1.79:32135/
+Welcome to nginx!
 ```
