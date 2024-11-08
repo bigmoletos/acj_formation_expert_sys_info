@@ -1,0 +1,23 @@
+version = 2
+
+enabled_plugins = ["cri"]
+
+[plugins]
+  [plugins.cri]
+    sandbox_image = "k8s.gcr.io/pause:3.2"
+    [plugins.cri.containerd]
+      snapshotter = "overlayfs"
+      no_pivot = false
+
+[plugins."io.containerd.grpc.v1.cri".containerd]
+  snapshotter = "overlayfs"
+  [plugins."io.containerd.grpc.v1.cri".containerd.runtimes]
+    [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+      runtime_type = "io.containerd.runc.v2"
+      [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+        SystemdCgroup = true
+
+[ttrpc]
+  address = ""
+  gid = 0
+  uid = 0
