@@ -65,7 +65,9 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 # Add the repository to Apt sources:
 echo  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install cri-tools docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo snap install kube-apiserver --classic
 
 
 # curl -fsSL https://get.docker.com | sh;
@@ -101,8 +103,6 @@ enabled_plugins = ["cri"]
 sudo  systemctl restart containerd.service
 
 
-
-
 ```
 
 ## installation kubernetes
@@ -136,6 +136,8 @@ echo 'complete -o default -F __start_kubectl k' >> ~/.bashrc
 source ~/.bashrc
 
 sudo apt-get install -y kubelet kubeadm kubectl
+sudo snap install kube-apiserver --classic
+
 # sudo nano /etc/apt/sources.list.d/kubernetes.list
 
 # sudo rm /etc/apt/sources.list.d/kubernetes.list
@@ -162,6 +164,9 @@ sudo snap install kubectl
 sudo snap install kubectl --classic
 sudo snap install kubeadm --classic
 sudo snap install kubelet --classic
+
+sudo snap install kube-apiserver --classic
+
 export PATH=$PATH:/snap/bin
 echo 'export PATH=$PATH:/snap/bin' >> ~/.bashrc
 source ~/.bashrc
@@ -242,6 +247,9 @@ echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
+
+sudo snap install kube-apiserver
+
 
 # sudo snap start kubelet && sudo snap services kubelet
 
@@ -334,7 +342,12 @@ sudo apt-get update
 sudo apt-get install -y etcd
 sudo mkdir -p /var/lib/etcd/default
 sudo chown -R etcd:etcd /var/lib/etcd
+
 sudo dpkg --configure -a
+
+sudo mkdir -p /var/run/kubernetes
+sudo chown -R root:root /var/run/kubernetes
+sudo chmod 755 /var/run/kubernetes
 
 sudo nano /etc/etcd/etcd.conf.yml
 
@@ -350,9 +363,10 @@ listen-client-urls: 'https://127.0.0.1:2379,https://192.168.1.79:2379'
 advertise-client-urls: 'https://192.168.1.79:2379'
 
 '
+# Changer disabled_plugins = ["cri"] par enabled_plugins = ["cri"]
 sudo nano /etc/containerd/config.toml
 '
-enable_plugins = ["cri"]
+enabled_plugins = ["cri"]
 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
   SystemdCgroup = true
 '
@@ -598,7 +612,7 @@ kubectl get pods -n kube-flannel
 ### Nettoyage
 
 ```Shell
-sudo fuser -k 10250/tcp | sudo fuser -k 10250/tcp  | sudo kubeadm reset
+sudo fuser -k 10250/tcp && sudo fuser -k 10250/tcp  && sudo kubeadm reset
 
 sudo fuser -k 10250/tcp
 sudo kubeadm reset
@@ -726,6 +740,10 @@ sudo chown $(id -u):$(id -g) /.kube/config
 #  changer les droits du fichier
 sudo chown worker /var/lib/kubelet/pki/kubelet-client-current.pem
 sudo chmod 644 /var/lib/kubelet/pki/kubelet-client-current.pem
+sudo mkdir -p /var/run/kubernetes
+sudo chown -R root:root /var/run/kubernetes
+sudo chmod 755 /var/run/kubernetes
+
 
 # test
 kubectl get nodes
@@ -775,4 +793,106 @@ nginx        NodePort    10.107.55.63   <none>        80:32135/TCP   9s
 # dans mon navigateur avec l'IP du master:
 http://192.168.1.79:32135/
 Welcome to nginx!
+```
+
+## Redemarrage des VM
+
+- Pour tester votre cluster, déployez une application simple comme Nginx :
+
+```Shell
+sudo snap start kubelet
+sudo snap services kubelet
+sudo snap set kubelet daemon.restart=true
+sudo snap restart kubelet
+sudo snap enable kubelet
+sudo snap start kubelet.daemon
+
+sudo snap connect kube-apiserver:network
+sudo snap connect kube-apiserver:home
+sudo snap connect kube-apiserver:system-files
+
+
+sudo snap set kubelet.daemon mode=always
+ sudo iptables -L
+
+sudo iptables -L KUBE-FIREWALL -v -n
+sudo iptables -D KUBE-FIREWALL 1 #  Supprimer cette règle pourrait exposer votre système à des risques si certaines connexions non autorisées sont laissées ouvertes, donc faites attention à vérifier l'effet de cette suppression.
+
+sudo iptables -I INPUT -p tcp --dport 6443 -j ACCEPT
+# sauvegarde dse régles
+sudo iptables-save | sudo tee /etc/iptables/rules.v4
+
+# si pb de connexion à l'API-server
+sudo mkdir -p /var/run/kubernetes
+sudo chown -R root:root /var/run/kubernetes
+sudo chmod 777 /var/run/kubernetes
+
+kubectl get nodes
+kubectl get pods -A
+
+
+# si cela ne passe pas deja au niveau de l'update
+sudo snap remove kube-apiserver kubelet kubectl kubeadm
+sudo rm -f /etc/apt/sources.list.d/kubernetes.list
+sudo nano /etc/apt/sources.list
+sudo apt update
+sudo apt install -y curl apt-transport-https
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+chmod +x minikube
+sudo mv minikube /usr/local/bin/
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
+minikube start --driver=virtualbox
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+ls -lh kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubeadm"
+ls -lh kubeadm
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubelet"
+ls -lh kubelet
+chmod +x kubeadm kubelet kubectl
+sudo mv kubeadm kubelet kubectl /usr/local/bin/
+
+kubeadm version
+kubectl version --client
+kubelet --version
+
+# relancer le init
+# sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNAME --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml,Port-10250
+sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNAME --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml
+
+sudo lsof -i :10259
+sudo lsof -i :10257
+sudo lsof -i :10250
+sudo lsof -i :2379
+sudo lsof -i :2380
+sudo fuser -k 10250/tcp
+sudo kill -9   <pid>
+
+sudo rm -rf /etc/kubernetes/manifests/kube-apiserver.yaml
+sudo rm -rf /etc/kubernetes/manifests/kube-controller-manager.yaml
+sudo rm -rf /etc/kubernetes/manifests/kube-scheduler.yaml
+sudo rm -rf /etc/kubernetes/manifests/etcd.yaml
+sudo mv /var/lib/etcd /var/lib/etcd.bak
+sudo rm -rf /var/lib/etcd
+sudo kubeadm reset
+sudo rm -rf /etc/cni/net.d
+sudo rm -rf $HOME/.kube
+
+sudo kubeadm init --apiserver-advertise-address=192.168.1.79 --node-name $HOSTNAME --pod-network-cidr=10.244.0.0/16
+
+ # comme on vient de faire un reset il faut refaire le .kube/config en le copiant depuis le master
+ # depuis le master
+ scp /etc/kubernetes/admin.conf worker@worker1:/home/worker/
+# sur le worker et sur le master
+mkdir -p /.kube
+mv /home/worker/admin.conf /.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl label node worker1 node-role.kubernetes.io/worker=worker
+
+sudo kubeadm join 192.168.1.79:6443 --token guzumn.mxzunvz5ivjctnin  --discovery-token-ca-cert-hash sha256:45ea809d7aae433904937372fe0ac38f2c7b4e9067f2294a81910413056a8254
+
+
 ```
