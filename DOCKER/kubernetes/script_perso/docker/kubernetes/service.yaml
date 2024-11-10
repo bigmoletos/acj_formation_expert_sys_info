@@ -1,13 +1,13 @@
-apiVersion: v1
-kind: Service
+apiVersion: v1  # Version de l'API Kubernetes
+kind: Service   # Type de ressource Kubernetes
 metadata:
-  labels:
-    app: web
-  name: web
+  labels:      # Étiquettes pour identifier le service
+    app: web  # Nom de l'application associée
+  name: web    # Nom du service
 spec:
-  ports:
-  - port: 3000
-    protocol: TCP
-    targetPort: 8081
-  selector:
-    app: web
+  ports:      # Configuration des ports du service
+  - port: 3000  # Port sur lequel le service sera exposé
+    protocol: TCP  # Protocole utilisé (TCP)
+    targetPort: 8081  # Port cible sur lequel le service redirige le trafic
+  selector:   # Sélecteur pour associer le service aux pods
+    app: web  # Nom de l'application à sélectionner

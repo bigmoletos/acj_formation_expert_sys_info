@@ -1,29 +1,19 @@
 #!/bin/bash
-CERTS_OPTS="--client-cert-auth \
-           --cert-file=certs/admin.pem \
-           --key-file=certs/admin-key.pem \
-           --trusted-ca-file=certs/ca.pem"
-
-# By default, etcd will server HTTP, not HTTPS
-FORCE_HTTPS_OPTS="--advertise-client-urls https://127.0.0.1:2379 \
-                  --listen-client-urls https://127.0.0.1:2379"
-
-bin/etcd --data-dir etcd-data $CERTS_OPTS $FORCE_HTTPS_OPTS
-
-
-#!/bin/bash
 
 # Docstring
-# Lance le serveur etcd avec les certificats nécessaires en HTTPS
+# Ce script lance le serveur etcd avec les certificats nécessaires en HTTPS.
+# Il utilise des variables pour la configuration afin d'éviter les valeurs "dures".
+# Les options de configuration sont définies en haut du script pour une meilleure lisibilité et maintenabilité.
 
 # Variables de configuration
-ETCD_DIR="etcd-data"                  # Répertoire des données etcd
-CERTS_DIR="certs"
-ADMIN_CERT="${CERTS_DIR}/admin.pem"
-ADMIN_KEY="${CERTS_DIR}/admin-key.pem"
-CA_FILE="${CERTS_DIR}/ca.pem"
-HTTPS_HOST="127.0.0.1"
-HTTPS_PORT="2379"
+ETCD_BIN="bin/etcd"                      # Chemin vers l'exécutable etcd
+ETCD_DATA_DIR="etcd-data"                # Répertoire des données etcd
+CERTS_DIR="certs"                        # Répertoire des certificats
+ADMIN_CERT="${CERTS_DIR}/admin.pem"      # Chemin vers le certificat admin
+ADMIN_KEY="${CERTS_DIR}/admin-key.pem"   # Chemin vers la clé admin
+CA_FILE="${CERTS_DIR}/ca.pem"            # Chemin vers le fichier CA
+HTTPS_HOST="127.0.0.1"                   # Hôte pour HTTPS
+HTTPS_PORT="2379"                         # Port pour HTTPS
 
 # Helper pour afficher l'usage
 function usage() {
@@ -40,7 +30,7 @@ if [[ "$1" == "--help" ]]; then
 fi
 
 # Lancer etcd en HTTPS avec les certificats fournis
-bin/etcd --data-dir ${ETCD_DIR} \
+$ETCD_BIN --data-dir ${ETCD_DATA_DIR} \
     --client-cert-auth \
     --cert-file=${ADMIN_CERT} \
     --key-file=${ADMIN_KEY} \

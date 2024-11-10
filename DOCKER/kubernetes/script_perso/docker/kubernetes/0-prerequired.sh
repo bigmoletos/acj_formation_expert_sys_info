@@ -12,15 +12,26 @@ function usage() {
     echo "Usage: $0 [options]"
     echo "Options:"
     echo "  --help                      Affiche ce message d'aide"
-    echo "  --ca-config <path>          Chemin vers le fichier de configuration CA (par défaut: ca-config.json)"
-    echo "  --admin-config <path>       Chemin vers le fichier de configuration admin (par défaut: admin.conf)"
+    echo "  --ca-config <path>          Chemin vers le fichier de configuration CA (par défaut: $CA_CONFIG)"
+    echo "  --admin-config <path>       Chemin vers le fichier de configuration admin (par défaut: $ADMIN_CONFIG)"
     echo "  --windows                   Configure le script pour une utilisation sur Windows (via WSL) ou sur linux"
 }
 
 # Variables par défaut pour les options personnalisables
-CA_CONFIG="ca-config.json"
-ADMIN_CONFIG="admin.conf"
-ARCH="amd64"  # Par défaut, on considère une architecture amd64
+CA_CONFIG="ca-config.json"  # Chemin vers le fichier de configuration CA
+ADMIN_CONFIG="admin.conf"    # Chemin vers le fichier de configuration admin
+ARCH="amd64"                  # Par défaut, on considère une architecture amd64
+
+# Versions des composants
+K8S_VERSION="1.27.0"         # Version de Kubernetes à installer
+ETCD_VERSION="3.5.7"         # Version d'ETCD à installer
+CONTAINERD_VERSION="1.7.0"   # Version de Containerd à installer
+RUNC_VERSION="1.1.4"         # Version de Runc à installer
+CILIUM_VERSION="0.13.2"      # Version de Cilium à installer
+CNI_PLUGINS_VERSION="1.2.0"  # Version des plugins CNI à installer
+
+# Mise à jour et installation des paquets
+PACKAGES=("tmux" "curl" "golang-cfssl" "linux-image-generic-hwe-22.04")
 
 # Parse les arguments
 while [[ "$1" != "" ]]; do
@@ -62,15 +73,9 @@ git fetch origin
 git reset --hard origin/main
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install tmux curl golang-cfssl linux-image-generic-hwe-22.04 -y
-
-# Configuration des versions
-K8S_VERSION=1.27.0
-ETCD_VERSION=3.5.7
-CONTAINERD_VERSION=1.7.0
-RUNC_VERSION=1.1.4
-CILIUM_VERSION=0.13.2
-CNI_PLUGINS_VERSION=1.2.0
+for PACKAGE in "${PACKAGES[@]}"; do
+    sudo apt install $PACKAGE -y
+done
 
 # Création du répertoire bin si non existant
 mkdir -p bin/
@@ -79,9 +84,8 @@ mkdir -p bin/
 curl -s https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 # Téléchargement de Kubernetes
-# curl -L https://dl.k8s.io/v${K8S_VERSION}/kubernetes-server-linux-${ARCH}.tar.gz -o kubernetes.tar.gz
-# tar -zxf kubernetes.tar.gz
-curl -L https://dl.k8s.io/v${K8S_VERSION}/kubernetes-server-linux-${ARCH}.tar.gz -o kubernetes-server-linux-${ARCH}.tar.gz
+K8S_TAR_URL="https://dl.k8s.io/v${K8S_VERSION}/kubernetes-server-linux-${ARCH}.tar.gz"
+curl -L $K8S_TAR_URL -o kubernetes-server-linux-${ARCH}.tar.gz
 tar -zxf kubernetes-server-linux-${ARCH}.tar.gz
 for BINARY in kubectl kube-apiserver kube-scheduler kube-controller-manager kubelet; do
     mv kubernetes/server/bin/${BINARY} bin/

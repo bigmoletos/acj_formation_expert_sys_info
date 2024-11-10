@@ -6,17 +6,25 @@
 # cluster Kubernetes sécurisé. Ce script est destiné à être exécuté dans un environnement sécurisé.
 
 # Variables de configuration
-CERTS_DIR="certs"                    # Répertoire pour les certificats
-CA_CONFIG_FILE="ca-config.json"       # Fichier de configuration CA
-CA_CSR_FILE="ca-csr.json"             # CSR pour la CA
-CA_CERT_PREFIX="ca"                   # Préfixe pour les fichiers CA générés
-ADMIN_CSR_FILE="admin-csr.json"       # CSR pour l'utilisateur admin
-ADMIN_CERT_PREFIX="admin"             # Préfixe pour les fichiers admin générés
-KUBECONFIG_FILE="admin.conf"          # Fichier kubeconfig généré
-CLUSTER_NAME="demystifions-kubernetes" # Nom du cluster
-K8S_SERVER="https://127.0.0.1:6443"   # Adresse du serveur Kubernetes
-ADMIN_USER="admin"                    # Nom de l'utilisateur administrateur
-HOSTNAMES="127.0.0.1,10.0.0.1,10.244.0.1,kubernetes,kubernetes.default,kubernetes.default.svc,kubernetes.default.svc.cluster,kubernetes.svc.cluster.local"  # Hostnames pour le certificat
+CERTS_DIR="certs"                    # Répertoire où les certificats seront stockés
+CA_CONFIG_FILE="ca-config.json"      # Fichier de configuration pour l'autorité de certification
+CA_CSR_FILE="ca-csr.json"            # Fichier de demande de signature de certificat pour la CA
+CA_CERT_PREFIX="ca"                   # Préfixe pour le nom des fichiers de certificat de la CA
+ADMIN_CSR_FILE="admin-csr.json"      # Fichier de demande de signature de certificat pour l'utilisateur admin
+ADMIN_CERT_PREFIX="admin"             # Préfixe pour le nom des fichiers de certificat de l'utilisateur admin
+KUBECONFIG_FILE="admin.conf"          # Fichier de configuration kubeconfig pour l'utilisateur admin
+CLUSTER_NAME="demystifions-kubernetes" # Nom du cluster Kubernetes
+K8S_SERVER="https://127.0.0.1:6443"  # URL du serveur Kubernetes
+ADMIN_USER="admin"                    # Nom d'utilisateur pour l'administrateur
+HOSTNAMES="127.0.0.1,10.0.0.1,10.244.0.1,kubernetes,kubernetes.default,kubernetes.default.svc,kubernetes.default.svc.cluster,kubernetes.svc.cluster.local"  # Noms d'hôtes pour le certificat
+
+# Variables supplémentaires pour éviter les valeurs "en dur"
+EXPIRY_DURATION="8760h"               # Durée d'expiration des certificats
+COUNTRY="FR"                          # Code du pays pour le certificat
+LOCALITY="Pessac"                     # Localité pour le certificat
+ORG_NAME="Kubernetes"                 # Nom de l'organisation pour le certificat
+ORG_UNIT="CA"                         # Unité d'organisation pour le certificat
+STATE="Nouvelle Aquitaine"            # État pour le certificat
 
 # Helper pour afficher l'usage du script
 function usage() {
@@ -41,12 +49,12 @@ mkdir -p "$CERTS_DIR" && cd "$CERTS_DIR"
 {
   "signing": {
     "default": {
-      "expiry": "8760h"
+      "expiry": "$EXPIRY_DURATION"
     },
     "profiles": {
       "kubernetes": {
         "usages": ["signing", "key encipherment", "server auth", "client auth"],
-        "expiry": "8760h"
+        "expiry": "$EXPIRY_DURATION"
       }
     }
   }
@@ -56,18 +64,18 @@ EOF
     # Génération de la CSR (Certificate Signing Request) pour la CA
     cat > "$CA_CSR_FILE" <<EOF
 {
-  "CN": "Kubernetes",
+  "CN": "$ORG_NAME",
   "key": {
     "algo": "rsa",
     "size": 2048
   },
   "names": [
     {
-      "C": "FR",
-      "L": "Pessac",
-      "O": "Kubernetes",
-      "OU": "CA",
-      "ST": "Nouvelle Aquitaine"
+      "C": "$COUNTRY",
+      "L": "$LOCALITY",
+      "O": "$ORG_NAME",
+      "OU": "$ORG_UNIT",
+      "ST": "$STATE"
     }
   ]
 }
@@ -88,11 +96,11 @@ EOF
   },
   "names": [
     {
-      "C": "FR",
-      "L": "Pessac",
+      "C": "$COUNTRY",
+      "L": "$LOCALITY",
       "O": "system:masters",
       "OU": "Démystifions Kubernetes",
-      "ST": "Nouvelle Aquitaine"
+      "ST": "$STATE"
     }
   ]
 }
