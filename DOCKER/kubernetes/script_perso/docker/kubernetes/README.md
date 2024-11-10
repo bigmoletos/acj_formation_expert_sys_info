@@ -1,106 +1,59 @@
-# demystifions-kubernetes
+# Démystifions Kubernetes
 
-## License
+## Licence
 
-All the scripts, images, markdown text and presentation in this repository are licenced under license CC BY-SA 4.0 (Creative Commons Attribution-ShareAlike 4.0 International)
+Tous les scripts, images, textes en markdown et présentations dans ce dépôt sont sous licence CC BY-SA 4.0 (Creative Commons Attribution-ShareAlike 4.0 International).
 
-This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes. If others remix, adapt, or build upon the material, they must license the modified material under identical terms.
+Cette licence exige que les réutilisateurs donnent crédit au créateur. Elle permet aux réutilisateurs de distribuer, remixer, adapter et construire sur le matériel dans n'importe quel support ou format, même à des fins commerciales. Si d'autres remixent, adaptent ou construisent sur le matériel, ils doivent licencier le matériel modifié sous des termes identiques.
 
-    BY: Credit must be given to you, the creator.
-    SA: Adaptations must be shared under the same terms. 
+    BY : Le crédit doit vous être donné, le créateur.
+    SA : Les adaptations doivent être partagées sous les mêmes termes.
 
-## Prerequisites
+## Prérequis
 
-I'm going to launch this on a clean VM running Ubuntu 22.04. Hostname for this VM should be **kubernetes** (due to ✨*certificates stuff*✨ I don't want to bother you with).
+Je vais lancer cela sur une VM propre fonctionnant sous Ubuntu 22.04. Le nom d'hôte pour cette VM doit être **kubernetes** (en raison des ✨*choses liées aux certificats*✨ que je ne veux pas vous déranger avec).
 
-### api-server & friends
+### api-server & amis
 
-Get kubernetes binaries from the kubernetes release page. We want the "server" bundle for amd64 Linux.
+Obtenez les binaires de Kubernetes à partir de la page de version de Kubernetes. Nous voulons le bundle "server" pour Linux amd64.
 
-```bash
-K8S_VERSION=1.29.0-alpha.3
-curl -L https://dl.k8s.io/v${K8S_VERSION}/kubernetes-server-linux-amd64.tar.gz -o kubernetes-server-linux-amd64.tar.gz
-tar -zxf kubernetes-server-linux-amd64.tar.gz
-for BINARY in kubectl kube-apiserver kube-scheduler kube-controller-manager kubelet kube-proxy;
-do
-  mv kubernetes/server/bin/${BINARY} .
-done
-rm kubernetes-server-linux-amd64.tar.gz
-rm -rf kubernetes
-```
-
-Note: jpetazzo's repo mentions a all-in-one binary call `hyperkube` which doesn't seem to exist anymore.
+Note : Le dépôt de jpetazzo mentionne un binaire tout-en-un appelé `hyperkube` qui ne semble plus exister.
 
 ### etcd
 
-See [https://github.com/etcd-io/etcd/releases/tag/v3.5.10](https://github.com/etcd-io/etcd/releases/tag/v3.5.10)
+Voir [https://github.com/etcd-io/etcd/releases/tag/v3.5.10](https://github.com/etcd-io/etcd/releases/tag/v3.5.10)
 
-Get binaries from the etcd release page. Pick the tarball for Linux amd64. In that tarball, we just need `etcd` and (just in case) `etcdctl`.
+Obtenez les binaires à partir de la page de version d'etcd. Choisissez le tarball pour Linux amd64. Dans ce tarball, nous avons juste besoin de `etcd` et (juste au cas où) `etcdctl`.
 
-This is a fancy one-liner to download the tarball and extract just what we need:
+C'est une ligne de commande élégante pour télécharger le tarball et extraire juste ce dont nous avons besoin :
 
-```bash
-ETCD_VERSION=3.5.10
-curl -L https://github.com/etcd-io/etcd/releases/download/v${ETCD_VERSION}/etcd-v${ETCD_VERSION}-linux-amd64.tar.gz | 
-  tar --strip-components=1 --wildcards -zx '*/etcd' '*/etcdctl'
-```
+Testez-le
 
-Test it
-
-```bash
-$ etcd --version
-etcd Version: 3.5.10
-Git SHA: cecbe35ce
-Go Version: go1.16.15
-Go OS/Arch: linux/amd64
-
-$ etcdctl version
-etcdctl version: 3.5.10
-API version: 3.5
-```
-
-Create a directory to host etcd database files
-
-```bash
-mkdir etcd-data
-chmod 700 etcd-data
-```
+Créez un répertoire pour héberger les fichiers de base de données etcd
 
 ### containerd
 
-Note: Jérôme was using Docker but since Kubernetes 1.24, dockershim, the component responsible for bridging the gap between docker daemon and kubernetes is no longer supported. I (like many other) switched to `containerd` but there are alternatives.
-
-```bash
-wget https://github.com/containerd/containerd/releases/download/v1.7.9/containerd-1.7.9-linux-amd64.tar.gz
-tar --strip-components=1 --wildcards -zx '*/ctr' '*/containerd' '*/containerd-shim-runc-v2' -f containerd-1.7.9-linux-amd64.tar.gz
-rm containerd-1.7.9-linux-amd64.tar.gz
-```
+Note : Jérôme utilisait Docker, mais depuis Kubernetes 1.24, dockershim, le composant responsable de la liaison entre le démon docker et Kubernetes, n'est plus supporté. J'ai (comme beaucoup d'autres) changé pour `containerd`, mais il existe des alternatives.
 
 ### runc
 
-`containerd` is a high level container runtime which relies on `runc` (low level. Download it:
+`containerd` est un runtime de conteneur de haut niveau qui repose sur `runc` (de bas niveau). Téléchargez-le :
 
-```bash
-curl https://github.com/opencontainers/runc/releases/download/v1.1.4/runc.amd64 -L -o runc
-chmod +x runc
-sudo mv runc /usr/bin/
-```
+### Divers
 
-### Misc
+Nous avons besoin de l'outil `cfssl` pour générer des certificats. Installez-le (voir [github.com/cloudflare/cfssl](https://github.com/cloudflare/cfssl#installation)).
 
-We need `cfssl` tool to generate certificates. Install it (see [github.com/cloudflare/cfssl](https://github.com/cloudflare/cfssl#installation)).
+Pour installer Calico (le plugin CNI dans ce tutoriel), le moyen le plus simple est d'utiliser `helm` (voir [helm.sh/docs](https://helm.sh/docs/intro/install/)).
 
-To install calico (the CNI plugin in this tutorial), the easiest way is to use `helm` (see [helm.sh/docs](https://helm.sh/docs/intro/install/)).
+Optionnellement, pour faciliter ce tutoriel, vous devriez également avoir un moyen de passer facilement entre les terminaux. `tmux` ou `screen` sont vos amis. Voici une [fiche de triche tmux](https://tmuxcheatsheet.com/) si vous en avez besoin ;-).
 
-Optionally, to ease this tutorial, you should also have a mean to easily switch between terminals. `tmux` or `screen` are your friends. Here is a [tmux cheat sheet](https://tmuxcheatsheet.com/) should you need it ;-).
+Optionnellement également, `curl` est un bon ajout pour jouer avec le serveur API.
 
-Optionally as well, `curl` is a nice addition to play with API server.
+### Certificats
 
-### Certificates
+Bien que ce tutoriel puisse être exécuté sans avoir de chiffrement TLS entre les composants (comme Jérôme l'a fait), pour le plaisir (et le profit), je préfère utiliser le chiffrement partout. Voir [github.com/kelseyhightower/kubernetes-the-hard-way](https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/04-certificate-authority.md)
 
-Even though this tutorial could be run without having any TLS encryption between components (like Jérôme did), for fun (and profit) I'd rather use encryption everywhere. See [github.com/kelseyhightower/kubernetes-the-hard-way](https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/04-certificate-authority.md)
-
-Generate the CA
+Générez le CA
 
 ```bash
 mkdir certs && cd certs
@@ -143,7 +96,7 @@ cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 }
 ```
 
-Generate the admin certs (will be used for everything, bad practice).
+Générez les certificats administratifs (seront utilisés pour tout, mauvaise pratique).
 
 ```bash
 {
@@ -174,26 +127,26 @@ cfssl gencert \
 }
 ```
 
-Get back in main dir
+Retournez dans le répertoire principal
 
 ```bash
 cd ..
 ```
 
-### Warnings
+### Avertissements
 
-We are going to use admin cert for ALL components of Kubernetes. Please don't do this, this is really bad practice. All components should have separate certificates (some even need more than one). See [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/) in the official documentation for more information on this topic.
+Nous allons utiliser le certificat administrateur pour TOUS les composants de Kubernetes. S'il vous plaît, ne faites pas cela, c'est vraiment une mauvaise pratique. Tous les composants devraient avoir des certificats séparés (certains nécessitent même plus d'un). Voir [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/) dans la documentation officielle pour plus d'informations sur ce sujet.
 
-Also, a lot of files will be created in various places, and sometime they need priviledges to do so. For convenience, some binaries will be launched as **root** (`containerd`, `kubelet`, `kube-proxy`) using `sudo`.
+De plus, de nombreux fichiers seront créés à divers endroits, et parfois ils nécessitent des privilèges pour le faire. Pour plus de commodité, certains binaires seront lancés en tant que **root** (`containerd`, `kubelet`, `kube-proxy`) en utilisant `sudo`.
 
-## Kubernetes bootstrap
+## Bootstrap Kubernetes
 
-### Authentication Configs
+### Configurations d'authentification
 
-We will create a kubeconfig files using the certs we generated. We'll use them later:
+Nous allons créer des fichiers kubeconfig en utilisant les certificats que nous avons générés. Nous les utiliserons plus tard :
 
 ```bash
-#launch tmux
+#lancer tmux
 tmux new -t bash
 
 export KUBECONFIG=admin.conf
@@ -216,7 +169,7 @@ kubectl config use-context admin
 
 ### etcd
 
-We can't start the API server until we have an `etcd` backend to support it's persistance. So let's start with `etcd` command:
+Nous ne pouvons pas démarrer le serveur API tant que nous n'avons pas un backend `etcd` pour soutenir sa persistance. Commençons donc par la commande `etcd` :
 
 ```bash
 #create a new tmux session for etcd
@@ -235,7 +188,7 @@ We can't start the API server until we have an `etcd` backend to support it's pe
 
 ### kube-apiserver
 
-Now we can start the `kube-apiserver`:
+Maintenant, nous pouvons démarrer le `kube-apiserver` :
 
 ```bash
 #create a new tmux session for apiserver
@@ -255,9 +208,9 @@ Now we can start the `kube-apiserver`:
 --tls-private-key-file=certs/admin-key.pem
 ```
 
-Note: you can then switch between sessions with '[ctrl]-b' and then '(' or ')'
+Note : vous pouvez ensuite passer entre les sessions avec '[ctrl]-b' et puis '(' ou ')'
 
-Get back to "bash" tmux session and check that API server responds
+Retournez à la session tmux "bash" et vérifiez que le serveur API répond
 
 ```bash
 '[ctrl]-b' and then ': attach -t bash'
@@ -265,7 +218,7 @@ Get back to "bash" tmux session and check that API server responds
 kubectl version --short
 ```
 
-You should get a similar output
+Vous devriez obtenir une sortie similaire
 
 ```
 Client Version: v1.29.0-alpha.3
@@ -273,7 +226,7 @@ Kustomize Version: v4.5.7
 Server Version: v1.29.0-alpha.3
 ```
 
-Check what APIs are available
+Vérifiez quelles API sont disponibles
 
 ```
 kubectl api-resources | head
@@ -289,7 +242,7 @@ nodes                             no           v1                               
 persistentvolumeclaims            pvc          v1                                     true         PersistentVolumeClaim
 ```
 
-We can try to deploy a *Deployment* and see that the *Deployment* is created but not the *Pods*.
+Nous pouvons essayer de déployer un *Deployment* et voir que le *Deployment* est créé mais pas les *Pods*.
 
 ```
 cat > deploy.yaml << EOF
@@ -315,16 +268,16 @@ spec:
 EOF
 kubectl apply -f deploy.yaml
 
-#or
+#ou
 #kubectl create deployment web --image=zwindler/vhelloworld
 ```
 
-You should get the following message:
+Vous devriez obtenir le message suivant :
 ```bash
 deployment.apps/web created
 ```
 
-But... nothing happens
+Mais... rien ne se passe
 
 ```bash
 kubectl get deploy
@@ -337,9 +290,9 @@ No resources found in default namespace.
 
 ### kube-controller-manager
 
-This is because most of Kubernetes magic is done by the kubernetes **Controller manager** (and the controllers it controls). Typically here, creating a *Deployment* will trigger the creation of a *Replicaset*, which in turn will create our *Pods*.
+C'est parce que la plupart de la magie de Kubernetes est faite par le **Controller manager** de Kubernetes (et les contrôleurs qu'il contrôle). Typiquement ici, créer un *Deployment* déclenchera la création d'un *Replicaset*, qui à son tour créera nos *Pods*.
 
-We can start the controller manager to fix this.
+Nous pouvons démarrer le controller manager pour corriger cela.
 
 ```bash
 #create a new tmux session for the controller manager
@@ -356,15 +309,15 @@ We can start the controller manager to fix this.
 I1130 14:36:38.454244    1772 garbagecollector.go:163] Garbage collector: all resource monitors have synced. Proceeding to collect garbage
 ```
 
-The *ReplicaSet* and then the *Pod* are created... but the *Pod* is stuck in `Pending` indefinitely!
+Le *ReplicaSet* et ensuite le *Pod* sont créés... mais le *Pod* est bloqué en `Pending` indéfiniment !
 
-That's because there are many things missing before the Pod can start. 
+C'est parce qu'il manque beaucoup de choses avant que le Pod puisse démarrer.
 
-To start it, we still need a scheduler to decide where to start the **Pod**
+Pour le démarrer, nous avons encore besoin d'un planificateur pour décider où démarrer le **Pod**.
 
 ### kube-scheduler
 
-Let's now start the `kube-scheduler`:
+Démarrons maintenant le `kube-scheduler` :
 
 ```bash
 #create a new tmux session for scheduler
@@ -378,14 +331,14 @@ I1201 12:54:40.914977    2450 leaderelection.go:248] attempting to acquire leade
 I1201 12:54:40.923268    2450 leaderelection.go:258] successfully acquired lease kube-system/kube-scheduler
 ```
 
-But we still don't have our *Pod*... Sad panda.
+Mais nous n'avons toujours pas notre *Pod*... Triste panda.
 
-In fact, that's because we still need a bunch of things...
-- a container runtime to run the containers in the pods
-- a `kubelet` daemon to let kubernetes interact with the container runtime
-### container runtime
+En fait, c'est parce qu'il manque encore beaucoup de choses...
+- un runtime de conteneur pour exécuter les conteneurs dans les pods
+- un démon `kubelet` pour permettre à Kubernetes d'interagir avec le runtime de conteneur
+### Runtime de conteneur
 
-Let's start the container runtime `containerd` on our machine:
+Démarrons le runtime de conteneur `containerd` sur notre machine :
 
 ```bash
 #create a new tmux session for containerd
@@ -393,17 +346,17 @@ Let's start the container runtime `containerd` on our machine:
 sudo ./containerd
 [...]
 INFO[2022-12-01T11:03:37.616892592Z] serving...                                    address=/run/containerd/containerd.sock
-INFO[2022-12-01T11:03:37.617062671Z] containerd successfully booted in 0.038455s  
+INFO[2022-12-01T11:03:37.617062671Z] containerd successfully booted in 0.038455s
 [...]
 ```
 
 ### kubelet
 
-Let's start the `kubelet` component. It will register our current machine as a *Node*, which will allow future *Pod* scheduled by scheduler.
+Démarrons le composant `kubelet`. Il enregistrera notre machine actuelle en tant que *Node*, ce qui permettra aux futurs *Pods* planifiés par le planificateur.
 
-At last!
+Enfin !
 
-The role of the kubelet is also to talk with containerd to launch/monitor/kill the containers of our *Pods*.
+Le rôle du kubelet est également de parler avec containerd pour lancer/monitorer/tuer les conteneurs de nos *Pods*.
 
 ```bash
 #create a new tmux session for kubelet
@@ -416,19 +369,19 @@ sudo ./kubelet \
 --register-node=true
 ```
 
-We are going to get error messages telling us that we have no CNI plugin
+Nous allons obtenir des messages d'erreur nous disant que nous n'avons pas de plugin CNI
 
 ```bash
 E1211 21:13:22.555830   27332 kubelet.go:2373] "Container runtime network not ready" networkReady="NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized"
 E1211 21:13:27.556616   27332 kubelet.go:2373] "Container runtime network not ready" networkReady="NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized"
-E1211 21:13:32.558180   27332 kubelet.go:2373] "Container runtime network not ready" networkReady="NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized"
+E1211 21:13:32.558180   27332 kubelet.go:2373] "Container runtime network not ready" networkReady="NetworkReady=false reason:NetworkPluginNotReady message: Network plugin returns error: cni plugin not initialized"
 ```
 
-### CNI plugin
+### Plugin CNI
 
-To deal with networking inside Kubernetes, we need a few last things. A `kube-proxy` (which in some cases can be removed) and a CNI plugin. 
+Pour gérer le réseau à l'intérieur de Kubernetes, nous avons besoin de quelques dernières choses. Un `kube-proxy` (qui dans certains cas peut être supprimé) et un plugin CNI.
 
-For CNI plugin, I chose Calico but there are many more options out there. Here I just deploy the chart and let Calico do the magic.
+Pour le plugin CNI, j'ai choisi Calico mais il existe de nombreuses autres options. Ici, je déploie simplement le chart et laisse Calico faire la magie.
 
 ```bash
 helm repo add projectcalico https://projectcalico.docs.tigera.io/charts
@@ -439,7 +392,7 @@ helm install calico projectcalico/tigera-operator --version v3.24.5 --namespace 
 
 ### kube-proxy
 
-Let's start the `kube-proxy`:
+Démarrons le `kube-proxy` :
 
 ```bash
 #create a new tmux session for proxy
@@ -447,7 +400,7 @@ Let's start the `kube-proxy`:
 sudo ./kube-proxy --kubeconfig admin.conf
 ```
 
-Then, we are going to create a ClusterIP service to obtain a stable IP address (and load balancer) for our deployment.
+Ensuite, nous allons créer un service ClusterIP pour obtenir une adresse IP stable (et un équilibreur de charge) pour notre déploiement.
 
 ```bash
 cat > service.yaml << EOF
@@ -476,7 +429,7 @@ web          ClusterIP   10.0.0.34    <none>        3000/TCP  67s
 
 ### IngressController
 
-Finally, to allow us to connect to our Pod using a nice URL in our brower, I'll add an optional *IngressController*. Let's deploy Traefik as our ingressController
+Enfin, pour nous permettre de nous connecter à notre Pod en utilisant une belle URL dans notre navigateur, je vais ajouter un *IngressController* optionnel. Déployons Traefik comme notre ingressController
 
 ```bash
 helm repo add traefik https://traefik.github.io/charts
@@ -493,13 +446,13 @@ traefik      LoadBalancer   10.0.0.86    <pending>     80:31889/TCP,443:31297/TC
 web          ClusterIP      10.0.0.34    <none>        3000/TCP                     21m
 ```
 
-Notice the Ports on the traefik line: **80:31889/TCP,443:31297/TCP** in my example.
+Remarquez les ports sur la ligne traefik : **80:31889/TCP,443:31297/TCP** dans mon exemple.
 
-Provided that DNS can resolve domain.tld to the IP of our Node, we can now access Traefik from the Internet by using http://domain.tld:31889 (and https://domain.tld:31297).
+À condition que le DNS puisse résoudre domain.tld à l'IP de notre nœud, nous pouvons maintenant accéder à Traefik depuis Internet en utilisant http://domain.tld:31889 (et https://domain.tld:31297).
 
-But how can we connect to our website?
+Mais comment pouvons-nous nous connecter à notre site web ?
 
-By creating an Ingress that redirects traffic coming to dk.domain.tld to our docker image
+En créant un Ingress qui redirige le trafic venant à dk.domain.tld vers notre image docker
 
 ```yaml
 cat > ingress.yaml << EOF
@@ -524,41 +477,41 @@ EOF
 kubectl apply -f ingress.yaml
 ```
 
-[http://dk.domain.tld:31889/](http://dk.domain.tld:31889/) should now be available!! Congrats!
+[http://dk.domain.tld:31889/](http://dk.domain.tld:31889/) devrait maintenant être disponible !! Félicitations !
 
-## Playing with our cluster
+## Jouer avec notre cluster
 
-Let's then have a look to the iptables generated by `kube-proxy`
+Jetons ensuite un œil aux iptables générés par `kube-proxy`
 
 ```bash
 sudo iptables -t nat -L KUBE-SERVICES |grep -v calico
 Chain KUBE-SERVICES (2 references)
-target     prot opt source               destination         
+target     prot opt source               destination
 KUBE-SVC-NPX46M4PTMTKRN6Y  tcp  --  anywhere             10.0.0.1             /* default/kubernetes:https cluster IP */ tcp dpt:https
 KUBE-SVC-LOLE4ISW44XBNF3G  tcp  --  anywhere             10.0.0.34            /* default/web cluster IP */ tcp dpt:http
 KUBE-NODEPORTS  all  --  anywhere             anywhere             /* kubernetes service nodeports; NOTE: this must be the last rule in this chain */ ADDRTYPE match dst-type LOCAL
 ```
 
-Here we can see that everything trying to go to 10.0.0.34 (the IP of our Kubernetes **Service** for nginx) is forwarded to **KUBE-SVC-LOLE4ISW44XBNF3G** rule
+Ici, nous pouvons voir que tout ce qui essaie d'aller à 10.0.0.34 (l'IP de notre **Service** Kubernetes pour nginx) est redirigé vers la règle **KUBE-SVC-LOLE4ISW44XBNF3G**
 
 ```bash
 sudo iptables -t nat -L KUBE-SVC-LOLE4ISW44XBNF3G
 Chain KUBE-SVC-LOLE4ISW44XBNF3G (1 references)
-target     prot opt source               destination         
+target     prot opt source               destination
 KUBE-SEP-3RY52QTAPPWAROT7  all  --  anywhere             anywhere             /* default/web -> 192.168.238.4:80 */
 ```
 
-Digging a little bit further, we can see that for now, all the traffic is directed to the rule called **KUBE-SEP-3RY52QTAPPWAROT7**. **SEP** stands for "Service EndPoint"
+En creusant un peu plus, nous pouvons voir que pour l'instant, tout le trafic est dirigé vers la règle appelée **KUBE-SEP-3RY52QTAPPWAROT7**. **SEP** signifie "Service EndPoint"
 
 ```bash
 sudo iptables -t nat -L KUBE-SEP-3RY52QTAPPWAROT7
 Chain KUBE-SEP-3RY52QTAPPWAROT7 (1 references)
-target     prot opt source               destination         
+target     prot opt source               destination
 KUBE-MARK-MASQ  all  --  192.168.238.4        anywhere             /* default/web */
 DNAT       tcp  --  anywhere             anywhere             /* default/web */ tcp to:192.168.238.4:80
 ```
 
-Let's scale our deployment to see what happens
+Scalons notre déploiement pour voir ce qui se passe
 
 ```bash
 kubectl scale deploy web --replicas=4
@@ -572,29 +525,29 @@ web-8667899c97-s4sjg   1/1     Running   0          10s   192.168.238.7   instan
 web-8667899c97-vvqb7   1/1     Running   0          43m   192.168.238.4   instance-2022-12-01-15-47-29   <none>           <none>
 ```
 
-iptables rules are updated accordingly, with random propability to be selected
+Les règles iptables sont mises à jour en conséquence, avec une probabilité aléatoire d'être sélectionnées
 
 ```bash
 sudo iptables -t nat -L KUBE-SVC-LOLE4ISW44XBNF3G
 Chain KUBE-SVC-LOLE4ISW44XBNF3G (1 references)
-target     prot opt source               destination         
+target     prot opt source               destination
 KUBE-SEP-3RY52QTAPPWAROT7  all  --  anywhere             anywhere             /* default/web -> 192.168.238.4:80 */ statistic mode random probability 0.25000000000
 KUBE-SEP-XDYZG4GSYEXZWWXS  all  --  anywhere             anywhere             /* default/web -> 192.168.238.5:80 */ statistic mode random probability 0.33333333349
 KUBE-SEP-U3XU475URPOLV25V  all  --  anywhere             anywhere             /* default/web -> 192.168.238.6:80 */ statistic mode random probability 0.50000000000
 KUBE-SEP-XLJ4FHFV6DVOXHKZ  all  --  anywhere             anywhere             /* default/web -> 192.168.238.7:80 */
 ```
 
-## The end
+## La fin
 
-Now, you should have a working "one node kubernetes cluster"
+Maintenant, vous devriez avoir un "cluster Kubernetes à un nœud" fonctionnel.
 
-### Cleanup
+### Nettoyage
 
-You should clear the `/var/lib/kubelet` directory and remove the `/usr/bin/runc` and `/usr/local/bin/kubectl` binaries
+Vous devriez vider le répertoire `/var/lib/kubelet` et supprimer les binaires `/usr/bin/runc` et `/usr/local/bin/kubectl`
 
-If you want to run the lab again, also clear etcd-data directory or even the whole demystifions-kubernetes folder and `git clone` it again
+Si vous souhaitez relancer le laboratoire, videz également le répertoire etcd-data ou même tout le dossier demystifions-kubernetes et `git clone` à nouveau.
 
-## Similar resources 
+## Ressources similaires
 
 * Jérôme Petazzoni's [dessine-moi-un-cluster](https://github.com/jpetazzo/dessine-moi-un-cluster)
 * Kelsey Hightower's [kubernetes the hard way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
