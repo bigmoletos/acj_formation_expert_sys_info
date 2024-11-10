@@ -1,17 +1,18 @@
 #!/bin/bash
 
 # Docstring
-# Démarre le kube-controller-manager avec les options de certificat et les configurations réseau.
+# Ce script démarre le kube-controller-manager avec les options de certificat et les configurations réseau.
+# Les chemins et options sont définis par des variables pour faciliter la configuration.
 
 # Variables de configuration
-CERTS_DIR="certs"
-CA_FILE="${CERTS_DIR}/ca.pem"
-ADMIN_KEY="${CERTS_DIR}/ca-key.pem"
-KUBECONFIG="admin.conf"
-CLUSTER_CIDR="10.0.0.0/16"
-CONTROLLER_MANAGER_BIN="bin/kube-controller-manager"
+CERTS_DIR="certs"  # Répertoire contenant les certificats
+CA_FILE="${CERTS_DIR}/ca.pem"  # Fichier du certificat d'autorité
+ADMIN_KEY="${CERTS_DIR}/ca-key.pem"  # Clé privée de l'administrateur
+KUBECONFIG="admin.conf"  # Fichier de configuration Kubernetes par défaut
+CLUSTER_CIDR="10.0.0.0/16"  # Plage CIDR pour le cluster
+CONTROLLER_MANAGER_BIN="bin/kube-controller-manager"  # Chemin vers l'exécutable du kube-controller-manager
 
-# Helper pour afficher l'usage
+# Fonction d'aide
 function usage() {
     echo "Usage: $0"
     echo "Options:"

@@ -1,17 +1,17 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: networking.k8s.io/v1  # Version de l'API pour la ressource Ingress
+kind: Ingress  # Type de ressource Kubernetes
 metadata:
-  name: dk
-  namespace: default
+  name: dk  # Nom de l'Ingress
+  namespace: default  # Namespace dans lequel l'Ingress est créé
 spec:
-  rules:
-    - host: dk.zwindler.fr
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name:  web
-                port:
-                  number: 3000
+  rules:  # Règles de routage pour l'Ingress
+    - host: dk.zwindler.fr  # Nom d'hôte pour lequel cette règle s'applique
+      http:  # Configuration pour le routage HTTP
+        paths:  # Liste des chemins pour le routage
+          - path: /  # Chemin d'URL pour lequel cette règle s'applique
+            pathType: Prefix  # Type de correspondance du chemin (préfixe)
+            backend:  # Configuration du backend pour le routage
+              service:  # Définition du service backend
+                name: web  # Nom du service backend
+                port:  # Port du service backend
+                  number: 3000  # Numéro de port sur lequel le service écoute
