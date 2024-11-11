@@ -1,19 +1,37 @@
 apiVersion: apps/v1  # Version de l'API Kubernetes utilisée pour le déploiement
 kind: Deployment     # Type de ressource, ici un déploiement
 metadata:
+  name: web        # Nom du déploiement
   labels:           # Étiquettes pour identifier le déploiement
     app: web       # Nom de l'application
-  name: web        # Nom du déploiement
-spec:
+spec:               # Assurez-vous que 'spec' est correctement indenté
   replicas: 2      # Nombre de réplicas souhaités pour le déploiement
   selector:        # Sélecteur pour identifier les pods gérés par ce déploiement
     matchLabels:
       app: web    # Étiquette à faire correspondre pour sélectionner les pods
+  strategy:        # Stratégie de mise à jour
+    type: RollingUpdate  # Type de stratégie de mise à jour
+    rollingUpdate:       # Configuration de la mise à jour progressive
+      maxSurge: 1        # Nombre maximum de pods supplémentaires
+      maxUnavailable: 0   # Nombre maximum de pods non disponibles
   template:       # Modèle de pod à créer
     metadata:
       labels:     # Étiquettes pour les pods créés par ce déploiement
         app: web  # Nom de l'application pour les pods
     spec:
       containers: # Liste des conteneurs à déployer dans les pods
-      - image: zwindler/vhelloworld  # Image du conteneur à utiliser
-        name: web  # Nom du conteneur
+        - image: zwindler/vhelloworld  # Image sur Docker Hub du conteneur à utiliser
+          name: web  # Nom du conteneur
+          ports:     # Spécification des ports exposés par le conteneur
+            - containerPort: 80  # Port sur lequel le conteneur écoute
+          env:       # Variables d'environnement pour le conteneur (ajouté si nécessaire)
+            - name: HOST_DOMAIN  # Nom de la variable d'environnement
+              # value: "dk.zwindler.fr"  # Valeur de la variable d'environnement
+              value: "localhost"  # pour tester en local le déployment
+          resources:  # Ajout des limites de ressources
+            limits:  # Limites de ressources
+              memory: "256Mi"  # Limite de mémoire
+              cpu: "500m"      # Limite de CPU
+            requests:  # Requêtes de ressources
+              memory: "128Mi"  # Requête de mémoire
+              cpu: "250m"      # Requête de CPU
