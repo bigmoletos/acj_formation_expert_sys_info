@@ -5,7 +5,7 @@
 # Il utilise des variables pour toutes les valeurs configurables afin de faciliter la maintenance.
 
 # Variables
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 CONTAINERD_BIN="${USER_HOME}/bin/containerd"  # Chemin vers l'exécutable containerd
 
 # Fonction d'aide

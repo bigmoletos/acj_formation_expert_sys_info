@@ -16,7 +16,7 @@ HTTPS_HOST="127.0.0.1"                   # Hôte pour HTTPS
 HTTPS_PORT="2379"                         # Port pour HTTPS
 
 # Variables pour le répertoire personnel
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 ETCD_DATA_DIR="${USER_HOME}/etcd-data" # Répertoire des données etcd
 
 # Helper pour afficher l'usage

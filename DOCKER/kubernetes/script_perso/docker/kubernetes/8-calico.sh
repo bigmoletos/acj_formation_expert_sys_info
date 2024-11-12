@@ -17,13 +17,13 @@ HELM_VERSION="v3.25.1"                                   # Version du chart Helm
 #   - kubectl doit être configuré pour accéder au cluster Kubernetes.
 install_calico() {
     # Ajout du dépôt Helm
-    helm repo add projectcalico $HELM_REPO
+    sudo helm repo add projectcalico $HELM_REPO
 
     # Création du namespace
-    kubectl create namespace $NAMESPACE
+    sudo kubectl create namespace $NAMESPACE
 
     # Installation de Calico
-    helm install calico $HELM_CHART --version $HELM_VERSION --namespace $NAMESPACE
+    sudo helm install calico $HELM_CHART --version $HELM_VERSION --namespace $NAMESPACE
 }
 
 # Appel de la fonction d'installation

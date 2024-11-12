@@ -7,7 +7,7 @@
 
 # Variables
 # Variables pour le répertoire personnel
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 NAMESPACE="kube-flannel"  # Nom du namespace Kubernetes pour Flannel
 LABEL_KEY="pod-security.kubernetes.io/enforce"  # Clé de l'étiquette de sécurité à appliquer
 LABEL_VALUE="privileged"  # Valeur de l'étiquette de sécurité
@@ -33,6 +33,6 @@ kubectl create ns $NAMESPACE
 kubectl label --overwrite ns $NAMESPACE $LABEL_KEY=$LABEL_VALUE
 
 # Installation de Flannel avec Helm
-helm install flannel \
+sudo helm install flannel \
         --namespace $NAMESPACE \
         $HELM_CHART_URL

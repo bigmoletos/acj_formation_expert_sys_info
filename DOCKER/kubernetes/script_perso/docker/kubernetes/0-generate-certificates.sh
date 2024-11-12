@@ -6,7 +6,7 @@
 # cluster Kubernetes sécurisé. Ce script est destiné à être exécuté dans un environnement sécurisé.
 
 # Variables de configuration
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 # CERTS_DIR="certs"                    # Répertoire où les certificats seront stockés
 CA_CONFIG_FILE="ca-config.json"      # Fichier de configuration pour l'autorité de certification
 CA_CSR_FILE="ca-csr.json"            # Fichier de demande de signature de certificat pour la CA
@@ -45,7 +45,7 @@ if [[ "$1" == "--help" ]]; then
 fi
 
 # Création du répertoire de certificats
-mkdir -p "$CERTS_DIR" && cd "$CERTS_DIR"
+sudo mkdir -p "$CERTS_DIR" && cd "$CERTS_DIR"
 
 {
     # Génération du fichier de configuration CA
@@ -91,7 +91,7 @@ EOF
 
 {
     # Génération de la CSR pour l'utilisateur admin
-    cat > "$ADMIN_CSR_FILE" <<EOF
+    sudo cat > "$ADMIN_CSR_FILE" <<EOF
 {
   "CN": "$ADMIN_USER",
   "key": {
@@ -149,4 +149,4 @@ kubectl config set-context "$ADMIN_USER" \
 kubectl config use-context "$ADMIN_USER"
 
 # Copier le fichier de configuration dans le répertoire .kube
-mkdir -p ~/.kube && cp "$KUBECONFIG_FILE" ~/.kube/config
+sudo mkdir -p ~/.kube && cp "$KUBECONFIG_FILE" ~/.kube/config

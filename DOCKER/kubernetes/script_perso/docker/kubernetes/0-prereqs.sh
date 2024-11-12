@@ -21,7 +21,7 @@ function error_exit {
 }
 
 # Variables pour l'architecture
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 
 DEFAULT_ARCH="amd64" # Architecture par défaut si aucune n'est spécifiée
 ARCH=${1:-$DEFAULT_ARCH} # Architecture spécifiée par l'utilisateur ou par défaut
@@ -60,32 +60,32 @@ CILIUM_CLI_VERSION="0.16.10" # Version de Cilium CLI à installer
 CNI_PLUGINS_VERSION="1.5.0" # Version des plugins CNI à installer
 
 # Variables pour le répertoire personnel
-# USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+# USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 
 # Création du répertoire pour les binaires
 BIN_DIR="${USER_HOME}/bin/" # Répertoire pour stocker les binaires téléchargés
-mkdir -p $BIN_DIR # Création du répertoire pour les binaires
+sudo sudo mkdir -p $BIN_DIR # Création du répertoire pour les binaires
 
 # URL d'hôte pour ingress
 HOST_DOMAIN="dk.zwindler.fr" # Domaine d'hôte pour l'accès aux services via Ingress
 
 # Installation de Helm
 HELM_INSTALL_URL="https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3" # URL pour installer Helm
-curl $HELM_INSTALL_URL | bash
+sudo curl $HELM_INSTALL_URL | bash
 
 # Téléchargement et extraction de Kubernetes
 K8S_TAR_URL="https://dl.k8s.io/v$K8S_VERSION/kubernetes-server-linux-$ARCH.tar.gz" # URL de téléchargement de Kubernetes
-curl -L $K8S_TAR_URL -o kubernetes-server-linux-$ARCH.tar.gz
+sudo curl -L $K8S_TAR_URL -o kubernetes-server-linux-$ARCH.tar.gz
 tar -zxf kubernetes-server-linux-${ARCH}.tar.gz
 
 # Déplacement des binaires Kubernetes
 for BINARY in kubectl kube-apiserver kube-scheduler kube-controller-manager kubelet kube-proxy; do
-    mv kubernetes/server/bin/${BINARY} $BIN_DIR # Déplacement des binaires dans le répertoire personnel
+    sudo mv kubernetes/server/bin/${BINARY} $BIN_DIR # Déplacement des binaires dans le répertoire personnel
 done
 
 # Nettoyage des fichiers temporaires
-rm kubernetes-server-linux-${ARCH}.tar.gz # Suppression de l'archive tar de Kubernetes
-rm -rf kubernetes # Suppression du répertoire extrait de Kubernetes
+sudo rm kubernetes-server-linux-${ARCH}.tar.gz # Suppression de l'archive tar de Kubernetes
+sudo rm -rf kubernetes # Suppression du répertoire extrait de Kubernetes
 
 # Déplacement de kubectl dans le répertoire local
 KUBECTL_PATH="$BIN_DIR/kubectl" # Chemin où kubectl sera installé
@@ -96,45 +96,45 @@ BASHRC_FILE="$HOME/.bashrc" # Fichier de configuration bash de l'utilisateur
 echo 'source <(kubectl completion bash)' >> $BASHRC_FILE # Ajout de l'autocomplétion à .bashrc
 
 # Déplacement des autres binaires
-mv kube* $BIN_DIR # Déplacement des autres binaires dans le répertoire bin/
+sudo mv kube* $BIN_DIR # Déplacement des autres binaires dans le répertoire bin/
 
 # Téléchargement et installation d'etcd
 ETCD_TAR_URL="https://github.com/etcd-io/etcd/releases/download/v${ETCD_VERSION}/etcd-v${ETCD_VERSION}-linux-${ARCH}.tar.gz" # URL de téléchargement d'etcd
 curl -L $ETCD_TAR_URL | tar --strip-components=1 --wildcards -zx '*/etcd' # Extraction de etcd
-mv etcd /var/lib/etcd # Déplacement de etcd dans /var/lib/etcd
+sudo mv etcd /var/lib/etcd # Déplacement de etcd dans /var/lib/etcd
 
 # Création du répertoire de données pour etcd
 ETCD_DATA_DIR="${USER_HOME}/etcd-data" # Répertoire pour stocker les données d'etcd
-mkdir -p $ETCD_DATA_DIR # Création du répertoire de données
-chmod 700 $ETCD_DATA_DIR # Définition des permissions du répertoire
+sudo mkdir -p $ETCD_DATA_DIR # Création du répertoire de données
+sudo chmod 700 $ETCD_DATA_DIR # Définition des pesudo rmissions du répertoire
 
 # Téléchargement et installation de containerd
 CONTAINERD_TAR_URL="https://github.com/containerd/containerd/releases/download/v${CONTAINERD_VERSION}/containerd-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz" # URL de téléchargement de containerd
 wget $CONTAINERD_TAR_URL # Téléchargement de containerd
 tar --strip-components=1 --wildcards -zx '*/ctr' '*/containerd' '*/containerd-shim-runc-v2' -f containerd-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz # Extraction des binaires de containerd
-rm containerd-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz # Suppression de l'archive tar de containerd
-mv containerd* ctr /usr/local/bin/ # Déplacement des binaires de containerd dans /usr/local/bin/
+sudo rm containerd-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz # Suppression de l'archive tar de containerd
+sudo mv containerd* ctr /usr/local/bin/ # Déplacement des binaires de containerd dans /usr/local/bin/
 
 # Téléchargement et installation de runc
 RUNC_URL="https://github.com/opencontainers/runc/releases/download/v${RUNC_VERSION}/runc.${ARCH}" # URL de téléchargement de runc
 curl $RUNC_URL -L -o runc # Téléchargement de runc
-chmod +x runc # Rendre runc exécutable
+sudo chmod +x runc # Rendre runc exécutable
 sudo mv runc /usr/bin/ # Déplacement de runc dans /usr/bin/
 
 # Téléchargement et installation de Cilium CLI
 CILIUM_CLI_URL="https://github.com/cilium/cilium-cli/releases/download/v${CILIUM_CLI_VERSION}/cilium-linux-${ARCH}.tar.gz" # URL de téléchargement de Cilium CLI
 wget $CILIUM_CLI_URL # Téléchargement de Cilium CLI
 tar xzf cilium-linux-${ARCH}.tar.gz # Extraction de Cilium CLI
-rm cilium-linux-${ARCH}.tar.gz # Suppression de l'archive tar de Cilium CLI
-mv cilium /usr/local/bin/ # Déplacement de Cilium CLI dans /usr/local/bin/
+sudo rm cilium-linux-${ARCH}.tar.gz # Suppression de l'archive tar de Cilium CLI
+sudo mv cilium /usr/local/bin/ # Déplacement de Cilium CLI dans /usr/local/bin/
 
 # Installation des plugins CNI
 CNI_PLUGINS_URL="https://github.com/containernetworking/plugins/releases/download/v${CNI_PLUGINS_VERSION}/cni-plugins-linux-${ARCH}-v${CNI_PLUGINS_VERSION}.tgz" # URL de téléchargement des plugins CNI
 CNI_BIN_DIR="/opt/cni/bin" # Répertoire pour stocker les plugins CNI
-sudo mkdir -p $CNI_BIN_DIR # Création du répertoire pour les plugins CNI
+sudo sudo mkdir -p $CNI_BIN_DIR # Création du répertoire pour les plugins CNI
 curl -O -L $CNI_PLUGINS_URL # Téléchargement des plugins CNI
 sudo tar -C $CNI_BIN_DIR -xzf cni-plugins-linux-${ARCH}-v${CNI_PLUGINS_VERSION}.tgz # Extraction des plugins CNI
-rm cni-plugins-linux-${ARCH}-v${CNI_PLUGINS_VERSION}.tgz # Suppression de l'archive tar des plugins CNI
+sudo rm cni-plugins-linux-${ARCH}-v${CNI_PLUGINS_VERSION}.tgz # Suppression de l'archive tar des plugins CNI
 sudo chown root: $CNI_BIN_DIR # Changement de propriétaire du répertoire des plugins CNI
 
 # Désactivation de l'échange
@@ -162,4 +162,4 @@ else
 fi
 
 # Création du répertoire pour les certificats kube
-mkdir -p ${USER_HOME}/.kube/certs # Création du répertoire pour les certificats
+sudo mkdir -p ${USER_HOME}/.kube/certs # Création du répertoire pour les certificats
