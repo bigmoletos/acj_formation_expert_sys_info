@@ -6,7 +6,8 @@
 # cluster Kubernetes sécurisé. Ce script est destiné à être exécuté dans un environnement sécurisé.
 
 # Variables de configuration
-CERTS_DIR="certs"                    # Répertoire où les certificats seront stockés
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+# CERTS_DIR="certs"                    # Répertoire où les certificats seront stockés
 CA_CONFIG_FILE="ca-config.json"      # Fichier de configuration pour l'autorité de certification
 CA_CSR_FILE="ca-csr.json"            # Fichier de demande de signature de certificat pour la CA
 CA_CERT_PREFIX="ca"                   # Préfixe pour le nom des fichiers de certificat de la CA
@@ -25,6 +26,9 @@ LOCALITY="Pessac"                     # Localité pour le certificat
 ORG_NAME="Kubernetes"                 # Nom de l'organisation pour le certificat
 ORG_UNIT="CA"                         # Unité d'organisation pour le certificat
 STATE="Nouvelle Aquitaine"            # État pour le certificat
+
+# Variables pour le répertoire personnel
+CERTS_DIR="${USER_HOME}/certs" # Répertoire où les certificats seront stockés
 
 # Helper pour afficher l'usage du script
 function usage() {

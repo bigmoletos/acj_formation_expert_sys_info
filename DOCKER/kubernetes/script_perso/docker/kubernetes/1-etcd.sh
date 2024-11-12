@@ -7,13 +7,17 @@
 
 # Variables de configuration
 ETCD_BIN="bin/etcd"                      # Chemin vers l'exécutable etcd
-ETCD_DATA_DIR="etcd-data"                # Répertoire des données etcd
+# ETCD_DATA_DIR="etcd-data"                # Répertoire des données etcd
 CERTS_DIR="certs"                        # Répertoire des certificats
 ADMIN_CERT="${CERTS_DIR}/admin.pem"      # Chemin vers le certificat admin
 ADMIN_KEY="${CERTS_DIR}/admin-key.pem"   # Chemin vers la clé admin
 CA_FILE="${CERTS_DIR}/ca.pem"            # Chemin vers le fichier CA
 HTTPS_HOST="127.0.0.1"                   # Hôte pour HTTPS
 HTTPS_PORT="2379"                         # Port pour HTTPS
+
+# Variables pour le répertoire personnel
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+ETCD_DATA_DIR="${USER_HOME}/etcd-data" # Répertoire des données etcd
 
 # Helper pour afficher l'usage
 function usage() {

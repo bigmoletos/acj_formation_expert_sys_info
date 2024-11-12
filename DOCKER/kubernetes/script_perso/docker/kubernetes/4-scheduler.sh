@@ -5,8 +5,9 @@
 # Les chemins et les fichiers de configuration sont définis en tant que variables au début du script.
 
 # Variables
-KUBE_SCHEDULER_BIN="bin/kube-scheduler"  # Chemin vers l'exécutable du planificateur Kubernetes
-KUBE_CONFIG="admin.conf"                  # Fichier de configuration Kubernetes à utiliser
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+KUBE_SCHEDULER_BIN="${USER_HOME}/bin/kube-scheduler"  # Chemin vers l'exécutable du planificateur Kubernetes
+KUBE_CONFIG="${USER_HOME}/admin.conf"                  # Fichier de configuration Kubernetes à utiliser
 
 # Fonction d'aide
 function usage() {

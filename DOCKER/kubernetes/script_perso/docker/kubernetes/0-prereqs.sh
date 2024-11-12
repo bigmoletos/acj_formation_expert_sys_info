@@ -21,6 +21,8 @@ function error_exit {
 }
 
 # Variables pour l'architecture
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+
 DEFAULT_ARCH="amd64" # Architecture par défaut si aucune n'est spécifiée
 ARCH=${1:-$DEFAULT_ARCH} # Architecture spécifiée par l'utilisateur ou par défaut
 
@@ -57,7 +59,11 @@ RUNC_VERSION="1.2.0-rc.1" # Version de runc à installer
 CILIUM_CLI_VERSION="0.16.10" # Version de Cilium CLI à installer
 CNI_PLUGINS_VERSION="1.5.0" # Version des plugins CNI à installer
 
-BIN_DIR="bin/" # Répertoire pour stocker les binaires téléchargés
+# Variables pour le répertoire personnel
+# USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+
+# Création du répertoire pour les binaires
+BIN_DIR="${USER_HOME}/bin/" # Répertoire pour stocker les binaires téléchargés
 mkdir -p $BIN_DIR # Création du répertoire pour les binaires
 
 # URL d'hôte pour ingress
@@ -74,7 +80,7 @@ tar -zxf kubernetes-server-linux-${ARCH}.tar.gz
 
 # Déplacement des binaires Kubernetes
 for BINARY in kubectl kube-apiserver kube-scheduler kube-controller-manager kubelet kube-proxy; do
-    mv kubernetes/server/bin/${BINARY} /usr/local/bin/ # Déplacement des binaires dans /usr/local/bin/
+    mv kubernetes/server/bin/${BINARY} $BIN_DIR # Déplacement des binaires dans le répertoire personnel
 done
 
 # Nettoyage des fichiers temporaires
@@ -82,7 +88,7 @@ rm kubernetes-server-linux-${ARCH}.tar.gz # Suppression de l'archive tar de Kube
 rm -rf kubernetes # Suppression du répertoire extrait de Kubernetes
 
 # Déplacement de kubectl dans le répertoire local
-KUBECTL_PATH="/usr/local/bin/kubectl" # Chemin où kubectl sera installé
+KUBECTL_PATH="$BIN_DIR/kubectl" # Chemin où kubectl sera installé
 sudo mv kubectl $KUBECTL_PATH
 
 # Ajout de l'autocomplétion pour kubectl
@@ -98,7 +104,7 @@ curl -L $ETCD_TAR_URL | tar --strip-components=1 --wildcards -zx '*/etcd' # Extr
 mv etcd /var/lib/etcd # Déplacement de etcd dans /var/lib/etcd
 
 # Création du répertoire de données pour etcd
-ETCD_DATA_DIR="/var/lib/etcd/etcd-data" # Répertoire pour stocker les données d'etcd
+ETCD_DATA_DIR="${USER_HOME}/etcd-data" # Répertoire pour stocker les données d'etcd
 mkdir -p $ETCD_DATA_DIR # Création du répertoire de données
 chmod 700 $ETCD_DATA_DIR # Définition des permissions du répertoire
 
@@ -156,4 +162,4 @@ else
 fi
 
 # Création du répertoire pour les certificats kube
-mkdir -p $HOME/.kube/certs # Création du répertoire pour les certificats
+mkdir -p ${USER_HOME}/.kube/certs # Création du répertoire pour les certificats

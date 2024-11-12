@@ -1,13 +1,13 @@
 #
 #
 # # sur la vm il faut creer un fichier  
-# sudo touch ~/.bash_perso_fd
+# sudo touch ~/.bash_aliases
 # #coller tout ce script dedans puis le loader depuis le 
 # sudo nano ~/.bashrc
 # # pour appeler ce bash il faut copier les lignes suivantes à la fin du bashrc
 # # Charger les alias
-# if [ -f ~/.bash_perso_fd ]; then
-       # . ~/.bash_perso_fd
+# if [ -f ~/.bash_aliases ]; then
+       # . ~/.bash_aliases
 # fi 
 #----------------------------
 ##### alias fd ###
@@ -34,6 +34,7 @@ alias home="cd ~"       # Aller au repertoire personnel
 alias sdn="sudo nano "  # alias pous lancer un nano en mode sudo
 alias sdc="sudo cat "  # alias pous lancer un cat en mode sudo
 alias sd="sudo  "  # alias pous lancer un sudo
+alias his="history  "  # alias pous avoir l'historique
 
 # Alias pour lister les fichiers
 alias ls="ls --color=auto"  # Colorer les fichiers et dossiers

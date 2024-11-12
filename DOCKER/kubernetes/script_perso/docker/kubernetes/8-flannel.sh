@@ -6,10 +6,13 @@
 # au début du script pour faciliter la modification.
 
 # Variables
+# Variables pour le répertoire personnel
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
 NAMESPACE="kube-flannel"  # Nom du namespace Kubernetes pour Flannel
 LABEL_KEY="pod-security.kubernetes.io/enforce"  # Clé de l'étiquette de sécurité à appliquer
 LABEL_VALUE="privileged"  # Valeur de l'étiquette de sécurité
 HELM_CHART_URL="https://github.com/flannel-io/flannel/releases/latest/download/flannel.tgz"  # URL du chart Helm pour Flannel
+
 
 # Fonction d'aide
 function usage() {

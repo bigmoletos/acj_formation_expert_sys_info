@@ -13,8 +13,8 @@
 #     . ~/.bash_aliases
 # fi
 
-# export PATH="$HOME/script_perso:$PATH"
-export PATH="/script_perso:$PATH"
+# # export PATH="$HOME/script_perso:$PATH"
+# export PATH="/script_perso:$PATH"
 
 # Ajouter /script_perso au PATH globalement si ce n'est pas déjà fait
 if ! grep -Fxq 'export PATH="/script_perso:$PATH"' /etc/profile; then
@@ -30,6 +30,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="cd ~"          # Aller rapidement au repertoire personnel
+alias tild="~/"          # Aller rapidement au repertoire personnel
 alias c="clear"         # Effacer l'ecran
 alias ll="ls -lahF"     # Liste detaillee avec des tailles lisibles
 alias la="ls -A"        # Liste tous les fichiers, y compris les caches
@@ -62,7 +63,7 @@ alias grep="grep --color=auto"  # Colorer les resultats des recherches
 alias findtext="grep -rnw ."  # Rechercher du texte dans les fichiers du repertoire courant
 
 # Alias pour la gestion des paquets (exemples pour Debian/Ubuntu)
-alias update="sudo apt update && sudo apt upgrade"  # Mettre a jour le systeme
+alias update="sudo apt update && sudo apt upgrade -y"  # Mettre a jour le systeme
 alias install="sudo apt install"  # Installer un paquet
 alias remove="sudo apt remove"  # Supprimer un paquet
 alias search="apt search"  # Rechercher un paquet
