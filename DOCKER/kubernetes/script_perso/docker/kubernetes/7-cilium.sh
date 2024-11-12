@@ -5,8 +5,11 @@
 # Les valeurs de configuration sont définies en tant que variables au début du script.
 
 # Variables
-CILIUM_BIN="bin/cilium"  # Chemin vers l'exécutable de Cilium
-SERVICE_YAML="service.yaml"  # Nom du fichier YAML de service à appliquer
+# Variables pour le répertoire personnel
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+SERVICE_YAML="${USER_HOME}/service.yaml"  # Nom du fichier YAML de service à appliquer
+CILIUM_BIN="${USER_HOME}/bin/cilium"  # Chemin vers l'exécutable de Cilium
+# SERVICE_YAML="service.yaml"  # Nom du fichier YAML de service à appliquer
 DEPLOYMENT_NAME="web"  # Nom du déploiement Kubernetes à exposer
 EXPOSE_PORT=80  # Port sur lequel le déploiement sera exposé
 
@@ -30,4 +33,3 @@ $CILIUM_BIN install
 
 # Exposition du déploiement
 # kubectl expose deployment $DEPLOYMENT_NAME --port=$EXPOSE_PORT
-# kubectl get svc

@@ -7,7 +7,8 @@
 # granulaire des permissions et des privilèges.
 
 # Variables
-CERTS_DIR="certs/"  # Répertoire contenant les certificats
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+CERTS_DIR="${USER_HOME}/certs/"  # Répertoire contenant les certificats
 CLIENT_CA_FILE="${CERTS_DIR}ca.pem"  # Fichier CA client pour la validation des certificats
 TLS_CERT_FILE="${CERTS_DIR}admin.pem"  # Fichier de certificat TLS pour le serveur
 TLS_PRIVATE_KEY_FILE="${CERTS_DIR}admin-key.pem"  # Clé privée TLS correspondante
@@ -18,6 +19,8 @@ ETCD_CAFILE="${CERTS_DIR}ca.pem"  # Fichier CA pour etcd
 ETCD_CERTFILE="${CERTS_DIR}admin.pem"  # Fichier de certificat TLS pour etcd
 ETCD_KEYFILE="${CERTS_DIR}admin-key.pem"  # Clé privée TLS pour etcd
 ETCD_SERVERS="https://127.0.0.1:2379"  # URL du serveur etcd
+
+# Variables pour le répertoire personnel
 
 # Helper pour afficher l'usage du script
 function usage() {

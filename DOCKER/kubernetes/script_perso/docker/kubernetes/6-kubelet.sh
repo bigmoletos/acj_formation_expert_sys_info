@@ -5,9 +5,12 @@
 # Les paramètres de configuration sont définis en tant que variables au début du script.
 
 # Variables
-KUBELET_BIN="sudo bin/kubelet"  # Chemin vers l'exécutable kubelet avec sudo
-KUBECONFIG_FILE="admin.conf"     # Fichier de configuration Kubernetes pour l'authentification
-CONTAINER_RUNTIME_ENDPOINT="unix:///var/run/containerd/containerd.sock"  # Point de terminaison pour le runtime de conteneurs
+# Variables pour le répertoire personnel
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+KUBECONFIG_FILE="${USER_HOME}/admin.conf"     # Fichier de configuration Kubernetes pour l'authentification
+KUBELET_BIN="sudo ${USER_HOME}/bin/kubelet"  # Chemin vers l'exécutable kubelet avec sudo
+KUBECONFIG_FILE="${USER_HOME}/admin.conf"     # Fichier de configuration Kubernetes pour l'authentification
+CONTAINER_RUNTIME_ENDPOINT="unix:///${USER_HOME}/var/run/containerd/containerd.sock"  # Point de terminaison pour le runtime de conteneurs
 
 # Fonction d'aide
 function usage() {
@@ -22,8 +25,7 @@ if [ "$#" -ne 0 ]; then
 fi
 
 # Démarrer le kubelet avec les paramètres spécifiés
-$KUBELET_BIN --kubeconfig $KUBECONFIG_FILE \
-    --container-runtime-endpoint=$CONTAINER_RUNTIME_ENDPOINT
-
+$KUBELET_BIN --kubeconfig $KUBECONFIG_FILE  --container-runtime-endpoint=$CONTAINER_RUNTIME_ENDPOINT
 # Si votre serveur a swap (mais nous devrions l'avoir désactivé)
 # --fail-swap-on=false
+

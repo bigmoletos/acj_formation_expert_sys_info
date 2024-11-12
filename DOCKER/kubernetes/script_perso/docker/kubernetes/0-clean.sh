@@ -6,7 +6,8 @@
 # cluster Kubernetes sécurisé. Ce script est destiné à être exécuté dans un environnement sécurisé.
 
 # Variables de configuration
-CERTS_DIR="certs"                    # Répertoire où les certificats seront stockés
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+CERTS_DIR="${USER_HOME}/certs"                    # Répertoire où les certificats seront stockés
 CA_CONFIG_FILE="ca-config.json"       # Fichier de configuration pour la CA
 CA_CSR_FILE="ca-csr.json"             # Fichier CSR pour la CA
 CA_CERT_PREFIX="ca"                   # Préfixe pour le nom du certificat de la CA

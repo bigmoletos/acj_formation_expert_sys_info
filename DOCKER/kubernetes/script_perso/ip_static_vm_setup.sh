@@ -18,7 +18,8 @@ Utilisation :
 - Utiliser l'option -h ou --help pour obtenir des informations d'utilisation.
 
 """
-
+# Variables pour le répertoire personnel
+USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
 # Fonction d'aide
 show_help() {
     echo "Usage: $0 [options]"
@@ -60,8 +61,8 @@ STATIC_IP=${STATIC_IP:-$CURRENT_IP}  # Utiliser l'adresse IP actuelle si aucune 
 read -p "Entrez l'adresse IP de la passerelle [$GATEWAY_IP]: " USER_GATEWAY_IP
 GATEWAY_IP=${USER_GATEWAY_IP:-$GATEWAY_IP}  # Utiliser la passerelle par défaut si aucune entrée
 
-# Création du fichier de configuration Netplan
-cat <<EOF | sudo tee /etc/netplan/00-installer-config.yaml
+# Création d'un fichier Netplan dans le répertoire personnel
+cat <<EOF | sudo tee $USER_HOME/etcd/netplan/00-installer-config.yaml
 network:
   version: 2
   ethernets:
