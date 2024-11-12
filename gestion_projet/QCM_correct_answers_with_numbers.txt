@@ -1,0 +1,123 @@
+Les bonnes réponses aux questions de ce QCM sont :
+
+1. Toutes les réponses qui précédent.
+2. Complexes
+3. Un travail temporaire entrepris pour créer un produit, un service ou un résultat unique
+4. Résumer davantage, à mesure que vous montez plus haut dans la hiérarchie de l’organisation
+5. Démarrage
+6. Trouvez un moyen efficace d'identifier les besoins de toutes les parties prenantes
+7. Prévenir immédiatement la direction de projets
+8. Fixer des attentes raisonnables, stimulantes et claires pour les membres de l’équipe
+9. Dont la durée totale est supérieure à celle de tous les autres
+10. Chef de projet
+11. Est placée sous la supervision d’un chef fonctionnel
+12. Déterminer si un autre chemin critique a été créé
+13. Faire les changements requis mais conserver le planning de référence
+14. La capacité à s’exprimer clairement
+15. Nature, taille
+16. Le chef de projet
+17. Le projet est incomplet tant que tous les livrables n'ont pas été complétés et acceptés
+18. Définit le projet en termes de contenu, d’objectifs, de risques, d’hypothèses et autres critères
+19. À quiconque associé au projet
+20. L'adhésion de l'équipe aux activités
+21. Un facteur environnemental de l’entreprise
+22. La date de fin du projet
+23. Ajuster les activités de l’échéancier pour qu’elles se déroulent partiellement en parallèle
+24. Chemin critique
+25. Un individu qui a effectué ce type de travail à plusieurs reprises
+26. Utilise les estimations pessimistes, optimistes et les plus probables pour effectuer les estimations, avec un penchant pour les estimations les plus probables, pour arriver à une moyenne pondérée
+27. L'intégration du projet
+28. Par projets
+29. Réaffecter du personnel à des activités qui ne sont pas sur le chemin critique
+30. Le groupe de processus de démarrage
+31. Analyser les impacts de cette modification avec l'équipe
+32. Durant la phase de planification
+33. Le groupe de processus de planification
+34. Décodage
+35. Planification par vagues
+36. Donner une idée exhaustive des critères de succès du projet
+37. L'avancement des travaux
+38. L’état de la Structure de Découpage des Travaux (WBS)
+39. Les conditions externes du marché
+40. Toujours dépasser les attentes des parties prenantes
+41. Financer le projet
+42. Aucune de ces réponses
+43. A et B
+44. La charte du projet
+45. Le cycle de vie du projet fournit un cadrage pour une gestion du projet par phases
+46. Il fait un tout cohérent des différentes parties du projet
+47. Des parties prenantes
+48. Toujours être documentées
+49. Permettre de recalculer les données du projet, dès qu'une modification se présente.
+50. Toutes les réponses
+51. Lorsque le travail est exécuté
+52. Protéger la relation entre le client et le fournisseur
+53. Données historiques pour les projets futurs
+54. Identifier tous les impacts potentiels sur le contenu du projet
+55. Une représentation du niveau de confiance dans les estimations du projet
+56. Déterminer si l’activité est sur le chemin critique
+57. Pendant la clôture administrative
+58. Le point d’arrêt
+59. La criticité du risque (probabilité et gravité)
+60. A et B
+61. On est en retard
+62. Effectuer une inspection de routine mensuelle
+63. Il pourrait y avoir des risques de retards si une phase ultérieure ne pouvait pas démarrer avant qu’une phase précédente ne se soit achevée
+64. Fait partie du management de projet
+65. Obtenir l’approbation du commanditaire avant de lancer des investigations potentiellement gourmandes en termes d’effort
+66. Un graphique utilisé pour planifier et suivre les progrès d'un projet
+67. Une étape-clé ou un point de repère dans le projet
+68. Une série d'activités liées, ayant un début et une fin définis
+69. La technique qui permet d'identifier les tâches nécessaires à l'achèvement d'un projet
+70. Les objectifs, livrables, contraintes et critères de succès du projet
+71. La séquence d'activités qui détermine la durée totale du projet
+72. Toutes ces réponses
+73. Le temps
+74. Portée, temps, coût
+75. Clarifier les rôles et responsabilités
+76. Diriger l'équipe et gérer le projet
+77. Les coûts
+78. Toutes les réponses suggérées
+79. Matricielle
+80. Ce qu’un projet tente d’atteindre
+81. Un groupe de projets reliés, gérés de manière coordonnée
+82. Initiation
+83. Analyse de Pareto
+84. Le chef de projet
+85. Les chefs des projets
+86. Laisser l'équipe participer au processus décisionnel
+87. Est au plus près des objectifs du projet que possible
+88. Consommation réduite en ressources
+89. Se répète chaque mois
+90. Des objectifs stratégiques
+91. Un ordre du jour
+92. Confirmer que la décision a effectivement résolu le problème
+93. Confirmer la disponibilité des ressources
+94. Régulièrement, avec une fréquence en fonction de la taille du projet
+95. Cela évite que des travaux soient oubliés
+96. Est celui dont tous les objectifs définis sont cohérents avec la plupart des livrables
+97. S’il est découpé en projets plus petits
+98. Lorsqu'elles impliquent deux ou plusieurs lots de travaux
+99. Le chef de projet crée le plan de projet en se basant sur l'input de l'équipe
+100. L'Organigramme des tâches
+101. Cela accroît le risque du projet
+102. Un travail unique, avec des dates définies de début et de fin
+103. Un événement ou une circonstance qui va entraver le projet et qui va probablement se produire
+104. Événement
+105. Subdiviser les livrables et le travail du projet en composants plus petits et plus faciles à maîtriser
+106. Gérer de manière proactive les modifications du contenu
+107. Maximiser l'efficacité dans l'utilisation des ressources
+108. Un portefeuille
+109. Des communications efficaces aux interfaces-clés
+110. Un programme
+111. Fournit une terminologie et des définitions communes, qui garantissent une communication cohérente
+112. Des processus réutilisables et permet un temps de démarrage plus court pour les nouveaux projets et un transfert de connaissances plus facile
+113. A et B à la fois.
+114. Fournir un effort de bonne foi afin de réduire les coûts
+115. Un actif organisationnel
+116. Le budget de référence ne sera pas finalisé et accepté tant que la phase de planification n'est pas terminée
+117. Équilibrer les besoins et les objectifs contradictoires des parties prenantes
+118. Aux données historiques
+119. Toutes les propositions
+120. A et B
+121. Le cycle de vie d’un projet comprend toutes les phases, du début à la fin du projet.

@@ -1,0 +1,731 @@
+1. Au cours du processus de clôture de projet, le chef de projet doit :
+   - transférer les livrables à l’organisation de soutien et/ou d’exploitation
+   - obtenir les approbations finales
+   - clore tous les contrats
+   - toutes les réponses qui précédent. (Correct)
+
+2. Bob a très peu d'expérience mais il a été affecté comme chef de projet sur un nouveau projet. Puisqu'il travaillera au sein d'une organisation matricielle sur ce projet, il peut s'attendre à ce que les communications soient :
+   - Simples
+   - Ouvertes et précises
+   - Complexes (Correct)
+   - Difficile à automatiser
+
+3. Qu'est-ce qu'un projet ?
+   - Un ensemble d'activités répétitives menant à un résultat spécifique
+   - Un travail temporaire entrepris pour créer un produit, un service ou un résultat unique (Correct)
+   - Un processus continu d'amélioration d'un produit ou d'un service
+   - Une tâche quotidienne effectuée par une équipe
+
+4. Compte tenu des destinataires ciblés par un rapport sur l’état d’avancement, il est important de :
+   - créer un rapport séparé et unique pour chaque membre de l’équipe du projet
+   - inclure autant de détails que possible et laisser le destinataire déterminer ce qui est important
+   - rapporter seulement les succès du projet pour les responsables haut placés
+   - résumer davantage, à mesure que vous montez plus haut dans la hiérarchie de l’organisation (Correct)
+
+5. Dans quelle phase du cycle de vie la charte de projet est-elle produite ?
+   - Réalisation
+   - Planification
+   - Clôture
+   - Démarrage (Correct)
+
+6. Dans un grand projet qui a plus de 500 intervenants, que devez-vous faire ?
+   - Trouvez un moyen efficace d'identifier les besoins de toutes les parties prenantes (Correct)
+   - Éliminer certaines parties prenantes pour une gestion plus facile
+   - Identifier les besoins des parties prenantes les plus importantes
+   - Savoir quelles parties prenantes sont les plus importantes en demandant les cadres supérieurs ou la direction de l’entreprise
+
+7. Dans un organisme structuré sur le mode matriciel, lorsqu’un conflit intervient entre un chef de projet et un département de l’organisation fonctionnelle, ce chef de projet doit :
+   - stopper le projet en attendant une réaction de la hiérarchie
+   - convoquer la direction technique de l’entreprise pour signaler les manquements
+   - prévenir immédiatement la direction de projets (Correct)
+   - en référer immédiatement la direction générale
+   - arrêter toute activité avec ce département et envisager la sous-traitance
+
+8. Dans un projet, les responsabilités du chef de projet, par rapport à l’équipe projet, consistent à :
+   - fournir le meilleur équipement et les meilleures ressources pour garantir le succès du projet
+   - prodiguer des conseils sur des sujets personnels extérieurs au projet, pour motiver les membres de l’équipe
+   - assigner les activités les plus difficiles uniquement aux personnes les plus expérimentées pour garantir le succès
+   - fixer des attentes raisonnables, stimulantes et claires pour les membres de l’équipe (Correct)
+
+9. Dans un réseau logique, le chemin critique est celui :
+   - Qui tolère le plus de flexibilité dans sa réalisation
+   - Dont la durée totale est supérieure à celle de tous les autres (Correct)
+   - Qui représente les tâches qu’on doit exécuter en premier lieu
+   - Dont les tâches ont les durées les plus mal définies
+
+10. Dans une organisation en matrice équilibrée, établir les prévisions en ressources humaines du projet est du ressort du :
+    - Chef de projet (Correct)
+    - Directeur fonctionnel
+    - Directeur du personnel
+    - Haute direction
+
+11. Dans une organisation fonctionnelle, l'équipe du projet :
+    - est très fidèle au projet
+    - est placée sous la supervision d’un chef fonctionnel (Correct)
+    - est placée sous la supervision d’au moins deux cadres
+    - n'a nulle part où aller quand le projet sera terminé
+
+12. En appliquant les techniques de compression de l’échéancier, le chef de projet doit aussi réviser l’échéancier et :
+    - appliquer les techniques de compression à tous les autres chemins du réseau de l’échéancier
+    - éliminer tous les autres chemins critiques de l’échéancier.
+    - ne pas appliquer les techniques de nivellement des charges pour prévenir les surcharges
+    - déterminer si un autre chemin critique a été créé (Correct)
+
+13. En cours de réalisation, un nombre élevé de changements sont faits au projet. Le chef de projet devrait :
+    - Attendre que tous les changements soient faits et imprimer un nouveau planning
+    - Faire les changements requis mais conserver le planning de référence (Correct)
+    - Ne faire que les changements approuvés par la direction
+    - Discuter avec la direction avant de faire quelque changement que ce soit
+
+14. En général, la compétence du chef de projet la plus critique en matière de communication est ?
+    - La capacité à s’exprimer clairement (Correct)
+    - L’écoute
+    - L’interprétation
+    - L’encodage
+
+15. L'envergure des techniques de management de projet à utiliser sur un projet est principalement déterminée par le/la _________ et le/la ___________ du projet.
+    - Budget, planning
+    - Taille, type d'industrie
+    - Nature, taille (Correct)
+    - Chef de projet, commanditaire
+
+16. L'intégration est faite par :
+    - Le chef de projet (Correct)
+    - L'équipe
+    - La direction
+    - Les parties prenantes
+
+17. L'équipe de projet a complété tous les livrables techniques et le client les a acceptés. Toutefois, les leçons retenues exigées par le bureau de gestion de projet n'ont pas été complétées. Quel est l'état du projet ?
+    - Le projet est incomplet parce qu'il doit être replanifié
+    - Le projet est incomplet tant que tous les livrables n'ont pas été complétés et acceptés (Correct)
+    - Le projet est complet parce que le client a accepté les livrables
+    - Le projet est complet parce que le projet a atteint la date de fin de projet
+
+18. La charte de projet :
+    - Définit le projet en termes de contenu, d’objectifs, de risques, d’hypothèses et autres critères (Correct)
+    - Est incluse dans le document des objectifs commerciaux
+    - Facilite l’approbation du financement du projet, en détaillant les avantages du coût du projet.
+    - Ne peut être modifiée une fois qu’elle a été approuvée par le commanditaire et les parties prenantes
+
+19. La charte de projet et le cahier des charges sont des documents servant à dire _________________ exactement ce que le projet nécessite.
+    - Au chef de projet
+    - À l'équipe de projet
+    - Au commanditaire du projet
+    - À quiconque associé au projet (Correct)
+
+20. La création d'un organigramme des tâches a comme résultat :
+    - L'établissement du planning de projet
+    - L'adhésion de l'équipe aux activités (Correct)
+    - La définition d'une date de fin de projet
+    - L'identification des risques du projet
+
+21. La culture d’une organisation, elle doit être considérée en tant que …
+    - Un facteur environnemental de l’entreprise (Correct)
+    - Un cycle de vie de projet
+    - Une base de connaissances de l'entreprise
+    - Un actif organisationnel
+
+22. La marge totale est le temps que des activités peuvent être retardées sans retarder :
+    - Les activités suivantes
+    - La date de fin du projet (Correct)
+    - Les autres activités en cours
+    - Les contraintes sur les autres activités
+
+23. La méthode de la compression des délais, pour revenir dans l’échéancier d’un projet, consiste à :
+    - Affecter plus de personnel aux activités du chemin critique pour les terminer plus rapidement
+    - Motiver le personnel pour qu’il réalise rapidement le travail assigné
+    - Écourter la durée des activités en réduisant les caractéristiques et les fonctionnalités.
+    - Ajuster les activités de l’échéancier pour qu’elles se déroulent partiellement en parallèle (Correct)
+
+24. La série d'activités interreliées qui déterminent la durée d'un projet est appelée :
+    - Chemin critique (Correct)
+    - Le planning du projet
+    - Le planning critique du travail
+    - Le plan de projet
+
+25. La technique de l’avis d’un expert pour estimer les projets utilise :
+    - Des experts qui peuvent avoir ou ne pas avoir une expérience spécifique du travail du projet.
+    - Un groupe d’experts, dans le but d’arriver à un consensus
+    - Quelqu’un qui a des connaissances générales dans plusieurs domaines
+    - Un individu qui a effectué ce type de travail à plusieurs reprises (Correct)
+
+26. La technique d’estimation de PERT :
+    - Utilise les estimations pessimistes, optimistes et les plus probables pour effectuer les estimations
+    - Utilise les estimations pessimistes, optimistes et les plus probables pour effectuer les estimations, avec un penchant pour les estimations pessimistes, pour avoir une plus grande flexibilité au niveau de l’échéancier
+    - Utilise les estimations pessimistes, optimistes et les plus probables pour effectuer les estimations avec un penchant pour les estimations optimistes, pour offrir un défi stimulant à l’équipe du projet.
+    - Utilise les estimations pessimistes, optimistes et les plus probables pour effectuer les estimations, avec un penchant pour les estimations les plus probables, pour arriver à une moyenne pondérée (Correct)
+
+27. Laquelle des fonctions suivantes est au cœur du métier de chef de projet ?
+    - Suivre l'avancement du projet
+    - L'intégration du projet (Correct)
+    - Budgéter les coûts du projet
+    - Définir le planning du projet
+
+28. Laquelle des organisations suivantes est la mieux adaptée aux grands projets à forte complexité ?
+    - Matrice faible
+    - Fonctionnelle
+    - Par projets (Correct)
+    - Matrice forte
+
+29. Laquelle des techniques suivantes n’est pas bonne à employer pour ramener un projet qui dévie dans le cadre de l’échéancier ?
+    - Réaffecter du personnel à des activités qui ne sont pas sur le chemin critique (Correct)
+    - Le travail supplémentaire
+    - Compresser l’échéancier
+    - Changer le personnel
+
+30. Au cours de quel groupe de processus, est-ce que le chef du projet est choisi ?
+    - Le groupe de processus de planification
+    - Le groupe de processus d'exécution
+    - Le groupe de processus de surveillance et maîtrise
+    - Le groupe de processus de démarrage (Correct)
+
+31. Le client demande une modification au projet qui augmentera le niveau de risque du projet. Laquelle des actions suivantes devriez-vous prendre avant toute autre ?
+    - Inclure la valeur attendue de ce risque dans l'estimé révisé des coûts
+    - Discuter avec le client de l'impact de cette modification
+    - Analyser les impacts de cette modification avec l'équipe (Correct)
+    - Modifier le plan de gestion des risques
+
+32. Le moment le plus critique pour l'évaluation des risques d'un projet est :
+    - Lorsqu'un problème surgit
+    - Durant la phase de planification (Correct)
+    - Durant la phase de clôture
+    - Dès que le planning du projet a été publié
+
+33. Le plan de management du projet est créé au cours de quel groupe de processus ?
+    - Le groupe de processus d'exécution
+    - Le groupe de processus de surveillance et maîtrise
+    - Le groupe de processus de démarrage
+    - Le groupe de processus de planification (Correct)
+
+34. Le processus d'interprétation du message est le processus de :
+    - Encodage
+    - Décodage (Correct)
+    - Transmission
+    - Compréhension
+
+35. Le processus itératif de planification du projet est également connu comme :
+    - Planification continue
+    - Porte de phase
+    - Planification par vagues (Correct)
+    - La planification par l'intégration constante
+
+36. Le tableau de bord d’un projet doit :
+    - Représenter les critères de succès que seule l’équipe de projet accepte comme importants à mesurer
+    - Ne pas contenir des mesures évidentes telles que le coût réel par rapport au coût estimé
+    - Être approuvé seulement par l’équipe du projet
+    - Donner une idée exhaustive des critères de succès du projet (Correct)
+
+37. Le « reporting » de projet permet aux différents niveaux de décision de situer :
+    - La tendance des relations entre les acteurs
+    - L'avancement des travaux (Correct)
+    - Quels sont les problèmes et de proposer des solutions
+    - La satisfaction du client
+
+38. Lequel des rapports suivants n’est pas une bonne source pour contrôler la progression d’un projet ?
+    - L’état de la Structure de Découpage des Travaux (WBS)
+    - Le diagramme GANTT
+    - Le rapport des données réelles
+    - La valeur acquise (Correct)
+
+39. Lequel des éléments suivants ne fait pas partie du cadre de gouvernance de projet ?
+    - L’approche du cycle de vie du projet
+    - L’organigramme du projet
+    - Les conditions externes du marché (Correct)
+    - Les critères d’acceptation des livrables du projet
+
+40. Lequel des éléments suivants n’est pas ce qu'un chef de projet devrait faire par rapport aux parties prenantes ?
+    - Toujours déterminer les exigences des parties prenantes
+    - Toujours identifier les parties prenantes
+    - Toujours dépasser les attentes des parties prenantes (Correct)
+    - Toujours gérer l'influence des parties prenantes
+
+41. Lequel des éléments suivants n’est pas une responsabilité d'un chef de projet ?
+    - Satisfaire les besoins des parties prenantes
+    - Réaliser des objectifs stratégiques
+    - Financer le projet (Correct)
+    - Équilibrer les contraintes du projet
+
+42. Lequel des éléments suivants peut être omis dans un projet ?
+    - Le groupe de processus de planification et le groupe de processus de surveillance et maîtrise
+    - Le groupe de processus de planification et le groupe de processus d'exécution
+    - Le groupe de processus de démarrage et le groupe de processus de clôture
+    - Aucune de ces réponses (Correct)
+
+43. Lequel des éléments suivants pourrait ajouter "de la valeur commerciale" à un projet ?
+    - L’augmentation de la reconnaissance de la marque
+    - L’augmentation des capitaux propres des actionnaires
+    - ni A ni B
+    - A et B (Correct)
+
+44. Lequel des éléments suivants sert à enregistrer les besoins et les attentes préliminaires des parties prenantes du projet ?
+    - Plan de management du projet
+    - Les données de la performance du travail
+    - L’énoncé du contenu du projet
+    - La charte du projet (Correct)
+
+45. Lequel des énoncés suivants est vrai sur les phases du projet ?
+    - L'ordre des phases au cours du cycle de vie du projet est aléatoire
+    - Le cycle de vie du projet fournit un cadrage pour une gestion du projet par phases (Correct)
+    - Il n'y a pas de chevauchement entre les phases
+    - Le nombre et les noms des phases sont les mêmes pour différents types de projet
+
+46. Lequel des énoncés suivants décrit le MIEUX le rôle du chef de projet en tant qu'intégrateur ?
+    - Il aide les membres de l'équipe à devenir familiers avec le projet
+    - Il fait un tout cohérent des différentes parties du projet (Correct)
+    - Il fait un programme des différentes parties du projet
+    - Il fait des membres de l'équipe un tout intégré
+
+47. Les besoins de qui doivent toujours être abordés au cours du management de projet ?
+    - Du client
+    - Des parties prenantes (Correct)
+    - Des cadres supérieurs
+    - Des membres de l'équipe
+
+48. Les demandes de modification doivent :
+    - Être documentées, à moins qu’il n’y ait des directives différentes du commanditaire
+    - Être documentées dans le journal des problèmes majeurs
+    - Être documentées après l’approbation du changement
+    - Toujours être documentées (Correct)
+
+49. Les liaisons (liens) entre les tâches :
+    - Ne servent à rien
+    - Permettent uniquement de calculer le chemin critique
+    - Permettent de définir les flux des actions
+    - Permettent de recalculer les données du projet, dès qu'une modification se présente (Correct)
+
+50. Les modifications du contenu du projet sont acceptables si :
+    - L’impact sur le projet est bien connu
+    - La valeur ajoutée par la modification est bien connue
+    - Le commanditaire décide que la modification est justifiée
+    - Toutes les réponses (Correct)
+
+51. Les niveaux les plus élevés des coûts et d’engagement de ressources humaines sont atteints lors de quel état du projet ?
+    - Lorsque le travail est organisé et préparé
+    - Lors de la clôture du projet
+    - Lorsque le projet commence
+    - Lorsque le travail est exécuté (Correct)
+
+52. Les négociations de contrats ont pour objectif principal de :
+    - Tirer le maximum de profit de l’autre partie
+    - Protéger la relation entre le client et le fournisseur (Correct)
+    - Obtenir la plus grosse remise possible
+    - Définir les objectifs et de s’y tenir
+
+53. Les processus internes de l’entreprise commandent l’exploitation de leçons apprises. Lequel des éléments suivants représente la MEILLEURE utilisation de leçons apprises ?
+    - Données historiques pour les projets futurs (Correct)
+    - Archive de planification pour le projet courant
+    - Informer l'équipe sur les accomplissements du chef de projet
+    - Informer l'équipe sur le plan de projet
+
+54. Les procédures de modification du contenu doivent :
+    - Identifier tous les impacts potentiels sur le contenu du projet (Correct)
+    - Être élaborées au début du projet et modifiées après chaque modification du contenu
+    - Inclure le coût des modifications de contenu attendues
+    - Être élaborées à l’avance
+
+55. Les provisions pour aléas (réserves pour imprévus) sont :
+    - Des fonds versés sur un compte personnel pour garantir la conformité à la réglementation
+    - Utilisés pour les bonus à la fin d’un projet réussi
+    - Une représentation du niveau de confiance dans les estimations du projet (Correct)
+    - Toujours inclus dans chaque estimation particulière
+
+56. Lorsqu’un chef de projet découvre qu’une activité est en retard par rapport à l’échéancier, il doit en premier lieu :
+    - Déterminer comment réaffecter le personnel pour rattraper le retard
+    - Informer le client
+    - Déterminer des options pour comprimer l’échéancier
+    - Déterminer si l’activité est sur le chemin critique (Correct)
+
+57. L’acceptation formelle du produit par le client ou le sponsor d’un projet doit être signée :
+    - Pendant la clôture administrative (Correct)
+    - Après la dernière tâche du planning
+    - Après la clôture du projet
+    - À la demande du chef de projet
+
+58. L’achèvement d'une phase de projet est également connu sous quelle dénomination ?
+    - Le point d’arrêt (Correct)
+    - Les leçons apprises
+    - Le management par la valeur acquise
+    - L’avancement conditionnel
+
+59. L’analyse des risques doit prendre en compte :
+    - La subjectivité du chef de projet
+    - Les conditions de réalisation du risque
+    - Les acteurs du risque
+    - La criticité du risque (probabilité et gravité) (Correct)
+
+60. L’objectif d’un rapport sur l’état d’avancement du projet est de :
+    - Rapporter la progression du projet par rapport à l’échéancier
+    - Donner un aperçu de la situation des activités quasi critiques
+    - Gérer les attentes
+    - A, B et C (Correct)
+
+61. On constate, à la date d’état du projet, une valeur de l’indice de performance des prévisions (IPP) égale à 0,8. Quelle est votre interprétation ?
+    - On a dépensé plus que prévu
+    - On est en retard (Correct)
+    - On est en avance
+    - On a économisé de l'argent
+    - Rien de tout cela
+
+62. Parmi les éléments suivants, lequel ne peut pas être appelé un projet ?
+    - Effectuer un changement dans la structure, les effectifs ou le style d'une organisation
+    - Effectuer une inspection de routine mensuelle (Correct)
+    - Mettre en place un nouvel ensemble de processus ou procédures d’affaires
+    - L'acquisition d'un nouveau système d'information ou sa modification
+
+63. Parmi les énoncés suivants, lequel décrit adéquatement ce qui se passe avec les phases successives ?
+    - Il y a un risque accru pour le projet en raison du risque de travail de reprise
+    - Les phases peuvent être effectuées en parallèle dans certains cas, nécessitant des ressources supplémentaires
+    - Il pourrait y avoir des risques de retards si une phase ultérieure ne pouvait pas démarrer avant qu’une phase précédente ne se soit achevée (Correct)
+    - Certaines activités du projet sont intentionnellement répétées dans les phases
+
+64. Pour le chef de projet, la communication :
+    - Fait partie du management de projet (Correct)
+    - A un degré d’importance dépendant des exigences de la gestion de projet
+    - Est d’importance moyenne
+    - Est du même niveau d’importance que sa contribution d’expert
+
+65. Pour les demandes de GRANDES modifications du contenu, il est recommandé de :
+    - Évaluer le coût, car c’est l’aspect le plus important
+    - Obtenir l’approbation du commanditaire avant de lancer des investigations (Correct)
+    - Insister pour que le client consigne formellement les avantages
+    - Ne jamais les accepter tard dans le projet
+
+66. Qu'est-ce qu'un diagramme de Gantt ?
+    - Un outil de gestion des coûts
+    - Un diagramme de flux
+    - Un graphique utilisé pour planifier et suivre les progrès d'un projet (Correct)
+    - Une technique d'analyse des risques
+
+67. Qu'est-ce qu'un jalon dans le contexte de la gestion de projet ?
+    - Un outil de planification
+    - Une étape-clé ou un point de repère dans le projet (Correct)
+    - Un rapport de projet
+
+68. Qu'est-ce qu'un projet ?
+    - Une tâche quotidienne
+    - Une série d'activités liées, ayant un début et une fin définis (Correct)
+    - Une réunion d'équipe
+    - Une procédure opérationnelle standard
+    - Une routine permanente
+
+69. Qu'est-ce que la méthode du chemin critique ?
+    - L’outil pour déterminer le chemin le plus court pour atteindre l'objectif
+    - La technique qui permet d'identifier les tâches nécessaires à l'achèvement d'un projet (Correct)
+    - Les tâches les plus difficiles à réaliser
+    - Les étapes critiques pour le succès du projet
+
+70. Qu'est-ce que la portée d'un projet ?
+    - Le coût total du projet
+    - Le temps total nécessaire pour terminer le projet
+    - Les objectifs, livrables, contraintes et critères de succès du projet (Correct)
+    - Le nombre total d'activités du projet
+
+71. Qu'est-ce que le chemin critique dans une planification de projet ?
+    - La séquence des activités les moins importantes
+    - La séquence des activités les plus rapides
+    - La séquence d'activités qui détermine la durée totale du projet (Correct)
+    - La séquence d'activités les plus coûteuses
+
+72. Qu'est-ce qu’un processus de management de projet inclut ?
+    - Des données d’entrée
+    - Des outils et techniques
+    - Des données de sortie
+    - Toutes ces réponses (Correct)
+
+73. Que montre un diagramme de Gantt que ne montre pas une matrice de responsabilités ?
+    - Le temps (Correct)
+    - Les tâches
+    - Les interrelations
+    - La personne responsable de chaque tâche
+
+74. Que représente généralement le triangle d’or en gestion de projet ?
+    - Coût, qualité, risque
+    - Portée, temps, coût (Correct)
+    - Risque, temps, qualité
+    - Communication, collaboration, contrôle
+
+75. Quel est l'objectif principal de la matrice de responsabilité (RACI) en gestion de projet ?
+    - Suivre les coûts du projet
+    - Identifier les parties prenantes
+    - Clarifier les rôles et responsabilités (Correct)
+    - Définir les objectifs du projet
+
+76. Quel est le rôle du chef de projet ?
+    - Fournir les ressources financières
+    - Prendre toutes les décisions
+    - Diriger l'équipe et gérer le projet (Correct)
+    - Réaliser les tâches techniques du projet
+
+77. Quel est l’élément qui n’apparaît pas dans un GANTT :
+    - Les jalons
+    - Les opérateurs des tâches
+    - Les coûts (Correct)
+    - Les contraintes d’antériorité/postériorité
+
+78. Quel genre de contraintes doit être équilibré lors du management de projet ?
+    - Celles de la qualité et du contenu
+    - Celles de l’échéancier et du budget
+    - Celles des ressources et des risques
+    - Toutes les réponses suggérées (Correct)
+
+79. Quel type d'organisation est la mieux placée pour gérer des projets complexes impliquant des disciplines diverses ?
+    - Par projets
+    - Fonctionnelle
+    - Hiérarchique
+    - Matricielle (Correct)
+
+80. Quelle description convient le mieux à un objectif :
+    - Ambitieux et difficile à atteindre, avec des bénéfices commerciaux vagues
+    - Ce qu’un projet tente d’atteindre (Correct)
+    - Une spécification particulièrement détaillée
+    - Toujours réalisable au cours d’un même projet
+
+81. Quelle définition convient le mieux à un programme :
+    - une série de projets qui peuvent être ou ne pas être reliés
+    - tous les projets approuvés pour une même organisation
+    - un groupe de projets reliés, gérés de manière coordonnée (Correct)
+    - il est terminé lorsque les principaux livrables sont achevés pour la plupart des projets.
+
+82. Quelle est la première étape du cycle de vie d'un projet ?
+    - Planification
+    - Exécution
+    - Initiation (Correct)
+    - Contrôle
+
+83. Quelle technique est utilisée pour évaluer l'importance relative des différentes tâches dans un projet ?
+    - Analyse des risques
+    - Diagramme de Gantt
+    - Analyse de la valeur acquise (EVM)
+    - Analyse de Pareto (Correct)
+
+84. Qui est responsable des activités de planification ?
+    - Le commanditaire du projet
+    - Les membres de l'équipe
+    - Le responsable fonctionnel
+    - Le chef de projet (Correct)
+
+85. Qui sont les personnes les plus puissantes dans une organisation par projets ?
+    - Les membres du personnel
+    - Les partenaires commerciaux
+    - Les responsables fonctionnels
+    - Les chefs des projets (Correct)
+
+86. Responsabiliser l'équipe de projet requiert que le leader fournisse tous les éléments suivants sauf :
+    - Établir des objectifs clairs pour chacun
+    - Fournir à l'équipe les ressources appropriées
+    - Laisser l'équipe participer au processus décisionnel (Correct)
+    - Donner le soutien lorsque requis
+
+87. Sur un projet, le chef de projet doit viser un « niveau de qualité » qui :
+    - Représente le moindre coût pour le projet
+    - Dépasse les exigences spécifiées du projet
+    - Est au plus près des objectifs du projet que possible (Correct)
+    - Est le plus haut niveau possible
+
+88. Tous les choix suivants font partie de la clôture administrative SAUF un. Lequel ?
+    - Leçons retenues
+    - Acceptation formelle
+    - Consommation réduite en ressources (Correct)
+    - Analyse bénéfice coût
+
+89. Tous les choix suivants sont des caractéristiques des projets SAUF :
+    - Temporaire
+    - Un début et une fin clairs
+    - Activités interreliées
+    - Se répète chaque mois (Correct)
+
+90. Tous les projets doivent soutenir les objectifs à long terme des organisations. Ces objectifs représentent…
+    - Des objectifs tactiques
+    - Des objectifs opérationnels
+    - Des objectifs stratégiques (Correct)
+    - Une approche ascendante
+
+91. Un bon outil à utiliser pour gérer avec succès une réunion sur l’état d’avancement est :
+    - Une alarme pour indiquer qu’un intervenant parle trop longtemps
+    - Des procédures de gestion des changements
+    - Discuter individuellement avec chaque participant
+    - Un ordre du jour (Correct)
+
+92. Un chef de projet a un problème complexe à résoudre et a pris une décision sur l'action à prendre pour y remédier. Quelques mois plus tard, le problème resurgit. Plus que probablement, le chef de projet a omis quelque chose :
+    - Une analyse de risque bien faite
+    - Confirmer que la décision a effectivement résolu le problème (Correct)
+    - Faire valider la décision par le commanditaire
+    - Utiliser un diagramme d'Ishikawa
+
+93. Un chef de projet doit diffuser le planning du projet. Les activités, les dates de début/fin et les ressources sont connues. Que devrait-il faire ensuite ?
+    - Distribuer le planning de projet comme prévu au plan de communication
+    - Confirmer la disponibilité des ressources (Correct)
+    - Affiner le plan de projet pour refléter des informations de coût plus précises
+    - Publier un diagramme de Gantt illustrant l'échéance
+
+94. Un chef de projet doit réviser l’échéancier du projet :
+    - Chaque jour
+    - Mensuellement
+    - Régulièrement, avec une fréquence en fonction de la taille du projet (Correct)
+    - Chaque semaine
+
+95. Un chef de projet novice dans le management de projet vous demande pourquoi il doit utiliser un organigramme des tâches (OT) sur son projet. La MEILLEURE réponse serait :
+    - Cela évite que des travaux soient oubliés (Correct)
+    - Ce n'est pas nécessaire
+    - C'est requis sur les projets impliquant des contrats
+    - C'est la seule façon d'identifier les risques
+
+96. Un contenu bien défini :
+    - Inclut la plupart des livrables, ceux qui restent étant déterminés lorsque les exigences sont définies
+    - Inclut ce qui est dans le contenu
+    - Inclut ce qui est dans le contenu et ce qui n’est pas dans le contenu (Correct)
+    - Est celui dont tous les objectifs définis sont cohérents avec la plupart des livrables
+
+97. Un grand projet peut être mieux réalisé :
+    - En affectant plusieurs chefs de projet au même projet
+    - Ne peut être réalisé que dans le cadre de la culture d’entreprise actuelle
+    - S’il est découpé en projets plus petits (Correct)
+    - S’il est sous-traité à une autre compagnie pour protéger l’équipe projet en cas d’échec
+
+98. Un membre de l'équipe de projet doit obligatoirement participer aux réunions concernant le projet :
+    - Quelles qu'elles soient
+    - Lorsqu'elles impliquent deux ou plusieurs lots de travaux (Correct)
+    - Lorsqu'elles concernent les coûts
+    - Lorsqu'elles concernent les délais
+    - Lorsqu'elles concernent la qualité
+
+99. Un plan de projet doit être réaliste si on veut l'utiliser pour gérer le projet. Lequel, des choix suivants, représente la MEILLEURE méthode pour produire un plan de projet réaliste ?
+    - Le directeur de projet crée le plan de projet en se basant sur l'input du chef de projet
+    - Le directeur fonctionnel crée le plan de projet en se basant sur l'input du chef de projet
+    - Le chef de projet crée le plan de projet en se basant sur l'input de la haute direction
+    - Le chef de projet crée le plan de projet en se basant sur l'input de l'équipe (Correct)
+
+100. Un planning détaillé du projet ne peut être créé qu'après :
+    - Le budget du projet
+    - L'Organigramme des tâches (Correct)
+    - Le plan de projet
+    - L'évaluation détaillée des risques
+
+101. Un projet comporte trois chemins critiques. Lequel des énoncés suivants décrit le MIEUX comment cela affectera le projet ?
+    - Cela le rend plus facile à gérer
+    - Cela accroît le risque du projet (Correct)
+    - Cela demande plus de personnes
+    - Cela le rend plus onéreux
+
+102. Un projet est défini comme :
+    - Un travail unique, avec des dates définies de début et de fin (Correct)
+    - Un travail de routine, qui est effectué occasionnellement
+    - Un travail de support, pris en charge au cas par cas
+    - Un travail assigné, avec un budget illimité
+
+103. Un risque est :
+    - Un événement ou une circonstance qui n’aura pas un impact positif sur le projet et qui ne se produira pas
+    - Un événement ou une circonstance qui est nécessaire pour la réussite du projet et qui va probablement se produire
+    - Un événement ou une circonstance qui va entraver le projet et qui va probablement se produire (Correct)
+    - Un événement ou une circonstance qui est nécessaire pour la réussite du projet et qui a une forte probabilité de se produire
+
+104. Un(e) _________________ se définit comme une réalisation spécifique à un moment donné qui ne consomme ni temps ni ressource.
+    - Activité
+    - Événement (Correct)
+    - Contrainte
+    - Événement contraint dans les limites d'un effort planifié
+
+105. Une Structure de Découpage du Travail (SDT) ou WBS, est essentiellement utilisée pour :
+    - Créer des activités qui constituent des relations logiques
+    - Définir les activités générales du projet
+    - Documenter le prédécesseur et le successeur de chaque activité
+    - Subdiviser les livrables et le travail du projet en composants plus petits et plus faciles à maîtriser (Correct)
+
+106. Une des clés d’une gestion réussie d’un projet est de :
+    - Éduquer les membres de l’équipe, en leur délégant les activités de gestion du projet
+    - Accepter les demandes du client aussi longtemps qu’elles n’affectent pas l’échéancier du projet
+    - Gérer de manière proactive les modifications du contenu (Correct)
+    - S’assurer que les ressources internes allouées sont suffisantes
+
+107. Une des raisons principales pour mettre en place une organisation matricielle est de :
+    - Établir des responsabilités claires
+    - Réduire la redondance de travaux
+    - Améliorer les communications verticales
+    - Maximiser l'efficacité dans l'utilisation des ressources (Correct)
+
+108. Une entreprise de construction d'infrastructures a pour objectif stratégique de maximiser le retour sur son investissement. Elle a un certain nombre de projets dans le pétrole et le gaz, l'électricité, l'eau, les routes, le rail et les aéroports. L’ensemble de ces projets peut être géré en tant qu’…
+    - Un programme
+    - Un multi-projet
+    - Un portefeuille (Correct)
+    - Un méga-projet
+
+109. Une intégration de projet efficace demande habituellement de mettre l'emphase sur :
+    - La carrière personnelle des membres de l'équipe
+    - Les mises à jour ponctuelles du plan de projet
+    - Des communications efficaces aux interfaces-clés (Correct)
+    - Contrôle interne
+
+110. Une entreprise a décidé de mettre tous les projets d'électricité dans un groupe à gérer. Ce groupe représente…
+    - Un portefeuille
+    - Un multi-projet
+    - Un programme (Correct)
+    - Un méga-projet
+
+111. Une méthodologie de management de projet :
+    - Fournit une terminologie et des définitions communes, qui garantissent une communication cohérente (Correct)
+    - Recommande l’interprétation individuelle des processus, pour une flexibilité maximale du projet
+    - Présente des généralités inutiles pour la gestion des projets, mais améliore les aptitudes de l’organisation
+    - Établit une structure qui ne peut être utilisée que pour des projets particuliers au sein d’une organisation
+
+112. Une méthodologie de management de projet fournit :
+    - Des processus réutilisables et permet un temps de démarrage plus court pour les nouveaux projets et un transfert de connaissances plus facile (Correct)
+    - Des plans motivants, des modèles d’indicateurs de performance et des données antérieures
+    - Du travail de reprise constant sur les livrables, résultant des processus bureaucratiques
+    - Des conditions de travail acceptables et la plupart des technologies courantes
+
+113. Une réunion de démarrage de projet sert à :
+    - Rappeler à chacun son rôle et sa responsabilité
+    - Commencer officiellement l’exécution du projet
+    - Identifier le commanditaire du projet
+    - A et B à la fois (Correct)
+
+114. Votre projet a un budget très serré lorsque vous commencez les négociations avec un fournisseur pour une pièce d'équipement. Ce dernier vous dit que le prix de cette pièce est figé alors que votre chef vous dit de négocier le coût avec le fournisseur. Quelle est la MEILLEURE attitude :
+    - Fournir un effort de bonne foi afin de réduire les coûts (Correct)
+    - Repousser les négociations jusqu'à ce que vous puissiez convaincre votre chef de changer d'avis
+    - Suspendre les négociations sur cet aspect et négocier les autres aspects du projet
+    - Annuler les négociations
+
+115. Vous travaillez sur un projet de construction. Le client exige que votre société fournisse des garanties d’exécution avant le début des travaux sur le site. Ceci est un exemple d’…
+    - Un cycle de vie du projet
+    - Un portefeuille de projets
+    - Un facteur environnemental de l’entreprise (Correct)
+    - Un actif organisationnel
+
+116. Vous venez de compléter la phase de démarrage d'un petit projet et vous entamez la phase de planification lorsqu'un des acteurs du projet vous demande les budgets et coûts de référence. Que devriez-vous lui répondre ?
+    - Le budget du projet peut être trouvé dans la charte de projet qui vient tout juste d'être terminée
+    - Le budget de référence ne sera pas finalisé et accepté tant que la phase de planification n'est pas terminée (Correct)
+    - Le plan de projet ne contiendra pas le budget et les coûts de référence ; ceci est un petit projet
+    - Il est impossible de terminer une estimation avant que le plan de projet ne soit créé
+
+117. Vous êtes le chef de projet pour un projet multinational. Quelle est la chose la plus importante à faire pour vous ?
+    - S’assurer qu'il y ait au moins un commanditaire dans tous les pays
+    - Être ouvert sur les questions qui pourraient conduire à des conflits d'intérêt
+    - S’assurer qu'il y ait suffisamment de canaux de communication (Correct)
+    - Équilibrer les besoins et les objectifs contradictoires des parties prenantes
+
+118. Vous êtes tout nouveau dans le domaine du management de projet et on vous demande de planifier un nouveau projet. Il sera PREFERABLE dans cette situation de vous fier ____________________ durant la planification afin de maximiser vos chances de succès.
+    - À votre intuition
+    - À votre formation
+    - Aux données historiques (Correct)
+    - Au tableau des responsabilités
+
+119. __________ doit (doivent) suivre les procédures de gestion des modifications de projet :
+    - L’équipe de l’organisation cliente
+    - Le chef de projet
+    - L’équipe de projet
+    - Toutes les propositions (Correct)
+
+120. Le PERT est :
+    - Un type de diagramme
+    - Un outil pour estimer une durée (Correct)
+    - Utilisé pour calculer la méthode du chemin critique
+    - A et B
+
+121. Samir explique à Jean, nouveau chef de projet les différences entre les cycles de vie du projet et les cycles de vie du produit. Sélectionner tous les énoncés corrects ci-dessous :
+    - Le cycle de vie d’un projet comprend toutes les phases, du début à la fin du projet. (Correct)
+    - Le cycle de vie d’un produit comprend toutes les activités du développement du produit à son déclin.
+    - Le cycle de vie d’un projet inclut souvent plusieurs cycles de vie du produit. (Correct)
+    - Le cycle de vie d’un produit comprend souvent plusieurs cycles de vie du projet.
+    - Le cycle de vie d’un produit fait souvent partie du cycle de vie d’un projet.
+
+Ces réponses sont correctes selon le QCM. Utilisez-les pour réviser.

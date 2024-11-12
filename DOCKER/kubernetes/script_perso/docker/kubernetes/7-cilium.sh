@@ -6,7 +6,7 @@
 
 # Variables
 # Variables pour le répertoire personnel
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 SERVICE_YAML="${USER_HOME}/service.yaml"  # Nom du fichier YAML de service à appliquer
 CILIUM_BIN="${USER_HOME}/bin/cilium"  # Chemin vers l'exécutable de Cilium
 # SERVICE_YAML="service.yaml"  # Nom du fichier YAML de service à appliquer

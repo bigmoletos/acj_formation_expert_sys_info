@@ -7,7 +7,7 @@
 # granulaire des permissions et des privilèges.
 
 # Variables
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 CERTS_DIR="${USER_HOME}/certs/"  # Répertoire contenant les certificats
 CLIENT_CA_FILE="${CERTS_DIR}ca.pem"  # Fichier CA client pour la validation des certificats
 TLS_CERT_FILE="${CERTS_DIR}admin.pem"  # Fichier de certificat TLS pour le serveur

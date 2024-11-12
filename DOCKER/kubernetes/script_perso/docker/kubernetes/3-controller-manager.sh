@@ -5,7 +5,7 @@
 # Les chemins et options sont définis par des variables pour faciliter la configuration.
 
 # Variables de configuration
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 CERTS_DIR="${USER_HOME}/certs"  # Répertoire contenant les certificats
 CA_FILE="${CERTS_DIR}/ca.pem"  # Fichier du certificat d'autorité
 ADMIN_KEY="${CERTS_DIR}/ca-key.pem"  # Clé privée de l'administrateur

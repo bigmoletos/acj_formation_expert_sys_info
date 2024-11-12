@@ -13,7 +13,7 @@ NODE_PORT_WEBSECURE=30443                           # Port pour le service web s
 # INGRESS_FILE="ingress.yaml"                         # Fichier de configuration d'ingress
 
 # Variables pour le répertoire personnel
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 INGRESS_FILE="${USER_HOME}/ingress.yaml" # Fichier de configuration d'ingress
 
 # Fonction d'aide
@@ -29,10 +29,10 @@ if [ "$#" -ne 0 ]; then
 fi
 
 # Ajouter le dépôt Helm
-helm repo add traefik $HELM_REPO_URL
+sudo helm repo add traefik $HELM_REPO_URL
 
 # Installer Traefik avec les ports configurés
-helm install $HELM_RELEASE_NAME $HELM_CHART_NAME \
+sudo helm install $HELM_RELEASE_NAME $HELM_CHART_NAME \
     --set ports.web.nodePort=$NODE_PORT_WEB \
     --set ports.websecure.nodePort=$NODE_PORT_WEBSECURE
 

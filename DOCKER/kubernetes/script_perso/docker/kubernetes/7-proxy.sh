@@ -9,7 +9,7 @@
 # KUBE_PROXY_BIN="sudo bin/kube-proxy"  # Chemin vers l'exécutable kube-proxy avec élévation de privilèges
 # KUBE_CONFIG="admin.conf"  # Fichier de configuration pour kube-proxy
 # Variables pour le répertoire personnel
-USER_HOME="$HOME/$USER" # Définition du répertoire personnel de l'utilisateur
+USER_HOME="$HOME" # Définition du répertoire personnel de l'utilisateur
 KUBE_PROXY_BIN="sudo ${USER_HOME}/bin/kube-proxy"  # Chemin vers l'exécutable kube-proxy avec élévation de privilèges
 KUBE_CONFIG="${USER_HOME}/admin.conf"  # Fichier de configuration pour kube-proxy
 
