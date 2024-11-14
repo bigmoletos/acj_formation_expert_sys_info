@@ -7,5 +7,5 @@ CVehicule::~CVehicule() {
 
 // Implémentation de la méthode afficher()
 void CVehicule::afficher() const {
-    printf("Je suis un véhicule.\n");
+    printf("==================================\nJe suis un véhicule.\n");
 }

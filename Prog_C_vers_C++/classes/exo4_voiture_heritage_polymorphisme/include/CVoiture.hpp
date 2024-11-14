@@ -7,7 +7,7 @@
 class CVoiture : public CVehicule {
 public:
     CVoiture(const std::string& modele); // Constructeur avec modèle
-    ~CVoiture();
+    virtual ~CVoiture();
     void afficher() const override;
 
 private:
