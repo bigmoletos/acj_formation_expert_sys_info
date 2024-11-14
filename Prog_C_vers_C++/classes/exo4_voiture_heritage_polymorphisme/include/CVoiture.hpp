@@ -2,13 +2,16 @@
 #define CVOITURE_HPP
 
 #include "CVehicule.hpp"
+#include <string>
 
-class CVoiture :
-public CVehicule {
+class CVoiture : public CVehicule {
 public:
+    CVoiture(const std::string& modele); // Constructeur avec modèle
     ~CVoiture();
-    void afficher() const override; // Redéfinition de la méthode afficher()
+    void afficher() const override;
+
+private:
+    std::string modele;
 };
 
 #endif
-
