@@ -6,7 +6,7 @@
 
 int main() {
     // SOLUTION AVEC TABLEAU STATIQUE
-    CVehicule veh;
+    CVehicule veh("thermique");
     CVoiture voit("Voiture");
     CMoto moto("Moto");
 
@@ -21,7 +21,7 @@ int main() {
         tabStatique[i].afficher();  // Appelle afficher() de CVehicule pour tous
     }
     // SOLUTION AVEC TABLEAU STATIQUE avec POINTERS
-    CVehicule* pVeh = new CVehicule();
+    CVehicule* pVeh = new CVehicule("Electrique");
     CVoiture* pVoit = new CVoiture("Citroen");
     CMoto* pMoto = new CMoto("Aprilia");
 
@@ -38,7 +38,7 @@ int main() {
 
     // SOLUTION AVEC TABLEAU PAR POINTEURS (POLYMORPHISME)
     std::cout << "\nSolution avec tableau de pointeurs :\n";
-    CVehicule* vehicules[] = { new CVehicule(), new CMoto("Piaggio"), new CVoiture("Volvo") };
+    CVehicule* vehicules[] = { new CVehicule("hybride"), new CMoto("Piaggio"), new CVoiture("Volvo") };
 
     for (auto vehicule : vehicules) {
         vehicule->afficher();  // Appelle la version redéfinie de afficher() dans chaque classe
