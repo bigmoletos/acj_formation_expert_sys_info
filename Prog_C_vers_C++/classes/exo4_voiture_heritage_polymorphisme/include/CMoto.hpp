@@ -8,7 +8,7 @@ class CMoto : public CVehicule {
 public:
     CMoto(const std::string& modele); // Constructeur avec modèle
     //destructeur
-    ~CMoto();
+    virtual ~CMoto();
 
     void afficher() const override;
 
