@@ -1,0 +1,37 @@
+Réaliser un diagramme de classe en mettant en évidence les mécanismes de l’héritage avec les instruments suivants : (Vous pouvez utiliser le site www.draw.io pour le diagramme)
+
+Guitare acoustique
+
+Guitare électrique
+
+Violon
+
+Violoncelle
+
+Harpe
+
+Trompette
+
+Trombone
+
+Clarinette
+
+Flûte traversière
+
+Basson
+
+Piano à queue
+
+Piano droit
+
+Xylophone
+
+Marimba
+
+Batterie acoustique
+
+Batterie électronique
+
+Synthétiseur analogique
+
+Clavier MIDI
