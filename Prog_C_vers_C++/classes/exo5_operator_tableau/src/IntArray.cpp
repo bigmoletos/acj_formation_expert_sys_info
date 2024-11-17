@@ -3,16 +3,7 @@
 // #include <iostream>
 #include <stdexcept>
 
-// Fonction auxiliaire pour afficher un tableau
-void afficherTableau(const char* nom, const IntArray& array) {
-    printf("%s (taille: %d) = [", nom, array.getSize());
-    for (int i = 0; i < array.getSize(); ++i) {
-        printf("%d", array.data[i]);
-        if (i < array.getSize() - 1) printf(", ");
-    }
-    printf("]\n");
-}
-
+// -------------------------- CONSTRUCTEURS ---------------------
 // Constructeur par défaut
 IntArray::IntArray() : data(nullptr), size(0) {
     printf("Constructeur par défaut appelé pour IntArray\n");
@@ -42,7 +33,7 @@ IntArray::~IntArray() {
     afficherTableau("IntArray", *this);
     delete[] data;
 }
-
+// -------------------------- OPERATEURS  ---------------------
 // Opérateur d'assignation
 IntArray& IntArray::operator=(const IntArray& other) {
     if (this != &other) {
@@ -104,6 +95,7 @@ std::ostream& operator<<(std::ostream& os, const IntArray& array) {
         os << array.data[i];
         if (i < array.size - 1) os << ", ";
     }
+ 
     os << "]";
     return os;
 }
@@ -121,4 +113,14 @@ std::istream& operator>>(std::istream& is, IntArray& array) {
 // Méthode pour obtenir la taille
 int IntArray::getSize() const {
     return size;
+}
+
+// Fonction auxiliaire pour afficher un tableau
+void afficherTableau(const char* nom, const IntArray& array) {
+    printf("%s (taille: %d) = [", nom, array.getSize());
+    for (int i = 0; i < array.getSize(); ++i) {
+        printf("%d", array.data[i]);
+        if (i < array.getSize() - 1) printf(", ");
+    }
+    printf("]\n");
 }
