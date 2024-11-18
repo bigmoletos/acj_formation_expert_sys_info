@@ -141,29 +141,55 @@ int main()
     // 3. Modifiez chaque élément du vector en le multipliant par 3 à l’aide d’une lambda.
     cout << "=======Modifiez chaque élément du vector en le multipliant par 3 à l’aide d’une lambda==" << endl;
     std::for_each(v3.begin(), v3.end(), [](int &x)
-                  { x*=3;
-            printf(" %d ", x); });
+                  { x *= 3; });
+    std::for_each(v3.begin(), v3.end(), [](const int x)
+                  { printf(" %d ", x); });
 
     cout << "" << endl;
     // ## Étape 3 : Captures dans une Lambda
     // 1. Déclarez une variable `factor` et affectez-lui la valeur `4`.
     cout << "=========Déclarez une variable `factor` et affectez-lui la valeur `4`=======================" << endl;
-
+    int factor{4};
     // 2. Créez une lambda qui capture `factor` par **valeur** et retourne le produit d’un entier donné avec `factor`.
     cout << "=====Créez une lambda qui capture `factor` par **valeur** et retourne le produit d’un entier donné avec `factor`======" << endl;
+    auto produitByFactor = [=](const int x) -> int
+    { return x * factor; };
 
     // 3. Modifiez la valeur de `factor` après la déclaration de la lambda et vérifiez si la valeur utilisée par la lambda change.
     cout << "===odifiez la valeur de `factor` après la déclaration de la lambda et \nvérifiez si la valeur utilisée par la lambda change=====" << endl;
+    // Appel de la lambda avec différents entiers
+    int result1 = produitByFactor(4);
+    int result2 = produitByFactor(5);
+
+    std::cout << "factor= " << factor << std::endl;
+    cout << "Produit de 4 avec factor : " << result1 << endl; // Affiche 16
+    cout << "Produit de 5 avec factor : " << result2 << endl; // Affiche20
 
     // ## Étape 4 : Captures par Référence
     // 1. Déclarez une variable `factor` et affectez-lui la valeur `4`.
     cout << "=====Déclarez une variable `factor` et affectez-lui la valeur `4`======" << endl;
-
+    int factor2{4};
+    std::cout << "factor2= " << factor2 << std::endl;
     // 2. Créez une lambda qui capture `factor` par **référence** et retourne le produit d’un entier donné avec `factor`.
     cout << "====Créez une lambda qui capture `factor` par **référence** et \nretourne le produit d’un entier donné avec `factor`.====" << endl;
+    auto produitByFactorRef = [&](const int x) -> int
+    { return x * factor2; };
+
+    // Appel de la lambda avec différents entiers
+    int result10 = produitByFactorRef(4);
+    int result20 = produitByFactorRef(5);
+
+    std::cout << "factor2= " << factor2 << std::endl;
+    cout << "Produit de 4 avec factor2 : " << result10 << endl; // Affiche 16
+    cout << "Produit de 5 avec factor2 : " << result20 << endl; // Affiche20
 
     // 3. Modifiez la valeur de `factor` après la déclaration de la lambda et observez si la valeur utilisée par la lambda change.
     cout << "===== Modifiez la valeur de `factor` après la déclaration \nde la lambda et observez si la valeur utilisée par la lambda change=============" << endl;
+    factor2 = 20;
+    std::cout << "factor2= " << factor2 << std::endl;
+    std::cout << "factor2= " << factor2 << std::endl;
+    cout << "Produit de 4 avec factor2 : " << result10 << endl; // Affiche 16
+    cout << "Produit de 5 avec factor2 : " << result20 << endl; // Affiche20
 
     // ## Étape 5 : Captures Générales
     // 1. Déclarez deux variables `x` et `y` initialisées à 3 et 5 respectivement.
