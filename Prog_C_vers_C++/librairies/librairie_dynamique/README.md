@@ -59,3 +59,36 @@ librairies/
 
 
 
+# Debug
+
+le linker de MinGW, avec l'option -lMyFirstDll, attend une bibliothèque d'importation au format compatible GCC et utilisant la convention de nommage libMyFirstDll.a, et non MyFisrtDll.lib
+
+```shell
+mv MyFisrtDll.lib libMyFirstDll.a
+
+```
+
+## Étape 2 : Recompilez avec MinGW
+
+Utilisez la commande suivante pour compiler votre projet client :
+
+```shell
+x86_64-w64-mingw32-g++ main.cpp -o prog.exe -I. -L. -lMyFirstDll
+
+```
+
+## Étape 3 : Vérifiez les fichiers nécessaires
+
+libMyFirstDll.a : Le fichier de bibliothèque doit maintenant être correctement renommé.
+MyFirstDll.dll : Ce fichier doit être dans le même répertoire que l'exécutable prog.exe lors de l'exécution.
+exported_function.h : Fichier d'en-tête utilisé dans main.cpp.
+
+## Résultat attendu
+
+L'exécution de prog.exe devrait afficher le message suivant dans le terminal :
+
+
+```shell
+Appel de la fonction exportée depuis la DLL...
+Message depuis la DLL dynamique !
+```
