@@ -193,23 +193,47 @@ int main()
 
     // ## Étape 5 : Captures Générales
     // 1. Déclarez deux variables `x` et `y` initialisées à 3 et 5 respectivement.
-    cout << "======Déclarez deux variables `x` et `y` initialisées à 3 et 5 respectivement==========================" << endl;
+    cout << "======Déclarez deux variables `x` et `y` initialisées à 3 et 5 respectivement==============" << endl;
+    int x{3};
+    int y{5};
 
     // 2. Créez une lambda qui capture **toutes les variables** par valeur et retourne leur somme.
-    cout << "=========Créez une lambda qui capture **toutes les variables** par valeur et retourne leur somme.=======================" << endl;
+    cout << "=========Créez une lambda qui capture **toutes les variables** par valeur et retourne leur somme.=======" << endl;
+    auto sommeByValeur = [=]() -> int
+    { return x + y; };
+    int res1 = sommeByValeur();
+    std::cout << "res1= " << res1 << std::endl;
 
     // 3. Créez une autre lambda qui capture **toutes les variables** par référence et modifie leur valeur.
-    cout << "=======Créez une autre lambda qui capture **toutes les variables** par référence et modifie leur valeur.=========================" << endl;
-
+    cout
+        << "=======Créez une autre lambda qui capture **toutes les variables** par référence et modifie leur valeur.=======" << endl;
+    auto sommeByRef = [&]() -> int
+    {
+        x+=7;
+        y += 5;
+        return x + y; };
+    int res10 = sommeByRef();
+    std::cout << "res10= " << res10 << std::endl;
+    cout << "Valeurs modifiées : x = " << x << ", y = " << y << endl; // x = 9, y = 15
     // ## Étape 6 : Utilisation Avancée avec la STL
     // 1. Créez un `std::vector` contenant les entiers de 1 à 10.
-    cout << "==========Créez un `std::vector` contenant les entiers de 1 à 10.======================" << endl;
-
+    cout << "=======Créez un `std::vector` contenant les entiers de 1 à 10.==========" << endl;
+    std::vector<int> v4{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     // 2. Utilisez une lambda avec `std::find_if` pour trouver le premier élément supérieur à 5.
-    cout << "==========Utilisez une lambda avec `std::find_if` pour trouver le premier élément supérieur à 5.======================" << endl;
-
+    cout << "==========Utilisez une lambda avec `std::find_if` pour trouver le premier élément supérieur à 5.======" << endl;
+    auto valSup5 = find_if(v4.begin(), v4.end(), [](int x)
+                           { return x > 5; });
+    if (valSup5 != v4.end())
+    {
+        cout << "Premier élément supérieur à 5 : " << *valSup5 << endl;
+    }
+    else
+    {
+        cout << "Aucun élément supérieur à 5 trouvé." << endl;
+    }
     // 3. Utilisez une lambda avec `std::count_if` pour compter les éléments pairs.
-    cout << "=========Utilisez une lambda avec `std::count_if` pour compter les éléments pairs=======================" << endl;
+    cout
+        << "=====Utilisez une lambda avec `std::count_if` pour compter les éléments pairs=======" << endl;
 
     // ## Étape 7 : Lambdas avec `std::function`
     // 1. Déclarez une `std::function` qui encapsule une lambda pour calculer la différence entre deux entiers.
