@@ -7,6 +7,13 @@ using namespace std;
 using namespace std::chrono;
 
 
+/**
+ * @brief [Description de main]
+ *
+ * @param argc [Description du paramètre]
+ * @param *argv[] [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int main(int argc, char const *argv[])
 {
     if (argc != 2)
@@ -20,6 +27,12 @@ int main(int argc, char const *argv[])
     int val;
 
     // Ouvrir le fichier
+/**
+ * @brief [Description de data_f]
+ *
+ * @param filename [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream data_f(filename);
     if (!data_f.is_open())
     {

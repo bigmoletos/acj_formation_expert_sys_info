@@ -8,9 +8,21 @@
 using namespace std;
 
 // Fonction pour lire les secteurs Ã  partir d'un fichier
+/**
+ * @brief [Description de lireSecteurs]
+ *
+ * @param &nomFichier [Description du paramètre]
+ * @return vector<string> [Description du retour]
+ */
 vector<string> lireSecteurs(const string &nomFichier)
 {
     vector<string> secteurs;
+/**
+ * @brief [Description de fichier]
+ *
+ * @param nomFichier [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream fichier(nomFichier);
     string ligne;
 
@@ -30,6 +42,15 @@ vector<string> lireSecteurs(const string &nomFichier)
 }
 
 // Fonction pour afficher les informations des employÃ©s
+/**
+ * @brief [Description de afficherEmployes]
+ *
+ * @param &employes [Description du paramètre]
+ * @param &adresses [Description du paramètre]
+ * @param &telephones [Description du paramètre]
+ * @param &secteurs [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void afficherEmployes(const vector<string> &employes, const vector<string> &adresses, const vector<vector<string>> &telephones, const vector<string> &secteurs)
 {
     int taille = employes.size();
@@ -49,11 +70,25 @@ void afficherEmployes(const vector<string> &employes, const vector<string> &adre
 }
 
 // Fonction pour trier les employÃ©s par secteur
+/**
+ * @brief [Description de comparerParSecteur]
+ *
+ * @param i [Description du paramètre]
+ * @param j [Description du paramètre]
+ * @param &secteurs [Description du paramètre]
+ * @return bool [Description du retour]
+ */
 bool comparerParSecteur(int i, int j, const vector<string> &secteurs)
 {
     return secteurs[i] < secteurs[j];
 }
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     // Liste des employÃ©s, adresses et numÃ©ros de tÃ©lÃ©phone
@@ -73,6 +108,12 @@ int main()
     afficherEmployes(employes, adresses, telephones, secteurs);
 
     // Tri par secteur
+/**
+ * @brief [Description de indices]
+ *
+ * @param employes.size() [Description du paramètre]
+ * @return vector<int> [Description du retour]
+ */
     vector<int> indices(employes.size());
     iota(indices.begin(), indices.end(), 0); // CrÃ©er un vecteur d'indices (0, 1, 2, ...)
 

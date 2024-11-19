@@ -39,6 +39,12 @@ public:
  * @param level [Description du paramètre]
  * @return void [Description du retour]
  */
+/**
+ * @brief [Description de setLevel]
+ *
+ * @param level [Description du paramètre]
+ * @return void [Description du retour]
+ */
     void setLevel(LogLevel level);
 
 private:

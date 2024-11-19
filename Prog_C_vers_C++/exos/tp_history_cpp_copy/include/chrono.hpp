@@ -27,7 +27,20 @@
  * @param &t1 [Description du paramètre]
  * @return void [Description du retour]
  */
+/**
+ * @brief [Description de chrono_start]
+ *
+ * @param &t1 [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void chrono_start(std::chrono::high_resolution_clock::time_point &t1);
+/**
+ * @brief [Description de chrono_end]
+ *
+ * @param &t1 [Description du paramètre]
+ * @param &message [Description du paramètre]
+ * @return void [Description du retour]
+ */
 /**
  * @brief [Description de chrono_end]
  *
@@ -59,9 +72,23 @@ void chrono_end(const std::chrono::high_resolution_clock::time_point &t1, const 
  * @param &tableau [Description du paramètre]
  * @return void [Description du retour]
  */
+/**
+ * @brief [Description de charger_donnees_fichier]
+ *
+ * @param &nom_fichier [Description du paramètre]
+ * @param &tableau [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void charger_donnees_fichier(const std::string &nom_fichier, std::vector<int> &tableau);
 
 // -------Fonctions pour construire un tableau vector
+/**
+ * @brief [Description de generer_valeurs_aleatoires]
+ *
+ * @param std::array<int [Description du paramètre]
+ * @param &tableau [Description du paramètre]
+ * @return void [Description du retour]
+ */
 /**
  * @brief [Description de generer_valeurs_aleatoires]
  *

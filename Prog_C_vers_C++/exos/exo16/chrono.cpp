@@ -17,6 +17,12 @@ using namespace std;
  *
  * @param t1 RÃ©fÃ©rence vers le point de dÃ©part du chronomÃ¨tre.
  */
+/**
+ * @brief [Description de chrono_start]
+ *
+ * @param &t1 [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void chrono_start(std::chrono::high_resolution_clock::time_point &t1);
 
 /**
@@ -25,15 +31,35 @@ void chrono_start(std::chrono::high_resolution_clock::time_point &t1);
  * @param t1 Point de dÃ©part du chronomÃ¨tre.
  * @param message Message Ã  afficher avec le temps Ã©coulÃ©.
  */
+/**
+ * @brief [Description de chrono_end]
+ *
+ * @param t1 [Description du paramètre]
+ * @param &message [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void chrono_end(std::chrono::high_resolution_clock::time_point t1, const string &message);
 
 // DÃ©finition des fonctions
 
+/**
+ * @brief [Description de chrono_start]
+ *
+ * @param &t1 [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void chrono_start(std::chrono::high_resolution_clock::time_point &t1)
 {
     t1 = std::chrono::high_resolution_clock::now();
 }
 
+/**
+ * @brief [Description de chrono_end]
+ *
+ * @param t1 [Description du paramètre]
+ * @param &message [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void chrono_end(std::chrono::high_resolution_clock::time_point t1, const string &message)
 {
     auto t2 = std::chrono::high_resolution_clock::now();
@@ -41,6 +67,12 @@ void chrono_end(std::chrono::high_resolution_clock::time_point t1, const string 
          << std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count() << " Î¼s\n";
 }
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     // Exemple d'utilisation

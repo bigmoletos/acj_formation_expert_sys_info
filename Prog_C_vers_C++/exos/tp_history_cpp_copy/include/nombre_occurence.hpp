@@ -24,6 +24,12 @@ public:
  * @param Aucun [Cette fonction n'a pas de paramètres]
  * @return void [Description du retour]
  */
+/**
+ * @brief [Description de calculerOccurrences]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return void [Description du retour]
+ */
     void calculerOccurrences();
 
     // MÃ©thode pour afficher les commandes et leur nombre d'occurrences, triÃ©es par ordre dÃ©croissant

@@ -12,6 +12,12 @@ public:
     NombreOccurrence(const std::vector<std::string> &lignes);
 
     // Méthode pour calculer les occurrences des commandes
+/**
+ * @brief [Description de calculerOccurrences]
+ *
+ * @param Aucun [Cette fonction n'a pas de param�tres]
+ * @return void [Description du retour]
+ */
     void calculerOccurrences();
 
     // Méthode pour afficher les commandes et leur nombre d'occurrences, triées par ordre décroissant

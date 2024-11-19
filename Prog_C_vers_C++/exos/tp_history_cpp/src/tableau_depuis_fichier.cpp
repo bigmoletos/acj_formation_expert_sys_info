@@ -6,8 +6,21 @@
 #include "logger.hpp" // Inclusion du fichier logger
 
 // Fonction pour charger des donnÃ©es Ã  partir d'un fichier dans un tableau
+/**
+ * @brief [Description de charger_donnees_fichier]
+ *
+ * @param &nom_fichier [Description du paramètre]
+ * @param tableau [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void charger_donnees_fichier(const std::string &nom_fichier, std::vector<int>& tableau)
 {
+/**
+ * @brief [Description de fichier]
+ *
+ * @param nom_fichier [Description du paramètre]
+ * @return std::ifstream [Description du retour]
+ */
     std::ifstream fichier(nom_fichier);
 
     if (!fichier.is_open())

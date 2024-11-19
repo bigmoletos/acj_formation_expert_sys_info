@@ -9,6 +9,13 @@
 
 using namespace std;
 
+/**
+ * @brief [Description de main]
+ *
+ * @param argc [Description du paramètre]
+ * @param argv [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int main(int argc, char** argv) {
     // Variables pour lire les caractÃ¨res
     char i, j;
@@ -28,7 +35,19 @@ int main(int argc, char** argv) {
     string namefichier2 = argv[2];
 
     // VÃ©rification d'existence et ouverture des fichiers
+/**
+ * @brief [Description de f1]
+ *
+ * @param namefichier [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream f1(namefichier);
+/**
+ * @brief [Description de f2]
+ *
+ * @param namefichier2 [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream f2(namefichier2);
 
     if (!f1.is_open()) {

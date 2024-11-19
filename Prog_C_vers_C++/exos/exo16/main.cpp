@@ -17,12 +17,32 @@
 6 - Peut-on Ãªtre plus efficace dans chacun des cas Ã©voquÃ©s dans cet exercice ?
 */
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     // CrÃ©ation d'un objet ConstruireTableau
+/**
+ * @brief [Description de monTableau]
+ *
+ * @param "MonTableau" [Description du paramètre]
+ * @param 100 [Description du paramètre]
+ * @return ConstruireTableau [Description du retour]
+ */
     ConstruireTableau monTableau("MonTableau", 100);
 
     // CrÃ©ation d'un objet ConstruireTableau
+/**
+ * @brief [Description de monTableau]
+ *
+ * @param "MonTableau" [Description du paramètre]
+ * @param 100 [Description du paramètre]
+ * @return genererValeursAleatoires [Description du retour]
+ */
     genererValeursAleatoires monTableau("MonTableau", 100);
 
     // GÃ©nÃ©rer des valeurs alÃ©atoires dans le tableau

@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     int n;

@@ -4,6 +4,12 @@
 #include "logger.hpp" // Inclusion du fichier logger
 
 
+/**
+ * @brief [Description de creerFichierHistorique]
+ *
+ * @param &cheminScriptSh [Description du param�tre]
+ * @return void [Description du retour]
+ */
 void creerFichierHistorique(const std::string &cheminScriptSh)
 {
     // std::cout << "Exécution de la création du fichier historique avec le script " << cheminScriptSh << std::endl;

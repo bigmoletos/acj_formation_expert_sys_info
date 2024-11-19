@@ -12,12 +12,24 @@
 
 using namespace std;
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main() {
 
         // Variables pour stocker les noms des fichiers
         string namefichier{"fichiier1.txt"};
 
         // VÃ©rification d'existence et ouverture des fichiers
+/**
+ * @brief [Description de f1]
+ *
+ * @param namefichier [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
         ifstream f1(namefichier);
 
     cout<<"ouverture fichier "<<namefichier<<endl;

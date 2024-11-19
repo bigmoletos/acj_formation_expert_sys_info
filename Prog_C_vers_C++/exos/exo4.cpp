@@ -3,8 +3,21 @@
 #include <stdio.h>
 using namespace std ;
   int total;
+/**
+ * @brief [Description de sum]
+ *
+ * @param int [Description du paramètre]
+ * @param int [Description du paramètre]
+ * @return int [Description du retour]
+ */
   int sum(  int,  int);
 
+/**
+ * @brief [Description de main]
+ *
+ * @param void [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int main(void){
     int a, b ;
     cout << "\n add function called, enter two numbers: " ;

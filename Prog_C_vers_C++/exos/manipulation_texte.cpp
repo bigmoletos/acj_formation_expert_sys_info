@@ -7,6 +7,13 @@ using namespace std;
 
 
 
+/**
+ * @brief [Description de main]
+ *
+ * @param argc [Description du paramètre]
+ * @param argv [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int main(int argc, char** argv){
     int choix = 0;
 
@@ -25,7 +32,19 @@ int main(int argc, char** argv){
         cout << "Nom du fichier source identique au nom du fichier destination" <<  endl;
         exit(1);
     }
+/**
+ * @brief [Description de fileSrc]
+ *
+ * @param argv[1] [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream fileSrc(argv[1]);
+/**
+ * @brief [Description de fileDst]
+ *
+ * @param nomFichierDest [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream fileDst(nomFichierDest);
     if(!fileSrc.is_open()){
         cout << "Impossible d'ouvrir le fichier source: " << nomFichierSource <<  endl;

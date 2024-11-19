@@ -35,6 +35,12 @@ void NombreOccurrence::calculerOccurrences()
  * @param ligne [Description du paramètre]
  * @return std::istringstream [Description du retour]
  */
+/**
+ * @brief [Description de iss]
+ *
+ * @param ligne [Description du paramètre]
+ * @return std::istringstream [Description du retour]
+ */
             std::istringstream iss(ligne);
             std::string commande;
             iss >> commande;

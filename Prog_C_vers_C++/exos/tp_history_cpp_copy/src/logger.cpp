@@ -13,6 +13,12 @@
  * @param LogLevel::DEFAULT [Description du paramètre]
  * @return Logger [Description du retour]
  */
+/**
+ * @brief [Description de logger]
+ *
+ * @param LogLevel::DEFAULT [Description du paramètre]
+ * @return Logger [Description du retour]
+ */
 Logger logger(LogLevel::DEFAULT);
 /**
  * @brief Constructeur de la classe Logger

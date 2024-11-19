@@ -10,11 +10,31 @@
 
 // Fonction pour gÃ©nÃ©rer un tableau de 100 valeurs alÃ©atoires
 
+/**
+ * @brief [Description de generer_valeurs_aleatoires]
+ *
+ * @param &tableau [Description du paramètre]
+ * @param 100 [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void generer_valeurs_aleatoires(std::vector<int> &tableau, int taille = 100)
 {
 
     // Initailiser les generateurs de nombres alÃ©atoires
+/**
+ * @brief [Description de generateur]
+ *
+ * @param int>(std::time(0)) [Description du paramètre]
+ * @return std::mt19937 [Description du retour]
+ */
     std::mt19937 generateur(static_cast<unsigned int>(std::time(0)));
+/**
+ * @brief [Description de distribution]
+ *
+ * @param 0 [Description du paramètre]
+ * @param 90 [Description du paramètre]
+ * @return std::uniform_int_distribution<int> [Description du retour]
+ */
     std::uniform_int_distribution<int> distribution(0, 90);
 
     // redmimensionner le tableau
@@ -30,6 +50,13 @@ void generer_valeurs_aleatoires(std::vector<int> &tableau, int taille = 100)
 }
 
 // Fonction pour trouver tous les indices d'une valeur dans un tableau
+/**
+ * @brief [Description de trouver_indices]
+ *
+ * @param &tableau [Description du paramètre]
+ * @param valeur_recherchee [Description du paramètre]
+ * @return std::vector<int> [Description du retour]
+ */
 std::vector<int> trouver_indices(const std::vector<int> &tableau, int valeur_recherchee)
 {
     std::vector<int> indices; // Stocker les indices des occurrences trouvÃ©es

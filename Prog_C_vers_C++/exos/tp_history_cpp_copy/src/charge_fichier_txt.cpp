@@ -58,6 +58,12 @@ bool ChargeFichierTxt::charger()
  * @param cheminFichier [Description du paramètre]
  * @return std::ifstream [Description du retour]
  */
+/**
+ * @brief [Description de fichier]
+ *
+ * @param cheminFichier [Description du paramètre]
+ * @return std::ifstream [Description du retour]
+ */
     std::ifstream fichier(cheminFichier);
     if (!fichier.is_open())
     {
