@@ -1,0 +1,95 @@
+\hypertarget{Instance_8h}{}\section{linux/download/htop-\/3.3.0/pcp/\+Instance.h File Reference}
+\label{Instance_8h}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+Instance.\+h@{linux/download/htop-\/3.\+3.\+0/pcp/\+Instance.\+h}}
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row.\+h\char`\"{}}\newline
+Include dependency graph for Instance.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structInstance__}{Instance\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Instance_8h_abe23db4762991fdcf92ce6021481e1a8}{In\+Dom\+\_\+get\+Id}(i\+\_\+)~((i\+\_\+)-\/$>$indom-\/$>$id)
+\item 
+\#define \hyperlink{Instance_8h_ac4f29feaeaed8598d7e7f0384c9a07dd}{Instance\+\_\+get\+Id}(i\+\_\+)~((i\+\_\+)-\/$>$super.\+id)
+\item 
+\#define \hyperlink{Instance_8h_a5f2bc6999347b6270e1d7e430cf65973}{Instance\+\_\+set\+Id}(i\+\_\+,  id\+\_\+)~((i\+\_\+)-\/$>$super.\+id = (id\+\_\+))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structInstance__}{Instance\+\_\+} \hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance} $\ast$ \hyperlink{Instance_8h_aba4599f74c6cada856f8cd2ddd3c9b04}{Instance\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, const struct \hyperlink{structInDomTable__}{In\+Dom\+Table\+\_\+} $\ast$indom)
+\item 
+void \hyperlink{Instance_8h_a10025437ee6af54741d7eb292bc157fd}{Instance\+\_\+done} (\hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance} $\ast$this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class} \hyperlink{Instance_8h_a3a1e0837d655b02960f199f105efa9f1}{Instance\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Instance_8h_abe23db4762991fdcf92ce6021481e1a8}\label{Instance_8h_abe23db4762991fdcf92ce6021481e1a8}} 
+\index{Instance.\+h@{Instance.\+h}!In\+Dom\+\_\+get\+Id@{In\+Dom\+\_\+get\+Id}}
+\index{In\+Dom\+\_\+get\+Id@{In\+Dom\+\_\+get\+Id}!Instance.\+h@{Instance.\+h}}
+\subsubsection{\texorpdfstring{In\+Dom\+\_\+get\+Id}{InDom\_getId}}
+{\footnotesize\ttfamily \#define In\+Dom\+\_\+get\+Id(\begin{DoxyParamCaption}\item[{}]{i\+\_\+ }\end{DoxyParamCaption})~((i\+\_\+)-\/$>$indom-\/$>$id)}
+
+\mbox{\Hypertarget{Instance_8h_ac4f29feaeaed8598d7e7f0384c9a07dd}\label{Instance_8h_ac4f29feaeaed8598d7e7f0384c9a07dd}} 
+\index{Instance.\+h@{Instance.\+h}!Instance\+\_\+get\+Id@{Instance\+\_\+get\+Id}}
+\index{Instance\+\_\+get\+Id@{Instance\+\_\+get\+Id}!Instance.\+h@{Instance.\+h}}
+\subsubsection{\texorpdfstring{Instance\+\_\+get\+Id}{Instance\_getId}}
+{\footnotesize\ttfamily \#define Instance\+\_\+get\+Id(\begin{DoxyParamCaption}\item[{}]{i\+\_\+ }\end{DoxyParamCaption})~((i\+\_\+)-\/$>$super.\+id)}
+
+\mbox{\Hypertarget{Instance_8h_a5f2bc6999347b6270e1d7e430cf65973}\label{Instance_8h_a5f2bc6999347b6270e1d7e430cf65973}} 
+\index{Instance.\+h@{Instance.\+h}!Instance\+\_\+set\+Id@{Instance\+\_\+set\+Id}}
+\index{Instance\+\_\+set\+Id@{Instance\+\_\+set\+Id}!Instance.\+h@{Instance.\+h}}
+\subsubsection{\texorpdfstring{Instance\+\_\+set\+Id}{Instance\_setId}}
+{\footnotesize\ttfamily \#define Instance\+\_\+set\+Id(\begin{DoxyParamCaption}\item[{}]{i\+\_\+,  }\item[{}]{id\+\_\+ }\end{DoxyParamCaption})~((i\+\_\+)-\/$>$super.\+id = (id\+\_\+))}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Instance_8h_a8d25debc602518145844c2ee78ec4745}\label{Instance_8h_a8d25debc602518145844c2ee78ec4745}} 
+\index{Instance.\+h@{Instance.\+h}!Instance@{Instance}}
+\index{Instance@{Instance}!Instance.\+h@{Instance.\+h}}
+\subsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structInstance__}{Instance\+\_\+}  \hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Instance_8h_a10025437ee6af54741d7eb292bc157fd}\label{Instance_8h_a10025437ee6af54741d7eb292bc157fd}} 
+\index{Instance.\+h@{Instance.\+h}!Instance\+\_\+done@{Instance\+\_\+done}}
+\index{Instance\+\_\+done@{Instance\+\_\+done}!Instance.\+h@{Instance.\+h}}
+\subsubsection{\texorpdfstring{Instance\+\_\+done()}{Instance\_done()}}
+{\footnotesize\ttfamily void Instance\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Instance_8h_aba4599f74c6cada856f8cd2ddd3c9b04}\label{Instance_8h_aba4599f74c6cada856f8cd2ddd3c9b04}} 
+\index{Instance.\+h@{Instance.\+h}!Instance\+\_\+new@{Instance\+\_\+new}}
+\index{Instance\+\_\+new@{Instance\+\_\+new}!Instance.\+h@{Instance.\+h}}
+\subsubsection{\texorpdfstring{Instance\+\_\+new()}{Instance\_new()}}
+{\footnotesize\ttfamily \hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance}$\ast$ Instance\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{const struct \hyperlink{structInDomTable__}{In\+Dom\+Table\+\_\+} $\ast$}]{indom }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Instance_8h_a3a1e0837d655b02960f199f105efa9f1}\label{Instance_8h_a3a1e0837d655b02960f199f105efa9f1}} 
+\index{Instance.\+h@{Instance.\+h}!Instance\+\_\+class@{Instance\+\_\+class}}
+\index{Instance\+\_\+class@{Instance\+\_\+class}!Instance.\+h@{Instance.\+h}}
+\subsubsection{\texorpdfstring{Instance\+\_\+class}{Instance\_class}}
+{\footnotesize\ttfamily const \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class} Instance\+\_\+class}
+

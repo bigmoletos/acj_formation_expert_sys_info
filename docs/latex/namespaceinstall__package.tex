@@ -1,0 +1,89 @@
+\hypertarget{namespaceinstall__package}{}\section{install\+\_\+package Namespace Reference}
+\label{namespaceinstall__package}\index{install\+\_\+package@{install\+\_\+package}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceinstall__package_a42a6d7d8adb7f681d019e52307b723c8}{execute\+\_\+ssh\+\_\+command} (hostname, port, username, password, command)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceinstall__package_a09d052de767c89d5fa1295215686dd31}{level}
+\item 
+string \hyperlink{namespaceinstall__package_a6cdc52ac805c6d2bee7e03a30dd65e08}{H\+O\+S\+T\+N\+A\+ME} = \char`\"{}votre\+\_\+serveur\+\_\+ssh.\+com\char`\"{}
+\item 
+int \hyperlink{namespaceinstall__package_a8fa4d0174c6c45253d8e8c21c1139e70}{P\+O\+RT} = 22
+\item 
+string \hyperlink{namespaceinstall__package_a943c3530ca14efbcf3f81a1df7b8c6e2}{U\+S\+E\+R\+N\+A\+ME} = \char`\"{}votre\+\_\+utilisateur\char`\"{}
+\item 
+string \hyperlink{namespaceinstall__package_a3d33bc00d252344b0d3a00c4df7ea365}{P\+A\+S\+S\+W\+O\+RD} = \char`\"{}votre\+\_\+mot\+\_\+de\+\_\+passe\char`\"{}
+\item 
+string \hyperlink{namespaceinstall__package_a4c23108a299350f164877e17265d5966}{C\+O\+M\+M\+A\+ND} = \char`\"{}ls -\/l\char`\"{}
+\item 
+def \hyperlink{namespaceinstall__package_a50b9608065a7c7ad45282db7394d31d3}{result} = \hyperlink{namespaceinstall__package_a42a6d7d8adb7f681d019e52307b723c8}{execute\+\_\+ssh\+\_\+command}(\hyperlink{namespaceinstall__package_a6cdc52ac805c6d2bee7e03a30dd65e08}{H\+O\+S\+T\+N\+A\+ME}, \hyperlink{namespaceinstall__package_a8fa4d0174c6c45253d8e8c21c1139e70}{P\+O\+RT}, \hyperlink{namespaceinstall__package_a943c3530ca14efbcf3f81a1df7b8c6e2}{U\+S\+E\+R\+N\+A\+ME}, \hyperlink{namespaceinstall__package_a3d33bc00d252344b0d3a00c4df7ea365}{P\+A\+S\+S\+W\+O\+RD}, \hyperlink{namespaceinstall__package_a4c23108a299350f164877e17265d5966}{C\+O\+M\+M\+A\+ND})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceinstall__package_a42a6d7d8adb7f681d019e52307b723c8}\label{namespaceinstall__package_a42a6d7d8adb7f681d019e52307b723c8}} 
+\index{install\+\_\+package@{install\+\_\+package}!execute\+\_\+ssh\+\_\+command@{execute\+\_\+ssh\+\_\+command}}
+\index{execute\+\_\+ssh\+\_\+command@{execute\+\_\+ssh\+\_\+command}!install\+\_\+package@{install\+\_\+package}}
+\subsubsection{\texorpdfstring{execute\+\_\+ssh\+\_\+command()}{execute\_ssh\_command()}}
+{\footnotesize\ttfamily def install\+\_\+package.\+execute\+\_\+ssh\+\_\+command (\begin{DoxyParamCaption}\item[{}]{hostname,  }\item[{}]{port,  }\item[{}]{username,  }\item[{}]{password,  }\item[{}]{command }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Établit une connexion SSH à un hôte distant et exécute une commande.
+
+:param hostname: Adresse de l'hôte distant
+:param port: Port SSH (généralement 22)
+:param username: Nom d'utilisateur pour la connexion SSH
+:param password: Mot de passe pour la connexion SSH
+:param command: Commande à exécuter sur l'hôte distant
+
+:return: Sortie de la commande exécutée
+:raises Exception: Si la connexion SSH ou l'exécution de la commande échoue
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceinstall__package_a4c23108a299350f164877e17265d5966}\label{namespaceinstall__package_a4c23108a299350f164877e17265d5966}} 
+\index{install\+\_\+package@{install\+\_\+package}!C\+O\+M\+M\+A\+ND@{C\+O\+M\+M\+A\+ND}}
+\index{C\+O\+M\+M\+A\+ND@{C\+O\+M\+M\+A\+ND}!install\+\_\+package@{install\+\_\+package}}
+\subsubsection{\texorpdfstring{C\+O\+M\+M\+A\+ND}{COMMAND}}
+{\footnotesize\ttfamily string install\+\_\+package.\+C\+O\+M\+M\+A\+ND = \char`\"{}ls -\/l\char`\"{}}
+
+\mbox{\Hypertarget{namespaceinstall__package_a6cdc52ac805c6d2bee7e03a30dd65e08}\label{namespaceinstall__package_a6cdc52ac805c6d2bee7e03a30dd65e08}} 
+\index{install\+\_\+package@{install\+\_\+package}!H\+O\+S\+T\+N\+A\+ME@{H\+O\+S\+T\+N\+A\+ME}}
+\index{H\+O\+S\+T\+N\+A\+ME@{H\+O\+S\+T\+N\+A\+ME}!install\+\_\+package@{install\+\_\+package}}
+\subsubsection{\texorpdfstring{H\+O\+S\+T\+N\+A\+ME}{HOSTNAME}}
+{\footnotesize\ttfamily string install\+\_\+package.\+H\+O\+S\+T\+N\+A\+ME = \char`\"{}votre\+\_\+serveur\+\_\+ssh.\+com\char`\"{}}
+
+\mbox{\Hypertarget{namespaceinstall__package_a09d052de767c89d5fa1295215686dd31}\label{namespaceinstall__package_a09d052de767c89d5fa1295215686dd31}} 
+\index{install\+\_\+package@{install\+\_\+package}!level@{level}}
+\index{level@{level}!install\+\_\+package@{install\+\_\+package}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily install\+\_\+package.\+level}
+
+\mbox{\Hypertarget{namespaceinstall__package_a3d33bc00d252344b0d3a00c4df7ea365}\label{namespaceinstall__package_a3d33bc00d252344b0d3a00c4df7ea365}} 
+\index{install\+\_\+package@{install\+\_\+package}!P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}}
+\index{P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}!install\+\_\+package@{install\+\_\+package}}
+\subsubsection{\texorpdfstring{P\+A\+S\+S\+W\+O\+RD}{PASSWORD}}
+{\footnotesize\ttfamily string install\+\_\+package.\+P\+A\+S\+S\+W\+O\+RD = \char`\"{}votre\+\_\+mot\+\_\+de\+\_\+passe\char`\"{}}
+
+\mbox{\Hypertarget{namespaceinstall__package_a8fa4d0174c6c45253d8e8c21c1139e70}\label{namespaceinstall__package_a8fa4d0174c6c45253d8e8c21c1139e70}} 
+\index{install\+\_\+package@{install\+\_\+package}!P\+O\+RT@{P\+O\+RT}}
+\index{P\+O\+RT@{P\+O\+RT}!install\+\_\+package@{install\+\_\+package}}
+\subsubsection{\texorpdfstring{P\+O\+RT}{PORT}}
+{\footnotesize\ttfamily int install\+\_\+package.\+P\+O\+RT = 22}
+
+\mbox{\Hypertarget{namespaceinstall__package_a50b9608065a7c7ad45282db7394d31d3}\label{namespaceinstall__package_a50b9608065a7c7ad45282db7394d31d3}} 
+\index{install\+\_\+package@{install\+\_\+package}!result@{result}}
+\index{result@{result}!install\+\_\+package@{install\+\_\+package}}
+\subsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily def install\+\_\+package.\+result = \hyperlink{namespaceinstall__package_a42a6d7d8adb7f681d019e52307b723c8}{execute\+\_\+ssh\+\_\+command}(\hyperlink{namespaceinstall__package_a6cdc52ac805c6d2bee7e03a30dd65e08}{H\+O\+S\+T\+N\+A\+ME}, \hyperlink{namespaceinstall__package_a8fa4d0174c6c45253d8e8c21c1139e70}{P\+O\+RT}, \hyperlink{namespaceinstall__package_a943c3530ca14efbcf3f81a1df7b8c6e2}{U\+S\+E\+R\+N\+A\+ME}, \hyperlink{namespaceinstall__package_a3d33bc00d252344b0d3a00c4df7ea365}{P\+A\+S\+S\+W\+O\+RD}, \hyperlink{namespaceinstall__package_a4c23108a299350f164877e17265d5966}{C\+O\+M\+M\+A\+ND})}
+
+\mbox{\Hypertarget{namespaceinstall__package_a943c3530ca14efbcf3f81a1df7b8c6e2}\label{namespaceinstall__package_a943c3530ca14efbcf3f81a1df7b8c6e2}} 
+\index{install\+\_\+package@{install\+\_\+package}!U\+S\+E\+R\+N\+A\+ME@{U\+S\+E\+R\+N\+A\+ME}}
+\index{U\+S\+E\+R\+N\+A\+ME@{U\+S\+E\+R\+N\+A\+ME}!install\+\_\+package@{install\+\_\+package}}
+\subsubsection{\texorpdfstring{U\+S\+E\+R\+N\+A\+ME}{USERNAME}}
+{\footnotesize\ttfamily string install\+\_\+package.\+U\+S\+E\+R\+N\+A\+ME = \char`\"{}votre\+\_\+utilisateur\char`\"{}}
+

@@ -1,0 +1,194 @@
+Le mot-\/clé {\ttfamily virtual} en C++ est essentiel pour permettre le {\bfseries polymorphisme}, en particulier lorsqu\textquotesingle{}on travaille avec l\textquotesingle{}héritage. Il garantit que les méthodes et destructeurs appropriés des classes dérivées sont appelés, même si l\textquotesingle{}objet est référencé via un pointeur ou une référence de la classe de base.
+
+\subsection*{Sommaire}
+
+
+\begin{DoxyEnumerate}
+\item \href{#1-pourquoi-utiliser-virtual-sur-le-destructeur}{\tt Pourquoi utiliser {\ttfamily virtual} sur le destructeur}
+\item \href{#2-pourquoi-utiliser-virtual-sur-certaines-méthodes}{\tt Pourquoi utiliser {\ttfamily virtual} sur certaines méthodes}
+\item \href{#3-exemple-complet-avec-virtual}{\tt Exemple complet avec {\ttfamily virtual}}
+\item \href{#4-conclusion}{\tt Conclusion} 
+
+
+\end{DoxyEnumerate}
+
+\subsection*{1. Pourquoi utiliser {\ttfamily virtual} sur le destructeur}
+
+Lorsqu\textquotesingle{}un destructeur est marqué comme {\ttfamily virtual} dans une classe de base, cela garantit que le destructeur de la classe dérivée sera correctement appelé si un objet dérivé est détruit via un pointeur de la classe de base.
+
+\subsubsection*{Exemple de problème sans destructeur {\ttfamily virtual}}
+
+Imaginons que nous ayons une classe de base {\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}} et une classe dérivée {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}}. Si nous détruisons un objet {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}} via un pointeur de type {\ttfamily C\+Vehicule$\ast$} sans un destructeur {\ttfamily virtual}, seul le destructeur de {\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}} sera appelé, et non celui de {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}}. Cela peut entraîner des {\bfseries fuites de mémoire} si {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}} alloue dynamiquement des ressources.
+
+
+\begin{DoxyCode}
+\hyperlink{classCVehicule}{CVehicule}* veh = \textcolor{keyword}{new} \hyperlink{classCVoiture}{CVoiture}(\textcolor{stringliteral}{"Volvo"});
+\textcolor{keyword}{delete} veh; \textcolor{comment}{// Sans destructeur virtuel, seul CVehicule::~CVehicule() est appelé}
+\end{DoxyCode}
+
+
+\subsubsection*{Solution \+: ajouter un destructeur {\ttfamily virtual}}
+
+En ajoutant {\ttfamily virtual} au destructeur de {\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}}, C++ s\textquotesingle{}assure que le destructeur de la classe dérivée {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}} sera également appelé, libérant correctement toutes les ressources.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }\hyperlink{classCVehicule}{CVehicule} \{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{virtual} \hyperlink{classCVehicule_a149e48f61193e22310c87a418f11fcc3}{~CVehicule}(); \textcolor{comment}{// Destructeur virtuel}
+\};
+\end{DoxyCode}
+
+
+\subsection*{2. Pourquoi utiliser {\ttfamily virtual} sur certaines méthodes}
+
+Le mot-\/clé {\ttfamily virtual} permet de définir des {\bfseries méthodes polymorphiques}. En marquant une méthode comme {\ttfamily virtual} dans la classe de base, cela permet aux classes dérivées de redéfinir cette méthode, et garantit que la version correcte sera appelée en fonction du type réel de l\textquotesingle{}objet, même si celui-\/ci est manipulé via un pointeur de la classe de base.
+
+\subsubsection*{Exemple d\textquotesingle{}utilisation du polymorphisme}
+
+Dans votre code, la méthode {\ttfamily afficher()} est redéfinie dans {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}}. En marquant cette méthode comme {\ttfamily virtual} dans {\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}} et {\ttfamily override} dans {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}}, on s\textquotesingle{}assure que la bonne version de {\ttfamily afficher()} est appelée en fonction du type réel de l\textquotesingle{}objet.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }\hyperlink{classCVehicule}{CVehicule} \{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{classCVehicule_a7d62fa555949feb096b4f56781164895}{afficher}() \textcolor{keyword}{const}; \textcolor{comment}{// Méthode virtuelle pour permettre le polymorphisme}
+\};
+
+\textcolor{keyword}{class }\hyperlink{classCVoiture}{CVoiture} : \textcolor{keyword}{public} \hyperlink{classCVehicule}{CVehicule} \{
+\textcolor{keyword}{public}:
+    \textcolor{keywordtype}{void} \hyperlink{classCVehicule_a7d62fa555949feb096b4f56781164895}{afficher}() \textcolor{keyword}{const override}; \textcolor{comment}{// Redéfinition de la méthode afficher()}
+\};
+\end{DoxyCode}
+
+
+\subsubsection*{Exemple de polymorphisme en action}
+
+
+\begin{DoxyCode}
+\hyperlink{classCVehicule}{CVehicule}* veh = \textcolor{keyword}{new} \hyperlink{classCVoiture}{CVoiture}(\textcolor{stringliteral}{"Volvo"});
+veh->\hyperlink{classCVehicule_a7d62fa555949feb096b4f56781164895}{afficher}(); \textcolor{comment}{// Appelle CVoiture::afficher() grâce au mot-clé virtual}
+\end{DoxyCode}
+
+
+Sans {\ttfamily virtual}, la méthode {\ttfamily \hyperlink{classCVehicule_a7d62fa555949feb096b4f56781164895}{C\+Vehicule\+::afficher()}} serait appelée, même si {\ttfamily veh} pointe vers un objet de type {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}}. Grâce à {\ttfamily virtual}, C++ résout l\textquotesingle{}appel à la méthode la plus spécifique possible en fonction du type de l\textquotesingle{}objet réel.
+
+\subsection*{3. Exemple complet avec {\ttfamily virtual}}
+
+Voici un exemple complet montrant l\textquotesingle{}importance du mot-\/clé {\ttfamily virtual} dans les destructeurs et les méthodes \+:
+
+\subsubsection*{Fichier {\ttfamily \hyperlink{CVehicule_8hpp}{C\+Vehicule.\+hpp}}}
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#ifndef CVEHICULE\_HPP}
+\textcolor{preprocessor}{#define CVEHICULE\_HPP}
+
+\textcolor{preprocessor}{#include <string>}
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{keyword}{class }\hyperlink{classCVehicule}{CVehicule} \{
+\textcolor{keyword}{public}:
+    \hyperlink{classCVehicule_a05c0b5b9a9a96f5c6f9973e85e713d7a}{CVehicule}(\textcolor{keyword}{const} std::string& \hyperlink{classCVehicule_aade35613ce26b4263d09d39889604022}{type} = \textcolor{stringliteral}{"Inconnu"});
+    \textcolor{keyword}{virtual} \hyperlink{classCVehicule_a149e48f61193e22310c87a418f11fcc3}{~CVehicule}(); \textcolor{comment}{// Destructeur virtuel}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{classCVehicule_a7d62fa555949feb096b4f56781164895}{afficher}() \textcolor{keyword}{const}; \textcolor{comment}{// Méthode virtuelle pour polymorphisme}
+
+\textcolor{keyword}{protected}:
+    std::string \hyperlink{classCVehicule_aade35613ce26b4263d09d39889604022}{type};
+\};
+
+\textcolor{preprocessor}{#endif}
+\end{DoxyCode}
+
+
+\subsubsection*{Fichier {\ttfamily \hyperlink{CVehicule_8cpp}{C\+Vehicule.\+cpp}}}
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{CVehicule_8hpp}{CVehicule.hpp}"}
+
+\hyperlink{classCVehicule_a05c0b5b9a9a96f5c6f9973e85e713d7a}{CVehicule::CVehicule}(\textcolor{keyword}{const} std::string& type) : type(type) \{\}
+
+\hyperlink{classCVehicule_a149e48f61193e22310c87a418f11fcc3}{CVehicule::~CVehicule}() \{
+    std::cout << \textcolor{stringliteral}{"Destruction de CVehicule ("} << \hyperlink{classCVehicule_aade35613ce26b4263d09d39889604022}{type} << \textcolor{stringliteral}{")"} << std::endl;
+\}
+
+\textcolor{keywordtype}{void} \hyperlink{classCVehicule_a7d62fa555949feb096b4f56781164895}{CVehicule::afficher}()\textcolor{keyword}{ const }\{
+    std::cout << \textcolor{stringliteral}{"Je suis un véhicule de type : "} << \hyperlink{classCVehicule_aade35613ce26b4263d09d39889604022}{type} << std::endl;
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{Fichier {\ttfamily \hyperlink{CVoiture_8hpp}{C\+Voiture.\+hpp}}}
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#ifndef CVOITURE\_HPP}
+\textcolor{preprocessor}{#define CVOITURE\_HPP}
+
+\textcolor{preprocessor}{#include "\hyperlink{CVehicule_8hpp}{CVehicule.hpp}"}
+\textcolor{preprocessor}{#include <string>}
+
+\textcolor{keyword}{class }\hyperlink{classCVoiture}{CVoiture} : \textcolor{keyword}{public} \hyperlink{classCVehicule}{CVehicule} \{
+\textcolor{keyword}{public}:
+    \hyperlink{classCVoiture_ae37a64af5668827a9e7fd7c4e2251c04}{CVoiture}(\textcolor{keyword}{const} std::string& modele);
+    \textcolor{keyword}{virtual} \hyperlink{classCVoiture_a35c99dadefbf269daba764cbe01488a1}{~CVoiture}(); \textcolor{comment}{// Destructeur virtuel pour garantir la destruction complète}
+    \textcolor{keywordtype}{void} \hyperlink{classCVoiture_a0dd704fa1e172f461950f7f21a7ce21e}{afficher}() \textcolor{keyword}{const override}; \textcolor{comment}{// Redéfinition de la méthode afficher()}
+
+\textcolor{keyword}{private}:
+    std::string modele;
+\};
+
+\textcolor{preprocessor}{#endif}
+\end{DoxyCode}
+
+
+\subsubsection*{Fichier {\ttfamily \hyperlink{CVoiture_8cpp}{C\+Voiture.\+cpp}}}
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{CVoiture_8hpp}{CVoiture.hpp}"}
+\textcolor{preprocessor}{#include <iostream>}
+
+\hyperlink{classCVoiture_ae37a64af5668827a9e7fd7c4e2251c04}{CVoiture::CVoiture}(\textcolor{keyword}{const} std::string& modele) : \hyperlink{classCVehicule}{CVehicule}(\textcolor{stringliteral}{"Voiture"}), modele(
+      modele) \{\}
+
+\hyperlink{classCVoiture_a35c99dadefbf269daba764cbe01488a1}{CVoiture::~CVoiture}() \{
+    std::cout << \textcolor{stringliteral}{"Destruction de CVoiture ("} << modele << \textcolor{stringliteral}{")"} << std::endl;
+\}
+
+\textcolor{keywordtype}{void} \hyperlink{classCVoiture_a0dd704fa1e172f461950f7f21a7ce21e}{CVoiture::afficher}()\textcolor{keyword}{ const }\{
+    std::cout << \textcolor{stringliteral}{"Je suis une voiture de modèle : "} << modele << std::endl;
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{Exemple d\textquotesingle{}utilisation dans {\ttfamily main.\+cpp}}
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{CVehicule_8hpp}{CVehicule.hpp}"}
+\textcolor{preprocessor}{#include "\hyperlink{CVoiture_8hpp}{CVoiture.hpp}"}
+\textcolor{preprocessor}{#include <vector>}
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    \hyperlink{classCVehicule}{CVehicule}* veh = \textcolor{keyword}{new} \hyperlink{classCVoiture}{CVoiture}(\textcolor{stringliteral}{"Volvo"});
+    veh->\hyperlink{classCVehicule_a7d62fa555949feb096b4f56781164895}{afficher}(); \textcolor{comment}{// Appelle CVoiture::afficher() grâce au polymorphisme}
+
+    \textcolor{keyword}{delete} veh; \textcolor{comment}{// Appelle le destructeur de CVoiture suivi de CVehicule}
+
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+\subsection*{4. Conclusion}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Destructeur {\ttfamily virtual}} \+: Assure que le destructeur de la classe dérivée est appelé lors de la suppression d\textquotesingle{}un objet via un pointeur de la classe de base. Cela permet de gérer correctement la mémoire et les ressources.
+\item {\bfseries Méthodes {\ttfamily virtual}} \+: Permet le polymorphisme, ce qui signifie que la bonne version de la méthode est appelée en fonction du type réel de l\textquotesingle{}objet, même lorsqu\textquotesingle{}il est manipulé via un pointeur de la classe de base.
+\end{DoxyItemize}
+
+Le mot-\/clé {\ttfamily virtual} est essentiel pour éviter les erreurs de gestion de mémoire et pour tirer parti du polymorphisme, ce qui rend le code plus flexible et plus sûr. 

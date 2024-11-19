@@ -1,0 +1,442 @@
+\hypertarget{CPUMeter_8c}{}\section{linux/download/htop-\/3.3.0/\+C\+P\+U\+Meter.c File Reference}
+\label{CPUMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/\+C\+P\+U\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/\+C\+P\+U\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+P\+U\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for C\+P\+U\+Meter.\+c\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCPUMeterData__}{C\+P\+U\+Meter\+Data\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structCPUMeterData__}{C\+P\+U\+Meter\+Data\+\_\+} \hyperlink{CPUMeter_8c_ac5c8586a056f848c8aa93933dcea1d28}{C\+P\+U\+Meter\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_a1642b76a01013e8da302d5a95793dc6f}{C\+P\+U\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_ad014beb971e6d6d397ed40f8575483f2}{All\+C\+P\+Us\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_abfeca781a4739f1d3fc8f64b2d2e0db3}{All\+C\+P\+Us2\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_aa346421c357e597573143922ea248dc7}{Left\+C\+P\+Us\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_a209cadc70c9ee1cd143a187384c51041}{Right\+C\+P\+Us\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_aeb8a67fc0199b0ce65971f8dc3c5073d}{Left\+C\+P\+Us2\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_aa72a3913542cb301c9c53545773f3941}{Right\+C\+P\+Us2\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_a95f20181ab88f670447b7c474c0d08cc}{All\+C\+P\+Us4\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_a7acc0c3ab5d20c70db7bbe1d464c5e81}{Left\+C\+P\+Us4\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_a5b8dad71ae701c1cf48ce05d129d9634}{Right\+C\+P\+Us4\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_aa0a2cd615f3630e431f0a2195c396f82}{All\+C\+P\+Us8\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_abd4fe1019226bf5d02768e8b7714475f}{Left\+C\+P\+Us8\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{CPUMeter_8c_a65975d1f883bcd3006afac39669050e4}{Right\+C\+P\+Us8\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{CPUMeter_8c_ac5c8586a056f848c8aa93933dcea1d28}\label{CPUMeter_8c_ac5c8586a056f848c8aa93933dcea1d28}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!C\+P\+U\+Meter\+Data@{C\+P\+U\+Meter\+Data}}
+\index{C\+P\+U\+Meter\+Data@{C\+P\+U\+Meter\+Data}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{C\+P\+U\+Meter\+Data}{CPUMeterData}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structCPUMeterData__}{C\+P\+U\+Meter\+Data\+\_\+}  \hyperlink{CPUMeter_8c_ac5c8586a056f848c8aa93933dcea1d28}{C\+P\+U\+Meter\+Data}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{CPUMeter_8c_abfeca781a4739f1d3fc8f64b2d2e0db3}\label{CPUMeter_8c_abfeca781a4739f1d3fc8f64b2d2e0db3}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!All\+C\+P\+Us2\+Meter\+\_\+class@{All\+C\+P\+Us2\+Meter\+\_\+class}}
+\index{All\+C\+P\+Us2\+Meter\+\_\+class@{All\+C\+P\+Us2\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{All\+C\+P\+Us2\+Meter\+\_\+class}{AllCPUs2Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} All\+C\+P\+Us2\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"AllCPUs2"},
+   .uiName = \textcolor{stringliteral}{"CPUs (1&2/2)"},
+   .description = \textcolor{stringliteral}{"CPUs (1&2/2): all CPUs in 2 shorter columns"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = DualColCPUsMeter\_draw,
+   .init = DualColCPUsMeter\_init,
+   .updateMode = DualColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_a95f20181ab88f670447b7c474c0d08cc}\label{CPUMeter_8c_a95f20181ab88f670447b7c474c0d08cc}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!All\+C\+P\+Us4\+Meter\+\_\+class@{All\+C\+P\+Us4\+Meter\+\_\+class}}
+\index{All\+C\+P\+Us4\+Meter\+\_\+class@{All\+C\+P\+Us4\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{All\+C\+P\+Us4\+Meter\+\_\+class}{AllCPUs4Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} All\+C\+P\+Us4\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"AllCPUs4"},
+   .uiName = \textcolor{stringliteral}{"CPUs (1&2&3&4/4)"},
+   .description = \textcolor{stringliteral}{"CPUs (1&2&3&4/4): all CPUs in 4 shorter columns"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = QuadColCPUsMeter\_draw,
+   .init = QuadColCPUsMeter\_init,
+   .updateMode = QuadColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_aa0a2cd615f3630e431f0a2195c396f82}\label{CPUMeter_8c_aa0a2cd615f3630e431f0a2195c396f82}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!All\+C\+P\+Us8\+Meter\+\_\+class@{All\+C\+P\+Us8\+Meter\+\_\+class}}
+\index{All\+C\+P\+Us8\+Meter\+\_\+class@{All\+C\+P\+Us8\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{All\+C\+P\+Us8\+Meter\+\_\+class}{AllCPUs8Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} All\+C\+P\+Us8\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"AllCPUs8"},
+   .uiName = \textcolor{stringliteral}{"CPUs (1-8/8)"},
+   .description = \textcolor{stringliteral}{"CPUs (1-8/8): all CPUs in 8 shorter columns"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = OctoColCPUsMeter\_draw,
+   .init = OctoColCPUsMeter\_init,
+   .updateMode = OctoColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_ad014beb971e6d6d397ed40f8575483f2}\label{CPUMeter_8c_ad014beb971e6d6d397ed40f8575483f2}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!All\+C\+P\+Us\+Meter\+\_\+class@{All\+C\+P\+Us\+Meter\+\_\+class}}
+\index{All\+C\+P\+Us\+Meter\+\_\+class@{All\+C\+P\+Us\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{All\+C\+P\+Us\+Meter\+\_\+class}{AllCPUsMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} All\+C\+P\+Us\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"AllCPUs"},
+   .uiName = \textcolor{stringliteral}{"CPUs (1/1)"},
+   .description = \textcolor{stringliteral}{"CPUs (1/1): all CPUs"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = SingleColCPUsMeter\_draw,
+   .init = SingleColCPUsMeter\_init,
+   .updateMode = SingleColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_a1642b76a01013e8da302d5a95793dc6f}\label{CPUMeter_8c_a1642b76a01013e8da302d5a95793dc6f}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!C\+P\+U\+Meter\+\_\+class@{C\+P\+U\+Meter\+\_\+class}}
+\index{C\+P\+U\+Meter\+\_\+class@{C\+P\+U\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{C\+P\+U\+Meter\+\_\+class}{CPUMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} C\+P\+U\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = CPUMeter\_updateValues,
+   .getUiName = CPUMeter\_getUiName,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa7da66e2e324247d0722afd14d7f12037}{BAR\_METERMODE},
+   .maxItems = \hyperlink{CPUMeter_8h_a4fc03d54a70245ef06d37226fe459d7eaa9b027e913be644e67f3dfbdc2e5c7c0}{CPU\_METER\_ITEMCOUNT},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"CPU"},
+   .uiName = \textcolor{stringliteral}{"CPU"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .init = CPUMeter\_init
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_aeb8a67fc0199b0ce65971f8dc3c5073d}\label{CPUMeter_8c_aeb8a67fc0199b0ce65971f8dc3c5073d}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!Left\+C\+P\+Us2\+Meter\+\_\+class@{Left\+C\+P\+Us2\+Meter\+\_\+class}}
+\index{Left\+C\+P\+Us2\+Meter\+\_\+class@{Left\+C\+P\+Us2\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Left\+C\+P\+Us2\+Meter\+\_\+class}{LeftCPUs2Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Left\+C\+P\+Us2\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"LeftCPUs2"},
+   .uiName = \textcolor{stringliteral}{"CPUs (1&2/4)"},
+   .description = \textcolor{stringliteral}{"CPUs (1&2/4): first half in 2 shorter columns"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = DualColCPUsMeter\_draw,
+   .init = DualColCPUsMeter\_init,
+   .updateMode = DualColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_a7acc0c3ab5d20c70db7bbe1d464c5e81}\label{CPUMeter_8c_a7acc0c3ab5d20c70db7bbe1d464c5e81}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!Left\+C\+P\+Us4\+Meter\+\_\+class@{Left\+C\+P\+Us4\+Meter\+\_\+class}}
+\index{Left\+C\+P\+Us4\+Meter\+\_\+class@{Left\+C\+P\+Us4\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Left\+C\+P\+Us4\+Meter\+\_\+class}{LeftCPUs4Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Left\+C\+P\+Us4\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"LeftCPUs4"},
+   .uiName = \textcolor{stringliteral}{"CPUs (1-4/8)"},
+   .description = \textcolor{stringliteral}{"CPUs (1-4/8): first half in 4 shorter columns"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = QuadColCPUsMeter\_draw,
+   .init = QuadColCPUsMeter\_init,
+   .updateMode = QuadColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_abd4fe1019226bf5d02768e8b7714475f}\label{CPUMeter_8c_abd4fe1019226bf5d02768e8b7714475f}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!Left\+C\+P\+Us8\+Meter\+\_\+class@{Left\+C\+P\+Us8\+Meter\+\_\+class}}
+\index{Left\+C\+P\+Us8\+Meter\+\_\+class@{Left\+C\+P\+Us8\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Left\+C\+P\+Us8\+Meter\+\_\+class}{LeftCPUs8Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Left\+C\+P\+Us8\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"LeftCPUs8"},
+   .uiName = \textcolor{stringliteral}{"CPUs (1-8/16)"},
+   .description = \textcolor{stringliteral}{"CPUs (1-8/16): first half in 8 shorter columns"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = OctoColCPUsMeter\_draw,
+   .init = OctoColCPUsMeter\_init,
+   .updateMode = OctoColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_aa346421c357e597573143922ea248dc7}\label{CPUMeter_8c_aa346421c357e597573143922ea248dc7}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!Left\+C\+P\+Us\+Meter\+\_\+class@{Left\+C\+P\+Us\+Meter\+\_\+class}}
+\index{Left\+C\+P\+Us\+Meter\+\_\+class@{Left\+C\+P\+Us\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Left\+C\+P\+Us\+Meter\+\_\+class}{LeftCPUsMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Left\+C\+P\+Us\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"LeftCPUs"},
+   .uiName = \textcolor{stringliteral}{"CPUs (1/2)"},
+   .description = \textcolor{stringliteral}{"CPUs (1/2): first half of list"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = SingleColCPUsMeter\_draw,
+   .init = SingleColCPUsMeter\_init,
+   .updateMode = SingleColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_aa72a3913542cb301c9c53545773f3941}\label{CPUMeter_8c_aa72a3913542cb301c9c53545773f3941}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!Right\+C\+P\+Us2\+Meter\+\_\+class@{Right\+C\+P\+Us2\+Meter\+\_\+class}}
+\index{Right\+C\+P\+Us2\+Meter\+\_\+class@{Right\+C\+P\+Us2\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Right\+C\+P\+Us2\+Meter\+\_\+class}{RightCPUs2Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Right\+C\+P\+Us2\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"RightCPUs2"},
+   .uiName = \textcolor{stringliteral}{"CPUs (3&4/4)"},
+   .description = \textcolor{stringliteral}{"CPUs (3&4/4): second half in 2 shorter columns"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = DualColCPUsMeter\_draw,
+   .init = DualColCPUsMeter\_init,
+   .updateMode = DualColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_a5b8dad71ae701c1cf48ce05d129d9634}\label{CPUMeter_8c_a5b8dad71ae701c1cf48ce05d129d9634}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!Right\+C\+P\+Us4\+Meter\+\_\+class@{Right\+C\+P\+Us4\+Meter\+\_\+class}}
+\index{Right\+C\+P\+Us4\+Meter\+\_\+class@{Right\+C\+P\+Us4\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Right\+C\+P\+Us4\+Meter\+\_\+class}{RightCPUs4Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Right\+C\+P\+Us4\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"RightCPUs4"},
+   .uiName = \textcolor{stringliteral}{"CPUs (5-8/8)"},
+   .description = \textcolor{stringliteral}{"CPUs (5-8/8): second half in 4 shorter columns"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = QuadColCPUsMeter\_draw,
+   .init = QuadColCPUsMeter\_init,
+   .updateMode = QuadColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_a65975d1f883bcd3006afac39669050e4}\label{CPUMeter_8c_a65975d1f883bcd3006afac39669050e4}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!Right\+C\+P\+Us8\+Meter\+\_\+class@{Right\+C\+P\+Us8\+Meter\+\_\+class}}
+\index{Right\+C\+P\+Us8\+Meter\+\_\+class@{Right\+C\+P\+Us8\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Right\+C\+P\+Us8\+Meter\+\_\+class}{RightCPUs8Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Right\+C\+P\+Us8\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"RightCPUs8"},
+   .uiName = \textcolor{stringliteral}{"CPUs (9-16/16)"},
+   .description = \textcolor{stringliteral}{"CPUs (9-16/16): second half in 8 shorter columns"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = OctoColCPUsMeter\_draw,
+   .init = OctoColCPUsMeter\_init,
+   .updateMode = OctoColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{CPUMeter_8c_a209cadc70c9ee1cd143a187384c51041}\label{CPUMeter_8c_a209cadc70c9ee1cd143a187384c51041}} 
+\index{C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}!Right\+C\+P\+Us\+Meter\+\_\+class@{Right\+C\+P\+Us\+Meter\+\_\+class}}
+\index{Right\+C\+P\+Us\+Meter\+\_\+class@{Right\+C\+P\+Us\+Meter\+\_\+class}!C\+P\+U\+Meter.\+c@{C\+P\+U\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Right\+C\+P\+Us\+Meter\+\_\+class}{RightCPUsMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Right\+C\+P\+Us\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = CPUMeter\_display
+   \},
+   .updateValues = AllCPUsMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{CUSTOM\_METERMODE},
+   .isMultiColumn = \textcolor{keyword}{true},
+   .total = 100.0,
+   .attributes = CPUMeter\_attributes,
+   .name = \textcolor{stringliteral}{"RightCPUs"},
+   .uiName = \textcolor{stringliteral}{"CPUs (2/2)"},
+   .description = \textcolor{stringliteral}{"CPUs (2/2): second half of list"},
+   .caption = \textcolor{stringliteral}{"CPU"},
+   .draw = SingleColCPUsMeter\_draw,
+   .init = SingleColCPUsMeter\_init,
+   .updateMode = SingleColCPUsMeter\_updateMode,
+   .done = AllCPUsMeter\_done
+\}
+\end{DoxyCode}

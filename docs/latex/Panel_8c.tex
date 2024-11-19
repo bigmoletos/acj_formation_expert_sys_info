@@ -1,0 +1,282 @@
+\hypertarget{Panel_8c}{}\section{linux/download/htop-\/3.3.0/\+Panel.c File Reference}
+\label{Panel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$strings.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}List\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Panel.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Panel_8c_a612e4d160afa03a1d8fda56a9ffffcbb}{P\+A\+N\+E\+L\+\_\+\+S\+C\+R\+O\+LL}(amount)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$ \hyperlink{Panel_8c_a49bdeee5f97862726e32e8fc667ce164}{Panel\+\_\+new} (int \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int \hyperlink{addition_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, int w, int h, const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$type, bool owner, \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$fu\+Bar)
+\item 
+void \hyperlink{Panel_8c_abf10ccfa752e70bfd0c404fcad844a34}{Panel\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+void \hyperlink{Panel_8c_a0bb036a9c32f270f4c4be503df15baae}{Panel\+\_\+init} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int \hyperlink{addition_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, int w, int h, const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$type, bool owner, \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$fu\+Bar)
+\item 
+void \hyperlink{Panel_8c_a9c8e4721452982c9e80a8dea376bd298}{Panel\+\_\+done} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this)
+\item 
+void \hyperlink{Panel_8c_adbd6bc10ad28dc2810835924139d44b9}{Panel\+\_\+set\+Cursor\+To\+Selection} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this)
+\item 
+void \hyperlink{Panel_8c_a4667df96023160c2297cfb0bea97e073}{Panel\+\_\+set\+Selection\+Color} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, \hyperlink{CRT_8h_acea6130e6974f0cffaa58bbcbf09372a}{Color\+Elements} color\+Id)
+\item 
+void \hyperlink{Panel_8c_ae84b92bab8d809acae6a6d402e98aca5}{Panel\+\_\+set\+Header} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, const char $\ast$header)
+\item 
+void \hyperlink{Panel_8c_af9f123ce71745359434ff61988a663b4}{Panel\+\_\+move} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int \hyperlink{addition_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\item 
+void \hyperlink{Panel_8c_a08a92b227269634810f5e925ee8dd853}{Panel\+\_\+resize} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int w, int h)
+\item 
+void \hyperlink{Panel_8c_a3d4eb8423b1486f6d43ed643d0c882fb}{Panel\+\_\+prune} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this)
+\item 
+void \hyperlink{Panel_8c_aca9a5f89df3b1ebd3183cff28df4cdc3}{Panel\+\_\+add} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$o)
+\item 
+void \hyperlink{Panel_8c_a732d655828dff41b69d7d2dbc408bc6f}{Panel\+\_\+insert} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int \hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i}, \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$o)
+\item 
+void \hyperlink{Panel_8c_a1c05cf9f0b0203354658f00c628d4844}{Panel\+\_\+set} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int \hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i}, \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$o)
+\item 
+\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$ \hyperlink{Panel_8c_a38b355da98d6c9e57a92b5e82d1cf65a}{Panel\+\_\+get} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int \hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i})
+\item 
+\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$ \hyperlink{Panel_8c_ac4661994cc0eab0a9cf58ae74a8fe178}{Panel\+\_\+remove} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int \hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i})
+\item 
+\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$ \hyperlink{Panel_8c_a87802e9662b0b38e84257d74da803ebc}{Panel\+\_\+get\+Selected} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this)
+\item 
+void \hyperlink{Panel_8c_a7740e7abb5b45b595bd9c6f549c1442d}{Panel\+\_\+move\+Selected\+Up} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this)
+\item 
+void \hyperlink{Panel_8c_a965cd843c2a7de3042f8e5ee4f02cf54}{Panel\+\_\+move\+Selected\+Down} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this)
+\item 
+int \hyperlink{Panel_8c_a2e6687957799b677a2e901b86f31b7b9}{Panel\+\_\+get\+Selected\+Index} (const \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this)
+\item 
+int \hyperlink{Panel_8c_abce01df79cd1ba7bb672a98e79d10ad0}{Panel\+\_\+size} (const \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this)
+\item 
+void \hyperlink{Panel_8c_a9368cb18b4944c4cfff05dcd59377849}{Panel\+\_\+set\+Selected} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int selected)
+\item 
+void \hyperlink{Panel_8c_a8b3f1b6feb0ee47cabab33a98705dc78}{Panel\+\_\+splice} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, \hyperlink{Vector_8h_a8297b82ce917cd21838596b7e3a7faa8}{Vector} $\ast$from)
+\item 
+void \hyperlink{Panel_8c_a6671724e6970f4982232cdd5f6c1d2d7}{Panel\+\_\+draw} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, bool force\+\_\+redraw, bool focus, bool highlight\+Selected, bool hide\+Function\+Bar)
+\item 
+bool \hyperlink{Panel_8c_a37a4dbaab4e1992f3089f6d0c4fa79d7}{Panel\+\_\+on\+Key} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+\hyperlink{Panel_8h_acd4ec4b1a84a50e49be9f0166095d6ca}{Handler\+Result} \hyperlink{Panel_8c_ab3321670711061bfb395a7b220c9b825}{Panel\+\_\+select\+By\+Typing} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this, int ch)
+\item 
+int \hyperlink{Panel_8c_a3237de31aae4e8a6e3d9f752a8d53f7e}{Panel\+\_\+get\+Ch} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{Panel_8c_a2a284e75e24231f32a66f4e79fe0ba6d}{Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Panel_8c_a612e4d160afa03a1d8fda56a9ffffcbb}\label{Panel_8c_a612e4d160afa03a1d8fda56a9ffffcbb}} 
+\index{Panel.\+c@{Panel.\+c}!P\+A\+N\+E\+L\+\_\+\+S\+C\+R\+O\+LL@{P\+A\+N\+E\+L\+\_\+\+S\+C\+R\+O\+LL}}
+\index{P\+A\+N\+E\+L\+\_\+\+S\+C\+R\+O\+LL@{P\+A\+N\+E\+L\+\_\+\+S\+C\+R\+O\+LL}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{P\+A\+N\+E\+L\+\_\+\+S\+C\+R\+O\+LL}{PANEL\_SCROLL}}
+{\footnotesize\ttfamily \#define P\+A\+N\+E\+L\+\_\+\+S\+C\+R\+O\+LL(\begin{DoxyParamCaption}\item[{}]{amount }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                                       
+            \(\backslash\)
+      this->selected += (amount);                                                                          
+               \(\backslash\)
+      this->scrollV = \hyperlink{Macros_8h_a52a8c67405c41892537f726aad89941c}{CLAMP}(this->scrollV + (amount), 0, \hyperlink{Macros_8h_ad7922e7e4a36ebde96a3018b91f68f5e}{MAXIMUM}(0, (size - this->h - 
+      Panel\_headerHeight(\textcolor{keyword}{this}))));  \(\backslash\)
+      this->needsRedraw = \textcolor{keyword}{true};                                                                            
+               \(\backslash\)
+   \} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Panel_8c_aca9a5f89df3b1ebd3183cff28df4cdc3}\label{Panel_8c_aca9a5f89df3b1ebd3183cff28df4cdc3}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+add@{Panel\+\_\+add}}
+\index{Panel\+\_\+add@{Panel\+\_\+add}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+add()}{Panel\_add()}}
+{\footnotesize\ttfamily void Panel\+\_\+add (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_abf10ccfa752e70bfd0c404fcad844a34}\label{Panel_8c_abf10ccfa752e70bfd0c404fcad844a34}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+delete@{Panel\+\_\+delete}}
+\index{Panel\+\_\+delete@{Panel\+\_\+delete}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+delete()}{Panel\_delete()}}
+{\footnotesize\ttfamily void Panel\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a9c8e4721452982c9e80a8dea376bd298}\label{Panel_8c_a9c8e4721452982c9e80a8dea376bd298}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+done@{Panel\+\_\+done}}
+\index{Panel\+\_\+done@{Panel\+\_\+done}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+done()}{Panel\_done()}}
+{\footnotesize\ttfamily void Panel\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a6671724e6970f4982232cdd5f6c1d2d7}\label{Panel_8c_a6671724e6970f4982232cdd5f6c1d2d7}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+draw@{Panel\+\_\+draw}}
+\index{Panel\+\_\+draw@{Panel\+\_\+draw}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+draw()}{Panel\_draw()}}
+{\footnotesize\ttfamily void Panel\+\_\+draw (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{bool}]{force\+\_\+redraw,  }\item[{bool}]{focus,  }\item[{bool}]{highlight\+Selected,  }\item[{bool}]{hide\+Function\+Bar }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a38b355da98d6c9e57a92b5e82d1cf65a}\label{Panel_8c_a38b355da98d6c9e57a92b5e82d1cf65a}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+get@{Panel\+\_\+get}}
+\index{Panel\+\_\+get@{Panel\+\_\+get}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+get()}{Panel\_get()}}
+{\footnotesize\ttfamily \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$ Panel\+\_\+get (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a3237de31aae4e8a6e3d9f752a8d53f7e}\label{Panel_8c_a3237de31aae4e8a6e3d9f752a8d53f7e}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+get\+Ch@{Panel\+\_\+get\+Ch}}
+\index{Panel\+\_\+get\+Ch@{Panel\+\_\+get\+Ch}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+get\+Ch()}{Panel\_getCh()}}
+{\footnotesize\ttfamily int Panel\+\_\+get\+Ch (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a87802e9662b0b38e84257d74da803ebc}\label{Panel_8c_a87802e9662b0b38e84257d74da803ebc}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+get\+Selected@{Panel\+\_\+get\+Selected}}
+\index{Panel\+\_\+get\+Selected@{Panel\+\_\+get\+Selected}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+get\+Selected()}{Panel\_getSelected()}}
+{\footnotesize\ttfamily \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$ Panel\+\_\+get\+Selected (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a2e6687957799b677a2e901b86f31b7b9}\label{Panel_8c_a2e6687957799b677a2e901b86f31b7b9}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+get\+Selected\+Index@{Panel\+\_\+get\+Selected\+Index}}
+\index{Panel\+\_\+get\+Selected\+Index@{Panel\+\_\+get\+Selected\+Index}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+get\+Selected\+Index()}{Panel\_getSelectedIndex()}}
+{\footnotesize\ttfamily int Panel\+\_\+get\+Selected\+Index (\begin{DoxyParamCaption}\item[{const \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a0bb036a9c32f270f4c4be503df15baae}\label{Panel_8c_a0bb036a9c32f270f4c4be503df15baae}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+init@{Panel\+\_\+init}}
+\index{Panel\+\_\+init@{Panel\+\_\+init}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+init()}{Panel\_init()}}
+{\footnotesize\ttfamily void Panel\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$}]{type,  }\item[{bool}]{owner,  }\item[{\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$}]{fu\+Bar }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a732d655828dff41b69d7d2dbc408bc6f}\label{Panel_8c_a732d655828dff41b69d7d2dbc408bc6f}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+insert@{Panel\+\_\+insert}}
+\index{Panel\+\_\+insert@{Panel\+\_\+insert}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+insert()}{Panel\_insert()}}
+{\footnotesize\ttfamily void Panel\+\_\+insert (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{i,  }\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_af9f123ce71745359434ff61988a663b4}\label{Panel_8c_af9f123ce71745359434ff61988a663b4}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+move@{Panel\+\_\+move}}
+\index{Panel\+\_\+move@{Panel\+\_\+move}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+move()}{Panel\_move()}}
+{\footnotesize\ttfamily void Panel\+\_\+move (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a965cd843c2a7de3042f8e5ee4f02cf54}\label{Panel_8c_a965cd843c2a7de3042f8e5ee4f02cf54}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+move\+Selected\+Down@{Panel\+\_\+move\+Selected\+Down}}
+\index{Panel\+\_\+move\+Selected\+Down@{Panel\+\_\+move\+Selected\+Down}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+move\+Selected\+Down()}{Panel\_moveSelectedDown()}}
+{\footnotesize\ttfamily void Panel\+\_\+move\+Selected\+Down (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a7740e7abb5b45b595bd9c6f549c1442d}\label{Panel_8c_a7740e7abb5b45b595bd9c6f549c1442d}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+move\+Selected\+Up@{Panel\+\_\+move\+Selected\+Up}}
+\index{Panel\+\_\+move\+Selected\+Up@{Panel\+\_\+move\+Selected\+Up}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+move\+Selected\+Up()}{Panel\_moveSelectedUp()}}
+{\footnotesize\ttfamily void Panel\+\_\+move\+Selected\+Up (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a49bdeee5f97862726e32e8fc667ce164}\label{Panel_8c_a49bdeee5f97862726e32e8fc667ce164}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+new@{Panel\+\_\+new}}
+\index{Panel\+\_\+new@{Panel\+\_\+new}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+new()}{Panel\_new()}}
+{\footnotesize\ttfamily \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel}$\ast$ Panel\+\_\+new (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$}]{type,  }\item[{bool}]{owner,  }\item[{\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$}]{fu\+Bar }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a37a4dbaab4e1992f3089f6d0c4fa79d7}\label{Panel_8c_a37a4dbaab4e1992f3089f6d0c4fa79d7}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+on\+Key@{Panel\+\_\+on\+Key}}
+\index{Panel\+\_\+on\+Key@{Panel\+\_\+on\+Key}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+on\+Key()}{Panel\_onKey()}}
+{\footnotesize\ttfamily bool Panel\+\_\+on\+Key (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a3d4eb8423b1486f6d43ed643d0c882fb}\label{Panel_8c_a3d4eb8423b1486f6d43ed643d0c882fb}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+prune@{Panel\+\_\+prune}}
+\index{Panel\+\_\+prune@{Panel\+\_\+prune}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+prune()}{Panel\_prune()}}
+{\footnotesize\ttfamily void Panel\+\_\+prune (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_ac4661994cc0eab0a9cf58ae74a8fe178}\label{Panel_8c_ac4661994cc0eab0a9cf58ae74a8fe178}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+remove@{Panel\+\_\+remove}}
+\index{Panel\+\_\+remove@{Panel\+\_\+remove}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+remove()}{Panel\_remove()}}
+{\footnotesize\ttfamily \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$ Panel\+\_\+remove (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a08a92b227269634810f5e925ee8dd853}\label{Panel_8c_a08a92b227269634810f5e925ee8dd853}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+resize@{Panel\+\_\+resize}}
+\index{Panel\+\_\+resize@{Panel\+\_\+resize}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+resize()}{Panel\_resize()}}
+{\footnotesize\ttfamily void Panel\+\_\+resize (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_ab3321670711061bfb395a7b220c9b825}\label{Panel_8c_ab3321670711061bfb395a7b220c9b825}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+select\+By\+Typing@{Panel\+\_\+select\+By\+Typing}}
+\index{Panel\+\_\+select\+By\+Typing@{Panel\+\_\+select\+By\+Typing}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+select\+By\+Typing()}{Panel\_selectByTyping()}}
+{\footnotesize\ttfamily \hyperlink{Panel_8h_acd4ec4b1a84a50e49be9f0166095d6ca}{Handler\+Result} Panel\+\_\+select\+By\+Typing (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{ch }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a1c05cf9f0b0203354658f00c628d4844}\label{Panel_8c_a1c05cf9f0b0203354658f00c628d4844}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+set@{Panel\+\_\+set}}
+\index{Panel\+\_\+set@{Panel\+\_\+set}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+set()}{Panel\_set()}}
+{\footnotesize\ttfamily void Panel\+\_\+set (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{i,  }\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_adbd6bc10ad28dc2810835924139d44b9}\label{Panel_8c_adbd6bc10ad28dc2810835924139d44b9}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+set\+Cursor\+To\+Selection@{Panel\+\_\+set\+Cursor\+To\+Selection}}
+\index{Panel\+\_\+set\+Cursor\+To\+Selection@{Panel\+\_\+set\+Cursor\+To\+Selection}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+set\+Cursor\+To\+Selection()}{Panel\_setCursorToSelection()}}
+{\footnotesize\ttfamily void Panel\+\_\+set\+Cursor\+To\+Selection (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_ae84b92bab8d809acae6a6d402e98aca5}\label{Panel_8c_ae84b92bab8d809acae6a6d402e98aca5}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+set\+Header@{Panel\+\_\+set\+Header}}
+\index{Panel\+\_\+set\+Header@{Panel\+\_\+set\+Header}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+set\+Header()}{Panel\_setHeader()}}
+{\footnotesize\ttfamily void Panel\+\_\+set\+Header (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{const char $\ast$}]{header }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{Panel_8c_a9368cb18b4944c4cfff05dcd59377849}\label{Panel_8c_a9368cb18b4944c4cfff05dcd59377849}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+set\+Selected@{Panel\+\_\+set\+Selected}}
+\index{Panel\+\_\+set\+Selected@{Panel\+\_\+set\+Selected}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+set\+Selected()}{Panel\_setSelected()}}
+{\footnotesize\ttfamily void Panel\+\_\+set\+Selected (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{int}]{selected }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a4667df96023160c2297cfb0bea97e073}\label{Panel_8c_a4667df96023160c2297cfb0bea97e073}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+set\+Selection\+Color@{Panel\+\_\+set\+Selection\+Color}}
+\index{Panel\+\_\+set\+Selection\+Color@{Panel\+\_\+set\+Selection\+Color}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+set\+Selection\+Color()}{Panel\_setSelectionColor()}}
+{\footnotesize\ttfamily void Panel\+\_\+set\+Selection\+Color (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{\hyperlink{CRT_8h_acea6130e6974f0cffaa58bbcbf09372a}{Color\+Elements}}]{color\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_abce01df79cd1ba7bb672a98e79d10ad0}\label{Panel_8c_abce01df79cd1ba7bb672a98e79d10ad0}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+size@{Panel\+\_\+size}}
+\index{Panel\+\_\+size@{Panel\+\_\+size}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+size()}{Panel\_size()}}
+{\footnotesize\ttfamily int Panel\+\_\+size (\begin{DoxyParamCaption}\item[{const \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Panel_8c_a8b3f1b6feb0ee47cabab33a98705dc78}\label{Panel_8c_a8b3f1b6feb0ee47cabab33a98705dc78}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+splice@{Panel\+\_\+splice}}
+\index{Panel\+\_\+splice@{Panel\+\_\+splice}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+splice()}{Panel\_splice()}}
+{\footnotesize\ttfamily void Panel\+\_\+splice (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{this,  }\item[{\hyperlink{Vector_8h_a8297b82ce917cd21838596b7e3a7faa8}{Vector} $\ast$}]{from }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Panel_8c_a2a284e75e24231f32a66f4e79fe0ba6d}\label{Panel_8c_a2a284e75e24231f32a66f4e79fe0ba6d}} 
+\index{Panel.\+c@{Panel.\+c}!Panel\+\_\+class@{Panel\+\_\+class}}
+\index{Panel\+\_\+class@{Panel\+\_\+class}!Panel.\+c@{Panel.\+c}}
+\subsubsection{\texorpdfstring{Panel\+\_\+class}{Panel\_class}}
+{\footnotesize\ttfamily const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structObject__}{Object}),
+      .delete = \hyperlink{Panel_8c_abf10ccfa752e70bfd0c404fcad844a34}{Panel\_delete}
+   \},
+   .eventHandler = \hyperlink{Panel_8c_ab3321670711061bfb395a7b220c9b825}{Panel\_selectByTyping},
+\}
+\end{DoxyCode}

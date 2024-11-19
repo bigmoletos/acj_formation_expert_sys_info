@@ -1,0 +1,79 @@
+\hypertarget{namespacetransfert__fichier__ftp}{}\section{transfert\+\_\+fichier\+\_\+ftp Namespace Reference}
+\label{namespacetransfert__fichier__ftp}\index{transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacetransfert__fichier__ftp_a6e6593409d5926a19cfd633ef9ac47ed}{sftp\+\_\+transfer} (hostname, port, username, password, local\+\_\+file, remote\+\_\+file)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{namespacetransfert__fichier__ftp_aaf924bb1bce6dd4671118f7290805e75}{H\+O\+S\+T\+N\+A\+ME} = \char`\"{}votre\+\_\+serveur\+\_\+ssh.\+com\char`\"{}
+\item 
+int \hyperlink{namespacetransfert__fichier__ftp_a01f92a0bf115a21b4a583e882fee4da4}{P\+O\+RT} = 22
+\item 
+string \hyperlink{namespacetransfert__fichier__ftp_a0db1a1a4a8900ec50147d296ccd79b73}{U\+S\+E\+R\+N\+A\+ME} = \char`\"{}votre\+\_\+utilisateur\char`\"{}
+\item 
+string \hyperlink{namespacetransfert__fichier__ftp_a5abb8185f991a673b1c4487d397dbb36}{P\+A\+S\+S\+W\+O\+RD} = \char`\"{}votre\+\_\+mot\+\_\+de\+\_\+passe\char`\"{}
+\item 
+string \hyperlink{namespacetransfert__fichier__ftp_a706a5fc1828223a238c55e82ca7d184a}{L\+O\+C\+A\+L\+\_\+\+F\+I\+LE} = \char`\"{}chemin/vers/le/fichier/local.\+txt\char`\"{}
+\item 
+string \hyperlink{namespacetransfert__fichier__ftp_a3a3651c0269c79cff24af695b08d27f9}{R\+E\+M\+O\+T\+E\+\_\+\+F\+I\+LE} = \char`\"{}/chemin/vers/le/fichier/distant.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacetransfert__fichier__ftp_a6e6593409d5926a19cfd633ef9ac47ed}\label{namespacetransfert__fichier__ftp_a6e6593409d5926a19cfd633ef9ac47ed}} 
+\index{transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}!sftp\+\_\+transfer@{sftp\+\_\+transfer}}
+\index{sftp\+\_\+transfer@{sftp\+\_\+transfer}!transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}}
+\subsubsection{\texorpdfstring{sftp\+\_\+transfer()}{sftp\_transfer()}}
+{\footnotesize\ttfamily def transfert\+\_\+fichier\+\_\+ftp.\+sftp\+\_\+transfer (\begin{DoxyParamCaption}\item[{}]{hostname,  }\item[{}]{port,  }\item[{}]{username,  }\item[{}]{password,  }\item[{}]{local\+\_\+file,  }\item[{}]{remote\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Transfère un fichier local vers un hôte distant via SFTP.
+
+:param hostname: Adresse de l'hôte distant
+:param port: Port SSH (généralement 22)
+:param username: Nom d'utilisateur pour la connexion SSH
+:param password: Mot de passe pour la connexion SSH
+:param local_file: Chemin du fichier local à transférer
+:param remote_file: Chemin de destination sur l'hôte distant
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetransfert__fichier__ftp_aaf924bb1bce6dd4671118f7290805e75}\label{namespacetransfert__fichier__ftp_aaf924bb1bce6dd4671118f7290805e75}} 
+\index{transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}!H\+O\+S\+T\+N\+A\+ME@{H\+O\+S\+T\+N\+A\+ME}}
+\index{H\+O\+S\+T\+N\+A\+ME@{H\+O\+S\+T\+N\+A\+ME}!transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}}
+\subsubsection{\texorpdfstring{H\+O\+S\+T\+N\+A\+ME}{HOSTNAME}}
+{\footnotesize\ttfamily string transfert\+\_\+fichier\+\_\+ftp.\+H\+O\+S\+T\+N\+A\+ME = \char`\"{}votre\+\_\+serveur\+\_\+ssh.\+com\char`\"{}}
+
+\mbox{\Hypertarget{namespacetransfert__fichier__ftp_a706a5fc1828223a238c55e82ca7d184a}\label{namespacetransfert__fichier__ftp_a706a5fc1828223a238c55e82ca7d184a}} 
+\index{transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}!L\+O\+C\+A\+L\+\_\+\+F\+I\+LE@{L\+O\+C\+A\+L\+\_\+\+F\+I\+LE}}
+\index{L\+O\+C\+A\+L\+\_\+\+F\+I\+LE@{L\+O\+C\+A\+L\+\_\+\+F\+I\+LE}!transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}}
+\subsubsection{\texorpdfstring{L\+O\+C\+A\+L\+\_\+\+F\+I\+LE}{LOCAL\_FILE}}
+{\footnotesize\ttfamily string transfert\+\_\+fichier\+\_\+ftp.\+L\+O\+C\+A\+L\+\_\+\+F\+I\+LE = \char`\"{}chemin/vers/le/fichier/local.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{namespacetransfert__fichier__ftp_a5abb8185f991a673b1c4487d397dbb36}\label{namespacetransfert__fichier__ftp_a5abb8185f991a673b1c4487d397dbb36}} 
+\index{transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}!P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}}
+\index{P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}!transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}}
+\subsubsection{\texorpdfstring{P\+A\+S\+S\+W\+O\+RD}{PASSWORD}}
+{\footnotesize\ttfamily string transfert\+\_\+fichier\+\_\+ftp.\+P\+A\+S\+S\+W\+O\+RD = \char`\"{}votre\+\_\+mot\+\_\+de\+\_\+passe\char`\"{}}
+
+\mbox{\Hypertarget{namespacetransfert__fichier__ftp_a01f92a0bf115a21b4a583e882fee4da4}\label{namespacetransfert__fichier__ftp_a01f92a0bf115a21b4a583e882fee4da4}} 
+\index{transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}!P\+O\+RT@{P\+O\+RT}}
+\index{P\+O\+RT@{P\+O\+RT}!transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}}
+\subsubsection{\texorpdfstring{P\+O\+RT}{PORT}}
+{\footnotesize\ttfamily int transfert\+\_\+fichier\+\_\+ftp.\+P\+O\+RT = 22}
+
+\mbox{\Hypertarget{namespacetransfert__fichier__ftp_a3a3651c0269c79cff24af695b08d27f9}\label{namespacetransfert__fichier__ftp_a3a3651c0269c79cff24af695b08d27f9}} 
+\index{transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}!R\+E\+M\+O\+T\+E\+\_\+\+F\+I\+LE@{R\+E\+M\+O\+T\+E\+\_\+\+F\+I\+LE}}
+\index{R\+E\+M\+O\+T\+E\+\_\+\+F\+I\+LE@{R\+E\+M\+O\+T\+E\+\_\+\+F\+I\+LE}!transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}}
+\subsubsection{\texorpdfstring{R\+E\+M\+O\+T\+E\+\_\+\+F\+I\+LE}{REMOTE\_FILE}}
+{\footnotesize\ttfamily string transfert\+\_\+fichier\+\_\+ftp.\+R\+E\+M\+O\+T\+E\+\_\+\+F\+I\+LE = \char`\"{}/chemin/vers/le/fichier/distant.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{namespacetransfert__fichier__ftp_a0db1a1a4a8900ec50147d296ccd79b73}\label{namespacetransfert__fichier__ftp_a0db1a1a4a8900ec50147d296ccd79b73}} 
+\index{transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}!U\+S\+E\+R\+N\+A\+ME@{U\+S\+E\+R\+N\+A\+ME}}
+\index{U\+S\+E\+R\+N\+A\+ME@{U\+S\+E\+R\+N\+A\+ME}!transfert\+\_\+fichier\+\_\+ftp@{transfert\+\_\+fichier\+\_\+ftp}}
+\subsubsection{\texorpdfstring{U\+S\+E\+R\+N\+A\+ME}{USERNAME}}
+{\footnotesize\ttfamily string transfert\+\_\+fichier\+\_\+ftp.\+U\+S\+E\+R\+N\+A\+ME = \char`\"{}votre\+\_\+utilisateur\char`\"{}}
+

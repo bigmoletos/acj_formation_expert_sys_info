@@ -1,0 +1,56 @@
+\hypertarget{DragonFlyBSDMachine_8c}{}\section{linux/download/htop-\/3.3.0/dragonflybsd/\+Dragon\+Fly\+B\+S\+D\+Machine.c File Reference}
+\label{DragonFlyBSDMachine_8c}\index{linux/download/htop-\/3.\+3.\+0/dragonflybsd/\+Dragon\+Fly\+B\+S\+D\+Machine.\+c@{linux/download/htop-\/3.\+3.\+0/dragonflybsd/\+Dragon\+Fly\+B\+S\+D\+Machine.\+c}}
+{\ttfamily \#include \char`\"{}dragonflybsd/\+Dragon\+Fly\+B\+S\+D\+Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sysctl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/user.\+h$>$}\newline
+{\ttfamily \#include $<$sys/param.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dragonflybsd/\+Dragon\+Fly\+B\+S\+D\+Process.\+h\char`\"{}}\newline
+Include dependency graph for Dragon\+Fly\+B\+S\+D\+Machine.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$ \hyperlink{DragonFlyBSDMachine_8c_ae6e3ec78c3c42cdd4683f8b205af522a}{Machine\+\_\+new} (\hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table} $\ast$users\+Table, uid\+\_\+t user\+Id)
+\item 
+void \hyperlink{DragonFlyBSDMachine_8c_a9259d45b9ba6db31481f94c1a03b363a}{Machine\+\_\+delete} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$super)
+\item 
+char $\ast$ \hyperlink{DragonFlyBSDMachine_8c_aff5df7750098883ab0e7f916cbc0cb36}{Dragon\+Fly\+B\+S\+D\+Machine\+\_\+read\+Jail\+Name} (\hyperlink{DragonFlyBSDMachine_8h_a066b48d1445b824ee9e4b28d827590f9}{Dragon\+Fly\+B\+S\+D\+Machine} $\ast$host, int jailid)
+\item 
+void \hyperlink{DragonFlyBSDMachine_8c_a794e5df1bf4b2ae6ba93bfeeea717705}{Machine\+\_\+scan} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$super)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DragonFlyBSDMachine_8c_aff5df7750098883ab0e7f916cbc0cb36}\label{DragonFlyBSDMachine_8c_aff5df7750098883ab0e7f916cbc0cb36}} 
+\index{Dragon\+Fly\+B\+S\+D\+Machine.\+c@{Dragon\+Fly\+B\+S\+D\+Machine.\+c}!Dragon\+Fly\+B\+S\+D\+Machine\+\_\+read\+Jail\+Name@{Dragon\+Fly\+B\+S\+D\+Machine\+\_\+read\+Jail\+Name}}
+\index{Dragon\+Fly\+B\+S\+D\+Machine\+\_\+read\+Jail\+Name@{Dragon\+Fly\+B\+S\+D\+Machine\+\_\+read\+Jail\+Name}!Dragon\+Fly\+B\+S\+D\+Machine.\+c@{Dragon\+Fly\+B\+S\+D\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Dragon\+Fly\+B\+S\+D\+Machine\+\_\+read\+Jail\+Name()}{DragonFlyBSDMachine\_readJailName()}}
+{\footnotesize\ttfamily char$\ast$ Dragon\+Fly\+B\+S\+D\+Machine\+\_\+read\+Jail\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{DragonFlyBSDMachine_8h_a066b48d1445b824ee9e4b28d827590f9}{Dragon\+Fly\+B\+S\+D\+Machine} $\ast$}]{host,  }\item[{int}]{jailid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DragonFlyBSDMachine_8c_a9259d45b9ba6db31481f94c1a03b363a}\label{DragonFlyBSDMachine_8c_a9259d45b9ba6db31481f94c1a03b363a}} 
+\index{Dragon\+Fly\+B\+S\+D\+Machine.\+c@{Dragon\+Fly\+B\+S\+D\+Machine.\+c}!Machine\+\_\+delete@{Machine\+\_\+delete}}
+\index{Machine\+\_\+delete@{Machine\+\_\+delete}!Dragon\+Fly\+B\+S\+D\+Machine.\+c@{Dragon\+Fly\+B\+S\+D\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+delete()}{Machine\_delete()}}
+{\footnotesize\ttfamily void Machine\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{super }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DragonFlyBSDMachine_8c_ae6e3ec78c3c42cdd4683f8b205af522a}\label{DragonFlyBSDMachine_8c_ae6e3ec78c3c42cdd4683f8b205af522a}} 
+\index{Dragon\+Fly\+B\+S\+D\+Machine.\+c@{Dragon\+Fly\+B\+S\+D\+Machine.\+c}!Machine\+\_\+new@{Machine\+\_\+new}}
+\index{Machine\+\_\+new@{Machine\+\_\+new}!Dragon\+Fly\+B\+S\+D\+Machine.\+c@{Dragon\+Fly\+B\+S\+D\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+new()}{Machine\_new()}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine}$\ast$ Machine\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table} $\ast$}]{users\+Table,  }\item[{uid\+\_\+t}]{user\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DragonFlyBSDMachine_8c_a794e5df1bf4b2ae6ba93bfeeea717705}\label{DragonFlyBSDMachine_8c_a794e5df1bf4b2ae6ba93bfeeea717705}} 
+\index{Dragon\+Fly\+B\+S\+D\+Machine.\+c@{Dragon\+Fly\+B\+S\+D\+Machine.\+c}!Machine\+\_\+scan@{Machine\+\_\+scan}}
+\index{Machine\+\_\+scan@{Machine\+\_\+scan}!Dragon\+Fly\+B\+S\+D\+Machine.\+c@{Dragon\+Fly\+B\+S\+D\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+scan()}{Machine\_scan()}}
+{\footnotesize\ttfamily void Machine\+\_\+scan (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{super }\end{DoxyParamCaption})}
+

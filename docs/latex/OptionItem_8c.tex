@@ -1,0 +1,195 @@
+\hypertarget{OptionItem_8c}{}\section{linux/download/htop-\/3.3.0/\+Option\+Item.c File Reference}
+\label{OptionItem_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Option\+Item.\+c@{linux/download/htop-\/3.\+3.\+0/\+Option\+Item.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Option\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Option\+Item.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{OptionItem_8h_a53af2aaa5578cbdb8ac8bd65a971fe7f}{Text\+Item} $\ast$ \hyperlink{OptionItem_8c_a0dfa2487c8d1f71b60e54c5e891abaf5}{Text\+Item\+\_\+new} (const char $\ast$text)
+\item 
+\hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item} $\ast$ \hyperlink{OptionItem_8c_a43e6d1aabec233e798be53ea7a2eb9df}{Check\+Item\+\_\+new\+By\+Ref} (const char $\ast$text, bool $\ast$ref)
+\item 
+\hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item} $\ast$ \hyperlink{OptionItem_8c_a2dcacac2c0cd975ff25046a1e447d5d5}{Check\+Item\+\_\+new\+By\+Val} (const char $\ast$text, bool value)
+\item 
+bool \hyperlink{OptionItem_8c_aabf07f7fd70b57317d3b2e4410d17482}{Check\+Item\+\_\+get} (const \hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item} $\ast$this)
+\item 
+void \hyperlink{OptionItem_8c_a2356b4ba9e6a8b985a871afe50bbb24f}{Check\+Item\+\_\+set} (\hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item} $\ast$this, bool value)
+\item 
+void \hyperlink{OptionItem_8c_a9176bf8126ae312f85a4f1f345514935}{Check\+Item\+\_\+toggle} (\hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item} $\ast$this)
+\item 
+\hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$ \hyperlink{OptionItem_8c_aa55a6a00725be2fbbab155210597fc10}{Number\+Item\+\_\+new\+By\+Ref} (const char $\ast$text, int $\ast$ref, int \hyperlink{NetBSDMachine_8c_a13b38c360ed27fb8800b5a62c4972044}{scale}, int min, int \hyperlink{exo19_8cpp_ae3ed8abbe6617cfbdd14a9390b10f310}{max})
+\item 
+\hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$ \hyperlink{OptionItem_8c_ae8790e201d0601af5ecb89a7f2c94561}{Number\+Item\+\_\+new\+By\+Val} (const char $\ast$text, int value, int \hyperlink{NetBSDMachine_8c_a13b38c360ed27fb8800b5a62c4972044}{scale}, int min, int \hyperlink{exo19_8cpp_ae3ed8abbe6617cfbdd14a9390b10f310}{max})
+\item 
+int \hyperlink{OptionItem_8c_a921c9dfe46db005217953758ea9707a9}{Number\+Item\+\_\+get} (const \hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$this)
+\item 
+void \hyperlink{OptionItem_8c_ad1e54f1dc2f15f65da6d1a7dbeac4f21}{Number\+Item\+\_\+decrease} (\hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$this)
+\item 
+void \hyperlink{OptionItem_8c_a009addff091d3d3a4270cf003546cef9}{Number\+Item\+\_\+increase} (\hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$this)
+\item 
+void \hyperlink{OptionItem_8c_a6646d5e23aad1cfe9391234491576c44}{Number\+Item\+\_\+toggle} (\hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{OptionItem_8h_a56298f07b71e509ac7b42168e4a444bc}{Option\+Item\+Class} \hyperlink{OptionItem_8c_a11973de2ddced8e104891e80415b2f28}{Option\+Item\+\_\+class}
+\item 
+const \hyperlink{OptionItem_8h_a56298f07b71e509ac7b42168e4a444bc}{Option\+Item\+Class} \hyperlink{OptionItem_8c_afeddeb73140b0b02f6fb2ebde69e7325}{Text\+Item\+\_\+class}
+\item 
+const \hyperlink{OptionItem_8h_a56298f07b71e509ac7b42168e4a444bc}{Option\+Item\+Class} \hyperlink{OptionItem_8c_a34dea4c50c147f6b29f0aacc784ef8c0}{Check\+Item\+\_\+class}
+\item 
+const \hyperlink{OptionItem_8h_a56298f07b71e509ac7b42168e4a444bc}{Option\+Item\+Class} \hyperlink{OptionItem_8c_a0ae1d9d4e576a437b9f8e115764a63c9}{Number\+Item\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{OptionItem_8c_aabf07f7fd70b57317d3b2e4410d17482}\label{OptionItem_8c_aabf07f7fd70b57317d3b2e4410d17482}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Check\+Item\+\_\+get@{Check\+Item\+\_\+get}}
+\index{Check\+Item\+\_\+get@{Check\+Item\+\_\+get}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Check\+Item\+\_\+get()}{CheckItem\_get()}}
+{\footnotesize\ttfamily bool Check\+Item\+\_\+get (\begin{DoxyParamCaption}\item[{const \hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_a43e6d1aabec233e798be53ea7a2eb9df}\label{OptionItem_8c_a43e6d1aabec233e798be53ea7a2eb9df}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Check\+Item\+\_\+new\+By\+Ref@{Check\+Item\+\_\+new\+By\+Ref}}
+\index{Check\+Item\+\_\+new\+By\+Ref@{Check\+Item\+\_\+new\+By\+Ref}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Check\+Item\+\_\+new\+By\+Ref()}{CheckItem\_newByRef()}}
+{\footnotesize\ttfamily \hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item}$\ast$ Check\+Item\+\_\+new\+By\+Ref (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{bool $\ast$}]{ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_a2dcacac2c0cd975ff25046a1e447d5d5}\label{OptionItem_8c_a2dcacac2c0cd975ff25046a1e447d5d5}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Check\+Item\+\_\+new\+By\+Val@{Check\+Item\+\_\+new\+By\+Val}}
+\index{Check\+Item\+\_\+new\+By\+Val@{Check\+Item\+\_\+new\+By\+Val}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Check\+Item\+\_\+new\+By\+Val()}{CheckItem\_newByVal()}}
+{\footnotesize\ttfamily \hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item}$\ast$ Check\+Item\+\_\+new\+By\+Val (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_a2356b4ba9e6a8b985a871afe50bbb24f}\label{OptionItem_8c_a2356b4ba9e6a8b985a871afe50bbb24f}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Check\+Item\+\_\+set@{Check\+Item\+\_\+set}}
+\index{Check\+Item\+\_\+set@{Check\+Item\+\_\+set}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Check\+Item\+\_\+set()}{CheckItem\_set()}}
+{\footnotesize\ttfamily void Check\+Item\+\_\+set (\begin{DoxyParamCaption}\item[{\hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item} $\ast$}]{this,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_a9176bf8126ae312f85a4f1f345514935}\label{OptionItem_8c_a9176bf8126ae312f85a4f1f345514935}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Check\+Item\+\_\+toggle@{Check\+Item\+\_\+toggle}}
+\index{Check\+Item\+\_\+toggle@{Check\+Item\+\_\+toggle}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Check\+Item\+\_\+toggle()}{CheckItem\_toggle()}}
+{\footnotesize\ttfamily void Check\+Item\+\_\+toggle (\begin{DoxyParamCaption}\item[{\hyperlink{OptionItem_8h_a339fc326dcf06df638c783291a034290}{Check\+Item} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_ad1e54f1dc2f15f65da6d1a7dbeac4f21}\label{OptionItem_8c_ad1e54f1dc2f15f65da6d1a7dbeac4f21}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Number\+Item\+\_\+decrease@{Number\+Item\+\_\+decrease}}
+\index{Number\+Item\+\_\+decrease@{Number\+Item\+\_\+decrease}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Number\+Item\+\_\+decrease()}{NumberItem\_decrease()}}
+{\footnotesize\ttfamily void Number\+Item\+\_\+decrease (\begin{DoxyParamCaption}\item[{\hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_a921c9dfe46db005217953758ea9707a9}\label{OptionItem_8c_a921c9dfe46db005217953758ea9707a9}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Number\+Item\+\_\+get@{Number\+Item\+\_\+get}}
+\index{Number\+Item\+\_\+get@{Number\+Item\+\_\+get}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Number\+Item\+\_\+get()}{NumberItem\_get()}}
+{\footnotesize\ttfamily int Number\+Item\+\_\+get (\begin{DoxyParamCaption}\item[{const \hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_a009addff091d3d3a4270cf003546cef9}\label{OptionItem_8c_a009addff091d3d3a4270cf003546cef9}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Number\+Item\+\_\+increase@{Number\+Item\+\_\+increase}}
+\index{Number\+Item\+\_\+increase@{Number\+Item\+\_\+increase}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Number\+Item\+\_\+increase()}{NumberItem\_increase()}}
+{\footnotesize\ttfamily void Number\+Item\+\_\+increase (\begin{DoxyParamCaption}\item[{\hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_aa55a6a00725be2fbbab155210597fc10}\label{OptionItem_8c_aa55a6a00725be2fbbab155210597fc10}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Number\+Item\+\_\+new\+By\+Ref@{Number\+Item\+\_\+new\+By\+Ref}}
+\index{Number\+Item\+\_\+new\+By\+Ref@{Number\+Item\+\_\+new\+By\+Ref}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Number\+Item\+\_\+new\+By\+Ref()}{NumberItem\_newByRef()}}
+{\footnotesize\ttfamily \hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item}$\ast$ Number\+Item\+\_\+new\+By\+Ref (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{int $\ast$}]{ref,  }\item[{int}]{scale,  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_ae8790e201d0601af5ecb89a7f2c94561}\label{OptionItem_8c_ae8790e201d0601af5ecb89a7f2c94561}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Number\+Item\+\_\+new\+By\+Val@{Number\+Item\+\_\+new\+By\+Val}}
+\index{Number\+Item\+\_\+new\+By\+Val@{Number\+Item\+\_\+new\+By\+Val}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Number\+Item\+\_\+new\+By\+Val()}{NumberItem\_newByVal()}}
+{\footnotesize\ttfamily \hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item}$\ast$ Number\+Item\+\_\+new\+By\+Val (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{int}]{value,  }\item[{int}]{scale,  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_a6646d5e23aad1cfe9391234491576c44}\label{OptionItem_8c_a6646d5e23aad1cfe9391234491576c44}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Number\+Item\+\_\+toggle@{Number\+Item\+\_\+toggle}}
+\index{Number\+Item\+\_\+toggle@{Number\+Item\+\_\+toggle}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Number\+Item\+\_\+toggle()}{NumberItem\_toggle()}}
+{\footnotesize\ttfamily void Number\+Item\+\_\+toggle (\begin{DoxyParamCaption}\item[{\hyperlink{OptionItem_8h_ada6fd524df9668f0f9da1f3bfa13315e}{Number\+Item} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OptionItem_8c_a0dfa2487c8d1f71b60e54c5e891abaf5}\label{OptionItem_8c_a0dfa2487c8d1f71b60e54c5e891abaf5}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Text\+Item\+\_\+new@{Text\+Item\+\_\+new}}
+\index{Text\+Item\+\_\+new@{Text\+Item\+\_\+new}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Text\+Item\+\_\+new()}{TextItem\_new()}}
+{\footnotesize\ttfamily \hyperlink{OptionItem_8h_a53af2aaa5578cbdb8ac8bd65a971fe7f}{Text\+Item}$\ast$ Text\+Item\+\_\+new (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{OptionItem_8c_a34dea4c50c147f6b29f0aacc784ef8c0}\label{OptionItem_8c_a34dea4c50c147f6b29f0aacc784ef8c0}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Check\+Item\+\_\+class@{Check\+Item\+\_\+class}}
+\index{Check\+Item\+\_\+class@{Check\+Item\+\_\+class}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Check\+Item\+\_\+class}{CheckItem\_class}}
+{\footnotesize\ttfamily const \hyperlink{OptionItem_8h_a56298f07b71e509ac7b42168e4a444bc}{Option\+Item\+Class} Check\+Item\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structOptionItem__}{OptionItem}),
+      .delete = OptionItem\_delete,
+      .display = CheckItem\_display
+   \},
+   .kind = \hyperlink{OptionItem_8h_a7691fd89aaf5574f919536db7230b07ea0cccdbebb13e9ac2a61948b818dcb02e}{OPTION\_ITEM\_CHECK}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{OptionItem_8c_a0ae1d9d4e576a437b9f8e115764a63c9}\label{OptionItem_8c_a0ae1d9d4e576a437b9f8e115764a63c9}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Number\+Item\+\_\+class@{Number\+Item\+\_\+class}}
+\index{Number\+Item\+\_\+class@{Number\+Item\+\_\+class}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Number\+Item\+\_\+class}{NumberItem\_class}}
+{\footnotesize\ttfamily const \hyperlink{OptionItem_8h_a56298f07b71e509ac7b42168e4a444bc}{Option\+Item\+Class} Number\+Item\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structOptionItem__}{OptionItem}),
+      .delete = OptionItem\_delete,
+      .display = NumberItem\_display
+   \},
+   .kind = \hyperlink{OptionItem_8h_a7691fd89aaf5574f919536db7230b07eac1a6ea936ed934e6838b63742203ab6d}{OPTION\_ITEM\_NUMBER}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{OptionItem_8c_a11973de2ddced8e104891e80415b2f28}\label{OptionItem_8c_a11973de2ddced8e104891e80415b2f28}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Option\+Item\+\_\+class@{Option\+Item\+\_\+class}}
+\index{Option\+Item\+\_\+class@{Option\+Item\+\_\+class}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Option\+Item\+\_\+class}{OptionItem\_class}}
+{\footnotesize\ttfamily const \hyperlink{OptionItem_8h_a56298f07b71e509ac7b42168e4a444bc}{Option\+Item\+Class} Option\+Item\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structObject__}{Object}),
+      .delete = OptionItem\_delete
+   \}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{OptionItem_8c_afeddeb73140b0b02f6fb2ebde69e7325}\label{OptionItem_8c_afeddeb73140b0b02f6fb2ebde69e7325}} 
+\index{Option\+Item.\+c@{Option\+Item.\+c}!Text\+Item\+\_\+class@{Text\+Item\+\_\+class}}
+\index{Text\+Item\+\_\+class@{Text\+Item\+\_\+class}!Option\+Item.\+c@{Option\+Item.\+c}}
+\subsubsection{\texorpdfstring{Text\+Item\+\_\+class}{TextItem\_class}}
+{\footnotesize\ttfamily const \hyperlink{OptionItem_8h_a56298f07b71e509ac7b42168e4a444bc}{Option\+Item\+Class} Text\+Item\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structOptionItem__}{OptionItem}),
+      .delete = OptionItem\_delete,
+      .display = TextItem\_display
+   \},
+   .kind = \hyperlink{OptionItem_8h_a7691fd89aaf5574f919536db7230b07eaefeeb0fa7876fe94952a19295d9d4dd3}{OPTION\_ITEM\_TEXT}
+\}
+\end{DoxyCode}

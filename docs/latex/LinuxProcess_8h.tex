@@ -1,0 +1,225 @@
+\hypertarget{LinuxProcess_8h}{}\section{linux/download/htop-\/3.3.0/linux/\+Linux\+Process.h File Reference}
+\label{LinuxProcess_8h}\index{linux/download/htop-\/3.\+3.\+0/linux/\+Linux\+Process.\+h@{linux/download/htop-\/3.\+3.\+0/linux/\+Linux\+Process.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+I\+O\+Priority.\+h\char`\"{}}\newline
+Include dependency graph for Linux\+Process.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structLinuxProcess__}{Linux\+Process\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{LinuxProcess_8h_acc93ec94730da562e1b89737f8590ac5}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+I\+O\+P\+R\+IO}~0x00000100
+\item 
+\#define \hyperlink{LinuxProcess_8h_ad71b244d848105063501520052175211}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+P\+E\+N\+VZ}~0x00000200
+\item 
+\#define \hyperlink{LinuxProcess_8h_a946a11e1beb3ffc3ddec887f41a1e0aa}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+V\+S\+E\+R\+V\+ER}~0x00000400
+\item 
+\#define \hyperlink{LinuxProcess_8h_ab1ef4b6a685f119aef9a28235f5afe0c}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP}~0x00000800
+\item 
+\#define \hyperlink{LinuxProcess_8h_a5b99c69962636b98e6bcec78478b3570}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM}~0x00001000
+\item 
+\#define \hyperlink{LinuxProcess_8h_aa8e215d36999a35ac1468e17f50df79d}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS}~0x00002000
+\item 
+\#define \hyperlink{LinuxProcess_8h_a503130b437732aca449d20b20eb3996e}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT}~0x00004000
+\item 
+\#define \hyperlink{LinuxProcess_8h_a470ce57ad6c8b5190099ba84bf33984e}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR}~0x00008000
+\item 
+\#define \hyperlink{LinuxProcess_8h_ac36d54906e9470dc889f05b76057f2f7}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+L\+R\+S\+\_\+\+F\+IX}~0x00010000
+\item 
+\#define \hyperlink{LinuxProcess_8h_a12a82c30af93200057f534ea4d6faf08}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+D\+E\+L\+A\+Y\+A\+C\+CT}~0x00040000
+\item 
+\#define \hyperlink{LinuxProcess_8h_a99ebe2fc16333b232af14b60c47afb68}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP}~0x00080000
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structLinuxProcess__}{Linux\+Process\+\_\+} \hyperlink{LinuxProcess_8h_acc7507024529fc7edcded70119412c44}{Linux\+Process}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{LinuxProcess_8h_ad99316b950e68408820a99f0403f10d4}{Linux\+Process\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\item 
+void \hyperlink{LinuxProcess_8h_a6c66e15496a064f92b8c7e31183c16c3}{Process\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+\hyperlink{IOPriority_8h_a7f26835a9d854333f7dc5d7321922975}{I\+O\+Priority} \hyperlink{LinuxProcess_8h_a523b3ecbf509e59240bd227a3ef5beee}{Linux\+Process\+\_\+update\+I\+O\+Priority} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$proc)
+\item 
+bool \hyperlink{LinuxProcess_8h_af02018fbfd1a12292b8b3f28c8828240}{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super, \hyperlink{unionArg}{Arg} ioprio)
+\item 
+bool \hyperlink{LinuxProcess_8h_a430ae6762672d8d882fbbc3321423d26}{Linux\+Process\+\_\+is\+Autogroup\+Enabled} (void)
+\item 
+bool \hyperlink{LinuxProcess_8h_a78413fd7a99e9c7b67c3c089deaee54b}{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super, \hyperlink{unionArg}{Arg} delta)
+\item 
+bool \hyperlink{LinuxProcess_8h_a17ba705c42721407f7e0cfd66b65c31f}{Process\+\_\+is\+Thread} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{LinuxProcess_8h_a0f8fcbb2d8136c7d33c2e72f3642d6f2}{page\+Size}
+\item 
+int \hyperlink{LinuxProcess_8h_a49f78a155a4c2e503ba3571d11072d2e}{page\+Size\+KB}
+\item 
+const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} \hyperlink{LinuxProcess_8h_ad5f8090378cbc673e2ae0825d0342743}{Process\+\_\+fields} \mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}
+\item 
+const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} \hyperlink{LinuxProcess_8h_a69244cb743d41683ab97646805c32213}{Linux\+Process\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{LinuxProcess_8h_a99ebe2fc16333b232af14b60c47afb68}\label{LinuxProcess_8h_a99ebe2fc16333b232af14b60c47afb68}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP}{PROCESS\_FLAG\_LINUX\_AUTOGROUP}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP~0x00080000}
+
+\mbox{\Hypertarget{LinuxProcess_8h_ab1ef4b6a685f119aef9a28235f5afe0c}\label{LinuxProcess_8h_ab1ef4b6a685f119aef9a28235f5afe0c}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP}{PROCESS\_FLAG\_LINUX\_CGROUP}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP~0x00000800}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a503130b437732aca449d20b20eb3996e}\label{LinuxProcess_8h_a503130b437732aca449d20b20eb3996e}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT}{PROCESS\_FLAG\_LINUX\_CTXT}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT~0x00004000}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a12a82c30af93200057f534ea4d6faf08}\label{LinuxProcess_8h_a12a82c30af93200057f534ea4d6faf08}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+D\+E\+L\+A\+Y\+A\+C\+CT@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+D\+E\+L\+A\+Y\+A\+C\+CT}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+D\+E\+L\+A\+Y\+A\+C\+CT@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+D\+E\+L\+A\+Y\+A\+C\+CT}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+D\+E\+L\+A\+Y\+A\+C\+CT}{PROCESS\_FLAG\_LINUX\_DELAYACCT}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+D\+E\+L\+A\+Y\+A\+C\+CT~0x00040000}
+
+\mbox{\Hypertarget{LinuxProcess_8h_acc93ec94730da562e1b89737f8590ac5}\label{LinuxProcess_8h_acc93ec94730da562e1b89737f8590ac5}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+I\+O\+P\+R\+IO@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+I\+O\+P\+R\+IO}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+I\+O\+P\+R\+IO@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+I\+O\+P\+R\+IO}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+I\+O\+P\+R\+IO}{PROCESS\_FLAG\_LINUX\_IOPRIO}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+I\+O\+P\+R\+IO~0x00000100}
+
+\mbox{\Hypertarget{LinuxProcess_8h_ac36d54906e9470dc889f05b76057f2f7}\label{LinuxProcess_8h_ac36d54906e9470dc889f05b76057f2f7}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+L\+R\+S\+\_\+\+F\+IX@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+L\+R\+S\+\_\+\+F\+IX}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+L\+R\+S\+\_\+\+F\+IX@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+L\+R\+S\+\_\+\+F\+IX}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+L\+R\+S\+\_\+\+F\+IX}{PROCESS\_FLAG\_LINUX\_LRS\_FIX}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+L\+R\+S\+\_\+\+F\+IX~0x00010000}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a5b99c69962636b98e6bcec78478b3570}\label{LinuxProcess_8h_a5b99c69962636b98e6bcec78478b3570}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM}{PROCESS\_FLAG\_LINUX\_OOM}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM~0x00001000}
+
+\mbox{\Hypertarget{LinuxProcess_8h_ad71b244d848105063501520052175211}\label{LinuxProcess_8h_ad71b244d848105063501520052175211}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+P\+E\+N\+VZ@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+P\+E\+N\+VZ}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+P\+E\+N\+VZ@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+P\+E\+N\+VZ}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+P\+E\+N\+VZ}{PROCESS\_FLAG\_LINUX\_OPENVZ}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+P\+E\+N\+VZ~0x00000200}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a470ce57ad6c8b5190099ba84bf33984e}\label{LinuxProcess_8h_a470ce57ad6c8b5190099ba84bf33984e}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR}{PROCESS\_FLAG\_LINUX\_SECATTR}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR~0x00008000}
+
+\mbox{\Hypertarget{LinuxProcess_8h_aa8e215d36999a35ac1468e17f50df79d}\label{LinuxProcess_8h_aa8e215d36999a35ac1468e17f50df79d}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS}{PROCESS\_FLAG\_LINUX\_SMAPS}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS~0x00002000}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a946a11e1beb3ffc3ddec887f41a1e0aa}\label{LinuxProcess_8h_a946a11e1beb3ffc3ddec887f41a1e0aa}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+V\+S\+E\+R\+V\+ER@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+V\+S\+E\+R\+V\+ER}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+V\+S\+E\+R\+V\+ER@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+V\+S\+E\+R\+V\+ER}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+V\+S\+E\+R\+V\+ER}{PROCESS\_FLAG\_LINUX\_VSERVER}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+V\+S\+E\+R\+V\+ER~0x00000400}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{LinuxProcess_8h_acc7507024529fc7edcded70119412c44}\label{LinuxProcess_8h_acc7507024529fc7edcded70119412c44}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Linux\+Process@{Linux\+Process}}
+\index{Linux\+Process@{Linux\+Process}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Linux\+Process}{LinuxProcess}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structLinuxProcess__}{Linux\+Process\+\_\+}  \hyperlink{LinuxProcess_8h_acc7507024529fc7edcded70119412c44}{Linux\+Process}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{LinuxProcess_8h_a430ae6762672d8d882fbbc3321423d26}\label{LinuxProcess_8h_a430ae6762672d8d882fbbc3321423d26}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Linux\+Process\+\_\+is\+Autogroup\+Enabled@{Linux\+Process\+\_\+is\+Autogroup\+Enabled}}
+\index{Linux\+Process\+\_\+is\+Autogroup\+Enabled@{Linux\+Process\+\_\+is\+Autogroup\+Enabled}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+is\+Autogroup\+Enabled()}{LinuxProcess\_isAutogroupEnabled()}}
+{\footnotesize\ttfamily bool Linux\+Process\+\_\+is\+Autogroup\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8h_ad99316b950e68408820a99f0403f10d4}\label{LinuxProcess_8h_ad99316b950e68408820a99f0403f10d4}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Linux\+Process\+\_\+new@{Linux\+Process\+\_\+new}}
+\index{Linux\+Process\+\_\+new@{Linux\+Process\+\_\+new}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+new()}{LinuxProcess\_new()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ Linux\+Process\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a78413fd7a99e9c7b67c3c089deaee54b}\label{LinuxProcess_8h_a78413fd7a99e9c7b67c3c089deaee54b}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By@{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By}}
+\index{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By@{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By()}{LinuxProcess\_rowChangeAutogroupPriorityBy()}}
+{\footnotesize\ttfamily bool Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super,  }\item[{\hyperlink{unionArg}{Arg}}]{delta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8h_af02018fbfd1a12292b8b3f28c8828240}\label{LinuxProcess_8h_af02018fbfd1a12292b8b3f28c8828240}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Linux\+Process\+\_\+row\+Set\+I\+O\+Priority@{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority}}
+\index{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority@{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority()}{LinuxProcess\_rowSetIOPriority()}}
+{\footnotesize\ttfamily bool Linux\+Process\+\_\+row\+Set\+I\+O\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super,  }\item[{\hyperlink{unionArg}{Arg}}]{ioprio }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a523b3ecbf509e59240bd227a3ef5beee}\label{LinuxProcess_8h_a523b3ecbf509e59240bd227a3ef5beee}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Linux\+Process\+\_\+update\+I\+O\+Priority@{Linux\+Process\+\_\+update\+I\+O\+Priority}}
+\index{Linux\+Process\+\_\+update\+I\+O\+Priority@{Linux\+Process\+\_\+update\+I\+O\+Priority}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+update\+I\+O\+Priority()}{LinuxProcess\_updateIOPriority()}}
+{\footnotesize\ttfamily \hyperlink{IOPriority_8h_a7f26835a9d854333f7dc5d7321922975}{I\+O\+Priority} Linux\+Process\+\_\+update\+I\+O\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{proc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a6c66e15496a064f92b8c7e31183c16c3}\label{LinuxProcess_8h_a6c66e15496a064f92b8c7e31183c16c3}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Process\+\_\+delete@{Process\+\_\+delete}}
+\index{Process\+\_\+delete@{Process\+\_\+delete}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Process\+\_\+delete()}{Process\_delete()}}
+{\footnotesize\ttfamily void Process\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a17ba705c42721407f7e0cfd66b65c31f}\label{LinuxProcess_8h_a17ba705c42721407f7e0cfd66b65c31f}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Process\+\_\+is\+Thread@{Process\+\_\+is\+Thread}}
+\index{Process\+\_\+is\+Thread@{Process\+\_\+is\+Thread}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Process\+\_\+is\+Thread()}{Process\_isThread()}}
+{\footnotesize\ttfamily bool Process\+\_\+is\+Thread (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{LinuxProcess_8h_a69244cb743d41683ab97646805c32213}\label{LinuxProcess_8h_a69244cb743d41683ab97646805c32213}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Linux\+Process\+\_\+class@{Linux\+Process\+\_\+class}}
+\index{Linux\+Process\+\_\+class@{Linux\+Process\+\_\+class}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+class}{LinuxProcess\_class}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} Linux\+Process\+\_\+class}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a0f8fcbb2d8136c7d33c2e72f3642d6f2}\label{LinuxProcess_8h_a0f8fcbb2d8136c7d33c2e72f3642d6f2}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!page\+Size@{page\+Size}}
+\index{page\+Size@{page\+Size}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{page\+Size}{pageSize}}
+{\footnotesize\ttfamily int page\+Size}
+
+\mbox{\Hypertarget{LinuxProcess_8h_a49f78a155a4c2e503ba3571d11072d2e}\label{LinuxProcess_8h_a49f78a155a4c2e503ba3571d11072d2e}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!page\+Size\+KB@{page\+Size\+KB}}
+\index{page\+Size\+KB@{page\+Size\+KB}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{page\+Size\+KB}{pageSizeKB}}
+{\footnotesize\ttfamily int page\+Size\+KB}
+
+\mbox{\Hypertarget{LinuxProcess_8h_ad5f8090378cbc673e2ae0825d0342743}\label{LinuxProcess_8h_ad5f8090378cbc673e2ae0825d0342743}} 
+\index{Linux\+Process.\+h@{Linux\+Process.\+h}!Process\+\_\+fields@{Process\+\_\+fields}}
+\index{Process\+\_\+fields@{Process\+\_\+fields}!Linux\+Process.\+h@{Linux\+Process.\+h}}
+\subsubsection{\texorpdfstring{Process\+\_\+fields}{Process\_fields}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} Process\+\_\+fields\mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}}
+

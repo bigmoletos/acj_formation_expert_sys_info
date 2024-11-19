@@ -1,0 +1,120 @@
+\hypertarget{LinuxProcess_8c}{}\section{linux/download/htop-\/3.3.0/linux/\+Linux\+Process.c File Reference}
+\label{LinuxProcess_8c}\index{linux/download/htop-\/3.\+3.\+0/linux/\+Linux\+Process.\+c@{linux/download/htop-\/3.\+3.\+0/linux/\+Linux\+Process.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Linux\+Process.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$syscall.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row\+Field.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scheduling.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+I\+O\+Priority.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Linux\+Machine.\+h\char`\"{}}\newline
+Include dependency graph for Linux\+Process.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{LinuxProcess_8c_ad99316b950e68408820a99f0403f10d4}{Linux\+Process\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\item 
+void \hyperlink{LinuxProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+\hyperlink{IOPriority_8h_a7f26835a9d854333f7dc5d7321922975}{I\+O\+Priority} \hyperlink{LinuxProcess_8c_aed105b6c071632a1bc98d91181482e2f}{Linux\+Process\+\_\+update\+I\+O\+Priority} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$p)
+\item 
+bool \hyperlink{LinuxProcess_8c_af02018fbfd1a12292b8b3f28c8828240}{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super, \hyperlink{unionArg}{Arg} ioprio)
+\item 
+bool \hyperlink{LinuxProcess_8c_a430ae6762672d8d882fbbc3321423d26}{Linux\+Process\+\_\+is\+Autogroup\+Enabled} (void)
+\item 
+bool \hyperlink{LinuxProcess_8c_a78413fd7a99e9c7b67c3c089deaee54b}{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super, \hyperlink{unionArg}{Arg} delta)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} \hyperlink{LinuxProcess_8c_ad5f8090378cbc673e2ae0825d0342743}{Process\+\_\+fields} \mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}
+\item 
+const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} \hyperlink{LinuxProcess_8c_a69244cb743d41683ab97646805c32213}{Linux\+Process\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{LinuxProcess_8c_a430ae6762672d8d882fbbc3321423d26}\label{LinuxProcess_8c_a430ae6762672d8d882fbbc3321423d26}} 
+\index{Linux\+Process.\+c@{Linux\+Process.\+c}!Linux\+Process\+\_\+is\+Autogroup\+Enabled@{Linux\+Process\+\_\+is\+Autogroup\+Enabled}}
+\index{Linux\+Process\+\_\+is\+Autogroup\+Enabled@{Linux\+Process\+\_\+is\+Autogroup\+Enabled}!Linux\+Process.\+c@{Linux\+Process.\+c}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+is\+Autogroup\+Enabled()}{LinuxProcess\_isAutogroupEnabled()}}
+{\footnotesize\ttfamily bool Linux\+Process\+\_\+is\+Autogroup\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8c_ad99316b950e68408820a99f0403f10d4}\label{LinuxProcess_8c_ad99316b950e68408820a99f0403f10d4}} 
+\index{Linux\+Process.\+c@{Linux\+Process.\+c}!Linux\+Process\+\_\+new@{Linux\+Process\+\_\+new}}
+\index{Linux\+Process\+\_\+new@{Linux\+Process\+\_\+new}!Linux\+Process.\+c@{Linux\+Process.\+c}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+new()}{LinuxProcess\_new()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ Linux\+Process\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8c_a78413fd7a99e9c7b67c3c089deaee54b}\label{LinuxProcess_8c_a78413fd7a99e9c7b67c3c089deaee54b}} 
+\index{Linux\+Process.\+c@{Linux\+Process.\+c}!Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By@{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By}}
+\index{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By@{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By}!Linux\+Process.\+c@{Linux\+Process.\+c}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By()}{LinuxProcess\_rowChangeAutogroupPriorityBy()}}
+{\footnotesize\ttfamily bool Linux\+Process\+\_\+row\+Change\+Autogroup\+Priority\+By (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super,  }\item[{\hyperlink{unionArg}{Arg}}]{delta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8c_af02018fbfd1a12292b8b3f28c8828240}\label{LinuxProcess_8c_af02018fbfd1a12292b8b3f28c8828240}} 
+\index{Linux\+Process.\+c@{Linux\+Process.\+c}!Linux\+Process\+\_\+row\+Set\+I\+O\+Priority@{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority}}
+\index{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority@{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority}!Linux\+Process.\+c@{Linux\+Process.\+c}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+row\+Set\+I\+O\+Priority()}{LinuxProcess\_rowSetIOPriority()}}
+{\footnotesize\ttfamily bool Linux\+Process\+\_\+row\+Set\+I\+O\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super,  }\item[{\hyperlink{unionArg}{Arg}}]{ioprio }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8c_aed105b6c071632a1bc98d91181482e2f}\label{LinuxProcess_8c_aed105b6c071632a1bc98d91181482e2f}} 
+\index{Linux\+Process.\+c@{Linux\+Process.\+c}!Linux\+Process\+\_\+update\+I\+O\+Priority@{Linux\+Process\+\_\+update\+I\+O\+Priority}}
+\index{Linux\+Process\+\_\+update\+I\+O\+Priority@{Linux\+Process\+\_\+update\+I\+O\+Priority}!Linux\+Process.\+c@{Linux\+Process.\+c}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+update\+I\+O\+Priority()}{LinuxProcess\_updateIOPriority()}}
+{\footnotesize\ttfamily \hyperlink{IOPriority_8h_a7f26835a9d854333f7dc5d7321922975}{I\+O\+Priority} Linux\+Process\+\_\+update\+I\+O\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}\label{LinuxProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}} 
+\index{Linux\+Process.\+c@{Linux\+Process.\+c}!Process\+\_\+delete@{Process\+\_\+delete}}
+\index{Process\+\_\+delete@{Process\+\_\+delete}!Linux\+Process.\+c@{Linux\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+delete()}{Process\_delete()}}
+{\footnotesize\ttfamily void Process\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{LinuxProcess_8c_a69244cb743d41683ab97646805c32213}\label{LinuxProcess_8c_a69244cb743d41683ab97646805c32213}} 
+\index{Linux\+Process.\+c@{Linux\+Process.\+c}!Linux\+Process\+\_\+class@{Linux\+Process\+\_\+class}}
+\index{Linux\+Process\+\_\+class@{Linux\+Process\+\_\+class}!Linux\+Process.\+c@{Linux\+Process.\+c}}
+\subsubsection{\texorpdfstring{Linux\+Process\+\_\+class}{LinuxProcess\_class}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} Linux\+Process\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .super = \{
+         .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structProcess__}{Process}),
+         .display = \hyperlink{Row_8c_a1ca72e911c0e2299061df16e80da6a80}{Row\_display},
+         .delete = \hyperlink{LinuxProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\_delete},
+         .compare = \hyperlink{Process_8c_adfe5da81af5bdb6f1737efff4115ae59}{Process\_compare}
+      \},
+      .isHighlighted = \hyperlink{Process_8c_acc33de0abdacffbc71764974189a2623}{Process\_rowIsHighlighted},
+      .isVisible = \hyperlink{Process_8c_a81c1e83185bbf4303493558555e27f79}{Process\_rowIsVisible},
+      .matchesFilter = \hyperlink{Process_8c_a8447645ae54a0f49d0c67a7a6ccacd18}{Process\_rowMatchesFilter},
+      .compareByParent = \hyperlink{Process_8c_ad3b2093e8d84dc6178be2e6eb96f89b5}{Process\_compareByParent},
+      .sortKeyString = \hyperlink{Process_8c_a20530177962c8b1f48b2baadff6934aa}{Process\_rowGetSortKey},
+      .writeField = LinuxProcess\_rowWriteField
+   \},
+   .compareByKey = LinuxProcess\_compareByKey
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{LinuxProcess_8c_ad5f8090378cbc673e2ae0825d0342743}\label{LinuxProcess_8c_ad5f8090378cbc673e2ae0825d0342743}} 
+\index{Linux\+Process.\+c@{Linux\+Process.\+c}!Process\+\_\+fields@{Process\+\_\+fields}}
+\index{Process\+\_\+fields@{Process\+\_\+fields}!Linux\+Process.\+c@{Linux\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+fields}{Process\_fields}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} Process\+\_\+fields\mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}}
+

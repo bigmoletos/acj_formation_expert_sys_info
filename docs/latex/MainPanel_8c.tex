@@ -1,0 +1,107 @@
+\hypertarget{MainPanel_8c}{}\section{linux/download/htop-\/3.3.0/\+Main\+Panel.c File Reference}
+\label{MainPanel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Main\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Main\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Main\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row\+Field.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Main\+Panel.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{MainPanel_8c_ad551d036b31c84c90f815881f96b072d}{Main\+Panel\+\_\+update\+Labels} (\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$this, bool list, bool filter)
+\item 
+int \hyperlink{MainPanel_8c_a8592a5d05f9655e3663f9c0dc07301a5}{Main\+Panel\+\_\+selected\+Row} (\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$this)
+\item 
+bool \hyperlink{MainPanel_8c_a1a6fcb1420094ec4311c970e1fe0affe}{Main\+Panel\+\_\+foreach\+Row} (\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$this, \hyperlink{MainPanel_8h_a2662d360bc11109843eb66ae08f28a79}{Main\+Panel\+\_\+foreach\+Row\+Fn} fn, \hyperlink{unionArg}{Arg} arg, bool $\ast$was\+Any\+Tagged)
+\item 
+\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$ \hyperlink{MainPanel_8c_a81ea564ae17e35b66a0c0a7822d54a7d}{Main\+Panel\+\_\+new} (void)
+\item 
+void \hyperlink{MainPanel_8c_aa9f318eeec1d73b3b48837063c68d15a}{Main\+Panel\+\_\+set\+State} (\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$this, \hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$state)
+\item 
+void \hyperlink{MainPanel_8c_a46ea23e666bf3cbc11f5c393ba52d198}{Main\+Panel\+\_\+set\+Function\+Bar} (\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$this, bool readonly)
+\item 
+void \hyperlink{MainPanel_8c_a58a77596daf7c951bc7007a774a8c5dc}{Main\+Panel\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$object)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{MainPanel_8c_aa588a404c5d99d9c9580092ba2b02ffa}{Main\+Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{MainPanel_8c_a58a77596daf7c951bc7007a774a8c5dc}\label{MainPanel_8c_a58a77596daf7c951bc7007a774a8c5dc}} 
+\index{Main\+Panel.\+c@{Main\+Panel.\+c}!Main\+Panel\+\_\+delete@{Main\+Panel\+\_\+delete}}
+\index{Main\+Panel\+\_\+delete@{Main\+Panel\+\_\+delete}!Main\+Panel.\+c@{Main\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Main\+Panel\+\_\+delete()}{MainPanel\_delete()}}
+{\footnotesize\ttfamily void Main\+Panel\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{object }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MainPanel_8c_a1a6fcb1420094ec4311c970e1fe0affe}\label{MainPanel_8c_a1a6fcb1420094ec4311c970e1fe0affe}} 
+\index{Main\+Panel.\+c@{Main\+Panel.\+c}!Main\+Panel\+\_\+foreach\+Row@{Main\+Panel\+\_\+foreach\+Row}}
+\index{Main\+Panel\+\_\+foreach\+Row@{Main\+Panel\+\_\+foreach\+Row}!Main\+Panel.\+c@{Main\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Main\+Panel\+\_\+foreach\+Row()}{MainPanel\_foreachRow()}}
+{\footnotesize\ttfamily bool Main\+Panel\+\_\+foreach\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$}]{this,  }\item[{\hyperlink{MainPanel_8h_a2662d360bc11109843eb66ae08f28a79}{Main\+Panel\+\_\+foreach\+Row\+Fn}}]{fn,  }\item[{\hyperlink{unionArg}{Arg}}]{arg,  }\item[{bool $\ast$}]{was\+Any\+Tagged }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MainPanel_8c_a81ea564ae17e35b66a0c0a7822d54a7d}\label{MainPanel_8c_a81ea564ae17e35b66a0c0a7822d54a7d}} 
+\index{Main\+Panel.\+c@{Main\+Panel.\+c}!Main\+Panel\+\_\+new@{Main\+Panel\+\_\+new}}
+\index{Main\+Panel\+\_\+new@{Main\+Panel\+\_\+new}!Main\+Panel.\+c@{Main\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Main\+Panel\+\_\+new()}{MainPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel}$\ast$ Main\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MainPanel_8c_a8592a5d05f9655e3663f9c0dc07301a5}\label{MainPanel_8c_a8592a5d05f9655e3663f9c0dc07301a5}} 
+\index{Main\+Panel.\+c@{Main\+Panel.\+c}!Main\+Panel\+\_\+selected\+Row@{Main\+Panel\+\_\+selected\+Row}}
+\index{Main\+Panel\+\_\+selected\+Row@{Main\+Panel\+\_\+selected\+Row}!Main\+Panel.\+c@{Main\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Main\+Panel\+\_\+selected\+Row()}{MainPanel\_selectedRow()}}
+{\footnotesize\ttfamily int Main\+Panel\+\_\+selected\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MainPanel_8c_a46ea23e666bf3cbc11f5c393ba52d198}\label{MainPanel_8c_a46ea23e666bf3cbc11f5c393ba52d198}} 
+\index{Main\+Panel.\+c@{Main\+Panel.\+c}!Main\+Panel\+\_\+set\+Function\+Bar@{Main\+Panel\+\_\+set\+Function\+Bar}}
+\index{Main\+Panel\+\_\+set\+Function\+Bar@{Main\+Panel\+\_\+set\+Function\+Bar}!Main\+Panel.\+c@{Main\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Main\+Panel\+\_\+set\+Function\+Bar()}{MainPanel\_setFunctionBar()}}
+{\footnotesize\ttfamily void Main\+Panel\+\_\+set\+Function\+Bar (\begin{DoxyParamCaption}\item[{\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$}]{this,  }\item[{bool}]{readonly }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MainPanel_8c_aa9f318eeec1d73b3b48837063c68d15a}\label{MainPanel_8c_aa9f318eeec1d73b3b48837063c68d15a}} 
+\index{Main\+Panel.\+c@{Main\+Panel.\+c}!Main\+Panel\+\_\+set\+State@{Main\+Panel\+\_\+set\+State}}
+\index{Main\+Panel\+\_\+set\+State@{Main\+Panel\+\_\+set\+State}!Main\+Panel.\+c@{Main\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Main\+Panel\+\_\+set\+State()}{MainPanel\_setState()}}
+{\footnotesize\ttfamily void Main\+Panel\+\_\+set\+State (\begin{DoxyParamCaption}\item[{\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$}]{this,  }\item[{\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MainPanel_8c_ad551d036b31c84c90f815881f96b072d}\label{MainPanel_8c_ad551d036b31c84c90f815881f96b072d}} 
+\index{Main\+Panel.\+c@{Main\+Panel.\+c}!Main\+Panel\+\_\+update\+Labels@{Main\+Panel\+\_\+update\+Labels}}
+\index{Main\+Panel\+\_\+update\+Labels@{Main\+Panel\+\_\+update\+Labels}!Main\+Panel.\+c@{Main\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Main\+Panel\+\_\+update\+Labels()}{MainPanel\_updateLabels()}}
+{\footnotesize\ttfamily void Main\+Panel\+\_\+update\+Labels (\begin{DoxyParamCaption}\item[{\hyperlink{MainPanel_8h_a60adaa184e921218b7b4071962406169}{Main\+Panel} $\ast$}]{this,  }\item[{bool}]{list,  }\item[{bool}]{filter }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{MainPanel_8c_aa588a404c5d99d9c9580092ba2b02ffa}\label{MainPanel_8c_aa588a404c5d99d9c9580092ba2b02ffa}} 
+\index{Main\+Panel.\+c@{Main\+Panel.\+c}!Main\+Panel\+\_\+class@{Main\+Panel\+\_\+class}}
+\index{Main\+Panel\+\_\+class@{Main\+Panel\+\_\+class}!Main\+Panel.\+c@{Main\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Main\+Panel\+\_\+class}{MainPanel\_class}}
+{\footnotesize\ttfamily const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Main\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = \hyperlink{MainPanel_8c_a58a77596daf7c951bc7007a774a8c5dc}{MainPanel\_delete}
+   \},
+   .eventHandler = MainPanel\_eventHandler,
+   .drawFunctionBar = MainPanel\_drawFunctionBar,
+   .printHeader = MainPanel\_printHeader
+\}
+\end{DoxyCode}

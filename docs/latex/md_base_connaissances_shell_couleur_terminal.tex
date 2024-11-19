@@ -1,0 +1,37 @@
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_NORMAL NULL}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_RED "\(\backslash\)033[1;31m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_GREEN "\(\backslash\)033[1;32m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_YELLOW "\(\backslash\)033[1;33m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_BLUE "\(\backslash\)033[1;34m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_PURPLE "\(\backslash\)033[1;35m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_CYAN "\(\backslash\)033[1;36m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_DARKRED "\(\backslash\)033[31m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_DARKGREEN "\(\backslash\)033[32m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_DARKYELLOW "\(\backslash\)033[33m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_DARKBLUE "\(\backslash\)033[34m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_DARKPURPLE "\(\backslash\)033[35m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_DARKCYAN "\(\backslash\)033[36m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_DARKGREY "\(\backslash\)033[1;30m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_GREY "\(\backslash\)033[37m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_BRIGHTWHITE "\(\backslash\)033[1;37m"}
+\textcolor{preprocessor}{#define OSMO\_LOGCOLOR\_END "\(\backslash\)033[0;m"}
+\end{DoxyCode}
+
+
+\#\# ligne debut en rouge, puis en vert 
+\begin{DoxyCode}
+printf(\textcolor{stringliteral}{"\(\backslash\)033[31m%zu.\(\backslash\)033[32m %s\(\backslash\)033[0m\(\backslash\)n"}, a,b)
+\end{DoxyCode}
+ \#\# ligne debut en rouge 
+\begin{DoxyCode}
+printf(\textcolor{stringliteral}{"\(\backslash\)033[31mOption inconnue.\(\backslash\)033[0m\(\backslash\)n"});
+\end{DoxyCode}
+ \subsection*{ligne debut en vert}
+
+
+\begin{DoxyCode}
+printf(\textcolor{stringliteral}{"\(\backslash\)033[32mChoisissez votre option:\(\backslash\)033[0m\(\backslash\)n"});
+\end{DoxyCode}
+ 

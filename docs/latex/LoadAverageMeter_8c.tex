@@ -1,0 +1,72 @@
+\hypertarget{LoadAverageMeter_8c}{}\section{linux/download/htop-\/3.3.0/\+Load\+Average\+Meter.c File Reference}
+\label{LoadAverageMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Load\+Average\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/\+Load\+Average\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Load\+Average\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Load\+Average\+Meter.\+c\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{LoadAverageMeter_8c_a5b41007174dbaf162b124da8148995dc}{Load\+Average\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{LoadAverageMeter_8c_ade81e32250a756d1b3ea9b1be6349d65}{Load\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{LoadAverageMeter_8c_a5b41007174dbaf162b124da8148995dc}\label{LoadAverageMeter_8c_a5b41007174dbaf162b124da8148995dc}} 
+\index{Load\+Average\+Meter.\+c@{Load\+Average\+Meter.\+c}!Load\+Average\+Meter\+\_\+class@{Load\+Average\+Meter\+\_\+class}}
+\index{Load\+Average\+Meter\+\_\+class@{Load\+Average\+Meter\+\_\+class}!Load\+Average\+Meter.\+c@{Load\+Average\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Load\+Average\+Meter\+\_\+class}{LoadAverageMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Load\+Average\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = LoadAverageMeter\_display,
+   \},
+   .updateValues = LoadAverageMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 3,
+   .total = 100.0,
+   .attributes = LoadAverageMeter\_attributes,
+   .name = \textcolor{stringliteral}{"LoadAverage"},
+   .uiName = \textcolor{stringliteral}{"Load average"},
+   .description = \textcolor{stringliteral}{"Load averages: 1 minute, 5 minutes, 15 minutes"},
+   .caption = \textcolor{stringliteral}{"Load average: "}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{LoadAverageMeter_8c_ade81e32250a756d1b3ea9b1be6349d65}\label{LoadAverageMeter_8c_ade81e32250a756d1b3ea9b1be6349d65}} 
+\index{Load\+Average\+Meter.\+c@{Load\+Average\+Meter.\+c}!Load\+Meter\+\_\+class@{Load\+Meter\+\_\+class}}
+\index{Load\+Meter\+\_\+class@{Load\+Meter\+\_\+class}!Load\+Average\+Meter.\+c@{Load\+Average\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Load\+Meter\+\_\+class}{LoadMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Load\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = LoadMeter\_display,
+   \},
+   .updateValues = LoadMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 1,
+   .total = 100.0,
+   .attributes = LoadMeter\_attributes,
+   .name = \textcolor{stringliteral}{"Load"},
+   .uiName = \textcolor{stringliteral}{"Load"},
+   .description = \textcolor{stringliteral}{"Load: average of ready processes in the last minute"},
+   .caption = \textcolor{stringliteral}{"Load: "}
+\}
+\end{DoxyCode}

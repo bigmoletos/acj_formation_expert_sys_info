@@ -1,0 +1,135 @@
+\hypertarget{RichString_8c}{}\section{linux/download/htop-\/3.3.0/\+Rich\+String.c File Reference}
+\label{RichString_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Rich\+String.\+c@{linux/download/htop-\/3.\+3.\+0/\+Rich\+String.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Rich\+String.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{RichString_8c_a0850f09dee960b5932fc52c12cc48fca}{char\+Bytes}(\hyperlink{exo21_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n})~(sizeof(\hyperlink{RichString_8h_a6d7a32b0391d3dc5b23cdb2442f9993a}{Char\+Type}) $\ast$ (\hyperlink{exo21_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{RichString_8c_abfa1802e7b4481044573ce53b937cac7}{Rich\+String\+\_\+rewind} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int count)
+\item 
+int \hyperlink{RichString_8c_a2b00677421eb63470ae72d79fe37c965}{Rich\+String\+\_\+appendn\+Wide\+Columns} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs, const char $\ast$data\+\_\+c, int len, int $\ast$\hyperlink{HeaderLayout_8h_a9bf6c19eefefcddca5f152099add491c}{columns})
+\item 
+void \hyperlink{RichString_8c_ab13a7ea9188cd0e17ae1ab2e2f8292ce}{Rich\+String\+\_\+set\+Attrn} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs, int start, int charcount)
+\item 
+void \hyperlink{RichString_8c_a4fce009ef4ed4531980ecb7c41aff662}{Rich\+String\+\_\+append\+Chr} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs, char c, int count)
+\item 
+int \hyperlink{RichString_8c_a05beba2ac5f9310e3e411ada3ba61283}{Rich\+String\+\_\+find\+Char} (const \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, char c, int start)
+\item 
+void \hyperlink{RichString_8c_af98959f548da6f8c96a855f4bdc68a47}{Rich\+String\+\_\+delete} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this)
+\item 
+void \hyperlink{RichString_8c_a6425bdfa650e8f7c1b18cfc758966616}{Rich\+String\+\_\+set\+Attr} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs)
+\item 
+int \hyperlink{RichString_8c_af30a738a0fd1ae45e46b771f04f7e392}{Rich\+String\+\_\+append\+Wide} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs, const char $\ast$data)
+\item 
+int \hyperlink{RichString_8c_a976a8cfe6cf1be47cfff8fdd80c9ea1c}{Rich\+String\+\_\+appendn\+Wide} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs, const char $\ast$data, int len)
+\item 
+int \hyperlink{RichString_8c_a6d64683b0b18b156e67b0e4039528354}{Rich\+String\+\_\+write\+Wide} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs, const char $\ast$data)
+\item 
+int \hyperlink{RichString_8c_a200ee1eaf62f40ce001fecd99eb941d5}{Rich\+String\+\_\+append\+Ascii} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs, const char $\ast$data)
+\item 
+int \hyperlink{RichString_8c_a0de50ce755038ed338ce4166f2bc4f0a}{Rich\+String\+\_\+appendn\+Ascii} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs, const char $\ast$data, int len)
+\item 
+int \hyperlink{RichString_8c_a10ba0727ed94a37135cc8b756d2c0714}{Rich\+String\+\_\+write\+Ascii} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$this, int attrs, const char $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{RichString_8c_a0850f09dee960b5932fc52c12cc48fca}\label{RichString_8c_a0850f09dee960b5932fc52c12cc48fca}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!char\+Bytes@{char\+Bytes}}
+\index{char\+Bytes@{char\+Bytes}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{char\+Bytes}{charBytes}}
+{\footnotesize\ttfamily \#define char\+Bytes(\begin{DoxyParamCaption}\item[{}]{\hyperlink{exo21_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n} }\end{DoxyParamCaption})~(sizeof(\hyperlink{RichString_8h_a6d7a32b0391d3dc5b23cdb2442f9993a}{Char\+Type}) $\ast$ (\hyperlink{exo21_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}))}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{RichString_8c_a200ee1eaf62f40ce001fecd99eb941d5}\label{RichString_8c_a200ee1eaf62f40ce001fecd99eb941d5}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+append\+Ascii@{Rich\+String\+\_\+append\+Ascii}}
+\index{Rich\+String\+\_\+append\+Ascii@{Rich\+String\+\_\+append\+Ascii}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+append\+Ascii()}{RichString\_appendAscii()}}
+{\footnotesize\ttfamily int Rich\+String\+\_\+append\+Ascii (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs,  }\item[{const char $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_a4fce009ef4ed4531980ecb7c41aff662}\label{RichString_8c_a4fce009ef4ed4531980ecb7c41aff662}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+append\+Chr@{Rich\+String\+\_\+append\+Chr}}
+\index{Rich\+String\+\_\+append\+Chr@{Rich\+String\+\_\+append\+Chr}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+append\+Chr()}{RichString\_appendChr()}}
+{\footnotesize\ttfamily void Rich\+String\+\_\+append\+Chr (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs,  }\item[{char}]{c,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_a0de50ce755038ed338ce4166f2bc4f0a}\label{RichString_8c_a0de50ce755038ed338ce4166f2bc4f0a}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+appendn\+Ascii@{Rich\+String\+\_\+appendn\+Ascii}}
+\index{Rich\+String\+\_\+appendn\+Ascii@{Rich\+String\+\_\+appendn\+Ascii}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+appendn\+Ascii()}{RichString\_appendnAscii()}}
+{\footnotesize\ttfamily int Rich\+String\+\_\+appendn\+Ascii (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs,  }\item[{const char $\ast$}]{data,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_a976a8cfe6cf1be47cfff8fdd80c9ea1c}\label{RichString_8c_a976a8cfe6cf1be47cfff8fdd80c9ea1c}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+appendn\+Wide@{Rich\+String\+\_\+appendn\+Wide}}
+\index{Rich\+String\+\_\+appendn\+Wide@{Rich\+String\+\_\+appendn\+Wide}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+appendn\+Wide()}{RichString\_appendnWide()}}
+{\footnotesize\ttfamily int Rich\+String\+\_\+appendn\+Wide (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs,  }\item[{const char $\ast$}]{data,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_a2b00677421eb63470ae72d79fe37c965}\label{RichString_8c_a2b00677421eb63470ae72d79fe37c965}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+appendn\+Wide\+Columns@{Rich\+String\+\_\+appendn\+Wide\+Columns}}
+\index{Rich\+String\+\_\+appendn\+Wide\+Columns@{Rich\+String\+\_\+appendn\+Wide\+Columns}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+appendn\+Wide\+Columns()}{RichString\_appendnWideColumns()}}
+{\footnotesize\ttfamily int Rich\+String\+\_\+appendn\+Wide\+Columns (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs,  }\item[{const char $\ast$}]{data\+\_\+c,  }\item[{int}]{len,  }\item[{int $\ast$}]{columns }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_af30a738a0fd1ae45e46b771f04f7e392}\label{RichString_8c_af30a738a0fd1ae45e46b771f04f7e392}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+append\+Wide@{Rich\+String\+\_\+append\+Wide}}
+\index{Rich\+String\+\_\+append\+Wide@{Rich\+String\+\_\+append\+Wide}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+append\+Wide()}{RichString\_appendWide()}}
+{\footnotesize\ttfamily int Rich\+String\+\_\+append\+Wide (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs,  }\item[{const char $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_af98959f548da6f8c96a855f4bdc68a47}\label{RichString_8c_af98959f548da6f8c96a855f4bdc68a47}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+delete@{Rich\+String\+\_\+delete}}
+\index{Rich\+String\+\_\+delete@{Rich\+String\+\_\+delete}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+delete()}{RichString\_delete()}}
+{\footnotesize\ttfamily void Rich\+String\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_a05beba2ac5f9310e3e411ada3ba61283}\label{RichString_8c_a05beba2ac5f9310e3e411ada3ba61283}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+find\+Char@{Rich\+String\+\_\+find\+Char}}
+\index{Rich\+String\+\_\+find\+Char@{Rich\+String\+\_\+find\+Char}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+find\+Char()}{RichString\_findChar()}}
+{\footnotesize\ttfamily int Rich\+String\+\_\+find\+Char (\begin{DoxyParamCaption}\item[{const \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{char}]{c,  }\item[{int}]{start }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_abfa1802e7b4481044573ce53b937cac7}\label{RichString_8c_abfa1802e7b4481044573ce53b937cac7}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+rewind@{Rich\+String\+\_\+rewind}}
+\index{Rich\+String\+\_\+rewind@{Rich\+String\+\_\+rewind}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+rewind()}{RichString\_rewind()}}
+{\footnotesize\ttfamily void Rich\+String\+\_\+rewind (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_a6425bdfa650e8f7c1b18cfc758966616}\label{RichString_8c_a6425bdfa650e8f7c1b18cfc758966616}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+set\+Attr@{Rich\+String\+\_\+set\+Attr}}
+\index{Rich\+String\+\_\+set\+Attr@{Rich\+String\+\_\+set\+Attr}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+set\+Attr()}{RichString\_setAttr()}}
+{\footnotesize\ttfamily void Rich\+String\+\_\+set\+Attr (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_ab13a7ea9188cd0e17ae1ab2e2f8292ce}\label{RichString_8c_ab13a7ea9188cd0e17ae1ab2e2f8292ce}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+set\+Attrn@{Rich\+String\+\_\+set\+Attrn}}
+\index{Rich\+String\+\_\+set\+Attrn@{Rich\+String\+\_\+set\+Attrn}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+set\+Attrn()}{RichString\_setAttrn()}}
+{\footnotesize\ttfamily void Rich\+String\+\_\+set\+Attrn (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs,  }\item[{int}]{start,  }\item[{int}]{charcount }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_a10ba0727ed94a37135cc8b756d2c0714}\label{RichString_8c_a10ba0727ed94a37135cc8b756d2c0714}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+write\+Ascii@{Rich\+String\+\_\+write\+Ascii}}
+\index{Rich\+String\+\_\+write\+Ascii@{Rich\+String\+\_\+write\+Ascii}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+write\+Ascii()}{RichString\_writeAscii()}}
+{\footnotesize\ttfamily int Rich\+String\+\_\+write\+Ascii (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs,  }\item[{const char $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RichString_8c_a6d64683b0b18b156e67b0e4039528354}\label{RichString_8c_a6d64683b0b18b156e67b0e4039528354}} 
+\index{Rich\+String.\+c@{Rich\+String.\+c}!Rich\+String\+\_\+write\+Wide@{Rich\+String\+\_\+write\+Wide}}
+\index{Rich\+String\+\_\+write\+Wide@{Rich\+String\+\_\+write\+Wide}!Rich\+String.\+c@{Rich\+String.\+c}}
+\subsubsection{\texorpdfstring{Rich\+String\+\_\+write\+Wide()}{RichString\_writeWide()}}
+{\footnotesize\ttfamily int Rich\+String\+\_\+write\+Wide (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{this,  }\item[{int}]{attrs,  }\item[{const char $\ast$}]{data }\end{DoxyParamCaption})}
+

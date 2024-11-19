@@ -1,0 +1,51 @@
+```python import pandas as pd import numpy as np
+
+\section*{Création d\textquotesingle{}un dataframe exemple}
+
+```python df = pd.\+Data\+Frame(\{ \textquotesingle{}A\textquotesingle{}\+: \mbox{[}1, 2, 3, np.\+nan\mbox{]}, \textquotesingle{}B\textquotesingle{}\+: \mbox{[}4, 5, 6, np.\+nan\mbox{]}, \textquotesingle{}C\textquotesingle{}\+: \mbox{[}\textquotesingle{}foo\textquotesingle{}, \textquotesingle{}bar\textquotesingle{}, \textquotesingle{}baz\textquotesingle{}, \textquotesingle{}qux\textquotesingle{}\mbox{]}, \textquotesingle{}D\textquotesingle{}\+: pd.\+date\+\_\+range(start=\textquotesingle{}1/1/2020\textquotesingle{}, end=\textquotesingle{}1/4/2020\textquotesingle{}) \})
+
+\section*{Filtrage par valeur de colonne}
+
+```python filtered\+\_\+df1 = df\mbox{[}df\mbox{[}\textquotesingle{}A\textquotesingle{}\mbox{]} $>$ 1\mbox{]} print(\char`\"{}res1\+:\char`\"{}, filtered\+\_\+df1)
+
+Résultat \+: 1 2.\+0 5.\+0 bar 2020-\/01-\/02 2 3.\+0 6.\+0 baz 2020-\/01-\/03
+
+\section*{Filtrage basé sur plusieurs conditions}
+
+```python filtered\+\_\+df2 = df\mbox{[}(df\mbox{[}\textquotesingle{}A\textquotesingle{}\mbox{]} $>$ 1) \& (df\mbox{[}\textquotesingle{}B\textquotesingle{}\mbox{]} $<$ 6)\mbox{]} print(\char`\"{}res2\+:\char`\"{}, filtered\+\_\+df2) Résultat \+: 1 2.\+0 5.\+0 bar 2020-\/01-\/02
+
+\section*{Filtrage basé sur les dates}
+
+```python filtered\+\_\+df3 = df\mbox{[}(df\mbox{[}\textquotesingle{}D\textquotesingle{}\mbox{]} $>$ \textquotesingle{}2020-\/01-\/02\textquotesingle{}) \& (df\mbox{[}\textquotesingle{}D\textquotesingle{}\mbox{]} $<$= \textquotesingle{}2020-\/01-\/03\textquotesingle{})\mbox{]} print(\char`\"{}res13\char`\"{}, filtered\+\_\+df3) Résultat \+: 1 2.\+0 5.\+0 bar 2020-\/01-\/02
+
+\section*{Filtrage à une chaîne spécifique}
+
+```python filtered\+\_\+df4 = df\mbox{[}df\mbox{[}\textquotesingle{}C\textquotesingle{}\mbox{]}.str.\+contains(\textquotesingle{}foo\textquotesingle{})\mbox{]} print(\char`\"{}res4\+:\char`\"{}, filtered\+\_\+df4) Résultat \+: 0 1.\+0 4.\+0 foo 2020-\/01-\/01
+
+\section*{Sélection de lignes de dataframe basées sur une liste de valeurs}
+
+```python filtered\+\_\+df5 = df\mbox{[}df\mbox{[}\textquotesingle{}A\textquotesingle{}\mbox{]}.isin(\mbox{[}1, 2\mbox{]})\mbox{]} print(\char`\"{}res5\+:\char`\"{}, filtered\+\_\+df5) Résultat \+: 0 1.\+0 4.\+0 foo 2020-\/01-\/01 1 2.\+0 5.\+0 bar 2020-\/01-\/02
+
+\section*{Sélection de lignes de dataframe à l\textquotesingle{}aide d\textquotesingle{}expressions régulières (Regex)}
+
+```python filtered\+\_\+df6 = df\mbox{[}df\mbox{[}\textquotesingle{}C\textquotesingle{}\mbox{]}.str.\+match(\textquotesingle{}fo.$\ast$\textquotesingle{})\mbox{]} print(\char`\"{}res6\+:\char`\"{}, filtered\+\_\+df6) Résultat \+: 0 1.\+0 4.\+0 foo 2020-\/01-\/01
+
+\section*{Sélection de lignes de dataframe Null ou Non Null}
+
+```python filtered\+\_\+df7 = df\mbox{[}df\mbox{[}\textquotesingle{}A\textquotesingle{}\mbox{]}.isnull()\mbox{]} print(\char`\"{}res7\+:\char`\"{}, filtered\+\_\+df7) Résultat \+: 3 NaN NaN qux 2020-\/01-\/04
+
+\section*{Utilisation de la méthode loc()}
+
+```python filtered\+\_\+df8 = df.\+loc\mbox{[}df\mbox{[}\textquotesingle{}A\textquotesingle{}\mbox{]} $>$ 1\mbox{]} print(\char`\"{}res8\+:\char`\"{}, filtered\+\_\+df8) Résultat \+: 1 2.\+0 5.\+0 bar 2020-\/01-\/02 2 3.\+0 6.\+0 baz 2020-\/01-\/03
+
+\section*{Utilisation de la méthode query()}
+
+```python filtered\+\_\+df9 = df.\+query(\textquotesingle{}A $>$ 1\textquotesingle{}) print(\char`\"{}res9\+:\char`\"{}, filtered\+\_\+df9) Résultat \+: 1 2.\+0 5.\+0 bar 2020-\/01-\/02 2 3.\+0 6.\+0 baz 2020-\/01-\/03
+
+\section*{Utilisation de la méthode iloc()}
+
+```python filtered\+\_\+df10 = df.\+iloc\mbox{[}0\+:2\mbox{]} print(\char`\"{}res10\+:\char`\"{}, filtered\+\_\+df10) Résultat \+: 0 1.\+0 4.\+0 foo 2020-\/01-\/01 1 2.\+0 5.\+0 bar 2020-\/01-\/02
+
+\section*{Utilisation de la fonction where()}
+
+```python filtered\+\_\+df11 = df.\+where(df\mbox{[}\textquotesingle{}A\textquotesingle{}\mbox{]} $>$ 1) print(\char`\"{}res11\+:\char`\"{}, filtered\+\_\+df11) Résultat \+: 0 NaN NaN NaN NaT 1 2.\+0 5.\+0 bar 2020-\/01-\/02 2 3.\+0 6.\+0 baz 2020-\/01-\/03 3 NaN NaN NaN NaT 

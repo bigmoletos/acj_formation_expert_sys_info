@@ -1,0 +1,343 @@
+\section*{Installation}
+
+Pour configurer l\textquotesingle{}application, utilisez les identifiants suivants \+: Les identifaints ci-\/dessous seront remplacés par les valeurs issue du fichier .env et le fichier .md sera renommé en \+\_\+securised.\+md nom\+: \$\{name\} root\+: \$\{root\} mot de passe\+: \$\{password\} utilisateur\+: \$\{user\}
+
+\subsection*{A\+WS E\+C2 au niveau des instances aws groupe de securité il faut autorier S\+Sh H\+T\+TP et My\+S\+Q\+L/\+Aurora}
+
+Vérifier les Groupes de Sécurité sur A\+WS Connectez-\/vous à la console A\+WS et accédez à E\+C2 $>$ Groupes de sécurité. Sélectionnez le groupe de sécurité associé à l\textquotesingle{}instance Maria\+DB (3.\+135.\+226.\+41).
+
+Vérifiez les règles entrantes et assurez-\/vous qu\textquotesingle{}il y a une règle qui autorise les connexions entrantes sur le port 3306 \+:
+
+Type \+: My\+S\+Q\+L/\+Aurora Protocole \+: T\+CP Port \+: 3306 Source \+: 3.\+128.\+29.\+116/32 (adresse IP de l\textquotesingle{}instance Word\+Press) ou 0.\+0.\+0.\+0/0 (moins sécurisé, à n\textquotesingle{}utiliser que pour tester).
+
+\section*{Fiche d\textquotesingle{}Installation de Word\+Press sur Debian 12}
+
+\subsection*{Prérequis}
+
+
+\begin{DoxyItemize}
+\item Une instance Debian 12 avec les privilèges {\ttfamily sudo}.
+\item Un nom de domaine pointant vers l\textquotesingle{}adresse IP de l\textquotesingle{}instance ou son IP publique.
+\item Accès S\+SH à l\textquotesingle{}instance.
+\end{DoxyItemize}
+
+\subsection*{1. Mise à Jour du Système}
+
+
+\begin{DoxyCode}
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install build-essential libncursesw5-dev libncurses-dev autoconf autoconf-archive automake make
+       pkgconf m4 build-essential gdb lcov pkg-config   libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev
+       liblzma-dev   libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev  lzma lzma-dev tk-dev uuid-dev zlib1g-dev
+       unzip apache2 ssh ufw htop dos2unix sshpass -y
+\end{DoxyCode}
+
+
+\subsection*{2. Installation de L\+A\+MP (Linux, Apache, My\+S\+QL, P\+HP)}
+
+\#\#\# 2.\+1. Installer Apache 
+\begin{DoxyCode}
+sudo apt install apache2 -y
+sudo systemctl start apache2
+sudo systemctl enable apache2
+
+sudo systemctl status apache2
+\end{DoxyCode}
+
+
+\subsubsection*{Installer Maria\+DB (My\+S\+QL)}
+
+
+\begin{DoxyCode}
+sudo apt install mariadb-server -y
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+\end{DoxyCode}
+
+
+\subsubsection*{Sécuriser l\textquotesingle{}Installation de Maria\+DB}
+
+
+\begin{DoxyCode}
+sudo mysql\_secure\_installation
+\end{DoxyCode}
+
+
+N\+O\+TE\+: R\+U\+N\+N\+I\+NG A\+LL P\+A\+R\+TS OF T\+H\+IS S\+C\+R\+I\+PT IS R\+E\+C\+O\+M\+M\+E\+N\+D\+ED F\+OR A\+LL Maria\+DB S\+E\+R\+V\+E\+RS IN P\+R\+O\+D\+U\+C\+T\+I\+ON U\+S\+E! P\+L\+E\+A\+SE R\+E\+AD E\+A\+CH S\+T\+EP C\+A\+R\+E\+F\+U\+L\+L\+Y!
+
+In order to log into Maria\+DB to secure it, we\textquotesingle{}ll need the current password for the root user. If you\textquotesingle{}ve just installed Maria\+DB, and haven\textquotesingle{}t set the root password yet, you should just press enter here.
+
+Enter current password for root (enter for none)\+: OK, successfully used password, moving on...
+
+Setting the root password or using the unix\+\_\+socket ensures that nobody can log into the Maria\+DB root user without the proper authorisation.
+
+You already have your root account protected, so you can safely answer \textquotesingle{}n\textquotesingle{}.
+
+Switch to unix\+\_\+socket authentication \mbox{[}Y/n\mbox{]} y Enabled successfully! Reloading privilege tables.. ... Success!
+
+You already have your root account protected, so you can safely answer \textquotesingle{}n\textquotesingle{}.
+
+Change the root password? \mbox{[}Y/n\mbox{]} y New password\+: Re-\/enter new password\+: Sorry, you can\textquotesingle{}t use an empty password here.
+
+New password\+: Re-\/enter new password\+: Password updated successfully! Reloading privilege tables.. ... Success!
+
+By default, a Maria\+DB installation has an anonymous user, allowing anyone to log into Maria\+DB without having to have a user account created for them. This is intended only for testing, and to make the installation go a bit smoother. You should remove them before moving into a production environment.
+
+Remove anonymous users? \mbox{[}Y/n\mbox{]} n ... skipping. Normally, root should only be allowed to connect from \textquotesingle{}localhost\textquotesingle{}. This ensures that someone cannot guess at the root password from the network. Disallow root login remotely? \mbox{[}Y/n\mbox{]} n ... skipping.
+
+By default, Maria\+DB comes with a database named \textquotesingle{}test\textquotesingle{} that anyone can access. This is also intended only for testing, and should be removed before moving into a production environment.
+
+Remove test database and access to it? \mbox{[}Y/n\mbox{]} n ... skipping.
+
+Reloading the privilege tables will ensure that all changes made so far will take effect immediately.
+
+Reload privilege tables now? \mbox{[}Y/n\mbox{]} y ... Success!
+
+Cleaning up...
+
+All done! If you\textquotesingle{}ve completed all of the above steps, your Maria\+DB installation should now be secure.
+
+Thanks for using Maria\+D\+B!
+
+\subsection*{2.\+4. Créer la Base de Données Word\+Press}
+
+
+\begin{DoxyCode}
+sudo mysql -u root -p
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+CREATE DATABASE wordpress;
+CREATE USER 'franck'@'%' IDENTIFIED BY 'xxxxxxxxxxxxxxx';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'franck'@'%';
+FLUSH PRIVILEGES;
+EXIT;
+\end{DoxyCode}
+
+
+\#\#\#\# pour tester 
+\begin{DoxyCode}
+sudo mysql -u root -p
+GRANT ALL PRIVILEGES ON wordpress.* TO 'franck'@'%' IDENTIFIED BY 'xxxxxxxxxxxxxxx';
+FLUSH PRIVILEGES;
+exit;
+\end{DoxyCode}
+ \subsection*{Installer P\+HP et les Extensions Nécessaires}
+
+
+\begin{DoxyCode}
+sudo apt install php libapache2-mod-php php-mysql php-xml php-gd php-curl php-mbstring php-xmlrpc php-soap
+       php-intl php-zip unzip -y
+\end{DoxyCode}
+
+
+\subsection*{Téléchargement de Word\+Press}
+
+
+\begin{DoxyCode}
+cd /var/www/html/
+sudo wget https://wordpress.org/latest.zip
+sudo unzip latest.zip
+sudo mv wordpress/* /var/www/html/
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
+\end{DoxyCode}
+
+
+\subsection*{Configurer Word\+Press}
+
+
+\begin{DoxyCode}
+sudo mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
+\end{DoxyCode}
+
+
+\#\#\# Modifiez le fichier de configuration Word\+Press \+: 
+\begin{DoxyCode}
+sudo nano /var/www/html/wp-config.php
+
+#// ** Database settings - You can get this info from your web host ** //
+#/** The name of the database for WordPress */
+define( 'DB\_NAME', $DEBIAN\_NAME );
+
+#/** Database username */
+define( 'DB\_USER', 'franck' );
+
+#/** Database password */
+define( 'DB\_PASSWORD', 'xxxxxxx' );
+
+#/** Database hostname */
+define( 'DB\_HOST', '3.135.226.41' );
+
+#/** Database charset to use in creating database tables. */
+define( 'DB\_CHARSET', 'utf8' );
+
+#/** The database collate type. Don't change this if in doubt. */
+define( 'DB\_COLLATE', '' );
+\end{DoxyCode}
+
+
+\subsection*{Configurer Apache pour Word\+Press}
+
+\#\#\# Créez un nouveau fichier de configuration pour le site Word\+Press et Ajoutez la configuration suivante \+: 
+\begin{DoxyCode}
+sudo nano /etc/apache2/sites-available/wordpress.conf
+
+<VirtualHost *:80>
+    ServerName 3.128.29.116
+    DocumentRoot /var/www/html/
+
+    <Directory /var/www/html/>
+        AllowOverride All
+    </Directory>
+
+    ErrorLog $\{APACHE\_LOG\_DIR\}/error.log
+    CustomLog $\{APACHE\_LOG\_DIR\}/access.log combined
+</VirtualHost>
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+remplacer
+bind-address            = 127.0.0.1
+par
+bind-address            = 0.0.0.0
+\end{DoxyCode}
+
+
+\subsubsection*{Activez la configuration du site et le module rewrite \+:}
+
+
+\begin{DoxyCode}
+sudo nano /etc/apache2/apache2.conf
+
+### à la fin du fichier il faut rajouter
+ServerName 3.128.29.116
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+sudo a2ensite wordpress.conf
+sudo a2enmod rewrite
+\end{DoxyCode}
+
+
+\#\#\# Vérifiez la syntaxe Apache et redémarrez le service \+: 
+\begin{DoxyCode}
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+\end{DoxyCode}
+
+
+\subsection*{verfication du parfeu}
+
+
+\begin{DoxyCode}
+sudo apt install ufw -y
+sudo ufw status
+# pour autiser le port par defaut 3306
+sudo ufw allow from 3.128.29.116 to any port 3306
+
+# Pour tester, vous pouvez désactiver temporairement ufw :
+sudo ufw disable
+\end{DoxyCode}
+
+
+\subsection*{pour relancer le serveur maria\+Db}
+
+
+\begin{DoxyCode}
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+\end{DoxyCode}
+
+
+\subsection*{pour relancer le serveur Web}
+
+
+\begin{DoxyCode}
+sudo systemctl start apache2
+sudo systemctl enable apache2
+\end{DoxyCode}
+
+
+\#\#\# Pour voir les tables mariadb et les users 
+\begin{DoxyCode}
+sudo mysql -u root -p
+
+SHOW DATABASES;
+SELECT User, Host FROM mysql.user;
+SHOW GRANTS FOR 'franck'@'%';
+\end{DoxyCode}
+
+
+\subsubsection*{pour changer le mot de passe du user de la Bdd}
+
+
+\begin{DoxyCode}
+sudo mysql -u root -p
+ALTER USER 'franck'@'%' IDENTIFIED BY 'xxxxxxxxxxxxxxx';
+FLUSH PRIVILEGES;
+EXIT;
+
+CREATE USER 'franck'@'localhost' IDENTIFIED BY 'xxxxxxxxxxxxxxx';
+ALTER USER 'wordpress'@'localhost' IDENTIFIED BY 'xxxxxxxxxxxxxxx';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'franck'@'%' IDENTIFIED BY 'xxxxxxxxxxxxxxx';
+FLUSH PRIVILEGES;
+EXIT;
+
+### pour autoriser toutes les ip et pas que le localhost
+EXIT;
+CREATE USER 'franck'@'%' IDENTIFIED BY 'xxxxxxxxxxxxxxx';
+\end{DoxyCode}
+
+
+\subsubsection*{pour tester l\textquotesingle{}acces à l\textquotesingle{}instance de la B\+DD de puis celle du site wordpress il faut installer un client mariadb dessus}
+
+
+\begin{DoxyCode}
+sudo apt install mariadb-client -y
+mysql -h 3.135.226.41 -P 3306 -u franck -p
+\end{DoxyCode}
+
+
+\section*{acceder à la vm aws franck\+B\+DD depuis une Vm locale et non aws on peut creer un tunnel ssh}
+
+
+\begin{DoxyCode}
+ssh -i  C:/AJC\_formation/linux/doc/debian12/keyfranck2.pem  -L 3306:localhost:3306 franck@3.135.226.41
+# ou aller dans le repertoire de la clé -v pourle mode verbeux
+ssh -i key2.pem -v -L 3306:localhost:3306 admin@3.135.226.41
+
+mkdir -p ~/.ssh
+cp /path/to/keyfile.pem ~/.ssh/
+chmod 600 ~/.ssh/keyfile.pem
+chmod 700 ~/.ssh
+
+# avant il faut copier la clé pem sur l'instance dans un dossier .ssh
+
+~/.ssh/
+
+ssh -i ~/.ssh/keyfranck2.pem -L 3306:localhost:3306 franck@3.135.226.41
+\end{DoxyCode}
+
+
+\subsection*{instance wordpress locale bdd sur 192.\+168.\+1.\+189, instance site wordpress 192.\+168.\+1.\+188}
+
+
+\begin{DoxyCode}
+USE wordpress;
+SELECT option\_name, option\_value FROM wp\_options WHERE option\_name IN ('siteurl', 'home');
+UPDATE wp\_options SET option\_value = 'http://192.168.1.188:9500' WHERE option\_name = 'siteurl' OR
+       option\_name = 'home';
+
+# Pour tester le site en local:
+http://192.168.1.188:9500/wp-admin/install.php
+\end{DoxyCode}
+ 

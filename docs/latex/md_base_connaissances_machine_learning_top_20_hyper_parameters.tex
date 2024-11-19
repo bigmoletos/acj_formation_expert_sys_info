@@ -1,0 +1,69 @@
+
+\begin{DoxyEnumerate}
+\item {\bfseries Grid\+Search\+CV}\+: La principale métrique utilisée pour Grid\+Search\+CV est la précision du modèle sur les données de test. Les paramètres les plus couramment utilisés sont\+:
+\end{DoxyEnumerate}
+
+estimator\+: l’estimateur à utiliser pour ajuster les données. param\+\_\+grid\+: un dictionnaire de paramètres à ajuster. scoring\+: la métrique à utiliser pour évaluer les performances du modèle. cv\+: le nombre de split à utiliser pour la validation croisée.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries set\+\_\+params}\+: Cette méthode permet de définir les paramètres d’un estimateur. Les paramètres les plus couramment utilisés sont\+:
+\end{DoxyEnumerate}
+
+normalize\+: booléen indiquant si les données doivent être normalisées ou non. C\+: la force de régularisation.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Random\+Forest\+Classifier}\+: Les principales métriques utilisées pour Random\+Forest\+Classifier sont la précision, le rappel et le score F1. Les paramètres les plus couramment utilisés sont\+:
+\end{DoxyEnumerate}
+
+n\+\_\+estimators\+: le nombre d’arbres dans la forêt. max\+\_\+depth\+: la profondeur maximale de chaque arbre. min\+\_\+samples\+\_\+split\+: le nombre minimum d’échantillons requis pour diviser un nœud interne. min\+\_\+samples\+\_\+leaf\+: le nombre minimum d’échantillons requis pour être à une feuille.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Decision\+Tree\+Classifier}\+: Les principales métriques utilisées pour Decision\+Tree\+Classifier sont la précision, le rappel et le score F1. Les paramètres les plus couramment utilisés sont\+:
+\end{DoxyEnumerate}
+
+max\+\_\+depth\+: la profondeur maximale de l’arbre. min\+\_\+samples\+\_\+split\+: le nombre minimum d’échantillons requis pour diviser un nœud interne. min\+\_\+samples\+\_\+leaf\+: le nombre minimum d’échantillons requis pour être à une feuille.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Logistic\+Regression}\+: Les principales métriques utilisées pour Logistic\+Regression sont la précision, le rappel et le score F1. Les paramètres les plus couramment utilisés sont\+:
+\end{DoxyEnumerate}
+
+C\+: la force de régularisation. penalty\+: la norme de régularisation à utiliser.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Logistic\+Regression}\+: Les principales métriques utilisées pour Logistic\+Regression sont la précision, le rappel et le score F1. Les paramètres les plus couramment utilisés sont\+:
+\end{DoxyEnumerate}
+
+C\+: la force de régularisation.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries penalty}\+: la norme de régularisation à utiliser. Standard\+Scaler\+: Cette méthode permet de normaliser les données d’entrée. Aucun paramètre n’est généralement utilisé.
+\end{DoxyEnumerate}
+
+One\+Hot\+Encoder\+: Cette méthode permet de convertir les variables catégorielles en variables binaires. Aucun paramètre n’est généralement utilisé.
+
+Label\+Encoder\+: Cette méthode permet de convertir les variables catégorielles en variables numériques. Aucun paramètre n’est généralement utilisé.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Decision\+Tree\+Regressor}\+: Les principales métriques utilisées pour Decision\+Tree\+Regressor sont l’erreur quadratique moyenne et l’erreur absolue moyenne. Les paramètres les plus couramment utilisés sont\+:
+\end{DoxyEnumerate}
+
+max\+\_\+depth\+: la profondeur maximale de l’arbre. min\+\_\+samples\+\_\+split\+: le nombre minimum d’échantillons requis pour diviser un nœud interne. min\+\_\+samples\+\_\+leaf\+: le nombre minimum d’échantillons requis pour être à une feuille.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Gradient\+Boosting\+Classifier}\+: Les principales métriques utilisées pour Gradient\+Boosting\+Classifier sont la précision, le rappel et le score F1. Les paramètres les plus couramment utilisés sont\+:
+\end{DoxyEnumerate}
+
+n\+\_\+estimators\+: le nombre d’estimateurs à utiliser. max\+\_\+depth\+: la profondeur maximale de chaque arbre. min\+\_\+samples\+\_\+split\+: le nombre minimum d’échantillons requis pour diviser un nœud interne. min\+\_\+samples\+\_\+leaf\+: le nombre minimum d’échantillons requis pour être à une feuille.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Pipeline}\+: Les pipelines sont utilisés pour chaîner plusieurs étapes de traitement de données et de modélisation. Les paramètres les plus couramment utilisés sont les paramètres de l’estimateur final. 
+\end{DoxyEnumerate}

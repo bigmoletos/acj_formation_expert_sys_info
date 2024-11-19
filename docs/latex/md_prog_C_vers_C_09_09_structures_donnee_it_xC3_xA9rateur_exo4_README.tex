@@ -1,0 +1,71 @@
+A. Vérifier si un nombre est négatif dans une liste B. Tri par valeur absolue
+
+\subsection*{Étape 1 \+: Définition et Utilisation Simple}
+
+
+\begin{DoxyEnumerate}
+\item Déclarez une lambda qui affiche {\ttfamily \char`\"{}\+Bonjour tout le monde !\char`\"{}}.
+\item Déclarez une lambda qui prend deux entiers en paramètres et retourne leur produit.
+\item Testez les deux lambdas en les appelant depuis votre fonction {\ttfamily main}.
+\end{DoxyEnumerate}
+
+\subsection*{Étape 2 \+: Utilisation avec les Conteneurs}
+
+
+\begin{DoxyEnumerate}
+\item Créez un {\ttfamily std\+::vector} contenant les entiers de 1 à 10.
+\item Utilisez {\ttfamily std\+::for\+\_\+each} et une lambda pour afficher chaque élément du vector.
+\item Modifiez chaque élément du vector en le multipliant par 3 à l’aide d’une lambda.
+\end{DoxyEnumerate}
+
+\subsection*{Étape 3 \+: Captures dans une Lambda}
+
+
+\begin{DoxyEnumerate}
+\item Déclarez une variable {\ttfamily factor} et affectez-\/lui la valeur {\ttfamily 4}.
+\item Créez une lambda qui capture {\ttfamily factor} par {\bfseries valeur} et retourne le produit d’un entier donné avec {\ttfamily factor}.
+\item Modifiez la valeur de {\ttfamily factor} après la déclaration de la lambda et vérifiez si la valeur utilisée par la lambda change.
+\end{DoxyEnumerate}
+
+\subsection*{Étape 4 \+: Captures par Référence}
+
+
+\begin{DoxyEnumerate}
+\item Déclarez une variable {\ttfamily factor} et affectez-\/lui la valeur {\ttfamily 4}.
+\item Créez une lambda qui capture {\ttfamily factor} par {\bfseries référence} et retourne le produit d’un entier donné avec {\ttfamily factor}.
+\item Modifiez la valeur de {\ttfamily factor} après la déclaration de la lambda et observez si la valeur utilisée par la lambda change.
+\end{DoxyEnumerate}
+
+\subsection*{Étape 5 \+: Captures Générales}
+
+
+\begin{DoxyEnumerate}
+\item Déclarez deux variables {\ttfamily x} et {\ttfamily y} initialisées à 3 et 5 respectivement.
+\item Créez une lambda qui capture {\bfseries toutes les variables} par valeur et retourne leur somme.
+\item Créez une autre lambda qui capture {\bfseries toutes les variables} par référence et modifie leur valeur.
+\end{DoxyEnumerate}
+
+\subsection*{Étape 6 \+: Utilisation Avancée avec la S\+TL}
+
+
+\begin{DoxyEnumerate}
+\item Créez un {\ttfamily std\+::vector} contenant les entiers de 1 à 10.
+\item Utilisez une lambda avec {\ttfamily std\+::find\+\_\+if} pour trouver le premier élément supérieur à 5.
+\item Utilisez une lambda avec {\ttfamily std\+::count\+\_\+if} pour compter les éléments pairs.
+\end{DoxyEnumerate}
+
+\subsection*{Étape 7 \+: Lambdas avec {\ttfamily std\+::function}}
+
+
+\begin{DoxyEnumerate}
+\item Déclarez une {\ttfamily std\+::function} qui encapsule une lambda pour calculer la différence entre deux entiers.
+\item Changez dynamiquement la fonction pour encapsuler une lambda qui calcule le produit.
+\end{DoxyEnumerate}
+
+\subsection*{Étape 8 \+: Lambdas Génériques}
+
+
+\begin{DoxyEnumerate}
+\item Créez une lambda générique qui retourne le maximum entre deux valeurs.
+\item Testez votre lambda avec des types différents ({\ttfamily int}, {\ttfamily double}, etc.). 
+\end{DoxyEnumerate}

@@ -1,0 +1,93 @@
+\hypertarget{AffinityPanel_8c}{}\section{linux/download/htop-\/3.3.0/\+Affinity\+Panel.c File Reference}
+\label{AffinityPanel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Affinity\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Affinity\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Affinity\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Affinity\+Panel.\+c\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMaskItem__}{Mask\+Item\+\_\+}
+\item 
+struct \hyperlink{structAffinityPanel__}{Affinity\+Panel\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structMaskItem__}{Mask\+Item\+\_\+} \hyperlink{AffinityPanel_8c_aa048ac3dadf3ec09253b111e335d799e}{Mask\+Item}
+\item 
+typedef struct \hyperlink{structAffinityPanel__}{Affinity\+Panel\+\_\+} \hyperlink{AffinityPanel_8c_a8e74c2b5e2bf284318242afee2827174}{Affinity\+Panel}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$ \hyperlink{AffinityPanel_8c_a4a0dafa443ca83874e2bfa907851269f}{Affinity\+Panel\+\_\+new} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, const \hyperlink{Affinity_8h_a1e7d92b5025596c9d4bd5cce63d9334f}{Affinity} $\ast$affinity, int $\ast$width)
+\item 
+\hyperlink{Affinity_8h_a1e7d92b5025596c9d4bd5cce63d9334f}{Affinity} $\ast$ \hyperlink{AffinityPanel_8c_ad62f90b2dc12721dad87daa794c9f12c}{Affinity\+Panel\+\_\+get\+Affinity} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$super, \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{AffinityPanel_8c_aa12e06e5171b86a7d46b92d7d56721de}{Affinity\+Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{AffinityPanel_8c_a8e74c2b5e2bf284318242afee2827174}\label{AffinityPanel_8c_a8e74c2b5e2bf284318242afee2827174}} 
+\index{Affinity\+Panel.\+c@{Affinity\+Panel.\+c}!Affinity\+Panel@{Affinity\+Panel}}
+\index{Affinity\+Panel@{Affinity\+Panel}!Affinity\+Panel.\+c@{Affinity\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Affinity\+Panel}{AffinityPanel}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structAffinityPanel__}{Affinity\+Panel\+\_\+}  \hyperlink{AffinityPanel_8c_a8e74c2b5e2bf284318242afee2827174}{Affinity\+Panel}}
+
+\mbox{\Hypertarget{AffinityPanel_8c_aa048ac3dadf3ec09253b111e335d799e}\label{AffinityPanel_8c_aa048ac3dadf3ec09253b111e335d799e}} 
+\index{Affinity\+Panel.\+c@{Affinity\+Panel.\+c}!Mask\+Item@{Mask\+Item}}
+\index{Mask\+Item@{Mask\+Item}!Affinity\+Panel.\+c@{Affinity\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Mask\+Item}{MaskItem}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structMaskItem__}{Mask\+Item\+\_\+}  \hyperlink{AffinityPanel_8c_aa048ac3dadf3ec09253b111e335d799e}{Mask\+Item}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{AffinityPanel_8c_ad62f90b2dc12721dad87daa794c9f12c}\label{AffinityPanel_8c_ad62f90b2dc12721dad87daa794c9f12c}} 
+\index{Affinity\+Panel.\+c@{Affinity\+Panel.\+c}!Affinity\+Panel\+\_\+get\+Affinity@{Affinity\+Panel\+\_\+get\+Affinity}}
+\index{Affinity\+Panel\+\_\+get\+Affinity@{Affinity\+Panel\+\_\+get\+Affinity}!Affinity\+Panel.\+c@{Affinity\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Affinity\+Panel\+\_\+get\+Affinity()}{AffinityPanel\_getAffinity()}}
+{\footnotesize\ttfamily \hyperlink{Affinity_8h_a1e7d92b5025596c9d4bd5cce63d9334f}{Affinity}$\ast$ Affinity\+Panel\+\_\+get\+Affinity (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{super,  }\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{AffinityPanel_8c_a4a0dafa443ca83874e2bfa907851269f}\label{AffinityPanel_8c_a4a0dafa443ca83874e2bfa907851269f}} 
+\index{Affinity\+Panel.\+c@{Affinity\+Panel.\+c}!Affinity\+Panel\+\_\+new@{Affinity\+Panel\+\_\+new}}
+\index{Affinity\+Panel\+\_\+new@{Affinity\+Panel\+\_\+new}!Affinity\+Panel.\+c@{Affinity\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Affinity\+Panel\+\_\+new()}{AffinityPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel}$\ast$ Affinity\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{const \hyperlink{Affinity_8h_a1e7d92b5025596c9d4bd5cce63d9334f}{Affinity} $\ast$}]{affinity,  }\item[{int $\ast$}]{width }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{AffinityPanel_8c_aa12e06e5171b86a7d46b92d7d56721de}\label{AffinityPanel_8c_aa12e06e5171b86a7d46b92d7d56721de}} 
+\index{Affinity\+Panel.\+c@{Affinity\+Panel.\+c}!Affinity\+Panel\+\_\+class@{Affinity\+Panel\+\_\+class}}
+\index{Affinity\+Panel\+\_\+class@{Affinity\+Panel\+\_\+class}!Affinity\+Panel.\+c@{Affinity\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Affinity\+Panel\+\_\+class}{AffinityPanel\_class}}
+{\footnotesize\ttfamily const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Affinity\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = AffinityPanel\_delete
+   \},
+   .eventHandler = AffinityPanel\_eventHandler
+\}
+\end{DoxyCode}

@@ -1,0 +1,27 @@
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Format }&\textbf{ Conversion en }&\textbf{ Écriture }&\textbf{ Taille (octets) }&\textbf{ Valeur min }&\textbf{ Valeur max  }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Format }&\textbf{ Conversion en }&\textbf{ Écriture }&\textbf{ Taille (octets) }&\textbf{ Valeur min }&\textbf{ Valeur max  }\\\cline{1-6}
+\endhead
+d &int &Décimale signée &2 ou 4 &-\/32,768 (2 octets) / -\/2,147,483,648 (4 octets) &32,767 (2 octets) / 2,147,483,647 (4 octets) \\\cline{1-6}
+ld &long int &Décimale signée &4 ou 8 &-\/2,147,483,648 (4 octets) / -\/9,223,372,036,854,775,808 (8 octets) &2,147,483,647 (4 octets) / 9,223,372,036,854,775,807 (8 octets) \\\cline{1-6}
+u &unsigned int &Décimale non signée &2 ou 4 &0 &65,535 (2 octets) / 4,294,967,295 (4 octets) \\\cline{1-6}
+lu &unsigned long int &Décimale non signée &4 ou 8 &0 &4,294,967,295 (4 octets) / 18,446,744,073,709,551,615 (8 octets) \\\cline{1-6}
+o &unsigned int &Octale non signée &2 ou 4 &0 &65,535 (2 octets) / 4,294,967,295 (4 octets) \\\cline{1-6}
+lo &unsigned long int &Octale non signée &4 ou 8 &0 &4,294,967,295 (4 octets) / 18,446,744,073,709,551,615 (8 octets) \\\cline{1-6}
+x &unsigned int &Hexadécimale non signée &2 ou 4 &0 &65,535 (2 octets) / 4,294,967,295 (4 octets) \\\cline{1-6}
+lx &unsigned long int &Hexadécimale non signée &4 ou 8 &0 &4,294,967,295 (4 octets) / 18,446,744,073,709,551,615 (8 octets) \\\cline{1-6}
+f &float &Décimale virgule fixe &4 &$\sim$ -\/3.\+4E+38 &$\sim$ 3.\+4E+38 \\\cline{1-6}
+lf &double &Décimale virgule fixe &8 &$\sim$ -\/1.\+7E+308 &$\sim$ 1.\+7E+308 \\\cline{1-6}
+e &double &Décimale notation exponentielle &8 &$\sim$ -\/1.\+7E+308 &$\sim$ 1.\+7E+308 \\\cline{1-6}
+le &long double &Décimale notation exponentielle &8, 12, ou 16 &$\sim$ -\/1.\+1E+4932 &$\sim$ 1.\+1E+4932 \\\cline{1-6}
+g &double &Représentation la plus courte &8 &$\sim$ -\/1.\+7E+308 &$\sim$ 1.\+7E+308 \\\cline{1-6}
+lg &long double &Représentation la plus courte &8, 12, ou 16 &$\sim$ -\/1.\+1E+4932 &$\sim$ 1.\+1E+4932 \\\cline{1-6}
+c &char &Caractère &1 &-\/128 &127 \\\cline{1-6}
+s &char$\ast$ &Chaîne de caractères &dépend de la chaîne &N/A &N/A \\\cline{1-6}
+\end{longtabu}

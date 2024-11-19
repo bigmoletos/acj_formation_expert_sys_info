@@ -1,0 +1,147 @@
+\hypertarget{SystemdMeter_8c}{}\section{linux/download/htop-\/3.3.0/linux/\+Systemd\+Meter.c File Reference}
+\label{SystemdMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/linux/\+Systemd\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/linux/\+Systemd\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Systemd\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$dlfcn.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Systemd\+Meter.\+c\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSystemdMeterContext}{Systemd\+Meter\+Context}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{SystemdMeter_8c_a35a8a571b374cc7adae7fe767b8f39f0}{I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+A\+L\+UE}~((unsigned int)-\/1)
+\item 
+\#define \hyperlink{SystemdMeter_8c_a647223d85cfb342e1495ff5c802efe6f}{resolve}(symbolname)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void \hyperlink{SystemdMeter_8c_a50445096b835a37bdc1bd416668b969b}{sd\+\_\+bus}
+\item 
+typedef void \hyperlink{SystemdMeter_8c_accf75dd07aac06bee0e999c1ceccd88d}{sd\+\_\+bus\+\_\+error}
+\item 
+typedef struct \hyperlink{structSystemdMeterContext}{Systemd\+Meter\+Context} \hyperlink{SystemdMeter_8c_af4f304d1835a088b421fd5be22b747b5}{Systemd\+Meter\+Context\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{SystemdMeter_8c_aca71b707e9f57bbd20ddc915e38202be}{Systemd\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{SystemdMeter_8c_ad170ec64ed1ee401ea38c4e330f8b7db}{Systemd\+User\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{SystemdMeter_8c_a35a8a571b374cc7adae7fe767b8f39f0}\label{SystemdMeter_8c_a35a8a571b374cc7adae7fe767b8f39f0}} 
+\index{Systemd\+Meter.\+c@{Systemd\+Meter.\+c}!I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+A\+L\+UE@{I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+A\+L\+UE}}
+\index{I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+A\+L\+UE@{I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+A\+L\+UE}!Systemd\+Meter.\+c@{Systemd\+Meter.\+c}}
+\subsubsection{\texorpdfstring{I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+A\+L\+UE}{INVALID\_VALUE}}
+{\footnotesize\ttfamily \#define I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+A\+L\+UE~((unsigned int)-\/1)}
+
+\mbox{\Hypertarget{SystemdMeter_8c_a647223d85cfb342e1495ff5c802efe6f}\label{SystemdMeter_8c_a647223d85cfb342e1495ff5c802efe6f}} 
+\index{Systemd\+Meter.\+c@{Systemd\+Meter.\+c}!resolve@{resolve}}
+\index{resolve@{resolve}!Systemd\+Meter.\+c@{Systemd\+Meter.\+c}}
+\subsubsection{\texorpdfstring{resolve}{resolve}}
+{\footnotesize\ttfamily \#define resolve(\begin{DoxyParamCaption}\item[{}]{symbolname }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                      \(\backslash\)
+         *(\textcolor{keywordtype}{void} **)(&sym\_##symbolname) = dlsym(dlopenHandle, #symbolname);  \(\backslash\)
+         if (!sym\_##symbolname || dlerror() != NULL)                        \(\backslash\)
+            goto dlfailure;                                                 \(\backslash\)
+      \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{SystemdMeter_8c_a50445096b835a37bdc1bd416668b969b}\label{SystemdMeter_8c_a50445096b835a37bdc1bd416668b969b}} 
+\index{Systemd\+Meter.\+c@{Systemd\+Meter.\+c}!sd\+\_\+bus@{sd\+\_\+bus}}
+\index{sd\+\_\+bus@{sd\+\_\+bus}!Systemd\+Meter.\+c@{Systemd\+Meter.\+c}}
+\subsubsection{\texorpdfstring{sd\+\_\+bus}{sd\_bus}}
+{\footnotesize\ttfamily typedef void \hyperlink{SystemdMeter_8c_a50445096b835a37bdc1bd416668b969b}{sd\+\_\+bus}}
+
+\mbox{\Hypertarget{SystemdMeter_8c_accf75dd07aac06bee0e999c1ceccd88d}\label{SystemdMeter_8c_accf75dd07aac06bee0e999c1ceccd88d}} 
+\index{Systemd\+Meter.\+c@{Systemd\+Meter.\+c}!sd\+\_\+bus\+\_\+error@{sd\+\_\+bus\+\_\+error}}
+\index{sd\+\_\+bus\+\_\+error@{sd\+\_\+bus\+\_\+error}!Systemd\+Meter.\+c@{Systemd\+Meter.\+c}}
+\subsubsection{\texorpdfstring{sd\+\_\+bus\+\_\+error}{sd\_bus\_error}}
+{\footnotesize\ttfamily typedef void \hyperlink{SystemdMeter_8c_accf75dd07aac06bee0e999c1ceccd88d}{sd\+\_\+bus\+\_\+error}}
+
+\mbox{\Hypertarget{SystemdMeter_8c_af4f304d1835a088b421fd5be22b747b5}\label{SystemdMeter_8c_af4f304d1835a088b421fd5be22b747b5}} 
+\index{Systemd\+Meter.\+c@{Systemd\+Meter.\+c}!Systemd\+Meter\+Context\+\_\+t@{Systemd\+Meter\+Context\+\_\+t}}
+\index{Systemd\+Meter\+Context\+\_\+t@{Systemd\+Meter\+Context\+\_\+t}!Systemd\+Meter.\+c@{Systemd\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Systemd\+Meter\+Context\+\_\+t}{SystemdMeterContext\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structSystemdMeterContext}{Systemd\+Meter\+Context}  \hyperlink{SystemdMeter_8c_af4f304d1835a088b421fd5be22b747b5}{Systemd\+Meter\+Context\+\_\+t}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{SystemdMeter_8c_aca71b707e9f57bbd20ddc915e38202be}\label{SystemdMeter_8c_aca71b707e9f57bbd20ddc915e38202be}} 
+\index{Systemd\+Meter.\+c@{Systemd\+Meter.\+c}!Systemd\+Meter\+\_\+class@{Systemd\+Meter\+\_\+class}}
+\index{Systemd\+Meter\+\_\+class@{Systemd\+Meter\+\_\+class}!Systemd\+Meter.\+c@{Systemd\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Systemd\+Meter\+\_\+class}{SystemdMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Systemd\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = SystemdMeter\_display
+   \},
+   .updateValues = SystemdMeter\_updateValues,
+   .done = SystemdMeter\_done,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 0,
+   .total = 100.0,
+   .attributes = SystemdMeter\_attributes,
+   .name = \textcolor{stringliteral}{"Systemd"},
+   .uiName = \textcolor{stringliteral}{"Systemd state"},
+   .description = \textcolor{stringliteral}{"Systemd system state and unit overview"},
+   .caption = \textcolor{stringliteral}{"Systemd: "},
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{SystemdMeter_8c_ad170ec64ed1ee401ea38c4e330f8b7db}\label{SystemdMeter_8c_ad170ec64ed1ee401ea38c4e330f8b7db}} 
+\index{Systemd\+Meter.\+c@{Systemd\+Meter.\+c}!Systemd\+User\+Meter\+\_\+class@{Systemd\+User\+Meter\+\_\+class}}
+\index{Systemd\+User\+Meter\+\_\+class@{Systemd\+User\+Meter\+\_\+class}!Systemd\+Meter.\+c@{Systemd\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Systemd\+User\+Meter\+\_\+class}{SystemdUserMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Systemd\+User\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = SystemdUserMeter\_display
+   \},
+   .updateValues = SystemdMeter\_updateValues,
+   .done = SystemdMeter\_done,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 0,
+   .total = 100.0,
+   .attributes = SystemdMeter\_attributes,
+   .name = \textcolor{stringliteral}{"SystemdUser"},
+   .uiName = \textcolor{stringliteral}{"Systemd user state"},
+   .description = \textcolor{stringliteral}{"Systemd user state and unit overview"},
+   .caption = \textcolor{stringliteral}{"Systemd User: "},
+\}
+\end{DoxyCode}

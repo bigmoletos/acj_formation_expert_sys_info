@@ -1,0 +1,72 @@
+\hypertarget{SolarisProcessTable_8c}{}\section{linux/download/htop-\/3.3.0/solaris/\+Solaris\+Process\+Table.c File Reference}
+\label{SolarisProcessTable_8c}\index{linux/download/htop-\/3.\+3.\+0/solaris/\+Solaris\+Process\+Table.\+c@{linux/download/htop-\/3.\+3.\+0/solaris/\+Solaris\+Process\+Table.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}solaris/\+Solaris\+Process\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/user.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$procfs.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$pwd.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}solaris/\+Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}solaris/\+Solaris\+Process.\+h\char`\"{}}\newline
+Include dependency graph for Solaris\+Process\+Table.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{SolarisProcessTable_8c_adb2a90ba86974bf444aff553a01f91b1}{G\+Z\+O\+NE}~\char`\"{}global    \char`\"{}
+\item 
+\#define \hyperlink{SolarisProcessTable_8c_a32aa444765fd6699ba3c67e15da27917}{U\+Z\+O\+NE}~\char`\"{}unknown   \char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$ \hyperlink{SolarisProcessTable_8c_a684b79c58f23a33ed9f8b2eb7cc8817b}{Process\+Table\+\_\+new} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$pid\+Match\+List)
+\item 
+void \hyperlink{SolarisProcessTable_8c_ab291bfda630da85c5662a634f11e0826}{Process\+Table\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+void \hyperlink{SolarisProcessTable_8c_af219b4e4bf605ddb7a16dd505b990688}{Process\+Table\+\_\+go\+Through\+Entries} (\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$super)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{SolarisProcessTable_8c_adb2a90ba86974bf444aff553a01f91b1}\label{SolarisProcessTable_8c_adb2a90ba86974bf444aff553a01f91b1}} 
+\index{Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}!G\+Z\+O\+NE@{G\+Z\+O\+NE}}
+\index{G\+Z\+O\+NE@{G\+Z\+O\+NE}!Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}}
+\subsubsection{\texorpdfstring{G\+Z\+O\+NE}{GZONE}}
+{\footnotesize\ttfamily \#define G\+Z\+O\+NE~\char`\"{}global    \char`\"{}}
+
+\mbox{\Hypertarget{SolarisProcessTable_8c_a32aa444765fd6699ba3c67e15da27917}\label{SolarisProcessTable_8c_a32aa444765fd6699ba3c67e15da27917}} 
+\index{Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}!U\+Z\+O\+NE@{U\+Z\+O\+NE}}
+\index{U\+Z\+O\+NE@{U\+Z\+O\+NE}!Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}}
+\subsubsection{\texorpdfstring{U\+Z\+O\+NE}{UZONE}}
+{\footnotesize\ttfamily \#define U\+Z\+O\+NE~\char`\"{}unknown   \char`\"{}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{SolarisProcessTable_8c_ab291bfda630da85c5662a634f11e0826}\label{SolarisProcessTable_8c_ab291bfda630da85c5662a634f11e0826}} 
+\index{Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}!Process\+Table\+\_\+delete@{Process\+Table\+\_\+delete}}
+\index{Process\+Table\+\_\+delete@{Process\+Table\+\_\+delete}!Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+delete()}{ProcessTable\_delete()}}
+{\footnotesize\ttfamily void Process\+Table\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{SolarisProcessTable_8c_af219b4e4bf605ddb7a16dd505b990688}\label{SolarisProcessTable_8c_af219b4e4bf605ddb7a16dd505b990688}} 
+\index{Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}!Process\+Table\+\_\+go\+Through\+Entries@{Process\+Table\+\_\+go\+Through\+Entries}}
+\index{Process\+Table\+\_\+go\+Through\+Entries@{Process\+Table\+\_\+go\+Through\+Entries}!Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+go\+Through\+Entries()}{ProcessTable\_goThroughEntries()}}
+{\footnotesize\ttfamily void Process\+Table\+\_\+go\+Through\+Entries (\begin{DoxyParamCaption}\item[{\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$}]{super }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{SolarisProcessTable_8c_a684b79c58f23a33ed9f8b2eb7cc8817b}\label{SolarisProcessTable_8c_a684b79c58f23a33ed9f8b2eb7cc8817b}} 
+\index{Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}!Process\+Table\+\_\+new@{Process\+Table\+\_\+new}}
+\index{Process\+Table\+\_\+new@{Process\+Table\+\_\+new}!Solaris\+Process\+Table.\+c@{Solaris\+Process\+Table.\+c}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+new()}{ProcessTable\_new()}}
+{\footnotesize\ttfamily \hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table}$\ast$ Process\+Table\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{pid\+Match\+List }\end{DoxyParamCaption})}
+

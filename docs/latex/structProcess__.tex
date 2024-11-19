@@ -1,0 +1,317 @@
+\hypertarget{structProcess__}{}\section{Process\+\_\+ Struct Reference}
+\label{structProcess__}\index{Process\+\_\+@{Process\+\_\+}}
+
+
+{\ttfamily \#include $<$Process.\+h$>$}
+
+
+
+Collaboration diagram for Process\+\_\+\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} \hyperlink{structProcess___a09ae30bf69354e5c7b62ba18e99112b9}{super}
+\item 
+int \hyperlink{structProcess___a603513457ee08c63031438a1efd6a53b}{pgrp}
+\item 
+int \hyperlink{structProcess___ad5375b57b318bbf9ce73c15fe189ee9b}{session}
+\item 
+int \hyperlink{structProcess___a48484f43dd41bddbe7aeeb2c6127720a}{tpgid}
+\item 
+bool \hyperlink{structProcess___a4274f70af5fc9b32d72bc01c78e3d3c9}{is\+Kernel\+Thread}
+\item 
+bool \hyperlink{structProcess___a5e0490e694a0981184a34b94d1ebaba5}{is\+Userland\+Thread}
+\item 
+bool \hyperlink{structProcess___af72c9dc7d0db85ac99d5c28d543da268}{is\+Running\+In\+Container}
+\item 
+unsigned long int \hyperlink{structProcess___a7b2c3c111d0c52fe143337283351f2f6}{tty\+\_\+nr}
+\item 
+char $\ast$ \hyperlink{structProcess___a6eebc460195aa2613278e4bed179dcac}{tty\+\_\+name}
+\item 
+uid\+\_\+t \hyperlink{structProcess___aa8670880f345d7fa09d96aec7b2f99c1}{st\+\_\+uid}
+\item 
+const char $\ast$ \hyperlink{structProcess___ab7567f24054af86f369d28e35e33e38f}{user}
+\item 
+bool \hyperlink{structProcess___a1e05af5ca1ccc752a0b75c7ea20491ab}{elevated\+\_\+priv}
+\item 
+unsigned long long int \hyperlink{structProcess___a450ede65d286d1d1300fcacd1aad3cc9}{time}
+\item 
+char $\ast$ \hyperlink{structProcess___a75b9c0708db9da46eb061bf0b68ca499}{cmdline}
+\item 
+int \hyperlink{structProcess___a2e09e6d44df324f8198c21f3d156bc2f}{cmdline\+Basename\+End}
+\item 
+int \hyperlink{structProcess___ab09f71b906aa1970ff0abfc0566582a5}{cmdline\+Basename\+Start}
+\item 
+char $\ast$ \hyperlink{structProcess___a241ff10766056dc26b25b012c05a07ce}{proc\+Comm}
+\item 
+char $\ast$ \hyperlink{structProcess___a998a39446c951d76abde48ef02d42089}{proc\+Exe}
+\item 
+char $\ast$ \hyperlink{structProcess___a51ff7b8452bfc3e3e7438219f88c3e98}{proc\+Cwd}
+\item 
+int \hyperlink{structProcess___a69db29693ef3689f1fe48d897f6270c2}{proc\+Exe\+Basename\+Offset}
+\item 
+bool \hyperlink{structProcess___a7e09e353d2f5030e4c48a63cf4691fb6}{proc\+Exe\+Deleted}
+\item 
+bool \hyperlink{structProcess___abd5b9284eb5b84fc55ecbae0713e2056}{uses\+Deleted\+Lib}
+\item 
+int \hyperlink{structProcess___a6c6a7b09d586b8982a4d7d4b7e06a6ff}{processor}
+\item 
+float \hyperlink{structProcess___add059b03abd4a3b0a4e21dc40ecd827a}{percent\+\_\+cpu}
+\item 
+float \hyperlink{structProcess___a6be09277141e5b74106b35e036289057}{percent\+\_\+mem}
+\item 
+long int \hyperlink{structProcess___a05c3aa291bcf1c2b058eeea8926f34b9}{priority}
+\item 
+long int \hyperlink{structProcess___a83f6bebe52f3723b5ca7a86567164bd4}{nice}
+\item 
+long int \hyperlink{structProcess___a8f1c2546df16590104ceb35aaea21a9b}{nlwp}
+\item 
+time\+\_\+t \hyperlink{structProcess___ac5925ef684f48f9544e7173fd1330758}{starttime\+\_\+ctime}
+\item 
+char \hyperlink{structProcess___a5b1599ab799622878ab248474061d4be}{starttime\+\_\+show} \mbox{[}8\mbox{]}
+\item 
+long \hyperlink{structProcess___ae765cc29129a0d3808fc486f0ab36a29}{m\+\_\+virt}
+\item 
+long \hyperlink{structProcess___afd27d34d1d903d222179edde94592555}{m\+\_\+resident}
+\item 
+unsigned long int \hyperlink{structProcess___a2770af6df2e6065de15a7a952bb9666c}{minflt}
+\item 
+unsigned long int \hyperlink{structProcess___a87af7e7904782a51e9cdd17a9eee6cdc}{majflt}
+\item 
+\hyperlink{Process_8h_a058a4a49f4578136dfcf39a19cd5d2ad}{Process\+State} \hyperlink{structProcess___a952ce166b520838a9b53987d1f7b9eea}{state}
+\item 
+int \hyperlink{structProcess___aa0bb323e685251a804202300ecc559e4}{scheduling\+\_\+policy}
+\item 
+\hyperlink{Process_8h_a5e8ba2e44bd69cd79bc65074a7ca174f}{Process\+Merged\+Command} \hyperlink{structProcess___a59289d121ba159ee758096c28202a949}{merged\+Command}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structProcess___a75b9c0708db9da46eb061bf0b68ca499}\label{structProcess___a75b9c0708db9da46eb061bf0b68ca499}} 
+\index{Process\+\_\+@{Process\+\_\+}!cmdline@{cmdline}}
+\index{cmdline@{cmdline}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{cmdline}{cmdline}}
+{\footnotesize\ttfamily char$\ast$ Process\+\_\+\+::cmdline}
+
+\mbox{\Hypertarget{structProcess___a2e09e6d44df324f8198c21f3d156bc2f}\label{structProcess___a2e09e6d44df324f8198c21f3d156bc2f}} 
+\index{Process\+\_\+@{Process\+\_\+}!cmdline\+Basename\+End@{cmdline\+Basename\+End}}
+\index{cmdline\+Basename\+End@{cmdline\+Basename\+End}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{cmdline\+Basename\+End}{cmdlineBasenameEnd}}
+{\footnotesize\ttfamily int Process\+\_\+\+::cmdline\+Basename\+End}
+
+\mbox{\Hypertarget{structProcess___ab09f71b906aa1970ff0abfc0566582a5}\label{structProcess___ab09f71b906aa1970ff0abfc0566582a5}} 
+\index{Process\+\_\+@{Process\+\_\+}!cmdline\+Basename\+Start@{cmdline\+Basename\+Start}}
+\index{cmdline\+Basename\+Start@{cmdline\+Basename\+Start}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{cmdline\+Basename\+Start}{cmdlineBasenameStart}}
+{\footnotesize\ttfamily int Process\+\_\+\+::cmdline\+Basename\+Start}
+
+\mbox{\Hypertarget{structProcess___a1e05af5ca1ccc752a0b75c7ea20491ab}\label{structProcess___a1e05af5ca1ccc752a0b75c7ea20491ab}} 
+\index{Process\+\_\+@{Process\+\_\+}!elevated\+\_\+priv@{elevated\+\_\+priv}}
+\index{elevated\+\_\+priv@{elevated\+\_\+priv}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{elevated\+\_\+priv}{elevated\_priv}}
+{\footnotesize\ttfamily bool Process\+\_\+\+::elevated\+\_\+priv}
+
+\mbox{\Hypertarget{structProcess___a4274f70af5fc9b32d72bc01c78e3d3c9}\label{structProcess___a4274f70af5fc9b32d72bc01c78e3d3c9}} 
+\index{Process\+\_\+@{Process\+\_\+}!is\+Kernel\+Thread@{is\+Kernel\+Thread}}
+\index{is\+Kernel\+Thread@{is\+Kernel\+Thread}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{is\+Kernel\+Thread}{isKernelThread}}
+{\footnotesize\ttfamily bool Process\+\_\+\+::is\+Kernel\+Thread}
+
+\mbox{\Hypertarget{structProcess___af72c9dc7d0db85ac99d5c28d543da268}\label{structProcess___af72c9dc7d0db85ac99d5c28d543da268}} 
+\index{Process\+\_\+@{Process\+\_\+}!is\+Running\+In\+Container@{is\+Running\+In\+Container}}
+\index{is\+Running\+In\+Container@{is\+Running\+In\+Container}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{is\+Running\+In\+Container}{isRunningInContainer}}
+{\footnotesize\ttfamily bool Process\+\_\+\+::is\+Running\+In\+Container}
+
+\mbox{\Hypertarget{structProcess___a5e0490e694a0981184a34b94d1ebaba5}\label{structProcess___a5e0490e694a0981184a34b94d1ebaba5}} 
+\index{Process\+\_\+@{Process\+\_\+}!is\+Userland\+Thread@{is\+Userland\+Thread}}
+\index{is\+Userland\+Thread@{is\+Userland\+Thread}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{is\+Userland\+Thread}{isUserlandThread}}
+{\footnotesize\ttfamily bool Process\+\_\+\+::is\+Userland\+Thread}
+
+\mbox{\Hypertarget{structProcess___afd27d34d1d903d222179edde94592555}\label{structProcess___afd27d34d1d903d222179edde94592555}} 
+\index{Process\+\_\+@{Process\+\_\+}!m\+\_\+resident@{m\+\_\+resident}}
+\index{m\+\_\+resident@{m\+\_\+resident}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+resident}{m\_resident}}
+{\footnotesize\ttfamily long Process\+\_\+\+::m\+\_\+resident}
+
+\mbox{\Hypertarget{structProcess___ae765cc29129a0d3808fc486f0ab36a29}\label{structProcess___ae765cc29129a0d3808fc486f0ab36a29}} 
+\index{Process\+\_\+@{Process\+\_\+}!m\+\_\+virt@{m\+\_\+virt}}
+\index{m\+\_\+virt@{m\+\_\+virt}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+virt}{m\_virt}}
+{\footnotesize\ttfamily long Process\+\_\+\+::m\+\_\+virt}
+
+\mbox{\Hypertarget{structProcess___a87af7e7904782a51e9cdd17a9eee6cdc}\label{structProcess___a87af7e7904782a51e9cdd17a9eee6cdc}} 
+\index{Process\+\_\+@{Process\+\_\+}!majflt@{majflt}}
+\index{majflt@{majflt}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{majflt}{majflt}}
+{\footnotesize\ttfamily unsigned long int Process\+\_\+\+::majflt}
+
+\mbox{\Hypertarget{structProcess___a59289d121ba159ee758096c28202a949}\label{structProcess___a59289d121ba159ee758096c28202a949}} 
+\index{Process\+\_\+@{Process\+\_\+}!merged\+Command@{merged\+Command}}
+\index{merged\+Command@{merged\+Command}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{merged\+Command}{mergedCommand}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a5e8ba2e44bd69cd79bc65074a7ca174f}{Process\+Merged\+Command} Process\+\_\+\+::merged\+Command}
+
+\mbox{\Hypertarget{structProcess___a2770af6df2e6065de15a7a952bb9666c}\label{structProcess___a2770af6df2e6065de15a7a952bb9666c}} 
+\index{Process\+\_\+@{Process\+\_\+}!minflt@{minflt}}
+\index{minflt@{minflt}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{minflt}{minflt}}
+{\footnotesize\ttfamily unsigned long int Process\+\_\+\+::minflt}
+
+\mbox{\Hypertarget{structProcess___a83f6bebe52f3723b5ca7a86567164bd4}\label{structProcess___a83f6bebe52f3723b5ca7a86567164bd4}} 
+\index{Process\+\_\+@{Process\+\_\+}!nice@{nice}}
+\index{nice@{nice}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{nice}{nice}}
+{\footnotesize\ttfamily long int Process\+\_\+\+::nice}
+
+\mbox{\Hypertarget{structProcess___a8f1c2546df16590104ceb35aaea21a9b}\label{structProcess___a8f1c2546df16590104ceb35aaea21a9b}} 
+\index{Process\+\_\+@{Process\+\_\+}!nlwp@{nlwp}}
+\index{nlwp@{nlwp}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{nlwp}{nlwp}}
+{\footnotesize\ttfamily long int Process\+\_\+\+::nlwp}
+
+\mbox{\Hypertarget{structProcess___add059b03abd4a3b0a4e21dc40ecd827a}\label{structProcess___add059b03abd4a3b0a4e21dc40ecd827a}} 
+\index{Process\+\_\+@{Process\+\_\+}!percent\+\_\+cpu@{percent\+\_\+cpu}}
+\index{percent\+\_\+cpu@{percent\+\_\+cpu}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{percent\+\_\+cpu}{percent\_cpu}}
+{\footnotesize\ttfamily float Process\+\_\+\+::percent\+\_\+cpu}
+
+\mbox{\Hypertarget{structProcess___a6be09277141e5b74106b35e036289057}\label{structProcess___a6be09277141e5b74106b35e036289057}} 
+\index{Process\+\_\+@{Process\+\_\+}!percent\+\_\+mem@{percent\+\_\+mem}}
+\index{percent\+\_\+mem@{percent\+\_\+mem}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{percent\+\_\+mem}{percent\_mem}}
+{\footnotesize\ttfamily float Process\+\_\+\+::percent\+\_\+mem}
+
+\mbox{\Hypertarget{structProcess___a603513457ee08c63031438a1efd6a53b}\label{structProcess___a603513457ee08c63031438a1efd6a53b}} 
+\index{Process\+\_\+@{Process\+\_\+}!pgrp@{pgrp}}
+\index{pgrp@{pgrp}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{pgrp}{pgrp}}
+{\footnotesize\ttfamily int Process\+\_\+\+::pgrp}
+
+\mbox{\Hypertarget{structProcess___a05c3aa291bcf1c2b058eeea8926f34b9}\label{structProcess___a05c3aa291bcf1c2b058eeea8926f34b9}} 
+\index{Process\+\_\+@{Process\+\_\+}!priority@{priority}}
+\index{priority@{priority}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{priority}{priority}}
+{\footnotesize\ttfamily long int Process\+\_\+\+::priority}
+
+\mbox{\Hypertarget{structProcess___a241ff10766056dc26b25b012c05a07ce}\label{structProcess___a241ff10766056dc26b25b012c05a07ce}} 
+\index{Process\+\_\+@{Process\+\_\+}!proc\+Comm@{proc\+Comm}}
+\index{proc\+Comm@{proc\+Comm}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{proc\+Comm}{procComm}}
+{\footnotesize\ttfamily char$\ast$ Process\+\_\+\+::proc\+Comm}
+
+\mbox{\Hypertarget{structProcess___a51ff7b8452bfc3e3e7438219f88c3e98}\label{structProcess___a51ff7b8452bfc3e3e7438219f88c3e98}} 
+\index{Process\+\_\+@{Process\+\_\+}!proc\+Cwd@{proc\+Cwd}}
+\index{proc\+Cwd@{proc\+Cwd}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{proc\+Cwd}{procCwd}}
+{\footnotesize\ttfamily char$\ast$ Process\+\_\+\+::proc\+Cwd}
+
+\mbox{\Hypertarget{structProcess___a6c6a7b09d586b8982a4d7d4b7e06a6ff}\label{structProcess___a6c6a7b09d586b8982a4d7d4b7e06a6ff}} 
+\index{Process\+\_\+@{Process\+\_\+}!processor@{processor}}
+\index{processor@{processor}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{processor}{processor}}
+{\footnotesize\ttfamily int Process\+\_\+\+::processor}
+
+\mbox{\Hypertarget{structProcess___a998a39446c951d76abde48ef02d42089}\label{structProcess___a998a39446c951d76abde48ef02d42089}} 
+\index{Process\+\_\+@{Process\+\_\+}!proc\+Exe@{proc\+Exe}}
+\index{proc\+Exe@{proc\+Exe}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{proc\+Exe}{procExe}}
+{\footnotesize\ttfamily char$\ast$ Process\+\_\+\+::proc\+Exe}
+
+\mbox{\Hypertarget{structProcess___a69db29693ef3689f1fe48d897f6270c2}\label{structProcess___a69db29693ef3689f1fe48d897f6270c2}} 
+\index{Process\+\_\+@{Process\+\_\+}!proc\+Exe\+Basename\+Offset@{proc\+Exe\+Basename\+Offset}}
+\index{proc\+Exe\+Basename\+Offset@{proc\+Exe\+Basename\+Offset}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{proc\+Exe\+Basename\+Offset}{procExeBasenameOffset}}
+{\footnotesize\ttfamily int Process\+\_\+\+::proc\+Exe\+Basename\+Offset}
+
+\mbox{\Hypertarget{structProcess___a7e09e353d2f5030e4c48a63cf4691fb6}\label{structProcess___a7e09e353d2f5030e4c48a63cf4691fb6}} 
+\index{Process\+\_\+@{Process\+\_\+}!proc\+Exe\+Deleted@{proc\+Exe\+Deleted}}
+\index{proc\+Exe\+Deleted@{proc\+Exe\+Deleted}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{proc\+Exe\+Deleted}{procExeDeleted}}
+{\footnotesize\ttfamily bool Process\+\_\+\+::proc\+Exe\+Deleted}
+
+\mbox{\Hypertarget{structProcess___aa0bb323e685251a804202300ecc559e4}\label{structProcess___aa0bb323e685251a804202300ecc559e4}} 
+\index{Process\+\_\+@{Process\+\_\+}!scheduling\+\_\+policy@{scheduling\+\_\+policy}}
+\index{scheduling\+\_\+policy@{scheduling\+\_\+policy}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{scheduling\+\_\+policy}{scheduling\_policy}}
+{\footnotesize\ttfamily int Process\+\_\+\+::scheduling\+\_\+policy}
+
+\mbox{\Hypertarget{structProcess___ad5375b57b318bbf9ce73c15fe189ee9b}\label{structProcess___ad5375b57b318bbf9ce73c15fe189ee9b}} 
+\index{Process\+\_\+@{Process\+\_\+}!session@{session}}
+\index{session@{session}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{session}{session}}
+{\footnotesize\ttfamily int Process\+\_\+\+::session}
+
+\mbox{\Hypertarget{structProcess___aa8670880f345d7fa09d96aec7b2f99c1}\label{structProcess___aa8670880f345d7fa09d96aec7b2f99c1}} 
+\index{Process\+\_\+@{Process\+\_\+}!st\+\_\+uid@{st\+\_\+uid}}
+\index{st\+\_\+uid@{st\+\_\+uid}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{st\+\_\+uid}{st\_uid}}
+{\footnotesize\ttfamily uid\+\_\+t Process\+\_\+\+::st\+\_\+uid}
+
+\mbox{\Hypertarget{structProcess___ac5925ef684f48f9544e7173fd1330758}\label{structProcess___ac5925ef684f48f9544e7173fd1330758}} 
+\index{Process\+\_\+@{Process\+\_\+}!starttime\+\_\+ctime@{starttime\+\_\+ctime}}
+\index{starttime\+\_\+ctime@{starttime\+\_\+ctime}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{starttime\+\_\+ctime}{starttime\_ctime}}
+{\footnotesize\ttfamily time\+\_\+t Process\+\_\+\+::starttime\+\_\+ctime}
+
+\mbox{\Hypertarget{structProcess___a5b1599ab799622878ab248474061d4be}\label{structProcess___a5b1599ab799622878ab248474061d4be}} 
+\index{Process\+\_\+@{Process\+\_\+}!starttime\+\_\+show@{starttime\+\_\+show}}
+\index{starttime\+\_\+show@{starttime\+\_\+show}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{starttime\+\_\+show}{starttime\_show}}
+{\footnotesize\ttfamily char Process\+\_\+\+::starttime\+\_\+show\mbox{[}8\mbox{]}}
+
+\mbox{\Hypertarget{structProcess___a952ce166b520838a9b53987d1f7b9eea}\label{structProcess___a952ce166b520838a9b53987d1f7b9eea}} 
+\index{Process\+\_\+@{Process\+\_\+}!state@{state}}
+\index{state@{state}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a058a4a49f4578136dfcf39a19cd5d2ad}{Process\+State} Process\+\_\+\+::state}
+
+\mbox{\Hypertarget{structProcess___a09ae30bf69354e5c7b62ba18e99112b9}\label{structProcess___a09ae30bf69354e5c7b62ba18e99112b9}} 
+\index{Process\+\_\+@{Process\+\_\+}!super@{super}}
+\index{super@{super}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{super}{super}}
+{\footnotesize\ttfamily \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} Process\+\_\+\+::super}
+
+\mbox{\Hypertarget{structProcess___a450ede65d286d1d1300fcacd1aad3cc9}\label{structProcess___a450ede65d286d1d1300fcacd1aad3cc9}} 
+\index{Process\+\_\+@{Process\+\_\+}!time@{time}}
+\index{time@{time}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily unsigned long long int Process\+\_\+\+::time}
+
+\mbox{\Hypertarget{structProcess___a48484f43dd41bddbe7aeeb2c6127720a}\label{structProcess___a48484f43dd41bddbe7aeeb2c6127720a}} 
+\index{Process\+\_\+@{Process\+\_\+}!tpgid@{tpgid}}
+\index{tpgid@{tpgid}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{tpgid}{tpgid}}
+{\footnotesize\ttfamily int Process\+\_\+\+::tpgid}
+
+\mbox{\Hypertarget{structProcess___a6eebc460195aa2613278e4bed179dcac}\label{structProcess___a6eebc460195aa2613278e4bed179dcac}} 
+\index{Process\+\_\+@{Process\+\_\+}!tty\+\_\+name@{tty\+\_\+name}}
+\index{tty\+\_\+name@{tty\+\_\+name}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{tty\+\_\+name}{tty\_name}}
+{\footnotesize\ttfamily char$\ast$ Process\+\_\+\+::tty\+\_\+name}
+
+\mbox{\Hypertarget{structProcess___a7b2c3c111d0c52fe143337283351f2f6}\label{structProcess___a7b2c3c111d0c52fe143337283351f2f6}} 
+\index{Process\+\_\+@{Process\+\_\+}!tty\+\_\+nr@{tty\+\_\+nr}}
+\index{tty\+\_\+nr@{tty\+\_\+nr}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{tty\+\_\+nr}{tty\_nr}}
+{\footnotesize\ttfamily unsigned long int Process\+\_\+\+::tty\+\_\+nr}
+
+\mbox{\Hypertarget{structProcess___ab7567f24054af86f369d28e35e33e38f}\label{structProcess___ab7567f24054af86f369d28e35e33e38f}} 
+\index{Process\+\_\+@{Process\+\_\+}!user@{user}}
+\index{user@{user}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily const char$\ast$ Process\+\_\+\+::user}
+
+\mbox{\Hypertarget{structProcess___abd5b9284eb5b84fc55ecbae0713e2056}\label{structProcess___abd5b9284eb5b84fc55ecbae0713e2056}} 
+\index{Process\+\_\+@{Process\+\_\+}!uses\+Deleted\+Lib@{uses\+Deleted\+Lib}}
+\index{uses\+Deleted\+Lib@{uses\+Deleted\+Lib}!Process\+\_\+@{Process\+\_\+}}
+\subsubsection{\texorpdfstring{uses\+Deleted\+Lib}{usesDeletedLib}}
+{\footnotesize\ttfamily bool Process\+\_\+\+::uses\+Deleted\+Lib}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+linux/download/htop-\/3.\+3.\+0/\hyperlink{Process_8h}{Process.\+h}\end{DoxyCompactItemize}

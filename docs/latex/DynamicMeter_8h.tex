@@ -1,0 +1,80 @@
+\hypertarget{DynamicMeter_8h}{}\section{linux/download/htop-\/3.3.0/\+Dynamic\+Meter.h File Reference}
+\label{DynamicMeter_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Meter.\+h@{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Meter.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+Include dependency graph for Dynamic\+Meter.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDynamicMeter__}{Dynamic\+Meter\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structDynamicMeter__}{Dynamic\+Meter\+\_\+} \hyperlink{DynamicMeter_8h_a4836428310d7591a9859c041b4ccef09}{Dynamic\+Meter}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$ \hyperlink{DynamicMeter_8h_a253e8af287dafa5a4a3e2419c166fb87}{Dynamic\+Meters\+\_\+new} (void)
+\item 
+void \hyperlink{DynamicMeter_8h_aeca75654e99cfe888e3d93eadcde9182}{Dynamic\+Meters\+\_\+delete} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics)
+\item 
+const char $\ast$ \hyperlink{DynamicMeter_8h_aa288327a9a0752c25e867084d9692a06}{Dynamic\+Meter\+\_\+lookup} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics, unsigned int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+bool \hyperlink{DynamicMeter_8h_a0d7df9973c48ac12b4ae94895bc9a678}{Dynamic\+Meter\+\_\+search} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics, const char $\ast$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name}, unsigned int $\ast$\hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{DynamicMeter_8h_ae64275dcbd7563544c6416ea3c1f56a0}{Dynamic\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{DynamicMeter_8h_a4836428310d7591a9859c041b4ccef09}\label{DynamicMeter_8h_a4836428310d7591a9859c041b4ccef09}} 
+\index{Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}!Dynamic\+Meter@{Dynamic\+Meter}}
+\index{Dynamic\+Meter@{Dynamic\+Meter}!Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Meter}{DynamicMeter}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structDynamicMeter__}{Dynamic\+Meter\+\_\+}  \hyperlink{DynamicMeter_8h_a4836428310d7591a9859c041b4ccef09}{Dynamic\+Meter}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DynamicMeter_8h_aa288327a9a0752c25e867084d9692a06}\label{DynamicMeter_8h_aa288327a9a0752c25e867084d9692a06}} 
+\index{Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}!Dynamic\+Meter\+\_\+lookup@{Dynamic\+Meter\+\_\+lookup}}
+\index{Dynamic\+Meter\+\_\+lookup@{Dynamic\+Meter\+\_\+lookup}!Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Meter\+\_\+lookup()}{DynamicMeter\_lookup()}}
+{\footnotesize\ttfamily const char$\ast$ Dynamic\+Meter\+\_\+lookup (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics,  }\item[{unsigned int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicMeter_8h_a0d7df9973c48ac12b4ae94895bc9a678}\label{DynamicMeter_8h_a0d7df9973c48ac12b4ae94895bc9a678}} 
+\index{Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}!Dynamic\+Meter\+\_\+search@{Dynamic\+Meter\+\_\+search}}
+\index{Dynamic\+Meter\+\_\+search@{Dynamic\+Meter\+\_\+search}!Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Meter\+\_\+search()}{DynamicMeter\_search()}}
+{\footnotesize\ttfamily bool Dynamic\+Meter\+\_\+search (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics,  }\item[{const char $\ast$}]{name,  }\item[{unsigned int $\ast$}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicMeter_8h_aeca75654e99cfe888e3d93eadcde9182}\label{DynamicMeter_8h_aeca75654e99cfe888e3d93eadcde9182}} 
+\index{Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}!Dynamic\+Meters\+\_\+delete@{Dynamic\+Meters\+\_\+delete}}
+\index{Dynamic\+Meters\+\_\+delete@{Dynamic\+Meters\+\_\+delete}!Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Meters\+\_\+delete()}{DynamicMeters\_delete()}}
+{\footnotesize\ttfamily void Dynamic\+Meters\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicMeter_8h_a253e8af287dafa5a4a3e2419c166fb87}\label{DynamicMeter_8h_a253e8af287dafa5a4a3e2419c166fb87}} 
+\index{Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}!Dynamic\+Meters\+\_\+new@{Dynamic\+Meters\+\_\+new}}
+\index{Dynamic\+Meters\+\_\+new@{Dynamic\+Meters\+\_\+new}!Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Meters\+\_\+new()}{DynamicMeters\_new()}}
+{\footnotesize\ttfamily \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}$\ast$ Dynamic\+Meters\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{DynamicMeter_8h_ae64275dcbd7563544c6416ea3c1f56a0}\label{DynamicMeter_8h_ae64275dcbd7563544c6416ea3c1f56a0}} 
+\index{Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}!Dynamic\+Meter\+\_\+class@{Dynamic\+Meter\+\_\+class}}
+\index{Dynamic\+Meter\+\_\+class@{Dynamic\+Meter\+\_\+class}!Dynamic\+Meter.\+h@{Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Meter\+\_\+class}{DynamicMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Dynamic\+Meter\+\_\+class}
+

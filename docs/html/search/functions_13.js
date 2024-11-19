@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['unsupportedprocess_5fnew',['UnsupportedProcess_new',['../UnsupportedProcess_8c.html#ac4e3463fc2b4f15f13faa29ea5bceb92',1,'UnsupportedProcess_new(const Machine *host):&#160;UnsupportedProcess.c'],['../UnsupportedProcess_8h.html#ac4e3463fc2b4f15f13faa29ea5bceb92',1,'UnsupportedProcess_new(const Machine *host):&#160;UnsupportedProcess.c']]],
+  ['userstable_5fdelete',['UsersTable_delete',['../UsersTable_8c.html#a3b92fd5a4c845cbc463eb492de69d6da',1,'UsersTable_delete(UsersTable *this):&#160;UsersTable.c'],['../UsersTable_8h.html#a3b92fd5a4c845cbc463eb492de69d6da',1,'UsersTable_delete(UsersTable *this):&#160;UsersTable.c']]],
+  ['userstable_5fforeach',['UsersTable_foreach',['../UsersTable_8c.html#a244fed7b11863de96dcae4c2987d16c9',1,'UsersTable_foreach(UsersTable *this, Hashtable_PairFunction f, void *userData):&#160;UsersTable.c'],['../UsersTable_8h.html#a244fed7b11863de96dcae4c2987d16c9',1,'UsersTable_foreach(UsersTable *this, Hashtable_PairFunction f, void *userData):&#160;UsersTable.c']]],
+  ['userstable_5fgetref',['UsersTable_getRef',['../UsersTable_8c.html#afb12a5c9f4fccfa5800f236672ccc523',1,'UsersTable_getRef(UsersTable *this, unsigned int uid):&#160;UsersTable.c'],['../UsersTable_8h.html#afb12a5c9f4fccfa5800f236672ccc523',1,'UsersTable_getRef(UsersTable *this, unsigned int uid):&#160;UsersTable.c']]],
+  ['userstable_5fnew',['UsersTable_new',['../UsersTable_8c.html#aa2b934c217dd0c90ad926b31fa6d8352',1,'UsersTable_new(void):&#160;UsersTable.c'],['../UsersTable_8h.html#aa2b934c217dd0c90ad926b31fa6d8352',1,'UsersTable_new(void):&#160;UsersTable.c']]]
+];

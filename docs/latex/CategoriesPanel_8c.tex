@@ -1,0 +1,91 @@
+\hypertarget{CategoriesPanel_8c}{}\section{linux/download/htop-\/3.3.0/\+Categories\+Panel.c File Reference}
+\label{CategoriesPanel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Categories\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Categories\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Categories\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Available\+Meters\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Colors\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Display\+Options\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header\+Layout.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header\+Options\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}List\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meters\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Screens\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Screen\+Tabs\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Categories\+Panel.\+c\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCategoriesPanelPage__}{Categories\+Panel\+Page\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{CategoriesPanel_8c_afc761f169c10a033db2e3e07604239c5}{Categories\+Panel\+\_\+make\+Page\+Func}) (\hyperlink{CategoriesPanel_8h_a1bb080695444bddf33981fb51ab35826}{Categories\+Panel} $\ast$ref)
+\item 
+typedef struct \hyperlink{structCategoriesPanelPage__}{Categories\+Panel\+Page\+\_\+} \hyperlink{CategoriesPanel_8c_a3544031e0969656539b0cff84cb7058d}{Categories\+Panel\+Page}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CategoriesPanel_8h_a1bb080695444bddf33981fb51ab35826}{Categories\+Panel} $\ast$ \hyperlink{CategoriesPanel_8c_acf1bb3ea8295c02aeaba626f22d30476}{Categories\+Panel\+\_\+new} (\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$scr, \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$header, \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{CategoriesPanel_8c_af52e029c157b36733c96bc366c088ca7}{Categories\+Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{CategoriesPanel_8c_afc761f169c10a033db2e3e07604239c5}\label{CategoriesPanel_8c_afc761f169c10a033db2e3e07604239c5}} 
+\index{Categories\+Panel.\+c@{Categories\+Panel.\+c}!Categories\+Panel\+\_\+make\+Page\+Func@{Categories\+Panel\+\_\+make\+Page\+Func}}
+\index{Categories\+Panel\+\_\+make\+Page\+Func@{Categories\+Panel\+\_\+make\+Page\+Func}!Categories\+Panel.\+c@{Categories\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Categories\+Panel\+\_\+make\+Page\+Func}{CategoriesPanel\_makePageFunc}}
+{\footnotesize\ttfamily typedef void($\ast$  Categories\+Panel\+\_\+make\+Page\+Func) (\hyperlink{CategoriesPanel_8h_a1bb080695444bddf33981fb51ab35826}{Categories\+Panel} $\ast$ref)}
+
+\mbox{\Hypertarget{CategoriesPanel_8c_a3544031e0969656539b0cff84cb7058d}\label{CategoriesPanel_8c_a3544031e0969656539b0cff84cb7058d}} 
+\index{Categories\+Panel.\+c@{Categories\+Panel.\+c}!Categories\+Panel\+Page@{Categories\+Panel\+Page}}
+\index{Categories\+Panel\+Page@{Categories\+Panel\+Page}!Categories\+Panel.\+c@{Categories\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Categories\+Panel\+Page}{CategoriesPanelPage}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structCategoriesPanelPage__}{Categories\+Panel\+Page\+\_\+}  \hyperlink{CategoriesPanel_8c_a3544031e0969656539b0cff84cb7058d}{Categories\+Panel\+Page}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{CategoriesPanel_8c_acf1bb3ea8295c02aeaba626f22d30476}\label{CategoriesPanel_8c_acf1bb3ea8295c02aeaba626f22d30476}} 
+\index{Categories\+Panel.\+c@{Categories\+Panel.\+c}!Categories\+Panel\+\_\+new@{Categories\+Panel\+\_\+new}}
+\index{Categories\+Panel\+\_\+new@{Categories\+Panel\+\_\+new}!Categories\+Panel.\+c@{Categories\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Categories\+Panel\+\_\+new()}{CategoriesPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{CategoriesPanel_8h_a1bb080695444bddf33981fb51ab35826}{Categories\+Panel}$\ast$ Categories\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{scr,  }\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{header,  }\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{CategoriesPanel_8c_af52e029c157b36733c96bc366c088ca7}\label{CategoriesPanel_8c_af52e029c157b36733c96bc366c088ca7}} 
+\index{Categories\+Panel.\+c@{Categories\+Panel.\+c}!Categories\+Panel\+\_\+class@{Categories\+Panel\+\_\+class}}
+\index{Categories\+Panel\+\_\+class@{Categories\+Panel\+\_\+class}!Categories\+Panel.\+c@{Categories\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Categories\+Panel\+\_\+class}{CategoriesPanel\_class}}
+{\footnotesize\ttfamily const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Categories\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = CategoriesPanel\_delete
+   \},
+   .eventHandler = CategoriesPanel\_eventHandler
+\}
+\end{DoxyCode}

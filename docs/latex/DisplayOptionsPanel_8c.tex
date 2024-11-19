@@ -1,0 +1,68 @@
+\hypertarget{DisplayOptionsPanel_8c}{}\section{linux/download/htop-\/3.3.0/\+Display\+Options\+Panel.c File Reference}
+\label{DisplayOptionsPanel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Display\+Options\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Display\+Options\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Display\+Options\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Option\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Screens\+Panel.\+h\char`\"{}}\newline
+Include dependency graph for Display\+Options\+Panel.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{DisplayOptionsPanel_8c_a47669e881a369f19e89e86f33188f29d}{T\+A\+B\+M\+SG}~\char`\"{}For current screen tab\+: \textbackslash{}0\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{DisplayOptionsPanel_8h_a18e649f2d53676916d2ba6eecbda0b9b}{Display\+Options\+Panel} $\ast$ \hyperlink{DisplayOptionsPanel_8c_aa545375781ba89d03d4a785b39ed8fa4}{Display\+Options\+Panel\+\_\+new} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings, \hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$scr)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{DisplayOptionsPanel_8c_a0a8de7635a9dcb0bf2c53ccb71703dc7}{Display\+Options\+Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{DisplayOptionsPanel_8c_a47669e881a369f19e89e86f33188f29d}\label{DisplayOptionsPanel_8c_a47669e881a369f19e89e86f33188f29d}} 
+\index{Display\+Options\+Panel.\+c@{Display\+Options\+Panel.\+c}!T\+A\+B\+M\+SG@{T\+A\+B\+M\+SG}}
+\index{T\+A\+B\+M\+SG@{T\+A\+B\+M\+SG}!Display\+Options\+Panel.\+c@{Display\+Options\+Panel.\+c}}
+\subsubsection{\texorpdfstring{T\+A\+B\+M\+SG}{TABMSG}}
+{\footnotesize\ttfamily \#define T\+A\+B\+M\+SG~\char`\"{}For current screen tab\+: \textbackslash{}0\char`\"{}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DisplayOptionsPanel_8c_aa545375781ba89d03d4a785b39ed8fa4}\label{DisplayOptionsPanel_8c_aa545375781ba89d03d4a785b39ed8fa4}} 
+\index{Display\+Options\+Panel.\+c@{Display\+Options\+Panel.\+c}!Display\+Options\+Panel\+\_\+new@{Display\+Options\+Panel\+\_\+new}}
+\index{Display\+Options\+Panel\+\_\+new@{Display\+Options\+Panel\+\_\+new}!Display\+Options\+Panel.\+c@{Display\+Options\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Display\+Options\+Panel\+\_\+new()}{DisplayOptionsPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{DisplayOptionsPanel_8h_a18e649f2d53676916d2ba6eecbda0b9b}{Display\+Options\+Panel}$\ast$ Display\+Options\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings,  }\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{scr }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{DisplayOptionsPanel_8c_a0a8de7635a9dcb0bf2c53ccb71703dc7}\label{DisplayOptionsPanel_8c_a0a8de7635a9dcb0bf2c53ccb71703dc7}} 
+\index{Display\+Options\+Panel.\+c@{Display\+Options\+Panel.\+c}!Display\+Options\+Panel\+\_\+class@{Display\+Options\+Panel\+\_\+class}}
+\index{Display\+Options\+Panel\+\_\+class@{Display\+Options\+Panel\+\_\+class}!Display\+Options\+Panel.\+c@{Display\+Options\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Display\+Options\+Panel\+\_\+class}{DisplayOptionsPanel\_class}}
+{\footnotesize\ttfamily const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Display\+Options\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = DisplayOptionsPanel\_delete
+   \},
+   .eventHandler = DisplayOptionsPanel\_eventHandler
+\}
+\end{DoxyCode}

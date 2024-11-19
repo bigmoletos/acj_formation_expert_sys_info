@@ -1,0 +1,82 @@
+\hypertarget{FunctionBar_8c}{}\section{linux/download/htop-\/3.3.0/\+Function\+Bar.c File Reference}
+\label{FunctionBar_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Function\+Bar.\+c@{linux/download/htop-\/3.\+3.\+0/\+Function\+Bar.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Function\+Bar.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$ \hyperlink{FunctionBar_8c_a91813ae78987971c3b9019c92f1f4d74}{Function\+Bar\+\_\+new\+Enter\+Esc} (const char $\ast$enter, const char $\ast$esc)
+\item 
+\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$ \hyperlink{FunctionBar_8c_a0aed1ae4680c89a7d7d878772079b8b4}{Function\+Bar\+\_\+new} (const char $\ast$const $\ast$functions, const char $\ast$const $\ast$keys, const int $\ast$events)
+\item 
+void \hyperlink{FunctionBar_8c_adabec5b3acdd9f3375e6dd5bb8b2f997}{Function\+Bar\+\_\+delete} (\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$this)
+\item 
+void \hyperlink{FunctionBar_8c_af3e210ff26de7c359831bd64bfc9685f}{Function\+Bar\+\_\+set\+Label} (\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$this, int event, const char $\ast$text)
+\item 
+int \hyperlink{FunctionBar_8c_a8cfa0b7fbcd29f1b5db276ebdb6fe981}{Function\+Bar\+\_\+draw} (const \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$this)
+\item 
+int \hyperlink{FunctionBar_8c_a6733c62fa09df8940f81b31eedef3963}{Function\+Bar\+\_\+draw\+Extra} (const \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$this, const char $\ast$buffer, int attr, bool set\+Cursor)
+\item 
+void \hyperlink{FunctionBar_8c_a211b713d7c470202c810370e6500e795}{Function\+Bar\+\_\+append} (const char $\ast$buffer, int attr)
+\item 
+int \hyperlink{FunctionBar_8c_a2dca94733faf292688aa36362eed16ce}{Function\+Bar\+\_\+synthesize\+Event} (const \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$this, int pos)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{FunctionBar_8c_a211b713d7c470202c810370e6500e795}\label{FunctionBar_8c_a211b713d7c470202c810370e6500e795}} 
+\index{Function\+Bar.\+c@{Function\+Bar.\+c}!Function\+Bar\+\_\+append@{Function\+Bar\+\_\+append}}
+\index{Function\+Bar\+\_\+append@{Function\+Bar\+\_\+append}!Function\+Bar.\+c@{Function\+Bar.\+c}}
+\subsubsection{\texorpdfstring{Function\+Bar\+\_\+append()}{FunctionBar\_append()}}
+{\footnotesize\ttfamily void Function\+Bar\+\_\+append (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{int}]{attr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FunctionBar_8c_adabec5b3acdd9f3375e6dd5bb8b2f997}\label{FunctionBar_8c_adabec5b3acdd9f3375e6dd5bb8b2f997}} 
+\index{Function\+Bar.\+c@{Function\+Bar.\+c}!Function\+Bar\+\_\+delete@{Function\+Bar\+\_\+delete}}
+\index{Function\+Bar\+\_\+delete@{Function\+Bar\+\_\+delete}!Function\+Bar.\+c@{Function\+Bar.\+c}}
+\subsubsection{\texorpdfstring{Function\+Bar\+\_\+delete()}{FunctionBar\_delete()}}
+{\footnotesize\ttfamily void Function\+Bar\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FunctionBar_8c_a8cfa0b7fbcd29f1b5db276ebdb6fe981}\label{FunctionBar_8c_a8cfa0b7fbcd29f1b5db276ebdb6fe981}} 
+\index{Function\+Bar.\+c@{Function\+Bar.\+c}!Function\+Bar\+\_\+draw@{Function\+Bar\+\_\+draw}}
+\index{Function\+Bar\+\_\+draw@{Function\+Bar\+\_\+draw}!Function\+Bar.\+c@{Function\+Bar.\+c}}
+\subsubsection{\texorpdfstring{Function\+Bar\+\_\+draw()}{FunctionBar\_draw()}}
+{\footnotesize\ttfamily int Function\+Bar\+\_\+draw (\begin{DoxyParamCaption}\item[{const \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FunctionBar_8c_a6733c62fa09df8940f81b31eedef3963}\label{FunctionBar_8c_a6733c62fa09df8940f81b31eedef3963}} 
+\index{Function\+Bar.\+c@{Function\+Bar.\+c}!Function\+Bar\+\_\+draw\+Extra@{Function\+Bar\+\_\+draw\+Extra}}
+\index{Function\+Bar\+\_\+draw\+Extra@{Function\+Bar\+\_\+draw\+Extra}!Function\+Bar.\+c@{Function\+Bar.\+c}}
+\subsubsection{\texorpdfstring{Function\+Bar\+\_\+draw\+Extra()}{FunctionBar\_drawExtra()}}
+{\footnotesize\ttfamily int Function\+Bar\+\_\+draw\+Extra (\begin{DoxyParamCaption}\item[{const \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$}]{this,  }\item[{const char $\ast$}]{buffer,  }\item[{int}]{attr,  }\item[{bool}]{set\+Cursor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FunctionBar_8c_a0aed1ae4680c89a7d7d878772079b8b4}\label{FunctionBar_8c_a0aed1ae4680c89a7d7d878772079b8b4}} 
+\index{Function\+Bar.\+c@{Function\+Bar.\+c}!Function\+Bar\+\_\+new@{Function\+Bar\+\_\+new}}
+\index{Function\+Bar\+\_\+new@{Function\+Bar\+\_\+new}!Function\+Bar.\+c@{Function\+Bar.\+c}}
+\subsubsection{\texorpdfstring{Function\+Bar\+\_\+new()}{FunctionBar\_new()}}
+{\footnotesize\ttfamily \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar}$\ast$ Function\+Bar\+\_\+new (\begin{DoxyParamCaption}\item[{const char $\ast$const $\ast$}]{functions,  }\item[{const char $\ast$const $\ast$}]{keys,  }\item[{const int $\ast$}]{events }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FunctionBar_8c_a91813ae78987971c3b9019c92f1f4d74}\label{FunctionBar_8c_a91813ae78987971c3b9019c92f1f4d74}} 
+\index{Function\+Bar.\+c@{Function\+Bar.\+c}!Function\+Bar\+\_\+new\+Enter\+Esc@{Function\+Bar\+\_\+new\+Enter\+Esc}}
+\index{Function\+Bar\+\_\+new\+Enter\+Esc@{Function\+Bar\+\_\+new\+Enter\+Esc}!Function\+Bar.\+c@{Function\+Bar.\+c}}
+\subsubsection{\texorpdfstring{Function\+Bar\+\_\+new\+Enter\+Esc()}{FunctionBar\_newEnterEsc()}}
+{\footnotesize\ttfamily \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar}$\ast$ Function\+Bar\+\_\+new\+Enter\+Esc (\begin{DoxyParamCaption}\item[{const char $\ast$}]{enter,  }\item[{const char $\ast$}]{esc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FunctionBar_8c_af3e210ff26de7c359831bd64bfc9685f}\label{FunctionBar_8c_af3e210ff26de7c359831bd64bfc9685f}} 
+\index{Function\+Bar.\+c@{Function\+Bar.\+c}!Function\+Bar\+\_\+set\+Label@{Function\+Bar\+\_\+set\+Label}}
+\index{Function\+Bar\+\_\+set\+Label@{Function\+Bar\+\_\+set\+Label}!Function\+Bar.\+c@{Function\+Bar.\+c}}
+\subsubsection{\texorpdfstring{Function\+Bar\+\_\+set\+Label()}{FunctionBar\_setLabel()}}
+{\footnotesize\ttfamily void Function\+Bar\+\_\+set\+Label (\begin{DoxyParamCaption}\item[{\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$}]{this,  }\item[{int}]{event,  }\item[{const char $\ast$}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FunctionBar_8c_a2dca94733faf292688aa36362eed16ce}\label{FunctionBar_8c_a2dca94733faf292688aa36362eed16ce}} 
+\index{Function\+Bar.\+c@{Function\+Bar.\+c}!Function\+Bar\+\_\+synthesize\+Event@{Function\+Bar\+\_\+synthesize\+Event}}
+\index{Function\+Bar\+\_\+synthesize\+Event@{Function\+Bar\+\_\+synthesize\+Event}!Function\+Bar.\+c@{Function\+Bar.\+c}}
+\subsubsection{\texorpdfstring{Function\+Bar\+\_\+synthesize\+Event()}{FunctionBar\_synthesizeEvent()}}
+{\footnotesize\ttfamily int Function\+Bar\+\_\+synthesize\+Event (\begin{DoxyParamCaption}\item[{const \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$}]{this,  }\item[{int}]{pos }\end{DoxyParamCaption})}
+

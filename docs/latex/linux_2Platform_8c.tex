@@ -1,0 +1,377 @@
+\hypertarget{linux_2Platform_8c}{}\section{linux/download/htop-\/3.3.0/linux/\+Platform.c File Reference}
+\label{linux_2Platform_8c}\index{linux/download/htop-\/3.\+3.\+0/linux/\+Platform.\+c@{linux/download/htop-\/3.\+3.\+0/linux/\+Platform.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sysmacros.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Battery\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Clock\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Compat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+P\+U\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Date\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Date\+Time\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Disk\+I\+O\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}File\+Descriptor\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hostname\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Huge\+Page\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Load\+Average\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Main\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Memory\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Memory\+Swap\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Network\+I\+O\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pressure\+Stall\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Swap\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sys\+Arch\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tasks\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Uptime\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+I\+O\+Priority.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+I\+O\+Priority\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Linux\+Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Linux\+Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+S\+E\+Linux\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Systemd\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Zram\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Zram\+Stats.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Zswap\+Stats.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}zfs/\+Zfs\+Arc\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}zfs/\+Zfs\+Arc\+Stats.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}zfs/\+Zfs\+Compressed\+Arc\+Meter.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{linux_2Platform_8c_a6b82111c13e7367ba2ac5fd6bf4650ab}{O\+\_\+\+P\+A\+TH}~010000000
+\item 
+\#define \hyperlink{linux_2Platform_8c_adef527a9b7ea914f2b885fcc755879ec}{P\+R\+O\+C\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+D\+IR}~\hyperlink{LinuxMachine_8h_a5b878e0e5808bb4ddf7114e653bfb224}{P\+R\+O\+C\+D\+IR} \char`\"{}/acpi/battery\char`\"{}
+\item 
+\#define \hyperlink{linux_2Platform_8c_a738a812595f3914f5cf3f15adc535886}{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR}~\hyperlink{LinuxMachine_8h_a5b878e0e5808bb4ddf7114e653bfb224}{P\+R\+O\+C\+D\+IR} \char`\"{}/acpi/ac\+\_\+adapter\char`\"{}
+\item 
+\#define \hyperlink{linux_2Platform_8c_ad96b9f8928597ec41e1c1686f2845f3e}{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+A\+C\+S\+T\+A\+T\+E\+\_\+\+F\+I\+LE}~\hyperlink{linux_2Platform_8c_a738a812595f3914f5cf3f15adc535886}{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR} \char`\"{}/AC/state\char`\"{}
+\item 
+\#define \hyperlink{linux_2Platform_8c_a4fcfbda9a80e49f9d12dc22f6c1c8e43}{S\+Y\+S\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR}~\char`\"{}/sys/class/power\+\_\+supply\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9eaf03d8110d4dcaf3fdcda92075380c752}{B\+A\+T\+\_\+\+P\+R\+OC}, 
+\hyperlink{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9ea3ac02dea9850d4dec31d458a6ddf8c12}{B\+A\+T\+\_\+\+S\+YS}, 
+\hyperlink{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9ea7ce9413449fd4820eeda91796a092599}{B\+A\+T\+\_\+\+E\+RR}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{linux_2Platform_8c_a5230ac6fa902c21dff3d759e16ffc507}{Platform\+\_\+set\+Bindings} (\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$keys)
+\item 
+int \hyperlink{linux_2Platform_8c_a97f7a52fbcd5425538172ebacde34d1e}{Platform\+\_\+get\+Uptime} (void)
+\item 
+void \hyperlink{linux_2Platform_8c_ae3d00dcf3ef2bf49e31b5f306dad489a}{Platform\+\_\+get\+Load\+Average} (double $\ast$one, double $\ast$five, double $\ast$fifteen)
+\item 
+pid\+\_\+t \hyperlink{linux_2Platform_8c_a12112c85f5275f728399258ce36cee9b}{Platform\+\_\+get\+Max\+Pid} (void)
+\item 
+double \hyperlink{linux_2Platform_8c_abf455eec676e7143b641576a4dc4afd4}{Platform\+\_\+set\+C\+P\+U\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this, unsigned int cpu)
+\item 
+void \hyperlink{linux_2Platform_8c_a20620332d27f20b0b91359e6d2e54465}{Platform\+\_\+set\+Memory\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+void \hyperlink{linux_2Platform_8c_a41cdc0177a4d4de7001bc0a1730907f6}{Platform\+\_\+set\+Swap\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+void \hyperlink{linux_2Platform_8c_aeb8fc4c8040e9c73890a047e9651acd8}{Platform\+\_\+set\+Zram\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+void \hyperlink{linux_2Platform_8c_a3e4d5d204dce31fe4e726f3d18b82287}{Platform\+\_\+set\+Zfs\+Arc\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+void \hyperlink{linux_2Platform_8c_a687e09df5fde56312585f2b432e99ab8}{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+char $\ast$ \hyperlink{linux_2Platform_8c_a47695afc57e2cc9e73d0e1da8774a7ce}{Platform\+\_\+get\+Process\+Env} (pid\+\_\+t pid)
+\item 
+\hyperlink{ProcessLocksScreen_8h_a436e614a94f3276e08b861d0b362fd0f}{File\+Locks\+\_\+\+Process\+Data} $\ast$ \hyperlink{linux_2Platform_8c_a4ac35b98c6a0c9e8be21aaf25bbf7aa9}{Platform\+\_\+get\+Process\+Locks} (pid\+\_\+t pid)
+\item 
+void \hyperlink{linux_2Platform_8c_a2de5f6558eba72604ab1351de75c1ca8}{Platform\+\_\+get\+Pressure\+Stall} (const char $\ast$file, bool some, double $\ast$ten, double $\ast$sixty, double $\ast$threehundred)
+\item 
+void \hyperlink{linux_2Platform_8c_a891ef12b78125e19558da1b8ebbca064}{Platform\+\_\+get\+File\+Descriptors} (double $\ast$used, double $\ast$\hyperlink{exo19_8cpp_ae3ed8abbe6617cfbdd14a9390b10f310}{max})
+\item 
+bool \hyperlink{linux_2Platform_8c_a3d55aab86e32d4dc49fcb41553af0fd2}{Platform\+\_\+get\+Disk\+IO} (\hyperlink{DiskIOMeter_8h_a6a9b8bac094ea16a6620d7a7352e67fb}{Disk\+I\+O\+Data} $\ast$data)
+\item 
+bool \hyperlink{linux_2Platform_8c_a8c88551540575ff88951cf8ea62d46e6}{Platform\+\_\+get\+Network\+IO} (\hyperlink{NetworkIOMeter_8h_a6b4f2a3fb060646a7cc8516ee94d91c5}{Network\+I\+O\+Data} $\ast$data)
+\item 
+void \hyperlink{linux_2Platform_8c_a09298032f192aafe117b87d9801ca6a2}{Platform\+\_\+get\+Battery} (double $\ast$percent, \hyperlink{BatteryMeter_8h_a277e9376f4d3a078c2ee41ca700bca81}{A\+C\+Presence} $\ast$is\+On\+AC)
+\item 
+void \hyperlink{linux_2Platform_8c_a610b0177628424d47e5c7b5ea571a18e}{Platform\+\_\+long\+Options\+Usage} (const char $\ast$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name})
+\item 
+\hyperlink{CommandLine_8h_a9ee8e6143d6b3b8628f89f5b68f39260}{Command\+Line\+Status} \hyperlink{linux_2Platform_8c_ad14299440d34820964b9bec52f18e769}{Platform\+\_\+get\+Long\+Option} (int opt, int argc, char $\ast$$\ast$argv)
+\item 
+bool \hyperlink{linux_2Platform_8c_ab628d7aa0caa3b1eb5e26674c88198af}{Platform\+\_\+init} (void)
+\item 
+void \hyperlink{linux_2Platform_8c_a1a3335195f8f8c51ded9f4f7cca5f9b3}{Platform\+\_\+done} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{linux_2Platform_8c_aecf5a237dd4faff0a78fb70d9a51bdb3}{Running\+\_\+containerized} = false
+\item 
+const \hyperlink{structScreenDefaults}{Screen\+Defaults} \hyperlink{linux_2Platform_8c_aff369bc0cdcf4070a58fd50b342b84cb}{Platform\+\_\+default\+Screens} \mbox{[}$\,$\mbox{]}
+\item 
+const unsigned int \hyperlink{linux_2Platform_8c_ac8f39efe7b8276cb8796316fd5c2583f}{Platform\+\_\+number\+Of\+Default\+Screens} = \hyperlink{Macros_8h_a9670edf37e84bf953c542953136abfd6}{A\+R\+R\+A\+Y\+S\+I\+ZE}(\hyperlink{unsupported_2Platform_8h_aff369bc0cdcf4070a58fd50b342b84cb}{Platform\+\_\+default\+Screens})
+\item 
+const \hyperlink{SignalsPanel_8h_aacc61a14392728a9696f0560309c1177}{Signal\+Item} \hyperlink{linux_2Platform_8c_ad6019115f7aacb2d94f395d5e8754638}{Platform\+\_\+signals} \mbox{[}$\,$\mbox{]}
+\item 
+const unsigned int \hyperlink{linux_2Platform_8c_aa7affae43f72bb563034790830aecb51}{Platform\+\_\+number\+Of\+Signals} = \hyperlink{Macros_8h_a9670edf37e84bf953c542953136abfd6}{A\+R\+R\+A\+Y\+S\+I\+ZE}(\hyperlink{unsupported_2Platform_8h_ad6019115f7aacb2d94f395d5e8754638}{Platform\+\_\+signals})
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} $\ast$const \hyperlink{linux_2Platform_8c_a3935ec99eeceab0fe9582c92eeec4baa}{Platform\+\_\+meter\+Types} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{linux_2Platform_8c_a6b82111c13e7367ba2ac5fd6bf4650ab}\label{linux_2Platform_8c_a6b82111c13e7367ba2ac5fd6bf4650ab}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!O\+\_\+\+P\+A\+TH@{O\+\_\+\+P\+A\+TH}}
+\index{O\+\_\+\+P\+A\+TH@{O\+\_\+\+P\+A\+TH}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{O\+\_\+\+P\+A\+TH}{O\_PATH}}
+{\footnotesize\ttfamily \#define O\+\_\+\+P\+A\+TH~010000000}
+
+\mbox{\Hypertarget{linux_2Platform_8c_adef527a9b7ea914f2b885fcc755879ec}\label{linux_2Platform_8c_adef527a9b7ea914f2b885fcc755879ec}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!P\+R\+O\+C\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+D\+IR@{P\+R\+O\+C\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+D\+IR}}
+\index{P\+R\+O\+C\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+D\+IR@{P\+R\+O\+C\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+D\+IR}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+D\+IR}{PROC\_BATTERY\_DIR}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+D\+IR~\hyperlink{LinuxMachine_8h_a5b878e0e5808bb4ddf7114e653bfb224}{P\+R\+O\+C\+D\+IR} \char`\"{}/acpi/battery\char`\"{}}
+
+\mbox{\Hypertarget{linux_2Platform_8c_ad96b9f8928597ec41e1c1686f2845f3e}\label{linux_2Platform_8c_ad96b9f8928597ec41e1c1686f2845f3e}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+A\+C\+S\+T\+A\+T\+E\+\_\+\+F\+I\+LE@{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+A\+C\+S\+T\+A\+T\+E\+\_\+\+F\+I\+LE}}
+\index{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+A\+C\+S\+T\+A\+T\+E\+\_\+\+F\+I\+LE@{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+A\+C\+S\+T\+A\+T\+E\+\_\+\+F\+I\+LE}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+A\+C\+S\+T\+A\+T\+E\+\_\+\+F\+I\+LE}{PROC\_POWERSUPPLY\_ACSTATE\_FILE}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+A\+C\+S\+T\+A\+T\+E\+\_\+\+F\+I\+LE~\hyperlink{linux_2Platform_8c_a738a812595f3914f5cf3f15adc535886}{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR} \char`\"{}/AC/state\char`\"{}}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a738a812595f3914f5cf3f15adc535886}\label{linux_2Platform_8c_a738a812595f3914f5cf3f15adc535886}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR@{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR}}
+\index{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR@{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR}{PROC\_POWERSUPPLY\_DIR}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR~\hyperlink{LinuxMachine_8h_a5b878e0e5808bb4ddf7114e653bfb224}{P\+R\+O\+C\+D\+IR} \char`\"{}/acpi/ac\+\_\+adapter\char`\"{}}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a4fcfbda9a80e49f9d12dc22f6c1c8e43}\label{linux_2Platform_8c_a4fcfbda9a80e49f9d12dc22f6c1c8e43}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!S\+Y\+S\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR@{S\+Y\+S\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR}}
+\index{S\+Y\+S\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR@{S\+Y\+S\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR}{SYS\_POWERSUPPLY\_DIR}}
+{\footnotesize\ttfamily \#define S\+Y\+S\+\_\+\+P\+O\+W\+E\+R\+S\+U\+P\+P\+L\+Y\+\_\+\+D\+IR~\char`\"{}/sys/class/power\+\_\+supply\char`\"{}}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9e}\label{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9e}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+A\+T\+\_\+\+P\+R\+OC@{B\+A\+T\+\_\+\+P\+R\+OC}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!B\+A\+T\+\_\+\+P\+R\+OC@{B\+A\+T\+\_\+\+P\+R\+OC}}}\mbox{\Hypertarget{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9eaf03d8110d4dcaf3fdcda92075380c752}\label{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9eaf03d8110d4dcaf3fdcda92075380c752}} 
+B\+A\+T\+\_\+\+P\+R\+OC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+A\+T\+\_\+\+S\+YS@{B\+A\+T\+\_\+\+S\+YS}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!B\+A\+T\+\_\+\+S\+YS@{B\+A\+T\+\_\+\+S\+YS}}}\mbox{\Hypertarget{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9ea3ac02dea9850d4dec31d458a6ddf8c12}\label{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9ea3ac02dea9850d4dec31d458a6ddf8c12}} 
+B\+A\+T\+\_\+\+S\+YS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+A\+T\+\_\+\+E\+RR@{B\+A\+T\+\_\+\+E\+RR}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!B\+A\+T\+\_\+\+E\+RR@{B\+A\+T\+\_\+\+E\+RR}}}\mbox{\Hypertarget{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9ea7ce9413449fd4820eeda91796a092599}\label{linux_2Platform_8c_a61dadd085c1777f559549e05962b2c9ea7ce9413449fd4820eeda91796a092599}} 
+B\+A\+T\+\_\+\+E\+RR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{linux_2Platform_8c_a1a3335195f8f8c51ded9f4f7cca5f9b3}\label{linux_2Platform_8c_a1a3335195f8f8c51ded9f4f7cca5f9b3}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+done@{Platform\+\_\+done}}
+\index{Platform\+\_\+done@{Platform\+\_\+done}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+done()}{Platform\_done()}}
+{\footnotesize\ttfamily void Platform\+\_\+done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a09298032f192aafe117b87d9801ca6a2}\label{linux_2Platform_8c_a09298032f192aafe117b87d9801ca6a2}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Battery@{Platform\+\_\+get\+Battery}}
+\index{Platform\+\_\+get\+Battery@{Platform\+\_\+get\+Battery}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Battery()}{Platform\_getBattery()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Battery (\begin{DoxyParamCaption}\item[{double $\ast$}]{percent,  }\item[{\hyperlink{BatteryMeter_8h_a277e9376f4d3a078c2ee41ca700bca81}{A\+C\+Presence} $\ast$}]{is\+On\+AC }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a3d55aab86e32d4dc49fcb41553af0fd2}\label{linux_2Platform_8c_a3d55aab86e32d4dc49fcb41553af0fd2}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Disk\+IO@{Platform\+\_\+get\+Disk\+IO}}
+\index{Platform\+\_\+get\+Disk\+IO@{Platform\+\_\+get\+Disk\+IO}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Disk\+I\+O()}{Platform\_getDiskIO()}}
+{\footnotesize\ttfamily bool Platform\+\_\+get\+Disk\+IO (\begin{DoxyParamCaption}\item[{\hyperlink{DiskIOMeter_8h_a6a9b8bac094ea16a6620d7a7352e67fb}{Disk\+I\+O\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a891ef12b78125e19558da1b8ebbca064}\label{linux_2Platform_8c_a891ef12b78125e19558da1b8ebbca064}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+File\+Descriptors@{Platform\+\_\+get\+File\+Descriptors}}
+\index{Platform\+\_\+get\+File\+Descriptors@{Platform\+\_\+get\+File\+Descriptors}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+File\+Descriptors()}{Platform\_getFileDescriptors()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+File\+Descriptors (\begin{DoxyParamCaption}\item[{double $\ast$}]{used,  }\item[{double $\ast$}]{max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_ae3d00dcf3ef2bf49e31b5f306dad489a}\label{linux_2Platform_8c_ae3d00dcf3ef2bf49e31b5f306dad489a}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Load\+Average@{Platform\+\_\+get\+Load\+Average}}
+\index{Platform\+\_\+get\+Load\+Average@{Platform\+\_\+get\+Load\+Average}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Load\+Average()}{Platform\_getLoadAverage()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Load\+Average (\begin{DoxyParamCaption}\item[{double $\ast$}]{one,  }\item[{double $\ast$}]{five,  }\item[{double $\ast$}]{fifteen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_ad14299440d34820964b9bec52f18e769}\label{linux_2Platform_8c_ad14299440d34820964b9bec52f18e769}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Long\+Option@{Platform\+\_\+get\+Long\+Option}}
+\index{Platform\+\_\+get\+Long\+Option@{Platform\+\_\+get\+Long\+Option}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Long\+Option()}{Platform\_getLongOption()}}
+{\footnotesize\ttfamily \hyperlink{CommandLine_8h_a9ee8e6143d6b3b8628f89f5b68f39260}{Command\+Line\+Status} Platform\+\_\+get\+Long\+Option (\begin{DoxyParamCaption}\item[{int}]{opt,  }\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a12112c85f5275f728399258ce36cee9b}\label{linux_2Platform_8c_a12112c85f5275f728399258ce36cee9b}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Max\+Pid@{Platform\+\_\+get\+Max\+Pid}}
+\index{Platform\+\_\+get\+Max\+Pid@{Platform\+\_\+get\+Max\+Pid}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Max\+Pid()}{Platform\_getMaxPid()}}
+{\footnotesize\ttfamily pid\+\_\+t Platform\+\_\+get\+Max\+Pid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a8c88551540575ff88951cf8ea62d46e6}\label{linux_2Platform_8c_a8c88551540575ff88951cf8ea62d46e6}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Network\+IO@{Platform\+\_\+get\+Network\+IO}}
+\index{Platform\+\_\+get\+Network\+IO@{Platform\+\_\+get\+Network\+IO}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Network\+I\+O()}{Platform\_getNetworkIO()}}
+{\footnotesize\ttfamily bool Platform\+\_\+get\+Network\+IO (\begin{DoxyParamCaption}\item[{\hyperlink{NetworkIOMeter_8h_a6b4f2a3fb060646a7cc8516ee94d91c5}{Network\+I\+O\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a2de5f6558eba72604ab1351de75c1ca8}\label{linux_2Platform_8c_a2de5f6558eba72604ab1351de75c1ca8}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Pressure\+Stall@{Platform\+\_\+get\+Pressure\+Stall}}
+\index{Platform\+\_\+get\+Pressure\+Stall@{Platform\+\_\+get\+Pressure\+Stall}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Pressure\+Stall()}{Platform\_getPressureStall()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Pressure\+Stall (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file,  }\item[{bool}]{some,  }\item[{double $\ast$}]{ten,  }\item[{double $\ast$}]{sixty,  }\item[{double $\ast$}]{threehundred }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a47695afc57e2cc9e73d0e1da8774a7ce}\label{linux_2Platform_8c_a47695afc57e2cc9e73d0e1da8774a7ce}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Process\+Env@{Platform\+\_\+get\+Process\+Env}}
+\index{Platform\+\_\+get\+Process\+Env@{Platform\+\_\+get\+Process\+Env}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Process\+Env()}{Platform\_getProcessEnv()}}
+{\footnotesize\ttfamily char$\ast$ Platform\+\_\+get\+Process\+Env (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a4ac35b98c6a0c9e8be21aaf25bbf7aa9}\label{linux_2Platform_8c_a4ac35b98c6a0c9e8be21aaf25bbf7aa9}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Process\+Locks@{Platform\+\_\+get\+Process\+Locks}}
+\index{Platform\+\_\+get\+Process\+Locks@{Platform\+\_\+get\+Process\+Locks}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Process\+Locks()}{Platform\_getProcessLocks()}}
+{\footnotesize\ttfamily \hyperlink{ProcessLocksScreen_8h_a436e614a94f3276e08b861d0b362fd0f}{File\+Locks\+\_\+\+Process\+Data}$\ast$ Platform\+\_\+get\+Process\+Locks (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a97f7a52fbcd5425538172ebacde34d1e}\label{linux_2Platform_8c_a97f7a52fbcd5425538172ebacde34d1e}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+get\+Uptime@{Platform\+\_\+get\+Uptime}}
+\index{Platform\+\_\+get\+Uptime@{Platform\+\_\+get\+Uptime}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Uptime()}{Platform\_getUptime()}}
+{\footnotesize\ttfamily int Platform\+\_\+get\+Uptime (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_ab628d7aa0caa3b1eb5e26674c88198af}\label{linux_2Platform_8c_ab628d7aa0caa3b1eb5e26674c88198af}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+init@{Platform\+\_\+init}}
+\index{Platform\+\_\+init@{Platform\+\_\+init}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+init()}{Platform\_init()}}
+{\footnotesize\ttfamily bool Platform\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a610b0177628424d47e5c7b5ea571a18e}\label{linux_2Platform_8c_a610b0177628424d47e5c7b5ea571a18e}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+long\+Options\+Usage@{Platform\+\_\+long\+Options\+Usage}}
+\index{Platform\+\_\+long\+Options\+Usage@{Platform\+\_\+long\+Options\+Usage}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+long\+Options\+Usage()}{Platform\_longOptionsUsage()}}
+{\footnotesize\ttfamily void Platform\+\_\+long\+Options\+Usage (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a5230ac6fa902c21dff3d759e16ffc507}\label{linux_2Platform_8c_a5230ac6fa902c21dff3d759e16ffc507}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+set\+Bindings@{Platform\+\_\+set\+Bindings}}
+\index{Platform\+\_\+set\+Bindings@{Platform\+\_\+set\+Bindings}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Bindings()}{Platform\_setBindings()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Bindings (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$}]{keys }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_abf455eec676e7143b641576a4dc4afd4}\label{linux_2Platform_8c_abf455eec676e7143b641576a4dc4afd4}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+set\+C\+P\+U\+Values@{Platform\+\_\+set\+C\+P\+U\+Values}}
+\index{Platform\+\_\+set\+C\+P\+U\+Values@{Platform\+\_\+set\+C\+P\+U\+Values}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+C\+P\+U\+Values()}{Platform\_setCPUValues()}}
+{\footnotesize\ttfamily double Platform\+\_\+set\+C\+P\+U\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this,  }\item[{unsigned int}]{cpu }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a20620332d27f20b0b91359e6d2e54465}\label{linux_2Platform_8c_a20620332d27f20b0b91359e6d2e54465}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+set\+Memory\+Values@{Platform\+\_\+set\+Memory\+Values}}
+\index{Platform\+\_\+set\+Memory\+Values@{Platform\+\_\+set\+Memory\+Values}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Memory\+Values()}{Platform\_setMemoryValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Memory\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a41cdc0177a4d4de7001bc0a1730907f6}\label{linux_2Platform_8c_a41cdc0177a4d4de7001bc0a1730907f6}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+set\+Swap\+Values@{Platform\+\_\+set\+Swap\+Values}}
+\index{Platform\+\_\+set\+Swap\+Values@{Platform\+\_\+set\+Swap\+Values}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Swap\+Values()}{Platform\_setSwapValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Swap\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a3e4d5d204dce31fe4e726f3d18b82287}\label{linux_2Platform_8c_a3e4d5d204dce31fe4e726f3d18b82287}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+set\+Zfs\+Arc\+Values@{Platform\+\_\+set\+Zfs\+Arc\+Values}}
+\index{Platform\+\_\+set\+Zfs\+Arc\+Values@{Platform\+\_\+set\+Zfs\+Arc\+Values}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Zfs\+Arc\+Values()}{Platform\_setZfsArcValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Zfs\+Arc\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_a687e09df5fde56312585f2b432e99ab8}\label{linux_2Platform_8c_a687e09df5fde56312585f2b432e99ab8}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values@{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values}}
+\index{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values@{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values()}{Platform\_setZfsCompressedArcValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_aeb8fc4c8040e9c73890a047e9651acd8}\label{linux_2Platform_8c_aeb8fc4c8040e9c73890a047e9651acd8}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+set\+Zram\+Values@{Platform\+\_\+set\+Zram\+Values}}
+\index{Platform\+\_\+set\+Zram\+Values@{Platform\+\_\+set\+Zram\+Values}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Zram\+Values()}{Platform\_setZramValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Zram\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{linux_2Platform_8c_aff369bc0cdcf4070a58fd50b342b84cb}\label{linux_2Platform_8c_aff369bc0cdcf4070a58fd50b342b84cb}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+default\+Screens@{Platform\+\_\+default\+Screens}}
+\index{Platform\+\_\+default\+Screens@{Platform\+\_\+default\+Screens}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+default\+Screens}{Platform\_defaultScreens}}
+{\footnotesize\ttfamily const \hyperlink{structScreenDefaults}{Screen\+Defaults} Platform\+\_\+default\+Screens\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   \{
+      .name = \textcolor{stringliteral}{"Main"},
+      .columns = \textcolor{stringliteral}{"PID USER PRIORITY NICE M\_VIRT M\_RESIDENT M\_SHARE STATE PERCENT\_CPU PERCENT\_MEM TIME
+       Command"},
+      .sortKey = \textcolor{stringliteral}{"PERCENT\_CPU"},
+   \},
+   \{
+      .name = \textcolor{stringliteral}{"I/O"},
+      .columns = \textcolor{stringliteral}{"PID USER IO\_PRIORITY IO\_RATE IO\_READ\_RATE IO\_WRITE\_RATE PERCENT\_SWAP\_DELAY
+       PERCENT\_IO\_DELAY Command"},
+      .sortKey = \textcolor{stringliteral}{"IO\_RATE"},
+   \},
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{linux_2Platform_8c_a3935ec99eeceab0fe9582c92eeec4baa}\label{linux_2Platform_8c_a3935ec99eeceab0fe9582c92eeec4baa}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+meter\+Types@{Platform\+\_\+meter\+Types}}
+\index{Platform\+\_\+meter\+Types@{Platform\+\_\+meter\+Types}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+meter\+Types}{Platform\_meterTypes}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class}$\ast$ const Platform\+\_\+meter\+Types\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{linux_2Platform_8c_ac8f39efe7b8276cb8796316fd5c2583f}\label{linux_2Platform_8c_ac8f39efe7b8276cb8796316fd5c2583f}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+number\+Of\+Default\+Screens@{Platform\+\_\+number\+Of\+Default\+Screens}}
+\index{Platform\+\_\+number\+Of\+Default\+Screens@{Platform\+\_\+number\+Of\+Default\+Screens}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+number\+Of\+Default\+Screens}{Platform\_numberOfDefaultScreens}}
+{\footnotesize\ttfamily const unsigned int Platform\+\_\+number\+Of\+Default\+Screens = \hyperlink{Macros_8h_a9670edf37e84bf953c542953136abfd6}{A\+R\+R\+A\+Y\+S\+I\+ZE}(\hyperlink{unsupported_2Platform_8h_aff369bc0cdcf4070a58fd50b342b84cb}{Platform\+\_\+default\+Screens})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_aa7affae43f72bb563034790830aecb51}\label{linux_2Platform_8c_aa7affae43f72bb563034790830aecb51}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+number\+Of\+Signals@{Platform\+\_\+number\+Of\+Signals}}
+\index{Platform\+\_\+number\+Of\+Signals@{Platform\+\_\+number\+Of\+Signals}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+number\+Of\+Signals}{Platform\_numberOfSignals}}
+{\footnotesize\ttfamily const unsigned int Platform\+\_\+number\+Of\+Signals = \hyperlink{Macros_8h_a9670edf37e84bf953c542953136abfd6}{A\+R\+R\+A\+Y\+S\+I\+ZE}(\hyperlink{unsupported_2Platform_8h_ad6019115f7aacb2d94f395d5e8754638}{Platform\+\_\+signals})}
+
+\mbox{\Hypertarget{linux_2Platform_8c_ad6019115f7aacb2d94f395d5e8754638}\label{linux_2Platform_8c_ad6019115f7aacb2d94f395d5e8754638}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Platform\+\_\+signals@{Platform\+\_\+signals}}
+\index{Platform\+\_\+signals@{Platform\+\_\+signals}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+signals}{Platform\_signals}}
+{\footnotesize\ttfamily const \hyperlink{SignalsPanel_8h_aacc61a14392728a9696f0560309c1177}{Signal\+Item} Platform\+\_\+signals\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{linux_2Platform_8c_aecf5a237dd4faff0a78fb70d9a51bdb3}\label{linux_2Platform_8c_aecf5a237dd4faff0a78fb70d9a51bdb3}} 
+\index{linux/\+Platform.\+c@{linux/\+Platform.\+c}!Running\+\_\+containerized@{Running\+\_\+containerized}}
+\index{Running\+\_\+containerized@{Running\+\_\+containerized}!linux/\+Platform.\+c@{linux/\+Platform.\+c}}
+\subsubsection{\texorpdfstring{Running\+\_\+containerized}{Running\_containerized}}
+{\footnotesize\ttfamily bool Running\+\_\+containerized = false}
+

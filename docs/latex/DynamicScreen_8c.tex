@@ -1,0 +1,63 @@
+\hypertarget{DynamicScreen_8c}{}\section{linux/download/htop-\/3.3.0/\+Dynamic\+Screen.c File Reference}
+\label{DynamicScreen_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Screen.\+c@{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Screen.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Dynamic\+Screen.\+c\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDynamicIterator}{Dynamic\+Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$ \hyperlink{DynamicScreen_8c_aca6b8e5955f3a5667bd5ead2814235d1}{Dynamic\+Screens\+\_\+new} (void)
+\item 
+void \hyperlink{DynamicScreen_8c_af47abf6498d7267d921dbc2e4b1cc318}{Dynamic\+Screens\+\_\+delete} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$screens)
+\item 
+void \hyperlink{DynamicScreen_8c_afad85ce66bc484dbf93dd00c36eb568c}{Dynamic\+Screen\+\_\+done} (\hyperlink{DynamicScreen_8h_a9b10b5a0b32fbb6fe6af7f0571ae6b25}{Dynamic\+Screen} $\ast$this)
+\item 
+bool \hyperlink{DynamicScreen_8c_abeab4dd5e72421c924addcc6d67088d1}{Dynamic\+Screen\+\_\+search} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$screens, const char $\ast$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name}, \hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t} $\ast$\hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+const char $\ast$ \hyperlink{DynamicScreen_8c_ab854d511719b2b24fac84ec6c1d8f2fe}{Dynamic\+Screen\+\_\+lookup} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$screens, \hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t} \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DynamicScreen_8c_afad85ce66bc484dbf93dd00c36eb568c}\label{DynamicScreen_8c_afad85ce66bc484dbf93dd00c36eb568c}} 
+\index{Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}!Dynamic\+Screen\+\_\+done@{Dynamic\+Screen\+\_\+done}}
+\index{Dynamic\+Screen\+\_\+done@{Dynamic\+Screen\+\_\+done}!Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Screen\+\_\+done()}{DynamicScreen\_done()}}
+{\footnotesize\ttfamily void Dynamic\+Screen\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{DynamicScreen_8h_a9b10b5a0b32fbb6fe6af7f0571ae6b25}{Dynamic\+Screen} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicScreen_8c_ab854d511719b2b24fac84ec6c1d8f2fe}\label{DynamicScreen_8c_ab854d511719b2b24fac84ec6c1d8f2fe}} 
+\index{Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}!Dynamic\+Screen\+\_\+lookup@{Dynamic\+Screen\+\_\+lookup}}
+\index{Dynamic\+Screen\+\_\+lookup@{Dynamic\+Screen\+\_\+lookup}!Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Screen\+\_\+lookup()}{DynamicScreen\_lookup()}}
+{\footnotesize\ttfamily const char$\ast$ Dynamic\+Screen\+\_\+lookup (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{screens,  }\item[{\hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t}}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicScreen_8c_abeab4dd5e72421c924addcc6d67088d1}\label{DynamicScreen_8c_abeab4dd5e72421c924addcc6d67088d1}} 
+\index{Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}!Dynamic\+Screen\+\_\+search@{Dynamic\+Screen\+\_\+search}}
+\index{Dynamic\+Screen\+\_\+search@{Dynamic\+Screen\+\_\+search}!Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Screen\+\_\+search()}{DynamicScreen\_search()}}
+{\footnotesize\ttfamily bool Dynamic\+Screen\+\_\+search (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{screens,  }\item[{const char $\ast$}]{name,  }\item[{\hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t} $\ast$}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicScreen_8c_af47abf6498d7267d921dbc2e4b1cc318}\label{DynamicScreen_8c_af47abf6498d7267d921dbc2e4b1cc318}} 
+\index{Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}!Dynamic\+Screens\+\_\+delete@{Dynamic\+Screens\+\_\+delete}}
+\index{Dynamic\+Screens\+\_\+delete@{Dynamic\+Screens\+\_\+delete}!Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Screens\+\_\+delete()}{DynamicScreens\_delete()}}
+{\footnotesize\ttfamily void Dynamic\+Screens\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{screens }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicScreen_8c_aca6b8e5955f3a5667bd5ead2814235d1}\label{DynamicScreen_8c_aca6b8e5955f3a5667bd5ead2814235d1}} 
+\index{Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}!Dynamic\+Screens\+\_\+new@{Dynamic\+Screens\+\_\+new}}
+\index{Dynamic\+Screens\+\_\+new@{Dynamic\+Screens\+\_\+new}!Dynamic\+Screen.\+c@{Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Screens\+\_\+new()}{DynamicScreens\_new()}}
+{\footnotesize\ttfamily \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}$\ast$ Dynamic\+Screens\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

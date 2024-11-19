@@ -1,0 +1,182 @@
+\hypertarget{PressureStallMeter_8c}{}\section{linux/download/htop-\/3.3.0/linux/\+Pressure\+Stall\+Meter.c File Reference}
+\label{PressureStallMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/linux/\+Pressure\+Stall\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/linux/\+Pressure\+Stall\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Pressure\+Stall\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Pressure\+Stall\+Meter.\+c\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{PressureStallMeter_8c_a8392e1f197d449ac239150a911a308be}{Pressure\+Stall\+C\+P\+U\+Some\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{PressureStallMeter_8c_aadc1911622a62d30a525a522a2722cb4}{Pressure\+Stall\+I\+O\+Some\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{PressureStallMeter_8c_ade9a0728057f926041e9233a6778cb16}{Pressure\+Stall\+I\+O\+Full\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{PressureStallMeter_8c_a87bf6ad18197ce875545e90d7a3fd938}{Pressure\+Stall\+I\+R\+Q\+Full\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{PressureStallMeter_8c_ae7a384152d471bb689139226f184fd68}{Pressure\+Stall\+Memory\+Some\+Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{PressureStallMeter_8c_ade8c33e86d2a0ca7b2349e7caa27b687}{Pressure\+Stall\+Memory\+Full\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{PressureStallMeter_8c_a8392e1f197d449ac239150a911a308be}\label{PressureStallMeter_8c_a8392e1f197d449ac239150a911a308be}} 
+\index{Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}!Pressure\+Stall\+C\+P\+U\+Some\+Meter\+\_\+class@{Pressure\+Stall\+C\+P\+U\+Some\+Meter\+\_\+class}}
+\index{Pressure\+Stall\+C\+P\+U\+Some\+Meter\+\_\+class@{Pressure\+Stall\+C\+P\+U\+Some\+Meter\+\_\+class}!Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Pressure\+Stall\+C\+P\+U\+Some\+Meter\+\_\+class}{PressureStallCPUSomeMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Pressure\+Stall\+C\+P\+U\+Some\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = PressureStallMeter\_display,
+   \},
+   .updateValues = PressureStallMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 3,
+   .total = 100.0,
+   .attributes = PressureStallMeter\_attributes,
+   .name = \textcolor{stringliteral}{"PressureStallCPUSome"},
+   .uiName = \textcolor{stringliteral}{"PSI some CPU"},
+   .caption = \textcolor{stringliteral}{"PSI some CPU:    "},
+   .description = \textcolor{stringliteral}{"Pressure Stall Information, some cpu"}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{PressureStallMeter_8c_ade9a0728057f926041e9233a6778cb16}\label{PressureStallMeter_8c_ade9a0728057f926041e9233a6778cb16}} 
+\index{Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}!Pressure\+Stall\+I\+O\+Full\+Meter\+\_\+class@{Pressure\+Stall\+I\+O\+Full\+Meter\+\_\+class}}
+\index{Pressure\+Stall\+I\+O\+Full\+Meter\+\_\+class@{Pressure\+Stall\+I\+O\+Full\+Meter\+\_\+class}!Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Pressure\+Stall\+I\+O\+Full\+Meter\+\_\+class}{PressureStallIOFullMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Pressure\+Stall\+I\+O\+Full\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = PressureStallMeter\_display,
+   \},
+   .updateValues = PressureStallMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 3,
+   .total = 100.0,
+   .attributes = PressureStallMeter\_attributes,
+   .name = \textcolor{stringliteral}{"PressureStallIOFull"},
+   .uiName = \textcolor{stringliteral}{"PSI full IO"},
+   .caption = \textcolor{stringliteral}{"PSI full IO:     "},
+   .description = \textcolor{stringliteral}{"Pressure Stall Information, full io"}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{PressureStallMeter_8c_aadc1911622a62d30a525a522a2722cb4}\label{PressureStallMeter_8c_aadc1911622a62d30a525a522a2722cb4}} 
+\index{Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}!Pressure\+Stall\+I\+O\+Some\+Meter\+\_\+class@{Pressure\+Stall\+I\+O\+Some\+Meter\+\_\+class}}
+\index{Pressure\+Stall\+I\+O\+Some\+Meter\+\_\+class@{Pressure\+Stall\+I\+O\+Some\+Meter\+\_\+class}!Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Pressure\+Stall\+I\+O\+Some\+Meter\+\_\+class}{PressureStallIOSomeMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Pressure\+Stall\+I\+O\+Some\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = PressureStallMeter\_display,
+   \},
+   .updateValues = PressureStallMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 3,
+   .total = 100.0,
+   .attributes = PressureStallMeter\_attributes,
+   .name = \textcolor{stringliteral}{"PressureStallIOSome"},
+   .uiName = \textcolor{stringliteral}{"PSI some IO"},
+   .caption = \textcolor{stringliteral}{"PSI some IO:     "},
+   .description = \textcolor{stringliteral}{"Pressure Stall Information, some io"}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{PressureStallMeter_8c_a87bf6ad18197ce875545e90d7a3fd938}\label{PressureStallMeter_8c_a87bf6ad18197ce875545e90d7a3fd938}} 
+\index{Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}!Pressure\+Stall\+I\+R\+Q\+Full\+Meter\+\_\+class@{Pressure\+Stall\+I\+R\+Q\+Full\+Meter\+\_\+class}}
+\index{Pressure\+Stall\+I\+R\+Q\+Full\+Meter\+\_\+class@{Pressure\+Stall\+I\+R\+Q\+Full\+Meter\+\_\+class}!Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Pressure\+Stall\+I\+R\+Q\+Full\+Meter\+\_\+class}{PressureStallIRQFullMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Pressure\+Stall\+I\+R\+Q\+Full\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = PressureStallMeter\_display,
+   \},
+   .updateValues = PressureStallMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 3,
+   .total = 100.0,
+   .attributes = PressureStallMeter\_attributes,
+   .name = \textcolor{stringliteral}{"PressureStallIRQFull"},
+   .uiName = \textcolor{stringliteral}{"PSI full IRQ"},
+   .caption = \textcolor{stringliteral}{"PSI full IRQ:    "},
+   .description = \textcolor{stringliteral}{"Pressure Stall Information, full irq"}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{PressureStallMeter_8c_ade8c33e86d2a0ca7b2349e7caa27b687}\label{PressureStallMeter_8c_ade8c33e86d2a0ca7b2349e7caa27b687}} 
+\index{Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}!Pressure\+Stall\+Memory\+Full\+Meter\+\_\+class@{Pressure\+Stall\+Memory\+Full\+Meter\+\_\+class}}
+\index{Pressure\+Stall\+Memory\+Full\+Meter\+\_\+class@{Pressure\+Stall\+Memory\+Full\+Meter\+\_\+class}!Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Pressure\+Stall\+Memory\+Full\+Meter\+\_\+class}{PressureStallMemoryFullMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Pressure\+Stall\+Memory\+Full\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = PressureStallMeter\_display,
+   \},
+   .updateValues = PressureStallMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 3,
+   .total = 100.0,
+   .attributes = PressureStallMeter\_attributes,
+   .name = \textcolor{stringliteral}{"PressureStallMemoryFull"},
+   .uiName = \textcolor{stringliteral}{"PSI full memory"},
+   .caption = \textcolor{stringliteral}{"PSI full memory: "},
+   .description = \textcolor{stringliteral}{"Pressure Stall Information, full memory"}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{PressureStallMeter_8c_ae7a384152d471bb689139226f184fd68}\label{PressureStallMeter_8c_ae7a384152d471bb689139226f184fd68}} 
+\index{Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}!Pressure\+Stall\+Memory\+Some\+Meter\+\_\+class@{Pressure\+Stall\+Memory\+Some\+Meter\+\_\+class}}
+\index{Pressure\+Stall\+Memory\+Some\+Meter\+\_\+class@{Pressure\+Stall\+Memory\+Some\+Meter\+\_\+class}!Pressure\+Stall\+Meter.\+c@{Pressure\+Stall\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Pressure\+Stall\+Memory\+Some\+Meter\+\_\+class}{PressureStallMemorySomeMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Pressure\+Stall\+Memory\+Some\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = PressureStallMeter\_display,
+   \},
+   .updateValues = PressureStallMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 3,
+   .total = 100.0,
+   .attributes = PressureStallMeter\_attributes,
+   .name = \textcolor{stringliteral}{"PressureStallMemorySome"},
+   .uiName = \textcolor{stringliteral}{"PSI some memory"},
+   .caption = \textcolor{stringliteral}{"PSI some memory: "},
+   .description = \textcolor{stringliteral}{"Pressure Stall Information, some memory"}
+\}
+\end{DoxyCode}

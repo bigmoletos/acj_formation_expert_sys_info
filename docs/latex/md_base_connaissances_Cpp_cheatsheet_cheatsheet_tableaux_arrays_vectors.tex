@@ -1,0 +1,72 @@
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Type }&\textbf{ Fonction }&\textbf{ Exemple }&\textbf{ Description  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Type }&\textbf{ Fonction }&\textbf{ Exemple }&\textbf{ Description  }\\\cline{1-4}
+\endhead
+Tableau classique &Déclaration &int arr\mbox{[}5\mbox{]}; &Déclare un tableau avec une taille fixe de 5 éléments. \\\cline{1-4}
+Tableau classique &Accès aux éléments &arr\mbox{[}2\mbox{]}; &Accède à l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+Tableau classique &Taille &Pas de fonction, taille fixe &La taille est fixe et définie à la compilation. \\\cline{1-4}
+Tableau classique &Initialisation &int arr\mbox{[}5\mbox{]} = \{1, 2, 3, 4, 5\}; &Initialise un tableau avec 5 éléments spécifiques. \\\cline{1-4}
+Tableau classique &Modifier un élément &arr\mbox{[}2\mbox{]} = 10; &Modifie l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::array &Déclaration &array$<$int, 5$>$ arr = \{1, 2, 3, 4, 5\}; &Déclare un std\+::array avec une taille fixe de 5 éléments. \\\cline{1-4}
+std\+::array &Accès aux éléments &arr\mbox{[}2\mbox{]}; &Accède à l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::array &Taille &arr.\+size(); &Renvoie la taille du std\+::array. \\\cline{1-4}
+std\+::array &Initialisation &array$<$int, 5$>$ arr = \{1, 2, 3, 4, 5\}; &Initialise un std\+::array avec 5 éléments spécifiques. \\\cline{1-4}
+std\+::array &Modifier un élément &arr\mbox{[}2\mbox{]} = 10; &Modifie l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::vector &Déclaration &vector$<$int$>$ vec(5); &Déclare un vecteur avec 5 éléments initialisés à 0. \\\cline{1-4}
+std\+::vector &Accès aux éléments &vec\mbox{[}2\mbox{]}; &Accède à l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::vector &Taille &vec.\+size(); &Renvoie la taille du vecteur. \\\cline{1-4}
+std\+::vector &Ajouter un élément &vec.\+push\+\_\+back(10); &Ajoute un élément à la fin du vecteur. \\\cline{1-4}
+std\+::vector &Supprimer un élément &vec.\+pop\+\_\+back(); &Supprime le dernier élément du vecteur. \\\cline{1-4}
+\end{longtabu}
+\section*{Plus}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Type }&\textbf{ Fonction/\+Commande }&\textbf{ Exemple }&\textbf{ Description  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Type }&\textbf{ Fonction/\+Commande }&\textbf{ Exemple }&\textbf{ Description  }\\\cline{1-4}
+\endhead
+Tableau classique (C-\/style) &Déclaration &int arr\mbox{[}5\mbox{]}; &Déclare un tableau classique avec une taille fixe de 5 éléments. \\\cline{1-4}
+Tableau classique (C-\/style) &Accès aux éléments &arr\mbox{[}2\mbox{]}; &Accède à l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+Tableau classique (C-\/style) &Lecture (boucle) &for (int i = 0; i $<$ 5; ++i) \{ cout $<$$<$ arr\mbox{[}i\mbox{]}; \} &Utilise une boucle pour lire tous les éléments du tableau. \\\cline{1-4}
+Tableau classique (C-\/style) &Trier &Pas possible sans une implémentation manuelle &Impossible de trier directement un tableau classique sans implémenter votre propre fonction de tri. \\\cline{1-4}
+Tableau classique (C-\/style) &Insertion (fixe) &Impossible, taille fixe &Impossible d\textquotesingle{}insérer un élément dans un tableau classique car sa taille est fixe. \\\cline{1-4}
+Tableau classique (C-\/style) &Suppression (fixe) &Impossible, taille fixe &Impossible de supprimer un élément dans un tableau classique car sa taille est fixe. \\\cline{1-4}
+std\+::array &Déclaration &std\+::array$<$int, 5$>$ arr; &Déclare un std\+::array avec une taille fixe de 5 éléments. \\\cline{1-4}
+std\+::array &Accès aux éléments &arr\mbox{[}2\mbox{]}; &Accède à l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::array &Lecture (boucle) &for (int i = 0; i $<$ arr.\+size(); ++i) \{ cout $<$$<$ arr\mbox{[}i\mbox{]}; \} &Utilise une boucle pour lire tous les éléments du std\+::array. \\\cline{1-4}
+std\+::array &Trier &std\+::sort(arr.\+begin(), arr.\+end()); &Tri du std\+::array à l\textquotesingle{}aide de std\+::sort. \\\cline{1-4}
+std\+::array &Insertion (taille fixe) &Impossible, taille fixe &Insertion impossible dans std\+::array, car la taille est fixe. \\\cline{1-4}
+std\+::array &Suppression (taille fixe) &Impossible, taille fixe &Suppression impossible dans std\+::array, car la taille est fixe. \\\cline{1-4}
+std\+::vector &Déclaration &std\+::vector$<$int$>$ vec; &Déclare un std\+::vector dynamique. \\\cline{1-4}
+std\+::vector &Accès aux éléments &vec\mbox{[}2\mbox{]}; &Accède à l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::vector &Lecture (boucle) &for (int i = 0; i $<$ vec.\+size(); ++i) \{ cout $<$$<$ vec\mbox{[}i\mbox{]}; \} &Utilise une boucle pour lire tous les éléments du std\+::vector. \\\cline{1-4}
+std\+::vector &Trier &std\+::sort(vec.\+begin(), vec.\+end()); &Tri du std\+::vector à l\textquotesingle{}aide de std\+::sort. \\\cline{1-4}
+std\+::vector &Insertion &vec.\+insert(vec.\+begin() + 2, 10); &Insère un élément dans le std\+::vector à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::vector &Suppression &vec.\+erase(vec.\+begin() + 2); &Supprime l\textquotesingle{}élément à l\textquotesingle{}indice 2 du std\+::vector. \\\cline{1-4}
+\end{longtabu}
+
+
+\subsection*{\char`\"{}\+Quand choisir ?\char`\"{}}
+
+\subsubsection*{\char`\"{}\+Tableau classique (\+C-\/style)\char`\"{}\+:}
+
+\char`\"{}\+Utilisez un tableau classique si vous savez à l\textquotesingle{}avance que la taille est fixe et ne changera jamais. \char`\"{} \char`\"{}\+C\textquotesingle{}est plus simple mais moins flexible que les autres options.\char`\"{}
+
+\subsubsection*{\char`\"{}std\+::array\char`\"{}\+:}
+
+\char`\"{}\+Utilisez std\+::array si vous avez besoin d\textquotesingle{}un tableau avec une taille fixe mais que vous voulez des \char`\"{} \char`\"{}fonctionnalités supplémentaires comme la gestion sécurisée avec des méthodes comme .\+size() ou .\+at().\char`\"{}
+
+\subsubsection*{\char`\"{}std\+::vector\char`\"{}\+:}
+
+\char`\"{}\+Utilisez std\+::vector si la taille du tableau peut changer au cours du programme. C\textquotesingle{}est flexible, \char`\"{} \char`\"{}vous pouvez ajouter ou supprimer des éléments à tout moment, mais il consomme plus de mémoire.\char`\"{} 

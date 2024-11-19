@@ -1,0 +1,234 @@
+Ce cheatsheet couvre les principales structures de données en C++ et propose des exemples pratiques pour les utiliser \+: {\ttfamily std\+::list}, {\ttfamily std\+::vector}, {\ttfamily std\+::set}, {\ttfamily std\+::map}, {\ttfamily std\+::stack}, {\ttfamily std\+::queue}, {\ttfamily std\+::multiset}, et {\ttfamily std\+::multimap}. 
+
+
+
+\subsection*{1. std\+::list}
+
+\subsubsection*{Description}
+
+Liste doublement chaînée. Permet des insertions et suppressions efficaces.
+
+\#\#\# Exemples \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <list>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    list<int> myList = \{1, 2, 3\};
+    myList.push\_back(4); \textcolor{comment}{// Ajouter à la fin}
+    myList.push\_front(0); \textcolor{comment}{// Ajouter au début}
+
+    myList.remove(2); \textcolor{comment}{// Supprimer la valeur 2}
+
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x : myList) \{
+        cout << x << \textcolor{stringliteral}{" "};
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+
+
+\subsection*{2. std\+::vector}
+
+\subsubsection*{Description}
+
+Tableau dynamique avec accès rapide aux éléments par index.
+
+\#\#\# Exemples \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <vector>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    vector<int> myVector = \{1, 2, 3\};
+    myVector.push\_back(4); \textcolor{comment}{// Ajouter à la fin}
+
+    myVector[1] = 5; \textcolor{comment}{// Modifier l'élément à l'index 1}
+
+    myVector.pop\_back(); \textcolor{comment}{// Supprimer le dernier élément}
+
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x : myVector) \{
+        cout << x << \textcolor{stringliteral}{" "};
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+
+
+\subsection*{3. std\+::set}
+
+\subsubsection*{Description}
+
+Conteneur ordonné qui ne contient que des éléments uniques.
+
+\#\#\# Exemples \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <set>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    set<int> mySet = \{1, 2, 3\};
+    mySet.insert(4); \textcolor{comment}{// Insérer un élément}
+    mySet.erase(2); \textcolor{comment}{// Supprimer un élément}
+
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x : mySet) \{
+        cout << x << \textcolor{stringliteral}{" "};
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+
+
+\subsection*{4. std\+::map}
+
+\subsubsection*{Description}
+
+Table associative clé-\/valeur.
+
+\#\#\# Exemples \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <map>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    map<string, int> myMap;
+    myMap[\textcolor{stringliteral}{"apple"}] = 5; \textcolor{comment}{// Ajouter ou modifier}
+    myMap[\textcolor{stringliteral}{"banana"}] = 2;
+
+    myMap.erase(\textcolor{stringliteral}{"apple"}); \textcolor{comment}{// Supprimer une clé}
+
+    \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} &[\hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key}, value] : myMap) \{
+        cout << \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key} << \textcolor{stringliteral}{": "} << value << endl;
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+
+
+\subsection*{5. std\+::stack}
+
+\subsubsection*{Description}
+
+Pile (L\+I\+FO \+: dernier entré, premier sorti).
+
+\#\#\# Exemples \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <stack>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    stack<int> myStack;
+    myStack.push(1); \textcolor{comment}{// Ajouter un élément}
+    myStack.push(2);
+
+    myStack.pop(); \textcolor{comment}{// Retirer le dernier élément}
+
+    cout << \textcolor{stringliteral}{"Top element: "} << myStack.top() << endl;
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+
+
+\subsection*{6. std\+::queue}
+
+\subsubsection*{Description}
+
+File (F\+I\+FO \+: premier entré, premier sorti).
+
+\#\#\# Exemples \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <queue>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    queue<int> myQueue;
+    myQueue.push(1); \textcolor{comment}{// Ajouter un élément}
+    myQueue.push(2);
+
+    myQueue.pop(); \textcolor{comment}{// Retirer le premier élément}
+
+    cout << \textcolor{stringliteral}{"Front element: "} << myQueue.front() << endl;
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+
+
+\subsection*{7. std\+::multiset}
+
+\subsubsection*{Description}
+
+Conteneur ordonné qui permet des éléments dupliqués.
+
+\#\#\# Exemples \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <set>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    multiset<int> myMultiset = \{1, 2, 2, 3\};
+    myMultiset.insert(4); \textcolor{comment}{// Ajouter un élément}
+    myMultiset.erase(myMultiset.find(2)); \textcolor{comment}{// Supprimer un élément (une seule occurrence)}
+
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x : myMultiset) \{
+        cout << x << \textcolor{stringliteral}{" "};
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+
+
+\subsection*{8. std\+::multimap}
+
+\subsubsection*{Description}
+
+Table associative clé-\/valeur qui permet des clés dupliquées.
+
+\#\#\# Exemples \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <map>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    multimap<string, int> myMultimap;
+    myMultimap.insert(\{\textcolor{stringliteral}{"apple"}, 5\});
+    myMultimap.insert(\{\textcolor{stringliteral}{"apple"}, 3\}); \textcolor{comment}{// Clé dupliquée}
+
+    \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} &[\hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key}, value] : myMultimap) \{
+        cout << \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key} << \textcolor{stringliteral}{": "} << value << endl;
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+
+
+\subsubsection*{Notes Générales}
+
+
+\begin{DoxyItemize}
+\item Inclure les bons headers pour chaque conteneur.
+\item Adapter les structures de données aux besoins spécifiques en performance et contraintes. 
+\end{DoxyItemize}

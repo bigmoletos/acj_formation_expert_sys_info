@@ -1,0 +1,61 @@
+\hypertarget{FileDescriptorMeter_8c}{}\section{linux/download/htop-\/3.3.0/\+File\+Descriptor\+Meter.c File Reference}
+\label{FileDescriptorMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/\+File\+Descriptor\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/\+File\+Descriptor\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}File\+Descriptor\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for File\+Descriptor\+Meter.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{FileDescriptorMeter_8c_aa232b0d35241104eb12fc420c4268833}{F\+D\+\_\+\+E\+F\+F\+E\+C\+T\+I\+V\+E\+\_\+\+U\+N\+L\+I\+M\+I\+T\+ED}(\hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~(!isgreaterequal((double)(1$<$$<$30), (\hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})))
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{FileDescriptorMeter_8c_a111b79742f36a8f61b647a63cf95fdae}{File\+Descriptor\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{FileDescriptorMeter_8c_aa232b0d35241104eb12fc420c4268833}\label{FileDescriptorMeter_8c_aa232b0d35241104eb12fc420c4268833}} 
+\index{File\+Descriptor\+Meter.\+c@{File\+Descriptor\+Meter.\+c}!F\+D\+\_\+\+E\+F\+F\+E\+C\+T\+I\+V\+E\+\_\+\+U\+N\+L\+I\+M\+I\+T\+ED@{F\+D\+\_\+\+E\+F\+F\+E\+C\+T\+I\+V\+E\+\_\+\+U\+N\+L\+I\+M\+I\+T\+ED}}
+\index{F\+D\+\_\+\+E\+F\+F\+E\+C\+T\+I\+V\+E\+\_\+\+U\+N\+L\+I\+M\+I\+T\+ED@{F\+D\+\_\+\+E\+F\+F\+E\+C\+T\+I\+V\+E\+\_\+\+U\+N\+L\+I\+M\+I\+T\+ED}!File\+Descriptor\+Meter.\+c@{File\+Descriptor\+Meter.\+c}}
+\subsubsection{\texorpdfstring{F\+D\+\_\+\+E\+F\+F\+E\+C\+T\+I\+V\+E\+\_\+\+U\+N\+L\+I\+M\+I\+T\+ED}{FD\_EFFECTIVE\_UNLIMITED}}
+{\footnotesize\ttfamily \#define F\+D\+\_\+\+E\+F\+F\+E\+C\+T\+I\+V\+E\+\_\+\+U\+N\+L\+I\+M\+I\+T\+ED(\begin{DoxyParamCaption}\item[{}]{\hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x} }\end{DoxyParamCaption})~(!isgreaterequal((double)(1$<$$<$30), (\hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})))}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{FileDescriptorMeter_8c_a111b79742f36a8f61b647a63cf95fdae}\label{FileDescriptorMeter_8c_a111b79742f36a8f61b647a63cf95fdae}} 
+\index{File\+Descriptor\+Meter.\+c@{File\+Descriptor\+Meter.\+c}!File\+Descriptor\+Meter\+\_\+class@{File\+Descriptor\+Meter\+\_\+class}}
+\index{File\+Descriptor\+Meter\+\_\+class@{File\+Descriptor\+Meter\+\_\+class}!File\+Descriptor\+Meter.\+c@{File\+Descriptor\+Meter.\+c}}
+\subsubsection{\texorpdfstring{File\+Descriptor\+Meter\+\_\+class}{FileDescriptorMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} File\+Descriptor\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = FileDescriptorMeter\_display,
+   \},
+   .updateValues = FileDescriptorMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 2,
+   .total = 65536.0,
+   .attributes = FileDescriptorMeter\_attributes,
+   .name = \textcolor{stringliteral}{"FileDescriptors"},
+   .uiName = \textcolor{stringliteral}{"File Descriptors"},
+   .caption = \textcolor{stringliteral}{"FDs: "},
+   .description = \textcolor{stringliteral}{"Number of allocated/available file descriptors"}
+\}
+\end{DoxyCode}

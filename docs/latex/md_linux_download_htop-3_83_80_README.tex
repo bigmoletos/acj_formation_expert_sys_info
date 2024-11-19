@@ -1,0 +1,222 @@
+\href{https://github.com/htop-dev/htop/actions}{\tt } \href{https://scan.coverity.com/projects/21665}{\tt } \href{https://groups.io/g/htop}{\tt } \href{https://web.libera.chat/#htop}{\tt } \href{https://github.com/htop-dev/htop/releases/latest}{\tt } \href{https://repology.org/project/htop/versions}{\tt } \mbox{[}\mbox{]}(C\+O\+P\+Y\+I\+NG?raw=true)
+
+
+
+\subsection*{Introduction}
+
+{\ttfamily htop} is a cross-\/platform interactive process viewer.
+
+{\ttfamily htop} allows scrolling the list of processes vertically and horizontally to see their full command lines and related information like memory and C\+PU consumption. Also system wide information, like load average or swap usage, is shown.
+
+The information displayed is configurable through a graphical setup and can be sorted and filtered interactively.
+
+Tasks related to processes (e.\+g. killing and renicing) can be done without entering their P\+I\+Ds.
+
+Running {\ttfamily htop} requires {\ttfamily ncurses} libraries, typically named libncurses(w).
+
+{\ttfamily htop} is written in C.
+
+For more information and details visit \href{https://htop.dev}{\tt htop.\+dev}.
+
+\subsection*{Build instructions}
+
+\subsubsection*{Prerequisite}
+
+List of build-\/time dependencies\+:
+\begin{DoxyItemize}
+\item standard G\+NU autotools-\/based C toolchain
+\begin{DoxyItemize}
+\item C99 compliant compiler
+\item {\ttfamily autoconf}
+\item {\ttfamily automake}
+\item {\ttfamily autotools}
+\end{DoxyItemize}
+\item {\ttfamily ncurses}
+\end{DoxyItemize}
+
+{\bfseries Note about {\ttfamily ncurses}\+:} \begin{quote}
+{\ttfamily htop} requires {\ttfamily ncurses} 6.\+0. Be aware the appropriate package is sometimes still called libncurses5 (on Debian/\+Ubuntu). Also {\ttfamily ncurses} usually comes in two flavours\+: $>$$\ast$ With Unicode support. $>$$\ast$ Without Unicode support.
+
+This is also something that is reflected in the package name on Debian/\+Ubuntu (via the additional \textquotesingle{}w\textquotesingle{} -\/ \textquotesingle{}w\textquotesingle{}ide character support). \end{quote}
+
+
+List of additional build-\/time dependencies (based on feature flags)\+:
+\begin{DoxyItemize}
+\item {\ttfamily sensors}
+\item {\ttfamily hwloc}
+\item {\ttfamily libcap} (v2.\+21 or later)
+\item {\ttfamily libnl-\/3}
+\end{DoxyItemize}
+
+Install these and other required packages for C development from your package manager.
+
+{\bfseries Debian/\+Ubuntu} 
+\begin{DoxyCode}
+sudo apt install libncursesw5-dev autotools-dev autoconf automake build-essential
+\end{DoxyCode}
+
+
+{\bfseries Fedora/\+R\+H\+EL} 
+\begin{DoxyCode}
+sudo dnf install ncurses-devel automake autoconf gcc
+\end{DoxyCode}
+
+
+{\bfseries Archlinux/\+Manjaro} 
+\begin{DoxyCode}
+sudo pacman -S ncurses automake autoconf gcc
+\end{DoxyCode}
+
+
+{\bfseries mac\+OS} 
+\begin{DoxyCode}
+brew install ncurses automake autoconf gcc
+\end{DoxyCode}
+
+
+\subsubsection*{Compile from source\+:}
+
+To compile from source, download from the Git repository ({\ttfamily git clone} or downloads from \href{https://github.com/htop-dev/htop/releases/}{\tt Git\+Hub releases}), then run\+: 
+\begin{DoxyCode}
+./autogen.sh && ./configure && make
+\end{DoxyCode}
+
+
+\subsubsection*{Install}
+
+To install on the local system run {\ttfamily make install}. By default {\ttfamily make install} installs into {\ttfamily /usr/local}. To change this path use {\ttfamily ./configure -\/-\/prefix=/some/path}.
+
+\subsubsection*{Build Options}
+
+{\ttfamily htop} has several build-\/time options to enable/disable additional features.
+
+\paragraph*{Generic}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/unicode}\+: enable Unicode support
+\begin{DoxyItemize}
+\item dependency\+: {\itshape libncursesw}
+\item default\+: {\itshape yes}
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/affinity}\+: enable {\ttfamily sched\+\_\+setaffinity(2)} and {\ttfamily sched\+\_\+getaffinity(2)} for affinity support; conflicts with hwloc
+\begin{DoxyItemize}
+\item default\+: {\itshape check}
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/hwloc}\+: enable hwloc support for C\+PU affinity; disables affinity support
+\begin{DoxyItemize}
+\item dependency\+: {\itshape libhwloc}
+\item default\+: {\itshape no}
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/static}\+: build a static htop binary; hwloc and delay accounting are not supported
+\begin{DoxyItemize}
+\item default\+: {\itshape no}
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/debug}\+: Enable asserts and internal sanity checks; implies a performance penalty
+\begin{DoxyItemize}
+\item default\+: {\itshape no}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\paragraph*{Performance Co-\/\+Pilot}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/pcp}\+: enable Performance Co-\/\+Pilot support via a new pcp-\/htop utility
+\begin{DoxyItemize}
+\item dependency\+: {\itshape libpcp}
+\item default\+: {\itshape no}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\paragraph*{Linux}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/sensors}\+: enable libsensors(3) support for reading temperature data
+\begin{DoxyItemize}
+\item dependencies\+: {\itshape libsensors-\/dev}(build-\/time), at runtime {\itshape libsensors} is loaded via {\ttfamily dlopen(3)} if available
+\item default\+: {\itshape check}
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/capabilities}\+: enable Linux capabilities support
+\begin{DoxyItemize}
+\item dependency\+: {\itshape libcap}
+\item default\+: {\itshape check}
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/with-\/proc}\+: location of a Linux-\/compatible proc filesystem
+\begin{DoxyItemize}
+\item default\+: $\ast$/proc$\ast$
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/openvz}\+: enable Open\+VZ support
+\begin{DoxyItemize}
+\item default\+: {\itshape no}
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/vserver}\+: enable V\+Server support
+\begin{DoxyItemize}
+\item default\+: {\itshape no}
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/ancient-\/vserver}\+: enable ancient V\+Server support (implies {\ttfamily -\/-\/enable-\/vserver})
+\begin{DoxyItemize}
+\item default\+: {\itshape no}
+\end{DoxyItemize}
+\item {\ttfamily -\/-\/enable-\/delayacct}\+: enable Linux delay accounting support
+\begin{DoxyItemize}
+\item dependencies\+: {\itshape pkg-\/config}(build-\/time), {\itshape libnl-\/3} and {\itshape libnl-\/genl-\/3}
+\item default\+: {\itshape check}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Runtime dependencies\+:}
+
+{\ttfamily htop} has a set of fixed minimum runtime dependencies, which is kept as minimal as possible\+:
+\begin{DoxyItemize}
+\item {\ttfamily ncurses} libraries for terminal handling (wide character support).
+\end{DoxyItemize}
+
+\subsubsection*{Runtime optional dependencies\+:}
+
+{\ttfamily htop} has a set of fixed optional dependencies, depending on build/configure option used\+:
+
+\paragraph*{Linux}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily libdl}, if not building a static binary, is always required when support for optional dependencies (i.\+e. {\ttfamily libsensors}, {\ttfamily libsystemd}) is present.
+\item {\ttfamily libcap}, user-\/space interfaces to P\+O\+S\+IX 1003.\+1e capabilities, is always required when {\ttfamily -\/-\/enable-\/capabilities} was used to configure {\ttfamily htop}.
+\item {\ttfamily libsensors}, readout of temperatures and C\+PU speeds, is optional even when {\ttfamily -\/-\/enable-\/sensors} was used to configure {\ttfamily htop}.
+\item {\ttfamily libsystemd} is optional when {\ttfamily -\/-\/enable-\/static} was not used to configure {\ttfamily htop}. If building statically and {\ttfamily libsystemd} is not found by {\ttfamily configure}, support for the systemd meter is disabled entirely.
+\end{DoxyItemize}
+
+{\ttfamily htop} checks for the availability of the actual runtime libraries as {\ttfamily htop} runs.
+
+\paragraph*{B\+SD}
+
+On most B\+SD systems {\ttfamily kvm} is a requirement to read kernel information.
+
+More information on required and optional dependencies can be found in \href{configure.ac}{\tt configure.\+ac}.
+
+\subsection*{Usage}
+
+See the manual page ({\ttfamily man htop}) or the help menu ({\bfseries F1} or {\bfseries h} inside {\ttfamily htop}) for a list of supported key commands.
+
+\subsection*{Support}
+
+If you have trouble running {\ttfamily htop} please consult your operating system / Linux distribution documentation for getting support and filing bugs.
+
+\subsection*{Bugs, development feedback}
+
+We have a \href{https://htop.dev/mailinglist.html}{\tt development mailing list}. Feel free to subscribe for release announcements or asking questions on the development of {\ttfamily htop}.
+
+You can also join our I\+RC channel \href{https://web.libera.chat/#htop}{\tt \#htop on Libera.\+Chat} and talk to the developers there.
+
+If you have found an issue within the source of {\ttfamily htop}, please check whether this has already been reported in our \href{https://github.com/htop-dev/htop/issues}{\tt Git\+Hub issue tracker}. If not, please file a new issue describing the problem you have found, the potential location in the source code you are referring to and a possible fix if available.
+
+\subsection*{History}
+
+{\ttfamily htop} was invented, developed and maintained by \href{https://hisham.hm/}{\tt Hisham Muhammad} from 2004 to 2019. His \href{https://github.com/hishamhm/htop/}{\tt legacy repository} has been archived to preserve the history.
+
+In 2020 a \href{https://github.com/orgs/htop-dev/people}{\tt team} took over the development amicably and continues to maintain {\ttfamily htop} collaboratively.
+
+\subsection*{License}
+
+G\+NU General Public License, version 2 (G\+P\+L-\/2.\+0) or, at your option, any later version. 

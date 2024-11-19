@@ -1,0 +1,243 @@
+
+\begin{DoxyEnumerate}
+\item {\ttfamily git init} -\/ Initialise un nouveau dépôt Git.
+\item {\ttfamily git clone $<$url$>$} -\/ Clone un dépôt Git existant.
+\item {\ttfamily git status} -\/ Affiche l\textquotesingle{}état du dépôt Git.
+\item {\ttfamily git add $<$fichier$>$} -\/ Ajoute un fichier à l\textquotesingle{}index.
+\item {\ttfamily git commit -\/m \char`\"{}$<$message$>$\char`\"{}} -\/ Enregistre les modifications dans le dépôt.
+\item {\ttfamily git push $<$remote$>$ $<$branche$>$} -\/ Pousse les commits vers une branche d\textquotesingle{}un dépôt distant.
+\item {\ttfamily git pull $<$remote$>$ $<$branche$>$} -\/ Récupère les modifications d\textquotesingle{}un dépôt distant et les fusionne.
+\item {\ttfamily git branch} -\/ Affiche les branches du dépôt.
+\item {\ttfamily git checkout $<$branche$>$} -\/ Change de branche.
+\item {\ttfamily git merge $<$branche$>$} -\/ Fusionne une branche dans la branche actuelle.
+\item {\ttfamily git log} -\/ Affiche l\textquotesingle{}historique des commits.
+\item {\ttfamily git diff} -\/ Affiche les modifications non indexées.
+\item {\ttfamily git stash} -\/ Met de côté les modifications non commitées.
+\item {\ttfamily git fetch $<$remote$>$} -\/ Récupère les mises à jour d\textquotesingle{}un dépôt distant.
+\item {\ttfamily git rebase $<$branche$>$} -\/ Rejoue les commits sur une autre branche.
+\item {\ttfamily git reset -\/-\/hard $<$commit$>$} -\/ Réinitialise l\textquotesingle{}état du dépôt à un commit spécifique.
+\item {\ttfamily git rm $<$fichier$>$} -\/ Supprime un fichier du dépôt.
+\item {\ttfamily git tag $<$tag$>$} -\/ Crée un tag pour un commit.
+\item {\ttfamily git show $<$commit$>$} -\/ Affiche les informations sur un commit.
+\item {\ttfamily git config -\/-\/global user.\+name \char`\"{}$<$nom$>$\char`\"{}} -\/ Définit le nom de l\textquotesingle{}utilisateur Git.
+\end{DoxyEnumerate}
+
+\section*{S\+U\+I\+TE E\+R\+R\+R\+E\+UR DE M\+E\+R\+GE}
+
+\subsection*{suite à une erruer de merge d\textquotesingle{}une branche, par exemple je suis sur master et je fais un merge main qui vient ecrasé tout master}
+
+\subsection*{alors que je voulais faire l\textquotesingle{}inverse pour tout annuler et revenir à l\textquotesingle{}état initial. Cela fonctionne si on as pas encore fait le push sur github}
+
+{\ttfamily git checkout -\/-\/ .}
+
+\section*{Top 20 des commandes Git avec exmples}
+
+
+\begin{DoxyEnumerate}
+\item {\ttfamily git init}
+\begin{DoxyItemize}
+\item Initialise un nouveau dépôt Git.
+\item Exemple \+: {\ttfamily git init}
+\end{DoxyItemize}
+\item {\ttfamily git clone $<$url$>$}
+\begin{DoxyItemize}
+\item Clone un dépôt Git existant.
+\item Exemple \+: {\ttfamily git clone \href{https://github.com/username/repo.git}{\tt https\+://github.\+com/username/repo.\+git}}
+\end{DoxyItemize}
+\item {\ttfamily git status}
+\begin{DoxyItemize}
+\item Affiche l\textquotesingle{}état du dépôt Git.
+\item Exemple \+: {\ttfamily git status}
+\end{DoxyItemize}
+\item {\ttfamily git add $<$fichier$>$}
+\begin{DoxyItemize}
+\item Ajoute un fichier à l\textquotesingle{}index.
+\item Exemple \+: {\ttfamily git add R\+E\+A\+D\+M\+E.\+md}
+\end{DoxyItemize}
+\item {\ttfamily git commit -\/m \char`\"{}$<$message$>$\char`\"{}}
+\begin{DoxyItemize}
+\item Enregistre les modifications dans le dépôt.
+\item Exemple \+: {\ttfamily git commit -\/m \char`\"{}\+Ajout de R\+E\+A\+D\+M\+E\char`\"{}}
+\end{DoxyItemize}
+\item {\ttfamily git push $<$remote$>$ $<$branche$>$}
+\begin{DoxyItemize}
+\item Pousse les commits vers une branche d\textquotesingle{}un dépôt distant.
+\item Exemple \+: {\ttfamily git push origin main}
+\end{DoxyItemize}
+\item {\ttfamily git pull $<$remote$>$ $<$branche$>$}
+\begin{DoxyItemize}
+\item Récupère les modifications d\textquotesingle{}un dépôt distant et les fusionne.
+\item Exemple \+: {\ttfamily git pull origin main}
+\end{DoxyItemize}
+\item {\ttfamily git branch}
+\begin{DoxyItemize}
+\item Affiche les branches du dépôt.
+\item Exemple \+: {\ttfamily git branch}
+\end{DoxyItemize}
+\item {\ttfamily git checkout $<$branche$>$}
+\begin{DoxyItemize}
+\item Change de branche.
+\item Exemple \+: {\ttfamily git checkout develop}
+\end{DoxyItemize}
+\item {\ttfamily git merge $<$branche$>$}
+\begin{DoxyItemize}
+\item Fusionne une branche dans la branche actuelle.
+\item Exemple \+: {\ttfamily git merge feature}
+\end{DoxyItemize}
+\item {\ttfamily git log}
+\begin{DoxyItemize}
+\item Affiche l\textquotesingle{}historique des commits.
+\item Exemple \+: {\ttfamily git log}
+\end{DoxyItemize}
+\item {\ttfamily git diff}
+\begin{DoxyItemize}
+\item Affiche les modifications non indexées.
+\item Exemple \+: {\ttfamily git diff}
+\end{DoxyItemize}
+\item {\ttfamily git stash}
+\begin{DoxyItemize}
+\item Met de côté les modifications non commitées.
+\item Exemple \+: {\ttfamily git stash}
+\end{DoxyItemize}
+\item {\ttfamily git fetch $<$remote$>$}
+\begin{DoxyItemize}
+\item Récupère les mises à jour d\textquotesingle{}un dépôt distant.
+\item Exemple \+: {\ttfamily git fetch origin}
+\end{DoxyItemize}
+\item {\ttfamily git rebase $<$branche$>$}
+\begin{DoxyItemize}
+\item Rejoue les commits sur une autre branche.
+\item Exemple \+: {\ttfamily git rebase main}
+\end{DoxyItemize}
+\item {\ttfamily git reset -\/-\/hard $<$commit$>$}
+\begin{DoxyItemize}
+\item Réinitialise l\textquotesingle{}état du dépôt à un commit spécifique.
+\item Exemple \+: {\ttfamily git reset -\/-\/hard 0d1d7fc32}
+\end{DoxyItemize}
+\item {\ttfamily git rm $<$fichier$>$}
+\begin{DoxyItemize}
+\item Supprime un fichier du dépôt.
+\item Exemple \+: {\ttfamily git rm R\+E\+A\+D\+M\+E.\+md}
+\end{DoxyItemize}
+\item {\ttfamily git tag $<$tag$>$}
+\begin{DoxyItemize}
+\item Crée un tag pour un commit.
+\item Exemple \+: {\ttfamily git tag v1.\+0.\+0}
+\end{DoxyItemize}
+\item {\ttfamily git show $<$commit$>$}
+\begin{DoxyItemize}
+\item Affiche les informations sur un commit.
+\item Exemple \+: {\ttfamily git show 0d1d7fc32}
+\end{DoxyItemize}
+\item {\ttfamily git config -\/-\/global user.\+name \char`\"{}$<$nom$>$\char`\"{}}
+\begin{DoxyItemize}
+\item Définit le nom de l\textquotesingle{}utilisateur Git.
+\item Exemple \+: {\ttfamily git config -\/-\/global user.\+name \char`\"{}\+Votre Nom\char`\"{}}
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\section*{Top 20 des commandes avancées\+:}
+
+
+\begin{DoxyEnumerate}
+\item {\ttfamily git commit -\/m \char`\"{}$<$message$>$\char`\"{}}
+\begin{DoxyItemize}
+\item Enregistre les modifications dans le dépôt.
+\item Exemple \+: {\ttfamily git commit -\/m \char`\"{}\+Ajout de R\+E\+A\+D\+M\+E\char`\"{}}
+\end{DoxyItemize}
+\item {\ttfamily git commit -\/-\/amend -\/m \char`\"{}$<$nouveau message$>$\char`\"{}}
+\begin{DoxyItemize}
+\item Modifie le dernier commit.
+\item Exemple \+: {\ttfamily git commit -\/-\/amend -\/m \char`\"{}\+Ajout de R\+E\+A\+D\+M\+E et L\+I\+C\+E\+N\+S\+E\char`\"{}}
+\end{DoxyItemize}
+\item {\ttfamily git revert $<$commit$>$}
+\begin{DoxyItemize}
+\item Annule un commit en créant un nouveau commit qui inverse les modifications.
+\item Exemple \+: {\ttfamily git revert 0d1d7fc32}
+\end{DoxyItemize}
+\item {\ttfamily git stash}
+\begin{DoxyItemize}
+\item Met de côté les modifications non commitées.
+\item Exemple \+: {\ttfamily git stash}
+\end{DoxyItemize}
+\item {\ttfamily git stash pop}
+\begin{DoxyItemize}
+\item Applique les modifications mises de côté par la dernière commande {\ttfamily git stash}.
+\item Exemple \+: {\ttfamily git stash pop}
+\end{DoxyItemize}
+\item {\ttfamily git reset -\/-\/hard $<$commit$>$}
+\begin{DoxyItemize}
+\item Réinitialise l\textquotesingle{}état du dépôt à un commit spécifique.
+\item Exemple \+: {\ttfamily git reset -\/-\/hard 0d1d7fc32}
+\end{DoxyItemize}
+\item {\ttfamily git reset -\/-\/soft $<$commit$>$}
+\begin{DoxyItemize}
+\item Déplace la tête à un commit spécifique, mais conserve les modifications non commitées.
+\item Exemple \+: {\ttfamily git reset -\/-\/soft 0d1d7fc32}
+\end{DoxyItemize}
+\item {\ttfamily git rebase $<$branche$>$}
+\begin{DoxyItemize}
+\item Rejoue les commits sur une autre branche.
+\item Exemple \+: {\ttfamily git rebase main}
+\end{DoxyItemize}
+\item {\ttfamily git rebase -\/i $<$commit$>$}
+\begin{DoxyItemize}
+\item Commence un rebase interactif, qui permet de modifier, supprimer ou réorganiser les commits.
+\item Exemple \+: {\ttfamily git rebase -\/i 0d1d7fc32}
+\end{DoxyItemize}
+\item {\ttfamily git prune}
+\begin{DoxyItemize}
+\item Supprime les objets non atteignables de la base de données.
+\item Exemple \+: {\ttfamily git prune}
+\end{DoxyItemize}
+\item {\ttfamily git stash list}
+\begin{DoxyItemize}
+\item Affiche la liste des modifications mises de côté.
+\item Exemple \+: {\ttfamily git stash list}
+\end{DoxyItemize}
+\item {\ttfamily git stash apply $<$stash$>$}
+\begin{DoxyItemize}
+\item Applique une modification mise de côté spécifique.
+\item Exemple \+: {\ttfamily git stash apply stash0\}}
+\end{DoxyItemize}
+\item {\ttfamily git stash drop $<$stash$>$}
+\begin{DoxyItemize}
+\item Supprime une modification mise de côté spécifique.
+\item Exemple \+: {\ttfamily git stash drop stash0\}}
+\end{DoxyItemize}
+\item {\ttfamily git reset $<$fichier$>$}
+\begin{DoxyItemize}
+\item Retire un fichier de l\textquotesingle{}index, mais conserve les modifications.
+\item Exemple \+: {\ttfamily git reset R\+E\+A\+D\+M\+E.\+md}
+\end{DoxyItemize}
+\item {\ttfamily git reset -\/-\/mixed $<$commit$>$}
+\begin{DoxyItemize}
+\item Déplace la tête à un commit spécifique et retire les fichiers de l\textquotesingle{}index, mais conserve les modifications.
+\item Exemple \+: {\ttfamily git reset -\/-\/mixed 0d1d7fc32}
+\end{DoxyItemize}
+\item {\ttfamily git rebase -\/-\/abort}
+\begin{DoxyItemize}
+\item Annule l\textquotesingle{}opération de rebase en cours.
+\item Exemple \+: {\ttfamily git rebase -\/-\/abort}
+\end{DoxyItemize}
+\item {\ttfamily git rebase -\/-\/continue}
+\begin{DoxyItemize}
+\item Continue l\textquotesingle{}opération de rebase après avoir résolu les conflits.
+\item Exemple \+: {\ttfamily git rebase -\/-\/continue}
+\end{DoxyItemize}
+\item {\ttfamily git prune -\/-\/dry-\/run}
+\begin{DoxyItemize}
+\item Affiche les objets qui seraient supprimés par la commande {\ttfamily git prune}, sans les supprimer réellement.
+\item Exemple \+: {\ttfamily git prune -\/-\/dry-\/run}
+\end{DoxyItemize}
+\item {\ttfamily git reflog}
+\begin{DoxyItemize}
+\item Affiche l\textquotesingle{}historique des mouvements de la tête.
+\item Exemple \+: {\ttfamily git reflog}
+\end{DoxyItemize}
+\item {\ttfamily git show $<$commit$>$}
+\begin{DoxyItemize}
+\item Affiche les informations sur un commit.
+\item Exemple \+: {\ttfamily git show 0d1d7fc32} 
+\end{DoxyItemize}
+\end{DoxyEnumerate}

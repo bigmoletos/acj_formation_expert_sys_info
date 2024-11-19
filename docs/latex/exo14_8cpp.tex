@@ -1,0 +1,307 @@
+\hypertarget{exo14_8cpp}{}\section{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo14.cpp File Reference}
+\label{exo14_8cpp}\index{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo14.\+cpp@{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo14.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+Include dependency graph for exo14.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{exo14_8cpp_ac4a6ea5584dcd5f76f21e7b2c8fa0770}{copier\+\_\+fichier} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de copier\+\_\+fichier\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo14_8cpp_a4784e519a1cf612c2ee919e1b58ddcc2}{mettre\+\_\+majuscule} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de mettre\+\_\+majuscule\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo14_8cpp_a94b675cdada266c3bdb653473b0bfb74}{mettre\+\_\+minuscules} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de mettre\+\_\+minuscules\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo14_8cpp_a05ee3e12c43f0a7f452c280c40baf354}{capitaliser\+\_\+premieres\+\_\+lettres} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de capitaliser\+\_\+premieres\+\_\+lettres\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo14_8cpp_a729298a1daee9c362845e41a3a250bc4}{inverser\+\_\+casse} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de inverser\+\_\+casse\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo14_8cpp_a1ec3d6961a2ef4cd2f7890ca48e96e04}{justifier\+\_\+droite\+\_\+85car} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de justifier\+\_\+droite\+\_\+85car\mbox{]} \end{DoxyCompactList}\item 
+int \hyperlink{exo14_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de main\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{exo14_8cpp_a05ee3e12c43f0a7f452c280c40baf354}\label{exo14_8cpp_a05ee3e12c43f0a7f452c280c40baf354}} 
+\index{exo14.\+cpp@{exo14.\+cpp}!capitaliser\+\_\+premieres\+\_\+lettres@{capitaliser\+\_\+premieres\+\_\+lettres}}
+\index{capitaliser\+\_\+premieres\+\_\+lettres@{capitaliser\+\_\+premieres\+\_\+lettres}!exo14.\+cpp@{exo14.\+cpp}}
+\subsubsection{\texorpdfstring{capitaliser\+\_\+premieres\+\_\+lettres()}{capitaliser\_premieres\_lettres()}}
+{\footnotesize\ttfamily void capitaliser\+\_\+premieres\+\_\+lettres (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de capitaliser\+\_\+premieres\+\_\+lettres\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo14_8cpp_ac4a6ea5584dcd5f76f21e7b2c8fa0770}\label{exo14_8cpp_ac4a6ea5584dcd5f76f21e7b2c8fa0770}} 
+\index{exo14.\+cpp@{exo14.\+cpp}!copier\+\_\+fichier@{copier\+\_\+fichier}}
+\index{copier\+\_\+fichier@{copier\+\_\+fichier}!exo14.\+cpp@{exo14.\+cpp}}
+\subsubsection{\texorpdfstring{copier\+\_\+fichier()}{copier\_fichier()}}
+{\footnotesize\ttfamily void copier\+\_\+fichier (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de copier\+\_\+fichier\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo14_8cpp_a729298a1daee9c362845e41a3a250bc4}\label{exo14_8cpp_a729298a1daee9c362845e41a3a250bc4}} 
+\index{exo14.\+cpp@{exo14.\+cpp}!inverser\+\_\+casse@{inverser\+\_\+casse}}
+\index{inverser\+\_\+casse@{inverser\+\_\+casse}!exo14.\+cpp@{exo14.\+cpp}}
+\subsubsection{\texorpdfstring{inverser\+\_\+casse()}{inverser\_casse()}}
+{\footnotesize\ttfamily void inverser\+\_\+casse (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de inverser\+\_\+casse\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo14_8cpp_a1ec3d6961a2ef4cd2f7890ca48e96e04}\label{exo14_8cpp_a1ec3d6961a2ef4cd2f7890ca48e96e04}} 
+\index{exo14.\+cpp@{exo14.\+cpp}!justifier\+\_\+droite\+\_\+85car@{justifier\+\_\+droite\+\_\+85car}}
+\index{justifier\+\_\+droite\+\_\+85car@{justifier\+\_\+droite\+\_\+85car}!exo14.\+cpp@{exo14.\+cpp}}
+\subsubsection{\texorpdfstring{justifier\+\_\+droite\+\_\+85car()}{justifier\_droite\_85car()}}
+{\footnotesize\ttfamily void justifier\+\_\+droite\+\_\+85car (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de justifier\+\_\+droite\+\_\+85car\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo14_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{exo14_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{exo14.\+cpp@{exo14.\+cpp}!main@{main}}
+\index{main@{main}!exo14.\+cpp@{exo14.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de main\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Aucun} & \mbox{[}Cette fonction n\textquotesingle{}a pas de paramètres\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier\+\_\+initial} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier\+\_\+corrected} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo14_8cpp_a4784e519a1cf612c2ee919e1b58ddcc2}\label{exo14_8cpp_a4784e519a1cf612c2ee919e1b58ddcc2}} 
+\index{exo14.\+cpp@{exo14.\+cpp}!mettre\+\_\+majuscule@{mettre\+\_\+majuscule}}
+\index{mettre\+\_\+majuscule@{mettre\+\_\+majuscule}!exo14.\+cpp@{exo14.\+cpp}}
+\subsubsection{\texorpdfstring{mettre\+\_\+majuscule()}{mettre\_majuscule()}}
+{\footnotesize\ttfamily void mettre\+\_\+majuscule (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de mettre\+\_\+majuscule\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo14_8cpp_a94b675cdada266c3bdb653473b0bfb74}\label{exo14_8cpp_a94b675cdada266c3bdb653473b0bfb74}} 
+\index{exo14.\+cpp@{exo14.\+cpp}!mettre\+\_\+minuscules@{mettre\+\_\+minuscules}}
+\index{mettre\+\_\+minuscules@{mettre\+\_\+minuscules}!exo14.\+cpp@{exo14.\+cpp}}
+\subsubsection{\texorpdfstring{mettre\+\_\+minuscules()}{mettre\_minuscules()}}
+{\footnotesize\ttfamily void mettre\+\_\+minuscules (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de mettre\+\_\+minuscules\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}

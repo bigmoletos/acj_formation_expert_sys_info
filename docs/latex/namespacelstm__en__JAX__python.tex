@@ -1,0 +1,91 @@
+\hypertarget{namespacelstm__en__JAX__python}{}\section{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python Namespace Reference}
+\label{namespacelstm__en__JAX__python}\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacelstm__en__JAX__python_a0ad26ee1f725cb54ad8b749930e094a8}{init\+\_\+lstm\+\_\+params} (\hyperlink{namespacelstm__en__JAX__python_a43773b878a81b64380dbda3a42dc12ac}{hidden\+\_\+size}, \hyperlink{namespacelstm__en__JAX__python_a105f5427a708a0b2b3eb7ed1e551a956}{input\+\_\+size}, \hyperlink{namespacelstm__en__JAX__python_a69d278272de0d7f417fa3a912d7942c1}{key})
+\item 
+def \hyperlink{namespacelstm__en__JAX__python_ac13ce59fe2b765416eb40e41654be652}{lstm\+\_\+step} (\hyperlink{namespacelstm__en__JAX__python_aa48611ad29dd219713a46cc6d4691a76}{params}, h, c, \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+def \hyperlink{namespacelstm__en__JAX__python_a11bf77a2c3fc11105d4d29944e565986}{lstm\+\_\+predict} (\hyperlink{namespacelstm__en__JAX__python_aa48611ad29dd219713a46cc6d4691a76}{params}, \hyperlink{namespacelstm__en__JAX__python_a2e0078d9d0b56fa8efb5e5e7f1a6fb1c}{inputs}, \hyperlink{namespacelstm__en__JAX__python_a43773b878a81b64380dbda3a42dc12ac}{hidden\+\_\+size})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespacelstm__en__JAX__python_a105f5427a708a0b2b3eb7ed1e551a956}{input\+\_\+size} = 10
+\item 
+int \hyperlink{namespacelstm__en__JAX__python_a43773b878a81b64380dbda3a42dc12ac}{hidden\+\_\+size} = 20
+\item 
+\hyperlink{namespacelstm__en__JAX__python_a69d278272de0d7f417fa3a912d7942c1}{key} = random.\+P\+R\+N\+G\+Key(0)
+\item 
+def \hyperlink{namespacelstm__en__JAX__python_aa48611ad29dd219713a46cc6d4691a76}{params} = \hyperlink{namespacelstm__en__JAX__python_a0ad26ee1f725cb54ad8b749930e094a8}{init\+\_\+lstm\+\_\+params}(\hyperlink{namespacelstm__en__JAX__python_a43773b878a81b64380dbda3a42dc12ac}{hidden\+\_\+size}, \hyperlink{namespacelstm__en__JAX__python_a105f5427a708a0b2b3eb7ed1e551a956}{input\+\_\+size}, \hyperlink{namespacelstm__en__JAX__python_a69d278272de0d7f417fa3a912d7942c1}{key})
+\item 
+\hyperlink{namespacelstm__en__JAX__python_a2e0078d9d0b56fa8efb5e5e7f1a6fb1c}{inputs}
+\item 
+def \hyperlink{namespacelstm__en__JAX__python_a3257f5a4a3e7a7fedaa56d2daf78c405}{predictions} = \hyperlink{namespacelstm__en__JAX__python_a11bf77a2c3fc11105d4d29944e565986}{lstm\+\_\+predict}(\hyperlink{namespacelstm__en__JAX__python_aa48611ad29dd219713a46cc6d4691a76}{params}, \hyperlink{namespacelstm__en__JAX__python_a2e0078d9d0b56fa8efb5e5e7f1a6fb1c}{inputs}, \hyperlink{namespacelstm__en__JAX__python_a43773b878a81b64380dbda3a42dc12ac}{hidden\+\_\+size})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacelstm__en__JAX__python_a0ad26ee1f725cb54ad8b749930e094a8}\label{namespacelstm__en__JAX__python_a0ad26ee1f725cb54ad8b749930e094a8}} 
+\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}!init\+\_\+lstm\+\_\+params@{init\+\_\+lstm\+\_\+params}}
+\index{init\+\_\+lstm\+\_\+params@{init\+\_\+lstm\+\_\+params}!lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsubsection{\texorpdfstring{init\+\_\+lstm\+\_\+params()}{init\_lstm\_params()}}
+{\footnotesize\ttfamily def lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python.\+init\+\_\+lstm\+\_\+params (\begin{DoxyParamCaption}\item[{}]{hidden\+\_\+size,  }\item[{}]{input\+\_\+size,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacelstm__en__JAX__python_a11bf77a2c3fc11105d4d29944e565986}\label{namespacelstm__en__JAX__python_a11bf77a2c3fc11105d4d29944e565986}} 
+\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}!lstm\+\_\+predict@{lstm\+\_\+predict}}
+\index{lstm\+\_\+predict@{lstm\+\_\+predict}!lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsubsection{\texorpdfstring{lstm\+\_\+predict()}{lstm\_predict()}}
+{\footnotesize\ttfamily def lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python.\+lstm\+\_\+predict (\begin{DoxyParamCaption}\item[{}]{params,  }\item[{}]{inputs,  }\item[{}]{hidden\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacelstm__en__JAX__python_ac13ce59fe2b765416eb40e41654be652}\label{namespacelstm__en__JAX__python_ac13ce59fe2b765416eb40e41654be652}} 
+\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}!lstm\+\_\+step@{lstm\+\_\+step}}
+\index{lstm\+\_\+step@{lstm\+\_\+step}!lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsubsection{\texorpdfstring{lstm\+\_\+step()}{lstm\_step()}}
+{\footnotesize\ttfamily def lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python.\+lstm\+\_\+step (\begin{DoxyParamCaption}\item[{}]{params,  }\item[{}]{h,  }\item[{}]{c,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacelstm__en__JAX__python_a43773b878a81b64380dbda3a42dc12ac}\label{namespacelstm__en__JAX__python_a43773b878a81b64380dbda3a42dc12ac}} 
+\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}!hidden\+\_\+size@{hidden\+\_\+size}}
+\index{hidden\+\_\+size@{hidden\+\_\+size}!lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsubsection{\texorpdfstring{hidden\+\_\+size}{hidden\_size}}
+{\footnotesize\ttfamily int lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python.\+hidden\+\_\+size = 20}
+
+\mbox{\Hypertarget{namespacelstm__en__JAX__python_a105f5427a708a0b2b3eb7ed1e551a956}\label{namespacelstm__en__JAX__python_a105f5427a708a0b2b3eb7ed1e551a956}} 
+\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}!input\+\_\+size@{input\+\_\+size}}
+\index{input\+\_\+size@{input\+\_\+size}!lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsubsection{\texorpdfstring{input\+\_\+size}{input\_size}}
+{\footnotesize\ttfamily int lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python.\+input\+\_\+size = 10}
+
+\mbox{\Hypertarget{namespacelstm__en__JAX__python_a2e0078d9d0b56fa8efb5e5e7f1a6fb1c}\label{namespacelstm__en__JAX__python_a2e0078d9d0b56fa8efb5e5e7f1a6fb1c}} 
+\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}!inputs@{inputs}}
+\index{inputs@{inputs}!lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsubsection{\texorpdfstring{inputs}{inputs}}
+{\footnotesize\ttfamily lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python.\+inputs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  random.normal(key,
+2                        (50, input\_size))
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacelstm__en__JAX__python_a69d278272de0d7f417fa3a912d7942c1}\label{namespacelstm__en__JAX__python_a69d278272de0d7f417fa3a912d7942c1}} 
+\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}!key@{key}}
+\index{key@{key}!lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python.\+key = random.\+P\+R\+N\+G\+Key(0)}
+
+\mbox{\Hypertarget{namespacelstm__en__JAX__python_aa48611ad29dd219713a46cc6d4691a76}\label{namespacelstm__en__JAX__python_aa48611ad29dd219713a46cc6d4691a76}} 
+\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}!params@{params}}
+\index{params@{params}!lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsubsection{\texorpdfstring{params}{params}}
+{\footnotesize\ttfamily def lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python.\+params = \hyperlink{namespacelstm__en__JAX__python_a0ad26ee1f725cb54ad8b749930e094a8}{init\+\_\+lstm\+\_\+params}(\hyperlink{namespacelstm__en__JAX__python_a43773b878a81b64380dbda3a42dc12ac}{hidden\+\_\+size}, \hyperlink{namespacelstm__en__JAX__python_a105f5427a708a0b2b3eb7ed1e551a956}{input\+\_\+size}, \hyperlink{namespacelstm__en__JAX__python_a69d278272de0d7f417fa3a912d7942c1}{key})}
+
+\mbox{\Hypertarget{namespacelstm__en__JAX__python_a3257f5a4a3e7a7fedaa56d2daf78c405}\label{namespacelstm__en__JAX__python_a3257f5a4a3e7a7fedaa56d2daf78c405}} 
+\index{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}!predictions@{predictions}}
+\index{predictions@{predictions}!lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python@{lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python}}
+\subsubsection{\texorpdfstring{predictions}{predictions}}
+{\footnotesize\ttfamily def lstm\+\_\+en\+\_\+\+J\+A\+X\+\_\+python.\+predictions = \hyperlink{namespacelstm__en__JAX__python_a11bf77a2c3fc11105d4d29944e565986}{lstm\+\_\+predict}(\hyperlink{namespacelstm__en__JAX__python_aa48611ad29dd219713a46cc6d4691a76}{params}, \hyperlink{namespacelstm__en__JAX__python_a2e0078d9d0b56fa8efb5e5e7f1a6fb1c}{inputs}, \hyperlink{namespacelstm__en__JAX__python_a43773b878a81b64380dbda3a42dc12ac}{hidden\+\_\+size})}
+

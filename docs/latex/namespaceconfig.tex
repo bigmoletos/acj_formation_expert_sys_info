@@ -1,0 +1,186 @@
+\hypertarget{namespaceconfig}{}\section{config Namespace Reference}
+\label{namespaceconfig}\index{config@{config}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\+\_\+env\+\_\+variable} (var\+\_\+name, default=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dictionary \hyperlink{namespaceconfig_a71816e4f95571e210c3a11901501efe1}{D\+E\+B\+I\+A\+N\+\_\+\+B\+DD}
+\item 
+dictionary \hyperlink{namespaceconfig_aff8b756685a16564c3e9cd25f0164ed0}{D\+E\+B\+I\+A\+N\+\_\+\+W\+EB}
+\item 
+dictionary \hyperlink{namespaceconfig_a722da23285ba8345159995861911a3b4}{U\+B\+U\+N\+TU}
+\item 
+dictionary \hyperlink{namespaceconfig_a6579f0a8b9b00feef5c78067411e8666}{U\+B\+U\+N\+T\+U2}
+\item 
+dictionary \hyperlink{namespaceconfig_a1583c06065c1cef60bf9da180f5482f6}{K\+A\+L\+I\+\_\+\+L\+I\+N\+UX}
+\item 
+dictionary \hyperlink{namespaceconfig_a087dd3633f6caa5a0ae259f99d9d6d47}{K\+A\+L\+I\+\_\+\+L\+I\+N\+U\+X2}
+\item 
+dictionary \hyperlink{namespaceconfig_af8dfe12d507571f5fb9183033d873043}{D\+E\+B\+I\+A\+N\+\_\+\+A\+J\+C\+\_\+\+A\+WS}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}\label{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}} 
+\index{config@{config}!get\+\_\+env\+\_\+variable@{get\+\_\+env\+\_\+variable}}
+\index{get\+\_\+env\+\_\+variable@{get\+\_\+env\+\_\+variable}!config@{config}}
+\subsubsection{\texorpdfstring{get\+\_\+env\+\_\+variable()}{get\_env\_variable()}}
+{\footnotesize\ttfamily def config.\+get\+\_\+env\+\_\+variable (\begin{DoxyParamCaption}\item[{}]{var\+\_\+name,  }\item[{}]{default = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Récupère la variable d'environnement ou retourne une valeur par défaut.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceconfig_af8dfe12d507571f5fb9183033d873043}\label{namespaceconfig_af8dfe12d507571f5fb9183033d873043}} 
+\index{config@{config}!D\+E\+B\+I\+A\+N\+\_\+\+A\+J\+C\+\_\+\+A\+WS@{D\+E\+B\+I\+A\+N\+\_\+\+A\+J\+C\+\_\+\+A\+WS}}
+\index{D\+E\+B\+I\+A\+N\+\_\+\+A\+J\+C\+\_\+\+A\+WS@{D\+E\+B\+I\+A\+N\+\_\+\+A\+J\+C\+\_\+\+A\+WS}!config@{config}}
+\subsubsection{\texorpdfstring{D\+E\+B\+I\+A\+N\+\_\+\+A\+J\+C\+\_\+\+A\+WS}{DEBIAN\_AJC\_AWS}}
+{\footnotesize\ttfamily dictionary config.\+D\+E\+B\+I\+A\+N\+\_\+\+A\+J\+C\+\_\+\+A\+WS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'hostname'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_AJC\_AWS\_HOSTNAME'}),
+3     \textcolor{stringliteral}{'ip'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_AJC\_AWS\_IP'}),
+4     \textcolor{stringliteral}{'port'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_AJC\_AWS\_PORT'}, 22)),
+5     \textcolor{stringliteral}{'username'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_AJC\_AWS\_USERNAME'}),
+6     \textcolor{stringliteral}{'password'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_AJC\_AWS\_PASSWORD'},
+7                                  \textcolor{stringliteral}{''}),  \textcolor{comment}{# Laisser vide si connexion avec clé}
+8     \textcolor{stringliteral}{'key\_file'}:
+9     \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_AJC\_AWS\_KEY\_FILE'}
+10                      ),  \textcolor{comment}{# Chemin vers la clé pour la connexion avec clé}
+11     \textcolor{stringliteral}{'port\_internet'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_AJC\_AWS\_PORT\_INTERNET'},
+12                                           8085)),
+13     \textcolor{stringliteral}{'name'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_AJC\_AWS\_NAME'}, \textcolor{stringliteral}{'debian\_ajc\_aws'}),
+14 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceconfig_a71816e4f95571e210c3a11901501efe1}\label{namespaceconfig_a71816e4f95571e210c3a11901501efe1}} 
+\index{config@{config}!D\+E\+B\+I\+A\+N\+\_\+\+B\+DD@{D\+E\+B\+I\+A\+N\+\_\+\+B\+DD}}
+\index{D\+E\+B\+I\+A\+N\+\_\+\+B\+DD@{D\+E\+B\+I\+A\+N\+\_\+\+B\+DD}!config@{config}}
+\subsubsection{\texorpdfstring{D\+E\+B\+I\+A\+N\+\_\+\+B\+DD}{DEBIAN\_BDD}}
+{\footnotesize\ttfamily dictionary config.\+D\+E\+B\+I\+A\+N\+\_\+\+B\+DD}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'hostname'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_HOSTNAME'}),
+3     \textcolor{stringliteral}{'ip'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_IP'}),
+4     \textcolor{stringliteral}{'port'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_PORT'}, 22)),
+5     \textcolor{stringliteral}{'username'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_USERNAME'}, \textcolor{stringliteral}{'vboxuser'}),
+6     \textcolor{stringliteral}{'password'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_PASSWORD'}),
+7     \textcolor{stringliteral}{'key\_file'}:
+8     \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_KEY\_FILE'},
+9                      \textcolor{stringliteral}{''}),  \textcolor{comment}{# Laisser vide si connexion avec mot de passe}
+10     \textcolor{stringliteral}{'port\_internet'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_PORT\_INTERNET'}, 8080)),
+11     \textcolor{stringliteral}{'name'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN\_NAME'}, \textcolor{stringliteral}{'debian'}),
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceconfig_aff8b756685a16564c3e9cd25f0164ed0}\label{namespaceconfig_aff8b756685a16564c3e9cd25f0164ed0}} 
+\index{config@{config}!D\+E\+B\+I\+A\+N\+\_\+\+W\+EB@{D\+E\+B\+I\+A\+N\+\_\+\+W\+EB}}
+\index{D\+E\+B\+I\+A\+N\+\_\+\+W\+EB@{D\+E\+B\+I\+A\+N\+\_\+\+W\+EB}!config@{config}}
+\subsubsection{\texorpdfstring{D\+E\+B\+I\+A\+N\+\_\+\+W\+EB}{DEBIAN\_WEB}}
+{\footnotesize\ttfamily dictionary config.\+D\+E\+B\+I\+A\+N\+\_\+\+W\+EB}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'hostname'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN2\_HOSTNAME'}),
+3     \textcolor{stringliteral}{'ip'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN2\_IP'}),
+4     \textcolor{stringliteral}{'port'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN2\_PORT'}, 22)),
+5     \textcolor{stringliteral}{'username'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN2\_USERNAME'}, \textcolor{stringliteral}{'vboxuser'}),
+6     \textcolor{stringliteral}{'password'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN2\_PASSWORD'}),
+7     \textcolor{stringliteral}{'key\_file'}:
+8     \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN2\_KEY\_FILE'},
+9                      \textcolor{stringliteral}{''}),  \textcolor{comment}{# Laisser vide si connexion avec mot de passe}
+10     \textcolor{stringliteral}{'port\_internet'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN2\_PORT\_INTERNET'}, 8081)),
+11     \textcolor{stringliteral}{'name'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'DEBIAN2\_NAME'}, \textcolor{stringliteral}{'debian2'}),
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceconfig_a1583c06065c1cef60bf9da180f5482f6}\label{namespaceconfig_a1583c06065c1cef60bf9da180f5482f6}} 
+\index{config@{config}!K\+A\+L\+I\+\_\+\+L\+I\+N\+UX@{K\+A\+L\+I\+\_\+\+L\+I\+N\+UX}}
+\index{K\+A\+L\+I\+\_\+\+L\+I\+N\+UX@{K\+A\+L\+I\+\_\+\+L\+I\+N\+UX}!config@{config}}
+\subsubsection{\texorpdfstring{K\+A\+L\+I\+\_\+\+L\+I\+N\+UX}{KALI\_LINUX}}
+{\footnotesize\ttfamily dictionary config.\+K\+A\+L\+I\+\_\+\+L\+I\+N\+UX}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'hostname'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_HOSTNAME'}),
+3     \textcolor{stringliteral}{'ip'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_IP'}),
+4     \textcolor{stringliteral}{'port'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_PORT'}, 22)),
+5     \textcolor{stringliteral}{'username'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_USERNAME'}, \textcolor{stringliteral}{'vboxuser'}),
+6     \textcolor{stringliteral}{'password'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_PASSWORD'}),
+7     \textcolor{stringliteral}{'key\_file'}:
+8     \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_KEY\_FILE'},
+9                      \textcolor{stringliteral}{''}),  \textcolor{comment}{# Laisser vide si connexion avec mot de passe}
+10     \textcolor{stringliteral}{'port\_internet'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_PORT\_INTERNET'}, 8084)),
+11     \textcolor{stringliteral}{'name'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_NAME'}, \textcolor{stringliteral}{'kali\_linux'}),
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceconfig_a087dd3633f6caa5a0ae259f99d9d6d47}\label{namespaceconfig_a087dd3633f6caa5a0ae259f99d9d6d47}} 
+\index{config@{config}!K\+A\+L\+I\+\_\+\+L\+I\+N\+U\+X2@{K\+A\+L\+I\+\_\+\+L\+I\+N\+U\+X2}}
+\index{K\+A\+L\+I\+\_\+\+L\+I\+N\+U\+X2@{K\+A\+L\+I\+\_\+\+L\+I\+N\+U\+X2}!config@{config}}
+\subsubsection{\texorpdfstring{K\+A\+L\+I\+\_\+\+L\+I\+N\+U\+X2}{KALI\_LINUX2}}
+{\footnotesize\ttfamily dictionary config.\+K\+A\+L\+I\+\_\+\+L\+I\+N\+U\+X2}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'hostname'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_HOSTNAME'}),
+3     \textcolor{stringliteral}{'ip'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_IP'}),
+4     \textcolor{stringliteral}{'port'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_PORT'}, 22)),
+5     \textcolor{stringliteral}{'username'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_USERNAME'}, \textcolor{stringliteral}{'vboxuser'}),
+6     \textcolor{stringliteral}{'password'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_PASSWORD'}),
+7     \textcolor{stringliteral}{'key\_file'}:
+8     \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_KEY\_FILE'},
+9                      \textcolor{stringliteral}{''}),  \textcolor{comment}{# Laisser vide si connexion avec mot de passe}
+10     \textcolor{stringliteral}{'port\_internet'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_PORT\_INTERNET'}, 8084)),
+11     \textcolor{stringliteral}{'name'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'KALI\_LINUX\_NAME'}, \textcolor{stringliteral}{'kali\_linux'}),
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceconfig_a722da23285ba8345159995861911a3b4}\label{namespaceconfig_a722da23285ba8345159995861911a3b4}} 
+\index{config@{config}!U\+B\+U\+N\+TU@{U\+B\+U\+N\+TU}}
+\index{U\+B\+U\+N\+TU@{U\+B\+U\+N\+TU}!config@{config}}
+\subsubsection{\texorpdfstring{U\+B\+U\+N\+TU}{UBUNTU}}
+{\footnotesize\ttfamily dictionary config.\+U\+B\+U\+N\+TU}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'hostname'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU\_HOSTNAME'}),
+3     \textcolor{stringliteral}{'ip'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU\_IP'}),
+4     \textcolor{stringliteral}{'port'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU\_PORT'}, 22)),
+5     \textcolor{stringliteral}{'username'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU\_USERNAME'}, \textcolor{stringliteral}{'vboxuser'}),
+6     \textcolor{stringliteral}{'password'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU\_PASSWORD'}),
+7     \textcolor{stringliteral}{'key\_file'}:
+8     \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU\_KEY\_FILE'},
+9                      \textcolor{stringliteral}{''}),  \textcolor{comment}{# Laisser vide si connexion avec mot de passe}
+10     \textcolor{stringliteral}{'port\_internet'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU\_PORT\_INTERNET'}, 8082)),
+11     \textcolor{stringliteral}{'name'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU\_NAME'}, \textcolor{stringliteral}{'ubuntu'}),
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceconfig_a6579f0a8b9b00feef5c78067411e8666}\label{namespaceconfig_a6579f0a8b9b00feef5c78067411e8666}} 
+\index{config@{config}!U\+B\+U\+N\+T\+U2@{U\+B\+U\+N\+T\+U2}}
+\index{U\+B\+U\+N\+T\+U2@{U\+B\+U\+N\+T\+U2}!config@{config}}
+\subsubsection{\texorpdfstring{U\+B\+U\+N\+T\+U2}{UBUNTU2}}
+{\footnotesize\ttfamily dictionary config.\+U\+B\+U\+N\+T\+U2}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'hostname'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU2\_HOSTNAME'}),
+3     \textcolor{stringliteral}{'ip'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU2\_IP'}),
+4     \textcolor{stringliteral}{'port'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU2\_PORT'}, 22)),
+5     \textcolor{stringliteral}{'username'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU2\_USERNAME'}, \textcolor{stringliteral}{'vboxuser'}),
+6     \textcolor{stringliteral}{'password'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU2\_PASSWORD'}),
+7     \textcolor{stringliteral}{'key\_file'}:
+8     \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU2\_KEY\_FILE'},
+9                      \textcolor{stringliteral}{''}),  \textcolor{comment}{# Laisser vide si connexion avec mot de passe}
+10     \textcolor{stringliteral}{'port\_internet'}: int(\hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU2\_PORT\_INTERNET'}, 8083)),
+11     \textcolor{stringliteral}{'name'}: \hyperlink{namespaceconfig_a7cf1bd9315cd5f3237441a2d9414082d}{get\_env\_variable}(\textcolor{stringliteral}{'UBUNTU2\_NAME'}, \textcolor{stringliteral}{'ubuntu2'}),
+12 \}
+\end{DoxyCode}

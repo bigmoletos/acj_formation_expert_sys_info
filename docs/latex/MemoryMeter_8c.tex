@@ -1,0 +1,46 @@
+\hypertarget{MemoryMeter_8c}{}\section{linux/download/htop-\/3.3.0/\+Memory\+Meter.c File Reference}
+\label{MemoryMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Memory\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/\+Memory\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Memory\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+Include dependency graph for Memory\+Meter.\+c\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{MemoryMeter_8c_a803f74402a94d9011a931a9c84bc085d}{Memory\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{MemoryMeter_8c_a803f74402a94d9011a931a9c84bc085d}\label{MemoryMeter_8c_a803f74402a94d9011a931a9c84bc085d}} 
+\index{Memory\+Meter.\+c@{Memory\+Meter.\+c}!Memory\+Meter\+\_\+class@{Memory\+Meter\+\_\+class}}
+\index{Memory\+Meter\+\_\+class@{Memory\+Meter\+\_\+class}!Memory\+Meter.\+c@{Memory\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Memory\+Meter\+\_\+class}{MemoryMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Memory\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = MemoryMeter\_display,
+   \},
+   .updateValues = MemoryMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa7da66e2e324247d0722afd14d7f12037}{BAR\_METERMODE},
+   .maxItems = \hyperlink{MemoryMeter_8h_a7f221a1a44d2e08def3318b4fd0a5b65a7b17f50bce1b66dcb9e4069c64cf6745}{MEMORY\_METER\_ITEMCOUNT},
+   .total = 100.0,
+   .attributes = MemoryMeter\_attributes,
+   .name = \textcolor{stringliteral}{"Memory"},
+   .uiName = \textcolor{stringliteral}{"Memory"},
+   .caption = \textcolor{stringliteral}{"Mem"}
+\}
+\end{DoxyCode}

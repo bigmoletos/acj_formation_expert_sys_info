@@ -1,0 +1,96 @@
+\hypertarget{ListItem_8h}{}\section{linux/download/htop-\/3.3.0/\+List\+Item.h File Reference}
+\label{ListItem_8h}\index{linux/download/htop-\/3.\+3.\+0/\+List\+Item.\+h@{linux/download/htop-\/3.\+3.\+0/\+List\+Item.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+Include dependency graph for List\+Item.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structListItem__}{List\+Item\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structListItem__}{List\+Item\+\_\+} \hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ListItem_8h_a1ee719a7c785aac4cba010a8d7a9ae33}{List\+Item\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+void \hyperlink{ListItem_8h_aa4490e10fd323af0cd79e9f60b3e0dd0}{List\+Item\+\_\+display} (const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$out)
+\item 
+void \hyperlink{ListItem_8h_a4fd135991ff8fd7fd13b768584ba0eaf}{List\+Item\+\_\+init} (\hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item} $\ast$this, const char $\ast$value, int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+\hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item} $\ast$ \hyperlink{ListItem_8h_aec8b4ce5c3b5d11e47936a809084d7b1}{List\+Item\+\_\+new} (const char $\ast$value, int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+void \hyperlink{ListItem_8h_a20dbe5cafa683806b135adbab8cd2e1b}{List\+Item\+\_\+append} (\hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item} $\ast$this, const char $\ast$text)
+\item 
+int \hyperlink{ListItem_8h_aa2e7d2d659a511f46c45230c99f8b38b}{List\+Item\+\_\+compare} (const void $\ast$cast1, const void $\ast$cast2)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} \hyperlink{ListItem_8h_a7ac5b26fbd995a37e57bf4be9217bdcb}{List\+Item\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}\label{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}} 
+\index{List\+Item.\+h@{List\+Item.\+h}!List\+Item@{List\+Item}}
+\index{List\+Item@{List\+Item}!List\+Item.\+h@{List\+Item.\+h}}
+\subsubsection{\texorpdfstring{List\+Item}{ListItem}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structListItem__}{List\+Item\+\_\+}  \hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ListItem_8h_a20dbe5cafa683806b135adbab8cd2e1b}\label{ListItem_8h_a20dbe5cafa683806b135adbab8cd2e1b}} 
+\index{List\+Item.\+h@{List\+Item.\+h}!List\+Item\+\_\+append@{List\+Item\+\_\+append}}
+\index{List\+Item\+\_\+append@{List\+Item\+\_\+append}!List\+Item.\+h@{List\+Item.\+h}}
+\subsubsection{\texorpdfstring{List\+Item\+\_\+append()}{ListItem\_append()}}
+{\footnotesize\ttfamily void List\+Item\+\_\+append (\begin{DoxyParamCaption}\item[{\hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item} $\ast$}]{this,  }\item[{const char $\ast$}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ListItem_8h_aa2e7d2d659a511f46c45230c99f8b38b}\label{ListItem_8h_aa2e7d2d659a511f46c45230c99f8b38b}} 
+\index{List\+Item.\+h@{List\+Item.\+h}!List\+Item\+\_\+compare@{List\+Item\+\_\+compare}}
+\index{List\+Item\+\_\+compare@{List\+Item\+\_\+compare}!List\+Item.\+h@{List\+Item.\+h}}
+\subsubsection{\texorpdfstring{List\+Item\+\_\+compare()}{ListItem\_compare()}}
+{\footnotesize\ttfamily int List\+Item\+\_\+compare (\begin{DoxyParamCaption}\item[{const void $\ast$}]{cast1,  }\item[{const void $\ast$}]{cast2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ListItem_8h_a1ee719a7c785aac4cba010a8d7a9ae33}\label{ListItem_8h_a1ee719a7c785aac4cba010a8d7a9ae33}} 
+\index{List\+Item.\+h@{List\+Item.\+h}!List\+Item\+\_\+delete@{List\+Item\+\_\+delete}}
+\index{List\+Item\+\_\+delete@{List\+Item\+\_\+delete}!List\+Item.\+h@{List\+Item.\+h}}
+\subsubsection{\texorpdfstring{List\+Item\+\_\+delete()}{ListItem\_delete()}}
+{\footnotesize\ttfamily void List\+Item\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ListItem_8h_aa4490e10fd323af0cd79e9f60b3e0dd0}\label{ListItem_8h_aa4490e10fd323af0cd79e9f60b3e0dd0}} 
+\index{List\+Item.\+h@{List\+Item.\+h}!List\+Item\+\_\+display@{List\+Item\+\_\+display}}
+\index{List\+Item\+\_\+display@{List\+Item\+\_\+display}!List\+Item.\+h@{List\+Item.\+h}}
+\subsubsection{\texorpdfstring{List\+Item\+\_\+display()}{ListItem\_display()}}
+{\footnotesize\ttfamily void List\+Item\+\_\+display (\begin{DoxyParamCaption}\item[{const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ListItem_8h_a4fd135991ff8fd7fd13b768584ba0eaf}\label{ListItem_8h_a4fd135991ff8fd7fd13b768584ba0eaf}} 
+\index{List\+Item.\+h@{List\+Item.\+h}!List\+Item\+\_\+init@{List\+Item\+\_\+init}}
+\index{List\+Item\+\_\+init@{List\+Item\+\_\+init}!List\+Item.\+h@{List\+Item.\+h}}
+\subsubsection{\texorpdfstring{List\+Item\+\_\+init()}{ListItem\_init()}}
+{\footnotesize\ttfamily void List\+Item\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item} $\ast$}]{this,  }\item[{const char $\ast$}]{value,  }\item[{int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ListItem_8h_aec8b4ce5c3b5d11e47936a809084d7b1}\label{ListItem_8h_aec8b4ce5c3b5d11e47936a809084d7b1}} 
+\index{List\+Item.\+h@{List\+Item.\+h}!List\+Item\+\_\+new@{List\+Item\+\_\+new}}
+\index{List\+Item\+\_\+new@{List\+Item\+\_\+new}!List\+Item.\+h@{List\+Item.\+h}}
+\subsubsection{\texorpdfstring{List\+Item\+\_\+new()}{ListItem\_new()}}
+{\footnotesize\ttfamily \hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item}$\ast$ List\+Item\+\_\+new (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value,  }\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ListItem_8h_a7ac5b26fbd995a37e57bf4be9217bdcb}\label{ListItem_8h_a7ac5b26fbd995a37e57bf4be9217bdcb}} 
+\index{List\+Item.\+h@{List\+Item.\+h}!List\+Item\+\_\+class@{List\+Item\+\_\+class}}
+\index{List\+Item\+\_\+class@{List\+Item\+\_\+class}!List\+Item.\+h@{List\+Item.\+h}}
+\subsubsection{\texorpdfstring{List\+Item\+\_\+class}{ListItem\_class}}
+{\footnotesize\ttfamily const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} List\+Item\+\_\+class}
+

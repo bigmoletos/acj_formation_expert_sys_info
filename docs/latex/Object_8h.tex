@@ -1,0 +1,161 @@
+\hypertarget{Object_8h}{}\section{linux/download/htop-\/3.3.0/\+Object.h File Reference}
+\label{Object_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Object.\+h@{linux/download/htop-\/3.\+3.\+0/\+Object.\+h}}
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Object.\+h\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structObjectClass__}{Object\+Class\+\_\+}
+\item 
+struct \hyperlink{structObject__}{Object\+\_\+}
+\item 
+union \hyperlink{unionArg}{Arg}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)~((const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$)(obj\+\_\+))-\/$>$klass
+\item 
+\#define \hyperlink{Object_8h_ab7e82a054b627a8e48d6ac12b9b284c9}{Object\+\_\+set\+Class}(obj\+\_\+,  class\+\_\+)~(((\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$)(obj\+\_\+))-\/$>$klass = (const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class}$\ast$) (class\+\_\+))
+\item 
+\#define \hyperlink{Object_8h_abc7ce75aadd7599b9b0a0ff117b19fff}{Object\+\_\+delete}(obj\+\_\+)~(assert(\hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$delete), \hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$delete((\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$)(obj\+\_\+)))
+\item 
+\#define \hyperlink{Object_8h_ad86b0cf7587bd5bf664b157d2c621822}{Object\+\_\+display\+Fn}(obj\+\_\+)~\hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$\hyperlink{calculatrice_8c_af531fc961536d8392c7f62732a98edfc}{display}
+\item 
+\#define \hyperlink{Object_8h_a1301db233bce14fae8105c4ba7b84228}{Object\+\_\+display}(obj\+\_\+,  str\+\_\+)~(assert(\hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$\hyperlink{calculatrice_8c_af531fc961536d8392c7f62732a98edfc}{display}), \hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$\hyperlink{calculatrice_8c_af531fc961536d8392c7f62732a98edfc}{display}((const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$)(obj\+\_\+), str\+\_\+))
+\item 
+\#define \hyperlink{Object_8h_a513f9003989a23ffec000a25b21b80d4}{Object\+\_\+compare}(obj\+\_\+,  other\+\_\+)~(assert(\hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$compare), \hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$compare((const void$\ast$)(obj\+\_\+), other\+\_\+))
+\item 
+\#define \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(class\+\_\+)~((const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class}$\ast$)(\&(class\+\_\+ \#\# \+\_\+class)))
+\item 
+\#define \hyperlink{Object_8h_a94299112bab2af8bd8e4e5cb67f6cb35}{Alloc\+This}(class\+\_\+)~(class\+\_\+$\ast$)   \hyperlink{XUtils_8h_a7d598f781ce8067c7653c7b745bf4191}{x\+Malloc}(sizeof(class\+\_\+)); \hyperlink{Object_8h_ab7e82a054b627a8e48d6ac12b9b284c9}{Object\+\_\+set\+Class}(this, \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(class\+\_\+))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structObject__}{Object\+\_\+} \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}
+\item 
+typedef void($\ast$ \hyperlink{Object_8h_a7f3c8c316adfe192cfd6068872ea0682}{Object\+\_\+\+Display}) (const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$)
+\item 
+typedef int($\ast$ \hyperlink{Object_8h_ac4e48c8d5aa251cd359de30d13cd26f4}{Object\+\_\+\+Compare}) (const void $\ast$, const void $\ast$)
+\item 
+typedef void($\ast$ \hyperlink{Object_8h_ad4d12b504fef15e113a3e939f5afa7fe}{Object\+\_\+\+Delete}) (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$)
+\item 
+typedef struct \hyperlink{structObjectClass__}{Object\+Class\+\_\+} \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{Object_8h_ab498a90dabfa72c4f4ac48a47b8c8d0c}{Object\+\_\+isA} (const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$o, const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$klass)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} \hyperlink{Object_8h_af85b6cfa85aad4339ee9f48a5c2848ef}{Object\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Object_8h_a94299112bab2af8bd8e4e5cb67f6cb35}\label{Object_8h_a94299112bab2af8bd8e4e5cb67f6cb35}} 
+\index{Object.\+h@{Object.\+h}!Alloc\+This@{Alloc\+This}}
+\index{Alloc\+This@{Alloc\+This}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Alloc\+This}{AllocThis}}
+{\footnotesize\ttfamily \#define Alloc\+This(\begin{DoxyParamCaption}\item[{}]{class\+\_\+ }\end{DoxyParamCaption})~(class\+\_\+$\ast$)   \hyperlink{XUtils_8h_a7d598f781ce8067c7653c7b745bf4191}{x\+Malloc}(sizeof(class\+\_\+)); \hyperlink{Object_8h_ab7e82a054b627a8e48d6ac12b9b284c9}{Object\+\_\+set\+Class}(this, \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(class\+\_\+))}
+
+\mbox{\Hypertarget{Object_8h_a1899d476fe1045e267789fef340acddd}\label{Object_8h_a1899d476fe1045e267789fef340acddd}} 
+\index{Object.\+h@{Object.\+h}!Class@{Class}}
+\index{Class@{Class}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Class}{Class}}
+{\footnotesize\ttfamily \#define Class(\begin{DoxyParamCaption}\item[{}]{class\+\_\+ }\end{DoxyParamCaption})~((const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class}$\ast$)(\&(class\+\_\+ \#\# \+\_\+class)))}
+
+\mbox{\Hypertarget{Object_8h_a513f9003989a23ffec000a25b21b80d4}\label{Object_8h_a513f9003989a23ffec000a25b21b80d4}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+compare@{Object\+\_\+compare}}
+\index{Object\+\_\+compare@{Object\+\_\+compare}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+compare}{Object\_compare}}
+{\footnotesize\ttfamily \#define Object\+\_\+compare(\begin{DoxyParamCaption}\item[{}]{obj\+\_\+,  }\item[{}]{other\+\_\+ }\end{DoxyParamCaption})~(assert(\hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$compare), \hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$compare((const void$\ast$)(obj\+\_\+), other\+\_\+))}
+
+\mbox{\Hypertarget{Object_8h_abc7ce75aadd7599b9b0a0ff117b19fff}\label{Object_8h_abc7ce75aadd7599b9b0a0ff117b19fff}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+delete@{Object\+\_\+delete}}
+\index{Object\+\_\+delete@{Object\+\_\+delete}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+delete}{Object\_delete}}
+{\footnotesize\ttfamily \#define Object\+\_\+delete(\begin{DoxyParamCaption}\item[{}]{obj\+\_\+ }\end{DoxyParamCaption})~(assert(\hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$delete), \hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$delete((\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$)(obj\+\_\+)))}
+
+\mbox{\Hypertarget{Object_8h_a1301db233bce14fae8105c4ba7b84228}\label{Object_8h_a1301db233bce14fae8105c4ba7b84228}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+display@{Object\+\_\+display}}
+\index{Object\+\_\+display@{Object\+\_\+display}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+display}{Object\_display}}
+{\footnotesize\ttfamily \#define Object\+\_\+display(\begin{DoxyParamCaption}\item[{}]{obj\+\_\+,  }\item[{}]{str\+\_\+ }\end{DoxyParamCaption})~(assert(\hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$\hyperlink{calculatrice_8c_af531fc961536d8392c7f62732a98edfc}{display}), \hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$\hyperlink{calculatrice_8c_af531fc961536d8392c7f62732a98edfc}{display}((const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$)(obj\+\_\+), str\+\_\+))}
+
+\mbox{\Hypertarget{Object_8h_ad86b0cf7587bd5bf664b157d2c621822}\label{Object_8h_ad86b0cf7587bd5bf664b157d2c621822}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+display\+Fn@{Object\+\_\+display\+Fn}}
+\index{Object\+\_\+display\+Fn@{Object\+\_\+display\+Fn}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+display\+Fn}{Object\_displayFn}}
+{\footnotesize\ttfamily \#define Object\+\_\+display\+Fn(\begin{DoxyParamCaption}\item[{}]{obj\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}{Object\+\_\+get\+Class}(obj\+\_\+)-\/$>$\hyperlink{calculatrice_8c_af531fc961536d8392c7f62732a98edfc}{display}}
+
+\mbox{\Hypertarget{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}\label{Object_8h_a7f4686405e03c43f7ff8098b4a958f2e}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+get\+Class@{Object\+\_\+get\+Class}}
+\index{Object\+\_\+get\+Class@{Object\+\_\+get\+Class}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+get\+Class}{Object\_getClass}}
+{\footnotesize\ttfamily \#define Object\+\_\+get\+Class(\begin{DoxyParamCaption}\item[{}]{obj\+\_\+ }\end{DoxyParamCaption})~((const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$)(obj\+\_\+))-\/$>$klass}
+
+\mbox{\Hypertarget{Object_8h_ab7e82a054b627a8e48d6ac12b9b284c9}\label{Object_8h_ab7e82a054b627a8e48d6ac12b9b284c9}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+set\+Class@{Object\+\_\+set\+Class}}
+\index{Object\+\_\+set\+Class@{Object\+\_\+set\+Class}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+set\+Class}{Object\_setClass}}
+{\footnotesize\ttfamily \#define Object\+\_\+set\+Class(\begin{DoxyParamCaption}\item[{}]{obj\+\_\+,  }\item[{}]{class\+\_\+ }\end{DoxyParamCaption})~(((\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$)(obj\+\_\+))-\/$>$klass = (const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class}$\ast$) (class\+\_\+))}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}\label{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}} 
+\index{Object.\+h@{Object.\+h}!Object@{Object}}
+\index{Object@{Object}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object}{Object}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structObject__}{Object\+\_\+} \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}}
+
+\mbox{\Hypertarget{Object_8h_ac4e48c8d5aa251cd359de30d13cd26f4}\label{Object_8h_ac4e48c8d5aa251cd359de30d13cd26f4}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+\+Compare@{Object\+\_\+\+Compare}}
+\index{Object\+\_\+\+Compare@{Object\+\_\+\+Compare}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+\+Compare}{Object\_Compare}}
+{\footnotesize\ttfamily typedef int($\ast$ Object\+\_\+\+Compare) (const void $\ast$, const void $\ast$)}
+
+\mbox{\Hypertarget{Object_8h_ad4d12b504fef15e113a3e939f5afa7fe}\label{Object_8h_ad4d12b504fef15e113a3e939f5afa7fe}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+\+Delete@{Object\+\_\+\+Delete}}
+\index{Object\+\_\+\+Delete@{Object\+\_\+\+Delete}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+\+Delete}{Object\_Delete}}
+{\footnotesize\ttfamily typedef void($\ast$ Object\+\_\+\+Delete) (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$)}
+
+\mbox{\Hypertarget{Object_8h_a7f3c8c316adfe192cfd6068872ea0682}\label{Object_8h_a7f3c8c316adfe192cfd6068872ea0682}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+\+Display@{Object\+\_\+\+Display}}
+\index{Object\+\_\+\+Display@{Object\+\_\+\+Display}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+\+Display}{Object\_Display}}
+{\footnotesize\ttfamily typedef void($\ast$ Object\+\_\+\+Display) (const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$)}
+
+\mbox{\Hypertarget{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}\label{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}} 
+\index{Object.\+h@{Object.\+h}!Object\+Class@{Object\+Class}}
+\index{Object\+Class@{Object\+Class}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+Class}{ObjectClass}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structObjectClass__}{Object\+Class\+\_\+}  \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Object_8h_ab498a90dabfa72c4f4ac48a47b8c8d0c}\label{Object_8h_ab498a90dabfa72c4f4ac48a47b8c8d0c}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+isA@{Object\+\_\+isA}}
+\index{Object\+\_\+isA@{Object\+\_\+isA}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+is\+A()}{Object\_isA()}}
+{\footnotesize\ttfamily bool Object\+\_\+isA (\begin{DoxyParamCaption}\item[{const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{o,  }\item[{const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$}]{klass }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Object_8h_af85b6cfa85aad4339ee9f48a5c2848ef}\label{Object_8h_af85b6cfa85aad4339ee9f48a5c2848ef}} 
+\index{Object.\+h@{Object.\+h}!Object\+\_\+class@{Object\+\_\+class}}
+\index{Object\+\_\+class@{Object\+\_\+class}!Object.\+h@{Object.\+h}}
+\subsubsection{\texorpdfstring{Object\+\_\+class}{Object\_class}}
+{\footnotesize\ttfamily const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} Object\+\_\+class}
+

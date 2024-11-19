@@ -1,0 +1,48 @@
+python.\+exe -\/m pip install --upgrade pip
+
+\section*{Installer virtualenv}
+
+pip install virtualenv
+
+\section*{Créer un environnement virtuel}
+
+virtualenv env\+Flask ../../../../../../\+Wild\+Code\+School/\+Formation\+\_\+\+I\+A\+\_\+\+D\+A\+T\+A\+\_\+nov2023/\+Projets/\+Projet2\+\_\+\+Net\+Flix/\+Django/lancement\+\_\+envi\+\_\+virtuel\+\_\+django.md \char`\"{}text\char`\"{} \section*{Activer l\textquotesingle{}environnement virtuel}
+
+.
+
+\section*{Installer les packages}
+
+pip install flask pandas numpy plotly seaborn scikit-\/learn
+
+\section*{Enregistrer les packages installés dans un fichier requirements.\+txt}
+
+pip freeze $>$ requirements.\+txt
+
+\section*{Installer les packages à partir du fichier requirements.\+txt}
+
+pip install -\/r requirements.\+txt
+
+\section*{lancer le fichier app.\+py}
+
+\mbox{[}Running\mbox{]} python -\/u \char`\"{}n\+:\textbackslash{}programmation\textbackslash{}\+Wild\+Code\+School\textbackslash{}\+Formation\+\_\+\+I\+A\+\_\+\+D\+A\+T\+A\+\_\+nov2023\textbackslash{}live\+\_\+coding\textbackslash{}flask\textbackslash{}sauvegarde\textbackslash{}app.\+py\char`\"{}
+\begin{DoxyItemize}
+\item Serving Flask app \textquotesingle{}app\textquotesingle{}
+\item Debug mode\+: on W\+A\+R\+N\+I\+NG\+: This is a development server. Do not use it in a production deployment. Use a production W\+S\+GI server instead.
+\item Running on \href{http://127.0.0.1:5000}{\tt http\+://127.\+0.\+0.\+1\+:5000} Press C\+T\+R\+L+C to quit
+\item Restarting with watchdog (windowsapi)
+\item Debugger is active!
+\item Debugger P\+IN\+: 357-\/821-\/041
+\item \section*{\href{http://127.0.0.1:5000}{\tt http\+://127.\+0.\+0.\+1\+:5000} sur le port 5000. Donc, l’\+U\+RL serait \href{http://localhost:5000}{\tt http\+://localhost\+:5000} ou \href{http://127.0.0.1:5000}{\tt http\+://127.\+0.\+0.\+1\+:5000}.}
+\end{DoxyItemize}
+
+\section*{pour arreter l\textquotesingle{}environnement virtuel}
+
+deactivate
+
+\section*{si besoin de désinstaller des prog}
+
+pip uninstall flask pandas numpy plotly seaborn scikit-\/learn
+
+\section*{les templates par défaut doivent se trouver dans le repertoire à la racine de app.\+py dans un dossier templates}
+
+templates 

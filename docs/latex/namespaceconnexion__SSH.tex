@@ -1,0 +1,67 @@
+\hypertarget{namespaceconnexion__SSH}{}\section{connexion\+\_\+\+S\+SH Namespace Reference}
+\label{namespaceconnexion__SSH}\index{connexion\+\_\+\+S\+SH@{connexion\+\_\+\+S\+SH}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceconnexion__SSH_a301597cff046e519a69daa584f1d9166}{execute\+\_\+ssh\+\_\+command} (vm\+\_\+config, command)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceconnexion__SSH_ab87d32049db052980aa5060e990b4ce9}{level}
+\item 
+string \hyperlink{namespaceconnexion__SSH_a0ca1d2768931747fc32a06533a7ed80b}{C\+O\+M\+M\+A\+ND} = \char`\"{}ls -\/l\char`\"{}
+\item 
+def \hyperlink{namespaceconnexion__SSH_ab06475dbad7f16b89c9114749bc95254}{result}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceconnexion__SSH_a301597cff046e519a69daa584f1d9166}\label{namespaceconnexion__SSH_a301597cff046e519a69daa584f1d9166}} 
+\index{connexion\+\_\+\+S\+SH@{connexion\+\_\+\+S\+SH}!execute\+\_\+ssh\+\_\+command@{execute\+\_\+ssh\+\_\+command}}
+\index{execute\+\_\+ssh\+\_\+command@{execute\+\_\+ssh\+\_\+command}!connexion\+\_\+\+S\+SH@{connexion\+\_\+\+S\+SH}}
+\subsubsection{\texorpdfstring{execute\+\_\+ssh\+\_\+command()}{execute\_ssh\_command()}}
+{\footnotesize\ttfamily def connexion\+\_\+\+S\+S\+H.\+execute\+\_\+ssh\+\_\+command (\begin{DoxyParamCaption}\item[{}]{vm\+\_\+config,  }\item[{}]{command }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Établit une connexion SSH à une machine virtuelle et exécute une commande.
+
+:param vm_config: Dictionnaire contenant les informations de la machine virtuelle
+:param command: Commande à exécuter sur la machine virtuelle
+
+:return: Sortie de la commande exécutée
+:raises Exception: Si la connexion SSH ou l'exécution de la commande échoue
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceconnexion__SSH_a0ca1d2768931747fc32a06533a7ed80b}\label{namespaceconnexion__SSH_a0ca1d2768931747fc32a06533a7ed80b}} 
+\index{connexion\+\_\+\+S\+SH@{connexion\+\_\+\+S\+SH}!C\+O\+M\+M\+A\+ND@{C\+O\+M\+M\+A\+ND}}
+\index{C\+O\+M\+M\+A\+ND@{C\+O\+M\+M\+A\+ND}!connexion\+\_\+\+S\+SH@{connexion\+\_\+\+S\+SH}}
+\subsubsection{\texorpdfstring{C\+O\+M\+M\+A\+ND}{COMMAND}}
+{\footnotesize\ttfamily string connexion\+\_\+\+S\+S\+H.\+C\+O\+M\+M\+A\+ND = \char`\"{}ls -\/l\char`\"{}}
+
+\mbox{\Hypertarget{namespaceconnexion__SSH_ab87d32049db052980aa5060e990b4ce9}\label{namespaceconnexion__SSH_ab87d32049db052980aa5060e990b4ce9}} 
+\index{connexion\+\_\+\+S\+SH@{connexion\+\_\+\+S\+SH}!level@{level}}
+\index{level@{level}!connexion\+\_\+\+S\+SH@{connexion\+\_\+\+S\+SH}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily connexion\+\_\+\+S\+S\+H.\+level}
+
+\mbox{\Hypertarget{namespaceconnexion__SSH_ab06475dbad7f16b89c9114749bc95254}\label{namespaceconnexion__SSH_ab06475dbad7f16b89c9114749bc95254}} 
+\index{connexion\+\_\+\+S\+SH@{connexion\+\_\+\+S\+SH}!result@{result}}
+\index{result@{result}!connexion\+\_\+\+S\+SH@{connexion\+\_\+\+S\+SH}}
+\subsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily def connexion\+\_\+\+S\+S\+H.\+result}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \hyperlink{namespaceconnexion__SSH_a301597cff046e519a69daa584f1d9166}{execute\_ssh\_command}(
+2             \textcolor{comment}{# DEBIAN\_AJC\_AWS,}
+3             DEBIAN,
+4             \textcolor{comment}{# DEBIAN2,}
+5             \textcolor{comment}{# UBUNTU,}
+6             \textcolor{comment}{# UBUNTU2,}
+7             \textcolor{comment}{# KALI\_LINUX,}
+8             \textcolor{comment}{# KALI\_LINUX2,}
+9             COMMAND
+10               )
+\end{DoxyCode}

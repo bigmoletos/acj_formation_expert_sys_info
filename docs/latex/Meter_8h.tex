@@ -1,0 +1,486 @@
+\hypertarget{Meter_8h}{}\section{linux/download/htop-\/3.3.0/\+Meter.h File Reference}
+\label{Meter_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Meter.\+h@{linux/download/htop-\/3.\+3.\+0/\+Meter.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}List\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+Include dependency graph for Meter.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMeterClass__}{Meter\+Class\+\_\+}
+\item 
+struct \hyperlink{structGraphData__}{Graph\+Data\+\_\+}
+\item 
+struct \hyperlink{structMeter__}{Meter\+\_\+}
+\item 
+struct \hyperlink{structMeterMode__}{Meter\+Mode\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Meter_8h_a01af83fd1a469fbecc974543fe070afe}{M\+E\+T\+E\+R\+\_\+\+T\+X\+T\+B\+U\+F\+F\+E\+R\+\_\+\+L\+EN}~256
+\item 
+\#define \hyperlink{Meter_8h_a83f808ac45a4d08994dd08114ce3b8bd}{M\+A\+X\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+A\+P\+H\+D\+A\+T\+A\+\_\+\+V\+A\+L\+U\+ES}~32768
+\item 
+\#define \hyperlink{Meter_8h_a71cb5734ccc2ccb591021d32c9c1fc79}{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+H\+E\+CK}(buffer,  size,  written)
+\item 
+\#define \hyperlink{Meter_8h_a64a7859d93e4a296cdd22cb3166ba124}{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+C\+HR}(buffer,  size,  c)
+\item 
+\#define \hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)~((const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class}$\ast$)((this\+\_\+)-\/$>$super.\+klass))
+\item 
+\#define \hyperlink{Meter_8h_accc651ba11cd9f2569ec2d8881aeacb6}{Meter\+\_\+init\+Fn}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$init
+\item 
+\#define \hyperlink{Meter_8h_a631b32bcace0b57969072ee52c807f21}{Meter\+\_\+init}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$init((\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+))
+\item 
+\#define \hyperlink{Meter_8h_aa649deef7cd824e1ddcad870883d302e}{Meter\+\_\+done}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$done((\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+))
+\item 
+\#define \hyperlink{Meter_8h_a542f52bee0c01b5d03bb4aae0cfdcfb1}{Meter\+\_\+update\+Mode\+Fn}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$update\+Mode
+\item 
+\#define \hyperlink{Meter_8h_ad92e6765415fbe83386621888c6c85d8}{Meter\+\_\+update\+Mode}(this\+\_\+,  m\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$update\+Mode((\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+), m\+\_\+)
+\item 
+\#define \hyperlink{Meter_8h_ac588e42859118e2a0836c8edd91ff109}{Meter\+\_\+draw\+Fn}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$draw
+\item 
+\#define \hyperlink{Meter_8h_ab7f775d50e7034a390f6b2cca542a89a}{Meter\+\_\+done\+Fn}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$done
+\item 
+\#define \hyperlink{Meter_8h_aa5680e41ca965ee32b35470d1416e5a7}{Meter\+\_\+update\+Values}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$update\+Values((\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+))
+\item 
+\#define \hyperlink{Meter_8h_a6d37595136b827cb0c31877a1db96c06}{Meter\+\_\+get\+Ui\+Name\+Fn}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$get\+Ui\+Name
+\item 
+\#define \hyperlink{Meter_8h_aa6106ceebabf4bc1d259729a609de4e4}{Meter\+\_\+get\+Ui\+Name}(this\+\_\+,  n\+\_\+,  l\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$get\+Ui\+Name((const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+),n\+\_\+,l\+\_\+)
+\item 
+\#define \hyperlink{Meter_8h_a2b8042b59dc036ebdfe65da1c60b1487}{Meter\+\_\+get\+Caption\+Fn}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$get\+Caption
+\item 
+\#define \hyperlink{Meter_8h_a7177f6b4ae1d0ddf631e9963751fb2b9}{Meter\+\_\+get\+Caption}(this\+\_\+)~(\hyperlink{Meter_8h_a2b8042b59dc036ebdfe65da1c60b1487}{Meter\+\_\+get\+Caption\+Fn}(this\+\_\+) ? \hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$get\+Caption((const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+)) \+: (this\+\_\+)-\/$>$caption)
+\item 
+\#define \hyperlink{Meter_8h_a443e04a0707cf0b7451326ad6c922102}{Meter\+\_\+default\+Mode}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$default\+Mode
+\item 
+\#define \hyperlink{Meter_8h_ab32df8fc2ccc75f7056057523fcd6f0e}{Meter\+\_\+attributes}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$attributes
+\item 
+\#define \hyperlink{Meter_8h_a62a3fe6d43ec7e964cf5f8870ced6ba1}{Meter\+\_\+name}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name}
+\item 
+\#define \hyperlink{Meter_8h_a8ba8960196712eaa96516088f85c0668}{Meter\+\_\+ui\+Name}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$ui\+Name
+\item 
+\#define \hyperlink{Meter_8h_a921acc97c8e54930029bfb28e2dd845c}{Meter\+\_\+is\+Multi\+Column}(this\+\_\+)~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$is\+Multi\+Column
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structMeter__}{Meter\+\_\+} \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}
+\item 
+typedef void($\ast$ \hyperlink{Meter_8h_a55e4a59fa1b152ff9fe9b3f5831834ac}{Meter\+\_\+\+Init}) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$)
+\item 
+typedef void($\ast$ \hyperlink{Meter_8h_a6dcd5a8e6cddc364f96e58fa404dde27}{Meter\+\_\+\+Done}) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$)
+\item 
+typedef void($\ast$ \hyperlink{Meter_8h_af9d3680496082005293171c69205d7f0}{Meter\+\_\+\+Update\+Mode}) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$, int)
+\item 
+typedef void($\ast$ \hyperlink{Meter_8h_a2fcefaa066b00a9727359f6af1d02f0e}{Meter\+\_\+\+Update\+Values}) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$)
+\item 
+typedef void($\ast$ \hyperlink{Meter_8h_af2bfba1e0c54d7d0dc0511e1805b1725}{Meter\+\_\+\+Draw}) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$, int, int, int)
+\item 
+typedef const char $\ast$($\ast$ \hyperlink{Meter_8h_a9396e4eaee9a298a89686163b2415d4a}{Meter\+\_\+\+Get\+Caption}) (const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$)
+\item 
+typedef void($\ast$ \hyperlink{Meter_8h_a6ae13068f393c3c786b82e19cc327546}{Meter\+\_\+\+Get\+Ui\+Name}) (const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$, char $\ast$, size\+\_\+t)
+\item 
+typedef struct \hyperlink{structMeterClass__}{Meter\+Class\+\_\+} \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class}
+\item 
+typedef struct \hyperlink{structGraphData__}{Graph\+Data\+\_\+} \hyperlink{Meter_8h_ab34ea7cb1d5864cd6f66f8de77662147}{Graph\+Data}
+\item 
+typedef struct \hyperlink{structMeterMode__}{Meter\+Mode\+\_\+} \hyperlink{Meter_8h_a7b0b62eabcda59cf23f59ee31b14cca6}{Meter\+Mode}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83a}{Meter\+Mode\+Id} \{ \newline
+\hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}{C\+U\+S\+T\+O\+M\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE} = 0, 
+\hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa7da66e2e324247d0722afd14d7f12037}{B\+A\+R\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}, 
+\hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{T\+E\+X\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}, 
+\hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa95de85a28d283a9df0334807761c11f9}{G\+R\+A\+P\+H\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}, 
+\newline
+\hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa25f99a73240fb1e8ca7d5f4f8ac8ed0c}{L\+E\+D\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}, 
+\hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8a608e4528931415f31e43b51df4bc4f}{L\+A\+S\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}
+ \}
+\item 
+enum \hyperlink{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988}{Meter\+Rate\+Status} \{ \hyperlink{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a37bec382aecdb6d5409a843a1e3b2303}{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+D\+A\+TA}, 
+\hyperlink{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a3a2f82742a38cfadba799cca2629ace9}{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+IT}, 
+\hyperlink{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a15cc391412d7c93ac6a09ec6a5516035}{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+D\+A\+TA}, 
+\hyperlink{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a3290ba2314a1e64796d30fbed1ad9d2f}{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+LE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$ \hyperlink{Meter_8h_a6dcdf6517b017e2ab37d290bd7cd2a57}{Meter\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, unsigned int param, const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} $\ast$type)
+\item 
+int \hyperlink{Meter_8h_a652e51916940897f4013ffa756fd7f0e}{Meter\+\_\+human\+Unit} (char $\ast$buffer, double value, size\+\_\+t size)
+\item 
+void \hyperlink{Meter_8h_afa360c5902fd03f204c2a7d05571be6d}{Meter\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+void \hyperlink{Meter_8h_ab134d1bfb513a704e58594ce488acf58}{Meter\+\_\+set\+Caption} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this, const char $\ast$caption)
+\item 
+void \hyperlink{Meter_8h_a84892c1fd64d200a34e7cc1aa56e424d}{Meter\+\_\+set\+Mode} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this, int mode\+Index)
+\item 
+\hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item} $\ast$ \hyperlink{Meter_8h_a2257215e62d83267a0b8829f8e6dbaf8}{Meter\+\_\+to\+List\+Item} (const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this, bool moving)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{Meter_8h_a569dd72c966c659dc80489d9dea310f7}{Meter\+\_\+class}
+\item 
+const \hyperlink{Meter_8h_a7b0b62eabcda59cf23f59ee31b14cca6}{Meter\+Mode} $\ast$const \hyperlink{Meter_8h_ae187af8cb20559b9934b198bbb6a93b6}{Meter\+\_\+modes} \mbox{[}$\,$\mbox{]}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{Meter_8h_a8a233ba66f686ca8cf4c53dc653989a6}{Blank\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}\label{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}} 
+\index{Meter.\+h@{Meter.\+h}!As\+\_\+\+Meter@{As\+\_\+\+Meter}}
+\index{As\+\_\+\+Meter@{As\+\_\+\+Meter}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{As\+\_\+\+Meter}{As\_Meter}}
+{\footnotesize\ttfamily \#define As\+\_\+\+Meter(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~((const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class}$\ast$)((this\+\_\+)-\/$>$super.\+klass))}
+
+\mbox{\Hypertarget{Meter_8h_a83f808ac45a4d08994dd08114ce3b8bd}\label{Meter_8h_a83f808ac45a4d08994dd08114ce3b8bd}} 
+\index{Meter.\+h@{Meter.\+h}!M\+A\+X\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+A\+P\+H\+D\+A\+T\+A\+\_\+\+V\+A\+L\+U\+ES@{M\+A\+X\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+A\+P\+H\+D\+A\+T\+A\+\_\+\+V\+A\+L\+U\+ES}}
+\index{M\+A\+X\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+A\+P\+H\+D\+A\+T\+A\+\_\+\+V\+A\+L\+U\+ES@{M\+A\+X\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+A\+P\+H\+D\+A\+T\+A\+\_\+\+V\+A\+L\+U\+ES}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+A\+P\+H\+D\+A\+T\+A\+\_\+\+V\+A\+L\+U\+ES}{MAX\_METER\_GRAPHDATA\_VALUES}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+A\+P\+H\+D\+A\+T\+A\+\_\+\+V\+A\+L\+U\+ES~32768}
+
+\mbox{\Hypertarget{Meter_8h_ab32df8fc2ccc75f7056057523fcd6f0e}\label{Meter_8h_ab32df8fc2ccc75f7056057523fcd6f0e}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+attributes@{Meter\+\_\+attributes}}
+\index{Meter\+\_\+attributes@{Meter\+\_\+attributes}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+attributes}{Meter\_attributes}}
+{\footnotesize\ttfamily \#define Meter\+\_\+attributes(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$attributes}
+
+\mbox{\Hypertarget{Meter_8h_a64a7859d93e4a296cdd22cb3166ba124}\label{Meter_8h_a64a7859d93e4a296cdd22cb3166ba124}} 
+\index{Meter.\+h@{Meter.\+h}!M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+C\+HR@{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+C\+HR}}
+\index{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+C\+HR@{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+C\+HR}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+C\+HR}{METER\_BUFFER\_APPEND\_CHR}}
+{\footnotesize\ttfamily \#define M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+C\+HR(\begin{DoxyParamCaption}\item[{}]{buffer,  }\item[{}]{size,  }\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                    \(\backslash\)
+      if ((size) < 2) \{                                    \(\backslash\)
+         return;                                           \(\backslash\)
+      \}                                                    \(\backslash\)
+      *(buffer)++ = c;                                     \(\backslash\)
+      *(buffer) = \textcolor{charliteral}{'\(\backslash\)0'};                                    \(\backslash\)
+      (size)--;                                            \(\backslash\)
+      if ((size) == 0) \{                                   \(\backslash\)
+         return;                                           \(\backslash\)
+      \}                                                    \(\backslash\)
+   \} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\mbox{\Hypertarget{Meter_8h_a71cb5734ccc2ccb591021d32c9c1fc79}\label{Meter_8h_a71cb5734ccc2ccb591021d32c9c1fc79}} 
+\index{Meter.\+h@{Meter.\+h}!M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+H\+E\+CK@{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+H\+E\+CK}}
+\index{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+H\+E\+CK@{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+H\+E\+CK}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+H\+E\+CK}{METER\_BUFFER\_CHECK}}
+{\footnotesize\ttfamily \#define M\+E\+T\+E\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{buffer,  }\item[{}]{size,  }\item[{}]{written }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                    \(\backslash\)
+      if ((written) < 0 || (\textcolor{keywordtype}{size\_t})(written) >= (size)) \{  \(\backslash\)
+         return;                                           \(\backslash\)
+      \}                                                    \(\backslash\)
+      (buffer) += (written);                               \(\backslash\)
+      (size) -= (\textcolor{keywordtype}{size\_t})(written);                         \(\backslash\)
+   \} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\mbox{\Hypertarget{Meter_8h_a443e04a0707cf0b7451326ad6c922102}\label{Meter_8h_a443e04a0707cf0b7451326ad6c922102}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+default\+Mode@{Meter\+\_\+default\+Mode}}
+\index{Meter\+\_\+default\+Mode@{Meter\+\_\+default\+Mode}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+default\+Mode}{Meter\_defaultMode}}
+{\footnotesize\ttfamily \#define Meter\+\_\+default\+Mode(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$default\+Mode}
+
+\mbox{\Hypertarget{Meter_8h_aa649deef7cd824e1ddcad870883d302e}\label{Meter_8h_aa649deef7cd824e1ddcad870883d302e}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+done@{Meter\+\_\+done}}
+\index{Meter\+\_\+done@{Meter\+\_\+done}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+done}{Meter\_done}}
+{\footnotesize\ttfamily \#define Meter\+\_\+done(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$done((\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+))}
+
+\mbox{\Hypertarget{Meter_8h_ab7f775d50e7034a390f6b2cca542a89a}\label{Meter_8h_ab7f775d50e7034a390f6b2cca542a89a}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+done\+Fn@{Meter\+\_\+done\+Fn}}
+\index{Meter\+\_\+done\+Fn@{Meter\+\_\+done\+Fn}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+done\+Fn}{Meter\_doneFn}}
+{\footnotesize\ttfamily \#define Meter\+\_\+done\+Fn(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$done}
+
+\mbox{\Hypertarget{Meter_8h_ac588e42859118e2a0836c8edd91ff109}\label{Meter_8h_ac588e42859118e2a0836c8edd91ff109}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+draw\+Fn@{Meter\+\_\+draw\+Fn}}
+\index{Meter\+\_\+draw\+Fn@{Meter\+\_\+draw\+Fn}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+draw\+Fn}{Meter\_drawFn}}
+{\footnotesize\ttfamily \#define Meter\+\_\+draw\+Fn(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$draw}
+
+\mbox{\Hypertarget{Meter_8h_a7177f6b4ae1d0ddf631e9963751fb2b9}\label{Meter_8h_a7177f6b4ae1d0ddf631e9963751fb2b9}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+get\+Caption@{Meter\+\_\+get\+Caption}}
+\index{Meter\+\_\+get\+Caption@{Meter\+\_\+get\+Caption}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+get\+Caption}{Meter\_getCaption}}
+{\footnotesize\ttfamily \#define Meter\+\_\+get\+Caption(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~(\hyperlink{Meter_8h_a2b8042b59dc036ebdfe65da1c60b1487}{Meter\+\_\+get\+Caption\+Fn}(this\+\_\+) ? \hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$get\+Caption((const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+)) \+: (this\+\_\+)-\/$>$caption)}
+
+\mbox{\Hypertarget{Meter_8h_a2b8042b59dc036ebdfe65da1c60b1487}\label{Meter_8h_a2b8042b59dc036ebdfe65da1c60b1487}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+get\+Caption\+Fn@{Meter\+\_\+get\+Caption\+Fn}}
+\index{Meter\+\_\+get\+Caption\+Fn@{Meter\+\_\+get\+Caption\+Fn}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+get\+Caption\+Fn}{Meter\_getCaptionFn}}
+{\footnotesize\ttfamily \#define Meter\+\_\+get\+Caption\+Fn(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$get\+Caption}
+
+\mbox{\Hypertarget{Meter_8h_aa6106ceebabf4bc1d259729a609de4e4}\label{Meter_8h_aa6106ceebabf4bc1d259729a609de4e4}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+get\+Ui\+Name@{Meter\+\_\+get\+Ui\+Name}}
+\index{Meter\+\_\+get\+Ui\+Name@{Meter\+\_\+get\+Ui\+Name}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+get\+Ui\+Name}{Meter\_getUiName}}
+{\footnotesize\ttfamily \#define Meter\+\_\+get\+Ui\+Name(\begin{DoxyParamCaption}\item[{}]{this\+\_\+,  }\item[{}]{n\+\_\+,  }\item[{}]{l\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$get\+Ui\+Name((const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+),n\+\_\+,l\+\_\+)}
+
+\mbox{\Hypertarget{Meter_8h_a6d37595136b827cb0c31877a1db96c06}\label{Meter_8h_a6d37595136b827cb0c31877a1db96c06}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+get\+Ui\+Name\+Fn@{Meter\+\_\+get\+Ui\+Name\+Fn}}
+\index{Meter\+\_\+get\+Ui\+Name\+Fn@{Meter\+\_\+get\+Ui\+Name\+Fn}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+get\+Ui\+Name\+Fn}{Meter\_getUiNameFn}}
+{\footnotesize\ttfamily \#define Meter\+\_\+get\+Ui\+Name\+Fn(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$get\+Ui\+Name}
+
+\mbox{\Hypertarget{Meter_8h_a631b32bcace0b57969072ee52c807f21}\label{Meter_8h_a631b32bcace0b57969072ee52c807f21}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+init@{Meter\+\_\+init}}
+\index{Meter\+\_\+init@{Meter\+\_\+init}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+init}{Meter\_init}}
+{\footnotesize\ttfamily \#define Meter\+\_\+init(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$init((\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+))}
+
+\mbox{\Hypertarget{Meter_8h_accc651ba11cd9f2569ec2d8881aeacb6}\label{Meter_8h_accc651ba11cd9f2569ec2d8881aeacb6}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+init\+Fn@{Meter\+\_\+init\+Fn}}
+\index{Meter\+\_\+init\+Fn@{Meter\+\_\+init\+Fn}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+init\+Fn}{Meter\_initFn}}
+{\footnotesize\ttfamily \#define Meter\+\_\+init\+Fn(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$init}
+
+\mbox{\Hypertarget{Meter_8h_a921acc97c8e54930029bfb28e2dd845c}\label{Meter_8h_a921acc97c8e54930029bfb28e2dd845c}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+is\+Multi\+Column@{Meter\+\_\+is\+Multi\+Column}}
+\index{Meter\+\_\+is\+Multi\+Column@{Meter\+\_\+is\+Multi\+Column}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+is\+Multi\+Column}{Meter\_isMultiColumn}}
+{\footnotesize\ttfamily \#define Meter\+\_\+is\+Multi\+Column(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$is\+Multi\+Column}
+
+\mbox{\Hypertarget{Meter_8h_a62a3fe6d43ec7e964cf5f8870ced6ba1}\label{Meter_8h_a62a3fe6d43ec7e964cf5f8870ced6ba1}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+name@{Meter\+\_\+name}}
+\index{Meter\+\_\+name@{Meter\+\_\+name}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+name}{Meter\_name}}
+{\footnotesize\ttfamily \#define Meter\+\_\+name(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name}}
+
+\mbox{\Hypertarget{Meter_8h_a01af83fd1a469fbecc974543fe070afe}\label{Meter_8h_a01af83fd1a469fbecc974543fe070afe}} 
+\index{Meter.\+h@{Meter.\+h}!M\+E\+T\+E\+R\+\_\+\+T\+X\+T\+B\+U\+F\+F\+E\+R\+\_\+\+L\+EN@{M\+E\+T\+E\+R\+\_\+\+T\+X\+T\+B\+U\+F\+F\+E\+R\+\_\+\+L\+EN}}
+\index{M\+E\+T\+E\+R\+\_\+\+T\+X\+T\+B\+U\+F\+F\+E\+R\+\_\+\+L\+EN@{M\+E\+T\+E\+R\+\_\+\+T\+X\+T\+B\+U\+F\+F\+E\+R\+\_\+\+L\+EN}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{M\+E\+T\+E\+R\+\_\+\+T\+X\+T\+B\+U\+F\+F\+E\+R\+\_\+\+L\+EN}{METER\_TXTBUFFER\_LEN}}
+{\footnotesize\ttfamily \#define M\+E\+T\+E\+R\+\_\+\+T\+X\+T\+B\+U\+F\+F\+E\+R\+\_\+\+L\+EN~256}
+
+\mbox{\Hypertarget{Meter_8h_a8ba8960196712eaa96516088f85c0668}\label{Meter_8h_a8ba8960196712eaa96516088f85c0668}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+ui\+Name@{Meter\+\_\+ui\+Name}}
+\index{Meter\+\_\+ui\+Name@{Meter\+\_\+ui\+Name}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+ui\+Name}{Meter\_uiName}}
+{\footnotesize\ttfamily \#define Meter\+\_\+ui\+Name(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$ui\+Name}
+
+\mbox{\Hypertarget{Meter_8h_ad92e6765415fbe83386621888c6c85d8}\label{Meter_8h_ad92e6765415fbe83386621888c6c85d8}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+update\+Mode@{Meter\+\_\+update\+Mode}}
+\index{Meter\+\_\+update\+Mode@{Meter\+\_\+update\+Mode}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+update\+Mode}{Meter\_updateMode}}
+{\footnotesize\ttfamily \#define Meter\+\_\+update\+Mode(\begin{DoxyParamCaption}\item[{}]{this\+\_\+,  }\item[{}]{m\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$update\+Mode((\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+), m\+\_\+)}
+
+\mbox{\Hypertarget{Meter_8h_a542f52bee0c01b5d03bb4aae0cfdcfb1}\label{Meter_8h_a542f52bee0c01b5d03bb4aae0cfdcfb1}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+update\+Mode\+Fn@{Meter\+\_\+update\+Mode\+Fn}}
+\index{Meter\+\_\+update\+Mode\+Fn@{Meter\+\_\+update\+Mode\+Fn}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+update\+Mode\+Fn}{Meter\_updateModeFn}}
+{\footnotesize\ttfamily \#define Meter\+\_\+update\+Mode\+Fn(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$update\+Mode}
+
+\mbox{\Hypertarget{Meter_8h_aa5680e41ca965ee32b35470d1416e5a7}\label{Meter_8h_aa5680e41ca965ee32b35470d1416e5a7}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+update\+Values@{Meter\+\_\+update\+Values}}
+\index{Meter\+\_\+update\+Values@{Meter\+\_\+update\+Values}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+update\+Values}{Meter\_updateValues}}
+{\footnotesize\ttfamily \#define Meter\+\_\+update\+Values(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{Meter_8h_ae1a2aa51db260a34339d79bb5cf8b203}{As\+\_\+\+Meter}(this\+\_\+)-\/$>$update\+Values((\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$)(this\+\_\+))}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Meter_8h_ab34ea7cb1d5864cd6f66f8de77662147}\label{Meter_8h_ab34ea7cb1d5864cd6f66f8de77662147}} 
+\index{Meter.\+h@{Meter.\+h}!Graph\+Data@{Graph\+Data}}
+\index{Graph\+Data@{Graph\+Data}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Graph\+Data}{GraphData}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structGraphData__}{Graph\+Data\+\_\+}  \hyperlink{Meter_8h_ab34ea7cb1d5864cd6f66f8de77662147}{Graph\+Data}}
+
+\mbox{\Hypertarget{Meter_8h_a36b2163502d1e0b7025c80f102390da2}\label{Meter_8h_a36b2163502d1e0b7025c80f102390da2}} 
+\index{Meter.\+h@{Meter.\+h}!Meter@{Meter}}
+\index{Meter@{Meter}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter}{Meter}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structMeter__}{Meter\+\_\+} \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}}
+
+\mbox{\Hypertarget{Meter_8h_a6dcd5a8e6cddc364f96e58fa404dde27}\label{Meter_8h_a6dcd5a8e6cddc364f96e58fa404dde27}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+\+Done@{Meter\+\_\+\+Done}}
+\index{Meter\+\_\+\+Done@{Meter\+\_\+\+Done}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+\+Done}{Meter\_Done}}
+{\footnotesize\ttfamily typedef void($\ast$ Meter\+\_\+\+Done) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$)}
+
+\mbox{\Hypertarget{Meter_8h_af2bfba1e0c54d7d0dc0511e1805b1725}\label{Meter_8h_af2bfba1e0c54d7d0dc0511e1805b1725}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+\+Draw@{Meter\+\_\+\+Draw}}
+\index{Meter\+\_\+\+Draw@{Meter\+\_\+\+Draw}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+\+Draw}{Meter\_Draw}}
+{\footnotesize\ttfamily typedef void($\ast$ Meter\+\_\+\+Draw) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$, int, int, int)}
+
+\mbox{\Hypertarget{Meter_8h_a9396e4eaee9a298a89686163b2415d4a}\label{Meter_8h_a9396e4eaee9a298a89686163b2415d4a}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+\+Get\+Caption@{Meter\+\_\+\+Get\+Caption}}
+\index{Meter\+\_\+\+Get\+Caption@{Meter\+\_\+\+Get\+Caption}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+\+Get\+Caption}{Meter\_GetCaption}}
+{\footnotesize\ttfamily typedef const char$\ast$($\ast$ Meter\+\_\+\+Get\+Caption) (const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$)}
+
+\mbox{\Hypertarget{Meter_8h_a6ae13068f393c3c786b82e19cc327546}\label{Meter_8h_a6ae13068f393c3c786b82e19cc327546}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+\+Get\+Ui\+Name@{Meter\+\_\+\+Get\+Ui\+Name}}
+\index{Meter\+\_\+\+Get\+Ui\+Name@{Meter\+\_\+\+Get\+Ui\+Name}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+\+Get\+Ui\+Name}{Meter\_GetUiName}}
+{\footnotesize\ttfamily typedef void($\ast$ Meter\+\_\+\+Get\+Ui\+Name) (const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$, char $\ast$, size\+\_\+t)}
+
+\mbox{\Hypertarget{Meter_8h_a55e4a59fa1b152ff9fe9b3f5831834ac}\label{Meter_8h_a55e4a59fa1b152ff9fe9b3f5831834ac}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+\+Init@{Meter\+\_\+\+Init}}
+\index{Meter\+\_\+\+Init@{Meter\+\_\+\+Init}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+\+Init}{Meter\_Init}}
+{\footnotesize\ttfamily typedef void($\ast$ Meter\+\_\+\+Init) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$)}
+
+\mbox{\Hypertarget{Meter_8h_af9d3680496082005293171c69205d7f0}\label{Meter_8h_af9d3680496082005293171c69205d7f0}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+\+Update\+Mode@{Meter\+\_\+\+Update\+Mode}}
+\index{Meter\+\_\+\+Update\+Mode@{Meter\+\_\+\+Update\+Mode}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+\+Update\+Mode}{Meter\_UpdateMode}}
+{\footnotesize\ttfamily typedef void($\ast$ Meter\+\_\+\+Update\+Mode) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$, int)}
+
+\mbox{\Hypertarget{Meter_8h_a2fcefaa066b00a9727359f6af1d02f0e}\label{Meter_8h_a2fcefaa066b00a9727359f6af1d02f0e}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+\+Update\+Values@{Meter\+\_\+\+Update\+Values}}
+\index{Meter\+\_\+\+Update\+Values@{Meter\+\_\+\+Update\+Values}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+\+Update\+Values}{Meter\_UpdateValues}}
+{\footnotesize\ttfamily typedef void($\ast$ Meter\+\_\+\+Update\+Values) (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$)}
+
+\mbox{\Hypertarget{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}\label{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+Class@{Meter\+Class}}
+\index{Meter\+Class@{Meter\+Class}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+Class}{MeterClass}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structMeterClass__}{Meter\+Class\+\_\+}  \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class}}
+
+\mbox{\Hypertarget{Meter_8h_a7b0b62eabcda59cf23f59ee31b14cca6}\label{Meter_8h_a7b0b62eabcda59cf23f59ee31b14cca6}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+Mode@{Meter\+Mode}}
+\index{Meter\+Mode@{Meter\+Mode}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+Mode}{MeterMode}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structMeterMode__}{Meter\+Mode\+\_\+}  \hyperlink{Meter_8h_a7b0b62eabcda59cf23f59ee31b14cca6}{Meter\+Mode}}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{Meter_8h_ab5ba256cdade130395aa470c0f22c83a}\label{Meter_8h_ab5ba256cdade130395aa470c0f22c83a}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+Mode\+Id@{Meter\+Mode\+Id}}
+\index{Meter\+Mode\+Id@{Meter\+Mode\+Id}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+Mode\+Id}{MeterModeId}}
+{\footnotesize\ttfamily enum \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83a}{Meter\+Mode\+Id}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+U\+S\+T\+O\+M\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{C\+U\+S\+T\+O\+M\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!C\+U\+S\+T\+O\+M\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{C\+U\+S\+T\+O\+M\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}}}\mbox{\Hypertarget{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}\label{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8f92365274dcf92352341cdeff584fcd}} 
+C\+U\+S\+T\+O\+M\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+A\+R\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{B\+A\+R\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!B\+A\+R\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{B\+A\+R\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}}}\mbox{\Hypertarget{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa7da66e2e324247d0722afd14d7f12037}\label{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa7da66e2e324247d0722afd14d7f12037}} 
+B\+A\+R\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+E\+X\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{T\+E\+X\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!T\+E\+X\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{T\+E\+X\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}}}\mbox{\Hypertarget{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}\label{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}} 
+T\+E\+X\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+R\+A\+P\+H\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{G\+R\+A\+P\+H\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!G\+R\+A\+P\+H\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{G\+R\+A\+P\+H\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}}}\mbox{\Hypertarget{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa95de85a28d283a9df0334807761c11f9}\label{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa95de85a28d283a9df0334807761c11f9}} 
+G\+R\+A\+P\+H\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+E\+D\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{L\+E\+D\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!L\+E\+D\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{L\+E\+D\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}}}\mbox{\Hypertarget{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa25f99a73240fb1e8ca7d5f4f8ac8ed0c}\label{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa25f99a73240fb1e8ca7d5f4f8ac8ed0c}} 
+L\+E\+D\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+A\+S\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{L\+A\+S\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!L\+A\+S\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE@{L\+A\+S\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE}}}\mbox{\Hypertarget{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8a608e4528931415f31e43b51df4bc4f}\label{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa8a608e4528931415f31e43b51df4bc4f}} 
+L\+A\+S\+T\+\_\+\+M\+E\+T\+E\+R\+M\+O\+DE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988}\label{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+Rate\+Status@{Meter\+Rate\+Status}}
+\index{Meter\+Rate\+Status@{Meter\+Rate\+Status}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+Rate\+Status}{MeterRateStatus}}
+{\footnotesize\ttfamily enum \hyperlink{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988}{Meter\+Rate\+Status}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+D\+A\+TA@{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+D\+A\+TA}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+D\+A\+TA@{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+D\+A\+TA}}}\mbox{\Hypertarget{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a37bec382aecdb6d5409a843a1e3b2303}\label{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a37bec382aecdb6d5409a843a1e3b2303}} 
+R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+IT@{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+IT}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+IT@{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+IT}}}\mbox{\Hypertarget{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a3a2f82742a38cfadba799cca2629ace9}\label{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a3a2f82742a38cfadba799cca2629ace9}} 
+R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+IT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+D\+A\+TA@{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+D\+A\+TA}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+D\+A\+TA@{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+D\+A\+TA}}}\mbox{\Hypertarget{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a15cc391412d7c93ac6a09ec6a5516035}\label{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a15cc391412d7c93ac6a09ec6a5516035}} 
+R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+LE@{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+LE}!Meter.\+h@{Meter.\+h}}\index{Meter.\+h@{Meter.\+h}!R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+LE@{R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+LE}}}\mbox{\Hypertarget{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a3290ba2314a1e64796d30fbed1ad9d2f}\label{Meter_8h_ac359e1055783a8860c0c5b6deb4b1988a3290ba2314a1e64796d30fbed1ad9d2f}} 
+R\+A\+T\+E\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+LE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Meter_8h_afa360c5902fd03f204c2a7d05571be6d}\label{Meter_8h_afa360c5902fd03f204c2a7d05571be6d}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+delete@{Meter\+\_\+delete}}
+\index{Meter\+\_\+delete@{Meter\+\_\+delete}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+delete()}{Meter\_delete()}}
+{\footnotesize\ttfamily void Meter\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Meter_8h_a652e51916940897f4013ffa756fd7f0e}\label{Meter_8h_a652e51916940897f4013ffa756fd7f0e}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+human\+Unit@{Meter\+\_\+human\+Unit}}
+\index{Meter\+\_\+human\+Unit@{Meter\+\_\+human\+Unit}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+human\+Unit()}{Meter\_humanUnit()}}
+{\footnotesize\ttfamily int Meter\+\_\+human\+Unit (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{double}]{value,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Meter_8h_a6dcdf6517b017e2ab37d290bd7cd2a57}\label{Meter_8h_a6dcdf6517b017e2ab37d290bd7cd2a57}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+new@{Meter\+\_\+new}}
+\index{Meter\+\_\+new@{Meter\+\_\+new}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+new()}{Meter\_new()}}
+{\footnotesize\ttfamily \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$ Meter\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{unsigned int}]{param,  }\item[{const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} $\ast$}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Meter_8h_ab134d1bfb513a704e58594ce488acf58}\label{Meter_8h_ab134d1bfb513a704e58594ce488acf58}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+set\+Caption@{Meter\+\_\+set\+Caption}}
+\index{Meter\+\_\+set\+Caption@{Meter\+\_\+set\+Caption}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+set\+Caption()}{Meter\_setCaption()}}
+{\footnotesize\ttfamily void Meter\+\_\+set\+Caption (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this,  }\item[{const char $\ast$}]{caption }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Meter_8h_a84892c1fd64d200a34e7cc1aa56e424d}\label{Meter_8h_a84892c1fd64d200a34e7cc1aa56e424d}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+set\+Mode@{Meter\+\_\+set\+Mode}}
+\index{Meter\+\_\+set\+Mode@{Meter\+\_\+set\+Mode}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+set\+Mode()}{Meter\_setMode()}}
+{\footnotesize\ttfamily void Meter\+\_\+set\+Mode (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this,  }\item[{int}]{mode\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Meter_8h_a2257215e62d83267a0b8829f8e6dbaf8}\label{Meter_8h_a2257215e62d83267a0b8829f8e6dbaf8}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+to\+List\+Item@{Meter\+\_\+to\+List\+Item}}
+\index{Meter\+\_\+to\+List\+Item@{Meter\+\_\+to\+List\+Item}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+to\+List\+Item()}{Meter\_toListItem()}}
+{\footnotesize\ttfamily \hyperlink{ListItem_8h_a311dfe5c572117175446997a9e6f15b8}{List\+Item}$\ast$ Meter\+\_\+to\+List\+Item (\begin{DoxyParamCaption}\item[{const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this,  }\item[{bool}]{moving }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Meter_8h_a8a233ba66f686ca8cf4c53dc653989a6}\label{Meter_8h_a8a233ba66f686ca8cf4c53dc653989a6}} 
+\index{Meter.\+h@{Meter.\+h}!Blank\+Meter\+\_\+class@{Blank\+Meter\+\_\+class}}
+\index{Blank\+Meter\+\_\+class@{Blank\+Meter\+\_\+class}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Blank\+Meter\+\_\+class}{BlankMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Blank\+Meter\+\_\+class}
+
+\mbox{\Hypertarget{Meter_8h_a569dd72c966c659dc80489d9dea310f7}\label{Meter_8h_a569dd72c966c659dc80489d9dea310f7}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+class@{Meter\+\_\+class}}
+\index{Meter\+\_\+class@{Meter\+\_\+class}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+class}{Meter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Meter\+\_\+class}
+
+\mbox{\Hypertarget{Meter_8h_ae187af8cb20559b9934b198bbb6a93b6}\label{Meter_8h_ae187af8cb20559b9934b198bbb6a93b6}} 
+\index{Meter.\+h@{Meter.\+h}!Meter\+\_\+modes@{Meter\+\_\+modes}}
+\index{Meter\+\_\+modes@{Meter\+\_\+modes}!Meter.\+h@{Meter.\+h}}
+\subsubsection{\texorpdfstring{Meter\+\_\+modes}{Meter\_modes}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a7b0b62eabcda59cf23f59ee31b14cca6}{Meter\+Mode}$\ast$ const Meter\+\_\+modes\mbox{[}$\,$\mbox{]}}
+

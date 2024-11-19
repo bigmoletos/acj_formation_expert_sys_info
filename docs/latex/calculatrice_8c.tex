@@ -1,0 +1,114 @@
+\hypertarget{calculatrice_8c}{}\section{programmation\+\_\+\+C/interface\+\_\+graphique/calculatrice.c File Reference}
+\label{calculatrice_8c}\index{programmation\+\_\+\+C/interface\+\_\+graphique/calculatrice.\+c@{programmation\+\_\+\+C/interface\+\_\+graphique/calculatrice.\+c}}
+{\ttfamily \#include $<$F\+L/\+Fl.\+H$>$}\newline
+{\ttfamily \#include $<$F\+L/\+Fl\+\_\+\+Window.\+H$>$}\newline
+{\ttfamily \#include $<$F\+L/\+Fl\+\_\+\+Button.\+H$>$}\newline
+{\ttfamily \#include $<$F\+L/\+Fl\+\_\+\+Input.\+H$>$}\newline
+{\ttfamily \#include $<$F\+L/\+Fl\+\_\+\+Text\+\_\+\+Display.\+H$>$}\newline
+{\ttfamily \#include $<$F\+L/\+Fl\+\_\+\+Text\+\_\+\+Buffer.\+H$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+Include dependency graph for calculatrice.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{calculatrice_8c_ad62b1e19009c6476880506ae1d8c7ad2}{number\+\_\+cb} (Fl\+\_\+\+Widget $\ast$widget, void $\ast$)
+\item 
+void \hyperlink{calculatrice_8c_abed5f8ff26a7267fdf1b27e4125ce715}{operation\+\_\+cb} (Fl\+\_\+\+Widget $\ast$widget, void $\ast$)
+\item 
+void \hyperlink{calculatrice_8c_ac70fa363c0344c86529ecb192680e676}{equal\+\_\+cb} (Fl\+\_\+\+Widget $\ast$widget, void $\ast$)
+\item 
+void \hyperlink{calculatrice_8c_a09032635b25f2425db8e91d5ebbff630}{clear\+\_\+cb} (Fl\+\_\+\+Widget $\ast$widget, void $\ast$)
+\item 
+int \hyperlink{calculatrice_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Fl\+\_\+\+Input $\ast$ \hyperlink{calculatrice_8c_af531fc961536d8392c7f62732a98edfc}{display}
+\item 
+Fl\+\_\+\+Text\+\_\+\+Display $\ast$ \hyperlink{calculatrice_8c_a767fb2e15756a65bceec3dab176fd8c9}{history\+\_\+display}
+\item 
+Fl\+\_\+\+Text\+\_\+\+Buffer $\ast$ \hyperlink{calculatrice_8c_a93cc6c148fdaca40f361a9575f46479b}{history\+\_\+buffer}
+\item 
+std\+::deque$<$ std\+::string $>$ \hyperlink{calculatrice_8c_aec2e1f3fbf2cf5990a8aa470bf88928c}{history}
+\item 
+char \hyperlink{calculatrice_8c_a581c71d43bda5025c2bd984091277b3f}{operation} = 0
+\item 
+double \hyperlink{calculatrice_8c_ad3630be9fed1195e23b16858c0d48ff8}{first\+\_\+operand} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{calculatrice_8c_a09032635b25f2425db8e91d5ebbff630}\label{calculatrice_8c_a09032635b25f2425db8e91d5ebbff630}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!clear\+\_\+cb@{clear\+\_\+cb}}
+\index{clear\+\_\+cb@{clear\+\_\+cb}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{clear\+\_\+cb()}{clear\_cb()}}
+{\footnotesize\ttfamily void clear\+\_\+cb (\begin{DoxyParamCaption}\item[{Fl\+\_\+\+Widget $\ast$}]{widget,  }\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calculatrice_8c_ac70fa363c0344c86529ecb192680e676}\label{calculatrice_8c_ac70fa363c0344c86529ecb192680e676}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!equal\+\_\+cb@{equal\+\_\+cb}}
+\index{equal\+\_\+cb@{equal\+\_\+cb}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{equal\+\_\+cb()}{equal\_cb()}}
+{\footnotesize\ttfamily void equal\+\_\+cb (\begin{DoxyParamCaption}\item[{Fl\+\_\+\+Widget $\ast$}]{widget,  }\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calculatrice_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{calculatrice_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!main@{main}}
+\index{main@{main}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calculatrice_8c_ad62b1e19009c6476880506ae1d8c7ad2}\label{calculatrice_8c_ad62b1e19009c6476880506ae1d8c7ad2}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!number\+\_\+cb@{number\+\_\+cb}}
+\index{number\+\_\+cb@{number\+\_\+cb}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{number\+\_\+cb()}{number\_cb()}}
+{\footnotesize\ttfamily void number\+\_\+cb (\begin{DoxyParamCaption}\item[{Fl\+\_\+\+Widget $\ast$}]{widget,  }\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calculatrice_8c_abed5f8ff26a7267fdf1b27e4125ce715}\label{calculatrice_8c_abed5f8ff26a7267fdf1b27e4125ce715}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!operation\+\_\+cb@{operation\+\_\+cb}}
+\index{operation\+\_\+cb@{operation\+\_\+cb}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{operation\+\_\+cb()}{operation\_cb()}}
+{\footnotesize\ttfamily void operation\+\_\+cb (\begin{DoxyParamCaption}\item[{Fl\+\_\+\+Widget $\ast$}]{widget,  }\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{calculatrice_8c_af531fc961536d8392c7f62732a98edfc}\label{calculatrice_8c_af531fc961536d8392c7f62732a98edfc}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!display@{display}}
+\index{display@{display}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily Fl\+\_\+\+Input$\ast$ display}
+
+\mbox{\Hypertarget{calculatrice_8c_ad3630be9fed1195e23b16858c0d48ff8}\label{calculatrice_8c_ad3630be9fed1195e23b16858c0d48ff8}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!first\+\_\+operand@{first\+\_\+operand}}
+\index{first\+\_\+operand@{first\+\_\+operand}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{first\+\_\+operand}{first\_operand}}
+{\footnotesize\ttfamily double first\+\_\+operand = 0}
+
+\mbox{\Hypertarget{calculatrice_8c_aec2e1f3fbf2cf5990a8aa470bf88928c}\label{calculatrice_8c_aec2e1f3fbf2cf5990a8aa470bf88928c}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!history@{history}}
+\index{history@{history}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{history}{history}}
+{\footnotesize\ttfamily std\+::deque$<$std\+::string$>$ history}
+
+\mbox{\Hypertarget{calculatrice_8c_a93cc6c148fdaca40f361a9575f46479b}\label{calculatrice_8c_a93cc6c148fdaca40f361a9575f46479b}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!history\+\_\+buffer@{history\+\_\+buffer}}
+\index{history\+\_\+buffer@{history\+\_\+buffer}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{history\+\_\+buffer}{history\_buffer}}
+{\footnotesize\ttfamily Fl\+\_\+\+Text\+\_\+\+Buffer$\ast$ history\+\_\+buffer}
+
+\mbox{\Hypertarget{calculatrice_8c_a767fb2e15756a65bceec3dab176fd8c9}\label{calculatrice_8c_a767fb2e15756a65bceec3dab176fd8c9}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!history\+\_\+display@{history\+\_\+display}}
+\index{history\+\_\+display@{history\+\_\+display}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{history\+\_\+display}{history\_display}}
+{\footnotesize\ttfamily Fl\+\_\+\+Text\+\_\+\+Display$\ast$ history\+\_\+display}
+
+\mbox{\Hypertarget{calculatrice_8c_a581c71d43bda5025c2bd984091277b3f}\label{calculatrice_8c_a581c71d43bda5025c2bd984091277b3f}} 
+\index{calculatrice.\+c@{calculatrice.\+c}!operation@{operation}}
+\index{operation@{operation}!calculatrice.\+c@{calculatrice.\+c}}
+\subsubsection{\texorpdfstring{operation}{operation}}
+{\footnotesize\ttfamily char operation = 0}
+

@@ -1,0 +1,196 @@
+Les fonctions lambda, ou fonctions anonymes, sont des expressions qui permettent de déclarer des fonctions directement dans le code. Elles sont particulièrement utiles pour les opérations rapides ou les callbacks. 
+
+
+
+\#\# 1. Syntaxe de Base 
+\begin{DoxyCode}
+[ capture\_clause ] ( parameters ) -> return\_type \{ body \}
+\end{DoxyCode}
+
+
+\subsubsection*{Description des composants \+:}
+
+
+\begin{DoxyItemize}
+\item $\ast$$\ast${\ttfamily capture\+\_\+clause}$\ast$$\ast$ \+: Définit les variables accessibles dans la lambda ({\ttfamily \mbox{[}\mbox{]}}, {\ttfamily \mbox{[}=\mbox{]}}, {\ttfamily \mbox{[}\&\mbox{]}}).
+\item $\ast$$\ast${\ttfamily parameters}$\ast$$\ast$ \+: Liste des paramètres, comme dans une fonction normale.
+\item $\ast$$\ast${\ttfamily return\+\_\+type}$\ast$$\ast$ $\ast$(optionnel)$\ast$ \+: Type de retour de la lambda.
+\item $\ast$$\ast${\ttfamily body}$\ast$$\ast$ \+: Bloc d\textquotesingle{}instructions de la lambda. 
+
+
+\end{DoxyItemize}
+
+\#\# 2. Exemple Simple 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    \textcolor{keyword}{auto} add = [](\textcolor{keywordtype}{int} a, \textcolor{keywordtype}{int} b) -> \textcolor{keywordtype}{int} \{
+        \textcolor{keywordflow}{return} a + b;
+    \};
+    cout << \textcolor{stringliteral}{"Résultat : "} << add(5, 3) << endl; \textcolor{comment}{// Affiche 8}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+ 
+
+
+
+\subsection*{3. Capture des Variables}
+
+\#\#\# Capture par Valeur ({\ttfamily \mbox{[}=\mbox{]}}) \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} x = 10;
+\textcolor{keyword}{auto} lambda\_val = [=]() \{
+    cout << \textcolor{stringliteral}{"x (valeur) : "} << x << endl;
+\};
+lambda\_val();
+\end{DoxyCode}
+
+
+\#\#\# Capture par Référence ({\ttfamily \mbox{[}\&\mbox{]}}) \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} x = 10;
+\textcolor{keyword}{auto} lambda\_ref = [&]() \{
+    x *= 2;
+    cout << \textcolor{stringliteral}{"x (référence) : "} << x << endl;
+\};
+lambda\_ref(); \textcolor{comment}{// Modifie x}
+\end{DoxyCode}
+
+
+\#\#\# Capture de Variables Individuelles \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} a = 5, b = 10;
+\textcolor{keyword}{auto} lambda = [a, &b]() \{
+    \textcolor{comment}{// a est capturé par valeur, b par référence}
+    cout << \textcolor{stringliteral}{"a : "} << a << \textcolor{stringliteral}{", b : "} << b << endl;
+\};
+lambda();
+\end{DoxyCode}
+ 
+
+
+
+\subsection*{4. Utilisation avec {\ttfamily std\+::for\+\_\+each}}
+
+\#\#\# Doubler les Valeurs d\textquotesingle{}un {\ttfamily std\+::vector} \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <vector>}
+\textcolor{preprocessor}{#include <algorithm>} \textcolor{comment}{// pour std::for\_each}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    vector<int> vec = \{1, 2, 3, 4, 5\};
+    for\_each(vec.begin(), vec.end(), [](\textcolor{keywordtype}{int} &\hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) \{ x *= 2; \});
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x : vec) \{
+        cout << x << \textcolor{stringliteral}{" "}; \textcolor{comment}{// Affiche : 2 4 6 8 10}
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+ 
+
+
+
+\subsection*{5. Utilisation avec {\ttfamily std\+::count\+\_\+if}}
+
+\#\#\# Compter les Valeurs Supérieures à 10 \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <vector>}
+\textcolor{preprocessor}{#include <algorithm>} \textcolor{comment}{// pour std::count\_if}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    vector<int> vec = \{5, 15, 20, 8, 25\};
+    \textcolor{keywordtype}{int} count = count\_if(vec.begin(), vec.end(), [](\textcolor{keywordtype}{int} \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) \{ \textcolor{keywordflow}{return} x > 10; \});
+    cout << \textcolor{stringliteral}{"Nombre d'éléments > 10 : "} << count << endl; \textcolor{comment}{// Affiche 3}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+ 
+
+
+
+\subsection*{6. Utilisation avec {\ttfamily std\+::sort}}
+
+\#\#\# Trier un {\ttfamily std\+::vector} dans l\textquotesingle{}ordre décroissant \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <vector>}
+\textcolor{preprocessor}{#include <algorithm>} \textcolor{comment}{// pour std::sort}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    vector<int> vec = \{5, 1, 4, 2, 8\};
+    sort(vec.begin(), vec.end(), [](\textcolor{keywordtype}{int} a, \textcolor{keywordtype}{int} b) \{ \textcolor{keywordflow}{return} a > b; \});
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x : vec) \{
+        cout << x << \textcolor{stringliteral}{" "}; \textcolor{comment}{// Affiche : 8 5 4 2 1}
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+ 
+
+
+
+\subsection*{7. Lambda avec Capture Impliquée}
+
+\#\#\# Exemple \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} x = 10, y = 20;
+\textcolor{keyword}{auto} lambda = [=, &\hyperlink{addition_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}]() \{
+    \textcolor{comment}{// x est capturé par valeur, y par référence}
+    y += \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x};
+    cout << \textcolor{stringliteral}{"y : "} << y << endl;
+\};
+lambda();
+\end{DoxyCode}
+ 
+
+
+
+\subsection*{8. Lambda comme Callback}
+
+\#\#\# Exemple avec une Fonction \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <functional>}
+\textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+
+\textcolor{keywordtype}{void} execute\_callback(\textcolor{keyword}{function}<\textcolor{keywordtype}{void}()> callback) \{
+    callback();
+\}
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    execute\_callback([]() \{
+        cout << \textcolor{stringliteral}{"Callback exécuté !"} << endl;
+    \});
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+ 
+
+
+
+\subsubsection*{Notes \+:}
+
+
+\begin{DoxyEnumerate}
+\item Les lambdas sont idéales pour des tâches rapides ou les expressions anonymes.
+\item Le mot-\/clé {\ttfamily auto} est souvent utilisé pour stocker les lambdas.
+\item Les lambdas peuvent capturer automatiquement des variables locales. 
+
+
+\end{DoxyEnumerate}
+
+\subsubsection*{Références \+:}
+
+
+\begin{DoxyItemize}
+\item Bibliothèque S\+TL \+: {\ttfamily $<$algorithm$>$}, {\ttfamily $<$functional$>$}
+\item Documentation officielle \+: \href{https://en.cppreference.com}{\tt cppreference.\+com} 
+\end{DoxyItemize}

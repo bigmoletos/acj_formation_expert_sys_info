@@ -1,0 +1,67 @@
+\hypertarget{AvailableColumnsPanel_8c}{}\section{linux/download/htop-\/3.3.0/\+Available\+Columns\+Panel.c File Reference}
+\label{AvailableColumnsPanel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Available\+Columns\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Available\+Columns\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Available\+Columns\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Columns\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Column.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}List\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row\+Field.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Available\+Columns\+Panel.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{AvailableColumnsPanel_8c_a41e1e69b4035914723a8c8cfd3154fe7}{Available\+Columns\+Panel\+\_\+fill} (\hyperlink{AvailableColumnsPanel_8h_a7c59214c74f8285d43771c82a59afbab}{Available\+Columns\+Panel} $\ast$this, const char $\ast$dynamic\+Screen, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamic\+Columns)
+\item 
+\hyperlink{AvailableColumnsPanel_8h_a7c59214c74f8285d43771c82a59afbab}{Available\+Columns\+Panel} $\ast$ \hyperlink{AvailableColumnsPanel_8c_a6a2516a79d9594036ca34d1e551d3b31}{Available\+Columns\+Panel\+\_\+new} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$\hyperlink{HeaderLayout_8h_a9bf6c19eefefcddca5f152099add491c}{columns}, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamic\+Columns)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{AvailableColumnsPanel_8c_a6096516e703514c82f70411ef4433f0c}{Available\+Columns\+Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{AvailableColumnsPanel_8c_a41e1e69b4035914723a8c8cfd3154fe7}\label{AvailableColumnsPanel_8c_a41e1e69b4035914723a8c8cfd3154fe7}} 
+\index{Available\+Columns\+Panel.\+c@{Available\+Columns\+Panel.\+c}!Available\+Columns\+Panel\+\_\+fill@{Available\+Columns\+Panel\+\_\+fill}}
+\index{Available\+Columns\+Panel\+\_\+fill@{Available\+Columns\+Panel\+\_\+fill}!Available\+Columns\+Panel.\+c@{Available\+Columns\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Available\+Columns\+Panel\+\_\+fill()}{AvailableColumnsPanel\_fill()}}
+{\footnotesize\ttfamily void Available\+Columns\+Panel\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{AvailableColumnsPanel_8h_a7c59214c74f8285d43771c82a59afbab}{Available\+Columns\+Panel} $\ast$}]{this,  }\item[{const char $\ast$}]{dynamic\+Screen,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamic\+Columns }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{AvailableColumnsPanel_8c_a6a2516a79d9594036ca34d1e551d3b31}\label{AvailableColumnsPanel_8c_a6a2516a79d9594036ca34d1e551d3b31}} 
+\index{Available\+Columns\+Panel.\+c@{Available\+Columns\+Panel.\+c}!Available\+Columns\+Panel\+\_\+new@{Available\+Columns\+Panel\+\_\+new}}
+\index{Available\+Columns\+Panel\+\_\+new@{Available\+Columns\+Panel\+\_\+new}!Available\+Columns\+Panel.\+c@{Available\+Columns\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Available\+Columns\+Panel\+\_\+new()}{AvailableColumnsPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{AvailableColumnsPanel_8h_a7c59214c74f8285d43771c82a59afbab}{Available\+Columns\+Panel}$\ast$ Available\+Columns\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{columns,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamic\+Columns }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{AvailableColumnsPanel_8c_a6096516e703514c82f70411ef4433f0c}\label{AvailableColumnsPanel_8c_a6096516e703514c82f70411ef4433f0c}} 
+\index{Available\+Columns\+Panel.\+c@{Available\+Columns\+Panel.\+c}!Available\+Columns\+Panel\+\_\+class@{Available\+Columns\+Panel\+\_\+class}}
+\index{Available\+Columns\+Panel\+\_\+class@{Available\+Columns\+Panel\+\_\+class}!Available\+Columns\+Panel.\+c@{Available\+Columns\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Available\+Columns\+Panel\+\_\+class}{AvailableColumnsPanel\_class}}
+{\footnotesize\ttfamily const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Available\+Columns\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = AvailableColumnsPanel\_delete
+   \},
+   .eventHandler = AvailableColumnsPanel\_eventHandler
+\}
+\end{DoxyCode}

@@ -1,0 +1,80 @@
+\hypertarget{PCPProcess_8c}{}\section{linux/download/htop-\/3.3.0/pcp/\+P\+C\+P\+Process.c File Reference}
+\label{PCPProcess_8c}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Process.\+c@{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Process.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Process.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Dynamic\+Column.\+h\char`\"{}}\newline
+Include dependency graph for P\+C\+P\+Process.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{PCPProcess_8c_aee6bf4d85403f06f7669ed564db1c1e7}{P\+C\+P\+Process\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\item 
+void \hyperlink{PCPProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} \hyperlink{PCPProcess_8c_a4c21d43ea307fc6d644ce151591c5607}{Process\+\_\+fields} \mbox{[}$\,$\mbox{]}
+\item 
+const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} \hyperlink{PCPProcess_8c_afda370678b6ec56e6809c6a19e72fa48}{P\+C\+P\+Process\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{PCPProcess_8c_aee6bf4d85403f06f7669ed564db1c1e7}\label{PCPProcess_8c_aee6bf4d85403f06f7669ed564db1c1e7}} 
+\index{P\+C\+P\+Process.\+c@{P\+C\+P\+Process.\+c}!P\+C\+P\+Process\+\_\+new@{P\+C\+P\+Process\+\_\+new}}
+\index{P\+C\+P\+Process\+\_\+new@{P\+C\+P\+Process\+\_\+new}!P\+C\+P\+Process.\+c@{P\+C\+P\+Process.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Process\+\_\+new()}{PCPProcess\_new()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ P\+C\+P\+Process\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}\label{PCPProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}} 
+\index{P\+C\+P\+Process.\+c@{P\+C\+P\+Process.\+c}!Process\+\_\+delete@{Process\+\_\+delete}}
+\index{Process\+\_\+delete@{Process\+\_\+delete}!P\+C\+P\+Process.\+c@{P\+C\+P\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+delete()}{Process\_delete()}}
+{\footnotesize\ttfamily void Process\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{PCPProcess_8c_afda370678b6ec56e6809c6a19e72fa48}\label{PCPProcess_8c_afda370678b6ec56e6809c6a19e72fa48}} 
+\index{P\+C\+P\+Process.\+c@{P\+C\+P\+Process.\+c}!P\+C\+P\+Process\+\_\+class@{P\+C\+P\+Process\+\_\+class}}
+\index{P\+C\+P\+Process\+\_\+class@{P\+C\+P\+Process\+\_\+class}!P\+C\+P\+Process.\+c@{P\+C\+P\+Process.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Process\+\_\+class}{PCPProcess\_class}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} P\+C\+P\+Process\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .super = \{
+         .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structProcess__}{Process}),
+         .display = \hyperlink{Row_8c_a1ca72e911c0e2299061df16e80da6a80}{Row\_display},
+         .delete = \hyperlink{PCPProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\_delete},
+         .compare = \hyperlink{Process_8c_adfe5da81af5bdb6f1737efff4115ae59}{Process\_compare}
+      \},
+      .isHighlighted = \hyperlink{Process_8c_acc33de0abdacffbc71764974189a2623}{Process\_rowIsHighlighted},
+      .isVisible = \hyperlink{Process_8c_a81c1e83185bbf4303493558555e27f79}{Process\_rowIsVisible},
+      .matchesFilter = \hyperlink{Process_8c_a8447645ae54a0f49d0c67a7a6ccacd18}{Process\_rowMatchesFilter},
+      .compareByParent = \hyperlink{Process_8c_ad3b2093e8d84dc6178be2e6eb96f89b5}{Process\_compareByParent},
+      .sortKeyString = \hyperlink{Process_8c_a20530177962c8b1f48b2baadff6934aa}{Process\_rowGetSortKey},
+      .writeField = PCPProcess\_rowWriteField,
+   \},
+   .compareByKey = PCPProcess\_compareByKey,
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{PCPProcess_8c_a4c21d43ea307fc6d644ce151591c5607}\label{PCPProcess_8c_a4c21d43ea307fc6d644ce151591c5607}} 
+\index{P\+C\+P\+Process.\+c@{P\+C\+P\+Process.\+c}!Process\+\_\+fields@{Process\+\_\+fields}}
+\index{Process\+\_\+fields@{Process\+\_\+fields}!P\+C\+P\+Process.\+c@{P\+C\+P\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+fields}{Process\_fields}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} Process\+\_\+fields\mbox{[}$\,$\mbox{]}}
+

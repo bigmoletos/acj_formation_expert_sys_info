@@ -1,0 +1,262 @@
+\subsection*{1. File Extension}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: {\ttfamily .c}
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: {\ttfamily .cpp}
+\end{DoxyItemize}
+
+\subsection*{2. Basic Compilation}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: 
+\begin{DoxyCode}
+gcc file.c -o output
+\end{DoxyCode}
+
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+g++ file.cpp -o output
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{3. Input/\+Output}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <stdio.h>}
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    printf(\textcolor{stringliteral}{"Hello, World!\(\backslash\)n"});
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    std::cout << \textcolor{stringliteral}{"Hello, World!"} << std::endl;
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{4. Comments}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: 
+\begin{DoxyCode}
+\textcolor{comment}{// Single-line comment}
+\textcolor{comment}{/* Multi-line}
+\textcolor{comment}{   comment */}
+\end{DoxyCode}
+
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+\textcolor{comment}{// Single-line comment}
+\textcolor{comment}{/* Multi-line}
+\textcolor{comment}{   comment */}
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{5. Memory Allocation}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int}* p = (\textcolor{keywordtype}{int}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+free(p);
+\end{DoxyCode}
+
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int}* p = \textcolor{keyword}{new} int;
+\textcolor{keyword}{delete} p;
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{6. Functions}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} add(\textcolor{keywordtype}{int} a, \textcolor{keywordtype}{int} b) \{
+    \textcolor{keywordflow}{return} a + b;
+\}
+\end{DoxyCode}
+
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} add(\textcolor{keywordtype}{int} a, \textcolor{keywordtype}{int} b) \{
+    \textcolor{keywordflow}{return} a + b;
+\}
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{7. Classes (C++ only)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: No support for classes
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyClass \{
+\textcolor{keyword}{public}:
+    \textcolor{keywordtype}{void} myMethod() \{
+        std::cout << \textcolor{stringliteral}{"Hello from MyClass!"} << std::endl;
+    \}
+\};
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{8. Namespaces (C++ only)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: No namespaces
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }myNamespace \{
+    \textcolor{keywordtype}{int} \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x} = 10;
+\}
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{9. Exception Handling (C++ only)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: No built-\/in exception handling
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{try} \{
+    \textcolor{comment}{// Code that may throw an exception}
+\} \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int} e) \{
+    std::cout << \textcolor{stringliteral}{"Exception caught: "} << e << std::endl;
+\}
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{10. Headers}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <stdio.h>}
+\textcolor{preprocessor}{#include <stdlib.h>}
+\end{DoxyCode}
+
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <cstdlib>}
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{11. Standard Libraries}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: Standard libraries include {\ttfamily stdio.\+h}, {\ttfamily stdlib.\+h}, etc.
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: Standard libraries include {\ttfamily iostream}, {\ttfamily vector}, {\ttfamily string}, {\ttfamily algorithm}, etc.
+\end{DoxyItemize}
+
+\subsection*{12. Structure Declaration}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }MyStruct \{
+    \textcolor{keywordtype}{int} a;
+    \textcolor{keywordtype}{float} b;
+\};
+\end{DoxyCode}
+
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }MyStruct \{
+    \textcolor{keywordtype}{int} a;
+    \textcolor{keywordtype}{float} b;
+\};
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{13. Object-\/\+Oriented Programming (C++ only)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries C} \+: No O\+OP support
+\item $\ast$$\ast$\+C++$\ast$$\ast$ \+: C++ supports object-\/oriented programming with classes, inheritance, polymorphism, and encapsulation.
+\end{DoxyItemize}
+
+\subsection*{compiler et lancer en controlant les erreurs \+:}
+
+
+\begin{DoxyItemize}
+\item {\bfseries -\/\+Wunused-\/const-\/variable Wunused-\/parameter -\/\+Werror -\/\+Wsign-\/compare} 
+\begin{DoxyCode}
+g++ exo1.cpp -o exo1 -Wunused-\textcolor{keyword}{const}-variable Wunused-parameter -Werror && ./exo1
+\end{DoxyCode}
+
+\item {\bfseries -\/creation fichier Makefile (sans extension) et dans le même dossier que le oules fichiers à compiler pour capter les erreurs et les warning au moment du build} 
+\begin{DoxyCode}
+\textcolor{comment}{// fichier Makefile}
+\textcolor{preprocessor}{# Variables}
+CC = g++
+CFLAGS = -Wall -Wextra -Wunused-\textcolor{keyword}{const}-variable -Wunused-parameter -Werror
+
+\textcolor{preprocessor}{# Règle générique pour compiler n'importe quel fichier .cpp}
+%: %.cpp
+    $(CC) $(CFLAGS) $< -o $@
+
+\textcolor{preprocessor}{# Nettoyer tous les exécutables générés}
+clean:
+    rm -f *.o $(wildcard *.exe) $(wildcard *.out) $(wildcard *.obj)
+\end{DoxyCode}
+ pour l\textquotesingle{}utiliser il suffit de faire \+: 
+\begin{DoxyCode}
+make \hyperlink{namespaceload__all__file__url__return__df_a5a32746777f32baf5f824a720b64a1a7}{nom\_fichier}
+\textcolor{comment}{// ex}
+make exo2
+
+\textcolor{comment}{//  pour supprimer les fichiers exe}
+make clean exo3
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{Debugger gdb (G\+NU Debug)}
+
+
+\begin{DoxyCode}
+sudo apt install gdb
+
+(gdb) break main       # Définir un point d'arrêt à la fonction main
+(gdb) run              # Lancer le programme jusqu'au point d'arrêt
+(gdb) next             # Avancer à la prochaine ligne
+(gdb) print variable   # Afficher la valeur d'une variable
+(gdb) quit             # Quitter GDB
+
+gdb ./exo3
+\end{DoxyCode}
+ 

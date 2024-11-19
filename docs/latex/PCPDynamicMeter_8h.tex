@@ -1,0 +1,97 @@
+\hypertarget{PCPDynamicMeter_8h}{}\section{linux/download/htop-\/3.3.0/pcp/\+P\+C\+P\+Dynamic\+Meter.h File Reference}
+\label{PCPDynamicMeter_8h}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Dynamic\+Meter.\+h@{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Dynamic\+Meter.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+Include dependency graph for P\+C\+P\+Dynamic\+Meter.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPCPDynamicMetric__}{P\+C\+P\+Dynamic\+Metric\+\_\+}
+\item 
+struct \hyperlink{structPCPDynamicMeter__}{P\+C\+P\+Dynamic\+Meter\+\_\+}
+\item 
+struct \hyperlink{structPCPDynamicMeters__}{P\+C\+P\+Dynamic\+Meters\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structPCPDynamicMetric__}{P\+C\+P\+Dynamic\+Metric\+\_\+} \hyperlink{PCPDynamicMeter_8h_aee84a9c7faa482cdebe065f72a693136}{P\+C\+P\+Dynamic\+Metric}
+\item 
+typedef struct \hyperlink{structPCPDynamicMeter__}{P\+C\+P\+Dynamic\+Meter\+\_\+} \hyperlink{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}{P\+C\+P\+Dynamic\+Meter}
+\item 
+typedef struct \hyperlink{structPCPDynamicMeters__}{P\+C\+P\+Dynamic\+Meters\+\_\+} \hyperlink{PCPDynamicMeter_8h_a48e248f493f4a33a6cc077627adf147a}{P\+C\+P\+Dynamic\+Meters}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{PCPDynamicMeter_8h_adc3565adab3111903e58adf3d8a36fc1}{P\+C\+P\+Dynamic\+Meters\+\_\+init} (\hyperlink{PCPDynamicMeter_8h_a48e248f493f4a33a6cc077627adf147a}{P\+C\+P\+Dynamic\+Meters} $\ast$meters)
+\item 
+void \hyperlink{PCPDynamicMeter_8h_a891b6fc1d59b15bccd054840d94ad3a5}{P\+C\+P\+Dynamic\+Meters\+\_\+done} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$table)
+\item 
+void \hyperlink{PCPDynamicMeter_8h_a05a6b109298536d4a0e4c78f3e6397f7}{P\+C\+P\+Dynamic\+Meter\+\_\+enable} (\hyperlink{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}{P\+C\+P\+Dynamic\+Meter} $\ast$this)
+\item 
+void \hyperlink{PCPDynamicMeter_8h_a245e36ecce4b8de612778a56a364749e}{P\+C\+P\+Dynamic\+Meter\+\_\+update\+Values} (\hyperlink{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}{P\+C\+P\+Dynamic\+Meter} $\ast$this, \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$meter)
+\item 
+void \hyperlink{PCPDynamicMeter_8h_af419c3ac109e64ca3dec37646d1c540d}{P\+C\+P\+Dynamic\+Meter\+\_\+display} (\hyperlink{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}{P\+C\+P\+Dynamic\+Meter} $\ast$this, const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$meter, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$out)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}\label{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}} 
+\index{P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}!P\+C\+P\+Dynamic\+Meter@{P\+C\+P\+Dynamic\+Meter}}
+\index{P\+C\+P\+Dynamic\+Meter@{P\+C\+P\+Dynamic\+Meter}!P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Meter}{PCPDynamicMeter}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structPCPDynamicMeter__}{P\+C\+P\+Dynamic\+Meter\+\_\+}  \hyperlink{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}{P\+C\+P\+Dynamic\+Meter}}
+
+\mbox{\Hypertarget{PCPDynamicMeter_8h_a48e248f493f4a33a6cc077627adf147a}\label{PCPDynamicMeter_8h_a48e248f493f4a33a6cc077627adf147a}} 
+\index{P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}!P\+C\+P\+Dynamic\+Meters@{P\+C\+P\+Dynamic\+Meters}}
+\index{P\+C\+P\+Dynamic\+Meters@{P\+C\+P\+Dynamic\+Meters}!P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Meters}{PCPDynamicMeters}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structPCPDynamicMeters__}{P\+C\+P\+Dynamic\+Meters\+\_\+}  \hyperlink{PCPDynamicMeter_8h_a48e248f493f4a33a6cc077627adf147a}{P\+C\+P\+Dynamic\+Meters}}
+
+\mbox{\Hypertarget{PCPDynamicMeter_8h_aee84a9c7faa482cdebe065f72a693136}\label{PCPDynamicMeter_8h_aee84a9c7faa482cdebe065f72a693136}} 
+\index{P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}!P\+C\+P\+Dynamic\+Metric@{P\+C\+P\+Dynamic\+Metric}}
+\index{P\+C\+P\+Dynamic\+Metric@{P\+C\+P\+Dynamic\+Metric}!P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Metric}{PCPDynamicMetric}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structPCPDynamicMetric__}{P\+C\+P\+Dynamic\+Metric\+\_\+}  \hyperlink{PCPDynamicMeter_8h_aee84a9c7faa482cdebe065f72a693136}{P\+C\+P\+Dynamic\+Metric}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{PCPDynamicMeter_8h_af419c3ac109e64ca3dec37646d1c540d}\label{PCPDynamicMeter_8h_af419c3ac109e64ca3dec37646d1c540d}} 
+\index{P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}!P\+C\+P\+Dynamic\+Meter\+\_\+display@{P\+C\+P\+Dynamic\+Meter\+\_\+display}}
+\index{P\+C\+P\+Dynamic\+Meter\+\_\+display@{P\+C\+P\+Dynamic\+Meter\+\_\+display}!P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Meter\+\_\+display()}{PCPDynamicMeter\_display()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Meter\+\_\+display (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}{P\+C\+P\+Dynamic\+Meter} $\ast$}]{this,  }\item[{const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{meter,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicMeter_8h_a05a6b109298536d4a0e4c78f3e6397f7}\label{PCPDynamicMeter_8h_a05a6b109298536d4a0e4c78f3e6397f7}} 
+\index{P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}!P\+C\+P\+Dynamic\+Meter\+\_\+enable@{P\+C\+P\+Dynamic\+Meter\+\_\+enable}}
+\index{P\+C\+P\+Dynamic\+Meter\+\_\+enable@{P\+C\+P\+Dynamic\+Meter\+\_\+enable}!P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Meter\+\_\+enable()}{PCPDynamicMeter\_enable()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Meter\+\_\+enable (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}{P\+C\+P\+Dynamic\+Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicMeter_8h_a245e36ecce4b8de612778a56a364749e}\label{PCPDynamicMeter_8h_a245e36ecce4b8de612778a56a364749e}} 
+\index{P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}!P\+C\+P\+Dynamic\+Meter\+\_\+update\+Values@{P\+C\+P\+Dynamic\+Meter\+\_\+update\+Values}}
+\index{P\+C\+P\+Dynamic\+Meter\+\_\+update\+Values@{P\+C\+P\+Dynamic\+Meter\+\_\+update\+Values}!P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Meter\+\_\+update\+Values()}{PCPDynamicMeter\_updateValues()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Meter\+\_\+update\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicMeter_8h_a9854a664fe57913c8fcfb7a2ec944b16}{P\+C\+P\+Dynamic\+Meter} $\ast$}]{this,  }\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{meter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicMeter_8h_a891b6fc1d59b15bccd054840d94ad3a5}\label{PCPDynamicMeter_8h_a891b6fc1d59b15bccd054840d94ad3a5}} 
+\index{P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}!P\+C\+P\+Dynamic\+Meters\+\_\+done@{P\+C\+P\+Dynamic\+Meters\+\_\+done}}
+\index{P\+C\+P\+Dynamic\+Meters\+\_\+done@{P\+C\+P\+Dynamic\+Meters\+\_\+done}!P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Meters\+\_\+done()}{PCPDynamicMeters\_done()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Meters\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicMeter_8h_adc3565adab3111903e58adf3d8a36fc1}\label{PCPDynamicMeter_8h_adc3565adab3111903e58adf3d8a36fc1}} 
+\index{P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}!P\+C\+P\+Dynamic\+Meters\+\_\+init@{P\+C\+P\+Dynamic\+Meters\+\_\+init}}
+\index{P\+C\+P\+Dynamic\+Meters\+\_\+init@{P\+C\+P\+Dynamic\+Meters\+\_\+init}!P\+C\+P\+Dynamic\+Meter.\+h@{P\+C\+P\+Dynamic\+Meter.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Meters\+\_\+init()}{PCPDynamicMeters\_init()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Meters\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicMeter_8h_a48e248f493f4a33a6cc077627adf147a}{P\+C\+P\+Dynamic\+Meters} $\ast$}]{meters }\end{DoxyParamCaption})}
+
