@@ -9,6 +9,7 @@
 #include "header.hpp"
 
 // Fonction pour générer un tableau de 100 valeurs aléatoires
+
 void generer_valeurs_aleatoires(std::vector<int> &tableau, int taille = 100)
 {
 
