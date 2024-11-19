@@ -1,6 +1,8 @@
 
 # Cheatsheet : Principales fonctions STL en C++
 
+https://en.cppreference.com/w/cpp/standard_library
+
 ## 1. **std::sort**
 Trie une plage d'éléments dans l'ordre croissant ou selon un critère personnalisé.
 
