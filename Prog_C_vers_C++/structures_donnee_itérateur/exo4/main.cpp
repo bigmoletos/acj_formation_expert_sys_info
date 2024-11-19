@@ -5,7 +5,9 @@
 #include <string>
 #include <algorithm> // pour std::sort
 #include <iterator>
-#include <cstdio> // pour printf
+#include <cstdio>     // pour printf
+#include <functional> // pour std::function
+#include <iomanip>    // Pour std::setprecision
 using namespace std;
 
 // # Exo sur les Lambdas
@@ -217,10 +219,10 @@ int main()
     cout << "Valeurs modifiées : x = " << x << ", y = " << y << endl; // x = 9, y = 15
     // ## Étape 6 : Utilisation Avancée avec la STL
     // 1. Créez un `std::vector` contenant les entiers de 1 à 10.
-    cout << "=======Créez un `std::vector` contenant les entiers de 1 à 10.==========" << endl;
+    cout << "=======Créez un `std::vector` contenant les entiers de 1 à 10.=======" << endl;
     std::vector<int> v4{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     // 2. Utilisez une lambda avec `std::find_if` pour trouver le premier élément supérieur à 5.
-    cout << "==========Utilisez une lambda avec `std::find_if` pour trouver le premier élément supérieur à 5.======" << endl;
+    cout << "===Utilisez une lambda avec `std::find_if` pour trouver le premier élément supérieur à 5.====" << endl;
     auto valSup5 = find_if(v4.begin(), v4.end(), [](int x)
                            { return x > 5; });
     if (valSup5 != v4.end())
@@ -232,22 +234,74 @@ int main()
         cout << "Aucun élément supérieur à 5 trouvé." << endl;
     }
     // 3. Utilisez une lambda avec `std::count_if` pour compter les éléments pairs.
-    cout
-        << "=====Utilisez une lambda avec `std::count_if` pour compter les éléments pairs=======" << endl;
+    cout << "=====Utilisez une lambda avec `std::count_if` pour compter les éléments pairs=====" << endl;
+    auto countPair = count_if(v4.begin(), v4.end(), [](int x) -> bool
+                              { return x % 2 == 0; });
+
+    if (countPair > 0)
+    {
+        std::cout << "nombre d'elements pairs : " << countPair << std::endl;
+    }
+    else
+    {
+        std::cout << "aucun élément pair trouvé" << std::endl;
+    }
 
     // ## Étape 7 : Lambdas avec `std::function`
     // 1. Déclarez une `std::function` qui encapsule une lambda pour calculer la différence entre deux entiers.
-    cout << "======Déclarez une `std::function` qui encapsule une lambda pour calculer la différence entre deux entiers.=======" << endl;
+    cout << "=====Déclarez une `std::function` qui encapsule une lambda pour calculer la différence entre deux entiers.=====" << endl;
+    function<int(int, int)> calculDiff = [](int x, int y) -> int
+    { return x - y; };
+    // Utilisation de la std::function
+    x = 10;
+    y = 4;
+    int res = calculDiff(x, y);
+
+    std::cout << "La différence entre " << x << " et " << y << " est : " << res << std::endl;
 
     // 2. Changez dynamiquement la fonction pour encapsuler une lambda qui calcule le produit.
     cout << "================================" << endl;
+    calculDiff = [](int x, int y) -> int
+    { return x * y; };
+    // Utilisation de la std::function
+
+    int res2 = calculDiff(x, y);
+
+    std::cout << "Le produit entre " << x << " et " << y << " est : " << res2 << std::endl;
 
     // ## Étape 8 : Lambdas Génériques
     // 1. Créez une lambda générique qui retourne le maximum entre deux valeurs.
-    cout << "==========Créez une lambda générique qui retourne le maximum entre deux valeurs.=================" << endl;
+    cout << "=====Créez une lambda générique qui retourne le maximum entre deux valeurs.==========" << endl;
+
+    auto findMax = [](auto x, auto y) -> auto
+    { return max(x, y); };
 
     // 2. Testez votre lambda avec des types différents (`int`, `double`, etc.).
-    cout << "=======Testez votre lambda avec des types différents (`int`, `double`, etc.).===================" << endl;
+    cout << "=======Testez votre lambda avec des types différents (`int`, `double`, etc.).=========" << endl;
+
+    int valMax = findMax(10, 5);
+    std::cout << "la valeur max int est : " << valMax << std::endl;
+
+    float valMax2 = findMax(1.64242444244242, 3.141592653589793242);
+    std::cout << std::setprecision(15);
+    std::cout << "la valeur max float avec setprecision est : " << valMax2 << std::endl;
+
+    double valMax3 = findMax(3.141592653589793, 2.895524444444442);
+    std::cout << "la valeur max est double : " << valMax3 << std::endl;
+
+    // autre solution sans passer par std::max qui retourne un float et pas un double
+    auto findMax2 = [](auto x, auto y) -> auto
+    { if (x > y)  return x; else return y; };
+
+    int valMax4 = findMax2(-10, 5);
+    printf("sans passer par la fonction max car elle retourne un float et pas un double\n");
+    std::cout << "la valeur max int est : " << valMax4 << std::endl;
+
+    float valMax5 = findMax2(1.64242444244242, 3.141592653589793242);
+    std::cout << "la valeur max float est : " << valMax5 << std::endl;
+
+    double valMax6 = findMax2(3.141592653589793, 2.895524444444442);
+    std::cout << "la valeur max est double : " << valMax6 << std::endl;
 
     return 0;
 }
