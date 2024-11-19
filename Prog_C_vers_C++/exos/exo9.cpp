@@ -10,6 +10,13 @@
 using namespace std;
 
 // int main(int argc, char* argv[]) {
+/**
+ * @brief [Description de main]
+ *
+ * @param argc [Description du paramètre]
+ * @param argv [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int main(int argc, char** argv) {
     //vzariables pour lire les caractÃ©res
     char i, j;

@@ -20,6 +20,12 @@ public:
     ChargeFichierTxt(const std::string &chemin);
 
     // Méthode pour charger le fichier
+/**
+ * @brief [Description de charger]
+ *
+ * @param Aucun [Cette fonction n'a pas de param�tres]
+ * @return bool [Description du retour]
+ */
     bool charger();
 
     // Obtenir les lignes du fichier chargé

@@ -5,6 +5,12 @@
 
 using namespace std;
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main() {
     // Variables pour stocker les donnÃ©es
     char nom[20], prenom[20], pays_naissance[20], profession[20];

@@ -1,6 +1,13 @@
 #include <iostream>
 
 // Fonction qui renvoie le maximum de deux entiers
+/**
+ * @brief [Description de max]
+ *
+ * @param a [Description du paramètre]
+ * @param b [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int max(int a, int b)
 {
     int max_res = (a > b) ? a : b;
@@ -8,6 +15,14 @@ int max(int a, int b)
 }
 
 // Fonction qui renvoie le maximum de deux entiers
+/**
+ * @brief [Description de max]
+ *
+ * @param a [Description du paramètre]
+ * @param b [Description du paramètre]
+ * @param c [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int max(int a, int b, int c)
 {
 
@@ -15,6 +30,15 @@ int max(int a, int b, int c)
     return max_res;
 }
 // Fonction qui renvoie le maximum de deux entiers
+/**
+ * @brief [Description de max]
+ *
+ * @param a [Description du paramètre]
+ * @param b [Description du paramètre]
+ * @param c [Description du paramètre]
+ * @param d [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int max(int a, int b, int c, int d)
 {
     int max_res = max(a,max(c,b,d));
@@ -22,6 +46,13 @@ int max(int a, int b, int c, int d)
 }
 
 
+/**
+ * @brief [Description de max]
+ *
+ * @param tab[] [Description du paramètre]
+ * @param size [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int max(int tab[], int size)
 {
     int res = tab[0];
@@ -33,8 +64,21 @@ int max(int tab[], int size)
 }
 
 //
+/**
+ * @brief [Description de inverse]
+ *
+ * @param &a [Description du paramètre]
+ * @param &b [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void inverse(int &a, int &b);
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     int a = 3, b = 7;
@@ -47,6 +91,13 @@ int main()
     std::cout << "b(" << b << ", " << &b << ")" << std::endl;
 }
 
+/**
+ * @brief [Description de inverse]
+ *
+ * @param &a [Description du paramètre]
+ * @param &b [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void inverse(int &a, int &b)
 {
     int tmp = b;
@@ -55,9 +106,28 @@ void inverse(int &a, int &b)
 }
 //#include <iostream>
 // exo 3
+/**
+ * @brief [Description de factorial_i]
+ *
+ * @param int [Description du paramètre]
+ * @return long long unsigned int [Description du retour]
+ */
 long long unsigned int factorial_i(int);
+/**
+ * @brief [Description de factorial_r]
+ *
+ * @param int [Description du paramètre]
+ * @return long long unsigned int [Description du retour]
+ */
 long long unsigned int factorial_r(int);
 
+/**
+ * @brief [Description de main]
+ *
+ * @param argc [Description du paramètre]
+ * @param *argv[] [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int main(int argc, char const *argv[])
 {
     if (argc != 2)
@@ -70,6 +140,12 @@ int main(int argc, char const *argv[])
     std::cout << n << "! = " << factorial_r(n) << std::endl;
 }
 
+/**
+ * @brief [Description de factorial_i]
+ *
+ * @param n [Description du paramètre]
+ * @return long long unsigned int [Description du retour]
+ */
 long long unsigned int factorial_i(int n)
 {
     long long unsigned int res = 1;
@@ -78,11 +154,23 @@ long long unsigned int factorial_i(int n)
     return res;
 }
 
+/**
+ * @brief [Description de factorial_r]
+ *
+ * @param n [Description du paramètre]
+ * @return long long unsigned int [Description du retour]
+ */
 long long unsigned int factorial_r(int n)
 {
     return (n < 2) ? 1 : n * factorial_r(n - 1);
 }
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     int num1 = 10;

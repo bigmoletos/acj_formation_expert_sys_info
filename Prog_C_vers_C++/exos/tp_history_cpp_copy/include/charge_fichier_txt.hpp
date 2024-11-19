@@ -32,6 +32,12 @@ public:
  * @param Aucun [Cette fonction n'a pas de paramètres]
  * @return bool [Description du retour]
  */
+/**
+ * @brief [Description de charger]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return bool [Description du retour]
+ */
     bool charger();
 
     // Obtenir les lignes du fichier chargÃ©

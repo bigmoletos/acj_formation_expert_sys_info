@@ -12,6 +12,13 @@
 
 using namespace std;
 
+/**
+ * @brief [Description de main]
+ *
+ * @param argc [Description du paramètre]
+ * @param argv [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int main(int argc, char** argv) {
     // Variables pour lire les caractÃ¨res
     char i, j;
@@ -33,9 +40,33 @@ int main(int argc, char** argv) {
     string namefichier4 = argv[1];
 
     // VÃ©rification d'existence et ouverture des fichiers
+/**
+ * @brief [Description de f1]
+ *
+ * @param namefichier [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream f1(namefichier);
+/**
+ * @brief [Description de f2]
+ *
+ * @param namefichier2 [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream f2(namefichier2);
+/**
+ * @brief [Description de f3]
+ *
+ * @param namefichier3 [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream f3(namefichier3);
+/**
+ * @brief [Description de f4]
+ *
+ * @param namefichier4 [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream f4(namefichier4);
 
 
@@ -92,6 +123,13 @@ int main(int argc, char** argv) {
     //copie du fichier1 dans fichier3.txt et vÃ©rification
 
     // Ouverture du fichier destination en mode ajout (append)
+/**
+ * @brief [Description de file2]
+ *
+ * @param namefichier2 [Description du paramètre]
+ * @param fstream::app [Description du paramètre]
+ * @return fstream [Description du retour]
+ */
     fstream file2(namefichier2, fstream::out | fstream::app);
     if (!file2.is_open()) {
         cout << "Erreur : Impossible d'ouvrir " << namefichier2 << " pour l'Ã©criture." << endl;

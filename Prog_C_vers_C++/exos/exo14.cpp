@@ -7,9 +7,28 @@
 using namespace std;
 
 // Fonction pour copier le fichier sans le modifier
+/**
+ * @brief [Description de copier_fichier]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void copier_fichier(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -28,9 +47,28 @@ void copier_fichier(const string &inputFile, const string &outputFile)
 }
 
 // Fonction pour mettre le texte en majuscules
+/**
+ * @brief [Description de mettre_majuscule]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void mettre_majuscule(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -49,9 +87,28 @@ void mettre_majuscule(const string &inputFile, const string &outputFile)
     }
 }
 // Fonction pour mettre le texte en minuscules
+/**
+ * @brief [Description de mettre_minuscules]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void mettre_minuscules(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -71,9 +128,28 @@ void mettre_minuscules(const string &inputFile, const string &outputFile)
 }
 
 // Fonction pour capitaliser les premiÃ¨res lettres de chaque mot
+/**
+ * @brief [Description de capitaliser_premieres_lettres]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void capitaliser_premieres_lettres(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -103,9 +179,28 @@ void capitaliser_premieres_lettres(const string &inputFile, const string &output
         cerr << "Erreur: impossible d'ouvrir le fichier.\n";
     }
 }
+/**
+ * @brief [Description de inverser_casse]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void inverser_casse(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -135,9 +230,28 @@ void inverser_casse(const string &inputFile, const string &outputFile)
 }
 
 // Fonction pour justifier le texte Ã  droite
+/**
+ * @brief [Description de justifier_droite_85car]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void justifier_droite_85car(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -155,6 +269,12 @@ void justifier_droite_85car(const string &inputFile, const string &outputFile)
     }
 }
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     string fichier_initial = "fichier_initial.txt";     // Nom du fichier d'entrÃ©e
@@ -203,7 +323,19 @@ int main()
         break;
     case 7:
     {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param fichier_initial [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
         ifstream inFile(fichier_initial);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param fichier_corrected [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
         ofstream outFile(fichier_corrected);
         string ligne;
         if (inFile && outFile)

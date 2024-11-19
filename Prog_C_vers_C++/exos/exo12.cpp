@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main(){
 // Boucle de 0 Ã  10 avec un pas de 2
 for (int k = 0; k <= 10; k += 2)

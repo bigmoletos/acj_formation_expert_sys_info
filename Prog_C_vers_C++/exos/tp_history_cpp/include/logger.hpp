@@ -27,6 +27,12 @@ public:
     void critical(const std::string &message) const;
 
     // Méthode pour définir le niveau de log
+/**
+ * @brief [Description de setLevel]
+ *
+ * @param level [Description du param�tre]
+ * @return void [Description du retour]
+ */
     void setLevel(LogLevel level);
 
 private:

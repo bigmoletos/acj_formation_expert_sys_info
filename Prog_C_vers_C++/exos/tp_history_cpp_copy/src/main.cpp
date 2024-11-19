@@ -48,6 +48,12 @@
  * @param Aucun [Cette fonction n'a pas de paramètres]
  * @return int [Description du retour]
  */
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     //----------LOGGER-------------
@@ -115,7 +121,19 @@ int main()
  * @param cheminFichier [Description du paramètre]
  * @return ChargeFichierTxt [Description du retour]
  */
+/**
+ * @brief [Description de chargeur]
+ *
+ * @param cheminFichier [Description du paramètre]
+ * @return ChargeFichierTxt [Description du retour]
+ */
     ChargeFichierTxt chargeur(cheminFichier);
+/**
+ * @brief [Description de chargeur2]
+ *
+ * @param cheminFichierCOmmandesUsuelles [Description du paramètre]
+ * @return ChargeFichierTxt [Description du retour]
+ */
 /**
  * @brief [Description de chargeur2]
  *
@@ -151,10 +169,22 @@ int main()
  * @param chargeur.getLignes() [Description du paramètre]
  * @return NombreOccurrence [Description du retour]
  */
+/**
+ * @brief [Description de nombreOccur]
+ *
+ * @param chargeur.getLignes() [Description du paramètre]
+ * @return NombreOccurrence [Description du retour]
+ */
     NombreOccurrence nombreOccur(chargeur.getLignes());
 
     //-------MENU-------------
     // Affichage et gestion du menu interactif
+/**
+ * @brief [Description de menu]
+ *
+ * @param optionsMenuMessages [Description du paramètre]
+ * @return Menu [Description du retour]
+ */
 /**
  * @brief [Description de menu]
  *

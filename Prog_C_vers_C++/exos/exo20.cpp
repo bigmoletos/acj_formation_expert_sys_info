@@ -5,6 +5,12 @@
 // Fonction pour calculer la racine carrée en utilisant une méthode itérative
 // Paramètres : nombre (double)
 // Retourne : racine carrée approximative du nombre
+/**
+ * @brief [Description de racine_carre]
+ *
+ * @param nombre [Description du param�tre]
+ * @return double [Description du retour]
+ */
 double racine_carre(double nombre)
 {
     double estimation = nombre / 2;          // Initialiser avec la moitié du nombre
@@ -13,6 +19,12 @@ double racine_carre(double nombre)
     return estimation; // Retourner l'estimation finale
 }
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de param�tres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     std::cout.precision(15);                              // Définir la précision des résultats

@@ -1,6 +1,12 @@
 #include <limits>
 #include <iostream>
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main() {
     std::cout << CHAR_BIT << " bits in byte" << std::endl;
     std::cout << "min  SIGNED CHAR: " << SCHAR_MIN << std::endl;

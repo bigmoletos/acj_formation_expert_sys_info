@@ -20,8 +20,21 @@
  * @param tableau [Description du paramètre]
  * @return void [Description du retour]
  */
+/**
+ * @brief [Description de charger_donnees_fichier]
+ *
+ * @param &nom_fichier [Description du paramètre]
+ * @param tableau [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void charger_donnees_fichier(const std::string &nom_fichier, std::vector<int>& tableau)
 {
+/**
+ * @brief [Description de fichier]
+ *
+ * @param nom_fichier [Description du paramètre]
+ * @return std::ifstream [Description du retour]
+ */
 /**
  * @brief [Description de fichier]
  *

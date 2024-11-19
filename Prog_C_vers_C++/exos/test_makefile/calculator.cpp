@@ -1,5 +1,11 @@
 #include <iostream>
 
+/**
+ * @brief [Description de calculatrice]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return void [Description du retour]
+ */
 void calculatrice() {
     char operation;
     double num1, num2;
@@ -42,6 +48,12 @@ void calculatrice() {
     }
 }
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main() {
     calculatrice();  // Appel de la fonction calculatrice
     return 0;
