@@ -1,0 +1,52 @@
+\hypertarget{ColorsPanel_8c}{}\section{linux/download/htop-\/3.3.0/\+Colors\+Panel.c File Reference}
+\label{ColorsPanel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Colors\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Colors\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Colors\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Option\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+Include dependency graph for Colors\+Panel.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ColorsPanel_8h_a3d6adc083316d9bbcd2bf6e11700ed7f}{Colors\+Panel} $\ast$ \hyperlink{ColorsPanel_8c_ae0ca9b0b82e106601ff35cd809bca81b}{Colors\+Panel\+\_\+new} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{ColorsPanel_8c_a23c2775744a82fe22e51c9d68d4d55e6}{Colors\+Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ColorsPanel_8c_ae0ca9b0b82e106601ff35cd809bca81b}\label{ColorsPanel_8c_ae0ca9b0b82e106601ff35cd809bca81b}} 
+\index{Colors\+Panel.\+c@{Colors\+Panel.\+c}!Colors\+Panel\+\_\+new@{Colors\+Panel\+\_\+new}}
+\index{Colors\+Panel\+\_\+new@{Colors\+Panel\+\_\+new}!Colors\+Panel.\+c@{Colors\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Colors\+Panel\+\_\+new()}{ColorsPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{ColorsPanel_8h_a3d6adc083316d9bbcd2bf6e11700ed7f}{Colors\+Panel}$\ast$ Colors\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ColorsPanel_8c_a23c2775744a82fe22e51c9d68d4d55e6}\label{ColorsPanel_8c_a23c2775744a82fe22e51c9d68d4d55e6}} 
+\index{Colors\+Panel.\+c@{Colors\+Panel.\+c}!Colors\+Panel\+\_\+class@{Colors\+Panel\+\_\+class}}
+\index{Colors\+Panel\+\_\+class@{Colors\+Panel\+\_\+class}!Colors\+Panel.\+c@{Colors\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Colors\+Panel\+\_\+class}{ColorsPanel\_class}}
+{\footnotesize\ttfamily const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Colors\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = ColorsPanel\_delete
+   \},
+   .eventHandler = ColorsPanel\_eventHandler
+\}
+\end{DoxyCode}

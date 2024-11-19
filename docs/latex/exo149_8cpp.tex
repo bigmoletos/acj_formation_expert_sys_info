@@ -1,0 +1,330 @@
+\hypertarget{exo149_8cpp}{}\section{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo149.cpp File Reference}
+\label{exo149_8cpp}\index{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo149.\+cpp@{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo149.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+Include dependency graph for exo149.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{exo149_8cpp_a37a8416638b386895e1756662b41d8fd}{copy\+File} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de copy\+File\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo149_8cpp_a3d89139b8229e4cf6019cad5bf0f03f7}{to\+Upper\+Case} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de to\+Upper\+Case\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo149_8cpp_a94f6875c9fcb603881ffd77218359eb8}{to\+Lower\+Case} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de to\+Lower\+Case\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo149_8cpp_a18b9a49e2e2f5384b2b1cc07c7748b8e}{capitalize} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de capitalize\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo149_8cpp_afcf8201f283e8737b99f9ec41444cc3b}{swap\+Case} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de swap\+Case\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo149_8cpp_aa8e4cbe0dcc134d7041b1bc4351164f8}{justify\+Right} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de justify\+Right\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{exo149_8cpp_abe88fe6abae8c7b6ed0cc1f2612dd8a6}{justify\+Left} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de justify\+Left\mbox{]} \end{DoxyCompactList}\item 
+int \hyperlink{exo149_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de main\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{exo149_8cpp_a18b9a49e2e2f5384b2b1cc07c7748b8e}\label{exo149_8cpp_a18b9a49e2e2f5384b2b1cc07c7748b8e}} 
+\index{exo149.\+cpp@{exo149.\+cpp}!capitalize@{capitalize}}
+\index{capitalize@{capitalize}!exo149.\+cpp@{exo149.\+cpp}}
+\subsubsection{\texorpdfstring{capitalize()}{capitalize()}}
+{\footnotesize\ttfamily void capitalize (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de capitalize\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo149_8cpp_a37a8416638b386895e1756662b41d8fd}\label{exo149_8cpp_a37a8416638b386895e1756662b41d8fd}} 
+\index{exo149.\+cpp@{exo149.\+cpp}!copy\+File@{copy\+File}}
+\index{copy\+File@{copy\+File}!exo149.\+cpp@{exo149.\+cpp}}
+\subsubsection{\texorpdfstring{copy\+File()}{copyFile()}}
+{\footnotesize\ttfamily void copy\+File (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de copy\+File\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo149_8cpp_abe88fe6abae8c7b6ed0cc1f2612dd8a6}\label{exo149_8cpp_abe88fe6abae8c7b6ed0cc1f2612dd8a6}} 
+\index{exo149.\+cpp@{exo149.\+cpp}!justify\+Left@{justify\+Left}}
+\index{justify\+Left@{justify\+Left}!exo149.\+cpp@{exo149.\+cpp}}
+\subsubsection{\texorpdfstring{justify\+Left()}{justifyLeft()}}
+{\footnotesize\ttfamily void justify\+Left (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de justify\+Left\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo149_8cpp_aa8e4cbe0dcc134d7041b1bc4351164f8}\label{exo149_8cpp_aa8e4cbe0dcc134d7041b1bc4351164f8}} 
+\index{exo149.\+cpp@{exo149.\+cpp}!justify\+Right@{justify\+Right}}
+\index{justify\+Right@{justify\+Right}!exo149.\+cpp@{exo149.\+cpp}}
+\subsubsection{\texorpdfstring{justify\+Right()}{justifyRight()}}
+{\footnotesize\ttfamily void justify\+Right (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de justify\+Right\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo149_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{exo149_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{exo149.\+cpp@{exo149.\+cpp}!main@{main}}
+\index{main@{main}!exo149.\+cpp@{exo149.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de main\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Aucun} & \mbox{[}Cette fonction n\textquotesingle{}a pas de paramètres\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo149_8cpp_afcf8201f283e8737b99f9ec41444cc3b}\label{exo149_8cpp_afcf8201f283e8737b99f9ec41444cc3b}} 
+\index{exo149.\+cpp@{exo149.\+cpp}!swap\+Case@{swap\+Case}}
+\index{swap\+Case@{swap\+Case}!exo149.\+cpp@{exo149.\+cpp}}
+\subsubsection{\texorpdfstring{swap\+Case()}{swapCase()}}
+{\footnotesize\ttfamily void swap\+Case (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de swap\+Case\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo149_8cpp_a94f6875c9fcb603881ffd77218359eb8}\label{exo149_8cpp_a94f6875c9fcb603881ffd77218359eb8}} 
+\index{exo149.\+cpp@{exo149.\+cpp}!to\+Lower\+Case@{to\+Lower\+Case}}
+\index{to\+Lower\+Case@{to\+Lower\+Case}!exo149.\+cpp@{exo149.\+cpp}}
+\subsubsection{\texorpdfstring{to\+Lower\+Case()}{toLowerCase()}}
+{\footnotesize\ttfamily void to\+Lower\+Case (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de to\+Lower\+Case\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo149_8cpp_a3d89139b8229e4cf6019cad5bf0f03f7}\label{exo149_8cpp_a3d89139b8229e4cf6019cad5bf0f03f7}} 
+\index{exo149.\+cpp@{exo149.\+cpp}!to\+Upper\+Case@{to\+Upper\+Case}}
+\index{to\+Upper\+Case@{to\+Upper\+Case}!exo149.\+cpp@{exo149.\+cpp}}
+\subsubsection{\texorpdfstring{to\+Upper\+Case()}{toUpperCase()}}
+{\footnotesize\ttfamily void to\+Upper\+Case (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File,  }\item[{const string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de to\+Upper\+Case\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em \&output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de in\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ifstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de out\+File\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ofstream \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}

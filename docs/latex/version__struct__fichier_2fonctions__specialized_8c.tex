@@ -1,0 +1,70 @@
+\hypertarget{version__struct__fichier_2fonctions__specialized_8c}{}\section{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.c File Reference}
+\label{version__struct__fichier_2fonctions__specialized_8c}\index{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}proto.\+h\char`\"{}}\newline
+Include dependency graph for fonctions\+\_\+specialized.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{version__struct__fichier_2fonctions__specialized_8c_a074e4770d5e9a3f22ae8ae752fccca31}{saisir\+\_\+repertoire} (\hyperlink{structContact}{Contact} $\ast$c)
+\item 
+void \hyperlink{version__struct__fichier_2fonctions__specialized_8c_aa260c002cfbb562253a3122c1c55c0c0}{enregistrement\+\_\+repertoire\+\_\+fichier} (\hyperlink{structContact}{Contact} c, size\+\_\+t \hyperlink{exo6-2__tp6__2__tableaux__et__adresses__exercices1_8c_a29bf3fc0ffe4e72e45f0c84ab4f8cd1e}{taille})
+\item 
+void \hyperlink{version__struct__fichier_2fonctions__specialized_8c_a49c93768f0bd505f29709b4c38fcb164}{lire\+\_\+repertoire\+\_\+fichier} ()
+\item 
+void \hyperlink{version__struct__fichier_2fonctions__specialized_8c_a609fc419889fddf83f84e12248abe0c2}{suppression\+\_\+repertoire} (\hyperlink{structContact}{Contact} contacts\mbox{[}$\,$\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau}, int numero\+\_\+contact)
+\item 
+void \hyperlink{version__struct__fichier_2fonctions__specialized_8c_a7bd65329bd2fb15ac86cda6033b54db4}{supprimer\+\_\+entree\+\_\+fichier} (\hyperlink{structContact}{Contact} contacts\mbox{[}$\,$\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{version__struct__fichier_2fonctions__specialized_8c_a51ae69583b1f76532ae99b81891e11e2}{afficher\+\_\+menu} (void)
+\item 
+int \hyperlink{version__struct__fichier_2fonctions__specialized_8c_a5d5b82eee21fc8475fd9a6cb07ac2dbc}{rechercher\+\_\+repertoire} (\hyperlink{structContact}{Contact} contacts\mbox{[}$\,$\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau}, const char $\ast$nom)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{version__struct__fichier_2fonctions__specialized_8c_a51ae69583b1f76532ae99b81891e11e2}\label{version__struct__fichier_2fonctions__specialized_8c_a51ae69583b1f76532ae99b81891e11e2}} 
+\index{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}!afficher\+\_\+menu@{afficher\+\_\+menu}}
+\index{afficher\+\_\+menu@{afficher\+\_\+menu}!version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{afficher\+\_\+menu()}{afficher\_menu()}}
+{\footnotesize\ttfamily void afficher\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct__fichier_2fonctions__specialized_8c_aa260c002cfbb562253a3122c1c55c0c0}\label{version__struct__fichier_2fonctions__specialized_8c_aa260c002cfbb562253a3122c1c55c0c0}} 
+\index{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}!enregistrement\+\_\+repertoire\+\_\+fichier@{enregistrement\+\_\+repertoire\+\_\+fichier}}
+\index{enregistrement\+\_\+repertoire\+\_\+fichier@{enregistrement\+\_\+repertoire\+\_\+fichier}!version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{enregistrement\+\_\+repertoire\+\_\+fichier()}{enregistrement\_repertoire\_fichier()}}
+{\footnotesize\ttfamily void enregistrement\+\_\+repertoire\+\_\+fichier (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{c,  }\item[{size\+\_\+t}]{taille }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct__fichier_2fonctions__specialized_8c_a49c93768f0bd505f29709b4c38fcb164}\label{version__struct__fichier_2fonctions__specialized_8c_a49c93768f0bd505f29709b4c38fcb164}} 
+\index{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}!lire\+\_\+repertoire\+\_\+fichier@{lire\+\_\+repertoire\+\_\+fichier}}
+\index{lire\+\_\+repertoire\+\_\+fichier@{lire\+\_\+repertoire\+\_\+fichier}!version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{lire\+\_\+repertoire\+\_\+fichier()}{lire\_repertoire\_fichier()}}
+{\footnotesize\ttfamily void lire\+\_\+repertoire\+\_\+fichier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct__fichier_2fonctions__specialized_8c_a5d5b82eee21fc8475fd9a6cb07ac2dbc}\label{version__struct__fichier_2fonctions__specialized_8c_a5d5b82eee21fc8475fd9a6cb07ac2dbc}} 
+\index{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}!rechercher\+\_\+repertoire@{rechercher\+\_\+repertoire}}
+\index{rechercher\+\_\+repertoire@{rechercher\+\_\+repertoire}!version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{rechercher\+\_\+repertoire()}{rechercher\_repertoire()}}
+{\footnotesize\ttfamily int rechercher\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{contacts\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau,  }\item[{const char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct__fichier_2fonctions__specialized_8c_a074e4770d5e9a3f22ae8ae752fccca31}\label{version__struct__fichier_2fonctions__specialized_8c_a074e4770d5e9a3f22ae8ae752fccca31}} 
+\index{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}!saisir\+\_\+repertoire@{saisir\+\_\+repertoire}}
+\index{saisir\+\_\+repertoire@{saisir\+\_\+repertoire}!version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{saisir\+\_\+repertoire()}{saisir\_repertoire()}}
+{\footnotesize\ttfamily void saisir\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact} $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct__fichier_2fonctions__specialized_8c_a609fc419889fddf83f84e12248abe0c2}\label{version__struct__fichier_2fonctions__specialized_8c_a609fc419889fddf83f84e12248abe0c2}} 
+\index{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}!suppression\+\_\+repertoire@{suppression\+\_\+repertoire}}
+\index{suppression\+\_\+repertoire@{suppression\+\_\+repertoire}!version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{suppression\+\_\+repertoire()}{suppression\_repertoire()}}
+{\footnotesize\ttfamily void suppression\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{contacts\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau,  }\item[{int}]{numero\+\_\+contact }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct__fichier_2fonctions__specialized_8c_a7bd65329bd2fb15ac86cda6033b54db4}\label{version__struct__fichier_2fonctions__specialized_8c_a7bd65329bd2fb15ac86cda6033b54db4}} 
+\index{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}!supprimer\+\_\+entree\+\_\+fichier@{supprimer\+\_\+entree\+\_\+fichier}}
+\index{supprimer\+\_\+entree\+\_\+fichier@{supprimer\+\_\+entree\+\_\+fichier}!version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c@{version\+\_\+struct\+\_\+fichier/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+entree\+\_\+fichier()}{supprimer\_entree\_fichier()}}
+{\footnotesize\ttfamily void supprimer\+\_\+entree\+\_\+fichier (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{contacts\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+

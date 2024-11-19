@@ -1,0 +1,182 @@
+\subsection*{Objectif}
+
+Ce document explique comment compiler et exécuter un programme C sous W\+SL en utilisant le compilateur {\bfseries G\+CC}.
+
+\subsection*{Prérequis}
+
+
+\begin{DoxyItemize}
+\item Avoir installé {\bfseries W\+SL} (Windows Subsystem for Linux) sur votre machine.
+\item Avoir installé {\bfseries G\+CC} dans l\textquotesingle{}environnement W\+SL.
+\item pour {\bfseries connaitre la version} de son compilateur et de son C
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+gcc --version
+gcc -dM -E - < /dev/null | grep \_\_STDC\_VERSION\_\_
+\end{DoxyCode}
+
+
+\subsubsection*{Installation de G\+CC sous W\+SL}
+
+Si G\+CC n\textquotesingle{}est pas installé, voici les étapes pour l\textquotesingle{}installer \+:
+
+
+\begin{DoxyEnumerate}
+\item Mettre à jour la liste des paquets \+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}
+sudo apt update
+sudo apt upgrade
+sudo apt install build-essential -y
+sudo apt install mingw-w64
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Installer le compilateur G\+CC \+: 
+\begin{DoxyCode}
+sudo apt install gcc
+\end{DoxyCode}
+
+\item Vérifier l\textquotesingle{}installation de G\+CC \+: 
+\begin{DoxyCode}
+gcc --version
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\subsection*{Étapes pour compiler un programme C}
+
+\subsubsection*{1. Créer un fichier source C}
+
+
+\begin{DoxyEnumerate}
+\item Ouvrir un éditeur de texte sous W\+SL (par exemple, {\ttfamily nano} ou {\ttfamily vim}). 
+\begin{DoxyCode}
+nano hello.c
+\end{DoxyCode}
+
+\item Écrire le programme C dans ce fichier \+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}
+#include <stdio.h>
+
+int main() \{
+      printf("Hello, World!\(\backslash\)n");
+      return 0;
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Sauvegarder et quitter l\textquotesingle{}éditeur \+:
+\begin{DoxyItemize}
+\item Pour {\ttfamily nano} \+: {\ttfamily C\+T\+R\+L+O} pour enregistrer, puis {\ttfamily C\+T\+R\+L+X} pour quitter.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\subsubsection*{2. Compiler le fichier source}
+
+
+\begin{DoxyEnumerate}
+\item Utiliser G\+CC pour compiler le fichier source \+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}
+gcc hello.c -o hello
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Cette commande crée un fichier exécutable appelé {\ttfamily hello}.
+\item Compiler un exe fonctionnant sous windows \+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}
+export LANG=C.UTF-8 # pour assurer que l'encodage du fichier sera en utf8
+x86\_64-w64-mingw32-gcc -o mon\_prog.exe fichier\_source.c
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Cette commande crée un fichier exécutable appelé {\ttfamily hello}. \subsubsection*{3. Exécuter le programme compilé}
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item Exécuter l\textquotesingle{}exécutable généré avec la commande suivante \+: 
+\begin{DoxyCode}
+./hello
+\end{DoxyCode}
+
+\item Vous devriez voir le message suivant s\textquotesingle{}afficher \+: 
+\begin{DoxyCode}
+Hello, World!
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\subsection*{Options de compilation courantes}
+
+
+\begin{DoxyItemize}
+\item {\bfseries -\/o} \+: Spécifie le nom de l\textquotesingle{}exécutable. Exemple \+: 
+\begin{DoxyCode}
+gcc fichier.c -o nom\_programme
+\end{DoxyCode}
+
+\item {\bfseries -\/\+Wall} \+: Active tous les avertissements. Exemple \+: 
+\begin{DoxyCode}
+gcc -Wall fichier.c -o programme
+\end{DoxyCode}
+
+\item {\bfseries -\/g} \+: Inclut des informations de débogage dans l\textquotesingle{}exécutable. Exemple \+: 
+\begin{DoxyCode}
+gcc -g fichier.c -o programme
+\end{DoxyCode}
+
+\item {\bfseries -\/\+O2} \+: Active des optimisations de niveau 2 pour améliorer les performances. Exemple \+: 
+\begin{DoxyCode}
+gcc -O2 fichier.c -o programme
+\end{DoxyCode}
+
+\item {\bfseries -\/lm} \+: Lien avec la bibliothèque mathématique {\ttfamily libm} pour utiliser des fonctions mathématiques. Exemple \+: 
+\begin{DoxyCode}
+gcc fichier.c -o programme -lm
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{Variables}
+
+```bash \#include $<$stdio.\+h$>$
+
+int \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()} \{ // Déclarations de variables de différents types int int\+\_\+var = 42; long long\+\_\+var = 1234567890L; unsigned int uint\+\_\+var = 300; unsigned long ulong\+\_\+var = 4000000000\+UL; float float\+\_\+var = 3.\+14159f; double double\+\_\+var = 2.\+718281828459; long double ldouble\+\_\+var = 1.\+61803398875L; char char\+\_\+var = \textquotesingle{}A\textquotesingle{}; char string\+\_\+var\mbox{[}\mbox{]} = \char`\"{}\+Hello, World!\char`\"{};
+
+// Impression des différentes variables avec les formats appropriés printf(\char`\"{}\+Int\+: \%d\textbackslash{}n\char`\"{}, int\+\_\+var); printf(\char`\"{}\+Long Int\+: \%ld\textbackslash{}n\char`\"{}, long\+\_\+var); printf(\char`\"{}\+Unsigned Int\+: \%u\textbackslash{}n\char`\"{}, uint\+\_\+var); printf(\char`\"{}\+Unsigned Long Int\+: \%lu\textbackslash{}n\char`\"{}, ulong\+\_\+var);
+
+// Représentation en octal et hexadécimal printf(\char`\"{}\+Unsigned Int (octal)\+: \%o\textbackslash{}n\char`\"{}, uint\+\_\+var); printf(\char`\"{}\+Unsigned Int (hexadécimal)\+: \%x\textbackslash{}n\char`\"{}, uint\+\_\+var); printf(\char`\"{}\+Unsigned Long Int (hexadécimal)\+: \%lx\textbackslash{}n\char`\"{}, ulong\+\_\+var);
+
+// Valeurs flottantes et doubles printf(\char`\"{}\+Float\+: \%f\textbackslash{}n\char`\"{}, float\+\_\+var); printf(\char`\"{}\+Double\+: \%f\textbackslash{}n\char`\"{}, double\+\_\+var); printf(\char`\"{}\+Long Double\+: \%\+Lf\textbackslash{}n\char`\"{}, ldouble\+\_\+var);
+
+// Notation exponentielle printf(\char`\"{}\+Double (exponentielle)\+: \%e\textbackslash{}n\char`\"{}, double\+\_\+var); printf(\char`\"{}\+Long Double (exponentielle)\+: \%\+Le\textbackslash{}n\char`\"{}, ldouble\+\_\+var);
+
+// Notation courte entre f et e printf(\char`\"{}\+Double (notation courte)\+: \%g\textbackslash{}n\char`\"{}, double\+\_\+var); printf(\char`\"{}\+Long Double (notation courte)\+: \%\+Lg\textbackslash{}n\char`\"{}, ldouble\+\_\+var);
+
+// Caractère et chaîne de caractères printf(\char`\"{}\+Char\+: \%c\textbackslash{}n\char`\"{}, char\+\_\+var); printf(\char`\"{}\+String\+: \%s\textbackslash{}n\char`\"{}, string\+\_\+var);
+
+return 0; \} 
+
+ 

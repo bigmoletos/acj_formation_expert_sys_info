@@ -1,0 +1,87 @@
+\hypertarget{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp}{}\section{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/structures\+\_\+donnee\+\_\+itérateur/exo5/main.cpp File Reference}
+\label{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp}\index{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp@{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$typeinfo$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\auto \hyperlink{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp_a6c32e30c8b35a624a6e3aa97551b103d}{calculate} (T1 a, T2 b) -\/$>$ decltype(a+b)
+\begin{DoxyCompactList}\small\item\em Effectue un calcul générique entre deux valeurs. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp_a435fbdc85d61d4f65c1e1b476eaede45}{display\+Result} (T result)
+\begin{DoxyCompactList}\small\item\em Affiche un message en fonction du type du résultat. \end{DoxyCompactList}\item 
+int \hyperlink{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp_a6c32e30c8b35a624a6e3aa97551b103d}\label{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp_a6c32e30c8b35a624a6e3aa97551b103d}} 
+\index{structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp@{structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp}!calculate@{calculate}}
+\index{calculate@{calculate}!structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp@{structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp}}
+\subsubsection{\texorpdfstring{calculate()}{calculate()}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+auto calculate (\begin{DoxyParamCaption}\item[{T1}]{a,  }\item[{T2}]{b }\end{DoxyParamCaption}) -\/$>$ decltype(a + b)
+}
+
+
+
+Effectue un calcul générique entre deux valeurs. 
+
+Cette fonction additionne deux valeurs de types potentiellement différents et utilise {\ttfamily decltype} pour déduire dynamiquement le type de retour.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T1} & Type du premier argument \\
+\hline
+{\em T2} & Type du second argument \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Première valeur \\
+\hline
+{\em b} & Seconde valeur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Type résultant déduit dynamiquement par {\ttfamily decltype(a + b)} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp_a435fbdc85d61d4f65c1e1b476eaede45}\label{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp_a435fbdc85d61d4f65c1e1b476eaede45}} 
+\index{structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp@{structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp}!display\+Result@{display\+Result}}
+\index{display\+Result@{display\+Result}!structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp@{structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp}}
+\subsubsection{\texorpdfstring{display\+Result()}{displayResult()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void display\+Result (\begin{DoxyParamCaption}\item[{T}]{result }\end{DoxyParamCaption})}
+
+
+
+Affiche un message en fonction du type du résultat. 
+
+Cette fonction utilise {\ttfamily decltype} pour capturer le type de la valeur et {\ttfamily typeid} pour obtenir des informations sur le type réel. Elle affiche un message selon que le résultat est un {\ttfamily float}, un {\ttfamily double}, ou tout autre type.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type du résultat à analyser \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em result} & Résultat de type générique à analyser \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{structures__donnee__it_xC3_xA9rateur_2exo5_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp@{structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp}!main@{main}}
+\index{main@{main}!structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp@{structures\+\_\+donnee\+\_\+itérateur/exo5/main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Test avec des valeurs de type float
+
+Test avec des valeurs de type double
+
+Test avec des types mixtes (float et double)
+
+Test avec des objets de type std\+::string

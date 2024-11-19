@@ -1,0 +1,223 @@
+Voici les 20 commandes les plus courantes de la bibliothèque Scikit-\/\+Learn pour l\textquotesingle{}apprentissage automatique\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries fit}\+: Permet de remplir le modèle avec des données d\textquotesingle{}entraînement.
+\item {\bfseries predict}\+: Permet de prédire les valeurs cibles pour les données d\textquotesingle{}entrée.
+\item {\bfseries transform}\+: Permet de transformer les données d\textquotesingle{}entrée en un format compatible avec le modèle.
+\item {\bfseries fit\+\_\+transform}\+: Permet de remplir le modèle avec des données d\textquotesingle{}entraînement et de transformer les données d\textquotesingle{}entrée en un format compatible avec le modèle.
+\item {\bfseries score}\+: Permet de calculer la précision du modèle sur les données de test.
+\item {\bfseries get\+\_\+params}\+: Permet d\textquotesingle{}obtenir les paramètres du modèle.
+\item {\bfseries set\+\_\+params}\+: Permet de définir les paramètres du modèle.
+\item {\bfseries Grid\+Search\+CV}\+: Permet de rechercher les meilleurs paramètres pour un modèle donné.
+\item {\bfseries Randomized\+Search\+CV}\+: Permet de rechercher les meilleurs paramètres pour un modèle donné en utilisant une recherche aléatoire.
+\item {\bfseries cross\+\_\+val\+\_\+score}\+: Permet de calculer la précision du modèle en utilisant la validation croisée.
+\item {\bfseries K\+Fold}\+: Permet de diviser les données en k groupes pour la validation croisée.
+\item {\bfseries train\+\_\+test\+\_\+split}\+: Permet de diviser les données en ensembles d\textquotesingle{}entraînement et de test.
+\item {\bfseries Pipeline}\+: Permet de chaîner plusieurs étapes de traitement de données et de modélisation.
+\item {\bfseries Standard\+Scaler}\+: Permet de normaliser les données d\textquotesingle{}entrée.
+\item {\bfseries Min\+Max\+Scaler}\+: Permet de mettre à l\textquotesingle{}échelle les données d\textquotesingle{}entrée entre 0 et 1.
+\item {\bfseries One\+Hot\+Encoder}\+: Permet de convertir les variables catégorielles en variables binaires.
+\item {\bfseries Label\+Encoder}\+: Permet de convertir les variables catégorielles en variables numériques.
+\item {\bfseries Decision\+Tree\+Classifier}\+: Permet de créer un arbre de décision pour la classification.
+\item {\bfseries Random\+Forest\+Classifier}\+: Permet de créer un modèle de forêt aléatoire pour la classification.
+\item {\bfseries Gradient\+Boosting\+Classifier}\+: Permet de créer un modèle de boosting de gradient pour la classification.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item {\bfseries fit}\+: Permet de remplir le modèle avec des données d’entraînement. from sklearn.\+linear\+\_\+model import Linear\+Regression \section*{Créer un objet de modèle}
+\end{DoxyEnumerate}
+
+model = Linear\+Regression() \section*{Remplir le modèle avec des données d\textquotesingle{}entraînement}
+
+model.\+fit(\+X\+\_\+train, y\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries predict}\+: Permet de prédire les valeurs cibles pour les données d’entrée. \section*{Prédire les valeurs cibles pour les données d\textquotesingle{}entrée}
+\end{DoxyEnumerate}
+
+y\+\_\+pred = model.\+predict(\+X\+\_\+test)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries transform}\+: Permet de transformer les données d’entrée en un format compatible avec le modèle. from sklearn.\+preprocessing import Standard\+Scaler \section*{Créer un objet de transformateur}
+\end{DoxyEnumerate}
+
+scaler = Standard\+Scaler() \section*{Transformer les données d\textquotesingle{}entrée en un format compatible avec le modèle}
+
+X\+\_\+train\+\_\+scaled = scaler.\+transform(\+X\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries fit\+\_\+transform}\+: Permet de remplir le modèle avec des données d’entraînement et de transformer les données d’entrée en un format compatible avec le modèle. \section*{Remplir le modèle avec des données d\textquotesingle{}entraînement et transformer les données d\textquotesingle{}entrée en un format compatible avec le modèle}
+\end{DoxyEnumerate}
+
+X\+\_\+train\+\_\+scaled = scaler.\+fit\+\_\+transform(\+X\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries score}\+: Permet de calculer la précision du modèle sur les données de test. \section*{Calculer la précision du modèle sur les données de test}
+\end{DoxyEnumerate}
+
+model.\+score(\+X\+\_\+test, y\+\_\+test)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries get\+\_\+params}\+: Permet d’obtenir les paramètres du modèle. \section*{Obtenir les paramètres du modèle}
+\end{DoxyEnumerate}
+
+model.\+get\+\_\+params()
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries set\+\_\+params}\+: Permet de définir les paramètres du modèle. \section*{Définir les paramètres du modèle}
+\end{DoxyEnumerate}
+
+model.\+set\+\_\+params(normalize=True)
+\begin{DoxyEnumerate}
+\item {\bfseries Grid\+Search\+CV}\+: Permet de rechercher les meilleurs paramètres pour un modèle donné. from sklearn.\+model\+\_\+selection import Grid\+Search\+CV from sklearn.\+svm import S\+VC \section*{Créer un objet de modèle}
+\end{DoxyEnumerate}
+
+model = S\+V\+C() \section*{Définir les paramètres à rechercher}
+
+param\+\_\+grid = \{\textquotesingle{}C\textquotesingle{}\+: \mbox{[}0.\+1, 1, 10\mbox{]}, \textquotesingle{}kernel\textquotesingle{}\+: \mbox{[}\textquotesingle{}linear\textquotesingle{}, \textquotesingle{}rbf\textquotesingle{}\mbox{]}\} \section*{Rechercher les meilleurs paramètres pour le modèle}
+
+grid\+\_\+search = Grid\+Search\+C\+V(model, param\+\_\+grid) grid\+\_\+search.\+fit(\+X\+\_\+train, y\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Randomized\+Search\+CV}\+: Permet de rechercher les meilleurs paramètres pour un modèle donné en utilisant une recherche aléatoire. from sklearn.\+model\+\_\+selection import Randomized\+Search\+CV from sklearn.\+ensemble import Random\+Forest\+Classifier \section*{Créer un objet de modèle}
+\end{DoxyEnumerate}
+
+model = Random\+Forest\+Classifier() \section*{Définir les paramètres à rechercher}
+
+param\+\_\+distributions = \{\textquotesingle{}n\+\_\+estimators\textquotesingle{}\+: \mbox{[}10, 100, 1000\mbox{]}, \textquotesingle{}max\+\_\+depth\textquotesingle{}\+: \mbox{[}None, 5, 10\mbox{]}\} \section*{Rechercher les meilleurs paramètres pour le modèle}
+
+random\+\_\+search = Randomized\+Search\+C\+V(model, param\+\_\+distributions) random\+\_\+search.\+fit(\+X\+\_\+train, y\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries cross\+\_\+val\+\_\+score}\+: Permet de calculer la précision du modèle en utilisant la validation croisée. from sklearn.\+model\+\_\+selection import cross\+\_\+val\+\_\+score from sklearn.\+tree import Decision\+Tree\+Classifier \section*{Créer un objet de modèle}
+\end{DoxyEnumerate}
+
+model = Decision\+Tree\+Classifier() \section*{Calculer la précision du modèle en utilisant la validation croisée}
+
+scores = cross\+\_\+val\+\_\+score(model, X, y, cv=5)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries K\+Fold}\+: Permet de diviser les données en k groupes pour la validation croisée. from sklearn.\+model\+\_\+selection import K\+Fold \section*{Créer un objet de diviseur de données}
+\end{DoxyEnumerate}
+
+kf = K\+Fold(n\+\_\+splits=5) \section*{Diviser les données en k groupes pour la validation croisée}
+
+for train\+\_\+index, test\+\_\+index in kf.\+split(\+X)\+: X\+\_\+train, X\+\_\+test = X\mbox{[}train\+\_\+index\mbox{]}, X\mbox{[}test\+\_\+index\mbox{]} y\+\_\+train, y\+\_\+test = y\mbox{[}train\+\_\+index\mbox{]}, y\mbox{[}test\+\_\+index\mbox{]}
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries train\+\_\+test\+\_\+split}\+: Permet de diviser les données en ensembles d’entraînement et de test. from sklearn.\+model\+\_\+selection import train\+\_\+test\+\_\+split \section*{Diviser les données en ensembles d\textquotesingle{}entraînement et de test}
+\end{DoxyEnumerate}
+
+X\+\_\+train, X\+\_\+test, y\+\_\+train, y\+\_\+test = train\+\_\+test\+\_\+split(X, y, test\+\_\+size=0.\+2)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Pipeline}\+: Permet de chaîner plusieurs étapes de traitement de données et de modélisation. from sklearn.\+pipeline import Pipeline from sklearn.\+decomposition import P\+CA from sklearn.\+linear\+\_\+model import Logistic\+Regression
+\end{DoxyEnumerate}
+
+\section*{Créer un objet de pipeline}
+
+pipe = Pipeline(\mbox{[}(\textquotesingle{}pca\textquotesingle{}, P\+C\+A()), (\textquotesingle{}logistic\textquotesingle{}, Logistic\+Regression())\mbox{]})
+
+\section*{Remplir le pipeline avec des données d\textquotesingle{}entraînement et entraîner le modèle}
+
+pipe.\+fit(\+X\+\_\+train, y\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Standard\+Scaler}\+: Permet de normaliser les données d’entrée. from sklearn.\+preprocessing import Standard\+Scaler \section*{Créer un objet de normaliseur}
+\end{DoxyEnumerate}
+
+scaler = Standard\+Scaler() \section*{Normaliser les données d\textquotesingle{}entrée}
+
+X\+\_\+train\+\_\+scaled = scaler.\+fit\+\_\+transform(\+X\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Min\+Max\+Scaler}\+: Permet de mettre à l’échelle les données d’entrée entre 0 et 1. from sklearn.\+preprocessing import Min\+Max\+Scaler \section*{Créer un objet de mise à l\textquotesingle{}échelle}
+\end{DoxyEnumerate}
+
+scaler = Min\+Max\+Scaler() \section*{Mettre à l\textquotesingle{}échelle les données d\textquotesingle{}entrée entre 0 et 1}
+
+X\+\_\+train\+\_\+scaled = scaler.\+fit\+\_\+transform(\+X\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries One\+Hot\+Encoder}\+: Permet de convertir les variables catégorielles en variables binaires. from sklearn.\+preprocessing import One\+Hot\+Encoder \section*{Créer un objet de convertisseur}
+\end{DoxyEnumerate}
+
+encoder = One\+Hot\+Encoder() \section*{Convertir les variables catégorielles en variables binaires}
+
+X\+\_\+train\+\_\+encoded = encoder.\+fit\+\_\+transform(\+X\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Label\+Encoder}\+: Permet de convertir les variables catégorielles en variables numériques. from sklearn.\+preprocessing import Label\+Encoder \section*{Créer un objet de convertisseur}
+\end{DoxyEnumerate}
+
+encoder = Label\+Encoder() \section*{Convertir les variables catégorielles en variables numériques}
+
+y\+\_\+train\+\_\+encoded = encoder.\+fit\+\_\+transform(y\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Decision\+Tree\+Classifier}\+: Permet de créer un arbre de décision pour la classification. from sklearn.\+tree import Decision\+Tree\+Classifier \section*{Créer un objet de modèle}
+\end{DoxyEnumerate}
+
+model = Decision\+Tree\+Classifier() \section*{Remplir le modèle avec des données d\textquotesingle{}entraînement}
+
+model.\+fit(\+X\+\_\+train, y\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Random\+Forest\+Classifier}\+: Permet de créer un modèle de forêt aléatoire pour la classification. from sklearn.\+ensemble import Random\+Forest\+Classifier \section*{Créer un objet de modèle}
+\end{DoxyEnumerate}
+
+model = Random\+Forest\+Classifier() \section*{Remplir le modèle avec des données d\textquotesingle{}entraînement}
+
+model.\+fit(\+X\+\_\+train, y\+\_\+train)
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Gradient\+Boosting\+Classifier}\+: Permet de créer un modèle de boosting de gradient pour la classification. from sklearn.\+ensemble import Gradient\+Boosting\+Classifier \section*{Créer un objet de modèle}
+\end{DoxyEnumerate}
+
+model = Gradient\+Boosting\+Classifier() \section*{Remplir le modèle avec des données d\textquotesingle{}entraînement}
+
+model.\+fit(\+X\+\_\+train, y\+\_\+train)
+
+\section*{V\+A\+L\+E\+U\+RS P\+AR D\+E\+F\+A\+UT}
+
+{\bfseries Grid\+Search\+CV}\+: Les valeurs par défaut pour Grid\+Search\+CV sont\+:
+
+estimator\+: None. param\+\_\+grid\+: None. scoring\+: None. cv\+: None.
+
+{\bfseries Random\+Forest\+Classifier}\+: Les valeurs par défaut pour Random\+Forest\+Classifier sont\+:
+
+n\+\_\+estimators\+: 100. criterion\+: “gini”. max\+\_\+depth\+: None. min\+\_\+samples\+\_\+split\+: 2. min\+\_\+samples\+\_\+leaf\+: 1. min\+\_\+weight\+\_\+fraction\+\_\+leaf\+: 0.\+0. max\+\_\+features\+: “auto”. max\+\_\+leaf\+\_\+nodes\+: None. min\+\_\+impurity\+\_\+decrease\+: 0.\+0. min\+\_\+impurity\+\_\+split\+: None. bootstrap\+: True. oob\+\_\+score\+: False. n\+\_\+jobs\+: None. random\+\_\+state\+: None. verbose\+: 0. warm\+\_\+start\+: False. class\+\_\+weight\+: None. ccp\+\_\+alpha\+: 0.\+0. max\+\_\+samples\+: None.
+
+{\bfseries Decision\+Tree\+Classifier}\+: Les valeurs par défaut pour Decision\+Tree\+Classifier sont\+:
+
+criterion\+: “gini”. splitter\+: “best”. max\+\_\+depth\+: None. min\+\_\+samples\+\_\+split\+: 2. min\+\_\+samples\+\_\+leaf\+: 1. min\+\_\+weight\+\_\+fraction\+\_\+leaf\+: 0.\+0. max\+\_\+features\+: None. random\+\_\+state\+: None. max\+\_\+leaf\+\_\+nodes\+: None. min\+\_\+impurity\+\_\+decrease\+: 0.\+0. min\+\_\+impurity\+\_\+split\+: None. class\+\_\+weight\+: None. ccp\+\_\+alpha\+: 0.\+0.
+
+{\bfseries Logistic\+Regression}\+: Les valeurs par défaut pour Logistic\+Regression sont\+:
+
+penalty\+: “l2”. dual\+: False. tol\+: 0.\+0001. C\+: 1.\+0. fit\+\_\+intercept\+: True. intercept\+\_\+scaling\+: 1. class\+\_\+weight\+: None. random\+\_\+state\+: None. solver\+: “lbfgs”. max\+\_\+iter\+: 100. multi\+\_\+class\+: “auto”. verbose\+: 0. warm\+\_\+start\+: False. n\+\_\+jobs\+: None. l1\+\_\+ratio\+: None.
+
+{\bfseries Decision\+Tree\+Regressor}\+: Les valeurs par défaut pour Decision\+Tree\+Regressor sont\+:
+
+criterion\+: “mse”. splitter\+: “best”. max\+\_\+depth\+: None. min\+\_\+samples\+\_\+split\+: 2. min\+\_\+samples\+\_\+leaf\+: 1. min\+\_\+weight\+\_\+fraction\+\_\+leaf\+: 0.\+0. max\+\_\+features\+: None. random\+\_\+state\+: None. max\+\_\+leaf\+\_\+nodes\+: None. min\+\_\+impurity\+\_\+decrease\+: 0.\+0. min\+\_\+impurity\+\_\+split\+: None. ccp\+\_\+alpha\+: 0.\+0.
+
+{\bfseries Gradient\+Boosting\+Classifier}\+: Les valeurs par défaut pour Gradient\+Boosting\+Classifier sont\+:
+
+loss\+: “deviance”. learning\+\_\+rate\+: 0.\+1. n\+\_\+estimators\+: 100. subsample\+: 1.\+0. criterion\+: “friedman\+\_\+mse”. `min\+\_\+samples 

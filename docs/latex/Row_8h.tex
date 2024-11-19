@@ -1,0 +1,460 @@
+\hypertarget{Row_8h}{}\section{linux/download/htop-\/3.3.0/\+Row.h File Reference}
+\label{Row_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Row.\+h@{linux/download/htop-\/3.\+3.\+0/\+Row.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row\+Field.\+h\char`\"{}}\newline
+Include dependency graph for Row.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structRow__}{Row\+\_\+}
+\item 
+struct \hyperlink{structRowClass__}{Row\+Class\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Row_8h_a8f91b33961832d32960ee8dc49feede3}{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS}~5
+\item 
+\#define \hyperlink{Row_8h_adb2e49e1cd2d99eef0b7a504c3763f6f}{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS}~19
+\item 
+\#define \hyperlink{Row_8h_a26ece7f665c85dd804dadaddec1e28c1}{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS}~5
+\item 
+\#define \hyperlink{Row_8h_a521bfbc2a38354b9e5670b46799b72aa}{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS}~20
+\item 
+\#define \hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(this\+\_\+)~((const \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class}$\ast$)((this\+\_\+)-\/$>$super.\+klass))
+\item 
+\#define \hyperlink{Row_8h_a874d9b43dc24e71a054bd8156ddcaef5}{Row\+\_\+is\+Highlighted}(r\+\_\+)~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$is\+Highlighted ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$is\+Highlighted(r\+\_\+)) \+: false)
+\item 
+\#define \hyperlink{Row_8h_a746ccf388eeaa83ee3182b50724d1cb2}{Row\+\_\+is\+Visible}(r\+\_\+,  t\+\_\+)~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$is\+Visible ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$is\+Visible(r\+\_\+, t\+\_\+)) \+: true)
+\item 
+\#define \hyperlink{Row_8h_a2117b1a5732327a5fa73e5f3d78a6e51}{Row\+\_\+matches\+Filter}(r\+\_\+,  t\+\_\+)~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$matches\+Filter ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$matches\+Filter(r\+\_\+, t\+\_\+)) \+: false)
+\item 
+\#define \hyperlink{Row_8h_a7c13fc64203b50a14522b617ee8497b5}{Row\+\_\+sort\+Key\+String}(r\+\_\+)~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$sort\+Key\+String ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$sort\+Key\+String(r\+\_\+)) \+: \char`\"{}\char`\"{})
+\item 
+\#define \hyperlink{Row_8h_a29516bb07bcdb317d516d56d37ceb7c6}{Row\+\_\+compare\+By\+Parent}(r1\+\_\+,  r2\+\_\+)~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r1\+\_\+)-\/$>$compare\+By\+Parent ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r1\+\_\+)-\/$>$compare\+By\+Parent(r1\+\_\+, r2\+\_\+)) \+: \hyperlink{Row_8h_a04da36a8671411cffe56762d9f03e83d}{Row\+\_\+compare\+By\+Parent\+\_\+\+Base}(r1\+\_\+, r2\+\_\+))
+\item 
+\#define \hyperlink{Row_8h_a0b179f7c83cdee4c7520882815256895}{O\+N\+E\+\_\+K}~1024\+UL
+\item 
+\#define \hyperlink{Row_8h_a9e0babf551f128d1ef55e92665f5e732}{O\+N\+E\+\_\+M}~(\hyperlink{Row_8h_a0b179f7c83cdee4c7520882815256895}{O\+N\+E\+\_\+K} $\ast$ \hyperlink{Row_8h_a0b179f7c83cdee4c7520882815256895}{O\+N\+E\+\_\+K})
+\item 
+\#define \hyperlink{Row_8h_a13d31422252a6a1e963542dde74fb98b}{O\+N\+E\+\_\+G}~(\hyperlink{Row_8h_a9e0babf551f128d1ef55e92665f5e732}{O\+N\+E\+\_\+M} $\ast$ \hyperlink{Row_8h_a0b179f7c83cdee4c7520882815256895}{O\+N\+E\+\_\+K})
+\item 
+\#define \hyperlink{Row_8h_a950a0f4e6f27c7dd544503fe971527df}{O\+N\+E\+\_\+T}~(1\+U\+L\+L $\ast$ O\+N\+E\+\_\+\+G $\ast$ O\+N\+E\+\_\+\+K)
+\item 
+\#define \hyperlink{Row_8h_a97ac45d19fe464c620190441dd2aa3ca}{O\+N\+E\+\_\+P}~(1\+U\+L\+L $\ast$ O\+N\+E\+\_\+\+T $\ast$ O\+N\+E\+\_\+\+K)
+\item 
+\#define \hyperlink{Row_8h_aaf21810eadf2e5738ce2bc59a48c2a17}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K}~1000\+UL
+\item 
+\#define \hyperlink{Row_8h_a6255a28e61928a621fee4e32a1cf990c}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+M}~(\hyperlink{Row_8h_aaf21810eadf2e5738ce2bc59a48c2a17}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K} $\ast$ \hyperlink{Row_8h_aaf21810eadf2e5738ce2bc59a48c2a17}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K})
+\item 
+\#define \hyperlink{Row_8h_af52b12c840c133c23ee355e1aec3bbea}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+G}~(\hyperlink{Row_8h_a6255a28e61928a621fee4e32a1cf990c}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+M} $\ast$ \hyperlink{Row_8h_aaf21810eadf2e5738ce2bc59a48c2a17}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K})
+\item 
+\#define \hyperlink{Row_8h_ae053f277f994ee3b6a9859480c7109a1}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+T}~(1\+U\+L\+L $\ast$ O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+\+G $\ast$ O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+\+K)
+\item 
+\#define \hyperlink{Row_8h_a4de2a4cfd22c789a4cc40ce4552c232d}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+P}~(1\+U\+L\+L $\ast$ O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+\+T $\ast$ O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+\+K)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structRow__}{Row\+\_\+} \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row}
+\item 
+typedef \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$($\ast$ \hyperlink{Row_8h_a9b62cd3d5b0c54020ac0f6c072c68c66}{Row\+\_\+\+New}) (const struct \hyperlink{structMachine__}{Machine\+\_\+} $\ast$)
+\item 
+typedef void($\ast$ \hyperlink{Row_8h_a89f55adea231414c3e16986d1ae5bdf0}{Row\+\_\+\+Write\+Field}) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$, \hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field})
+\item 
+typedef bool($\ast$ \hyperlink{Row_8h_aacc6c35bb344756ec17fd975b2539e03}{Row\+\_\+\+Is\+Highlighted}) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$)
+\item 
+typedef bool($\ast$ \hyperlink{Row_8h_a08d2a190b74ac8186225e90c378d6cc2}{Row\+\_\+\+Is\+Visible}) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$, const struct \hyperlink{structTable__}{Table\+\_\+} $\ast$)
+\item 
+typedef bool($\ast$ \hyperlink{Row_8h_a70a6514fbcdaef7ce30f91127f13a62a}{Row\+\_\+\+Matches\+Filter}) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$, const struct \hyperlink{structTable__}{Table\+\_\+} $\ast$)
+\item 
+typedef const char $\ast$($\ast$ \hyperlink{Row_8h_a5038da65a10191f16604a8a23592762d}{Row\+\_\+\+Sort\+Key\+String}) (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$)
+\item 
+typedef int($\ast$ \hyperlink{Row_8h_a98170315e8c78545311121660583147f}{Row\+\_\+\+Compare\+By\+Parent}) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$, const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$)
+\item 
+typedef struct \hyperlink{structRowClass__}{Row\+Class\+\_\+} \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{Row_8h_af87b560f0ded9bc76262778b2cddd8d6}{Row\+\_\+compare} (const void $\ast$v1, const void $\ast$v2)
+\item 
+void \hyperlink{Row_8h_a6c1a34f973be72139e75a1a3e56067b3}{Row\+\_\+init} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$this, const struct \hyperlink{structMachine__}{Machine\+\_\+} $\ast$host)
+\item 
+void \hyperlink{Row_8h_ae5370b76bbdd0c550101b6fed33a0c9e}{Row\+\_\+done} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$this)
+\item 
+void \hyperlink{Row_8h_a1ca72e911c0e2299061df16e80da6a80}{Row\+\_\+display} (const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$out)
+\item 
+void \hyperlink{Row_8h_a16391e2591d3b07a795dc969ca05370a}{Row\+\_\+toggle\+Tag} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$this)
+\item 
+void \hyperlink{Row_8h_afa9c37adac01e6836e13587dbdedd79f}{Row\+\_\+reset\+Field\+Widths} (void)
+\item 
+void \hyperlink{Row_8h_af55b0052473a75befd5d752a293636e6}{Row\+\_\+update\+Field\+Width} (\hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field} \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key}, size\+\_\+t width)
+\item 
+void \hyperlink{Row_8h_ad1ff5caf1fd4342c986bc9cf359441ef}{Row\+\_\+print\+Left\+Aligned\+Field} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, int attr, const char $\ast$content, unsigned int width)
+\item 
+const char $\ast$ \hyperlink{Row_8h_ae787e856fb07f0a39505d6450a631627}{Row\+Field\+\_\+aligned\+Title} (const struct \hyperlink{structSettings__}{Settings\+\_\+} $\ast$settings, \hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field} field)
+\item 
+\hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field} \hyperlink{Row_8h_aafe5b97bdaa4b3e8f403a4acafd8e34e}{Row\+Field\+\_\+key\+At} (const struct \hyperlink{structSettings__}{Settings\+\_\+} $\ast$settings, int at)
+\item 
+void \hyperlink{Row_8h_a206a6e1ec0888a521cd99cdb08149d29}{Row\+\_\+set\+Pid\+Column\+Width} (pid\+\_\+t max\+Pid)
+\item 
+void \hyperlink{Row_8h_ac30e0c40076a1836759cd83650431da9}{Row\+\_\+set\+Uid\+Column\+Width} (uid\+\_\+t max\+Uid)
+\item 
+void \hyperlink{Row_8h_a633ede4a568b2878c1293d3ffcafea6f}{Row\+\_\+print\+K\+Bytes} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, unsigned long long number, bool coloring)
+\item 
+void \hyperlink{Row_8h_abf130ca749081895e5b41536c876e5c2}{Row\+\_\+print\+Bytes} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, unsigned long long number, bool coloring)
+\item 
+void \hyperlink{Row_8h_a74707a7733f34ed3a04c3f798fed548c}{Row\+\_\+print\+Count} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, unsigned long long number, bool coloring)
+\item 
+void \hyperlink{Row_8h_aabeb4970aee0b5762ec184c88d79c5bc}{Row\+\_\+print\+Time} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, unsigned long long total\+Hundredths, bool coloring)
+\item 
+void \hyperlink{Row_8h_a924cee4393a50c451fb742f3e141949a}{Row\+\_\+print\+Rate} (\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, double rate, bool coloring)
+\item 
+int \hyperlink{Row_8h_ac8be20f1e09be24834b50b56bf7fe547}{Row\+\_\+print\+Percentage} (float val, char $\ast$buffer, size\+\_\+t \hyperlink{exo21_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}, uint8\+\_\+t width, int $\ast$attr)
+\item 
+int \hyperlink{Row_8h_a04da36a8671411cffe56762d9f03e83d}{Row\+\_\+compare\+By\+Parent\+\_\+\+Base} (const void $\ast$v1, const void $\ast$v2)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{Row_8h_adc9b23b939de363e5b0b976eb26b8780}{Row\+\_\+field\+Widths} \mbox{[}\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca66cf8ace6b4f6fcbf2081c56c28ecb0c}{L\+A\+S\+T\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+F\+I\+E\+LD}\mbox{]}
+\item 
+int \hyperlink{Row_8h_af7d7bb1f78442c0ac1b7b6084c1fab09}{Row\+\_\+pid\+Digits}
+\item 
+int \hyperlink{Row_8h_afc15da3326cfb1968c5943e8fc24c0a3}{Row\+\_\+uid\+Digits}
+\item 
+const \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class} \hyperlink{Row_8h_a1337c3e3fe142df2578b1cf031a7b857}{Row\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}\label{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}} 
+\index{Row.\+h@{Row.\+h}!As\+\_\+\+Row@{As\+\_\+\+Row}}
+\index{As\+\_\+\+Row@{As\+\_\+\+Row}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{As\+\_\+\+Row}{As\_Row}}
+{\footnotesize\ttfamily \#define As\+\_\+\+Row(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~((const \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class}$\ast$)((this\+\_\+)-\/$>$super.\+klass))}
+
+\mbox{\Hypertarget{Row_8h_af52b12c840c133c23ee355e1aec3bbea}\label{Row_8h_af52b12c840c133c23ee355e1aec3bbea}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+G@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+G}}
+\index{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+G@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+G}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+G}{ONE\_DECIMAL\_G}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+G~(\hyperlink{Row_8h_a6255a28e61928a621fee4e32a1cf990c}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+M} $\ast$ \hyperlink{Row_8h_aaf21810eadf2e5738ce2bc59a48c2a17}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K})}
+
+\mbox{\Hypertarget{Row_8h_aaf21810eadf2e5738ce2bc59a48c2a17}\label{Row_8h_aaf21810eadf2e5738ce2bc59a48c2a17}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K}}
+\index{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K}{ONE\_DECIMAL\_K}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K~1000\+UL}
+
+\mbox{\Hypertarget{Row_8h_a6255a28e61928a621fee4e32a1cf990c}\label{Row_8h_a6255a28e61928a621fee4e32a1cf990c}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+M@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+M}}
+\index{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+M@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+M}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+M}{ONE\_DECIMAL\_M}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+M~(\hyperlink{Row_8h_aaf21810eadf2e5738ce2bc59a48c2a17}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K} $\ast$ \hyperlink{Row_8h_aaf21810eadf2e5738ce2bc59a48c2a17}{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+K})}
+
+\mbox{\Hypertarget{Row_8h_a4de2a4cfd22c789a4cc40ce4552c232d}\label{Row_8h_a4de2a4cfd22c789a4cc40ce4552c232d}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+P@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+P}}
+\index{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+P@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+P}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+P}{ONE\_DECIMAL\_P}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+P~(1\+U\+L\+L $\ast$ O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+\+T $\ast$ O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+\+K)}
+
+\mbox{\Hypertarget{Row_8h_ae053f277f994ee3b6a9859480c7109a1}\label{Row_8h_ae053f277f994ee3b6a9859480c7109a1}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+T@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+T}}
+\index{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+T@{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+T}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+T}{ONE\_DECIMAL\_T}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+T~(1\+U\+L\+L $\ast$ O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+\+G $\ast$ O\+N\+E\+\_\+\+D\+E\+C\+I\+M\+A\+L\+\_\+\+K)}
+
+\mbox{\Hypertarget{Row_8h_a13d31422252a6a1e963542dde74fb98b}\label{Row_8h_a13d31422252a6a1e963542dde74fb98b}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+G@{O\+N\+E\+\_\+G}}
+\index{O\+N\+E\+\_\+G@{O\+N\+E\+\_\+G}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+G}{ONE\_G}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+G~(\hyperlink{Row_8h_a9e0babf551f128d1ef55e92665f5e732}{O\+N\+E\+\_\+M} $\ast$ \hyperlink{Row_8h_a0b179f7c83cdee4c7520882815256895}{O\+N\+E\+\_\+K})}
+
+\mbox{\Hypertarget{Row_8h_a0b179f7c83cdee4c7520882815256895}\label{Row_8h_a0b179f7c83cdee4c7520882815256895}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+K@{O\+N\+E\+\_\+K}}
+\index{O\+N\+E\+\_\+K@{O\+N\+E\+\_\+K}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+K}{ONE\_K}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+K~1024\+UL}
+
+\mbox{\Hypertarget{Row_8h_a9e0babf551f128d1ef55e92665f5e732}\label{Row_8h_a9e0babf551f128d1ef55e92665f5e732}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+M@{O\+N\+E\+\_\+M}}
+\index{O\+N\+E\+\_\+M@{O\+N\+E\+\_\+M}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+M}{ONE\_M}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+M~(\hyperlink{Row_8h_a0b179f7c83cdee4c7520882815256895}{O\+N\+E\+\_\+K} $\ast$ \hyperlink{Row_8h_a0b179f7c83cdee4c7520882815256895}{O\+N\+E\+\_\+K})}
+
+\mbox{\Hypertarget{Row_8h_a97ac45d19fe464c620190441dd2aa3ca}\label{Row_8h_a97ac45d19fe464c620190441dd2aa3ca}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+P@{O\+N\+E\+\_\+P}}
+\index{O\+N\+E\+\_\+P@{O\+N\+E\+\_\+P}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+P}{ONE\_P}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+P~(1\+U\+L\+L $\ast$ O\+N\+E\+\_\+\+T $\ast$ O\+N\+E\+\_\+\+K)}
+
+\mbox{\Hypertarget{Row_8h_a950a0f4e6f27c7dd544503fe971527df}\label{Row_8h_a950a0f4e6f27c7dd544503fe971527df}} 
+\index{Row.\+h@{Row.\+h}!O\+N\+E\+\_\+T@{O\+N\+E\+\_\+T}}
+\index{O\+N\+E\+\_\+T@{O\+N\+E\+\_\+T}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{O\+N\+E\+\_\+T}{ONE\_T}}
+{\footnotesize\ttfamily \#define O\+N\+E\+\_\+T~(1\+U\+L\+L $\ast$ O\+N\+E\+\_\+\+G $\ast$ O\+N\+E\+\_\+\+K)}
+
+\mbox{\Hypertarget{Row_8h_a29516bb07bcdb317d516d56d37ceb7c6}\label{Row_8h_a29516bb07bcdb317d516d56d37ceb7c6}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+compare\+By\+Parent@{Row\+\_\+compare\+By\+Parent}}
+\index{Row\+\_\+compare\+By\+Parent@{Row\+\_\+compare\+By\+Parent}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+compare\+By\+Parent}{Row\_compareByParent}}
+{\footnotesize\ttfamily \#define Row\+\_\+compare\+By\+Parent(\begin{DoxyParamCaption}\item[{}]{r1\+\_\+,  }\item[{}]{r2\+\_\+ }\end{DoxyParamCaption})~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r1\+\_\+)-\/$>$compare\+By\+Parent ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r1\+\_\+)-\/$>$compare\+By\+Parent(r1\+\_\+, r2\+\_\+)) \+: \hyperlink{Row_8h_a04da36a8671411cffe56762d9f03e83d}{Row\+\_\+compare\+By\+Parent\+\_\+\+Base}(r1\+\_\+, r2\+\_\+))}
+
+\mbox{\Hypertarget{Row_8h_a874d9b43dc24e71a054bd8156ddcaef5}\label{Row_8h_a874d9b43dc24e71a054bd8156ddcaef5}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+is\+Highlighted@{Row\+\_\+is\+Highlighted}}
+\index{Row\+\_\+is\+Highlighted@{Row\+\_\+is\+Highlighted}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+is\+Highlighted}{Row\_isHighlighted}}
+{\footnotesize\ttfamily \#define Row\+\_\+is\+Highlighted(\begin{DoxyParamCaption}\item[{}]{r\+\_\+ }\end{DoxyParamCaption})~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$is\+Highlighted ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$is\+Highlighted(r\+\_\+)) \+: false)}
+
+\mbox{\Hypertarget{Row_8h_a746ccf388eeaa83ee3182b50724d1cb2}\label{Row_8h_a746ccf388eeaa83ee3182b50724d1cb2}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+is\+Visible@{Row\+\_\+is\+Visible}}
+\index{Row\+\_\+is\+Visible@{Row\+\_\+is\+Visible}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+is\+Visible}{Row\_isVisible}}
+{\footnotesize\ttfamily \#define Row\+\_\+is\+Visible(\begin{DoxyParamCaption}\item[{}]{r\+\_\+,  }\item[{}]{t\+\_\+ }\end{DoxyParamCaption})~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$is\+Visible ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$is\+Visible(r\+\_\+, t\+\_\+)) \+: true)}
+
+\mbox{\Hypertarget{Row_8h_a2117b1a5732327a5fa73e5f3d78a6e51}\label{Row_8h_a2117b1a5732327a5fa73e5f3d78a6e51}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+matches\+Filter@{Row\+\_\+matches\+Filter}}
+\index{Row\+\_\+matches\+Filter@{Row\+\_\+matches\+Filter}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+matches\+Filter}{Row\_matchesFilter}}
+{\footnotesize\ttfamily \#define Row\+\_\+matches\+Filter(\begin{DoxyParamCaption}\item[{}]{r\+\_\+,  }\item[{}]{t\+\_\+ }\end{DoxyParamCaption})~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$matches\+Filter ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$matches\+Filter(r\+\_\+, t\+\_\+)) \+: false)}
+
+\mbox{\Hypertarget{Row_8h_adb2e49e1cd2d99eef0b7a504c3763f6f}\label{Row_8h_adb2e49e1cd2d99eef0b7a504c3763f6f}} 
+\index{Row.\+h@{Row.\+h}!R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS@{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS}}
+\index{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS@{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS}{ROW\_MAX\_PID\_DIGITS}}
+{\footnotesize\ttfamily \#define R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS~19}
+
+\mbox{\Hypertarget{Row_8h_a521bfbc2a38354b9e5670b46799b72aa}\label{Row_8h_a521bfbc2a38354b9e5670b46799b72aa}} 
+\index{Row.\+h@{Row.\+h}!R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS@{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS}}
+\index{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS@{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS}{ROW\_MAX\_UID\_DIGITS}}
+{\footnotesize\ttfamily \#define R\+O\+W\+\_\+\+M\+A\+X\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS~20}
+
+\mbox{\Hypertarget{Row_8h_a8f91b33961832d32960ee8dc49feede3}\label{Row_8h_a8f91b33961832d32960ee8dc49feede3}} 
+\index{Row.\+h@{Row.\+h}!R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS@{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS}}
+\index{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS@{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS}{ROW\_MIN\_PID\_DIGITS}}
+{\footnotesize\ttfamily \#define R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+P\+I\+D\+\_\+\+D\+I\+G\+I\+TS~5}
+
+\mbox{\Hypertarget{Row_8h_a26ece7f665c85dd804dadaddec1e28c1}\label{Row_8h_a26ece7f665c85dd804dadaddec1e28c1}} 
+\index{Row.\+h@{Row.\+h}!R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS@{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS}}
+\index{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS@{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS}{ROW\_MIN\_UID\_DIGITS}}
+{\footnotesize\ttfamily \#define R\+O\+W\+\_\+\+M\+I\+N\+\_\+\+U\+I\+D\+\_\+\+D\+I\+G\+I\+TS~5}
+
+\mbox{\Hypertarget{Row_8h_a7c13fc64203b50a14522b617ee8497b5}\label{Row_8h_a7c13fc64203b50a14522b617ee8497b5}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+sort\+Key\+String@{Row\+\_\+sort\+Key\+String}}
+\index{Row\+\_\+sort\+Key\+String@{Row\+\_\+sort\+Key\+String}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+sort\+Key\+String}{Row\_sortKeyString}}
+{\footnotesize\ttfamily \#define Row\+\_\+sort\+Key\+String(\begin{DoxyParamCaption}\item[{}]{r\+\_\+ }\end{DoxyParamCaption})~(\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$sort\+Key\+String ? (\hyperlink{Row_8h_aa0f61f24e30fcfdc75d4925bf8a48e95}{As\+\_\+\+Row}(r\+\_\+)-\/$>$sort\+Key\+String(r\+\_\+)) \+: \char`\"{}\char`\"{})}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Row_8h_a54193344854aa79a97448ca03062e70c}\label{Row_8h_a54193344854aa79a97448ca03062e70c}} 
+\index{Row.\+h@{Row.\+h}!Row@{Row}}
+\index{Row@{Row}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row}{Row}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structRow__}{Row\+\_\+}  \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row}}
+
+\mbox{\Hypertarget{Row_8h_a98170315e8c78545311121660583147f}\label{Row_8h_a98170315e8c78545311121660583147f}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+\+Compare\+By\+Parent@{Row\+\_\+\+Compare\+By\+Parent}}
+\index{Row\+\_\+\+Compare\+By\+Parent@{Row\+\_\+\+Compare\+By\+Parent}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+\+Compare\+By\+Parent}{Row\_CompareByParent}}
+{\footnotesize\ttfamily typedef int($\ast$ Row\+\_\+\+Compare\+By\+Parent) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$, const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$)}
+
+\mbox{\Hypertarget{Row_8h_aacc6c35bb344756ec17fd975b2539e03}\label{Row_8h_aacc6c35bb344756ec17fd975b2539e03}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+\+Is\+Highlighted@{Row\+\_\+\+Is\+Highlighted}}
+\index{Row\+\_\+\+Is\+Highlighted@{Row\+\_\+\+Is\+Highlighted}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+\+Is\+Highlighted}{Row\_IsHighlighted}}
+{\footnotesize\ttfamily typedef bool($\ast$ Row\+\_\+\+Is\+Highlighted) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$)}
+
+\mbox{\Hypertarget{Row_8h_a08d2a190b74ac8186225e90c378d6cc2}\label{Row_8h_a08d2a190b74ac8186225e90c378d6cc2}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+\+Is\+Visible@{Row\+\_\+\+Is\+Visible}}
+\index{Row\+\_\+\+Is\+Visible@{Row\+\_\+\+Is\+Visible}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+\+Is\+Visible}{Row\_IsVisible}}
+{\footnotesize\ttfamily typedef bool($\ast$ Row\+\_\+\+Is\+Visible) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$, const struct \hyperlink{structTable__}{Table\+\_\+} $\ast$)}
+
+\mbox{\Hypertarget{Row_8h_a70a6514fbcdaef7ce30f91127f13a62a}\label{Row_8h_a70a6514fbcdaef7ce30f91127f13a62a}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+\+Matches\+Filter@{Row\+\_\+\+Matches\+Filter}}
+\index{Row\+\_\+\+Matches\+Filter@{Row\+\_\+\+Matches\+Filter}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+\+Matches\+Filter}{Row\_MatchesFilter}}
+{\footnotesize\ttfamily typedef bool($\ast$ Row\+\_\+\+Matches\+Filter) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$, const struct \hyperlink{structTable__}{Table\+\_\+} $\ast$)}
+
+\mbox{\Hypertarget{Row_8h_a9b62cd3d5b0c54020ac0f6c072c68c66}\label{Row_8h_a9b62cd3d5b0c54020ac0f6c072c68c66}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+\+New@{Row\+\_\+\+New}}
+\index{Row\+\_\+\+New@{Row\+\_\+\+New}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+\+New}{Row\_New}}
+{\footnotesize\ttfamily typedef \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row}$\ast$($\ast$ Row\+\_\+\+New) (const struct \hyperlink{structMachine__}{Machine\+\_\+} $\ast$)}
+
+\mbox{\Hypertarget{Row_8h_a5038da65a10191f16604a8a23592762d}\label{Row_8h_a5038da65a10191f16604a8a23592762d}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+\+Sort\+Key\+String@{Row\+\_\+\+Sort\+Key\+String}}
+\index{Row\+\_\+\+Sort\+Key\+String@{Row\+\_\+\+Sort\+Key\+String}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+\+Sort\+Key\+String}{Row\_SortKeyString}}
+{\footnotesize\ttfamily typedef const char$\ast$($\ast$ Row\+\_\+\+Sort\+Key\+String) (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$)}
+
+\mbox{\Hypertarget{Row_8h_a89f55adea231414c3e16986d1ae5bdf0}\label{Row_8h_a89f55adea231414c3e16986d1ae5bdf0}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+\+Write\+Field@{Row\+\_\+\+Write\+Field}}
+\index{Row\+\_\+\+Write\+Field@{Row\+\_\+\+Write\+Field}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+\+Write\+Field}{Row\_WriteField}}
+{\footnotesize\ttfamily typedef void($\ast$ Row\+\_\+\+Write\+Field) (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$, \hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field})}
+
+\mbox{\Hypertarget{Row_8h_ab1f9686cc24220df899c6d7d32551496}\label{Row_8h_ab1f9686cc24220df899c6d7d32551496}} 
+\index{Row.\+h@{Row.\+h}!Row\+Class@{Row\+Class}}
+\index{Row\+Class@{Row\+Class}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+Class}{RowClass}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structRowClass__}{Row\+Class\+\_\+}  \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Row_8h_af87b560f0ded9bc76262778b2cddd8d6}\label{Row_8h_af87b560f0ded9bc76262778b2cddd8d6}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+compare@{Row\+\_\+compare}}
+\index{Row\+\_\+compare@{Row\+\_\+compare}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+compare()}{Row\_compare()}}
+{\footnotesize\ttfamily int Row\+\_\+compare (\begin{DoxyParamCaption}\item[{const void $\ast$}]{v1,  }\item[{const void $\ast$}]{v2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_a04da36a8671411cffe56762d9f03e83d}\label{Row_8h_a04da36a8671411cffe56762d9f03e83d}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+compare\+By\+Parent\+\_\+\+Base@{Row\+\_\+compare\+By\+Parent\+\_\+\+Base}}
+\index{Row\+\_\+compare\+By\+Parent\+\_\+\+Base@{Row\+\_\+compare\+By\+Parent\+\_\+\+Base}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+compare\+By\+Parent\+\_\+\+Base()}{Row\_compareByParent\_Base()}}
+{\footnotesize\ttfamily int Row\+\_\+compare\+By\+Parent\+\_\+\+Base (\begin{DoxyParamCaption}\item[{const void $\ast$}]{v1,  }\item[{const void $\ast$}]{v2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_a1ca72e911c0e2299061df16e80da6a80}\label{Row_8h_a1ca72e911c0e2299061df16e80da6a80}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+display@{Row\+\_\+display}}
+\index{Row\+\_\+display@{Row\+\_\+display}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+display()}{Row\_display()}}
+{\footnotesize\ttfamily void Row\+\_\+display (\begin{DoxyParamCaption}\item[{const \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_ae5370b76bbdd0c550101b6fed33a0c9e}\label{Row_8h_ae5370b76bbdd0c550101b6fed33a0c9e}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+done@{Row\+\_\+done}}
+\index{Row\+\_\+done@{Row\+\_\+done}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+done()}{Row\_done()}}
+{\footnotesize\ttfamily void Row\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_a6c1a34f973be72139e75a1a3e56067b3}\label{Row_8h_a6c1a34f973be72139e75a1a3e56067b3}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+init@{Row\+\_\+init}}
+\index{Row\+\_\+init@{Row\+\_\+init}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+init()}{Row\_init()}}
+{\footnotesize\ttfamily void Row\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{this,  }\item[{const struct \hyperlink{structMachine__}{Machine\+\_\+} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_abf130ca749081895e5b41536c876e5c2}\label{Row_8h_abf130ca749081895e5b41536c876e5c2}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+print\+Bytes@{Row\+\_\+print\+Bytes}}
+\index{Row\+\_\+print\+Bytes@{Row\+\_\+print\+Bytes}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+print\+Bytes()}{Row\_printBytes()}}
+{\footnotesize\ttfamily void Row\+\_\+print\+Bytes (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{unsigned long long}]{number,  }\item[{bool}]{coloring }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_a74707a7733f34ed3a04c3f798fed548c}\label{Row_8h_a74707a7733f34ed3a04c3f798fed548c}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+print\+Count@{Row\+\_\+print\+Count}}
+\index{Row\+\_\+print\+Count@{Row\+\_\+print\+Count}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+print\+Count()}{Row\_printCount()}}
+{\footnotesize\ttfamily void Row\+\_\+print\+Count (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{unsigned long long}]{number,  }\item[{bool}]{coloring }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_a633ede4a568b2878c1293d3ffcafea6f}\label{Row_8h_a633ede4a568b2878c1293d3ffcafea6f}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+print\+K\+Bytes@{Row\+\_\+print\+K\+Bytes}}
+\index{Row\+\_\+print\+K\+Bytes@{Row\+\_\+print\+K\+Bytes}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+print\+K\+Bytes()}{Row\_printKBytes()}}
+{\footnotesize\ttfamily void Row\+\_\+print\+K\+Bytes (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{unsigned long long}]{number,  }\item[{bool}]{coloring }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_ad1ff5caf1fd4342c986bc9cf359441ef}\label{Row_8h_ad1ff5caf1fd4342c986bc9cf359441ef}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+print\+Left\+Aligned\+Field@{Row\+\_\+print\+Left\+Aligned\+Field}}
+\index{Row\+\_\+print\+Left\+Aligned\+Field@{Row\+\_\+print\+Left\+Aligned\+Field}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+print\+Left\+Aligned\+Field()}{Row\_printLeftAlignedField()}}
+{\footnotesize\ttfamily void Row\+\_\+print\+Left\+Aligned\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{int}]{attr,  }\item[{const char $\ast$}]{content,  }\item[{unsigned int}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_ac8be20f1e09be24834b50b56bf7fe547}\label{Row_8h_ac8be20f1e09be24834b50b56bf7fe547}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+print\+Percentage@{Row\+\_\+print\+Percentage}}
+\index{Row\+\_\+print\+Percentage@{Row\+\_\+print\+Percentage}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+print\+Percentage()}{Row\_printPercentage()}}
+{\footnotesize\ttfamily int Row\+\_\+print\+Percentage (\begin{DoxyParamCaption}\item[{float}]{val,  }\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{n,  }\item[{uint8\+\_\+t}]{width,  }\item[{int $\ast$}]{attr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_a924cee4393a50c451fb742f3e141949a}\label{Row_8h_a924cee4393a50c451fb742f3e141949a}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+print\+Rate@{Row\+\_\+print\+Rate}}
+\index{Row\+\_\+print\+Rate@{Row\+\_\+print\+Rate}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+print\+Rate()}{Row\_printRate()}}
+{\footnotesize\ttfamily void Row\+\_\+print\+Rate (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{double}]{rate,  }\item[{bool}]{coloring }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_aabeb4970aee0b5762ec184c88d79c5bc}\label{Row_8h_aabeb4970aee0b5762ec184c88d79c5bc}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+print\+Time@{Row\+\_\+print\+Time}}
+\index{Row\+\_\+print\+Time@{Row\+\_\+print\+Time}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+print\+Time()}{Row\_printTime()}}
+{\footnotesize\ttfamily void Row\+\_\+print\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{unsigned long long}]{total\+Hundredths,  }\item[{bool}]{coloring }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_afa9c37adac01e6836e13587dbdedd79f}\label{Row_8h_afa9c37adac01e6836e13587dbdedd79f}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+reset\+Field\+Widths@{Row\+\_\+reset\+Field\+Widths}}
+\index{Row\+\_\+reset\+Field\+Widths@{Row\+\_\+reset\+Field\+Widths}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+reset\+Field\+Widths()}{Row\_resetFieldWidths()}}
+{\footnotesize\ttfamily void Row\+\_\+reset\+Field\+Widths (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_a206a6e1ec0888a521cd99cdb08149d29}\label{Row_8h_a206a6e1ec0888a521cd99cdb08149d29}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+set\+Pid\+Column\+Width@{Row\+\_\+set\+Pid\+Column\+Width}}
+\index{Row\+\_\+set\+Pid\+Column\+Width@{Row\+\_\+set\+Pid\+Column\+Width}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+set\+Pid\+Column\+Width()}{Row\_setPidColumnWidth()}}
+{\footnotesize\ttfamily void Row\+\_\+set\+Pid\+Column\+Width (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{max\+Pid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_ac30e0c40076a1836759cd83650431da9}\label{Row_8h_ac30e0c40076a1836759cd83650431da9}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+set\+Uid\+Column\+Width@{Row\+\_\+set\+Uid\+Column\+Width}}
+\index{Row\+\_\+set\+Uid\+Column\+Width@{Row\+\_\+set\+Uid\+Column\+Width}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+set\+Uid\+Column\+Width()}{Row\_setUidColumnWidth()}}
+{\footnotesize\ttfamily void Row\+\_\+set\+Uid\+Column\+Width (\begin{DoxyParamCaption}\item[{uid\+\_\+t}]{max\+Uid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_a16391e2591d3b07a795dc969ca05370a}\label{Row_8h_a16391e2591d3b07a795dc969ca05370a}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+toggle\+Tag@{Row\+\_\+toggle\+Tag}}
+\index{Row\+\_\+toggle\+Tag@{Row\+\_\+toggle\+Tag}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+toggle\+Tag()}{Row\_toggleTag()}}
+{\footnotesize\ttfamily void Row\+\_\+toggle\+Tag (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_af55b0052473a75befd5d752a293636e6}\label{Row_8h_af55b0052473a75befd5d752a293636e6}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+update\+Field\+Width@{Row\+\_\+update\+Field\+Width}}
+\index{Row\+\_\+update\+Field\+Width@{Row\+\_\+update\+Field\+Width}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+update\+Field\+Width()}{Row\_updateFieldWidth()}}
+{\footnotesize\ttfamily void Row\+\_\+update\+Field\+Width (\begin{DoxyParamCaption}\item[{\hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field}}]{key,  }\item[{size\+\_\+t}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_ae787e856fb07f0a39505d6450a631627}\label{Row_8h_ae787e856fb07f0a39505d6450a631627}} 
+\index{Row.\+h@{Row.\+h}!Row\+Field\+\_\+aligned\+Title@{Row\+Field\+\_\+aligned\+Title}}
+\index{Row\+Field\+\_\+aligned\+Title@{Row\+Field\+\_\+aligned\+Title}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+Field\+\_\+aligned\+Title()}{RowField\_alignedTitle()}}
+{\footnotesize\ttfamily const char$\ast$ Row\+Field\+\_\+aligned\+Title (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structSettings__}{Settings\+\_\+} $\ast$}]{settings,  }\item[{\hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field}}]{field }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Row_8h_aafe5b97bdaa4b3e8f403a4acafd8e34e}\label{Row_8h_aafe5b97bdaa4b3e8f403a4acafd8e34e}} 
+\index{Row.\+h@{Row.\+h}!Row\+Field\+\_\+key\+At@{Row\+Field\+\_\+key\+At}}
+\index{Row\+Field\+\_\+key\+At@{Row\+Field\+\_\+key\+At}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+Field\+\_\+key\+At()}{RowField\_keyAt()}}
+{\footnotesize\ttfamily \hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field} Row\+Field\+\_\+key\+At (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structSettings__}{Settings\+\_\+} $\ast$}]{settings,  }\item[{int}]{at }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Row_8h_a1337c3e3fe142df2578b1cf031a7b857}\label{Row_8h_a1337c3e3fe142df2578b1cf031a7b857}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+class@{Row\+\_\+class}}
+\index{Row\+\_\+class@{Row\+\_\+class}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+class}{Row\_class}}
+{\footnotesize\ttfamily const \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class} Row\+\_\+class}
+
+\mbox{\Hypertarget{Row_8h_adc9b23b939de363e5b0b976eb26b8780}\label{Row_8h_adc9b23b939de363e5b0b976eb26b8780}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+field\+Widths@{Row\+\_\+field\+Widths}}
+\index{Row\+\_\+field\+Widths@{Row\+\_\+field\+Widths}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+field\+Widths}{Row\_fieldWidths}}
+{\footnotesize\ttfamily uint8\+\_\+t Row\+\_\+field\+Widths\mbox{[}\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca66cf8ace6b4f6fcbf2081c56c28ecb0c}{L\+A\+S\+T\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+F\+I\+E\+LD}\mbox{]}}
+
+\mbox{\Hypertarget{Row_8h_af7d7bb1f78442c0ac1b7b6084c1fab09}\label{Row_8h_af7d7bb1f78442c0ac1b7b6084c1fab09}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+pid\+Digits@{Row\+\_\+pid\+Digits}}
+\index{Row\+\_\+pid\+Digits@{Row\+\_\+pid\+Digits}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+pid\+Digits}{Row\_pidDigits}}
+{\footnotesize\ttfamily int Row\+\_\+pid\+Digits}
+
+\mbox{\Hypertarget{Row_8h_afc15da3326cfb1968c5943e8fc24c0a3}\label{Row_8h_afc15da3326cfb1968c5943e8fc24c0a3}} 
+\index{Row.\+h@{Row.\+h}!Row\+\_\+uid\+Digits@{Row\+\_\+uid\+Digits}}
+\index{Row\+\_\+uid\+Digits@{Row\+\_\+uid\+Digits}!Row.\+h@{Row.\+h}}
+\subsubsection{\texorpdfstring{Row\+\_\+uid\+Digits}{Row\_uidDigits}}
+{\footnotesize\ttfamily int Row\+\_\+uid\+Digits}
+

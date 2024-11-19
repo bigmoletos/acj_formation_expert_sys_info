@@ -1,0 +1,47 @@
+\hypertarget{HugePageMeter_8c}{}\section{linux/download/htop-\/3.3.0/linux/\+Huge\+Page\+Meter.c File Reference}
+\label{HugePageMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/linux/\+Huge\+Page\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/linux/\+Huge\+Page\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Huge\+Page\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Linux\+Machine.\+h\char`\"{}}\newline
+Include dependency graph for Huge\+Page\+Meter.\+c\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{HugePageMeter_8c_a4ca6790d6411a2a8cbc14a815a5c970c}{Huge\+Page\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{HugePageMeter_8c_a4ca6790d6411a2a8cbc14a815a5c970c}\label{HugePageMeter_8c_a4ca6790d6411a2a8cbc14a815a5c970c}} 
+\index{Huge\+Page\+Meter.\+c@{Huge\+Page\+Meter.\+c}!Huge\+Page\+Meter\+\_\+class@{Huge\+Page\+Meter\+\_\+class}}
+\index{Huge\+Page\+Meter\+\_\+class@{Huge\+Page\+Meter\+\_\+class}!Huge\+Page\+Meter.\+c@{Huge\+Page\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Huge\+Page\+Meter\+\_\+class}{HugePageMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Huge\+Page\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = HugePageMeter\_display,
+   \},
+   .updateValues = HugePageMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa7da66e2e324247d0722afd14d7f12037}{BAR\_METERMODE},
+   .maxItems = \hyperlink{Macros_8h_a9670edf37e84bf953c542953136abfd6}{ARRAYSIZE}(HugePageMeter\_active\_labels),
+   .total = 100.0,
+   .attributes = HugePageMeter\_attributes,
+   .name = \textcolor{stringliteral}{"HugePages"},
+   .uiName = \textcolor{stringliteral}{"HugePages"},
+   .caption = \textcolor{stringliteral}{"HP"}
+\}
+\end{DoxyCode}

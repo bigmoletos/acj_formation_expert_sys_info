@@ -1,0 +1,79 @@
+
+\begin{DoxyEnumerate}
+\item {\bfseries Histogramme}\+: Un histogramme est un graphique qui représente la distribution des données continues. Les principales métriques utilisées pour un histogramme sont la densité de probabilité et la fréquence. import matplotlib.\+pyplot as plt import numpy as np \section*{Créer des données aléatoires}
+\end{DoxyEnumerate}
+
+data = np.\+random.\+randn(1000) \section*{Créer un histogramme}
+
+plt.\+hist(data, bins=30, density=True) \section*{Ajouter un titre et des étiquettes d\textquotesingle{}axe}
+
+plt.\+title(\textquotesingle{}Histogramme\textquotesingle{}) plt.\+xlabel(\textquotesingle{}Valeurs\textquotesingle{}) plt.\+ylabel(\textquotesingle{}Densité de probabilité\textquotesingle{}) \section*{Afficher le graphique}
+
+plt.\+show()
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Diagramme en boîte}\+: Un diagramme en boîte est un graphique qui représente la distribution des données continues. Les principales métriques utilisées pour un diagramme en boîte sont la médiane, le premier quartile, le troisième quartile et les valeurs aberrantes. import matplotlib.\+pyplot as plt import numpy as np \section*{Créer des données aléatoires}
+\end{DoxyEnumerate}
+
+data = np.\+random.\+randn(1000) \section*{Créer un diagramme en boîte}
+
+plt.\+boxplot(data) \section*{Ajouter un titre et des étiquettes d\textquotesingle{}axe}
+
+plt.\+title(\textquotesingle{}Diagramme en boîte\textquotesingle{}) plt.\+ylabel(\textquotesingle{}Valeurs\textquotesingle{}) \section*{Afficher le graphique}
+
+plt.\+show()
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Nuage de points}\+: Un nuage de points est un graphique qui représente la relation entre deux variables continues. Les principales métriques utilisées pour un nuage de points sont la corrélation et la covariance. import matplotlib.\+pyplot as plt import numpy as np \section*{Créer des données aléatoires}
+\end{DoxyEnumerate}
+
+x = np.\+random.\+randn(1000) y = np.\+random.\+randn(1000) \section*{Créer un nuage de points}
+
+plt.\+scatter(x, y)
+
+\section*{Ajouter un titre et des étiquettes d\textquotesingle{}axe}
+
+plt.\+title(\textquotesingle{}Nuage de points\textquotesingle{}) plt.\+xlabel(\textquotesingle{}Variable X\textquotesingle{}) plt.\+ylabel(\textquotesingle{}Variable Y\textquotesingle{}) \section*{Afficher le graphique}
+
+plt.\+show()
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Graphique en barres}\+: Un graphique en barres est un graphique qui représente la relation entre une variable catégorielle et une variable continue. Les principales métriques utilisées pour un graphique en barres sont la moyenne et l’écart type. import matplotlib.\+pyplot as plt import numpy as np \section*{Créer des données aléatoires}
+\end{DoxyEnumerate}
+
+x = \mbox{[}\textquotesingle{}A\textquotesingle{}, \textquotesingle{}B\textquotesingle{}, \textquotesingle{}C\textquotesingle{}, \textquotesingle{}D\textquotesingle{}, \textquotesingle{}E\textquotesingle{}\mbox{]} y = np.\+random.\+rand(5) \section*{Créer un graphique en barres}
+
+plt.\+bar(x, y) \section*{Ajouter un titre et des étiquettes d\textquotesingle{}axe}
+
+plt.\+title(\textquotesingle{}Graphique en barres\textquotesingle{}) plt.\+xlabel(\textquotesingle{}Catégories\textquotesingle{}) plt.\+ylabel(\textquotesingle{}Valeurs\textquotesingle{}) \section*{Afficher le graphique}
+
+plt.\+show()
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Graphique à secteurs}\+: Un graphique à secteurs est un graphique qui représente la relation entre une variable catégorielle et une variable continue. Les principales métriques utilisées pour un graphique à secteurs sont la proportion et le pourcentage. import matplotlib.\+pyplot as plt \section*{Créer des données aléatoires}
+\end{DoxyEnumerate}
+
+x = \mbox{[}20, 30, 40, 10\mbox{]} \section*{Créer un graphique à secteurs}
+
+plt.\+pie(x) \section*{Ajouter un titre}
+
+plt.\+title(\textquotesingle{}Graphique à secteurs\textquotesingle{}) \section*{Afficher le graphique}
+
+plt.\+show()
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries Graphique en aires}\+: Un graphique en aires est un graphique qui représente la relation entre une variable continue et le temps. Les principales métriques utilisées pour un graphique en aires sont la tendance et la saisonnalité. import matplotlib.\+pyplot as plt import numpy as np \section*{Créer des données aléatoires}
+\end{DoxyEnumerate}
+
+x = np.\+arange(0, 10, 0.\+1) y = np.\+sin(x) \section*{Créer un graphique en aires}
+
+plt.\+fill\+\_\+between(x, y) \section*{Ajouter un titre et des étiquettes d\textquotesingle{}axe}
+
+plt.\+title(\textquotesingle{}Graphique en aires\textquotesingle{}) plt.\+xlabel(\textquotesingle{}Temps\textquotesingle{}) plt.\+ylabel(\textquotesingle{}Valeurs\textquotesingle{}) \section*{Afficher le graphique}
+
+plt.\+show() 

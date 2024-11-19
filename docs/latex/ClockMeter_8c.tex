@@ -1,0 +1,42 @@
+\hypertarget{ClockMeter_8c}{}\section{linux/download/htop-\/3.3.0/\+Clock\+Meter.c File Reference}
+\label{ClockMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Clock\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/\+Clock\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Clock\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+Include dependency graph for Clock\+Meter.\+c\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{ClockMeter_8c_a4c340f4a26277f5112f4f9697c47ac07}{Clock\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ClockMeter_8c_a4c340f4a26277f5112f4f9697c47ac07}\label{ClockMeter_8c_a4c340f4a26277f5112f4f9697c47ac07}} 
+\index{Clock\+Meter.\+c@{Clock\+Meter.\+c}!Clock\+Meter\+\_\+class@{Clock\+Meter\+\_\+class}}
+\index{Clock\+Meter\+\_\+class@{Clock\+Meter\+\_\+class}!Clock\+Meter.\+c@{Clock\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Clock\+Meter\+\_\+class}{ClockMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Clock\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete}
+   \},
+   .updateValues = ClockMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 1,
+   .total = 1440, 
+   .attributes = ClockMeter\_attributes,
+   .name = \textcolor{stringliteral}{"Clock"},
+   .uiName = \textcolor{stringliteral}{"Clock"},
+   .caption = \textcolor{stringliteral}{"Time: "},
+\}
+\end{DoxyCode}

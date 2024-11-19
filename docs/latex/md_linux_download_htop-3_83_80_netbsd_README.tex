@@ -1,0 +1,21 @@
+This implementation utilizes kvm\+\_\+getprocs(3), sysctl(3), etc, eliminating the need for mount\+\_\+procfs(8) with Linux compatibility enabled.
+
+The implementation was initially based on the Open\+B\+SD support in htop(1).
+
+\subsection*{Notes on Net\+B\+SD curses }
+
+Net\+B\+SD is one of the last operating systems to use and maintain its own implementation of Curses.
+
+htop(1) can be compiled against either ncurses or Net\+B\+SD\textquotesingle{}s curses(3). In order for Net\+B\+SD\textquotesingle{}s libcurses to be used, htop(1) must be configured with {\ttfamily -\/-\/disable-\/unicode}. This is necessary because htop(1) with Unicode enabled directly accesses ncurses\textquotesingle{}s cchar\+\_\+t struct, which has different contents in Net\+B\+SD\textquotesingle{}s curses.
+
+Versions of libcurses in Net\+B\+SD 9 and prior have no mouse support (this is an ncurses extension). Newer versions contain no-\/op mouse functions for compatibility with ncurses.
+
+\subsection*{What needs improvement }
+
+
+\begin{DoxyItemize}
+\item Kernel and userspace threads are not displayed or counted -\/ maybe look at Net\+B\+SD top(1).
+\item Support for compiling using libcurses\textquotesingle{}s Unicode support.
+\item Support for fstat(1) (view open files, like lsof(8) on Linux).
+\item Support for ktrace(1) (like strace(1) on Linux). 
+\end{DoxyItemize}

@@ -1,0 +1,85 @@
+\hypertarget{FreeBSDProcess_8c}{}\section{linux/download/htop-\/3.3.0/freebsd/\+Free\+B\+S\+D\+Process.c File Reference}
+\label{FreeBSDProcess_8c}\index{linux/download/htop-\/3.\+3.\+0/freebsd/\+Free\+B\+S\+D\+Process.\+c@{linux/download/htop-\/3.\+3.\+0/freebsd/\+Free\+B\+S\+D\+Process.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freebsd/\+Free\+B\+S\+D\+Process.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scheduling.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Free\+B\+S\+D\+Process.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{FreeBSDProcess_8c_a744a882ab97eb49a583c9d384cac9be0}{Free\+B\+S\+D\+Process\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$machine)
+\item 
+void \hyperlink{FreeBSDProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$const \hyperlink{FreeBSDProcess_8c_a69b352db34e6f36545f2634b378e5f65}{nodev\+Str} = \char`\"{}nodev\char`\"{}
+\item 
+const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} \hyperlink{FreeBSDProcess_8c_ad5f8090378cbc673e2ae0825d0342743}{Process\+\_\+fields} \mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}
+\item 
+const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} \hyperlink{FreeBSDProcess_8c_aa1ceaf7affb28f226c99c4a9f24f9831}{Free\+B\+S\+D\+Process\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{FreeBSDProcess_8c_a744a882ab97eb49a583c9d384cac9be0}\label{FreeBSDProcess_8c_a744a882ab97eb49a583c9d384cac9be0}} 
+\index{Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}!Free\+B\+S\+D\+Process\+\_\+new@{Free\+B\+S\+D\+Process\+\_\+new}}
+\index{Free\+B\+S\+D\+Process\+\_\+new@{Free\+B\+S\+D\+Process\+\_\+new}!Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}}
+\subsubsection{\texorpdfstring{Free\+B\+S\+D\+Process\+\_\+new()}{FreeBSDProcess\_new()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ Free\+B\+S\+D\+Process\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{machine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FreeBSDProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}\label{FreeBSDProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}} 
+\index{Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}!Process\+\_\+delete@{Process\+\_\+delete}}
+\index{Process\+\_\+delete@{Process\+\_\+delete}!Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+delete()}{Process\_delete()}}
+{\footnotesize\ttfamily void Process\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{FreeBSDProcess_8c_aa1ceaf7affb28f226c99c4a9f24f9831}\label{FreeBSDProcess_8c_aa1ceaf7affb28f226c99c4a9f24f9831}} 
+\index{Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}!Free\+B\+S\+D\+Process\+\_\+class@{Free\+B\+S\+D\+Process\+\_\+class}}
+\index{Free\+B\+S\+D\+Process\+\_\+class@{Free\+B\+S\+D\+Process\+\_\+class}!Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}}
+\subsubsection{\texorpdfstring{Free\+B\+S\+D\+Process\+\_\+class}{FreeBSDProcess\_class}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} Free\+B\+S\+D\+Process\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .super = \{
+         .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structProcess__}{Process}),
+         .display = \hyperlink{Row_8c_a1ca72e911c0e2299061df16e80da6a80}{Row\_display},
+         .delete = \hyperlink{FreeBSDProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\_delete},
+         .compare = \hyperlink{Process_8c_adfe5da81af5bdb6f1737efff4115ae59}{Process\_compare}
+      \},
+      .isHighlighted = \hyperlink{Process_8c_acc33de0abdacffbc71764974189a2623}{Process\_rowIsHighlighted},
+      .isVisible = \hyperlink{Process_8c_a81c1e83185bbf4303493558555e27f79}{Process\_rowIsVisible},
+      .matchesFilter = \hyperlink{Process_8c_a8447645ae54a0f49d0c67a7a6ccacd18}{Process\_rowMatchesFilter},
+      .compareByParent = \hyperlink{Process_8c_ad3b2093e8d84dc6178be2e6eb96f89b5}{Process\_compareByParent},
+      .sortKeyString = \hyperlink{Process_8c_a20530177962c8b1f48b2baadff6934aa}{Process\_rowGetSortKey},
+      .writeField = FreeBSDProcess\_rowWriteField
+   \},
+   .compareByKey = FreeBSDProcess\_compareByKey
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{FreeBSDProcess_8c_a69b352db34e6f36545f2634b378e5f65}\label{FreeBSDProcess_8c_a69b352db34e6f36545f2634b378e5f65}} 
+\index{Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}!nodev\+Str@{nodev\+Str}}
+\index{nodev\+Str@{nodev\+Str}!Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}}
+\subsubsection{\texorpdfstring{nodev\+Str}{nodevStr}}
+{\footnotesize\ttfamily const char$\ast$ const nodev\+Str = \char`\"{}nodev\char`\"{}}
+
+\mbox{\Hypertarget{FreeBSDProcess_8c_ad5f8090378cbc673e2ae0825d0342743}\label{FreeBSDProcess_8c_ad5f8090378cbc673e2ae0825d0342743}} 
+\index{Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}!Process\+\_\+fields@{Process\+\_\+fields}}
+\index{Process\+\_\+fields@{Process\+\_\+fields}!Free\+B\+S\+D\+Process.\+c@{Free\+B\+S\+D\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+fields}{Process\_fields}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} Process\+\_\+fields\mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}}
+

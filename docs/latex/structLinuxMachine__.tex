@@ -1,0 +1,133 @@
+\hypertarget{structLinuxMachine__}{}\section{Linux\+Machine\+\_\+ Struct Reference}
+\label{structLinuxMachine__}\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+
+
+{\ttfamily \#include $<$Linux\+Machine.\+h$>$}
+
+
+
+Collaboration diagram for Linux\+Machine\+\_\+\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} \hyperlink{structLinuxMachine___a207e9c5335b580c4aac4d104c9a34394}{super}
+\item 
+long \hyperlink{structLinuxMachine___aeceeab5b0ab194d30acb50703849d8f8}{jiffies}
+\item 
+int \hyperlink{structLinuxMachine___a98286198b28a30c14724483c9e7a3986}{page\+Size}
+\item 
+int \hyperlink{structLinuxMachine___a607ba117c8ccc406f3ed3cf35efab3b2}{page\+Size\+KB}
+\item 
+unsigned int \hyperlink{structLinuxMachine___af0e21f770c760aefac7f08f4d20f9612}{running\+Tasks}
+\item 
+long long \hyperlink{structLinuxMachine___a428a0a0f05b7ed288241c6b14d1fef9f}{boottime}
+\item 
+double \hyperlink{structLinuxMachine___a41063ff2e2a8eb169af1c585aa18e1f0}{period}
+\item 
+\hyperlink{DragonFlyBSDMachine_8h_a144f55b34d84d75d470d730435fef363}{C\+P\+U\+Data} $\ast$ \hyperlink{structLinuxMachine___acd4587e839e6f26ce683934143550a1a}{cpu\+Data}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structLinuxMachine___aea396412b474093bfa89ac0fd77bcf2d}{total\+Huge\+Page\+Mem}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structLinuxMachine___a76de51ed0c95a232274522bb46e79527}{used\+Huge\+Page\+Mem} \mbox{[}\hyperlink{LinuxMachine_8h_ad70e20dcd2e88078ca1dd2cf3f0c53f5}{H\+T\+O\+P\+\_\+\+H\+U\+G\+E\+P\+A\+G\+E\+\_\+\+C\+O\+U\+NT}\mbox{]}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structLinuxMachine___a5fbcd53ea357d7bf9d861a20b8491eca}{available\+Mem}
+\item 
+\hyperlink{ZfsArcStats_8h_a2adeccbbba50329f61d34f355e5faddc}{Zfs\+Arc\+Stats} \hyperlink{structLinuxMachine___afe18771dfc5352b17d406684ffde417e}{zfs}
+\item 
+\hyperlink{ZramStats_8h_a6d52e5ca55176157f75983edcee3edb3}{Zram\+Stats} \hyperlink{structLinuxMachine___a5118fe9fa61b7db30c667a58b2ede233}{zram}
+\item 
+\hyperlink{ZswapStats_8h_ad2bd350512b2d43b858fc4632f2c4b26}{Zswap\+Stats} \hyperlink{structLinuxMachine___a4b5e481f544c0e56bad364c25eac8751}{zswap}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structLinuxMachine___a5fbcd53ea357d7bf9d861a20b8491eca}\label{structLinuxMachine___a5fbcd53ea357d7bf9d861a20b8491eca}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!available\+Mem@{available\+Mem}}
+\index{available\+Mem@{available\+Mem}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{available\+Mem}{availableMem}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Linux\+Machine\+\_\+\+::available\+Mem}
+
+\mbox{\Hypertarget{structLinuxMachine___a428a0a0f05b7ed288241c6b14d1fef9f}\label{structLinuxMachine___a428a0a0f05b7ed288241c6b14d1fef9f}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!boottime@{boottime}}
+\index{boottime@{boottime}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{boottime}{boottime}}
+{\footnotesize\ttfamily long long Linux\+Machine\+\_\+\+::boottime}
+
+\mbox{\Hypertarget{structLinuxMachine___acd4587e839e6f26ce683934143550a1a}\label{structLinuxMachine___acd4587e839e6f26ce683934143550a1a}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!cpu\+Data@{cpu\+Data}}
+\index{cpu\+Data@{cpu\+Data}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{cpu\+Data}{cpuData}}
+{\footnotesize\ttfamily \hyperlink{DragonFlyBSDMachine_8h_a144f55b34d84d75d470d730435fef363}{C\+P\+U\+Data}$\ast$ Linux\+Machine\+\_\+\+::cpu\+Data}
+
+\mbox{\Hypertarget{structLinuxMachine___aeceeab5b0ab194d30acb50703849d8f8}\label{structLinuxMachine___aeceeab5b0ab194d30acb50703849d8f8}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!jiffies@{jiffies}}
+\index{jiffies@{jiffies}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{jiffies}{jiffies}}
+{\footnotesize\ttfamily long Linux\+Machine\+\_\+\+::jiffies}
+
+\mbox{\Hypertarget{structLinuxMachine___a98286198b28a30c14724483c9e7a3986}\label{structLinuxMachine___a98286198b28a30c14724483c9e7a3986}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!page\+Size@{page\+Size}}
+\index{page\+Size@{page\+Size}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{page\+Size}{pageSize}}
+{\footnotesize\ttfamily int Linux\+Machine\+\_\+\+::page\+Size}
+
+\mbox{\Hypertarget{structLinuxMachine___a607ba117c8ccc406f3ed3cf35efab3b2}\label{structLinuxMachine___a607ba117c8ccc406f3ed3cf35efab3b2}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!page\+Size\+KB@{page\+Size\+KB}}
+\index{page\+Size\+KB@{page\+Size\+KB}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{page\+Size\+KB}{pageSizeKB}}
+{\footnotesize\ttfamily int Linux\+Machine\+\_\+\+::page\+Size\+KB}
+
+\mbox{\Hypertarget{structLinuxMachine___a41063ff2e2a8eb169af1c585aa18e1f0}\label{structLinuxMachine___a41063ff2e2a8eb169af1c585aa18e1f0}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!period@{period}}
+\index{period@{period}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{period}{period}}
+{\footnotesize\ttfamily double Linux\+Machine\+\_\+\+::period}
+
+\mbox{\Hypertarget{structLinuxMachine___af0e21f770c760aefac7f08f4d20f9612}\label{structLinuxMachine___af0e21f770c760aefac7f08f4d20f9612}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!running\+Tasks@{running\+Tasks}}
+\index{running\+Tasks@{running\+Tasks}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{running\+Tasks}{runningTasks}}
+{\footnotesize\ttfamily unsigned int Linux\+Machine\+\_\+\+::running\+Tasks}
+
+\mbox{\Hypertarget{structLinuxMachine___a207e9c5335b580c4aac4d104c9a34394}\label{structLinuxMachine___a207e9c5335b580c4aac4d104c9a34394}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!super@{super}}
+\index{super@{super}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{super}{super}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} Linux\+Machine\+\_\+\+::super}
+
+\mbox{\Hypertarget{structLinuxMachine___aea396412b474093bfa89ac0fd77bcf2d}\label{structLinuxMachine___aea396412b474093bfa89ac0fd77bcf2d}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!total\+Huge\+Page\+Mem@{total\+Huge\+Page\+Mem}}
+\index{total\+Huge\+Page\+Mem@{total\+Huge\+Page\+Mem}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{total\+Huge\+Page\+Mem}{totalHugePageMem}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Linux\+Machine\+\_\+\+::total\+Huge\+Page\+Mem}
+
+\mbox{\Hypertarget{structLinuxMachine___a76de51ed0c95a232274522bb46e79527}\label{structLinuxMachine___a76de51ed0c95a232274522bb46e79527}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!used\+Huge\+Page\+Mem@{used\+Huge\+Page\+Mem}}
+\index{used\+Huge\+Page\+Mem@{used\+Huge\+Page\+Mem}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{used\+Huge\+Page\+Mem}{usedHugePageMem}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Linux\+Machine\+\_\+\+::used\+Huge\+Page\+Mem\mbox{[}\hyperlink{LinuxMachine_8h_ad70e20dcd2e88078ca1dd2cf3f0c53f5}{H\+T\+O\+P\+\_\+\+H\+U\+G\+E\+P\+A\+G\+E\+\_\+\+C\+O\+U\+NT}\mbox{]}}
+
+\mbox{\Hypertarget{structLinuxMachine___afe18771dfc5352b17d406684ffde417e}\label{structLinuxMachine___afe18771dfc5352b17d406684ffde417e}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!zfs@{zfs}}
+\index{zfs@{zfs}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{zfs}{zfs}}
+{\footnotesize\ttfamily \hyperlink{ZfsArcStats_8h_a2adeccbbba50329f61d34f355e5faddc}{Zfs\+Arc\+Stats} Linux\+Machine\+\_\+\+::zfs}
+
+\mbox{\Hypertarget{structLinuxMachine___a5118fe9fa61b7db30c667a58b2ede233}\label{structLinuxMachine___a5118fe9fa61b7db30c667a58b2ede233}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!zram@{zram}}
+\index{zram@{zram}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{zram}{zram}}
+{\footnotesize\ttfamily \hyperlink{ZramStats_8h_a6d52e5ca55176157f75983edcee3edb3}{Zram\+Stats} Linux\+Machine\+\_\+\+::zram}
+
+\mbox{\Hypertarget{structLinuxMachine___a4b5e481f544c0e56bad364c25eac8751}\label{structLinuxMachine___a4b5e481f544c0e56bad364c25eac8751}} 
+\index{Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}!zswap@{zswap}}
+\index{zswap@{zswap}!Linux\+Machine\+\_\+@{Linux\+Machine\+\_\+}}
+\subsubsection{\texorpdfstring{zswap}{zswap}}
+{\footnotesize\ttfamily \hyperlink{ZswapStats_8h_ad2bd350512b2d43b858fc4632f2c4b26}{Zswap\+Stats} Linux\+Machine\+\_\+\+::zswap}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+linux/download/htop-\/3.\+3.\+0/linux/\hyperlink{LinuxMachine_8h}{Linux\+Machine.\+h}\end{DoxyCompactItemize}

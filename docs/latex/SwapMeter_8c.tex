@@ -1,0 +1,45 @@
+\hypertarget{SwapMeter_8c}{}\section{linux/download/htop-\/3.3.0/\+Swap\+Meter.c File Reference}
+\label{SwapMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Swap\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/\+Swap\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Swap\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+Include dependency graph for Swap\+Meter.\+c\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{SwapMeter_8c_a4396453ada113ac53898b695e08ce252}{Swap\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{SwapMeter_8c_a4396453ada113ac53898b695e08ce252}\label{SwapMeter_8c_a4396453ada113ac53898b695e08ce252}} 
+\index{Swap\+Meter.\+c@{Swap\+Meter.\+c}!Swap\+Meter\+\_\+class@{Swap\+Meter\+\_\+class}}
+\index{Swap\+Meter\+\_\+class@{Swap\+Meter\+\_\+class}!Swap\+Meter.\+c@{Swap\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Swap\+Meter\+\_\+class}{SwapMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Swap\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = SwapMeter\_display,
+   \},
+   .updateValues = SwapMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa7da66e2e324247d0722afd14d7f12037}{BAR\_METERMODE},
+   .maxItems = \hyperlink{SwapMeter_8h_a1194571e2636d014d7a84a491dfe84b9acd5e878034da10eede2c2e16f6dacfbd}{SWAP\_METER\_ITEMCOUNT},
+   .total = 100.0,
+   .attributes = SwapMeter\_attributes,
+   .name = \textcolor{stringliteral}{"Swap"},
+   .uiName = \textcolor{stringliteral}{"Swap"},
+   .caption = \textcolor{stringliteral}{"Swp"}
+\}
+\end{DoxyCode}

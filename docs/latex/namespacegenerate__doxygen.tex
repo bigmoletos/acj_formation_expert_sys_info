@@ -1,0 +1,57 @@
+\hypertarget{namespacegenerate__doxygen}{}\section{generate\+\_\+doxygen Namespace Reference}
+\label{namespacegenerate__doxygen}\index{generate\+\_\+doxygen@{generate\+\_\+doxygen}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacegenerate__doxygen_a011c4ecb5ff6538406fa43d2f4e294a0}{add\+\_\+doxygen\+\_\+to\+\_\+file} (filepath)
+\item 
+def \hyperlink{namespacegenerate__doxygen_a53df88af82d48f4c3745bcb5d0973187}{process\+\_\+directory} (directory)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacegenerate__doxygen_aef24a16e9260486f19bb2aa10574350b}{project\+\_\+path} = os.\+getcwd()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacegenerate__doxygen_a011c4ecb5ff6538406fa43d2f4e294a0}\label{namespacegenerate__doxygen_a011c4ecb5ff6538406fa43d2f4e294a0}} 
+\index{generate\+\_\+doxygen@{generate\+\_\+doxygen}!add\+\_\+doxygen\+\_\+to\+\_\+file@{add\+\_\+doxygen\+\_\+to\+\_\+file}}
+\index{add\+\_\+doxygen\+\_\+to\+\_\+file@{add\+\_\+doxygen\+\_\+to\+\_\+file}!generate\+\_\+doxygen@{generate\+\_\+doxygen}}
+\subsubsection{\texorpdfstring{add\+\_\+doxygen\+\_\+to\+\_\+file()}{add\_doxygen\_to\_file()}}
+{\footnotesize\ttfamily def generate\+\_\+doxygen.\+add\+\_\+doxygen\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{}]{filepath }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Ajoute des commentaires Doxygen aux fonctions présentes dans un fichier.
+
+Gère correctement les déclarations de fonctions dans les fichiers .hpp
+et les définitions dans les fichiers .cpp.
+
+Args:
+    filepath (str): Chemin du fichier à traiter.
+
+Returns:
+    None
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacegenerate__doxygen_a53df88af82d48f4c3745bcb5d0973187}\label{namespacegenerate__doxygen_a53df88af82d48f4c3745bcb5d0973187}} 
+\index{generate\+\_\+doxygen@{generate\+\_\+doxygen}!process\+\_\+directory@{process\+\_\+directory}}
+\index{process\+\_\+directory@{process\+\_\+directory}!generate\+\_\+doxygen@{generate\+\_\+doxygen}}
+\subsubsection{\texorpdfstring{process\+\_\+directory()}{process\_directory()}}
+{\footnotesize\ttfamily def generate\+\_\+doxygen.\+process\+\_\+directory (\begin{DoxyParamCaption}\item[{}]{directory }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parcourt récursivement tous les fichiers d'un répertoire et traite chaque fichier.
+
+Args:
+    directory (str): Chemin du répertoire à analyser.
+
+Returns:
+    None
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacegenerate__doxygen_aef24a16e9260486f19bb2aa10574350b}\label{namespacegenerate__doxygen_aef24a16e9260486f19bb2aa10574350b}} 
+\index{generate\+\_\+doxygen@{generate\+\_\+doxygen}!project\+\_\+path@{project\+\_\+path}}
+\index{project\+\_\+path@{project\+\_\+path}!generate\+\_\+doxygen@{generate\+\_\+doxygen}}
+\subsubsection{\texorpdfstring{project\+\_\+path}{project\_path}}
+{\footnotesize\ttfamily generate\+\_\+doxygen.\+project\+\_\+path = os.\+getcwd()}
+

@@ -1,0 +1,113 @@
+\# \section*{Créer un répertoire \+:}
+
+\section*{Crée un répertoire nommé projet dans ton dossier personnel ($\sim$/).}
+
+mkdir $\sim$/projet \section*{Créer des sous-\/répertoires \+:}
+
+\section*{Dans le répertoire projet, crée deux sous-\/répertoires nommés doc et src.}
+
+mkdir $\sim$/projet/doc mkdir $\sim$/projet/src \# \section*{Créer des fichiers \+:}
+
+\section*{Dans le répertoire doc, crée deux fichiers \+: R\+E\+A\+D\+M\+E.\+txt et L\+I\+C\+E\+N\+S\+E.\+txt.}
+
+touch $\sim$/projet/doc/\+R\+E\+A\+D\+ME.txt touch $\sim$/projet/doc/\+L\+I\+C\+E\+N\+SE.txt \# \section*{Modifier un fichier \+:}
+
+\section*{Ajoute le texte \char`\"{}\+Projet Open Source\char`\"{} dans le fichier R\+E\+A\+D\+M\+E.\+txt.}
+
+\# nano $\sim$/projet/doc/\+R\+E\+A\+D\+ME.txt ecrire\+: \char`\"{}\+Projet Open Source\char`\"{} enregistrer\+: C\+T\+RL + O sortir de nano \+: C\+T\+RL + X \# \section*{Vérifier la structure \+:}
+
+\section*{Liste tous les fichiers et répertoires du dossier projet avec une vue détaillée (afficher permissions, taille, etc.).}
+
+ls -\/la dans chaque dossiers \section*{ou}
+
+ls -\/lR $\sim$/projet \section*{ou}
+
+tree
+
+\section*{Exercice 2 \+: Manipulation des fichiers}
+
+\section*{Renommer un fichier \+:}
+
+\section*{Renomme le fichier L\+I\+C\+E\+N\+S\+E.\+txt en L\+I\+C\+E\+N\+S\+E.\+md.}
+
+cd projet cd doc mv L\+I\+C\+E\+N\+S\+E.\+txt L\+I\+C\+E\+N\+S\+E.\+md
+
+\section*{Copier des fichiers \+:}
+
+\section*{Copie le fichier R\+E\+A\+D\+M\+E.\+txt dans le répertoire src.}
+
+cp R\+E\+A\+D\+M\+E.\+txt $\sim$/projet/src/
+
+\section*{Déplacer un fichier \+:}
+
+\section*{Déplace le fichier L\+I\+C\+E\+N\+S\+E.\+md dans le répertoire src.}
+
+mv L\+I\+C\+E\+N\+S\+E.\+md $\sim$/projet/src/
+
+\section*{Supprimer un fichier \+:}
+
+\section*{Supprime le fichier R\+E\+A\+D\+M\+E.\+txt dans le répertoire src.}
+
+cd .. cd src rm R\+E\+A\+D\+M\+E.\+txt
+
+\section*{Exercice 3 \+: Gestion des utilisateurs et des permissions}
+
+\# \section*{Créer un utilisateur \+:}
+
+\section*{Crée un nouvel utilisateur nommé devuser sans créer de dossier personnel.}
+
+sudo adduser devuser \section*{Changer le mot de passe de l\textquotesingle{}utilisateur \+:}
+
+\section*{Attribue un mot de passe à devuser.}
+
+sudo passwd devuser
+
+\section*{Changer les permissions \+:}
+
+\section*{Change les permissions du fichier L\+I\+C\+E\+N\+S\+E.\+md pour qu\textquotesingle{}il soit lisible et modifiable seulement par le propriétaire, et lisible par les autres utilisateurs.}
+
+chmod 644 L\+I\+C\+E\+N\+S\+E.\+md \section*{Changer le propriétaire d’un fichier \+:}
+
+\section*{Assigne le fichier L\+I\+C\+E\+N\+S\+E.\+md à l’utilisateur devuser.}
+
+sudo chown devuser L\+I\+C\+E\+N\+S\+E.\+md
+
+\section*{Exercice 4 \+: Gestion avancée des répertoires et fichiers}
+
+\# \section*{Créer un lien symbolique \+:}
+
+\section*{Crée un lien symbolique du fichier L\+I\+C\+E\+N\+S\+E.\+md dans le répertoire personnel de l\textquotesingle{}utilisateur courant.}
+
+ln -\/s L\+I\+C\+E\+N\+S\+E.\+md
+
+\section*{Trier les fichiers \+:}
+
+\section*{Liste tous les fichiers du répertoire src triés par taille.}
+
+ls -\/lS $\sim$/projet/src
+
+\section*{Compresser un répertoire \+:}
+
+\section*{Compresse le répertoire projet dans un fichier projet.\+tar.\+gz.}
+
+cd .. tar -\/czvf projet.\+tar.\+gz $\sim$/projet
+
+\section*{Extraire un fichier compressé \+:}
+
+\section*{Extrais l\textquotesingle{}archive projet.\+tar.\+gz dans un nouveau répertoire projet\+\_\+copy.}
+
+cd .. mkdir projet\+\_\+copy tar -\/xzvf projet.\+tar.\+gz -\/C /projet\+\_\+copy
+
+\section*{Exercice 5 \+: Supprimer des utilisateurs et fichiers}
+
+\# \section*{Supprimer un fichier \+:}
+
+\section*{Supprime l\textquotesingle{}archive projet.\+tar.\+gz.}
+
+rm projet.\+tar.\+gz
+
+\section*{Supprimer un utilisateur \+:}
+
+\section*{Supprime l\textquotesingle{}utilisateur devuser sans supprimer son répertoire personnel (s\textquotesingle{}il y en a un).}
+
+sudo userdel devuser 

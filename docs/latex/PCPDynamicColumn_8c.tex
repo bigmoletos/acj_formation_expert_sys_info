@@ -1,0 +1,86 @@
+\hypertarget{PCPDynamicColumn_8c}{}\section{linux/download/htop-\/3.3.0/pcp/\+P\+C\+P\+Dynamic\+Column.c File Reference}
+\label{PCPDynamicColumn_8c}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Dynamic\+Column.\+c@{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Dynamic\+Column.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Dynamic\+Column.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$pwd.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+C\+Group\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+Metric.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Process.\+h\char`\"{}}\newline
+Include dependency graph for P\+C\+P\+Dynamic\+Column.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{PCPDynamicColumn_8c_a89655f61a5977c11fea923f1eb150789}{P\+C\+P\+Dynamic\+Columns\+\_\+init} (\hyperlink{PCPDynamicColumn_8h_a340cb3857a739ded09f30922e07f9a93}{P\+C\+P\+Dynamic\+Columns} $\ast$\hyperlink{HeaderLayout_8h_a9bf6c19eefefcddca5f152099add491c}{columns})
+\item 
+void \hyperlink{PCPDynamicColumn_8c_ac9354220eb42f3e98f1ad0a4c41f9d58}{P\+C\+P\+Dynamic\+Column\+\_\+done} (\hyperlink{PCPDynamicColumn_8h_a4532d9e7590e9e295b35985eb95e4fad}{P\+C\+P\+Dynamic\+Column} $\ast$this)
+\item 
+void \hyperlink{PCPDynamicColumn_8c_a6821bb1a5a43633fe78d6539bc4f031d}{P\+C\+P\+Dynamic\+Columns\+\_\+done} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$table)
+\item 
+void \hyperlink{PCPDynamicColumn_8c_ad9d2bf79f06e98aefa6f61156b9c5ce5}{P\+C\+P\+Dynamic\+Columns\+\_\+setup\+Widths} (\hyperlink{PCPDynamicColumn_8h_a340cb3857a739ded09f30922e07f9a93}{P\+C\+P\+Dynamic\+Columns} $\ast$\hyperlink{HeaderLayout_8h_a9bf6c19eefefcddca5f152099add491c}{columns})
+\item 
+void \hyperlink{PCPDynamicColumn_8c_ab4daea47c86403c1e00a92f3eebb2246}{P\+C\+P\+Dynamic\+Column\+\_\+write\+Atom\+Value} (\hyperlink{PCPDynamicColumn_8h_a4532d9e7590e9e295b35985eb95e4fad}{P\+C\+P\+Dynamic\+Column} $\ast$column, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, const struct \hyperlink{structSettings__}{Settings\+\_\+} $\ast$settings, int metric, int instance, const pm\+Desc $\ast$desc, const void $\ast$atom)
+\item 
+void \hyperlink{PCPDynamicColumn_8c_ac9d8987c2e7f77f4be3e22c765a3a007}{P\+C\+P\+Dynamic\+Column\+\_\+write\+Field} (\hyperlink{PCPDynamicColumn_8h_a4532d9e7590e9e295b35985eb95e4fad}{P\+C\+P\+Dynamic\+Column} $\ast$this, const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$proc, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str)
+\item 
+int \hyperlink{PCPDynamicColumn_8c_a2d3e9c45ab4a9b58abd0cac4e8f6632c}{P\+C\+P\+Dynamic\+Column\+\_\+compare\+By\+Key} (const \hyperlink{PCPProcess_8h_a1fb5306618d353d9d7f0522798c94154}{P\+C\+P\+Process} $\ast$p1, const \hyperlink{PCPProcess_8h_a1fb5306618d353d9d7f0522798c94154}{P\+C\+P\+Process} $\ast$p2, \hyperlink{Process_8h_a23f514dba817798419bae559ca58078b}{Process\+Field} \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{PCPDynamicColumn_8c_a2d3e9c45ab4a9b58abd0cac4e8f6632c}\label{PCPDynamicColumn_8c_a2d3e9c45ab4a9b58abd0cac4e8f6632c}} 
+\index{P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}!P\+C\+P\+Dynamic\+Column\+\_\+compare\+By\+Key@{P\+C\+P\+Dynamic\+Column\+\_\+compare\+By\+Key}}
+\index{P\+C\+P\+Dynamic\+Column\+\_\+compare\+By\+Key@{P\+C\+P\+Dynamic\+Column\+\_\+compare\+By\+Key}!P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Column\+\_\+compare\+By\+Key()}{PCPDynamicColumn\_compareByKey()}}
+{\footnotesize\ttfamily int P\+C\+P\+Dynamic\+Column\+\_\+compare\+By\+Key (\begin{DoxyParamCaption}\item[{const \hyperlink{PCPProcess_8h_a1fb5306618d353d9d7f0522798c94154}{P\+C\+P\+Process} $\ast$}]{p1,  }\item[{const \hyperlink{PCPProcess_8h_a1fb5306618d353d9d7f0522798c94154}{P\+C\+P\+Process} $\ast$}]{p2,  }\item[{\hyperlink{Process_8h_a23f514dba817798419bae559ca58078b}{Process\+Field}}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicColumn_8c_ac9354220eb42f3e98f1ad0a4c41f9d58}\label{PCPDynamicColumn_8c_ac9354220eb42f3e98f1ad0a4c41f9d58}} 
+\index{P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}!P\+C\+P\+Dynamic\+Column\+\_\+done@{P\+C\+P\+Dynamic\+Column\+\_\+done}}
+\index{P\+C\+P\+Dynamic\+Column\+\_\+done@{P\+C\+P\+Dynamic\+Column\+\_\+done}!P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Column\+\_\+done()}{PCPDynamicColumn\_done()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Column\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicColumn_8h_a4532d9e7590e9e295b35985eb95e4fad}{P\+C\+P\+Dynamic\+Column} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicColumn_8c_ab4daea47c86403c1e00a92f3eebb2246}\label{PCPDynamicColumn_8c_ab4daea47c86403c1e00a92f3eebb2246}} 
+\index{P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}!P\+C\+P\+Dynamic\+Column\+\_\+write\+Atom\+Value@{P\+C\+P\+Dynamic\+Column\+\_\+write\+Atom\+Value}}
+\index{P\+C\+P\+Dynamic\+Column\+\_\+write\+Atom\+Value@{P\+C\+P\+Dynamic\+Column\+\_\+write\+Atom\+Value}!P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Column\+\_\+write\+Atom\+Value()}{PCPDynamicColumn\_writeAtomValue()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Column\+\_\+write\+Atom\+Value (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicColumn_8h_a4532d9e7590e9e295b35985eb95e4fad}{P\+C\+P\+Dynamic\+Column} $\ast$}]{column,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{const struct \hyperlink{structSettings__}{Settings\+\_\+} $\ast$}]{settings,  }\item[{int}]{metric,  }\item[{int}]{instance,  }\item[{const pm\+Desc $\ast$}]{desc,  }\item[{const void $\ast$}]{atom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicColumn_8c_ac9d8987c2e7f77f4be3e22c765a3a007}\label{PCPDynamicColumn_8c_ac9d8987c2e7f77f4be3e22c765a3a007}} 
+\index{P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}!P\+C\+P\+Dynamic\+Column\+\_\+write\+Field@{P\+C\+P\+Dynamic\+Column\+\_\+write\+Field}}
+\index{P\+C\+P\+Dynamic\+Column\+\_\+write\+Field@{P\+C\+P\+Dynamic\+Column\+\_\+write\+Field}!P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Column\+\_\+write\+Field()}{PCPDynamicColumn\_writeField()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Column\+\_\+write\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicColumn_8h_a4532d9e7590e9e295b35985eb95e4fad}{P\+C\+P\+Dynamic\+Column} $\ast$}]{this,  }\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{proc,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicColumn_8c_a6821bb1a5a43633fe78d6539bc4f031d}\label{PCPDynamicColumn_8c_a6821bb1a5a43633fe78d6539bc4f031d}} 
+\index{P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}!P\+C\+P\+Dynamic\+Columns\+\_\+done@{P\+C\+P\+Dynamic\+Columns\+\_\+done}}
+\index{P\+C\+P\+Dynamic\+Columns\+\_\+done@{P\+C\+P\+Dynamic\+Columns\+\_\+done}!P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Columns\+\_\+done()}{PCPDynamicColumns\_done()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Columns\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicColumn_8c_a89655f61a5977c11fea923f1eb150789}\label{PCPDynamicColumn_8c_a89655f61a5977c11fea923f1eb150789}} 
+\index{P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}!P\+C\+P\+Dynamic\+Columns\+\_\+init@{P\+C\+P\+Dynamic\+Columns\+\_\+init}}
+\index{P\+C\+P\+Dynamic\+Columns\+\_\+init@{P\+C\+P\+Dynamic\+Columns\+\_\+init}!P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Columns\+\_\+init()}{PCPDynamicColumns\_init()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Columns\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicColumn_8h_a340cb3857a739ded09f30922e07f9a93}{P\+C\+P\+Dynamic\+Columns} $\ast$}]{columns }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicColumn_8c_ad9d2bf79f06e98aefa6f61156b9c5ce5}\label{PCPDynamicColumn_8c_ad9d2bf79f06e98aefa6f61156b9c5ce5}} 
+\index{P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}!P\+C\+P\+Dynamic\+Columns\+\_\+setup\+Widths@{P\+C\+P\+Dynamic\+Columns\+\_\+setup\+Widths}}
+\index{P\+C\+P\+Dynamic\+Columns\+\_\+setup\+Widths@{P\+C\+P\+Dynamic\+Columns\+\_\+setup\+Widths}!P\+C\+P\+Dynamic\+Column.\+c@{P\+C\+P\+Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Columns\+\_\+setup\+Widths()}{PCPDynamicColumns\_setupWidths()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Columns\+\_\+setup\+Widths (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicColumn_8h_a340cb3857a739ded09f30922e07f9a93}{P\+C\+P\+Dynamic\+Columns} $\ast$}]{columns }\end{DoxyParamCaption})}
+

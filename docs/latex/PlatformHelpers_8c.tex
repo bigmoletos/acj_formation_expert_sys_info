@@ -1,0 +1,65 @@
+\hypertarget{PlatformHelpers_8c}{}\section{linux/download/htop-\/3.3.0/darwin/\+Platform\+Helpers.c File Reference}
+\label{PlatformHelpers_8c}\index{linux/download/htop-\/3.\+3.\+0/darwin/\+Platform\+Helpers.\+c@{linux/download/htop-\/3.\+3.\+0/darwin/\+Platform\+Helpers.\+c}}
+{\ttfamily \#include \char`\"{}darwin/\+Platform\+Helpers.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sysctl.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+Include dependency graph for Platform\+Helpers.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{PlatformHelpers_8c_aefff42d1c3a6ded5250bc061422f0031}{Platform\+\_\+\+Get\+Kernel\+Version} (\hyperlink{structKernelVersion}{Kernel\+Version} $\ast$k)
+\item 
+int \hyperlink{PlatformHelpers_8c_aad29eb4fdff4e5f9ff943247f75e7380}{Platform\+\_\+\+Compare\+Kernel\+Version} (\hyperlink{structKernelVersion}{Kernel\+Version} v)
+\item 
+bool \hyperlink{PlatformHelpers_8c_a7b4756303a2f7898096384143f23dd64}{Platform\+\_\+\+Kernel\+Version\+Is\+Between} (\hyperlink{structKernelVersion}{Kernel\+Version} lower\+Bound, \hyperlink{structKernelVersion}{Kernel\+Version} upper\+Bound)
+\item 
+void \hyperlink{PlatformHelpers_8c_ace140fe6e3e8c8b0ec14e99b8c218374}{Platform\+\_\+get\+C\+P\+U\+Brand\+String} (char $\ast$cpu\+Brand\+String, size\+\_\+t cpu\+Brand\+String\+Size)
+\item 
+bool \hyperlink{PlatformHelpers_8c_a96365b78a9e0ecb52fc8f44e5da800de}{Platform\+\_\+is\+Running\+Translated} (void)
+\item 
+double \hyperlink{PlatformHelpers_8c_af2668ecbdc946d84c78b2ac9e5e41bfd}{Platform\+\_\+calculate\+Nanoseconds\+Per\+Mach\+Tick} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{PlatformHelpers_8c_af2668ecbdc946d84c78b2ac9e5e41bfd}\label{PlatformHelpers_8c_af2668ecbdc946d84c78b2ac9e5e41bfd}} 
+\index{Platform\+Helpers.\+c@{Platform\+Helpers.\+c}!Platform\+\_\+calculate\+Nanoseconds\+Per\+Mach\+Tick@{Platform\+\_\+calculate\+Nanoseconds\+Per\+Mach\+Tick}}
+\index{Platform\+\_\+calculate\+Nanoseconds\+Per\+Mach\+Tick@{Platform\+\_\+calculate\+Nanoseconds\+Per\+Mach\+Tick}!Platform\+Helpers.\+c@{Platform\+Helpers.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+calculate\+Nanoseconds\+Per\+Mach\+Tick()}{Platform\_calculateNanosecondsPerMachTick()}}
+{\footnotesize\ttfamily double Platform\+\_\+calculate\+Nanoseconds\+Per\+Mach\+Tick (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PlatformHelpers_8c_aad29eb4fdff4e5f9ff943247f75e7380}\label{PlatformHelpers_8c_aad29eb4fdff4e5f9ff943247f75e7380}} 
+\index{Platform\+Helpers.\+c@{Platform\+Helpers.\+c}!Platform\+\_\+\+Compare\+Kernel\+Version@{Platform\+\_\+\+Compare\+Kernel\+Version}}
+\index{Platform\+\_\+\+Compare\+Kernel\+Version@{Platform\+\_\+\+Compare\+Kernel\+Version}!Platform\+Helpers.\+c@{Platform\+Helpers.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+\+Compare\+Kernel\+Version()}{Platform\_CompareKernelVersion()}}
+{\footnotesize\ttfamily int Platform\+\_\+\+Compare\+Kernel\+Version (\begin{DoxyParamCaption}\item[{\hyperlink{structKernelVersion}{Kernel\+Version}}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PlatformHelpers_8c_ace140fe6e3e8c8b0ec14e99b8c218374}\label{PlatformHelpers_8c_ace140fe6e3e8c8b0ec14e99b8c218374}} 
+\index{Platform\+Helpers.\+c@{Platform\+Helpers.\+c}!Platform\+\_\+get\+C\+P\+U\+Brand\+String@{Platform\+\_\+get\+C\+P\+U\+Brand\+String}}
+\index{Platform\+\_\+get\+C\+P\+U\+Brand\+String@{Platform\+\_\+get\+C\+P\+U\+Brand\+String}!Platform\+Helpers.\+c@{Platform\+Helpers.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+C\+P\+U\+Brand\+String()}{Platform\_getCPUBrandString()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+C\+P\+U\+Brand\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{cpu\+Brand\+String,  }\item[{size\+\_\+t}]{cpu\+Brand\+String\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PlatformHelpers_8c_aefff42d1c3a6ded5250bc061422f0031}\label{PlatformHelpers_8c_aefff42d1c3a6ded5250bc061422f0031}} 
+\index{Platform\+Helpers.\+c@{Platform\+Helpers.\+c}!Platform\+\_\+\+Get\+Kernel\+Version@{Platform\+\_\+\+Get\+Kernel\+Version}}
+\index{Platform\+\_\+\+Get\+Kernel\+Version@{Platform\+\_\+\+Get\+Kernel\+Version}!Platform\+Helpers.\+c@{Platform\+Helpers.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+\+Get\+Kernel\+Version()}{Platform\_GetKernelVersion()}}
+{\footnotesize\ttfamily void Platform\+\_\+\+Get\+Kernel\+Version (\begin{DoxyParamCaption}\item[{\hyperlink{structKernelVersion}{Kernel\+Version} $\ast$}]{k }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PlatformHelpers_8c_a96365b78a9e0ecb52fc8f44e5da800de}\label{PlatformHelpers_8c_a96365b78a9e0ecb52fc8f44e5da800de}} 
+\index{Platform\+Helpers.\+c@{Platform\+Helpers.\+c}!Platform\+\_\+is\+Running\+Translated@{Platform\+\_\+is\+Running\+Translated}}
+\index{Platform\+\_\+is\+Running\+Translated@{Platform\+\_\+is\+Running\+Translated}!Platform\+Helpers.\+c@{Platform\+Helpers.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+is\+Running\+Translated()}{Platform\_isRunningTranslated()}}
+{\footnotesize\ttfamily bool Platform\+\_\+is\+Running\+Translated (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PlatformHelpers_8c_a7b4756303a2f7898096384143f23dd64}\label{PlatformHelpers_8c_a7b4756303a2f7898096384143f23dd64}} 
+\index{Platform\+Helpers.\+c@{Platform\+Helpers.\+c}!Platform\+\_\+\+Kernel\+Version\+Is\+Between@{Platform\+\_\+\+Kernel\+Version\+Is\+Between}}
+\index{Platform\+\_\+\+Kernel\+Version\+Is\+Between@{Platform\+\_\+\+Kernel\+Version\+Is\+Between}!Platform\+Helpers.\+c@{Platform\+Helpers.\+c}}
+\subsubsection{\texorpdfstring{Platform\+\_\+\+Kernel\+Version\+Is\+Between()}{Platform\_KernelVersionIsBetween()}}
+{\footnotesize\ttfamily bool Platform\+\_\+\+Kernel\+Version\+Is\+Between (\begin{DoxyParamCaption}\item[{\hyperlink{structKernelVersion}{Kernel\+Version}}]{lower\+Bound,  }\item[{\hyperlink{structKernelVersion}{Kernel\+Version}}]{upper\+Bound }\end{DoxyParamCaption})}
+

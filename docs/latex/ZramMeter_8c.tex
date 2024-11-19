@@ -1,0 +1,44 @@
+\hypertarget{ZramMeter_8c}{}\section{linux/download/htop-\/3.3.0/linux/\+Zram\+Meter.c File Reference}
+\label{ZramMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/linux/\+Zram\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/linux/\+Zram\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Zram\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+Include dependency graph for Zram\+Meter.\+c\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{ZramMeter_8c_a1e7bdae38ede8d4f2c5ff6a12be93e78}{Zram\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ZramMeter_8c_a1e7bdae38ede8d4f2c5ff6a12be93e78}\label{ZramMeter_8c_a1e7bdae38ede8d4f2c5ff6a12be93e78}} 
+\index{Zram\+Meter.\+c@{Zram\+Meter.\+c}!Zram\+Meter\+\_\+class@{Zram\+Meter\+\_\+class}}
+\index{Zram\+Meter\+\_\+class@{Zram\+Meter\+\_\+class}!Zram\+Meter.\+c@{Zram\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Zram\+Meter\+\_\+class}{ZramMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Zram\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = ZramMeter\_display,
+   \},
+   .updateValues = ZramMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa7da66e2e324247d0722afd14d7f12037}{BAR\_METERMODE},
+   .maxItems = \hyperlink{ZramMeter_8h_a58f4108e60da5b9c95837918965fb81aa185900a9359a4cac5a0f4bb4affd69d7}{ZRAM\_METER\_ITEMCOUNT},
+   .total = 100.0,
+   .attributes = ZramMeter\_attributes,
+   .name = \textcolor{stringliteral}{"Zram"},
+   .uiName = \textcolor{stringliteral}{"Zram"},
+   .caption = \textcolor{stringliteral}{"zrm"}
+\}
+\end{DoxyCode}

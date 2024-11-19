@@ -1,0 +1,311 @@
+\hypertarget{Process_8c}{}\section{linux/download/htop-\/3.3.0/\+Process.c File Reference}
+\label{Process_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Process.\+c@{linux/download/htop-\/3.\+3.\+0/\+Process.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/resource.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Column.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scheduling.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Process.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Process_8c_a389bdfc15bea83bdd54353e1758e22e3}{T\+A\+S\+K\+\_\+\+C\+O\+M\+M\+\_\+\+L\+EN}~16
+\item 
+\#define \hyperlink{Process_8c_a36b29d2f5eddffd4639ef060f2d5c47d}{W\+R\+I\+T\+E\+\_\+\+H\+I\+G\+H\+L\+I\+G\+HT}(\+\_\+offset,  \+\_\+length,  \+\_\+attr,  \+\_\+flags)
+\item 
+\#define \hyperlink{Process_8c_a6aeebcf1888926dfe8d1a70574c0154d}{W\+R\+I\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}
+\item 
+\#define \hyperlink{Process_8c_af2a9992e81ca1f871088c0d8768f8627}{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+RK}(str\+\_\+,  prefix\+\_\+)
+\item 
+\#define \hyperlink{Process_8c_ad1e5c47caa73cd0a88877dfb810b29b8}{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+R\+K\+\_\+\+D\+I\+S\+T\+\_\+\+P\+A\+T\+H\+\_\+\+P\+R\+E\+F\+I\+X\+ES}(str\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Process_8c_a426435a0f5480c43db1940e573d1382a}{Process\+\_\+fill\+Starttime\+Buffer} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this)
+\item 
+void \hyperlink{Process_8c_a5f06b2744379cd2ef3e5f5d83a945149}{Process\+\_\+make\+Command\+Str} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this, const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings)
+\item 
+void \hyperlink{Process_8c_a14424564424794cb81a88466793f917c}{Process\+\_\+write\+Command} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this, int attr, int base\+Attr, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str)
+\item 
+void \hyperlink{Process_8c_aebd2e8fb19fb8b92f484a5cf58562b62}{Process\+\_\+write\+Field} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, \hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field} field)
+\item 
+void \hyperlink{Process_8c_abff835509d1a6bc5b96a190ef274ee0c}{Process\+\_\+done} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this)
+\item 
+const char $\ast$ \hyperlink{Process_8c_a83773d4ad55545504ede3b92bb8d707c}{Process\+\_\+get\+Command} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this)
+\item 
+const char $\ast$ \hyperlink{Process_8c_a20530177962c8b1f48b2baadff6934aa}{Process\+\_\+row\+Get\+Sort\+Key} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super)
+\item 
+bool \hyperlink{Process_8c_acc33de0abdacffbc71764974189a2623}{Process\+\_\+row\+Is\+Highlighted} (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super)
+\item 
+bool \hyperlink{Process_8c_a81c1e83185bbf4303493558555e27f79}{Process\+\_\+row\+Is\+Visible} (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super, const \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$table)
+\item 
+bool \hyperlink{Process_8c_a8447645ae54a0f49d0c67a7a6ccacd18}{Process\+\_\+row\+Matches\+Filter} (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super, const \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$table)
+\item 
+void \hyperlink{Process_8c_ad20265a0d7d10712f972f158788ff027}{Process\+\_\+init} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this, const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\item 
+bool \hyperlink{Process_8c_aaf8ea7798476f11a4a18e8ad14a3ec75}{Process\+\_\+row\+Set\+Priority} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super, int priority)
+\item 
+bool \hyperlink{Process_8c_a3fa721a7ec555699dfa2c01cdfafa932}{Process\+\_\+row\+Change\+Priority\+By} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super, \hyperlink{unionArg}{Arg} delta)
+\item 
+bool \hyperlink{Process_8c_a003253ac5a037f3adc9910d83224a40a}{Process\+\_\+row\+Send\+Signal} (\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$super, \hyperlink{unionArg}{Arg} sgn)
+\item 
+int \hyperlink{Process_8c_adfe5da81af5bdb6f1737efff4115ae59}{Process\+\_\+compare} (const void $\ast$v1, const void $\ast$v2)
+\item 
+int \hyperlink{Process_8c_ad3b2093e8d84dc6178be2e6eb96f89b5}{Process\+\_\+compare\+By\+Parent} (const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$r1, const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$r2)
+\item 
+int \hyperlink{Process_8c_a94d764aa8cdcddd3a7300ffb860abbdd}{Process\+\_\+compare\+By\+Key\+\_\+\+Base} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$p1, const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$p2, \hyperlink{Process_8h_a23f514dba817798419bae559ca58078b}{Process\+Field} \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+void \hyperlink{Process_8c_abb61e1d6ec16a41b5844547d6f27ed57}{Process\+\_\+update\+Comm} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this, const char $\ast$comm)
+\item 
+void \hyperlink{Process_8c_a84695457d0db6093d6c1997707336a8a}{Process\+\_\+update\+Cmdline} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this, const char $\ast$cmdline, int basename\+Start, int basename\+End)
+\item 
+void \hyperlink{Process_8c_a93108787672ce112c26640cc7cd97a4c}{Process\+\_\+update\+Exe} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this, const char $\ast$exe)
+\item 
+void \hyperlink{Process_8c_a9e35deffa06a63dacb5790d6c5672c62}{Process\+\_\+update\+C\+P\+U\+Field\+Widths} (float percentage)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} \hyperlink{Process_8c_a3daad9717ef6978c8436290d59489ff2}{Process\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Process_8c_af2a9992e81ca1f871088c0d8768f8627}\label{Process_8c_af2a9992e81ca1f871088c0d8768f8627}} 
+\index{Process.\+c@{Process.\+c}!C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+RK@{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+RK}}
+\index{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+RK@{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+RK}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+RK}{CHECK\_AND\_MARK}}
+{\footnotesize\ttfamily \#define C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+RK(\begin{DoxyParamCaption}\item[{}]{str\+\_\+,  }\item[{}]{prefix\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (String\_startsWith(str\_, prefix\_)) \{                                                 \(\backslash\)
+         WRITE\_HIGHLIGHT(0, strlen(prefix\_), \hyperlink{CRT_8c_a86bf3fcbd1afe6367e2cd70958076109}{CRT\_colors}[\hyperlink{CRT_8h_a3966d1f2a814605f9a44f285a0205fb3ae2c2ab233b5bbc16fe871c6dead3e9a4}{PROCESS\_SHADOW}], 
+      \hyperlink{Process_8h_a1a9cbd1346ecba6073aea6db96710b40}{CMDLINE\_HIGHLIGHT\_FLAG\_PREFIXDIR}); \(\backslash\)
+         break;                                                                               \(\backslash\)
+      \} \textcolor{keywordflow}{else} (\textcolor{keywordtype}{void})0
+\end{DoxyCode}
+\mbox{\Hypertarget{Process_8c_ad1e5c47caa73cd0a88877dfb810b29b8}\label{Process_8c_ad1e5c47caa73cd0a88877dfb810b29b8}} 
+\index{Process.\+c@{Process.\+c}!C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+R\+K\+\_\+\+D\+I\+S\+T\+\_\+\+P\+A\+T\+H\+\_\+\+P\+R\+E\+F\+I\+X\+ES@{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+R\+K\+\_\+\+D\+I\+S\+T\+\_\+\+P\+A\+T\+H\+\_\+\+P\+R\+E\+F\+I\+X\+ES}}
+\index{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+R\+K\+\_\+\+D\+I\+S\+T\+\_\+\+P\+A\+T\+H\+\_\+\+P\+R\+E\+F\+I\+X\+ES@{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+R\+K\+\_\+\+D\+I\+S\+T\+\_\+\+P\+A\+T\+H\+\_\+\+P\+R\+E\+F\+I\+X\+ES}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+R\+K\+\_\+\+D\+I\+S\+T\+\_\+\+P\+A\+T\+H\+\_\+\+P\+R\+E\+F\+I\+X\+ES}{CHECK\_AND\_MARK\_DIST\_PATH\_PREFIXES}}
+{\footnotesize\ttfamily \#define C\+H\+E\+C\+K\+\_\+\+A\+N\+D\+\_\+\+M\+A\+R\+K\+\_\+\+D\+I\+S\+T\+\_\+\+P\+A\+T\+H\+\_\+\+P\+R\+E\+F\+I\+X\+ES(\begin{DoxyParamCaption}\item[{}]{str\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a389bdfc15bea83bdd54353e1758e22e3}\label{Process_8c_a389bdfc15bea83bdd54353e1758e22e3}} 
+\index{Process.\+c@{Process.\+c}!T\+A\+S\+K\+\_\+\+C\+O\+M\+M\+\_\+\+L\+EN@{T\+A\+S\+K\+\_\+\+C\+O\+M\+M\+\_\+\+L\+EN}}
+\index{T\+A\+S\+K\+\_\+\+C\+O\+M\+M\+\_\+\+L\+EN@{T\+A\+S\+K\+\_\+\+C\+O\+M\+M\+\_\+\+L\+EN}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{T\+A\+S\+K\+\_\+\+C\+O\+M\+M\+\_\+\+L\+EN}{TASK\_COMM\_LEN}}
+{\footnotesize\ttfamily \#define T\+A\+S\+K\+\_\+\+C\+O\+M\+M\+\_\+\+L\+EN~16}
+
+\mbox{\Hypertarget{Process_8c_a36b29d2f5eddffd4639ef060f2d5c47d}\label{Process_8c_a36b29d2f5eddffd4639ef060f2d5c47d}} 
+\index{Process.\+c@{Process.\+c}!W\+R\+I\+T\+E\+\_\+\+H\+I\+G\+H\+L\+I\+G\+HT@{W\+R\+I\+T\+E\+\_\+\+H\+I\+G\+H\+L\+I\+G\+HT}}
+\index{W\+R\+I\+T\+E\+\_\+\+H\+I\+G\+H\+L\+I\+G\+HT@{W\+R\+I\+T\+E\+\_\+\+H\+I\+G\+H\+L\+I\+G\+HT}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+H\+I\+G\+H\+L\+I\+G\+HT}{WRITE\_HIGHLIGHT}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+H\+I\+G\+H\+L\+I\+G\+HT(\begin{DoxyParamCaption}\item[{}]{\+\_\+offset,  }\item[{}]{\+\_\+length,  }\item[{}]{\+\_\+attr,  }\item[{}]{\+\_\+flags }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                    \(\backslash\)
+         \textcolor{comment}{/* Check if we still have capacity */}                                                \(\backslash\)
+         assert(mc->highlightCount < \hyperlink{Macros_8h_a9670edf37e84bf953c542953136abfd6}{ARRAYSIZE}(mc->highlights));                              \(\backslash\)
+         if (mc->highlightCount >= \hyperlink{Macros_8h_a9670edf37e84bf953c542953136abfd6}{ARRAYSIZE}(mc->highlights))                                 \(\backslash\)
+            break;                                                                            \(\backslash\)
+                                                                                              \(\backslash\)
+         mc->highlights[mc->highlightCount].offset = str - strStart + (\_offset) - mbMismatch; \(\backslash\)
+         mc->highlights[mc->highlightCount].length = \_length;                                 \(\backslash\)
+         mc->highlights[mc->highlightCount].attr = \_attr;                                     \(\backslash\)
+         mc->highlights[mc->highlightCount].flags = \_flags;                                   \(\backslash\)
+         mc->highlightCount++;                                                                \(\backslash\)
+      \} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\mbox{\Hypertarget{Process_8c_a6aeebcf1888926dfe8d1a70574c0154d}\label{Process_8c_a6aeebcf1888926dfe8d1a70574c0154d}} 
+\index{Process.\+c@{Process.\+c}!W\+R\+I\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{W\+R\+I\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}}
+\index{W\+R\+I\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{W\+R\+I\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}{WRITE\_SEPARATOR}}
+{\footnotesize\ttfamily \#define W\+R\+I\+T\+E\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                    \(\backslash\)
+         WRITE\_HIGHLIGHT(0, 1, \hyperlink{CRT_8c_a86bf3fcbd1afe6367e2cd70958076109}{CRT\_colors}[\hyperlink{CRT_8h_a3966d1f2a814605f9a44f285a0205fb3ae211ff341e58687c02019dc05eb1ebf4}{FAILED\_READ}], 
+      \hyperlink{Process_8h_a4cd5d1427715d4853f7a09a4335e27d7}{CMDLINE\_HIGHLIGHT\_FLAG\_SEPARATOR});    \(\backslash\)
+         mbMismatch += SEPARATOR\_LEN - 1;                                                     \(\backslash\)
+         str = stpcpy(str, SEPARATOR);                                                        \(\backslash\)
+      \} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Process_8c_adfe5da81af5bdb6f1737efff4115ae59}\label{Process_8c_adfe5da81af5bdb6f1737efff4115ae59}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+compare@{Process\+\_\+compare}}
+\index{Process\+\_\+compare@{Process\+\_\+compare}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+compare()}{Process\_compare()}}
+{\footnotesize\ttfamily int Process\+\_\+compare (\begin{DoxyParamCaption}\item[{const void $\ast$}]{v1,  }\item[{const void $\ast$}]{v2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a94d764aa8cdcddd3a7300ffb860abbdd}\label{Process_8c_a94d764aa8cdcddd3a7300ffb860abbdd}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+compare\+By\+Key\+\_\+\+Base@{Process\+\_\+compare\+By\+Key\+\_\+\+Base}}
+\index{Process\+\_\+compare\+By\+Key\+\_\+\+Base@{Process\+\_\+compare\+By\+Key\+\_\+\+Base}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+compare\+By\+Key\+\_\+\+Base()}{Process\_compareByKey\_Base()}}
+{\footnotesize\ttfamily int Process\+\_\+compare\+By\+Key\+\_\+\+Base (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{p1,  }\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{p2,  }\item[{\hyperlink{Process_8h_a23f514dba817798419bae559ca58078b}{Process\+Field}}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_ad3b2093e8d84dc6178be2e6eb96f89b5}\label{Process_8c_ad3b2093e8d84dc6178be2e6eb96f89b5}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+compare\+By\+Parent@{Process\+\_\+compare\+By\+Parent}}
+\index{Process\+\_\+compare\+By\+Parent@{Process\+\_\+compare\+By\+Parent}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+compare\+By\+Parent()}{Process\_compareByParent()}}
+{\footnotesize\ttfamily int Process\+\_\+compare\+By\+Parent (\begin{DoxyParamCaption}\item[{const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{r1,  }\item[{const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{r2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_abff835509d1a6bc5b96a190ef274ee0c}\label{Process_8c_abff835509d1a6bc5b96a190ef274ee0c}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+done@{Process\+\_\+done}}
+\index{Process\+\_\+done@{Process\+\_\+done}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+done()}{Process\_done()}}
+{\footnotesize\ttfamily void Process\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a426435a0f5480c43db1940e573d1382a}\label{Process_8c_a426435a0f5480c43db1940e573d1382a}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+fill\+Starttime\+Buffer@{Process\+\_\+fill\+Starttime\+Buffer}}
+\index{Process\+\_\+fill\+Starttime\+Buffer@{Process\+\_\+fill\+Starttime\+Buffer}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+fill\+Starttime\+Buffer()}{Process\_fillStarttimeBuffer()}}
+{\footnotesize\ttfamily void Process\+\_\+fill\+Starttime\+Buffer (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a83773d4ad55545504ede3b92bb8d707c}\label{Process_8c_a83773d4ad55545504ede3b92bb8d707c}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+get\+Command@{Process\+\_\+get\+Command}}
+\index{Process\+\_\+get\+Command@{Process\+\_\+get\+Command}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+get\+Command()}{Process\_getCommand()}}
+{\footnotesize\ttfamily const char$\ast$ Process\+\_\+get\+Command (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_ad20265a0d7d10712f972f158788ff027}\label{Process_8c_ad20265a0d7d10712f972f158788ff027}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+init@{Process\+\_\+init}}
+\index{Process\+\_\+init@{Process\+\_\+init}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+init()}{Process\_init()}}
+{\footnotesize\ttfamily void Process\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this,  }\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a5f06b2744379cd2ef3e5f5d83a945149}\label{Process_8c_a5f06b2744379cd2ef3e5f5d83a945149}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+make\+Command\+Str@{Process\+\_\+make\+Command\+Str}}
+\index{Process\+\_\+make\+Command\+Str@{Process\+\_\+make\+Command\+Str}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+make\+Command\+Str()}{Process\_makeCommandStr()}}
+{\footnotesize\ttfamily void Process\+\_\+make\+Command\+Str (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this,  }\item[{const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a3fa721a7ec555699dfa2c01cdfafa932}\label{Process_8c_a3fa721a7ec555699dfa2c01cdfafa932}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+row\+Change\+Priority\+By@{Process\+\_\+row\+Change\+Priority\+By}}
+\index{Process\+\_\+row\+Change\+Priority\+By@{Process\+\_\+row\+Change\+Priority\+By}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+row\+Change\+Priority\+By()}{Process\_rowChangePriorityBy()}}
+{\footnotesize\ttfamily bool Process\+\_\+row\+Change\+Priority\+By (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super,  }\item[{\hyperlink{unionArg}{Arg}}]{delta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a20530177962c8b1f48b2baadff6934aa}\label{Process_8c_a20530177962c8b1f48b2baadff6934aa}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+row\+Get\+Sort\+Key@{Process\+\_\+row\+Get\+Sort\+Key}}
+\index{Process\+\_\+row\+Get\+Sort\+Key@{Process\+\_\+row\+Get\+Sort\+Key}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+row\+Get\+Sort\+Key()}{Process\_rowGetSortKey()}}
+{\footnotesize\ttfamily const char$\ast$ Process\+\_\+row\+Get\+Sort\+Key (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_acc33de0abdacffbc71764974189a2623}\label{Process_8c_acc33de0abdacffbc71764974189a2623}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+row\+Is\+Highlighted@{Process\+\_\+row\+Is\+Highlighted}}
+\index{Process\+\_\+row\+Is\+Highlighted@{Process\+\_\+row\+Is\+Highlighted}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+row\+Is\+Highlighted()}{Process\_rowIsHighlighted()}}
+{\footnotesize\ttfamily bool Process\+\_\+row\+Is\+Highlighted (\begin{DoxyParamCaption}\item[{const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a81c1e83185bbf4303493558555e27f79}\label{Process_8c_a81c1e83185bbf4303493558555e27f79}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+row\+Is\+Visible@{Process\+\_\+row\+Is\+Visible}}
+\index{Process\+\_\+row\+Is\+Visible@{Process\+\_\+row\+Is\+Visible}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+row\+Is\+Visible()}{Process\_rowIsVisible()}}
+{\footnotesize\ttfamily bool Process\+\_\+row\+Is\+Visible (\begin{DoxyParamCaption}\item[{const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super,  }\item[{const \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a8447645ae54a0f49d0c67a7a6ccacd18}\label{Process_8c_a8447645ae54a0f49d0c67a7a6ccacd18}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+row\+Matches\+Filter@{Process\+\_\+row\+Matches\+Filter}}
+\index{Process\+\_\+row\+Matches\+Filter@{Process\+\_\+row\+Matches\+Filter}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+row\+Matches\+Filter()}{Process\_rowMatchesFilter()}}
+{\footnotesize\ttfamily bool Process\+\_\+row\+Matches\+Filter (\begin{DoxyParamCaption}\item[{const \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super,  }\item[{const \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a003253ac5a037f3adc9910d83224a40a}\label{Process_8c_a003253ac5a037f3adc9910d83224a40a}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+row\+Send\+Signal@{Process\+\_\+row\+Send\+Signal}}
+\index{Process\+\_\+row\+Send\+Signal@{Process\+\_\+row\+Send\+Signal}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+row\+Send\+Signal()}{Process\_rowSendSignal()}}
+{\footnotesize\ttfamily bool Process\+\_\+row\+Send\+Signal (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super,  }\item[{\hyperlink{unionArg}{Arg}}]{sgn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_aaf8ea7798476f11a4a18e8ad14a3ec75}\label{Process_8c_aaf8ea7798476f11a4a18e8ad14a3ec75}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+row\+Set\+Priority@{Process\+\_\+row\+Set\+Priority}}
+\index{Process\+\_\+row\+Set\+Priority@{Process\+\_\+row\+Set\+Priority}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+row\+Set\+Priority()}{Process\_rowSetPriority()}}
+{\footnotesize\ttfamily bool Process\+\_\+row\+Set\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{super,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a84695457d0db6093d6c1997707336a8a}\label{Process_8c_a84695457d0db6093d6c1997707336a8a}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+update\+Cmdline@{Process\+\_\+update\+Cmdline}}
+\index{Process\+\_\+update\+Cmdline@{Process\+\_\+update\+Cmdline}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+update\+Cmdline()}{Process\_updateCmdline()}}
+{\footnotesize\ttfamily void Process\+\_\+update\+Cmdline (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this,  }\item[{const char $\ast$}]{cmdline,  }\item[{int}]{basename\+Start,  }\item[{int}]{basename\+End }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_abb61e1d6ec16a41b5844547d6f27ed57}\label{Process_8c_abb61e1d6ec16a41b5844547d6f27ed57}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+update\+Comm@{Process\+\_\+update\+Comm}}
+\index{Process\+\_\+update\+Comm@{Process\+\_\+update\+Comm}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+update\+Comm()}{Process\_updateComm()}}
+{\footnotesize\ttfamily void Process\+\_\+update\+Comm (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this,  }\item[{const char $\ast$}]{comm }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a9e35deffa06a63dacb5790d6c5672c62}\label{Process_8c_a9e35deffa06a63dacb5790d6c5672c62}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+update\+C\+P\+U\+Field\+Widths@{Process\+\_\+update\+C\+P\+U\+Field\+Widths}}
+\index{Process\+\_\+update\+C\+P\+U\+Field\+Widths@{Process\+\_\+update\+C\+P\+U\+Field\+Widths}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+update\+C\+P\+U\+Field\+Widths()}{Process\_updateCPUFieldWidths()}}
+{\footnotesize\ttfamily void Process\+\_\+update\+C\+P\+U\+Field\+Widths (\begin{DoxyParamCaption}\item[{float}]{percentage }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a93108787672ce112c26640cc7cd97a4c}\label{Process_8c_a93108787672ce112c26640cc7cd97a4c}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+update\+Exe@{Process\+\_\+update\+Exe}}
+\index{Process\+\_\+update\+Exe@{Process\+\_\+update\+Exe}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+update\+Exe()}{Process\_updateExe()}}
+{\footnotesize\ttfamily void Process\+\_\+update\+Exe (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this,  }\item[{const char $\ast$}]{exe }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_a14424564424794cb81a88466793f917c}\label{Process_8c_a14424564424794cb81a88466793f917c}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+write\+Command@{Process\+\_\+write\+Command}}
+\index{Process\+\_\+write\+Command@{Process\+\_\+write\+Command}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+write\+Command()}{Process\_writeCommand()}}
+{\footnotesize\ttfamily void Process\+\_\+write\+Command (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this,  }\item[{int}]{attr,  }\item[{int}]{base\+Attr,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Process_8c_aebd2e8fb19fb8b92f484a5cf58562b62}\label{Process_8c_aebd2e8fb19fb8b92f484a5cf58562b62}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+write\+Field@{Process\+\_\+write\+Field}}
+\index{Process\+\_\+write\+Field@{Process\+\_\+write\+Field}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+write\+Field()}{Process\_writeField()}}
+{\footnotesize\ttfamily void Process\+\_\+write\+Field (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{\hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field}}]{field }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Process_8c_a3daad9717ef6978c8436290d59489ff2}\label{Process_8c_a3daad9717ef6978c8436290d59489ff2}} 
+\index{Process.\+c@{Process.\+c}!Process\+\_\+class@{Process\+\_\+class}}
+\index{Process\+\_\+class@{Process\+\_\+class}!Process.\+c@{Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+class}{Process\_class}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} Process\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .super = \{
+         .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structRow__}{Row}),
+         .display = \hyperlink{Row_8c_a1ca72e911c0e2299061df16e80da6a80}{Row\_display},
+         .delete = \hyperlink{DarwinProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\_delete},
+         .compare = \hyperlink{Process_8c_adfe5da81af5bdb6f1737efff4115ae59}{Process\_compare}
+      \},
+      .isHighlighted = \hyperlink{Process_8c_acc33de0abdacffbc71764974189a2623}{Process\_rowIsHighlighted},
+      .isVisible = \hyperlink{Process_8c_a81c1e83185bbf4303493558555e27f79}{Process\_rowIsVisible},
+      .matchesFilter = \hyperlink{Process_8c_a8447645ae54a0f49d0c67a7a6ccacd18}{Process\_rowMatchesFilter},
+      .sortKeyString = \hyperlink{Process_8c_a20530177962c8b1f48b2baadff6934aa}{Process\_rowGetSortKey},
+      .compareByParent = \hyperlink{Process_8c_ad3b2093e8d84dc6178be2e6eb96f89b5}{Process\_compareByParent},
+      .writeField = Process\_rowWriteField
+   \},
+\}
+\end{DoxyCode}

@@ -1,0 +1,136 @@
+\hypertarget{Metric_8c}{}\section{linux/download/htop-\/3.3.0/pcp/\+Metric.c File Reference}
+\label{Metric_8c}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+Metric.\+c@{linux/download/htop-\/3.\+3.\+0/pcp/\+Metric.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+Metric.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+Platform.\+h\char`\"{}}\newline
+Include dependency graph for Metric.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const pm\+Desc $\ast$ \hyperlink{Metric_8c_a59841e77819aba235feff6e07895539d}{Metric\+\_\+desc} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric)
+\item 
+int \hyperlink{Metric_8c_abc511f6e5389ef7e407d93a9d2b62e5b}{Metric\+\_\+type} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric)
+\item 
+pm\+Atom\+Value $\ast$ \hyperlink{Metric_8c_aedc65308b8bd3ef1a290619c6b2c3e26}{Metric\+\_\+values} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric, pm\+Atom\+Value $\ast$atom, int count, int type)
+\item 
+int \hyperlink{Metric_8c_a3b98e9b6ca7e4397b0b81060365bfd76}{Metric\+\_\+instance\+Count} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric)
+\item 
+int \hyperlink{Metric_8c_a150ca2a4f7804ccb38659bd8539585a2}{Metric\+\_\+instance\+Offset} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric, int inst)
+\item 
+pm\+Atom\+Value $\ast$ \hyperlink{Metric_8c_a4d3351fad2f9d52caa6342c5f4e0e60e}{Metric\+\_\+instance} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric, int inst, int offset, pm\+Atom\+Value $\ast$atom, int type)
+\item 
+bool \hyperlink{Metric_8c_afa30a54e8c90bbf662ae25e185d9db01}{Metric\+\_\+iterate} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric, int $\ast$instp, int $\ast$offsetp)
+\item 
+void \hyperlink{Metric_8c_aff9c96ff85e35673ee0b20a9c6c90b86}{Metric\+\_\+enable} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric, bool enable)
+\item 
+bool \hyperlink{Metric_8c_a83af3f58ae4ce1d7881c29ad10614be5}{Metric\+\_\+enabled} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric)
+\item 
+void \hyperlink{Metric_8c_ac366c2ee5627637d9bde5aaa1088136f}{Metric\+\_\+enable\+Threads} (void)
+\item 
+bool \hyperlink{Metric_8c_a0aa7a23af1ca25e737beeeccc8b45757}{Metric\+\_\+fetch} (struct timeval $\ast$timestamp)
+\item 
+void \hyperlink{Metric_8c_a13325acdbdf379af01d8ffbecf8218eb}{Metric\+\_\+external\+Name} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} metric, int inst, char $\ast$$\ast$external\+Name)
+\item 
+int \hyperlink{Metric_8c_a2e0665dd5590240ec875fa87535d3c5a}{Metric\+\_\+lookup\+Text} (const char $\ast$metric, char $\ast$$\ast$desc)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pcp_2Platform_8h_a1b3fd1e816fe74e7d7dc2d7323471de6}{Platform} $\ast$ \hyperlink{Metric_8c_a45a3a320376089d1784e001189222307}{pcp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Metric_8c_a59841e77819aba235feff6e07895539d}\label{Metric_8c_a59841e77819aba235feff6e07895539d}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+desc@{Metric\+\_\+desc}}
+\index{Metric\+\_\+desc@{Metric\+\_\+desc}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+desc()}{Metric\_desc()}}
+{\footnotesize\ttfamily const pm\+Desc$\ast$ Metric\+\_\+desc (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_aff9c96ff85e35673ee0b20a9c6c90b86}\label{Metric_8c_aff9c96ff85e35673ee0b20a9c6c90b86}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+enable@{Metric\+\_\+enable}}
+\index{Metric\+\_\+enable@{Metric\+\_\+enable}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+enable()}{Metric\_enable()}}
+{\footnotesize\ttfamily void Metric\+\_\+enable (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric,  }\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_a83af3f58ae4ce1d7881c29ad10614be5}\label{Metric_8c_a83af3f58ae4ce1d7881c29ad10614be5}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+enabled@{Metric\+\_\+enabled}}
+\index{Metric\+\_\+enabled@{Metric\+\_\+enabled}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+enabled()}{Metric\_enabled()}}
+{\footnotesize\ttfamily bool Metric\+\_\+enabled (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_ac366c2ee5627637d9bde5aaa1088136f}\label{Metric_8c_ac366c2ee5627637d9bde5aaa1088136f}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+enable\+Threads@{Metric\+\_\+enable\+Threads}}
+\index{Metric\+\_\+enable\+Threads@{Metric\+\_\+enable\+Threads}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+enable\+Threads()}{Metric\_enableThreads()}}
+{\footnotesize\ttfamily void Metric\+\_\+enable\+Threads (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_a13325acdbdf379af01d8ffbecf8218eb}\label{Metric_8c_a13325acdbdf379af01d8ffbecf8218eb}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+external\+Name@{Metric\+\_\+external\+Name}}
+\index{Metric\+\_\+external\+Name@{Metric\+\_\+external\+Name}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+external\+Name()}{Metric\_externalName()}}
+{\footnotesize\ttfamily void Metric\+\_\+external\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric,  }\item[{int}]{inst,  }\item[{char $\ast$$\ast$}]{external\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_a0aa7a23af1ca25e737beeeccc8b45757}\label{Metric_8c_a0aa7a23af1ca25e737beeeccc8b45757}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+fetch@{Metric\+\_\+fetch}}
+\index{Metric\+\_\+fetch@{Metric\+\_\+fetch}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+fetch()}{Metric\_fetch()}}
+{\footnotesize\ttfamily bool Metric\+\_\+fetch (\begin{DoxyParamCaption}\item[{struct timeval $\ast$}]{timestamp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_a4d3351fad2f9d52caa6342c5f4e0e60e}\label{Metric_8c_a4d3351fad2f9d52caa6342c5f4e0e60e}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+instance@{Metric\+\_\+instance}}
+\index{Metric\+\_\+instance@{Metric\+\_\+instance}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+instance()}{Metric\_instance()}}
+{\footnotesize\ttfamily pm\+Atom\+Value$\ast$ Metric\+\_\+instance (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric,  }\item[{int}]{inst,  }\item[{int}]{offset,  }\item[{pm\+Atom\+Value $\ast$}]{atom,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_a3b98e9b6ca7e4397b0b81060365bfd76}\label{Metric_8c_a3b98e9b6ca7e4397b0b81060365bfd76}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+instance\+Count@{Metric\+\_\+instance\+Count}}
+\index{Metric\+\_\+instance\+Count@{Metric\+\_\+instance\+Count}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+instance\+Count()}{Metric\_instanceCount()}}
+{\footnotesize\ttfamily int Metric\+\_\+instance\+Count (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_a150ca2a4f7804ccb38659bd8539585a2}\label{Metric_8c_a150ca2a4f7804ccb38659bd8539585a2}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+instance\+Offset@{Metric\+\_\+instance\+Offset}}
+\index{Metric\+\_\+instance\+Offset@{Metric\+\_\+instance\+Offset}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+instance\+Offset()}{Metric\_instanceOffset()}}
+{\footnotesize\ttfamily int Metric\+\_\+instance\+Offset (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric,  }\item[{int}]{inst }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_afa30a54e8c90bbf662ae25e185d9db01}\label{Metric_8c_afa30a54e8c90bbf662ae25e185d9db01}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+iterate@{Metric\+\_\+iterate}}
+\index{Metric\+\_\+iterate@{Metric\+\_\+iterate}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+iterate()}{Metric\_iterate()}}
+{\footnotesize\ttfamily bool Metric\+\_\+iterate (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric,  }\item[{int $\ast$}]{instp,  }\item[{int $\ast$}]{offsetp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_a2e0665dd5590240ec875fa87535d3c5a}\label{Metric_8c_a2e0665dd5590240ec875fa87535d3c5a}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+lookup\+Text@{Metric\+\_\+lookup\+Text}}
+\index{Metric\+\_\+lookup\+Text@{Metric\+\_\+lookup\+Text}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+lookup\+Text()}{Metric\_lookupText()}}
+{\footnotesize\ttfamily int Metric\+\_\+lookup\+Text (\begin{DoxyParamCaption}\item[{const char $\ast$}]{metric,  }\item[{char $\ast$$\ast$}]{desc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_abc511f6e5389ef7e407d93a9d2b62e5b}\label{Metric_8c_abc511f6e5389ef7e407d93a9d2b62e5b}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+type@{Metric\+\_\+type}}
+\index{Metric\+\_\+type@{Metric\+\_\+type}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+type()}{Metric\_type()}}
+{\footnotesize\ttfamily int Metric\+\_\+type (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Metric_8c_aedc65308b8bd3ef1a290619c6b2c3e26}\label{Metric_8c_aedc65308b8bd3ef1a290619c6b2c3e26}} 
+\index{Metric.\+c@{Metric.\+c}!Metric\+\_\+values@{Metric\+\_\+values}}
+\index{Metric\+\_\+values@{Metric\+\_\+values}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{Metric\+\_\+values()}{Metric\_values()}}
+{\footnotesize\ttfamily pm\+Atom\+Value$\ast$ Metric\+\_\+values (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{metric,  }\item[{pm\+Atom\+Value $\ast$}]{atom,  }\item[{int}]{count,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Metric_8c_a45a3a320376089d1784e001189222307}\label{Metric_8c_a45a3a320376089d1784e001189222307}} 
+\index{Metric.\+c@{Metric.\+c}!pcp@{pcp}}
+\index{pcp@{pcp}!Metric.\+c@{Metric.\+c}}
+\subsubsection{\texorpdfstring{pcp}{pcp}}
+{\footnotesize\ttfamily \hyperlink{pcp_2Platform_8h_a1b3fd1e816fe74e7d7dc2d7323471de6}{Platform}$\ast$ pcp}
+

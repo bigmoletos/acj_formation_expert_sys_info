@@ -1,0 +1,42 @@
+\hypertarget{SysArchMeter_8c}{}\section{linux/download/htop-\/3.3.0/\+Sys\+Arch\+Meter.c File Reference}
+\label{SysArchMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Sys\+Arch\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/\+Sys\+Arch\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sys\+Arch\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Sys\+Arch\+Meter.\+c\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{SysArchMeter_8c_ab7ad5e695edd88c573baf6b33a86af79}{Sys\+Arch\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{SysArchMeter_8c_ab7ad5e695edd88c573baf6b33a86af79}\label{SysArchMeter_8c_ab7ad5e695edd88c573baf6b33a86af79}} 
+\index{Sys\+Arch\+Meter.\+c@{Sys\+Arch\+Meter.\+c}!Sys\+Arch\+Meter\+\_\+class@{Sys\+Arch\+Meter\+\_\+class}}
+\index{Sys\+Arch\+Meter\+\_\+class@{Sys\+Arch\+Meter\+\_\+class}!Sys\+Arch\+Meter.\+c@{Sys\+Arch\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Sys\+Arch\+Meter\+\_\+class}{SysArchMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Sys\+Arch\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete}
+   \},
+   .updateValues = SysArchMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 0,
+   .total = 100.0,
+   .attributes = SysArchMeter\_attributes,
+   .name = \textcolor{stringliteral}{"System"},
+   .uiName = \textcolor{stringliteral}{"System"},
+   .caption = \textcolor{stringliteral}{"System: "},
+\}
+\end{DoxyCode}

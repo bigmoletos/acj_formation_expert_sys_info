@@ -1,0 +1,9 @@
+digraph "linux/download/htop-3.3.0/zfs" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b932c5e19070f08215315961f36cd8a5 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="htop-3.3.0" fontname="Helvetica", fontsize="10", URL="dir_b932c5e19070f08215315961f36cd8a5.html"]
+  dir_240f9a125fb2d8aefe3163bb4736c458 [shape=box, label="zfs", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_240f9a125fb2d8aefe3163bb4736c458.html"];
+  }
+}

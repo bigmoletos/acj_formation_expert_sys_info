@@ -1,0 +1,70 @@
+\hypertarget{FreeBSDMachine_8c}{}\section{linux/download/htop-\/3.3.0/freebsd/\+Free\+B\+S\+D\+Machine.c File Reference}
+\label{FreeBSDMachine_8c}\index{linux/download/htop-\/3.\+3.\+0/freebsd/\+Free\+B\+S\+D\+Machine.\+c@{linux/download/htop-\/3.\+3.\+0/freebsd/\+Free\+B\+S\+D\+Machine.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freebsd/\+Free\+B\+S\+D\+Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/\+\_\+iovec.\+h$>$}\newline
+{\ttfamily \#include $<$sys/errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/param.\+h$>$}\newline
+{\ttfamily \#include $<$sys/jail.\+h$>$}\newline
+{\ttfamily \#include $<$sys/priority.\+h$>$}\newline
+{\ttfamily \#include $<$sys/proc.\+h$>$}\newline
+{\ttfamily \#include $<$sys/resource.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sysctl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/user.\+h$>$}\newline
+{\ttfamily \#include $<$sys/vmmeter.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Compat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scheduling.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}generic/openzfs\+\_\+sysctl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}zfs/\+Zfs\+Arc\+Stats.\+h\char`\"{}}\newline
+Include dependency graph for Free\+B\+S\+D\+Machine.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$ \hyperlink{FreeBSDMachine_8c_ae6e3ec78c3c42cdd4683f8b205af522a}{Machine\+\_\+new} (\hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table} $\ast$users\+Table, uid\+\_\+t user\+Id)
+\item 
+void \hyperlink{FreeBSDMachine_8c_a9259d45b9ba6db31481f94c1a03b363a}{Machine\+\_\+delete} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$super)
+\item 
+void \hyperlink{FreeBSDMachine_8c_a794e5df1bf4b2ae6ba93bfeeea717705}{Machine\+\_\+scan} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$super)
+\item 
+bool \hyperlink{FreeBSDMachine_8c_a3548abc682a4b1d046d9b3a955c611a4}{Machine\+\_\+is\+C\+P\+Uonline} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, unsigned int id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{FreeBSDMachine_8c_a9259d45b9ba6db31481f94c1a03b363a}\label{FreeBSDMachine_8c_a9259d45b9ba6db31481f94c1a03b363a}} 
+\index{Free\+B\+S\+D\+Machine.\+c@{Free\+B\+S\+D\+Machine.\+c}!Machine\+\_\+delete@{Machine\+\_\+delete}}
+\index{Machine\+\_\+delete@{Machine\+\_\+delete}!Free\+B\+S\+D\+Machine.\+c@{Free\+B\+S\+D\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+delete()}{Machine\_delete()}}
+{\footnotesize\ttfamily void Machine\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{super }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FreeBSDMachine_8c_a3548abc682a4b1d046d9b3a955c611a4}\label{FreeBSDMachine_8c_a3548abc682a4b1d046d9b3a955c611a4}} 
+\index{Free\+B\+S\+D\+Machine.\+c@{Free\+B\+S\+D\+Machine.\+c}!Machine\+\_\+is\+C\+P\+Uonline@{Machine\+\_\+is\+C\+P\+Uonline}}
+\index{Machine\+\_\+is\+C\+P\+Uonline@{Machine\+\_\+is\+C\+P\+Uonline}!Free\+B\+S\+D\+Machine.\+c@{Free\+B\+S\+D\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+is\+C\+P\+Uonline()}{Machine\_isCPUonline()}}
+{\footnotesize\ttfamily bool Machine\+\_\+is\+C\+P\+Uonline (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FreeBSDMachine_8c_ae6e3ec78c3c42cdd4683f8b205af522a}\label{FreeBSDMachine_8c_ae6e3ec78c3c42cdd4683f8b205af522a}} 
+\index{Free\+B\+S\+D\+Machine.\+c@{Free\+B\+S\+D\+Machine.\+c}!Machine\+\_\+new@{Machine\+\_\+new}}
+\index{Machine\+\_\+new@{Machine\+\_\+new}!Free\+B\+S\+D\+Machine.\+c@{Free\+B\+S\+D\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+new()}{Machine\_new()}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine}$\ast$ Machine\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table} $\ast$}]{users\+Table,  }\item[{uid\+\_\+t}]{user\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{FreeBSDMachine_8c_a794e5df1bf4b2ae6ba93bfeeea717705}\label{FreeBSDMachine_8c_a794e5df1bf4b2ae6ba93bfeeea717705}} 
+\index{Free\+B\+S\+D\+Machine.\+c@{Free\+B\+S\+D\+Machine.\+c}!Machine\+\_\+scan@{Machine\+\_\+scan}}
+\index{Machine\+\_\+scan@{Machine\+\_\+scan}!Free\+B\+S\+D\+Machine.\+c@{Free\+B\+S\+D\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+scan()}{Machine\_scan()}}
+{\footnotesize\ttfamily void Machine\+\_\+scan (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{super }\end{DoxyParamCaption})}
+

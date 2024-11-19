@@ -1,0 +1,35 @@
+\subsubsection*{import pour les notebook jupyter}
+
+\%javascript I\+Python.\+Output\+Area.\+auto\+\_\+scroll\+\_\+threshold = 9999 pd.\+set\+\_\+option(\textquotesingle{}display.\+max\+\_\+row\textquotesingle{}, 111) pd.\+set\+\_\+option(\textquotesingle{}display.\+max\+\_\+column\textquotesingle{}, 111) url = \textquotesingle{}\href{https://raw.githubusercontent.com/MachineLearnia/Python-Machine-Learning/master/Dataset/dataset.csv'}{\tt https\+://raw.\+githubusercontent.\+com/\+Machine\+Learnia/\+Python-\/\+Machine-\/\+Learning/master/\+Dataset/dataset.\+csv\textquotesingle{}} data = pd.\+read\+\_\+csv(url, index\+\_\+col=0, encoding = \char`\"{}\+I\+S\+O-\/8859-\/1\char`\"{})
+
+\subsubsection*{pour avoir un affichage plus clair le \+:-\/$<$50}
+
+for col in df.\+select\+\_\+dtypes(include=\mbox{[}\textquotesingle{}float64\textquotesingle{},\textquotesingle{}int64\textquotesingle{}\mbox{]})\+: print(f\char`\"{}\+Moyenne col\+: \{col\+:-\/$<$50\}  \{df\mbox{[}col\mbox{]}.\+mean()\} \char`\"{})
+
+Moyenne col\+: Passenger\+Id-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 446.\+0 Moyenne col\+: Survived-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 0.\+3838383838383838 Moyenne col\+: Pclass-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 2.\+308641975308642 Moyenne col\+: Sex-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 0.\+35241301907968575 Moyenne col\+: Age-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 29.\+69911764705882 Moyenne col\+: Sib\+Sp-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 0.\+5230078563411896 Moyenne col\+: Parch-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 0.\+38159371492704824 Moyenne col\+: Fare-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 32.\+204207968574636
+
+\paragraph*{lzq graphiques à connaitrre pour l\textquotesingle{}E\+DA avec la correlation .\hyperlink{namespaceex__pipeline__with__param_a023e948f87c4d7ce264150124c637e55}{corr()}}
+
+plt.\+figure(figsize =(20,10)) sns.\+histplot(df\mbox{[}\mbox{[}\textquotesingle{}Age\textquotesingle{},\textquotesingle{}Sex\textquotesingle{},\textquotesingle{}Survived\textquotesingle{}\mbox{]}\mbox{]}.dropna().\hyperlink{namespaceex__pipeline__with__param_a023e948f87c4d7ce264150124c637e55}{corr()}) sns.\+displot(df\mbox{[}\mbox{[}\textquotesingle{}Age\textquotesingle{},\textquotesingle{}Sex\textquotesingle{},\textquotesingle{}Survived\textquotesingle{}\mbox{]}\mbox{]}, label=\textquotesingle{}Survived\textquotesingle{}) sns.\+clustermap(df\mbox{[}\mbox{[}\textquotesingle{}Age\textquotesingle{},\textquotesingle{}Sex\textquotesingle{},\textquotesingle{}Survived\textquotesingle{}\mbox{]}\mbox{]}.dropna().\hyperlink{namespaceex__pipeline__with__param_a023e948f87c4d7ce264150124c637e55}{corr()}) sns.\+countplot(df\mbox{[}\mbox{[}\textquotesingle{}Age\textquotesingle{},\textquotesingle{}Sex\textquotesingle{},\textquotesingle{}Survived\textquotesingle{}\mbox{]}\mbox{]}.dropna().\hyperlink{namespaceex__pipeline__with__param_a023e948f87c4d7ce264150124c637e55}{corr()}) sns.\+lmplot(x=\textquotesingle{}Age\textquotesingle{}, y=col, hue=\textquotesingle{}Survived\textquotesingle{}, data=df) plt.\+show()
+
+pd.\+crosstab(index=\mbox{[}df\mbox{[}\textquotesingle{}Age\textquotesingle{}\mbox{]}, df\mbox{[}\textquotesingle{}Sex\textquotesingle{}\mbox{]}, df\mbox{[}\textquotesingle{}Survived\textquotesingle{}\mbox{]}\mbox{]}, columns=df\mbox{[}col\mbox{]})
+
+\paragraph*{Correlation}
+
+df.\+select\+\_\+dtypes(include=\mbox{[}\textquotesingle{}float64\textquotesingle{},\textquotesingle{}int64\textquotesingle{}\mbox{]}).\hyperlink{namespaceex__pipeline__with__param_a023e948f87c4d7ce264150124c637e55}{corr()}\mbox{[}\char`\"{}\+Survived\char`\"{}\mbox{]}.sort\+\_\+values(ascending=False)
+
+\paragraph*{Distribution des survivants en fonction du sexe}
+
+pd.\+crosstab(df\mbox{[}\char`\"{}\+Survived\char`\"{}\mbox{]}, df\mbox{[}\char`\"{}\+Sex\char`\"{}\mbox{]})
+
+\paragraph*{Graphique résuea de neurones avant il faut installer grapviz sur le pc et dans python}
+
+!pip install pydot graphviz
+
+from tensorflow.\+keras.\+utils import plot\+\_\+model from I\+Python.\+display import Image import tempfile \section*{Supposons que \textquotesingle{}reseau\textquotesingle{} est votre modèle Keras}
+
+\section*{Utiliser un fichier temporaire pour sauvegarder le schéma du modèle}
+
+with tempfile.\+Named\+Temporary\+File(suffix=\textquotesingle{}.png\textquotesingle{}, delete=False) as tmpfile\+: plot\+\_\+model(reseau, to\+\_\+file=tmpfile.\+name, show\+\_\+shapes=True, show\+\_\+layer\+\_\+names=True) \section*{Affichage de l\textquotesingle{}image}
+
+display(Image(filename=tmpfile.\+name)) 

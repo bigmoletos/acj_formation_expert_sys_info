@@ -1,0 +1,54 @@
+\hypertarget{HeaderOptionsPanel_8c}{}\section{linux/download/htop-\/3.3.0/\+Header\+Options\+Panel.c File Reference}
+\label{HeaderOptionsPanel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Header\+Options\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Header\+Options\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header\+Options\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header\+Layout.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Option\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+Include dependency graph for Header\+Options\+Panel.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{HeaderOptionsPanel_8h_a01d4e481aff017a5a530b5a0e65e75b9}{Header\+Options\+Panel} $\ast$ \hyperlink{HeaderOptionsPanel_8c_a0e1b2210e74759777a26236c1d068308}{Header\+Options\+Panel\+\_\+new} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings, \hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$scr)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{HeaderOptionsPanel_8c_ab60fe250b351495c8085beda0e0fc413}{Header\+Options\+Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{HeaderOptionsPanel_8c_a0e1b2210e74759777a26236c1d068308}\label{HeaderOptionsPanel_8c_a0e1b2210e74759777a26236c1d068308}} 
+\index{Header\+Options\+Panel.\+c@{Header\+Options\+Panel.\+c}!Header\+Options\+Panel\+\_\+new@{Header\+Options\+Panel\+\_\+new}}
+\index{Header\+Options\+Panel\+\_\+new@{Header\+Options\+Panel\+\_\+new}!Header\+Options\+Panel.\+c@{Header\+Options\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Header\+Options\+Panel\+\_\+new()}{HeaderOptionsPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{HeaderOptionsPanel_8h_a01d4e481aff017a5a530b5a0e65e75b9}{Header\+Options\+Panel}$\ast$ Header\+Options\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings,  }\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{scr }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{HeaderOptionsPanel_8c_ab60fe250b351495c8085beda0e0fc413}\label{HeaderOptionsPanel_8c_ab60fe250b351495c8085beda0e0fc413}} 
+\index{Header\+Options\+Panel.\+c@{Header\+Options\+Panel.\+c}!Header\+Options\+Panel\+\_\+class@{Header\+Options\+Panel\+\_\+class}}
+\index{Header\+Options\+Panel\+\_\+class@{Header\+Options\+Panel\+\_\+class}!Header\+Options\+Panel.\+c@{Header\+Options\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Header\+Options\+Panel\+\_\+class}{HeaderOptionsPanel\_class}}
+{\footnotesize\ttfamily const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Header\+Options\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = HeaderOptionsPanel\_delete
+   \},
+   .eventHandler = HeaderOptionsPanel\_eventHandler
+\}
+\end{DoxyCode}

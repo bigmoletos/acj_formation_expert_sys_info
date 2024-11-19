@@ -1,0 +1,128 @@
+\hypertarget{UnsupportedProcess_8c}{}\section{linux/download/htop-\/3.3.0/unsupported/\+Unsupported\+Process.c File Reference}
+\label{UnsupportedProcess_8c}\index{linux/download/htop-\/3.\+3.\+0/unsupported/\+Unsupported\+Process.\+c@{linux/download/htop-\/3.\+3.\+0/unsupported/\+Unsupported\+Process.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unsupported/\+Unsupported\+Process.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+Include dependency graph for Unsupported\+Process.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{UnsupportedProcess_8c_ac4e3463fc2b4f15f13faa29ea5bceb92}{Unsupported\+Process\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\item 
+void \hyperlink{UnsupportedProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} \hyperlink{UnsupportedProcess_8c_ad5f8090378cbc673e2ae0825d0342743}{Process\+\_\+fields} \mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}
+\item 
+const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} \hyperlink{UnsupportedProcess_8c_a72cc3ec6ac14cb8330ccdf41f550e1f6}{Unsupported\+Process\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{UnsupportedProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}\label{UnsupportedProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}} 
+\index{Unsupported\+Process.\+c@{Unsupported\+Process.\+c}!Process\+\_\+delete@{Process\+\_\+delete}}
+\index{Process\+\_\+delete@{Process\+\_\+delete}!Unsupported\+Process.\+c@{Unsupported\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+delete()}{Process\_delete()}}
+{\footnotesize\ttfamily void Process\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{UnsupportedProcess_8c_ac4e3463fc2b4f15f13faa29ea5bceb92}\label{UnsupportedProcess_8c_ac4e3463fc2b4f15f13faa29ea5bceb92}} 
+\index{Unsupported\+Process.\+c@{Unsupported\+Process.\+c}!Unsupported\+Process\+\_\+new@{Unsupported\+Process\+\_\+new}}
+\index{Unsupported\+Process\+\_\+new@{Unsupported\+Process\+\_\+new}!Unsupported\+Process.\+c@{Unsupported\+Process.\+c}}
+\subsubsection{\texorpdfstring{Unsupported\+Process\+\_\+new()}{UnsupportedProcess\_new()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ Unsupported\+Process\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{UnsupportedProcess_8c_ad5f8090378cbc673e2ae0825d0342743}\label{UnsupportedProcess_8c_ad5f8090378cbc673e2ae0825d0342743}} 
+\index{Unsupported\+Process.\+c@{Unsupported\+Process.\+c}!Process\+\_\+fields@{Process\+\_\+fields}}
+\index{Process\+\_\+fields@{Process\+\_\+fields}!Unsupported\+Process.\+c@{Unsupported\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+fields}{Process\_fields}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} Process\+\_\+fields\mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   [0] = \{ .name = \textcolor{stringliteral}{""}, .title = NULL, .description = NULL, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca6630909667d3806502c57e040512acc0}{PID}] = \{ .name = \textcolor{stringliteral}{"PID"}, .title = \textcolor{stringliteral}{"PID"}, .description = \textcolor{stringliteral}{"Process/thread ID"}, .flags = 0, .pidColumn =
+       \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca6f451ba8ea6ae9cd569eb91e2126376b}{COMM}] = \{ .name = \textcolor{stringliteral}{"Command"}, .title = \textcolor{stringliteral}{"Command "}, .description = \textcolor{stringliteral}{"Command line"}, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55cab21bb6164a68674f388520d4d59e4da1}{STATE}] = \{ .name = \textcolor{stringliteral}{"STATE"}, .title = \textcolor{stringliteral}{"S "}, .description = \textcolor{stringliteral}{"Process state (S sleeping, R running, D
+       disk, Z zombie, T traced, W paging)"}, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca264b71c9f1d06b487175c7bff9a48fc9}{PPID}] = \{ .name = \textcolor{stringliteral}{"PPID"}, .title = \textcolor{stringliteral}{"PPID"}, .description = \textcolor{stringliteral}{"Parent process ID"}, .flags = 0, .
+      pidColumn = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca4c9ae68109fc57eea2893257613421d0}{PGRP}] = \{ .name = \textcolor{stringliteral}{"PGRP"}, .title = \textcolor{stringliteral}{"PGRP"}, .description = \textcolor{stringliteral}{"Process group ID"}, .flags = 0, .
+      pidColumn = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55caf6ae7ec124c8a5c3c1e39537b090f553}{SESSION}] = \{ .name = \textcolor{stringliteral}{"SESSION"}, .title = \textcolor{stringliteral}{"SID"}, .description = \textcolor{stringliteral}{"Process's session ID"}, .flags = 
+      0, .pidColumn = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55cafc25bf110d14e772a21b66bc64d4db65}{TTY}] = \{ .name = \textcolor{stringliteral}{"TTY"}, .title = \textcolor{stringliteral}{"TTY      "}, .description = \textcolor{stringliteral}{"Controlling terminal"}, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55cab404da103725aa9a30bb3697ebd556da}{TPGID}] = \{ .name = \textcolor{stringliteral}{"TPGID"}, .title = \textcolor{stringliteral}{"TPGID"}, .description = \textcolor{stringliteral}{"Process ID of the fg process group
+       of the controlling terminal"}, .flags = 0, .pidColumn = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55cafb6e45d1fd548671e54ddbe47d31a016}{MINFLT}] = \{ .name = \textcolor{stringliteral}{"MINFLT"}, .title = \textcolor{stringliteral}{"     MINFLT "}, .description = \textcolor{stringliteral}{"Number of minor faults
+       which have not required loading a memory page from disk"}, .flags = 0, .defaultSortDesc = \textcolor{keyword}{true},\},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca61809e18e4f5cee7ddf7bc39fe46c84c}{MAJFLT}] = \{ .name = \textcolor{stringliteral}{"MAJFLT"}, .title = \textcolor{stringliteral}{"     MAJFLT "}, .description = \textcolor{stringliteral}{"Number of major faults
+       which have required loading a memory page from disk"}, .flags = 0, .defaultSortDesc = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca117d4e929adf16e40bd27b3e7c7cee51}{PRIORITY}] = \{ .name = \textcolor{stringliteral}{"PRIORITY"}, .title = \textcolor{stringliteral}{"PRI "}, .description = \textcolor{stringliteral}{"Kernel's internal priority
+       for the process"}, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55cab31411fab4fd2cab988d78995b9e888f}{NICE}] = \{ .name = \textcolor{stringliteral}{"NICE"}, .title = \textcolor{stringliteral}{" NI "}, .description = \textcolor{stringliteral}{"Nice value (the higher the value, the
+       more it lets other processes take priority)"}, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca86f263620d3831bd6ad6863a608ed712}{STARTTIME}] = \{ .name = \textcolor{stringliteral}{"STARTTIME"}, .title = \textcolor{stringliteral}{"START "}, .description = \textcolor{stringliteral}{"Time the process was
+       started"}, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca087176a5a7826e7035657c2ed346aa67}{ELAPSED}] = \{ .name = \textcolor{stringliteral}{"ELAPSED"}, .title = \textcolor{stringliteral}{"ELAPSED  "}, .description = \textcolor{stringliteral}{"Time since the process was
+       started"}, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca57442daa7105bc381b61d89eee6ebf15}{PROCESSOR}] = \{ .name = \textcolor{stringliteral}{"PROCESSOR"}, .title = \textcolor{stringliteral}{"CPU "}, .description = \textcolor{stringliteral}{"Id of the CPU the process
+       last executed on"}, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca345925771b8af849dc806aa986e7fdbe}{M\_VIRT}] = \{ .name = \textcolor{stringliteral}{"M\_VIRT"}, .title = \textcolor{stringliteral}{" VIRT "}, .description = \textcolor{stringliteral}{"Total program size in virtual
+       memory"}, .flags = 0, .defaultSortDesc = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55caf39d86f1f6e5daaf9912dd6cae502a3e}{M\_RESIDENT}] = \{ .name = \textcolor{stringliteral}{"M\_RESIDENT"}, .title = \textcolor{stringliteral}{"  RES "}, .description = \textcolor{stringliteral}{"Resident set size,
+       size of the text and data sections, plus stack usage"}, .flags = 0, .defaultSortDesc = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca8d07dee67b0bdf398b7753c784f0190c}{ST\_UID}] = \{ .name = \textcolor{stringliteral}{"ST\_UID"}, .title = \textcolor{stringliteral}{"UID"}, .description = \textcolor{stringliteral}{"User ID of the process owner"}, .
+      flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55cafbaba4f57ef02942a4312cb2b80f84ae}{PERCENT\_CPU}] = \{ .name = \textcolor{stringliteral}{"PERCENT\_CPU"}, .title = \textcolor{stringliteral}{" CPU%"}, .description = \textcolor{stringliteral}{"Percentage of the
+       CPU time the process used in the last sampling"}, .flags = 0, .defaultSortDesc = \textcolor{keyword}{true}, .autoWidth = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca2c77ef7ba44eb3ee189562125a484d0c}{PERCENT\_NORM\_CPU}] = \{ .name = \textcolor{stringliteral}{"PERCENT\_NORM\_CPU"}, .title = \textcolor{stringliteral}{"NCPU%"}, .description = \textcolor{stringliteral}{"
+      Normalized percentage of the CPU time the process used in the last sampling (normalized by cpu count)"}, .flags 
+      = 0, .defaultSortDesc = \textcolor{keyword}{true}, .autoWidth = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca2e530452066444fbdd3f3e2933f6c595}{PERCENT\_MEM}] = \{ .name = \textcolor{stringliteral}{"PERCENT\_MEM"}, .title = \textcolor{stringliteral}{"MEM% "}, .description = \textcolor{stringliteral}{"Percentage of the
+       memory the process is using, based on resident memory size"}, .flags = 0, .defaultSortDesc = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55cae2d30a195cee6b2961cc2c23ea4b520b}{USER}] = \{ .name = \textcolor{stringliteral}{"USER"}, .title = \textcolor{stringliteral}{"USER       "}, .description = \textcolor{stringliteral}{"Username of the process owner (or
+       user ID if name cannot be determined)"}, .flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55cae9e4c627760f36823cdd153c24229157}{TIME}] = \{ .name = \textcolor{stringliteral}{"TIME"}, .title = \textcolor{stringliteral}{"  TIME+  "}, .description = \textcolor{stringliteral}{"Total time the process has spent in
+       user and system time"}, .flags = 0, .defaultSortDesc = \textcolor{keyword}{true}, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca5549e349f0d0ae4ad17a18a62048d1a9}{NLWP}] = \{ .name = \textcolor{stringliteral}{"NLWP"}, .title = \textcolor{stringliteral}{"NLWP "}, .description = \textcolor{stringliteral}{"Number of threads in the process"}, .
+      flags = 0, \},
+   [\hyperlink{RowField_8h_a86bdbe234f31a9e3961c89363d99d55ca942e839aa7677996c23713b29bdf869b}{TGID}] = \{ .name = \textcolor{stringliteral}{"TGID"}, .title = \textcolor{stringliteral}{"TGID"}, .description = \textcolor{stringliteral}{"Thread group ID (i.e. process ID)"}, .
+      flags = 0, .pidColumn = \textcolor{keyword}{true}, \},
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{UnsupportedProcess_8c_a72cc3ec6ac14cb8330ccdf41f550e1f6}\label{UnsupportedProcess_8c_a72cc3ec6ac14cb8330ccdf41f550e1f6}} 
+\index{Unsupported\+Process.\+c@{Unsupported\+Process.\+c}!Unsupported\+Process\+\_\+class@{Unsupported\+Process\+\_\+class}}
+\index{Unsupported\+Process\+\_\+class@{Unsupported\+Process\+\_\+class}!Unsupported\+Process.\+c@{Unsupported\+Process.\+c}}
+\subsubsection{\texorpdfstring{Unsupported\+Process\+\_\+class}{UnsupportedProcess\_class}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} Unsupported\+Process\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .super = \{
+         .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structProcess__}{Process}),
+         .display = \hyperlink{Row_8c_a1ca72e911c0e2299061df16e80da6a80}{Row\_display},
+         .delete = \hyperlink{UnsupportedProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\_delete},
+         .compare = \hyperlink{Process_8c_adfe5da81af5bdb6f1737efff4115ae59}{Process\_compare}
+      \},
+      .isHighlighted = \hyperlink{Process_8c_acc33de0abdacffbc71764974189a2623}{Process\_rowIsHighlighted},
+      .isVisible = \hyperlink{Process_8c_a81c1e83185bbf4303493558555e27f79}{Process\_rowIsVisible},
+      .matchesFilter = \hyperlink{Process_8c_a8447645ae54a0f49d0c67a7a6ccacd18}{Process\_rowMatchesFilter},
+      .compareByParent = \hyperlink{Process_8c_ad3b2093e8d84dc6178be2e6eb96f89b5}{Process\_compareByParent},
+      .sortKeyString = \hyperlink{Process_8c_a20530177962c8b1f48b2baadff6934aa}{Process\_rowGetSortKey},
+      .writeField = UnsupportedProcess\_rowWriteField
+   \},
+   .compareByKey = UnsupportedProcess\_compareByKey
+\}
+\end{DoxyCode}

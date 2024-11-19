@@ -1,0 +1,61 @@
+\subsection*{il faut installer Mongo\+DB community et éventuellement Altas}
+
+\href{https://www.mongodb.com/try/download/community}{\tt https\+://www.\+mongodb.\+com/try/download/community}
+
+\subsection*{Il faut aussi installer mongo\+Shell pour utiliser avec le terminal}
+
+\href{https://www.mongodb.com/try/download/shell}{\tt https\+://www.\+mongodb.\+com/try/download/shell}
+
+\subsection*{verifier que les paths sont okpour mongo.\+exe et mongosh.\+exe}
+
+\section*{Opérateurs}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \$in} \+: Sélectionne les documents où la valeur d\textquotesingle{}un champ est dans un tableau spécifié.
+\item {\bfseries \$gt} \+: Sélectionne les documents où la valeur d\textquotesingle{}un champ est supérieure à une valeur spécifiée.
+\item {\bfseries \$lt} \+: Sélectionne les documents où la valeur d\textquotesingle{}un champ est inférieure à une valeur spécifiée.
+\item {\bfseries \$gte} \+: Sélectionne les documents où la valeur d\textquotesingle{}un champ est supérieure ou égale à une valeur spécifiée.
+\item {\bfseries \$lte} \+: Sélectionne les documents où la valeur d\textquotesingle{}un champ est inférieure ou égale à une valeur spécifiée.
+\item {\bfseries \$ne} \+: Sélectionne les documents où la valeur d\textquotesingle{}un champ n\textquotesingle{}est pas égale à une valeur spécifiée.
+\item {\bfseries \$and} \+: Rejoint les clauses de requête avec une opération logique A\+ND.
+\item {\bfseries \$or} \+: Rejoint les clauses de requête avec une opération logique OR.
+\item {\bfseries \$not} \+: Inverse l\textquotesingle{}effet d\textquotesingle{}un opérateur de requête.
+\item {\bfseries \$nor} \+: Rejoint les clauses de requête avec une opération logique N\+OR.
+\item {\bfseries \$exists} \+: Sélectionne les documents où un champ existe ou non, quelle que soit sa valeur.
+\item {\bfseries \$type} \+: Sélectionne les documents où le type d\textquotesingle{}un champ correspond à un type B\+S\+ON spécifié.
+\item {\bfseries \$regex} \+: Sélectionne les documents où les valeurs correspondent à une expression régulière spécifiée.
+\item {\bfseries \$text} \+: Effectue une recherche de texte sur le contenu des champs indexés par texte.
+\item {\bfseries \$elem\+Match} \+: Sélectionne les documents si un champ est un tableau qui contient au moins un élément qui correspond à toutes les conditions spécifiées.
+\item {\bfseries \$size} \+: Sélectionne les documents si un champ est un tableau de la taille spécifiée.
+\item {\bfseries \$all} \+: Correspond aux tableaux qui contiennent tous les éléments spécifiés.
+\item {\bfseries \$group} \+: Regroupe les documents d\textquotesingle{}entrée par un identifiant spécifié.
+\item {\bfseries \$sort} \+: Trie les documents d\textquotesingle{}entrée.
+\item {\bfseries \$limit} \+: Limite le nombre de documents d\textquotesingle{}entrée.
+\end{DoxyItemize}
+
+\section*{Commandes}
+
+
+\begin{DoxyItemize}
+\item {\bfseries db.\+help()} \+: Cette commande répertorie l’ensemble des commandes Mongo\+DB disponibles\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries mongo -\/version} \+: Cette commande vous indique la version de Mongo\+DB que vous utilisez\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries show dbs} \+: Cette commande permet d’afficher l’ensemble des bases de données sous la forme d’une liste\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries use D\+A\+T\+A\+B\+A\+S\+E\+\_\+\+N\+A\+ME} \+: Cette commande permet de créer une nouvelle base de données et de choisir son nom\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+drop\+Database()} \+: Cette commande permet de supprimer la base de données actuellement sélectionnée\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+find()} \+: Cette commande permet de récupérer des documents dans une collection qui correspondent à une condition\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+insert()} \+: Cette commande permet d\textquotesingle{}insérer un ou plusieurs documents dans une collection\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+update()} \+: Cette commande permet de mettre à jour un ou plusieurs documents dans une collection\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+remove()} \+: Cette commande permet de supprimer un ou plusieurs documents d\textquotesingle{}une collection\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+count()} \+: Cette commande retourne le nombre de documents qui correspondent à une condition\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+distinct()} \+: Cette commande retourne une liste de valeurs distinctes pour la clé donnée parmi tous les documents de la collection\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+aggregate()} \+: Cette commande permet d\textquotesingle{}effectuer des opérations de traitement de données complexes sur les données d\textquotesingle{}une collection\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+map\+Reduce()} \+: Cette commande permet d\textquotesingle{}effectuer des opérations map-\/reduce sur une collection\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+create\+Index()} \+: Cette commande crée un nouvel index sur une collection\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+get\+Indexes()} \+: Cette commande retourne une liste de tous les index sur une collection\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+collection.\+drop\+Index()} \+: Cette commande supprime un index d\textquotesingle{}une collection\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+create\+User()} \+: Cette commande crée un nouvel utilisateur\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+drop\+User()} \+: Cette commande supprime un utilisateur\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+auth()} \+: Cette commande authentifie un utilisateur\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}.
+\item {\bfseries db.\+logout()} \+: Cette commande déconnecte un utilisateur\mbox{[}$^\wedge$1$^\wedge$\mbox{]}\mbox{[}1\mbox{]}. 
+\end{DoxyItemize}

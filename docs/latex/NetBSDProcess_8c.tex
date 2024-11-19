@@ -1,0 +1,75 @@
+\hypertarget{NetBSDProcess_8c}{}\section{linux/download/htop-\/3.3.0/netbsd/\+Net\+B\+S\+D\+Process.c File Reference}
+\label{NetBSDProcess_8c}\index{linux/download/htop-\/3.\+3.\+0/netbsd/\+Net\+B\+S\+D\+Process.\+c@{linux/download/htop-\/3.\+3.\+0/netbsd/\+Net\+B\+S\+D\+Process.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}netbsd/\+Net\+B\+S\+D\+Process.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Net\+B\+S\+D\+Process.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{NetBSDProcess_8c_a7db17929c197288f59aa55d2b525b847}{Net\+B\+S\+D\+Process\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\item 
+void \hyperlink{NetBSDProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} \hyperlink{NetBSDProcess_8c_ad5f8090378cbc673e2ae0825d0342743}{Process\+\_\+fields} \mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}
+\item 
+const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} \hyperlink{NetBSDProcess_8c_a473d019173bb7d14b3f9ce7f15f877b9}{Net\+B\+S\+D\+Process\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{NetBSDProcess_8c_a7db17929c197288f59aa55d2b525b847}\label{NetBSDProcess_8c_a7db17929c197288f59aa55d2b525b847}} 
+\index{Net\+B\+S\+D\+Process.\+c@{Net\+B\+S\+D\+Process.\+c}!Net\+B\+S\+D\+Process\+\_\+new@{Net\+B\+S\+D\+Process\+\_\+new}}
+\index{Net\+B\+S\+D\+Process\+\_\+new@{Net\+B\+S\+D\+Process\+\_\+new}!Net\+B\+S\+D\+Process.\+c@{Net\+B\+S\+D\+Process.\+c}}
+\subsubsection{\texorpdfstring{Net\+B\+S\+D\+Process\+\_\+new()}{NetBSDProcess\_new()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ Net\+B\+S\+D\+Process\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NetBSDProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}\label{NetBSDProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}} 
+\index{Net\+B\+S\+D\+Process.\+c@{Net\+B\+S\+D\+Process.\+c}!Process\+\_\+delete@{Process\+\_\+delete}}
+\index{Process\+\_\+delete@{Process\+\_\+delete}!Net\+B\+S\+D\+Process.\+c@{Net\+B\+S\+D\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+delete()}{Process\_delete()}}
+{\footnotesize\ttfamily void Process\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{NetBSDProcess_8c_a473d019173bb7d14b3f9ce7f15f877b9}\label{NetBSDProcess_8c_a473d019173bb7d14b3f9ce7f15f877b9}} 
+\index{Net\+B\+S\+D\+Process.\+c@{Net\+B\+S\+D\+Process.\+c}!Net\+B\+S\+D\+Process\+\_\+class@{Net\+B\+S\+D\+Process\+\_\+class}}
+\index{Net\+B\+S\+D\+Process\+\_\+class@{Net\+B\+S\+D\+Process\+\_\+class}!Net\+B\+S\+D\+Process.\+c@{Net\+B\+S\+D\+Process.\+c}}
+\subsubsection{\texorpdfstring{Net\+B\+S\+D\+Process\+\_\+class}{NetBSDProcess\_class}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} Net\+B\+S\+D\+Process\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .super = \{
+         .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structProcess__}{Process}),
+         .display = \hyperlink{Row_8c_a1ca72e911c0e2299061df16e80da6a80}{Row\_display},
+         .delete = \hyperlink{NetBSDProcess_8c_a6c66e15496a064f92b8c7e31183c16c3}{Process\_delete},
+         .compare = \hyperlink{Process_8c_adfe5da81af5bdb6f1737efff4115ae59}{Process\_compare}
+      \},
+      .isHighlighted = \hyperlink{Process_8c_acc33de0abdacffbc71764974189a2623}{Process\_rowIsHighlighted},
+      .isVisible = \hyperlink{Process_8c_a81c1e83185bbf4303493558555e27f79}{Process\_rowIsVisible},
+      .matchesFilter = \hyperlink{Process_8c_a8447645ae54a0f49d0c67a7a6ccacd18}{Process\_rowMatchesFilter},
+      .compareByParent = \hyperlink{Process_8c_ad3b2093e8d84dc6178be2e6eb96f89b5}{Process\_compareByParent},
+      .sortKeyString = \hyperlink{Process_8c_a20530177962c8b1f48b2baadff6934aa}{Process\_rowGetSortKey},
+      .writeField = NetBSDProcess\_rowWriteField
+   \},
+   .compareByKey = NetBSDProcess\_compareByKey
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{NetBSDProcess_8c_ad5f8090378cbc673e2ae0825d0342743}\label{NetBSDProcess_8c_ad5f8090378cbc673e2ae0825d0342743}} 
+\index{Net\+B\+S\+D\+Process.\+c@{Net\+B\+S\+D\+Process.\+c}!Process\+\_\+fields@{Process\+\_\+fields}}
+\index{Process\+\_\+fields@{Process\+\_\+fields}!Net\+B\+S\+D\+Process.\+c@{Net\+B\+S\+D\+Process.\+c}}
+\subsubsection{\texorpdfstring{Process\+\_\+fields}{Process\_fields}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} Process\+\_\+fields\mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}}
+

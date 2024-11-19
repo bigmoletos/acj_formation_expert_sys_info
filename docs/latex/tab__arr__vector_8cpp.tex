@@ -1,0 +1,64 @@
+\hypertarget{tab__arr__vector_8cpp}{}\section{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/tab\+\_\+arr\+\_\+vector.cpp File Reference}
+\label{tab__arr__vector_8cpp}\index{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/tab\+\_\+arr\+\_\+vector.\+cpp@{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/tab\+\_\+arr\+\_\+vector.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for tab\+\_\+arr\+\_\+vector.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{tab__arr__vector_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em Programme de comparaison entre un tableau classique, un std\+::array et un std\+::vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tab__arr__vector_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{tab__arr__vector_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{tab\+\_\+arr\+\_\+vector.\+cpp@{tab\+\_\+arr\+\_\+vector.\+cpp}!main@{main}}
+\index{main@{main}!tab\+\_\+arr\+\_\+vector.\+cpp@{tab\+\_\+arr\+\_\+vector.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Programme de comparaison entre un tableau classique, un std\+::array et un std\+::vector. 
+
+Le programme montre la déclaration, l\textquotesingle{}accès et l\textquotesingle{}utilisation des trois types de conteneurs en C++ \+:
+\begin{DoxyItemize}
+\item Tableau classique \+: taille fixe, déclaration statique, pas de vérification des limites.
+\item std\+::array \+: taille fixe, partie de la bibliothèque standard, avec des méthodes utilitaires.
+\item std\+::vector \+: tableau dynamique, peut changer de taille, fourni par la bibliothèque standard. \mbox{[}Description de main\mbox{]}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Aucun} & \mbox{[}Cette fonction n\textquotesingle{}a pas de param�tres\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+Déclaration d\textquotesingle{}un tableau classique avec une taille fixe de 5 éléments.
+
+
+\begin{DoxyItemize}
+\item Les éléments sont stockés de manière statique.
+\item L\textquotesingle{}accès se fait via des indices.
+\item Il n\textquotesingle{}y a pas de vérification des limites.
+\end{DoxyItemize}
+
+Utilisation de std\+::array pour déclarer un tableau avec une taille fixe.
+
+
+\begin{DoxyItemize}
+\item std\+::array fait partie de la bibliothèque standard C++.
+\item Il offre des méthodes supplémentaires comme .size() et .at() pour plus de sécurité.
+\end{DoxyItemize}
+
+Utilisation de std\+::vector pour déclarer un tableau dynamique.
+
+
+\begin{DoxyItemize}
+\item std\+::vector est un conteneur dynamique, permettant d\textquotesingle{}ajouter et de retirer des éléments à tout moment.
+\item Il offre des méthodes comme .push\+\_\+back() et .pop\+\_\+back() pour manipuler la taille du tableau.
+\end{DoxyItemize}

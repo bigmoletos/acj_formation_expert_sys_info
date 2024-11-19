@@ -1,0 +1,61 @@
+\hypertarget{CGroupUtils_8c}{}\section{linux/download/htop-\/3.3.0/linux/\+C\+Group\+Utils.c File Reference}
+\label{CGroupUtils_8c}\index{linux/download/htop-\/3.\+3.\+0/linux/\+C\+Group\+Utils.\+c@{linux/download/htop-\/3.\+3.\+0/linux/\+C\+Group\+Utils.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+C\+Group\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for C\+Group\+Utils.\+c\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structStrBuf__state}{Str\+Buf\+\_\+state}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structStrBuf__state}{Str\+Buf\+\_\+state} \hyperlink{CGroupUtils_8c_aeed9085749515f236d89922699de1b6f}{Str\+Buf\+\_\+state}
+\item 
+typedef bool($\ast$ \hyperlink{CGroupUtils_8c_ae72ae5643a148dd3bd6cf12184730ae0}{Str\+Buf\+\_\+putc\+\_\+t}) (\hyperlink{structStrBuf__state}{Str\+Buf\+\_\+state} $\ast$p, char c)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{CGroupUtils_8c_a1a3b89d33a2c3cb87d185c5519c634a3}{C\+Group\+\_\+filter\+Name} (const char $\ast$cgroup)
+\item 
+char $\ast$ \hyperlink{CGroupUtils_8c_a83bc9eebe5fa2a4b24359f2e9f9fd0e6}{C\+Group\+\_\+filter\+Container} (const char $\ast$cgroup)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{CGroupUtils_8c_ae72ae5643a148dd3bd6cf12184730ae0}\label{CGroupUtils_8c_ae72ae5643a148dd3bd6cf12184730ae0}} 
+\index{C\+Group\+Utils.\+c@{C\+Group\+Utils.\+c}!Str\+Buf\+\_\+putc\+\_\+t@{Str\+Buf\+\_\+putc\+\_\+t}}
+\index{Str\+Buf\+\_\+putc\+\_\+t@{Str\+Buf\+\_\+putc\+\_\+t}!C\+Group\+Utils.\+c@{C\+Group\+Utils.\+c}}
+\subsubsection{\texorpdfstring{Str\+Buf\+\_\+putc\+\_\+t}{StrBuf\_putc\_t}}
+{\footnotesize\ttfamily typedef bool($\ast$ Str\+Buf\+\_\+putc\+\_\+t) (\hyperlink{structStrBuf__state}{Str\+Buf\+\_\+state} $\ast$p, char c)}
+
+\mbox{\Hypertarget{CGroupUtils_8c_aeed9085749515f236d89922699de1b6f}\label{CGroupUtils_8c_aeed9085749515f236d89922699de1b6f}} 
+\index{C\+Group\+Utils.\+c@{C\+Group\+Utils.\+c}!Str\+Buf\+\_\+state@{Str\+Buf\+\_\+state}}
+\index{Str\+Buf\+\_\+state@{Str\+Buf\+\_\+state}!C\+Group\+Utils.\+c@{C\+Group\+Utils.\+c}}
+\subsubsection{\texorpdfstring{Str\+Buf\+\_\+state}{StrBuf\_state}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structStrBuf__state}{Str\+Buf\+\_\+state}  \hyperlink{structStrBuf__state}{Str\+Buf\+\_\+state}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{CGroupUtils_8c_a83bc9eebe5fa2a4b24359f2e9f9fd0e6}\label{CGroupUtils_8c_a83bc9eebe5fa2a4b24359f2e9f9fd0e6}} 
+\index{C\+Group\+Utils.\+c@{C\+Group\+Utils.\+c}!C\+Group\+\_\+filter\+Container@{C\+Group\+\_\+filter\+Container}}
+\index{C\+Group\+\_\+filter\+Container@{C\+Group\+\_\+filter\+Container}!C\+Group\+Utils.\+c@{C\+Group\+Utils.\+c}}
+\subsubsection{\texorpdfstring{C\+Group\+\_\+filter\+Container()}{CGroup\_filterContainer()}}
+{\footnotesize\ttfamily char$\ast$ C\+Group\+\_\+filter\+Container (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cgroup }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CGroupUtils_8c_a1a3b89d33a2c3cb87d185c5519c634a3}\label{CGroupUtils_8c_a1a3b89d33a2c3cb87d185c5519c634a3}} 
+\index{C\+Group\+Utils.\+c@{C\+Group\+Utils.\+c}!C\+Group\+\_\+filter\+Name@{C\+Group\+\_\+filter\+Name}}
+\index{C\+Group\+\_\+filter\+Name@{C\+Group\+\_\+filter\+Name}!C\+Group\+Utils.\+c@{C\+Group\+Utils.\+c}}
+\subsubsection{\texorpdfstring{C\+Group\+\_\+filter\+Name()}{CGroup\_filterName()}}
+{\footnotesize\ttfamily char$\ast$ C\+Group\+\_\+filter\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cgroup }\end{DoxyParamCaption})}
+

@@ -1,0 +1,499 @@
+\hypertarget{pcp_2Platform_8h}{}\section{linux/download/htop-\/3.3.0/pcp/\+Platform.h File Reference}
+\label{pcp_2Platform_8h}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+Platform.\+h@{linux/download/htop-\/3.\+3.\+0/pcp/\+Platform.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$pcp/pmapi.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Action.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Battery\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Disk\+I\+O\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Network\+I\+O\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process\+Locks\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Signals\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Command\+Line.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+Metric.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Dynamic\+Column.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Dynamic\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Dynamic\+Screen.\+h\char`\"{}}\newline
+Include dependency graph for Platform.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPlatform__}{Platform\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pcp_2Platform_8h_a838e3e0d518304dbf6031715177bacd3}{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structPlatform__}{Platform\+\_\+} \hyperlink{pcp_2Platform_8h_a1b3fd1e816fe74e7d7dc2d7323471de6}{Platform}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab789a89f4a3f605651e7fd4fb3f64cef}{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+ST} = 128, 
+\hyperlink{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2da002636090904c71836445e2613485926}{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+T\+I\+M\+E\+Z\+O\+NE}, 
+\hyperlink{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2da6fcc86091f3f1a91ae70de8987ab1b73}{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+S\+T\+Z\+O\+NE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{pcp_2Platform_8h_ab628d7aa0caa3b1eb5e26674c88198af}{Platform\+\_\+init} (void)
+\item 
+void \hyperlink{pcp_2Platform_8h_a1a3335195f8f8c51ded9f4f7cca5f9b3}{Platform\+\_\+done} (void)
+\item 
+void \hyperlink{pcp_2Platform_8h_a5230ac6fa902c21dff3d759e16ffc507}{Platform\+\_\+set\+Bindings} (\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$keys)
+\item 
+int \hyperlink{pcp_2Platform_8h_a97f7a52fbcd5425538172ebacde34d1e}{Platform\+\_\+get\+Uptime} (void)
+\item 
+void \hyperlink{pcp_2Platform_8h_ae3d00dcf3ef2bf49e31b5f306dad489a}{Platform\+\_\+get\+Load\+Average} (double $\ast$one, double $\ast$five, double $\ast$fifteen)
+\item 
+long long \hyperlink{pcp_2Platform_8h_a40d3f8a2e1d63d7a7e96673bc20187eb}{Platform\+\_\+get\+Boot\+Time} (void)
+\item 
+unsigned int \hyperlink{pcp_2Platform_8h_ab42df339f788103af8c6515ac1786fa0}{Platform\+\_\+get\+Max\+C\+PU} (void)
+\item 
+pid\+\_\+t \hyperlink{pcp_2Platform_8h_a12112c85f5275f728399258ce36cee9b}{Platform\+\_\+get\+Max\+Pid} (void)
+\item 
+double \hyperlink{pcp_2Platform_8h_ac1b45c9c7717b01340624d71c62e2430}{Platform\+\_\+set\+C\+P\+U\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this, int cpu)
+\item 
+void \hyperlink{pcp_2Platform_8h_a20620332d27f20b0b91359e6d2e54465}{Platform\+\_\+set\+Memory\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+void \hyperlink{pcp_2Platform_8h_a41cdc0177a4d4de7001bc0a1730907f6}{Platform\+\_\+set\+Swap\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+void \hyperlink{pcp_2Platform_8h_aeb8fc4c8040e9c73890a047e9651acd8}{Platform\+\_\+set\+Zram\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+void \hyperlink{pcp_2Platform_8h_a3e4d5d204dce31fe4e726f3d18b82287}{Platform\+\_\+set\+Zfs\+Arc\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+void \hyperlink{pcp_2Platform_8h_a687e09df5fde56312585f2b432e99ab8}{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+char $\ast$ \hyperlink{pcp_2Platform_8h_a47695afc57e2cc9e73d0e1da8774a7ce}{Platform\+\_\+get\+Process\+Env} (pid\+\_\+t pid)
+\item 
+\hyperlink{ProcessLocksScreen_8h_a436e614a94f3276e08b861d0b362fd0f}{File\+Locks\+\_\+\+Process\+Data} $\ast$ \hyperlink{pcp_2Platform_8h_a4ac35b98c6a0c9e8be21aaf25bbf7aa9}{Platform\+\_\+get\+Process\+Locks} (pid\+\_\+t pid)
+\item 
+void \hyperlink{pcp_2Platform_8h_a2de5f6558eba72604ab1351de75c1ca8}{Platform\+\_\+get\+Pressure\+Stall} (const char $\ast$file, bool some, double $\ast$ten, double $\ast$sixty, double $\ast$threehundred)
+\item 
+bool \hyperlink{pcp_2Platform_8h_a3d55aab86e32d4dc49fcb41553af0fd2}{Platform\+\_\+get\+Disk\+IO} (\hyperlink{DiskIOMeter_8h_a6a9b8bac094ea16a6620d7a7352e67fb}{Disk\+I\+O\+Data} $\ast$data)
+\item 
+bool \hyperlink{pcp_2Platform_8h_a8c88551540575ff88951cf8ea62d46e6}{Platform\+\_\+get\+Network\+IO} (\hyperlink{NetworkIOMeter_8h_a6b4f2a3fb060646a7cc8516ee94d91c5}{Network\+I\+O\+Data} $\ast$data)
+\item 
+void \hyperlink{pcp_2Platform_8h_a09298032f192aafe117b87d9801ca6a2}{Platform\+\_\+get\+Battery} (double $\ast$percent, \hyperlink{BatteryMeter_8h_a277e9376f4d3a078c2ee41ca700bca81}{A\+C\+Presence} $\ast$is\+On\+AC)
+\item 
+void \hyperlink{pcp_2Platform_8h_ae93427bb125e150d98b57ef029de82e8}{Platform\+\_\+get\+Hostname} (char $\ast$buffer, size\+\_\+t size)
+\item 
+void \hyperlink{pcp_2Platform_8h_a3f0f6950a64ac5fc249ac2b25f7d5b74}{Platform\+\_\+get\+Release} (char $\ast$$\ast$string)
+\item 
+void \hyperlink{pcp_2Platform_8h_a610b0177628424d47e5c7b5ea571a18e}{Platform\+\_\+long\+Options\+Usage} (const char $\ast$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name})
+\item 
+\hyperlink{CommandLine_8h_a9ee8e6143d6b3b8628f89f5b68f39260}{Command\+Line\+Status} \hyperlink{pcp_2Platform_8h_ad14299440d34820964b9bec52f18e769}{Platform\+\_\+get\+Long\+Option} (int opt, int argc, char $\ast$$\ast$argv)
+\item 
+size\+\_\+t \hyperlink{pcp_2Platform_8h_a97f79e16ae3d7d163f43d84abface788}{Platform\+\_\+add\+Metric} (\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric} id, const char $\ast$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name})
+\item 
+void \hyperlink{pcp_2Platform_8h_a891ef12b78125e19558da1b8ebbca064}{Platform\+\_\+get\+File\+Descriptors} (double $\ast$used, double $\ast$\hyperlink{exo19_8cpp_ae3ed8abbe6617cfbdd14a9390b10f310}{max})
+\item 
+void \hyperlink{pcp_2Platform_8h_a3d15601f11080596427f490751d65561}{Platform\+\_\+gettime\+\_\+realtime} (struct timeval $\ast$tv, uint64\+\_\+t $\ast$msec)
+\item 
+void \hyperlink{pcp_2Platform_8h_ad0951fa5aef35ee7e17ba9f134b85706}{Platform\+\_\+gettime\+\_\+monotonic} (uint64\+\_\+t $\ast$msec)
+\item 
+\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$ \hyperlink{pcp_2Platform_8h_ada6b6d3e1c04eef98543eb3ed002f091}{Platform\+\_\+dynamic\+Meters} (void)
+\item 
+void \hyperlink{pcp_2Platform_8h_aaa150a5b5e5ff1b5e360d1e393d55e35}{Platform\+\_\+dynamic\+Meters\+Done} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$meters)
+\item 
+void \hyperlink{pcp_2Platform_8h_a4ca410e98ba51f0108acfad17be54353}{Platform\+\_\+dynamic\+Meter\+Init} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$meter)
+\item 
+void \hyperlink{pcp_2Platform_8h_ae35dc680fa4e8656171dc4decf35415e}{Platform\+\_\+dynamic\+Meter\+Update\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$meter)
+\item 
+void \hyperlink{pcp_2Platform_8h_a85629371ea0e316a81f56b140df5e384}{Platform\+\_\+dynamic\+Meter\+Display} (const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$meter, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$out)
+\item 
+\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$ \hyperlink{pcp_2Platform_8h_a62ff6ba6c0f949cebda64d608d1b5303}{Platform\+\_\+dynamic\+Columns} (void)
+\item 
+void \hyperlink{pcp_2Platform_8h_a304b48b22988bcf3ae2bfe77215a22d1}{Platform\+\_\+dynamic\+Columns\+Done} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$\hyperlink{HeaderLayout_8h_a9bf6c19eefefcddca5f152099add491c}{columns})
+\item 
+const char $\ast$ \hyperlink{pcp_2Platform_8h_a0f09d775ffffb07f267f691f3edba376}{Platform\+\_\+dynamic\+Column\+Name} (unsigned int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+bool \hyperlink{pcp_2Platform_8h_ae1adbdb77971674d131128bf5e032269}{Platform\+\_\+dynamic\+Column\+Write\+Field} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$proc, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, unsigned int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$ \hyperlink{pcp_2Platform_8h_a5a1f03766d21e06ae5840a06d641283a}{Platform\+\_\+dynamic\+Screens} (void)
+\item 
+void \hyperlink{pcp_2Platform_8h_a1c91a9b652fb516f701a8486d0c32cfb}{Platform\+\_\+default\+Dynamic\+Screens} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings)
+\item 
+void \hyperlink{pcp_2Platform_8h_a1e5c8e97fd8d08f83b9825390d640c4c}{Platform\+\_\+add\+Dynamic\+Screen} (\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$ss)
+\item 
+void \hyperlink{pcp_2Platform_8h_a906c0b9710a8403823baf3a71792c257}{Platform\+\_\+add\+Dynamic\+Screen\+Available\+Columns} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$available\+Columns, const char $\ast$screen)
+\item 
+void \hyperlink{pcp_2Platform_8h_ac5a0cc7c9a5e9c70991f6de77080494a}{Platform\+\_\+dynamic\+Screens\+Done} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$screens)
+\item 
+void \hyperlink{pcp_2Platform_8h_ace36c1e5a0236a136f5cc9b2e2dd42f6}{Platform\+\_\+update\+Tables} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structScreenDefaults}{Screen\+Defaults} \hyperlink{pcp_2Platform_8h_aff369bc0cdcf4070a58fd50b342b84cb}{Platform\+\_\+default\+Screens} \mbox{[}$\,$\mbox{]}
+\item 
+const unsigned int \hyperlink{pcp_2Platform_8h_ac8f39efe7b8276cb8796316fd5c2583f}{Platform\+\_\+number\+Of\+Default\+Screens}
+\item 
+const \hyperlink{SignalsPanel_8h_aacc61a14392728a9696f0560309c1177}{Signal\+Item} \hyperlink{pcp_2Platform_8h_ad6019115f7aacb2d94f395d5e8754638}{Platform\+\_\+signals} \mbox{[}$\,$\mbox{]}
+\item 
+const unsigned int \hyperlink{pcp_2Platform_8h_aa7affae43f72bb563034790830aecb51}{Platform\+\_\+number\+Of\+Signals}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} $\ast$const \hyperlink{pcp_2Platform_8h_a3935ec99eeceab0fe9582c92eeec4baa}{Platform\+\_\+meter\+Types} \mbox{[}$\,$\mbox{]}
+\item 
+pm\+Options \hyperlink{pcp_2Platform_8h_ad6ca27ccbee85de84aa3658cce6de84e}{opts}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pcp_2Platform_8h_a838e3e0d518304dbf6031715177bacd3}\label{pcp_2Platform_8h_a838e3e0d518304dbf6031715177bacd3}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}{PLATFORM\_LONG\_OPTIONS}}
+{\footnotesize\ttfamily \#define P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{PMLONGOPT\_HOST, optional\_argument, 0, \hyperlink{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab789a89f4a3f605651e7fd4fb3f64cef}{PLATFORM\_LONGOPT\_HOST}\}, \(\backslash\)
+      \{PMLONGOPT\_TIMEZONE, optional\_argument, 0, \hyperlink{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2da002636090904c71836445e2613485926}{PLATFORM\_LONGOPT\_TIMEZONE}\}, \(\backslash\)
+      \{PMLONGOPT\_HOSTZONE, optional\_argument, 0, \hyperlink{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2da6fcc86091f3f1a91ae70de8987ab1b73}{PLATFORM\_LONGOPT\_HOSTZONE}\}, \(\backslash\)
+\end{DoxyCode}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{pcp_2Platform_8h_a1b3fd1e816fe74e7d7dc2d7323471de6}\label{pcp_2Platform_8h_a1b3fd1e816fe74e7d7dc2d7323471de6}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform@{Platform}}
+\index{Platform@{Platform}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform}{Platform}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structPlatform__}{Platform\+\_\+}  \hyperlink{pcp_2Platform_8h_a1b3fd1e816fe74e7d7dc2d7323471de6}{Platform}}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2d}\label{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2d}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+ST@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+ST}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+ST@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+ST}}}\mbox{\Hypertarget{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab789a89f4a3f605651e7fd4fb3f64cef}\label{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2dab789a89f4a3f605651e7fd4fb3f64cef}} 
+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+ST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+T\+I\+M\+E\+Z\+O\+NE@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+T\+I\+M\+E\+Z\+O\+NE}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+T\+I\+M\+E\+Z\+O\+NE@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+T\+I\+M\+E\+Z\+O\+NE}}}\mbox{\Hypertarget{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2da002636090904c71836445e2613485926}\label{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2da002636090904c71836445e2613485926}} 
+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+T\+I\+M\+E\+Z\+O\+NE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+S\+T\+Z\+O\+NE@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+S\+T\+Z\+O\+NE}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+S\+T\+Z\+O\+NE@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+S\+T\+Z\+O\+NE}}}\mbox{\Hypertarget{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2da6fcc86091f3f1a91ae70de8987ab1b73}\label{pcp_2Platform_8h_a0411cd49bb5b71852cecd93bcbf0ca2da6fcc86091f3f1a91ae70de8987ab1b73}} 
+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+O\+P\+T\+\_\+\+H\+O\+S\+T\+Z\+O\+NE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{pcp_2Platform_8h_a1e5c8e97fd8d08f83b9825390d640c4c}\label{pcp_2Platform_8h_a1e5c8e97fd8d08f83b9825390d640c4c}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+add\+Dynamic\+Screen@{Platform\+\_\+add\+Dynamic\+Screen}}
+\index{Platform\+\_\+add\+Dynamic\+Screen@{Platform\+\_\+add\+Dynamic\+Screen}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+add\+Dynamic\+Screen()}{Platform\_addDynamicScreen()}}
+{\footnotesize\ttfamily void Platform\+\_\+add\+Dynamic\+Screen (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$}]{ss }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a906c0b9710a8403823baf3a71792c257}\label{pcp_2Platform_8h_a906c0b9710a8403823baf3a71792c257}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+add\+Dynamic\+Screen\+Available\+Columns@{Platform\+\_\+add\+Dynamic\+Screen\+Available\+Columns}}
+\index{Platform\+\_\+add\+Dynamic\+Screen\+Available\+Columns@{Platform\+\_\+add\+Dynamic\+Screen\+Available\+Columns}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+add\+Dynamic\+Screen\+Available\+Columns()}{Platform\_addDynamicScreenAvailableColumns()}}
+{\footnotesize\ttfamily void Platform\+\_\+add\+Dynamic\+Screen\+Available\+Columns (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{available\+Columns,  }\item[{const char $\ast$}]{screen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a97f79e16ae3d7d163f43d84abface788}\label{pcp_2Platform_8h_a97f79e16ae3d7d163f43d84abface788}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+add\+Metric@{Platform\+\_\+add\+Metric}}
+\index{Platform\+\_\+add\+Metric@{Platform\+\_\+add\+Metric}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+add\+Metric()}{Platform\_addMetric()}}
+{\footnotesize\ttfamily size\+\_\+t Platform\+\_\+add\+Metric (\begin{DoxyParamCaption}\item[{\hyperlink{Metric_8h_a1684cd09e3c6c7e47c9e16b6e80c471c}{Metric}}]{id,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a1c91a9b652fb516f701a8486d0c32cfb}\label{pcp_2Platform_8h_a1c91a9b652fb516f701a8486d0c32cfb}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+default\+Dynamic\+Screens@{Platform\+\_\+default\+Dynamic\+Screens}}
+\index{Platform\+\_\+default\+Dynamic\+Screens@{Platform\+\_\+default\+Dynamic\+Screens}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+default\+Dynamic\+Screens()}{Platform\_defaultDynamicScreens()}}
+{\footnotesize\ttfamily void Platform\+\_\+default\+Dynamic\+Screens (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a1a3335195f8f8c51ded9f4f7cca5f9b3}\label{pcp_2Platform_8h_a1a3335195f8f8c51ded9f4f7cca5f9b3}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+done@{Platform\+\_\+done}}
+\index{Platform\+\_\+done@{Platform\+\_\+done}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+done()}{Platform\_done()}}
+{\footnotesize\ttfamily void Platform\+\_\+done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a0f09d775ffffb07f267f691f3edba376}\label{pcp_2Platform_8h_a0f09d775ffffb07f267f691f3edba376}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Column\+Name@{Platform\+\_\+dynamic\+Column\+Name}}
+\index{Platform\+\_\+dynamic\+Column\+Name@{Platform\+\_\+dynamic\+Column\+Name}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Column\+Name()}{Platform\_dynamicColumnName()}}
+{\footnotesize\ttfamily const char$\ast$ Platform\+\_\+dynamic\+Column\+Name (\begin{DoxyParamCaption}\item[{unsigned int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a62ff6ba6c0f949cebda64d608d1b5303}\label{pcp_2Platform_8h_a62ff6ba6c0f949cebda64d608d1b5303}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Columns@{Platform\+\_\+dynamic\+Columns}}
+\index{Platform\+\_\+dynamic\+Columns@{Platform\+\_\+dynamic\+Columns}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Columns()}{Platform\_dynamicColumns()}}
+{\footnotesize\ttfamily \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}$\ast$ Platform\+\_\+dynamic\+Columns (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a304b48b22988bcf3ae2bfe77215a22d1}\label{pcp_2Platform_8h_a304b48b22988bcf3ae2bfe77215a22d1}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Columns\+Done@{Platform\+\_\+dynamic\+Columns\+Done}}
+\index{Platform\+\_\+dynamic\+Columns\+Done@{Platform\+\_\+dynamic\+Columns\+Done}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Columns\+Done()}{Platform\_dynamicColumnsDone()}}
+{\footnotesize\ttfamily void Platform\+\_\+dynamic\+Columns\+Done (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{columns }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ae1adbdb77971674d131128bf5e032269}\label{pcp_2Platform_8h_ae1adbdb77971674d131128bf5e032269}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Column\+Write\+Field@{Platform\+\_\+dynamic\+Column\+Write\+Field}}
+\index{Platform\+\_\+dynamic\+Column\+Write\+Field@{Platform\+\_\+dynamic\+Column\+Write\+Field}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Column\+Write\+Field()}{Platform\_dynamicColumnWriteField()}}
+{\footnotesize\ttfamily bool Platform\+\_\+dynamic\+Column\+Write\+Field (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{proc,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{unsigned int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a85629371ea0e316a81f56b140df5e384}\label{pcp_2Platform_8h_a85629371ea0e316a81f56b140df5e384}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Meter\+Display@{Platform\+\_\+dynamic\+Meter\+Display}}
+\index{Platform\+\_\+dynamic\+Meter\+Display@{Platform\+\_\+dynamic\+Meter\+Display}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Meter\+Display()}{Platform\_dynamicMeterDisplay()}}
+{\footnotesize\ttfamily void Platform\+\_\+dynamic\+Meter\+Display (\begin{DoxyParamCaption}\item[{const \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{meter,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a4ca410e98ba51f0108acfad17be54353}\label{pcp_2Platform_8h_a4ca410e98ba51f0108acfad17be54353}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Meter\+Init@{Platform\+\_\+dynamic\+Meter\+Init}}
+\index{Platform\+\_\+dynamic\+Meter\+Init@{Platform\+\_\+dynamic\+Meter\+Init}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Meter\+Init()}{Platform\_dynamicMeterInit()}}
+{\footnotesize\ttfamily void Platform\+\_\+dynamic\+Meter\+Init (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{meter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ada6b6d3e1c04eef98543eb3ed002f091}\label{pcp_2Platform_8h_ada6b6d3e1c04eef98543eb3ed002f091}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Meters@{Platform\+\_\+dynamic\+Meters}}
+\index{Platform\+\_\+dynamic\+Meters@{Platform\+\_\+dynamic\+Meters}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Meters()}{Platform\_dynamicMeters()}}
+{\footnotesize\ttfamily \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}$\ast$ Platform\+\_\+dynamic\+Meters (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_aaa150a5b5e5ff1b5e360d1e393d55e35}\label{pcp_2Platform_8h_aaa150a5b5e5ff1b5e360d1e393d55e35}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Meters\+Done@{Platform\+\_\+dynamic\+Meters\+Done}}
+\index{Platform\+\_\+dynamic\+Meters\+Done@{Platform\+\_\+dynamic\+Meters\+Done}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Meters\+Done()}{Platform\_dynamicMetersDone()}}
+{\footnotesize\ttfamily void Platform\+\_\+dynamic\+Meters\+Done (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{meters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ae35dc680fa4e8656171dc4decf35415e}\label{pcp_2Platform_8h_ae35dc680fa4e8656171dc4decf35415e}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Meter\+Update\+Values@{Platform\+\_\+dynamic\+Meter\+Update\+Values}}
+\index{Platform\+\_\+dynamic\+Meter\+Update\+Values@{Platform\+\_\+dynamic\+Meter\+Update\+Values}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Meter\+Update\+Values()}{Platform\_dynamicMeterUpdateValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+dynamic\+Meter\+Update\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{meter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a5a1f03766d21e06ae5840a06d641283a}\label{pcp_2Platform_8h_a5a1f03766d21e06ae5840a06d641283a}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Screens@{Platform\+\_\+dynamic\+Screens}}
+\index{Platform\+\_\+dynamic\+Screens@{Platform\+\_\+dynamic\+Screens}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Screens()}{Platform\_dynamicScreens()}}
+{\footnotesize\ttfamily \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}$\ast$ Platform\+\_\+dynamic\+Screens (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ac5a0cc7c9a5e9c70991f6de77080494a}\label{pcp_2Platform_8h_ac5a0cc7c9a5e9c70991f6de77080494a}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+dynamic\+Screens\+Done@{Platform\+\_\+dynamic\+Screens\+Done}}
+\index{Platform\+\_\+dynamic\+Screens\+Done@{Platform\+\_\+dynamic\+Screens\+Done}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+dynamic\+Screens\+Done()}{Platform\_dynamicScreensDone()}}
+{\footnotesize\ttfamily void Platform\+\_\+dynamic\+Screens\+Done (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{screens }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a09298032f192aafe117b87d9801ca6a2}\label{pcp_2Platform_8h_a09298032f192aafe117b87d9801ca6a2}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Battery@{Platform\+\_\+get\+Battery}}
+\index{Platform\+\_\+get\+Battery@{Platform\+\_\+get\+Battery}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Battery()}{Platform\_getBattery()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Battery (\begin{DoxyParamCaption}\item[{double $\ast$}]{percent,  }\item[{\hyperlink{BatteryMeter_8h_a277e9376f4d3a078c2ee41ca700bca81}{A\+C\+Presence} $\ast$}]{is\+On\+AC }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a40d3f8a2e1d63d7a7e96673bc20187eb}\label{pcp_2Platform_8h_a40d3f8a2e1d63d7a7e96673bc20187eb}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Boot\+Time@{Platform\+\_\+get\+Boot\+Time}}
+\index{Platform\+\_\+get\+Boot\+Time@{Platform\+\_\+get\+Boot\+Time}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Boot\+Time()}{Platform\_getBootTime()}}
+{\footnotesize\ttfamily long long Platform\+\_\+get\+Boot\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a3d55aab86e32d4dc49fcb41553af0fd2}\label{pcp_2Platform_8h_a3d55aab86e32d4dc49fcb41553af0fd2}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Disk\+IO@{Platform\+\_\+get\+Disk\+IO}}
+\index{Platform\+\_\+get\+Disk\+IO@{Platform\+\_\+get\+Disk\+IO}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Disk\+I\+O()}{Platform\_getDiskIO()}}
+{\footnotesize\ttfamily bool Platform\+\_\+get\+Disk\+IO (\begin{DoxyParamCaption}\item[{\hyperlink{DiskIOMeter_8h_a6a9b8bac094ea16a6620d7a7352e67fb}{Disk\+I\+O\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a891ef12b78125e19558da1b8ebbca064}\label{pcp_2Platform_8h_a891ef12b78125e19558da1b8ebbca064}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+File\+Descriptors@{Platform\+\_\+get\+File\+Descriptors}}
+\index{Platform\+\_\+get\+File\+Descriptors@{Platform\+\_\+get\+File\+Descriptors}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+File\+Descriptors()}{Platform\_getFileDescriptors()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+File\+Descriptors (\begin{DoxyParamCaption}\item[{double $\ast$}]{used,  }\item[{double $\ast$}]{max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ae93427bb125e150d98b57ef029de82e8}\label{pcp_2Platform_8h_ae93427bb125e150d98b57ef029de82e8}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Hostname@{Platform\+\_\+get\+Hostname}}
+\index{Platform\+\_\+get\+Hostname@{Platform\+\_\+get\+Hostname}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Hostname()}{Platform\_getHostname()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Hostname (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ae3d00dcf3ef2bf49e31b5f306dad489a}\label{pcp_2Platform_8h_ae3d00dcf3ef2bf49e31b5f306dad489a}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Load\+Average@{Platform\+\_\+get\+Load\+Average}}
+\index{Platform\+\_\+get\+Load\+Average@{Platform\+\_\+get\+Load\+Average}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Load\+Average()}{Platform\_getLoadAverage()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Load\+Average (\begin{DoxyParamCaption}\item[{double $\ast$}]{one,  }\item[{double $\ast$}]{five,  }\item[{double $\ast$}]{fifteen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ad14299440d34820964b9bec52f18e769}\label{pcp_2Platform_8h_ad14299440d34820964b9bec52f18e769}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Long\+Option@{Platform\+\_\+get\+Long\+Option}}
+\index{Platform\+\_\+get\+Long\+Option@{Platform\+\_\+get\+Long\+Option}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Long\+Option()}{Platform\_getLongOption()}}
+{\footnotesize\ttfamily \hyperlink{CommandLine_8h_a9ee8e6143d6b3b8628f89f5b68f39260}{Command\+Line\+Status} Platform\+\_\+get\+Long\+Option (\begin{DoxyParamCaption}\item[{int}]{opt,  }\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ab42df339f788103af8c6515ac1786fa0}\label{pcp_2Platform_8h_ab42df339f788103af8c6515ac1786fa0}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Max\+C\+PU@{Platform\+\_\+get\+Max\+C\+PU}}
+\index{Platform\+\_\+get\+Max\+C\+PU@{Platform\+\_\+get\+Max\+C\+PU}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Max\+C\+P\+U()}{Platform\_getMaxCPU()}}
+{\footnotesize\ttfamily unsigned int Platform\+\_\+get\+Max\+C\+PU (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a12112c85f5275f728399258ce36cee9b}\label{pcp_2Platform_8h_a12112c85f5275f728399258ce36cee9b}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Max\+Pid@{Platform\+\_\+get\+Max\+Pid}}
+\index{Platform\+\_\+get\+Max\+Pid@{Platform\+\_\+get\+Max\+Pid}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Max\+Pid()}{Platform\_getMaxPid()}}
+{\footnotesize\ttfamily pid\+\_\+t Platform\+\_\+get\+Max\+Pid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a8c88551540575ff88951cf8ea62d46e6}\label{pcp_2Platform_8h_a8c88551540575ff88951cf8ea62d46e6}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Network\+IO@{Platform\+\_\+get\+Network\+IO}}
+\index{Platform\+\_\+get\+Network\+IO@{Platform\+\_\+get\+Network\+IO}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Network\+I\+O()}{Platform\_getNetworkIO()}}
+{\footnotesize\ttfamily bool Platform\+\_\+get\+Network\+IO (\begin{DoxyParamCaption}\item[{\hyperlink{NetworkIOMeter_8h_a6b4f2a3fb060646a7cc8516ee94d91c5}{Network\+I\+O\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a2de5f6558eba72604ab1351de75c1ca8}\label{pcp_2Platform_8h_a2de5f6558eba72604ab1351de75c1ca8}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Pressure\+Stall@{Platform\+\_\+get\+Pressure\+Stall}}
+\index{Platform\+\_\+get\+Pressure\+Stall@{Platform\+\_\+get\+Pressure\+Stall}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Pressure\+Stall()}{Platform\_getPressureStall()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Pressure\+Stall (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file,  }\item[{bool}]{some,  }\item[{double $\ast$}]{ten,  }\item[{double $\ast$}]{sixty,  }\item[{double $\ast$}]{threehundred }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a47695afc57e2cc9e73d0e1da8774a7ce}\label{pcp_2Platform_8h_a47695afc57e2cc9e73d0e1da8774a7ce}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Process\+Env@{Platform\+\_\+get\+Process\+Env}}
+\index{Platform\+\_\+get\+Process\+Env@{Platform\+\_\+get\+Process\+Env}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Process\+Env()}{Platform\_getProcessEnv()}}
+{\footnotesize\ttfamily char$\ast$ Platform\+\_\+get\+Process\+Env (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a4ac35b98c6a0c9e8be21aaf25bbf7aa9}\label{pcp_2Platform_8h_a4ac35b98c6a0c9e8be21aaf25bbf7aa9}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Process\+Locks@{Platform\+\_\+get\+Process\+Locks}}
+\index{Platform\+\_\+get\+Process\+Locks@{Platform\+\_\+get\+Process\+Locks}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Process\+Locks()}{Platform\_getProcessLocks()}}
+{\footnotesize\ttfamily \hyperlink{ProcessLocksScreen_8h_a436e614a94f3276e08b861d0b362fd0f}{File\+Locks\+\_\+\+Process\+Data}$\ast$ Platform\+\_\+get\+Process\+Locks (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a3f0f6950a64ac5fc249ac2b25f7d5b74}\label{pcp_2Platform_8h_a3f0f6950a64ac5fc249ac2b25f7d5b74}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Release@{Platform\+\_\+get\+Release}}
+\index{Platform\+\_\+get\+Release@{Platform\+\_\+get\+Release}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Release()}{Platform\_getRelease()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Release (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{string }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ad0951fa5aef35ee7e17ba9f134b85706}\label{pcp_2Platform_8h_ad0951fa5aef35ee7e17ba9f134b85706}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+gettime\+\_\+monotonic@{Platform\+\_\+gettime\+\_\+monotonic}}
+\index{Platform\+\_\+gettime\+\_\+monotonic@{Platform\+\_\+gettime\+\_\+monotonic}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+gettime\+\_\+monotonic()}{Platform\_gettime\_monotonic()}}
+{\footnotesize\ttfamily void Platform\+\_\+gettime\+\_\+monotonic (\begin{DoxyParamCaption}\item[{uint64\+\_\+t $\ast$}]{msec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a3d15601f11080596427f490751d65561}\label{pcp_2Platform_8h_a3d15601f11080596427f490751d65561}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+gettime\+\_\+realtime@{Platform\+\_\+gettime\+\_\+realtime}}
+\index{Platform\+\_\+gettime\+\_\+realtime@{Platform\+\_\+gettime\+\_\+realtime}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+gettime\+\_\+realtime()}{Platform\_gettime\_realtime()}}
+{\footnotesize\ttfamily void Platform\+\_\+gettime\+\_\+realtime (\begin{DoxyParamCaption}\item[{struct timeval $\ast$}]{tv,  }\item[{uint64\+\_\+t $\ast$}]{msec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a97f7a52fbcd5425538172ebacde34d1e}\label{pcp_2Platform_8h_a97f7a52fbcd5425538172ebacde34d1e}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+get\+Uptime@{Platform\+\_\+get\+Uptime}}
+\index{Platform\+\_\+get\+Uptime@{Platform\+\_\+get\+Uptime}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Uptime()}{Platform\_getUptime()}}
+{\footnotesize\ttfamily int Platform\+\_\+get\+Uptime (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ab628d7aa0caa3b1eb5e26674c88198af}\label{pcp_2Platform_8h_ab628d7aa0caa3b1eb5e26674c88198af}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+init@{Platform\+\_\+init}}
+\index{Platform\+\_\+init@{Platform\+\_\+init}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+init()}{Platform\_init()}}
+{\footnotesize\ttfamily bool Platform\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a610b0177628424d47e5c7b5ea571a18e}\label{pcp_2Platform_8h_a610b0177628424d47e5c7b5ea571a18e}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+long\+Options\+Usage@{Platform\+\_\+long\+Options\+Usage}}
+\index{Platform\+\_\+long\+Options\+Usage@{Platform\+\_\+long\+Options\+Usage}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+long\+Options\+Usage()}{Platform\_longOptionsUsage()}}
+{\footnotesize\ttfamily void Platform\+\_\+long\+Options\+Usage (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a5230ac6fa902c21dff3d759e16ffc507}\label{pcp_2Platform_8h_a5230ac6fa902c21dff3d759e16ffc507}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+set\+Bindings@{Platform\+\_\+set\+Bindings}}
+\index{Platform\+\_\+set\+Bindings@{Platform\+\_\+set\+Bindings}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Bindings()}{Platform\_setBindings()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Bindings (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$}]{keys }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ac1b45c9c7717b01340624d71c62e2430}\label{pcp_2Platform_8h_ac1b45c9c7717b01340624d71c62e2430}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+set\+C\+P\+U\+Values@{Platform\+\_\+set\+C\+P\+U\+Values}}
+\index{Platform\+\_\+set\+C\+P\+U\+Values@{Platform\+\_\+set\+C\+P\+U\+Values}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+C\+P\+U\+Values()}{Platform\_setCPUValues()}}
+{\footnotesize\ttfamily double Platform\+\_\+set\+C\+P\+U\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this,  }\item[{int}]{cpu }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a20620332d27f20b0b91359e6d2e54465}\label{pcp_2Platform_8h_a20620332d27f20b0b91359e6d2e54465}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+set\+Memory\+Values@{Platform\+\_\+set\+Memory\+Values}}
+\index{Platform\+\_\+set\+Memory\+Values@{Platform\+\_\+set\+Memory\+Values}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Memory\+Values()}{Platform\_setMemoryValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Memory\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a41cdc0177a4d4de7001bc0a1730907f6}\label{pcp_2Platform_8h_a41cdc0177a4d4de7001bc0a1730907f6}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+set\+Swap\+Values@{Platform\+\_\+set\+Swap\+Values}}
+\index{Platform\+\_\+set\+Swap\+Values@{Platform\+\_\+set\+Swap\+Values}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Swap\+Values()}{Platform\_setSwapValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Swap\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a3e4d5d204dce31fe4e726f3d18b82287}\label{pcp_2Platform_8h_a3e4d5d204dce31fe4e726f3d18b82287}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+set\+Zfs\+Arc\+Values@{Platform\+\_\+set\+Zfs\+Arc\+Values}}
+\index{Platform\+\_\+set\+Zfs\+Arc\+Values@{Platform\+\_\+set\+Zfs\+Arc\+Values}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Zfs\+Arc\+Values()}{Platform\_setZfsArcValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Zfs\+Arc\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a687e09df5fde56312585f2b432e99ab8}\label{pcp_2Platform_8h_a687e09df5fde56312585f2b432e99ab8}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values@{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values}}
+\index{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values@{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values()}{Platform\_setZfsCompressedArcValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Zfs\+Compressed\+Arc\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_aeb8fc4c8040e9c73890a047e9651acd8}\label{pcp_2Platform_8h_aeb8fc4c8040e9c73890a047e9651acd8}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+set\+Zram\+Values@{Platform\+\_\+set\+Zram\+Values}}
+\index{Platform\+\_\+set\+Zram\+Values@{Platform\+\_\+set\+Zram\+Values}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Zram\+Values()}{Platform\_setZramValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Zram\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ace36c1e5a0236a136f5cc9b2e2dd42f6}\label{pcp_2Platform_8h_ace36c1e5a0236a136f5cc9b2e2dd42f6}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+update\+Tables@{Platform\+\_\+update\+Tables}}
+\index{Platform\+\_\+update\+Tables@{Platform\+\_\+update\+Tables}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+update\+Tables()}{Platform\_updateTables()}}
+{\footnotesize\ttfamily void Platform\+\_\+update\+Tables (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{pcp_2Platform_8h_ad6ca27ccbee85de84aa3658cce6de84e}\label{pcp_2Platform_8h_ad6ca27ccbee85de84aa3658cce6de84e}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!opts@{opts}}
+\index{opts@{opts}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{opts}{opts}}
+{\footnotesize\ttfamily pm\+Options opts}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_aff369bc0cdcf4070a58fd50b342b84cb}\label{pcp_2Platform_8h_aff369bc0cdcf4070a58fd50b342b84cb}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+default\+Screens@{Platform\+\_\+default\+Screens}}
+\index{Platform\+\_\+default\+Screens@{Platform\+\_\+default\+Screens}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+default\+Screens}{Platform\_defaultScreens}}
+{\footnotesize\ttfamily const \hyperlink{structScreenDefaults}{Screen\+Defaults} Platform\+\_\+default\+Screens\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_a3935ec99eeceab0fe9582c92eeec4baa}\label{pcp_2Platform_8h_a3935ec99eeceab0fe9582c92eeec4baa}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+meter\+Types@{Platform\+\_\+meter\+Types}}
+\index{Platform\+\_\+meter\+Types@{Platform\+\_\+meter\+Types}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+meter\+Types}{Platform\_meterTypes}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class}$\ast$ const Platform\+\_\+meter\+Types\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ac8f39efe7b8276cb8796316fd5c2583f}\label{pcp_2Platform_8h_ac8f39efe7b8276cb8796316fd5c2583f}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+number\+Of\+Default\+Screens@{Platform\+\_\+number\+Of\+Default\+Screens}}
+\index{Platform\+\_\+number\+Of\+Default\+Screens@{Platform\+\_\+number\+Of\+Default\+Screens}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+number\+Of\+Default\+Screens}{Platform\_numberOfDefaultScreens}}
+{\footnotesize\ttfamily const unsigned int Platform\+\_\+number\+Of\+Default\+Screens}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_aa7affae43f72bb563034790830aecb51}\label{pcp_2Platform_8h_aa7affae43f72bb563034790830aecb51}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+number\+Of\+Signals@{Platform\+\_\+number\+Of\+Signals}}
+\index{Platform\+\_\+number\+Of\+Signals@{Platform\+\_\+number\+Of\+Signals}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+number\+Of\+Signals}{Platform\_numberOfSignals}}
+{\footnotesize\ttfamily const unsigned int Platform\+\_\+number\+Of\+Signals}
+
+\mbox{\Hypertarget{pcp_2Platform_8h_ad6019115f7aacb2d94f395d5e8754638}\label{pcp_2Platform_8h_ad6019115f7aacb2d94f395d5e8754638}} 
+\index{pcp/\+Platform.\+h@{pcp/\+Platform.\+h}!Platform\+\_\+signals@{Platform\+\_\+signals}}
+\index{Platform\+\_\+signals@{Platform\+\_\+signals}!pcp/\+Platform.\+h@{pcp/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+signals}{Platform\_signals}}
+{\footnotesize\ttfamily const \hyperlink{SignalsPanel_8h_aacc61a14392728a9696f0560309c1177}{Signal\+Item} Platform\+\_\+signals\mbox{[}$\,$\mbox{]}}
+

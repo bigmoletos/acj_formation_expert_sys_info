@@ -1,0 +1,18 @@
+digraph "linux/download/htop-3.3.0/MetersPanel.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node41 [label="linux/download/htop\l-3.3.0/MetersPanel.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node41 -> Node42 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node42 [label="linux/download/htop\l-3.3.0/AvailableMetersPanel.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AvailableMetersPanel_8h.html"];
+  Node42 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 [label="linux/download/htop\l-3.3.0/AvailableMetersPanel.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AvailableMetersPanel_8c.html"];
+  Node42 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node44 [label="linux/download/htop\l-3.3.0/CategoriesPanel.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CategoriesPanel_8c.html"];
+  Node41 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node41 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node41 -> Node45 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 [label="linux/download/htop\l-3.3.0/CommandLine.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CommandLine_8c.html"];
+  Node41 -> Node46 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 [label="linux/download/htop\l-3.3.0/MetersPanel.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$MetersPanel_8c.html"];
+}

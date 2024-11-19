@@ -1,0 +1,235 @@
+\hypertarget{Table_8h}{}\section{linux/download/htop-\/3.3.0/\+Table.h File Reference}
+\label{Table_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Table.\+h@{linux/download/htop-\/3.\+3.\+0/\+Table.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+Include dependency graph for Table.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structTable__}{Table\+\_\+}
+\item 
+struct \hyperlink{structTableClass__}{Table\+Class\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(this\+\_\+)~((const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class}$\ast$)((this\+\_\+)-\/$>$super.\+klass))
+\item 
+\#define \hyperlink{Table_8h_a0919e2fe3e5646d03c793228633afaaf}{Table\+\_\+scan\+Prepare}(t\+\_\+)~(\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$prepare ? (\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$prepare(t\+\_\+)) \+: \hyperlink{Table_8h_ab0797fb9ad2355db6c4a50d2817ad81c}{Table\+\_\+prepare\+Entries}(t\+\_\+))
+\item 
+\#define \hyperlink{Table_8h_a4173e51e03ffece2c48d7f983a60058d}{Table\+\_\+scan\+Iterate}(t\+\_\+)~(\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$iterate(t\+\_\+))  /$\ast$ mandatory; must have a custom iterate method $\ast$/
+\item 
+\#define \hyperlink{Table_8h_ade3dc603c60e38c6a5c7f39bcd86b715}{Table\+\_\+scan\+Cleanup}(t\+\_\+)~(\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$cleanup ? (\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$cleanup(t\+\_\+)) \+: \hyperlink{Table_8h_a3478ee6f34adb3062f15156caaa676ef}{Table\+\_\+cleanup\+Entries}(t\+\_\+))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structTable__}{Table\+\_\+} \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table}
+\item 
+typedef \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$($\ast$ \hyperlink{Table_8h_adfdbf1455fb67194e588eb9ae639b225}{Table\+\_\+\+New}) (const struct \hyperlink{structMachine__}{Machine\+\_\+} $\ast$)
+\item 
+typedef void($\ast$ \hyperlink{Table_8h_a9b73c1e2f5fe404379cbd9c2b2e54a0d}{Table\+\_\+\+Scan\+Prepare}) (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+typedef void($\ast$ \hyperlink{Table_8h_a148456aa8508b5f715555919f2b265f9}{Table\+\_\+\+Scan\+Iterate}) (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+typedef void($\ast$ \hyperlink{Table_8h_ad248f64af32f49ca877a8a581e35fd83}{Table\+\_\+\+Scan\+Cleanup}) (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+typedef struct \hyperlink{structTableClass__}{Table\+Class\+\_\+} \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$ \hyperlink{Table_8h_a4505a77502a57166eb1a842cea21f65e}{Table\+\_\+init} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this, const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$klass, struct \hyperlink{structMachine__}{Machine\+\_\+} $\ast$host)
+\item 
+void \hyperlink{Table_8h_a8421f9dffcd7b17add6130f4f4929784}{Table\+\_\+done} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+void \hyperlink{Table_8h_ad4bfee1db7ee14490444caedf9549f55}{Table\+\_\+set\+Panel} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this, struct \hyperlink{structPanel__}{Panel\+\_\+} $\ast$panel)
+\item 
+void \hyperlink{Table_8h_ad2702fcbf5d8a73186f563253e0c5f34}{Table\+\_\+print\+Header} (const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$header)
+\item 
+void \hyperlink{Table_8h_afe0eefb43036b59d92ac0380a303064d}{Table\+\_\+add} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this, struct \hyperlink{structRow__}{Row\+\_\+} $\ast$row)
+\item 
+void \hyperlink{Table_8h_a909e8ad4086e15b663cf96457d3d0e29}{Table\+\_\+remove\+Index} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this, const struct \hyperlink{structRow__}{Row\+\_\+} $\ast$row, int idx)
+\item 
+void \hyperlink{Table_8h_ad2a94b7d5e061199ed46c5fa17ee3468}{Table\+\_\+update\+Display\+List} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+void \hyperlink{Table_8h_a6d5edc0e0957ec1c1ae3ef186b7f3642}{Table\+\_\+expand\+Tree} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+void \hyperlink{Table_8h_aa87d7d6c6fd8025d6f0830e0fd0f66aa}{Table\+\_\+collapse\+All\+Branches} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+void \hyperlink{Table_8h_a6c98993c9ee45ca09ca157515761fc45}{Table\+\_\+rebuild\+Panel} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+void \hyperlink{Table_8h_ab0797fb9ad2355db6c4a50d2817ad81c}{Table\+\_\+prepare\+Entries} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+void \hyperlink{Table_8h_a3478ee6f34adb3062f15156caaa676ef}{Table\+\_\+cleanup\+Entries} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)
+\item 
+void \hyperlink{Table_8h_a244d3a11805df49b6bd3365d886cf79b}{Table\+\_\+cleanup\+Row} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this, \hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$row, int idx)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} \hyperlink{Table_8h_a26f78400ae1e518e86247abe406f9f25}{Table\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Table_8h_ab2f88426fff88420ab7a989901746e6a}\label{Table_8h_ab2f88426fff88420ab7a989901746e6a}} 
+\index{Table.\+h@{Table.\+h}!As\+\_\+\+Table@{As\+\_\+\+Table}}
+\index{As\+\_\+\+Table@{As\+\_\+\+Table}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{As\+\_\+\+Table}{As\_Table}}
+{\footnotesize\ttfamily \#define As\+\_\+\+Table(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~((const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class}$\ast$)((this\+\_\+)-\/$>$super.\+klass))}
+
+\mbox{\Hypertarget{Table_8h_ade3dc603c60e38c6a5c7f39bcd86b715}\label{Table_8h_ade3dc603c60e38c6a5c7f39bcd86b715}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+scan\+Cleanup@{Table\+\_\+scan\+Cleanup}}
+\index{Table\+\_\+scan\+Cleanup@{Table\+\_\+scan\+Cleanup}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+scan\+Cleanup}{Table\_scanCleanup}}
+{\footnotesize\ttfamily \#define Table\+\_\+scan\+Cleanup(\begin{DoxyParamCaption}\item[{}]{t\+\_\+ }\end{DoxyParamCaption})~(\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$cleanup ? (\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$cleanup(t\+\_\+)) \+: \hyperlink{Table_8h_a3478ee6f34adb3062f15156caaa676ef}{Table\+\_\+cleanup\+Entries}(t\+\_\+))}
+
+\mbox{\Hypertarget{Table_8h_a4173e51e03ffece2c48d7f983a60058d}\label{Table_8h_a4173e51e03ffece2c48d7f983a60058d}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+scan\+Iterate@{Table\+\_\+scan\+Iterate}}
+\index{Table\+\_\+scan\+Iterate@{Table\+\_\+scan\+Iterate}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+scan\+Iterate}{Table\_scanIterate}}
+{\footnotesize\ttfamily \#define Table\+\_\+scan\+Iterate(\begin{DoxyParamCaption}\item[{}]{t\+\_\+ }\end{DoxyParamCaption})~(\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$iterate(t\+\_\+))  /$\ast$ mandatory; must have a custom iterate method $\ast$/}
+
+\mbox{\Hypertarget{Table_8h_a0919e2fe3e5646d03c793228633afaaf}\label{Table_8h_a0919e2fe3e5646d03c793228633afaaf}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+scan\+Prepare@{Table\+\_\+scan\+Prepare}}
+\index{Table\+\_\+scan\+Prepare@{Table\+\_\+scan\+Prepare}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+scan\+Prepare}{Table\_scanPrepare}}
+{\footnotesize\ttfamily \#define Table\+\_\+scan\+Prepare(\begin{DoxyParamCaption}\item[{}]{t\+\_\+ }\end{DoxyParamCaption})~(\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$prepare ? (\hyperlink{Table_8h_ab2f88426fff88420ab7a989901746e6a}{As\+\_\+\+Table}(t\+\_\+)-\/$>$prepare(t\+\_\+)) \+: \hyperlink{Table_8h_ab0797fb9ad2355db6c4a50d2817ad81c}{Table\+\_\+prepare\+Entries}(t\+\_\+))}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}\label{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}} 
+\index{Table.\+h@{Table.\+h}!Table@{Table}}
+\index{Table@{Table}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table}{Table}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structTable__}{Table\+\_\+}  \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table}}
+
+\mbox{\Hypertarget{Table_8h_adfdbf1455fb67194e588eb9ae639b225}\label{Table_8h_adfdbf1455fb67194e588eb9ae639b225}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+\+New@{Table\+\_\+\+New}}
+\index{Table\+\_\+\+New@{Table\+\_\+\+New}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+\+New}{Table\_New}}
+{\footnotesize\ttfamily typedef \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table}$\ast$($\ast$ Table\+\_\+\+New) (const struct \hyperlink{structMachine__}{Machine\+\_\+} $\ast$)}
+
+\mbox{\Hypertarget{Table_8h_ad248f64af32f49ca877a8a581e35fd83}\label{Table_8h_ad248f64af32f49ca877a8a581e35fd83}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+\+Scan\+Cleanup@{Table\+\_\+\+Scan\+Cleanup}}
+\index{Table\+\_\+\+Scan\+Cleanup@{Table\+\_\+\+Scan\+Cleanup}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+\+Scan\+Cleanup}{Table\_ScanCleanup}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+\_\+\+Scan\+Cleanup) (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)}
+
+\mbox{\Hypertarget{Table_8h_a148456aa8508b5f715555919f2b265f9}\label{Table_8h_a148456aa8508b5f715555919f2b265f9}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+\+Scan\+Iterate@{Table\+\_\+\+Scan\+Iterate}}
+\index{Table\+\_\+\+Scan\+Iterate@{Table\+\_\+\+Scan\+Iterate}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+\+Scan\+Iterate}{Table\_ScanIterate}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+\_\+\+Scan\+Iterate) (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)}
+
+\mbox{\Hypertarget{Table_8h_a9b73c1e2f5fe404379cbd9c2b2e54a0d}\label{Table_8h_a9b73c1e2f5fe404379cbd9c2b2e54a0d}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+\+Scan\+Prepare@{Table\+\_\+\+Scan\+Prepare}}
+\index{Table\+\_\+\+Scan\+Prepare@{Table\+\_\+\+Scan\+Prepare}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+\+Scan\+Prepare}{Table\_ScanPrepare}}
+{\footnotesize\ttfamily typedef void($\ast$ Table\+\_\+\+Scan\+Prepare) (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$this)}
+
+\mbox{\Hypertarget{Table_8h_aadb7c52b14edf1a3128ef39e10099137}\label{Table_8h_aadb7c52b14edf1a3128ef39e10099137}} 
+\index{Table.\+h@{Table.\+h}!Table\+Class@{Table\+Class}}
+\index{Table\+Class@{Table\+Class}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+Class}{TableClass}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structTableClass__}{Table\+Class\+\_\+}  \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Table_8h_afe0eefb43036b59d92ac0380a303064d}\label{Table_8h_afe0eefb43036b59d92ac0380a303064d}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+add@{Table\+\_\+add}}
+\index{Table\+\_\+add@{Table\+\_\+add}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+add()}{Table\_add()}}
+{\footnotesize\ttfamily void Table\+\_\+add (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this,  }\item[{struct \hyperlink{structRow__}{Row\+\_\+} $\ast$}]{row }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_a3478ee6f34adb3062f15156caaa676ef}\label{Table_8h_a3478ee6f34adb3062f15156caaa676ef}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+cleanup\+Entries@{Table\+\_\+cleanup\+Entries}}
+\index{Table\+\_\+cleanup\+Entries@{Table\+\_\+cleanup\+Entries}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+cleanup\+Entries()}{Table\_cleanupEntries()}}
+{\footnotesize\ttfamily void Table\+\_\+cleanup\+Entries (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_a244d3a11805df49b6bd3365d886cf79b}\label{Table_8h_a244d3a11805df49b6bd3365d886cf79b}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+cleanup\+Row@{Table\+\_\+cleanup\+Row}}
+\index{Table\+\_\+cleanup\+Row@{Table\+\_\+cleanup\+Row}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+cleanup\+Row()}{Table\_cleanupRow()}}
+{\footnotesize\ttfamily void Table\+\_\+cleanup\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this,  }\item[{\hyperlink{Row_8h_a54193344854aa79a97448ca03062e70c}{Row} $\ast$}]{row,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_aa87d7d6c6fd8025d6f0830e0fd0f66aa}\label{Table_8h_aa87d7d6c6fd8025d6f0830e0fd0f66aa}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+collapse\+All\+Branches@{Table\+\_\+collapse\+All\+Branches}}
+\index{Table\+\_\+collapse\+All\+Branches@{Table\+\_\+collapse\+All\+Branches}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+collapse\+All\+Branches()}{Table\_collapseAllBranches()}}
+{\footnotesize\ttfamily void Table\+\_\+collapse\+All\+Branches (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_a8421f9dffcd7b17add6130f4f4929784}\label{Table_8h_a8421f9dffcd7b17add6130f4f4929784}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+done@{Table\+\_\+done}}
+\index{Table\+\_\+done@{Table\+\_\+done}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+done()}{Table\_done()}}
+{\footnotesize\ttfamily void Table\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_a6d5edc0e0957ec1c1ae3ef186b7f3642}\label{Table_8h_a6d5edc0e0957ec1c1ae3ef186b7f3642}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+expand\+Tree@{Table\+\_\+expand\+Tree}}
+\index{Table\+\_\+expand\+Tree@{Table\+\_\+expand\+Tree}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+expand\+Tree()}{Table\_expandTree()}}
+{\footnotesize\ttfamily void Table\+\_\+expand\+Tree (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_a4505a77502a57166eb1a842cea21f65e}\label{Table_8h_a4505a77502a57166eb1a842cea21f65e}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+init@{Table\+\_\+init}}
+\index{Table\+\_\+init@{Table\+\_\+init}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+init()}{Table\_init()}}
+{\footnotesize\ttfamily \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table}$\ast$ Table\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this,  }\item[{const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$}]{klass,  }\item[{struct \hyperlink{structMachine__}{Machine\+\_\+} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_ab0797fb9ad2355db6c4a50d2817ad81c}\label{Table_8h_ab0797fb9ad2355db6c4a50d2817ad81c}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+prepare\+Entries@{Table\+\_\+prepare\+Entries}}
+\index{Table\+\_\+prepare\+Entries@{Table\+\_\+prepare\+Entries}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+prepare\+Entries()}{Table\_prepareEntries()}}
+{\footnotesize\ttfamily void Table\+\_\+prepare\+Entries (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_ad2702fcbf5d8a73186f563253e0c5f34}\label{Table_8h_ad2702fcbf5d8a73186f563253e0c5f34}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+print\+Header@{Table\+\_\+print\+Header}}
+\index{Table\+\_\+print\+Header@{Table\+\_\+print\+Header}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+print\+Header()}{Table\_printHeader()}}
+{\footnotesize\ttfamily void Table\+\_\+print\+Header (\begin{DoxyParamCaption}\item[{const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{header }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_a6c98993c9ee45ca09ca157515761fc45}\label{Table_8h_a6c98993c9ee45ca09ca157515761fc45}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+rebuild\+Panel@{Table\+\_\+rebuild\+Panel}}
+\index{Table\+\_\+rebuild\+Panel@{Table\+\_\+rebuild\+Panel}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+rebuild\+Panel()}{Table\_rebuildPanel()}}
+{\footnotesize\ttfamily void Table\+\_\+rebuild\+Panel (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_a909e8ad4086e15b663cf96457d3d0e29}\label{Table_8h_a909e8ad4086e15b663cf96457d3d0e29}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+remove\+Index@{Table\+\_\+remove\+Index}}
+\index{Table\+\_\+remove\+Index@{Table\+\_\+remove\+Index}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+remove\+Index()}{Table\_removeIndex()}}
+{\footnotesize\ttfamily void Table\+\_\+remove\+Index (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this,  }\item[{const struct \hyperlink{structRow__}{Row\+\_\+} $\ast$}]{row,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_ad4bfee1db7ee14490444caedf9549f55}\label{Table_8h_ad4bfee1db7ee14490444caedf9549f55}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+set\+Panel@{Table\+\_\+set\+Panel}}
+\index{Table\+\_\+set\+Panel@{Table\+\_\+set\+Panel}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+set\+Panel()}{Table\_setPanel()}}
+{\footnotesize\ttfamily void Table\+\_\+set\+Panel (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this,  }\item[{struct \hyperlink{structPanel__}{Panel\+\_\+} $\ast$}]{panel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Table_8h_ad2a94b7d5e061199ed46c5fa17ee3468}\label{Table_8h_ad2a94b7d5e061199ed46c5fa17ee3468}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+update\+Display\+List@{Table\+\_\+update\+Display\+List}}
+\index{Table\+\_\+update\+Display\+List@{Table\+\_\+update\+Display\+List}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+update\+Display\+List()}{Table\_updateDisplayList()}}
+{\footnotesize\ttfamily void Table\+\_\+update\+Display\+List (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Table_8h_a26f78400ae1e518e86247abe406f9f25}\label{Table_8h_a26f78400ae1e518e86247abe406f9f25}} 
+\index{Table.\+h@{Table.\+h}!Table\+\_\+class@{Table\+\_\+class}}
+\index{Table\+\_\+class@{Table\+\_\+class}!Table.\+h@{Table.\+h}}
+\subsubsection{\texorpdfstring{Table\+\_\+class}{Table\_class}}
+{\footnotesize\ttfamily const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} Table\+\_\+class}
+

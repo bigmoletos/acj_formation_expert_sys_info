@@ -1,0 +1,101 @@
+\hypertarget{ScreenManager_8h}{}\section{linux/download/htop-\/3.3.0/\+Screen\+Manager.h File Reference}
+\label{ScreenManager_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Screen\+Manager.\+h@{linux/download/htop-\/3.\+3.\+0/\+Screen\+Manager.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Action.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+Include dependency graph for Screen\+Manager.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structScreenManager__}{Screen\+Manager\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structScreenManager__}{Screen\+Manager\+\_\+} \hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$ \hyperlink{ScreenManager_8h_ace9655a9f5ec8f19bc8d888f000fa962}{Screen\+Manager\+\_\+new} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$header, \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, \hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$state, bool owner)
+\item 
+void \hyperlink{ScreenManager_8h_a61149357e3b410635a052c667856f0eb}{Screen\+Manager\+\_\+delete} (\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$this)
+\item 
+int \hyperlink{ScreenManager_8h_a457aef164834bf710761754d4d50da24}{Screen\+Manager\+\_\+size} (const \hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$this)
+\item 
+void \hyperlink{ScreenManager_8h_a9fcf6b1497df994e3598b0d79ce8852c}{Screen\+Manager\+\_\+add} (\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$this, \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$item, int size)
+\item 
+void \hyperlink{ScreenManager_8h_a52987963d71a1e53004c587ab8c6fa18}{Screen\+Manager\+\_\+insert} (\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$this, \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$item, int size, int idx)
+\item 
+\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$ \hyperlink{ScreenManager_8h_a402eea9679a3b6908b54814671858614}{Screen\+Manager\+\_\+remove} (\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$this, int idx)
+\item 
+void \hyperlink{ScreenManager_8h_ab03d43de64d1659c19b87c0228e1f877}{Screen\+Manager\+\_\+resize} (\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$this)
+\item 
+void \hyperlink{ScreenManager_8h_ae5ff1592de8291377f6523d13d138b4f}{Screen\+Manager\+\_\+run} (\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$this, \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$$\ast$last\+Focus, int $\ast$last\+Key, const char $\ast$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name})
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}\label{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}} 
+\index{Screen\+Manager.\+h@{Screen\+Manager.\+h}!Screen\+Manager@{Screen\+Manager}}
+\index{Screen\+Manager@{Screen\+Manager}!Screen\+Manager.\+h@{Screen\+Manager.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Manager}{ScreenManager}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structScreenManager__}{Screen\+Manager\+\_\+}  \hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ScreenManager_8h_a9fcf6b1497df994e3598b0d79ce8852c}\label{ScreenManager_8h_a9fcf6b1497df994e3598b0d79ce8852c}} 
+\index{Screen\+Manager.\+h@{Screen\+Manager.\+h}!Screen\+Manager\+\_\+add@{Screen\+Manager\+\_\+add}}
+\index{Screen\+Manager\+\_\+add@{Screen\+Manager\+\_\+add}!Screen\+Manager.\+h@{Screen\+Manager.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Manager\+\_\+add()}{ScreenManager\_add()}}
+{\footnotesize\ttfamily void Screen\+Manager\+\_\+add (\begin{DoxyParamCaption}\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{this,  }\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{item,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ScreenManager_8h_a61149357e3b410635a052c667856f0eb}\label{ScreenManager_8h_a61149357e3b410635a052c667856f0eb}} 
+\index{Screen\+Manager.\+h@{Screen\+Manager.\+h}!Screen\+Manager\+\_\+delete@{Screen\+Manager\+\_\+delete}}
+\index{Screen\+Manager\+\_\+delete@{Screen\+Manager\+\_\+delete}!Screen\+Manager.\+h@{Screen\+Manager.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Manager\+\_\+delete()}{ScreenManager\_delete()}}
+{\footnotesize\ttfamily void Screen\+Manager\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ScreenManager_8h_a52987963d71a1e53004c587ab8c6fa18}\label{ScreenManager_8h_a52987963d71a1e53004c587ab8c6fa18}} 
+\index{Screen\+Manager.\+h@{Screen\+Manager.\+h}!Screen\+Manager\+\_\+insert@{Screen\+Manager\+\_\+insert}}
+\index{Screen\+Manager\+\_\+insert@{Screen\+Manager\+\_\+insert}!Screen\+Manager.\+h@{Screen\+Manager.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Manager\+\_\+insert()}{ScreenManager\_insert()}}
+{\footnotesize\ttfamily void Screen\+Manager\+\_\+insert (\begin{DoxyParamCaption}\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{this,  }\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{item,  }\item[{int}]{size,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ScreenManager_8h_ace9655a9f5ec8f19bc8d888f000fa962}\label{ScreenManager_8h_ace9655a9f5ec8f19bc8d888f000fa962}} 
+\index{Screen\+Manager.\+h@{Screen\+Manager.\+h}!Screen\+Manager\+\_\+new@{Screen\+Manager\+\_\+new}}
+\index{Screen\+Manager\+\_\+new@{Screen\+Manager\+\_\+new}!Screen\+Manager.\+h@{Screen\+Manager.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Manager\+\_\+new()}{ScreenManager\_new()}}
+{\footnotesize\ttfamily \hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager}$\ast$ Screen\+Manager\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{header,  }\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$}]{state,  }\item[{bool}]{owner }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ScreenManager_8h_a402eea9679a3b6908b54814671858614}\label{ScreenManager_8h_a402eea9679a3b6908b54814671858614}} 
+\index{Screen\+Manager.\+h@{Screen\+Manager.\+h}!Screen\+Manager\+\_\+remove@{Screen\+Manager\+\_\+remove}}
+\index{Screen\+Manager\+\_\+remove@{Screen\+Manager\+\_\+remove}!Screen\+Manager.\+h@{Screen\+Manager.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Manager\+\_\+remove()}{ScreenManager\_remove()}}
+{\footnotesize\ttfamily \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel}$\ast$ Screen\+Manager\+\_\+remove (\begin{DoxyParamCaption}\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{this,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ScreenManager_8h_ab03d43de64d1659c19b87c0228e1f877}\label{ScreenManager_8h_ab03d43de64d1659c19b87c0228e1f877}} 
+\index{Screen\+Manager.\+h@{Screen\+Manager.\+h}!Screen\+Manager\+\_\+resize@{Screen\+Manager\+\_\+resize}}
+\index{Screen\+Manager\+\_\+resize@{Screen\+Manager\+\_\+resize}!Screen\+Manager.\+h@{Screen\+Manager.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Manager\+\_\+resize()}{ScreenManager\_resize()}}
+{\footnotesize\ttfamily void Screen\+Manager\+\_\+resize (\begin{DoxyParamCaption}\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ScreenManager_8h_ae5ff1592de8291377f6523d13d138b4f}\label{ScreenManager_8h_ae5ff1592de8291377f6523d13d138b4f}} 
+\index{Screen\+Manager.\+h@{Screen\+Manager.\+h}!Screen\+Manager\+\_\+run@{Screen\+Manager\+\_\+run}}
+\index{Screen\+Manager\+\_\+run@{Screen\+Manager\+\_\+run}!Screen\+Manager.\+h@{Screen\+Manager.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Manager\+\_\+run()}{ScreenManager\_run()}}
+{\footnotesize\ttfamily void Screen\+Manager\+\_\+run (\begin{DoxyParamCaption}\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{this,  }\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$$\ast$}]{last\+Focus,  }\item[{int $\ast$}]{last\+Key,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ScreenManager_8h_a457aef164834bf710761754d4d50da24}\label{ScreenManager_8h_a457aef164834bf710761754d4d50da24}} 
+\index{Screen\+Manager.\+h@{Screen\+Manager.\+h}!Screen\+Manager\+\_\+size@{Screen\+Manager\+\_\+size}}
+\index{Screen\+Manager\+\_\+size@{Screen\+Manager\+\_\+size}!Screen\+Manager.\+h@{Screen\+Manager.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Manager\+\_\+size()}{ScreenManager\_size()}}
+{\footnotesize\ttfamily int Screen\+Manager\+\_\+size (\begin{DoxyParamCaption}\item[{const \hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

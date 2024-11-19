@@ -1,0 +1,95 @@
+python.\+exe -\/m pip install --upgrade pip
+
+\section*{Installer virtualenv}
+
+pip install virtualenv
+
+\section*{Créer un environnement virtuel}
+
+virtualenv django\+\_\+env
+
+\section*{Activer l\textquotesingle{}environnement virtuel}
+
+.
+
+\section*{Installer les packages}
+
+pip install django views pandas numpy plotly seaborn scikit-\/learn scipy bs4 fuzzywuzzy django-\/select2 requests joblib djangorestframework selenium webdriver\+\_\+manager
+
+\section*{Enregistrer les packages installés dans un fichier requirements.\+txt}
+
+pip freeze $>$ requirements.\+txt
+
+\section*{Installer les packages à partir du fichier requirements.\+txt en adaptant les verssion à notre environnement}
+
+pip install -\/r requirements.\+txt
+
+\section*{Créer un projet Django}
+
+django-\/admin startproject projet\+\_\+recommandation\+\_\+films
+
+\section*{lancer le fichier app.\+py}
+
+python manage.\+py runserver
+
+\section*{Mise à jour des migrations de B\+DD}
+
+python manage.\+py migrate
+
+\section*{relancer le fichier app.\+py}
+
+python manage.\+py runserver
+
+\section*{\href{http://127.0.0.1:5000}{\tt http\+://127.\+0.\+0.\+1\+:5000} sur le port 5000. Donc, l’\+U\+RL serait \href{http://localhost:5000}{\tt http\+://localhost\+:5000} ou \href{http://127.0.0.1:5000}{\tt http\+://127.\+0.\+0.\+1\+:5000}.}
+
+\section*{pour arreter l\textquotesingle{}environnement virtuel}
+
+deactivate
+
+\section*{Pour relancer le projet}
+
+\subsection*{se mettre dans le dossier $\ast$$\ast$$\ast$\+Projet2\+\_\+\+Net\+Flix$>$$\ast$$\ast$$\ast$}
+
+cd Django . \subsection*{se mettre dans le dossier $\ast$$\ast$$\ast$\+Projet2\+\_\+\+Net\+Flix$>$$\ast$$\ast$$\ast$}
+
+cd .\textbackslash{} python manage.\+py runserver
+
+\section*{importer réguliérement les données statiques du site css, js ,image etc....}
+
+python manage.\+py collectstatic
+
+\section*{si besoin de désinstaller des prog}
+
+pip uninstall django pandas numpy plotly seaborn scikit-\/learn
+
+\section*{les templates par défaut doivent se trouver dans le repertoire à la racine de app.\+py dans un dossier templates}
+
+créer un dossier {\itshape {\bfseries my\+\_\+application}} créer un dossier {\itshape {\bfseries template}} comprenant tous les fichiers html Django\textbackslash{} accueil.\+html \subsubsection*{les fichiers importants se trouvent dans\+:}
+
+Projets\textbackslash{} manage.\+py Projets\textbackslash{} models.\+py Django\textbackslash{} views.\+py \subsubsection*{Django$<$/h3$>$ Django\textbackslash{} urls.\+py settings.\+py les fichiers python de l\textquotesingle{}application}
+
+Django\textbackslash{} stat\+\_\+acteur.\+py
+
+\section*{Créez une application en utilisant manage.\+py. Assurez-\/vous d\textquotesingle{}être dans le même répertoire que manage.\+py et exécutez la commande suivante}
+
+\subsubsection*{on ne doit pas avoir plusieurs manage.\+py dans le projet}
+
+python manage.\+py startapp nom\+\_\+de\+\_\+votre\+\_\+application
+
+\section*{Gestion des problemes on peut forcer lma réinstallation de django pour qu\textquotesingle{}il prenne en compte notre architecture}
+
+pip install --force-\/reinstall django
+
+\section*{pour annuler un e meigration}
+
+python manage.\+py migrate anom\+\_\+application zero \section*{si aprés des pb de migration il faut recreer les dossiers migration d\textquotesingle{}un application}
+
+python manage.\+py makemigrations nom\+\_\+application python manage.\+py migrate
+
+\section*{pour créer un user admin}
+
+python manage.\+py createsuperuser
+
+\section*{Changer le mot de passe d\textquotesingle{}un superutilisateur existant}
+
+python manage.\+py changepassword $<$username$>$ 

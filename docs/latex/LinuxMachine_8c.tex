@@ -1,0 +1,128 @@
+\hypertarget{LinuxMachine_8c}{}\section{linux/download/htop-\/3.3.0/linux/\+Linux\+Machine.c File Reference}
+\label{LinuxMachine_8c}\index{linux/download/htop-\/3.\+3.\+0/linux/\+Linux\+Machine.\+c@{linux/download/htop-\/3.\+3.\+0/linux/\+Linux\+Machine.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Linux\+Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$strings.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Compat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Users\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linux/\+Platform.\+h\char`\"{}}\newline
+Include dependency graph for Linux\+Machine.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{LinuxMachine_8c_a6b82111c13e7367ba2ac5fd6bf4650ab}{O\+\_\+\+P\+A\+TH}~010000000
+\item 
+\#define \hyperlink{LinuxMachine_8c_a54bdd7b3c352f0ebdb18af83add8f5a4}{try\+Read}(label,  variable)
+\item 
+\#define \hyperlink{LinuxMachine_8c_a54bdd7b3c352f0ebdb18af83add8f5a4}{try\+Read}(label,  variable)
+\item 
+\#define \hyperlink{LinuxMachine_8c_ab34e2e3a188c5736c98cce20356784ca}{try\+Read\+Flag}(label,  variable,  flag)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{LinuxMachine_8c_a794e5df1bf4b2ae6ba93bfeeea717705}{Machine\+\_\+scan} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$super)
+\item 
+\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$ \hyperlink{LinuxMachine_8c_ae6e3ec78c3c42cdd4683f8b205af522a}{Machine\+\_\+new} (\hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table} $\ast$users\+Table, uid\+\_\+t user\+Id)
+\item 
+void \hyperlink{LinuxMachine_8c_a9259d45b9ba6db31481f94c1a03b363a}{Machine\+\_\+delete} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$super)
+\item 
+bool \hyperlink{LinuxMachine_8c_a64911ff4f1b14717387091398cd1c8ba}{Machine\+\_\+is\+C\+P\+Uonline} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$super, unsigned int id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{LinuxMachine_8c_a6b82111c13e7367ba2ac5fd6bf4650ab}\label{LinuxMachine_8c_a6b82111c13e7367ba2ac5fd6bf4650ab}} 
+\index{Linux\+Machine.\+c@{Linux\+Machine.\+c}!O\+\_\+\+P\+A\+TH@{O\+\_\+\+P\+A\+TH}}
+\index{O\+\_\+\+P\+A\+TH@{O\+\_\+\+P\+A\+TH}!Linux\+Machine.\+c@{Linux\+Machine.\+c}}
+\subsubsection{\texorpdfstring{O\+\_\+\+P\+A\+TH}{O\_PATH}}
+{\footnotesize\ttfamily \#define O\+\_\+\+P\+A\+TH~010000000}
+
+\mbox{\Hypertarget{LinuxMachine_8c_a54bdd7b3c352f0ebdb18af83add8f5a4}\label{LinuxMachine_8c_a54bdd7b3c352f0ebdb18af83add8f5a4}} 
+\index{Linux\+Machine.\+c@{Linux\+Machine.\+c}!try\+Read@{try\+Read}}
+\index{try\+Read@{try\+Read}!Linux\+Machine.\+c@{Linux\+Machine.\+c}}
+\subsubsection{\texorpdfstring{try\+Read}{tryRead}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define try\+Read(\begin{DoxyParamCaption}\item[{}]{label,  }\item[{}]{variable }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (String\_startsWith(buffer, label)) \{                             \(\backslash\)
+            memory\_t parsed\_;                                                \(\backslash\)
+            if (sscanf(buffer + strlen(label), \textcolor{stringliteral}{"%llu kB"}, &parsed\_) == 1) \{  \(\backslash\)
+               (variable) = parsed\_;                                         \(\backslash\)
+            \}                                                                \(\backslash\)
+            break;                                                           \(\backslash\)
+         \} \textcolor{keywordflow}{else} (\textcolor{keywordtype}{void}) 0 \textcolor{comment}{/* Require a ";" after the macro use. */}
+\end{DoxyCode}
+\mbox{\Hypertarget{LinuxMachine_8c_a54bdd7b3c352f0ebdb18af83add8f5a4}\label{LinuxMachine_8c_a54bdd7b3c352f0ebdb18af83add8f5a4}} 
+\index{Linux\+Machine.\+c@{Linux\+Machine.\+c}!try\+Read@{try\+Read}}
+\index{try\+Read@{try\+Read}!Linux\+Machine.\+c@{Linux\+Machine.\+c}}
+\subsubsection{\texorpdfstring{try\+Read}{tryRead}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define try\+Read(\begin{DoxyParamCaption}\item[{}]{label,  }\item[{}]{variable }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (String\_startsWith(buffer, label)) \{                               \(\backslash\)
+            sscanf(buffer + strlen(label), \textcolor{stringliteral}{" %*2u %32llu"}, variable);          \(\backslash\)
+            break;                                                             \(\backslash\)
+         \} \textcolor{keywordflow}{else} (\textcolor{keywordtype}{void}) 0 \textcolor{comment}{/* Require a ";" after the macro use. */}
+\end{DoxyCode}
+\mbox{\Hypertarget{LinuxMachine_8c_ab34e2e3a188c5736c98cce20356784ca}\label{LinuxMachine_8c_ab34e2e3a188c5736c98cce20356784ca}} 
+\index{Linux\+Machine.\+c@{Linux\+Machine.\+c}!try\+Read\+Flag@{try\+Read\+Flag}}
+\index{try\+Read\+Flag@{try\+Read\+Flag}!Linux\+Machine.\+c@{Linux\+Machine.\+c}}
+\subsubsection{\texorpdfstring{try\+Read\+Flag}{tryReadFlag}}
+{\footnotesize\ttfamily \#define try\+Read\+Flag(\begin{DoxyParamCaption}\item[{}]{label,  }\item[{}]{variable,  }\item[{}]{flag }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (String\_startsWith(buffer, label)) \{                               \(\backslash\)
+            (flag) = sscanf(buffer + strlen(label), \textcolor{stringliteral}{" %*2u %32llu"}, variable); \(\backslash\)
+            break;                                                             \(\backslash\)
+         \} \textcolor{keywordflow}{else} (\textcolor{keywordtype}{void}) 0 \textcolor{comment}{/* Require a ";" after the macro use. */}
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{LinuxMachine_8c_a9259d45b9ba6db31481f94c1a03b363a}\label{LinuxMachine_8c_a9259d45b9ba6db31481f94c1a03b363a}} 
+\index{Linux\+Machine.\+c@{Linux\+Machine.\+c}!Machine\+\_\+delete@{Machine\+\_\+delete}}
+\index{Machine\+\_\+delete@{Machine\+\_\+delete}!Linux\+Machine.\+c@{Linux\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+delete()}{Machine\_delete()}}
+{\footnotesize\ttfamily void Machine\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{super }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxMachine_8c_a64911ff4f1b14717387091398cd1c8ba}\label{LinuxMachine_8c_a64911ff4f1b14717387091398cd1c8ba}} 
+\index{Linux\+Machine.\+c@{Linux\+Machine.\+c}!Machine\+\_\+is\+C\+P\+Uonline@{Machine\+\_\+is\+C\+P\+Uonline}}
+\index{Machine\+\_\+is\+C\+P\+Uonline@{Machine\+\_\+is\+C\+P\+Uonline}!Linux\+Machine.\+c@{Linux\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+is\+C\+P\+Uonline()}{Machine\_isCPUonline()}}
+{\footnotesize\ttfamily bool Machine\+\_\+is\+C\+P\+Uonline (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{super,  }\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxMachine_8c_ae6e3ec78c3c42cdd4683f8b205af522a}\label{LinuxMachine_8c_ae6e3ec78c3c42cdd4683f8b205af522a}} 
+\index{Linux\+Machine.\+c@{Linux\+Machine.\+c}!Machine\+\_\+new@{Machine\+\_\+new}}
+\index{Machine\+\_\+new@{Machine\+\_\+new}!Linux\+Machine.\+c@{Linux\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+new()}{Machine\_new()}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine}$\ast$ Machine\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table} $\ast$}]{users\+Table,  }\item[{uid\+\_\+t}]{user\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{LinuxMachine_8c_a794e5df1bf4b2ae6ba93bfeeea717705}\label{LinuxMachine_8c_a794e5df1bf4b2ae6ba93bfeeea717705}} 
+\index{Linux\+Machine.\+c@{Linux\+Machine.\+c}!Machine\+\_\+scan@{Machine\+\_\+scan}}
+\index{Machine\+\_\+scan@{Machine\+\_\+scan}!Linux\+Machine.\+c@{Linux\+Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+scan()}{Machine\_scan()}}
+{\footnotesize\ttfamily void Machine\+\_\+scan (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{super }\end{DoxyParamCaption})}
+

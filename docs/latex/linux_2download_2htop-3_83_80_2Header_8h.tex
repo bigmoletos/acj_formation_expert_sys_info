@@ -1,0 +1,130 @@
+\hypertarget{linux_2download_2htop-3_83_80_2Header_8h}{}\section{linux/download/htop-\/3.3.0/\+Header.h File Reference}
+\label{linux_2download_2htop-3_83_80_2Header_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Header\+Layout.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+Include dependency graph for Header.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structHeader__}{Header\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_af27a88f94fb177b54dd3ff1f29b76615}{Header\+\_\+for\+Each\+Column}(this\+\_\+,  i\+\_\+)~\hyperlink{exo21_8cpp_a21d2815da7c583ec46e9b81638877e7b}{for} (size\+\_\+t (i\+\_\+)=0, H\+\_\+f\+E\+C\+\_\+num\+Columns\+\_\+ = Header\+Layout\+\_\+get\+Columns((this\+\_\+)-\/$>$header\+Layout); (i\+\_\+) $<$ H\+\_\+f\+E\+C\+\_\+num\+Columns\+\_\+; ++(i\+\_\+))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structHeader__}{Header\+\_\+} \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$ \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a6b6de6db73a35db6cffc67f9e36dcdad}{Header\+\_\+new} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, \hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout} h\+Layout)
+\item 
+void \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_aa6c5ee017dcbc2559b8043d13c6ce4ee}{Header\+\_\+delete} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+void \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a9918e7a64f023cbafbe9e52e7073c4f7}{Header\+\_\+set\+Layout} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this, \hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout} h\+Layout)
+\item 
+void \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_aa7bb04ad3231663bc2e520425c8eb97c}{Header\+\_\+populate\+From\+Settings} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+void \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_ad8efc1073dcde3741fb1465237a7de8a}{Header\+\_\+write\+Back\+To\+Settings} (const \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$ \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_abef22ccfc18d4b931db18a618498d4cf}{Header\+\_\+add\+Meter\+By\+Class} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this, const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} $\ast$type, unsigned int param, unsigned int column)
+\item 
+void \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a16dfc5a81555ed5b24fa76ca9dd382dd}{Header\+\_\+reinit} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+void \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a8fdc16efdbdf77c599e2286925876790}{Header\+\_\+draw} (const \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+void \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a920f6f5b28ea524edde6e59c51ef5632}{Header\+\_\+update\+Data} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+int \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a617d51c6adc388c29bdbb1f5c8499d38}{Header\+\_\+calculate\+Height} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_af27a88f94fb177b54dd3ff1f29b76615}\label{linux_2download_2htop-3_83_80_2Header_8h_af27a88f94fb177b54dd3ff1f29b76615}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+for\+Each\+Column@{Header\+\_\+for\+Each\+Column}}
+\index{Header\+\_\+for\+Each\+Column@{Header\+\_\+for\+Each\+Column}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+for\+Each\+Column}{Header\_forEachColumn}}
+{\footnotesize\ttfamily \#define Header\+\_\+for\+Each\+Column(\begin{DoxyParamCaption}\item[{}]{this\+\_\+,  }\item[{}]{i\+\_\+ }\end{DoxyParamCaption})~\hyperlink{exo21_8cpp_a21d2815da7c583ec46e9b81638877e7b}{for} (size\+\_\+t (i\+\_\+)=0, H\+\_\+f\+E\+C\+\_\+num\+Columns\+\_\+ = Header\+Layout\+\_\+get\+Columns((this\+\_\+)-\/$>$header\+Layout); (i\+\_\+) $<$ H\+\_\+f\+E\+C\+\_\+num\+Columns\+\_\+; ++(i\+\_\+))}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}\label{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header@{Header}}
+\index{Header@{Header}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header}{Header}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structHeader__}{Header\+\_\+}  \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_abef22ccfc18d4b931db18a618498d4cf}\label{linux_2download_2htop-3_83_80_2Header_8h_abef22ccfc18d4b931db18a618498d4cf}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+add\+Meter\+By\+Class@{Header\+\_\+add\+Meter\+By\+Class}}
+\index{Header\+\_\+add\+Meter\+By\+Class@{Header\+\_\+add\+Meter\+By\+Class}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+add\+Meter\+By\+Class()}{Header\_addMeterByClass()}}
+{\footnotesize\ttfamily \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$ Header\+\_\+add\+Meter\+By\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this,  }\item[{const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} $\ast$}]{type,  }\item[{unsigned int}]{param,  }\item[{unsigned int}]{column }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_a617d51c6adc388c29bdbb1f5c8499d38}\label{linux_2download_2htop-3_83_80_2Header_8h_a617d51c6adc388c29bdbb1f5c8499d38}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+calculate\+Height@{Header\+\_\+calculate\+Height}}
+\index{Header\+\_\+calculate\+Height@{Header\+\_\+calculate\+Height}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+calculate\+Height()}{Header\_calculateHeight()}}
+{\footnotesize\ttfamily int Header\+\_\+calculate\+Height (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_aa6c5ee017dcbc2559b8043d13c6ce4ee}\label{linux_2download_2htop-3_83_80_2Header_8h_aa6c5ee017dcbc2559b8043d13c6ce4ee}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+delete@{Header\+\_\+delete}}
+\index{Header\+\_\+delete@{Header\+\_\+delete}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+delete()}{Header\_delete()}}
+{\footnotesize\ttfamily void Header\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_a8fdc16efdbdf77c599e2286925876790}\label{linux_2download_2htop-3_83_80_2Header_8h_a8fdc16efdbdf77c599e2286925876790}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+draw@{Header\+\_\+draw}}
+\index{Header\+\_\+draw@{Header\+\_\+draw}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+draw()}{Header\_draw()}}
+{\footnotesize\ttfamily void Header\+\_\+draw (\begin{DoxyParamCaption}\item[{const \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_a6b6de6db73a35db6cffc67f9e36dcdad}\label{linux_2download_2htop-3_83_80_2Header_8h_a6b6de6db73a35db6cffc67f9e36dcdad}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+new@{Header\+\_\+new}}
+\index{Header\+\_\+new@{Header\+\_\+new}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+new()}{Header\_new()}}
+{\footnotesize\ttfamily \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header}$\ast$ Header\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{\hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout}}]{h\+Layout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_aa7bb04ad3231663bc2e520425c8eb97c}\label{linux_2download_2htop-3_83_80_2Header_8h_aa7bb04ad3231663bc2e520425c8eb97c}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+populate\+From\+Settings@{Header\+\_\+populate\+From\+Settings}}
+\index{Header\+\_\+populate\+From\+Settings@{Header\+\_\+populate\+From\+Settings}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+populate\+From\+Settings()}{Header\_populateFromSettings()}}
+{\footnotesize\ttfamily void Header\+\_\+populate\+From\+Settings (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_a16dfc5a81555ed5b24fa76ca9dd382dd}\label{linux_2download_2htop-3_83_80_2Header_8h_a16dfc5a81555ed5b24fa76ca9dd382dd}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+reinit@{Header\+\_\+reinit}}
+\index{Header\+\_\+reinit@{Header\+\_\+reinit}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+reinit()}{Header\_reinit()}}
+{\footnotesize\ttfamily void Header\+\_\+reinit (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_a9918e7a64f023cbafbe9e52e7073c4f7}\label{linux_2download_2htop-3_83_80_2Header_8h_a9918e7a64f023cbafbe9e52e7073c4f7}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+set\+Layout@{Header\+\_\+set\+Layout}}
+\index{Header\+\_\+set\+Layout@{Header\+\_\+set\+Layout}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+set\+Layout()}{Header\_setLayout()}}
+{\footnotesize\ttfamily void Header\+\_\+set\+Layout (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this,  }\item[{\hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout}}]{h\+Layout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_a920f6f5b28ea524edde6e59c51ef5632}\label{linux_2download_2htop-3_83_80_2Header_8h_a920f6f5b28ea524edde6e59c51ef5632}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+update\+Data@{Header\+\_\+update\+Data}}
+\index{Header\+\_\+update\+Data@{Header\+\_\+update\+Data}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+update\+Data()}{Header\_updateData()}}
+{\footnotesize\ttfamily void Header\+\_\+update\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linux_2download_2htop-3_83_80_2Header_8h_ad8efc1073dcde3741fb1465237a7de8a}\label{linux_2download_2htop-3_83_80_2Header_8h_ad8efc1073dcde3741fb1465237a7de8a}} 
+\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}!Header\+\_\+write\+Back\+To\+Settings@{Header\+\_\+write\+Back\+To\+Settings}}
+\index{Header\+\_\+write\+Back\+To\+Settings@{Header\+\_\+write\+Back\+To\+Settings}!linux/download/htop-\/3.\+3.\+0/\+Header.\+h@{linux/download/htop-\/3.\+3.\+0/\+Header.\+h}}
+\subsubsection{\texorpdfstring{Header\+\_\+write\+Back\+To\+Settings()}{Header\_writeBackToSettings()}}
+{\footnotesize\ttfamily void Header\+\_\+write\+Back\+To\+Settings (\begin{DoxyParamCaption}\item[{const \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+

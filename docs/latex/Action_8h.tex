@@ -1,0 +1,159 @@
+\hypertarget{Action_8h}{}\section{linux/download/htop-\/3.3.0/\+Action.h File Reference}
+\label{Action_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Action.\+h@{linux/download/htop-\/3.\+3.\+0/\+Action.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Header.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+Include dependency graph for Action.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structState__}{State\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structState__}{State\+\_\+} \hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State}
+\item 
+typedef \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction}($\ast$ \hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action}) (\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$st)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} \{ \newline
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09affa419d04e30eef8f0fe93a07a9e8b4d}{H\+T\+O\+P\+\_\+\+OK} = 0x00, 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09aa2a7459926172a2f514f9813d65c7b83}{H\+T\+O\+P\+\_\+\+R\+E\+F\+R\+E\+SH} = 0x01, 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09ab05e2c09b9777cb0eac087464b769cb5}{H\+T\+O\+P\+\_\+\+R\+E\+C\+A\+L\+C\+U\+L\+A\+TE} = 0x02 $\vert$ H\+T\+O\+P\+\_\+\+R\+E\+F\+R\+E\+SH, 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09aeceb2cc409e454445eee502ba90fe6d6}{H\+T\+O\+P\+\_\+\+S\+A\+V\+E\+\_\+\+S\+E\+T\+T\+I\+N\+GS} = 0x04, 
+\newline
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09aa638efe041efcaee7f5c22ec6ea81253}{H\+T\+O\+P\+\_\+\+K\+E\+E\+P\+\_\+\+F\+O\+L\+L\+O\+W\+I\+NG} = 0x08, 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a0005d0898f0e75abb7d06a5e97a45dcd}{H\+T\+O\+P\+\_\+\+Q\+U\+IT} = 0x10, 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a67598d96324d5dac45578d64a457c686}{H\+T\+O\+P\+\_\+\+R\+E\+D\+R\+A\+W\+\_\+\+B\+AR} = 0x20, 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a27b877f0eaf58a8807a0506d5fc30bbd}{H\+T\+O\+P\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+A\+N\+E\+L\+H\+DR} = 0x40 $\vert$ H\+T\+O\+P\+\_\+\+R\+E\+F\+R\+E\+SH, 
+\newline
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a5f3dfb20ac505f2952f1a4a599161668}{H\+T\+O\+P\+\_\+\+R\+E\+S\+I\+ZE} = 0x80 $\vert$ H\+T\+O\+P\+\_\+\+R\+E\+F\+R\+E\+SH $\vert$ H\+T\+O\+P\+\_\+\+R\+E\+D\+R\+A\+W\+\_\+\+B\+AR $\vert$ H\+T\+O\+P\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+A\+N\+E\+L\+H\+DR
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$ \hyperlink{Action_8h_a12202eaefc93d7849f975de8fc982b89}{Action\+\_\+pick\+From\+Vector} (\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$st, \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$list, int \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, bool follow)
+\item 
+bool \hyperlink{Action_8h_ac5df1d224f9cb3f2b64861f2bb555cdc}{Action\+\_\+set\+User\+Only} (const char $\ast$user\+Name, uid\+\_\+t $\ast$user\+Id)
+\item 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} \hyperlink{Action_8h_addd87df00b3cd87fd68e9a81704dddf3}{Action\+\_\+set\+Sort\+Key} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings, \hyperlink{Process_8h_a23f514dba817798419bae559ca58078b}{Process\+Field} sort\+Key)
+\item 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} \hyperlink{Action_8h_a3bc682b9f6545d1c1412e4495743281e}{Action\+\_\+set\+Screen\+Tab} (\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$st, int \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} \hyperlink{Action_8h_a461a2f28a55b8c409868dbd429d71c52}{Action\+\_\+follow} (\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$st)
+\item 
+void \hyperlink{Action_8h_a9c182fd6d36a33baf1b83212caf11f07}{Action\+\_\+set\+Bindings} (\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$keys)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}\label{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}} 
+\index{Action.\+h@{Action.\+h}!Htop\+\_\+\+Action@{Htop\+\_\+\+Action}}
+\index{Htop\+\_\+\+Action@{Htop\+\_\+\+Action}!Action.\+h@{Action.\+h}}
+\subsubsection{\texorpdfstring{Htop\+\_\+\+Action}{Htop\_Action}}
+{\footnotesize\ttfamily typedef \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction}($\ast$ Htop\+\_\+\+Action) (\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$st)}
+
+\mbox{\Hypertarget{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}\label{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}} 
+\index{Action.\+h@{Action.\+h}!State@{State}}
+\index{State@{State}!Action.\+h@{Action.\+h}}
+\subsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structState__}{State\+\_\+}  \hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State}}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}} 
+\index{Action.\+h@{Action.\+h}!Htop\+\_\+\+Reaction@{Htop\+\_\+\+Reaction}}
+\index{Htop\+\_\+\+Reaction@{Htop\+\_\+\+Reaction}!Action.\+h@{Action.\+h}}
+\subsubsection{\texorpdfstring{Htop\+\_\+\+Reaction}{Htop\_Reaction}}
+{\footnotesize\ttfamily enum \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+T\+O\+P\+\_\+\+OK@{H\+T\+O\+P\+\_\+\+OK}!Action.\+h@{Action.\+h}}\index{Action.\+h@{Action.\+h}!H\+T\+O\+P\+\_\+\+OK@{H\+T\+O\+P\+\_\+\+OK}}}\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09affa419d04e30eef8f0fe93a07a9e8b4d}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09affa419d04e30eef8f0fe93a07a9e8b4d}} 
+H\+T\+O\+P\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+T\+O\+P\+\_\+\+R\+E\+F\+R\+E\+SH@{H\+T\+O\+P\+\_\+\+R\+E\+F\+R\+E\+SH}!Action.\+h@{Action.\+h}}\index{Action.\+h@{Action.\+h}!H\+T\+O\+P\+\_\+\+R\+E\+F\+R\+E\+SH@{H\+T\+O\+P\+\_\+\+R\+E\+F\+R\+E\+SH}}}\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09aa2a7459926172a2f514f9813d65c7b83}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09aa2a7459926172a2f514f9813d65c7b83}} 
+H\+T\+O\+P\+\_\+\+R\+E\+F\+R\+E\+SH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+T\+O\+P\+\_\+\+R\+E\+C\+A\+L\+C\+U\+L\+A\+TE@{H\+T\+O\+P\+\_\+\+R\+E\+C\+A\+L\+C\+U\+L\+A\+TE}!Action.\+h@{Action.\+h}}\index{Action.\+h@{Action.\+h}!H\+T\+O\+P\+\_\+\+R\+E\+C\+A\+L\+C\+U\+L\+A\+TE@{H\+T\+O\+P\+\_\+\+R\+E\+C\+A\+L\+C\+U\+L\+A\+TE}}}\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09ab05e2c09b9777cb0eac087464b769cb5}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09ab05e2c09b9777cb0eac087464b769cb5}} 
+H\+T\+O\+P\+\_\+\+R\+E\+C\+A\+L\+C\+U\+L\+A\+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+T\+O\+P\+\_\+\+S\+A\+V\+E\+\_\+\+S\+E\+T\+T\+I\+N\+GS@{H\+T\+O\+P\+\_\+\+S\+A\+V\+E\+\_\+\+S\+E\+T\+T\+I\+N\+GS}!Action.\+h@{Action.\+h}}\index{Action.\+h@{Action.\+h}!H\+T\+O\+P\+\_\+\+S\+A\+V\+E\+\_\+\+S\+E\+T\+T\+I\+N\+GS@{H\+T\+O\+P\+\_\+\+S\+A\+V\+E\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}}\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09aeceb2cc409e454445eee502ba90fe6d6}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09aeceb2cc409e454445eee502ba90fe6d6}} 
+H\+T\+O\+P\+\_\+\+S\+A\+V\+E\+\_\+\+S\+E\+T\+T\+I\+N\+GS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+T\+O\+P\+\_\+\+K\+E\+E\+P\+\_\+\+F\+O\+L\+L\+O\+W\+I\+NG@{H\+T\+O\+P\+\_\+\+K\+E\+E\+P\+\_\+\+F\+O\+L\+L\+O\+W\+I\+NG}!Action.\+h@{Action.\+h}}\index{Action.\+h@{Action.\+h}!H\+T\+O\+P\+\_\+\+K\+E\+E\+P\+\_\+\+F\+O\+L\+L\+O\+W\+I\+NG@{H\+T\+O\+P\+\_\+\+K\+E\+E\+P\+\_\+\+F\+O\+L\+L\+O\+W\+I\+NG}}}\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09aa638efe041efcaee7f5c22ec6ea81253}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09aa638efe041efcaee7f5c22ec6ea81253}} 
+H\+T\+O\+P\+\_\+\+K\+E\+E\+P\+\_\+\+F\+O\+L\+L\+O\+W\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+T\+O\+P\+\_\+\+Q\+U\+IT@{H\+T\+O\+P\+\_\+\+Q\+U\+IT}!Action.\+h@{Action.\+h}}\index{Action.\+h@{Action.\+h}!H\+T\+O\+P\+\_\+\+Q\+U\+IT@{H\+T\+O\+P\+\_\+\+Q\+U\+IT}}}\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a0005d0898f0e75abb7d06a5e97a45dcd}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a0005d0898f0e75abb7d06a5e97a45dcd}} 
+H\+T\+O\+P\+\_\+\+Q\+U\+IT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+T\+O\+P\+\_\+\+R\+E\+D\+R\+A\+W\+\_\+\+B\+AR@{H\+T\+O\+P\+\_\+\+R\+E\+D\+R\+A\+W\+\_\+\+B\+AR}!Action.\+h@{Action.\+h}}\index{Action.\+h@{Action.\+h}!H\+T\+O\+P\+\_\+\+R\+E\+D\+R\+A\+W\+\_\+\+B\+AR@{H\+T\+O\+P\+\_\+\+R\+E\+D\+R\+A\+W\+\_\+\+B\+AR}}}\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a67598d96324d5dac45578d64a457c686}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a67598d96324d5dac45578d64a457c686}} 
+H\+T\+O\+P\+\_\+\+R\+E\+D\+R\+A\+W\+\_\+\+B\+AR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+T\+O\+P\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+A\+N\+E\+L\+H\+DR@{H\+T\+O\+P\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+A\+N\+E\+L\+H\+DR}!Action.\+h@{Action.\+h}}\index{Action.\+h@{Action.\+h}!H\+T\+O\+P\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+A\+N\+E\+L\+H\+DR@{H\+T\+O\+P\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+A\+N\+E\+L\+H\+DR}}}\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a27b877f0eaf58a8807a0506d5fc30bbd}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a27b877f0eaf58a8807a0506d5fc30bbd}} 
+H\+T\+O\+P\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+A\+N\+E\+L\+H\+DR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+T\+O\+P\+\_\+\+R\+E\+S\+I\+ZE@{H\+T\+O\+P\+\_\+\+R\+E\+S\+I\+ZE}!Action.\+h@{Action.\+h}}\index{Action.\+h@{Action.\+h}!H\+T\+O\+P\+\_\+\+R\+E\+S\+I\+ZE@{H\+T\+O\+P\+\_\+\+R\+E\+S\+I\+ZE}}}\mbox{\Hypertarget{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a5f3dfb20ac505f2952f1a4a599161668}\label{Action_8h_a5e4f36af69ac47b1c52317ab11518c09a5f3dfb20ac505f2952f1a4a599161668}} 
+H\+T\+O\+P\+\_\+\+R\+E\+S\+I\+ZE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Action_8h_a461a2f28a55b8c409868dbd429d71c52}\label{Action_8h_a461a2f28a55b8c409868dbd429d71c52}} 
+\index{Action.\+h@{Action.\+h}!Action\+\_\+follow@{Action\+\_\+follow}}
+\index{Action\+\_\+follow@{Action\+\_\+follow}!Action.\+h@{Action.\+h}}
+\subsubsection{\texorpdfstring{Action\+\_\+follow()}{Action\_follow()}}
+{\footnotesize\ttfamily \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} Action\+\_\+follow (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$}]{st }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8h_a12202eaefc93d7849f975de8fc982b89}\label{Action_8h_a12202eaefc93d7849f975de8fc982b89}} 
+\index{Action.\+h@{Action.\+h}!Action\+\_\+pick\+From\+Vector@{Action\+\_\+pick\+From\+Vector}}
+\index{Action\+\_\+pick\+From\+Vector@{Action\+\_\+pick\+From\+Vector}!Action.\+h@{Action.\+h}}
+\subsubsection{\texorpdfstring{Action\+\_\+pick\+From\+Vector()}{Action\_pickFromVector()}}
+{\footnotesize\ttfamily \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$ Action\+\_\+pick\+From\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$}]{st,  }\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{list,  }\item[{int}]{x,  }\item[{bool}]{follow }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8h_a9c182fd6d36a33baf1b83212caf11f07}\label{Action_8h_a9c182fd6d36a33baf1b83212caf11f07}} 
+\index{Action.\+h@{Action.\+h}!Action\+\_\+set\+Bindings@{Action\+\_\+set\+Bindings}}
+\index{Action\+\_\+set\+Bindings@{Action\+\_\+set\+Bindings}!Action.\+h@{Action.\+h}}
+\subsubsection{\texorpdfstring{Action\+\_\+set\+Bindings()}{Action\_setBindings()}}
+{\footnotesize\ttfamily void Action\+\_\+set\+Bindings (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$}]{keys }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8h_a3bc682b9f6545d1c1412e4495743281e}\label{Action_8h_a3bc682b9f6545d1c1412e4495743281e}} 
+\index{Action.\+h@{Action.\+h}!Action\+\_\+set\+Screen\+Tab@{Action\+\_\+set\+Screen\+Tab}}
+\index{Action\+\_\+set\+Screen\+Tab@{Action\+\_\+set\+Screen\+Tab}!Action.\+h@{Action.\+h}}
+\subsubsection{\texorpdfstring{Action\+\_\+set\+Screen\+Tab()}{Action\_setScreenTab()}}
+{\footnotesize\ttfamily \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} Action\+\_\+set\+Screen\+Tab (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$}]{st,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8h_addd87df00b3cd87fd68e9a81704dddf3}\label{Action_8h_addd87df00b3cd87fd68e9a81704dddf3}} 
+\index{Action.\+h@{Action.\+h}!Action\+\_\+set\+Sort\+Key@{Action\+\_\+set\+Sort\+Key}}
+\index{Action\+\_\+set\+Sort\+Key@{Action\+\_\+set\+Sort\+Key}!Action.\+h@{Action.\+h}}
+\subsubsection{\texorpdfstring{Action\+\_\+set\+Sort\+Key()}{Action\_setSortKey()}}
+{\footnotesize\ttfamily \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} Action\+\_\+set\+Sort\+Key (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings,  }\item[{\hyperlink{Process_8h_a23f514dba817798419bae559ca58078b}{Process\+Field}}]{sort\+Key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8h_ac5df1d224f9cb3f2b64861f2bb555cdc}\label{Action_8h_ac5df1d224f9cb3f2b64861f2bb555cdc}} 
+\index{Action.\+h@{Action.\+h}!Action\+\_\+set\+User\+Only@{Action\+\_\+set\+User\+Only}}
+\index{Action\+\_\+set\+User\+Only@{Action\+\_\+set\+User\+Only}!Action.\+h@{Action.\+h}}
+\subsubsection{\texorpdfstring{Action\+\_\+set\+User\+Only()}{Action\_setUserOnly()}}
+{\footnotesize\ttfamily bool Action\+\_\+set\+User\+Only (\begin{DoxyParamCaption}\item[{const char $\ast$}]{user\+Name,  }\item[{uid\+\_\+t $\ast$}]{user\+Id }\end{DoxyParamCaption})}
+

@@ -1,0 +1,98 @@
+\hypertarget{Compat_8h}{}\section{linux/download/htop-\/3.3.0/\+Compat.h File Reference}
+\label{Compat_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Compat.\+h@{linux/download/htop-\/3.\+3.\+0/\+Compat.\+h}}
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+Include dependency graph for Compat.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Compat_8h_ab17388ecd17d6d10f3b80501488ee129}{\+\_\+\+Static\+\_\+assert}(expr,  msg)
+\item 
+\#define \hyperlink{Compat_8h_a25b4da9c1f0b06ff0b92509c874234a1}{static\+\_\+assert}(expr,  msg)~\hyperlink{Compat_8h_ab17388ecd17d6d10f3b80501488ee129}{\+\_\+\+Static\+\_\+assert}(expr, msg)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef const char $\ast$ \hyperlink{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}{openat\+\_\+arg\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{Compat_8h_abda1f8aff05ff2fd38a3ae31059ec6a9}{Compat\+\_\+faccessat} (int dirfd, const char $\ast$pathname, int mode, int flags)
+\item 
+int \hyperlink{Compat_8h_ab11462d2344408ee97d260fe8104bdd6}{Compat\+\_\+fstatat} (int dirfd, const char $\ast$dirpath, const char $\ast$pathname, struct stat $\ast$statbuf, int flags)
+\item 
+int \hyperlink{Compat_8h_acf8c7e33ac871cedf691759ca4071af8}{Compat\+\_\+openat} (\hyperlink{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}{openat\+\_\+arg\+\_\+t} dirpath, const char $\ast$pathname, int flags)
+\item 
+ssize\+\_\+t \hyperlink{Compat_8h_a3e817ca973fe421ad4ff80106bf4fb99}{Compat\+\_\+readlinkat} (int dirfd, const char $\ast$dirpath, const char $\ast$pathname, char $\ast$buf, size\+\_\+t bufsize)
+\item 
+ssize\+\_\+t \hyperlink{Compat_8h_a7cee22e41f9505c1bf78537a97fcd426}{Compat\+\_\+readlink} (\hyperlink{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}{openat\+\_\+arg\+\_\+t} dirfd, const char $\ast$pathname, char $\ast$buf, size\+\_\+t bufsize)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Compat_8h_ab17388ecd17d6d10f3b80501488ee129}\label{Compat_8h_ab17388ecd17d6d10f3b80501488ee129}} 
+\index{Compat.\+h@{Compat.\+h}!\+\_\+\+Static\+\_\+assert@{\+\_\+\+Static\+\_\+assert}}
+\index{\+\_\+\+Static\+\_\+assert@{\+\_\+\+Static\+\_\+assert}!Compat.\+h@{Compat.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+Static\+\_\+assert}{\_Static\_assert}}
+{\footnotesize\ttfamily \#define \+\_\+\+Static\+\_\+assert(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{msg }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{extern} int (*\_\_Static\_assert\_function (\textcolor{keywordtype}{void}))                       \(\backslash\)
+      [!!\textcolor{keyword}{sizeof} (\textcolor{keyword}{struct }\{ \textcolor{keywordtype}{int} \_\_error\_if\_negative: (expr) ? 2 : -1; \})]
+\end{DoxyCode}
+\mbox{\Hypertarget{Compat_8h_a25b4da9c1f0b06ff0b92509c874234a1}\label{Compat_8h_a25b4da9c1f0b06ff0b92509c874234a1}} 
+\index{Compat.\+h@{Compat.\+h}!static\+\_\+assert@{static\+\_\+assert}}
+\index{static\+\_\+assert@{static\+\_\+assert}!Compat.\+h@{Compat.\+h}}
+\subsubsection{\texorpdfstring{static\+\_\+assert}{static\_assert}}
+{\footnotesize\ttfamily \#define static\+\_\+assert(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{msg }\end{DoxyParamCaption})~\hyperlink{Compat_8h_ab17388ecd17d6d10f3b80501488ee129}{\+\_\+\+Static\+\_\+assert}(expr, msg)}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}\label{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}} 
+\index{Compat.\+h@{Compat.\+h}!openat\+\_\+arg\+\_\+t@{openat\+\_\+arg\+\_\+t}}
+\index{openat\+\_\+arg\+\_\+t@{openat\+\_\+arg\+\_\+t}!Compat.\+h@{Compat.\+h}}
+\subsubsection{\texorpdfstring{openat\+\_\+arg\+\_\+t}{openat\_arg\_t}}
+{\footnotesize\ttfamily typedef const char$\ast$ \hyperlink{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}{openat\+\_\+arg\+\_\+t}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Compat_8h_abda1f8aff05ff2fd38a3ae31059ec6a9}\label{Compat_8h_abda1f8aff05ff2fd38a3ae31059ec6a9}} 
+\index{Compat.\+h@{Compat.\+h}!Compat\+\_\+faccessat@{Compat\+\_\+faccessat}}
+\index{Compat\+\_\+faccessat@{Compat\+\_\+faccessat}!Compat.\+h@{Compat.\+h}}
+\subsubsection{\texorpdfstring{Compat\+\_\+faccessat()}{Compat\_faccessat()}}
+{\footnotesize\ttfamily int Compat\+\_\+faccessat (\begin{DoxyParamCaption}\item[{int}]{dirfd,  }\item[{const char $\ast$}]{pathname,  }\item[{int}]{mode,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Compat_8h_ab11462d2344408ee97d260fe8104bdd6}\label{Compat_8h_ab11462d2344408ee97d260fe8104bdd6}} 
+\index{Compat.\+h@{Compat.\+h}!Compat\+\_\+fstatat@{Compat\+\_\+fstatat}}
+\index{Compat\+\_\+fstatat@{Compat\+\_\+fstatat}!Compat.\+h@{Compat.\+h}}
+\subsubsection{\texorpdfstring{Compat\+\_\+fstatat()}{Compat\_fstatat()}}
+{\footnotesize\ttfamily int Compat\+\_\+fstatat (\begin{DoxyParamCaption}\item[{int}]{dirfd,  }\item[{const char $\ast$}]{dirpath,  }\item[{const char $\ast$}]{pathname,  }\item[{struct stat $\ast$}]{statbuf,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Compat_8h_acf8c7e33ac871cedf691759ca4071af8}\label{Compat_8h_acf8c7e33ac871cedf691759ca4071af8}} 
+\index{Compat.\+h@{Compat.\+h}!Compat\+\_\+openat@{Compat\+\_\+openat}}
+\index{Compat\+\_\+openat@{Compat\+\_\+openat}!Compat.\+h@{Compat.\+h}}
+\subsubsection{\texorpdfstring{Compat\+\_\+openat()}{Compat\_openat()}}
+{\footnotesize\ttfamily int Compat\+\_\+openat (\begin{DoxyParamCaption}\item[{\hyperlink{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}{openat\+\_\+arg\+\_\+t}}]{dirpath,  }\item[{const char $\ast$}]{pathname,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Compat_8h_a7cee22e41f9505c1bf78537a97fcd426}\label{Compat_8h_a7cee22e41f9505c1bf78537a97fcd426}} 
+\index{Compat.\+h@{Compat.\+h}!Compat\+\_\+readlink@{Compat\+\_\+readlink}}
+\index{Compat\+\_\+readlink@{Compat\+\_\+readlink}!Compat.\+h@{Compat.\+h}}
+\subsubsection{\texorpdfstring{Compat\+\_\+readlink()}{Compat\_readlink()}}
+{\footnotesize\ttfamily ssize\+\_\+t Compat\+\_\+readlink (\begin{DoxyParamCaption}\item[{\hyperlink{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}{openat\+\_\+arg\+\_\+t}}]{dirfd,  }\item[{const char $\ast$}]{pathname,  }\item[{char $\ast$}]{buf,  }\item[{size\+\_\+t}]{bufsize }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Compat_8h_a3e817ca973fe421ad4ff80106bf4fb99}\label{Compat_8h_a3e817ca973fe421ad4ff80106bf4fb99}} 
+\index{Compat.\+h@{Compat.\+h}!Compat\+\_\+readlinkat@{Compat\+\_\+readlinkat}}
+\index{Compat\+\_\+readlinkat@{Compat\+\_\+readlinkat}!Compat.\+h@{Compat.\+h}}
+\subsubsection{\texorpdfstring{Compat\+\_\+readlinkat()}{Compat\_readlinkat()}}
+{\footnotesize\ttfamily ssize\+\_\+t Compat\+\_\+readlinkat (\begin{DoxyParamCaption}\item[{int}]{dirfd,  }\item[{const char $\ast$}]{dirpath,  }\item[{const char $\ast$}]{pathname,  }\item[{char $\ast$}]{buf,  }\item[{size\+\_\+t}]{bufsize }\end{DoxyParamCaption})}
+

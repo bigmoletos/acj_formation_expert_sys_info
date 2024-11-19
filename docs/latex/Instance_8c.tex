@@ -1,0 +1,71 @@
+\hypertarget{Instance_8c}{}\section{linux/download/htop-\/3.3.0/pcp/\+Instance.c File Reference}
+\label{Instance_8c}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+Instance.\+c@{linux/download/htop-\/3.\+3.\+0/pcp/\+Instance.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+Instance.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Column.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Metric.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}P\+C\+P\+Dynamic\+Column.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}P\+C\+P\+Dynamic\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+In\+Dom\+Table.\+h\char`\"{}}\newline
+Include dependency graph for Instance.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance} $\ast$ \hyperlink{Instance_8c_a2e30d5144ee21e98ef5038835d8fc036}{Instance\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, const \hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table} $\ast$indom)
+\item 
+void \hyperlink{Instance_8c_a10025437ee6af54741d7eb292bc157fd}{Instance\+\_\+done} (\hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance} $\ast$this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class} \hyperlink{Instance_8c_a3a1e0837d655b02960f199f105efa9f1}{Instance\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Instance_8c_a10025437ee6af54741d7eb292bc157fd}\label{Instance_8c_a10025437ee6af54741d7eb292bc157fd}} 
+\index{Instance.\+c@{Instance.\+c}!Instance\+\_\+done@{Instance\+\_\+done}}
+\index{Instance\+\_\+done@{Instance\+\_\+done}!Instance.\+c@{Instance.\+c}}
+\subsubsection{\texorpdfstring{Instance\+\_\+done()}{Instance\_done()}}
+{\footnotesize\ttfamily void Instance\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Instance_8c_a2e30d5144ee21e98ef5038835d8fc036}\label{Instance_8c_a2e30d5144ee21e98ef5038835d8fc036}} 
+\index{Instance.\+c@{Instance.\+c}!Instance\+\_\+new@{Instance\+\_\+new}}
+\index{Instance\+\_\+new@{Instance\+\_\+new}!Instance.\+c@{Instance.\+c}}
+\subsubsection{\texorpdfstring{Instance\+\_\+new()}{Instance\_new()}}
+{\footnotesize\ttfamily \hyperlink{Instance_8h_a8d25debc602518145844c2ee78ec4745}{Instance}$\ast$ Instance\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{const \hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table} $\ast$}]{indom }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Instance_8c_a3a1e0837d655b02960f199f105efa9f1}\label{Instance_8c_a3a1e0837d655b02960f199f105efa9f1}} 
+\index{Instance.\+c@{Instance.\+c}!Instance\+\_\+class@{Instance\+\_\+class}}
+\index{Instance\+\_\+class@{Instance\+\_\+class}!Instance.\+c@{Instance.\+c}}
+\subsubsection{\texorpdfstring{Instance\+\_\+class}{Instance\_class}}
+{\footnotesize\ttfamily const \hyperlink{Row_8h_ab1f9686cc24220df899c6d7d32551496}{Row\+Class} Instance\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structRow__}{Row}),
+      .display = \hyperlink{Row_8c_a1ca72e911c0e2299061df16e80da6a80}{Row\_display},
+      .delete = Instance\_delete,
+      .compare = Instance\_compare,
+   \},
+   .sortKeyString = Instance\_externalName,
+   .writeField = Instance\_writeField,
+\}
+\end{DoxyCode}

@@ -1,0 +1,30 @@
+\hypertarget{gettime_8h}{}\section{linux/download/htop-\/3.3.0/generic/gettime.h File Reference}
+\label{gettime_8h}\index{linux/download/htop-\/3.\+3.\+0/generic/gettime.\+h@{linux/download/htop-\/3.\+3.\+0/generic/gettime.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+Include dependency graph for gettime.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{gettime_8h_a2304e59aa884e4dc2c6c11f8f307c05b}{Generic\+\_\+gettime\+\_\+realtime} (struct timeval $\ast$tvp, uint64\+\_\+t $\ast$msec)
+\item 
+void \hyperlink{gettime_8h_a10fc4bf5c178c00c6fecfc00f74c615e}{Generic\+\_\+gettime\+\_\+monotonic} (uint64\+\_\+t $\ast$msec)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{gettime_8h_a10fc4bf5c178c00c6fecfc00f74c615e}\label{gettime_8h_a10fc4bf5c178c00c6fecfc00f74c615e}} 
+\index{gettime.\+h@{gettime.\+h}!Generic\+\_\+gettime\+\_\+monotonic@{Generic\+\_\+gettime\+\_\+monotonic}}
+\index{Generic\+\_\+gettime\+\_\+monotonic@{Generic\+\_\+gettime\+\_\+monotonic}!gettime.\+h@{gettime.\+h}}
+\subsubsection{\texorpdfstring{Generic\+\_\+gettime\+\_\+monotonic()}{Generic\_gettime\_monotonic()}}
+{\footnotesize\ttfamily void Generic\+\_\+gettime\+\_\+monotonic (\begin{DoxyParamCaption}\item[{uint64\+\_\+t $\ast$}]{msec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gettime_8h_a2304e59aa884e4dc2c6c11f8f307c05b}\label{gettime_8h_a2304e59aa884e4dc2c6c11f8f307c05b}} 
+\index{gettime.\+h@{gettime.\+h}!Generic\+\_\+gettime\+\_\+realtime@{Generic\+\_\+gettime\+\_\+realtime}}
+\index{Generic\+\_\+gettime\+\_\+realtime@{Generic\+\_\+gettime\+\_\+realtime}!gettime.\+h@{gettime.\+h}}
+\subsubsection{\texorpdfstring{Generic\+\_\+gettime\+\_\+realtime()}{Generic\_gettime\_realtime()}}
+{\footnotesize\ttfamily void Generic\+\_\+gettime\+\_\+realtime (\begin{DoxyParamCaption}\item[{struct timeval $\ast$}]{tvp,  }\item[{uint64\+\_\+t $\ast$}]{msec }\end{DoxyParamCaption})}
+

@@ -1,0 +1,54 @@
+\hypertarget{version__struct_2fonctions__specialized_8c}{}\section{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct/fonctions\+\_\+specialized.c File Reference}
+\label{version__struct_2fonctions__specialized_8c}\index{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct/fonctions\+\_\+specialized.\+c@{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct/fonctions\+\_\+specialized.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}proto.\+h\char`\"{}}\newline
+Include dependency graph for fonctions\+\_\+specialized.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{version__struct_2fonctions__specialized_8c_a074e4770d5e9a3f22ae8ae752fccca31}{saisir\+\_\+repertoire} (\hyperlink{structContact}{Contact} $\ast$c)
+\item 
+void \hyperlink{version__struct_2fonctions__specialized_8c_a74574d450a7e1b456d07fc92143914d4}{affichage\+\_\+repertoire} (\hyperlink{structContact}{Contact} contacts\mbox{[}$\,$\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{version__struct_2fonctions__specialized_8c_a609fc419889fddf83f84e12248abe0c2}{suppression\+\_\+repertoire} (\hyperlink{structContact}{Contact} contacts\mbox{[}$\,$\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau}, int numero\+\_\+contact)
+\item 
+void \hyperlink{version__struct_2fonctions__specialized_8c_a51ae69583b1f76532ae99b81891e11e2}{afficher\+\_\+menu} (void)
+\item 
+int \hyperlink{version__struct_2fonctions__specialized_8c_a5d5b82eee21fc8475fd9a6cb07ac2dbc}{rechercher\+\_\+repertoire} (\hyperlink{structContact}{Contact} contacts\mbox{[}$\,$\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau}, const char $\ast$nom)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{version__struct_2fonctions__specialized_8c_a74574d450a7e1b456d07fc92143914d4}\label{version__struct_2fonctions__specialized_8c_a74574d450a7e1b456d07fc92143914d4}} 
+\index{version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}!affichage\+\_\+repertoire@{affichage\+\_\+repertoire}}
+\index{affichage\+\_\+repertoire@{affichage\+\_\+repertoire}!version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{affichage\+\_\+repertoire()}{affichage\_repertoire()}}
+{\footnotesize\ttfamily void affichage\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{contacts\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__specialized_8c_a51ae69583b1f76532ae99b81891e11e2}\label{version__struct_2fonctions__specialized_8c_a51ae69583b1f76532ae99b81891e11e2}} 
+\index{version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}!afficher\+\_\+menu@{afficher\+\_\+menu}}
+\index{afficher\+\_\+menu@{afficher\+\_\+menu}!version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{afficher\+\_\+menu()}{afficher\_menu()}}
+{\footnotesize\ttfamily void afficher\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__specialized_8c_a5d5b82eee21fc8475fd9a6cb07ac2dbc}\label{version__struct_2fonctions__specialized_8c_a5d5b82eee21fc8475fd9a6cb07ac2dbc}} 
+\index{version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}!rechercher\+\_\+repertoire@{rechercher\+\_\+repertoire}}
+\index{rechercher\+\_\+repertoire@{rechercher\+\_\+repertoire}!version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{rechercher\+\_\+repertoire()}{rechercher\_repertoire()}}
+{\footnotesize\ttfamily int rechercher\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{contacts\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau,  }\item[{const char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__specialized_8c_a074e4770d5e9a3f22ae8ae752fccca31}\label{version__struct_2fonctions__specialized_8c_a074e4770d5e9a3f22ae8ae752fccca31}} 
+\index{version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}!saisir\+\_\+repertoire@{saisir\+\_\+repertoire}}
+\index{saisir\+\_\+repertoire@{saisir\+\_\+repertoire}!version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{saisir\+\_\+repertoire()}{saisir\_repertoire()}}
+{\footnotesize\ttfamily void saisir\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact} $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__specialized_8c_a609fc419889fddf83f84e12248abe0c2}\label{version__struct_2fonctions__specialized_8c_a609fc419889fddf83f84e12248abe0c2}} 
+\index{version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}!suppression\+\_\+repertoire@{suppression\+\_\+repertoire}}
+\index{suppression\+\_\+repertoire@{suppression\+\_\+repertoire}!version\+\_\+struct/fonctions\+\_\+specialized.\+c@{version\+\_\+struct/fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{suppression\+\_\+repertoire()}{suppression\_repertoire()}}
+{\footnotesize\ttfamily void suppression\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{contacts\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau,  }\item[{int}]{numero\+\_\+contact }\end{DoxyParamCaption})}
+

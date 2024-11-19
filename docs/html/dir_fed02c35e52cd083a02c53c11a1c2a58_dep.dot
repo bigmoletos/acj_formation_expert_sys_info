@@ -1,0 +1,11 @@
+digraph "linux/download/htop-3.3.0/openbsd" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b932c5e19070f08215315961f36cd8a5 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="htop-3.3.0" fontname="Helvetica", fontsize="10", URL="dir_b932c5e19070f08215315961f36cd8a5.html"]
+  dir_fed02c35e52cd083a02c53c11a1c2a58 [shape=box, label="openbsd", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_fed02c35e52cd083a02c53c11a1c2a58.html"];
+  }
+  dir_9d543c6ce8c2289cd55a6f73485c93f1 [shape=box label="generic" URL="dir_9d543c6ce8c2289cd55a6f73485c93f1.html"];
+  dir_fed02c35e52cd083a02c53c11a1c2a58->dir_9d543c6ce8c2289cd55a6f73485c93f1 [headlabel="3", labeldistance=1.5 headhref="dir_000019_000023.html"];
+}

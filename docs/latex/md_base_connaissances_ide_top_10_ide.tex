@@ -1,0 +1,11 @@
+\subsection*{Trouver remplacer par regex}
+
+Utilisez cette regex dans le champ de recherche. Ici on veut rajouter un sudo devant les commandes rm, mv, mkdir \+: en mode recherche regex
+
+
+\begin{DoxyCode}
+(?<!sudo\(\backslash\)s)(^|\(\backslash\)s)(mkdir|mv|rm)(?=\(\backslash\)s)
+# Utilisez  dans le champ de remplacement:
+sudo $&
+\end{DoxyCode}
+ 

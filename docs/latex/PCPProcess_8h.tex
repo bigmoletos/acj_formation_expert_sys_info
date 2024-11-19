@@ -1,0 +1,135 @@
+\hypertarget{PCPProcess_8h}{}\section{linux/download/htop-\/3.3.0/pcp/\+P\+C\+P\+Process.h File Reference}
+\label{PCPProcess_8h}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Process.\+h@{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Process.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+Include dependency graph for P\+C\+P\+Process.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPCPProcess__}{P\+C\+P\+Process\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{PCPProcess_8h_ab1ef4b6a685f119aef9a28235f5afe0c}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP}~0x00000800
+\item 
+\#define \hyperlink{PCPProcess_8h_a5b99c69962636b98e6bcec78478b3570}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM}~0x00001000
+\item 
+\#define \hyperlink{PCPProcess_8h_aa8e215d36999a35ac1468e17f50df79d}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS}~0x00002000
+\item 
+\#define \hyperlink{PCPProcess_8h_a503130b437732aca449d20b20eb3996e}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT}~0x00004000
+\item 
+\#define \hyperlink{PCPProcess_8h_a470ce57ad6c8b5190099ba84bf33984e}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR}~0x00008000
+\item 
+\#define \hyperlink{PCPProcess_8h_a99ebe2fc16333b232af14b60c47afb68}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP}~0x00080000
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structPCPProcess__}{P\+C\+P\+Process\+\_\+} \hyperlink{PCPProcess_8h_a1fb5306618d353d9d7f0522798c94154}{P\+C\+P\+Process}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{PCPProcess_8h_aee6bf4d85403f06f7669ed564db1c1e7}{P\+C\+P\+Process\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\item 
+void \hyperlink{PCPProcess_8h_a6c66e15496a064f92b8c7e31183c16c3}{Process\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+bool \hyperlink{PCPProcess_8h_a17ba705c42721407f7e0cfd66b65c31f}{Process\+\_\+is\+Thread} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} \hyperlink{PCPProcess_8h_ad5f8090378cbc673e2ae0825d0342743}{Process\+\_\+fields} \mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}
+\item 
+const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} \hyperlink{PCPProcess_8h_afda370678b6ec56e6809c6a19e72fa48}{P\+C\+P\+Process\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{PCPProcess_8h_a99ebe2fc16333b232af14b60c47afb68}\label{PCPProcess_8h_a99ebe2fc16333b232af14b60c47afb68}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP}{PROCESS\_FLAG\_LINUX\_AUTOGROUP}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+U\+T\+O\+G\+R\+O\+UP~0x00080000}
+
+\mbox{\Hypertarget{PCPProcess_8h_ab1ef4b6a685f119aef9a28235f5afe0c}\label{PCPProcess_8h_ab1ef4b6a685f119aef9a28235f5afe0c}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP}{PROCESS\_FLAG\_LINUX\_CGROUP}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+G\+R\+O\+UP~0x00000800}
+
+\mbox{\Hypertarget{PCPProcess_8h_a503130b437732aca449d20b20eb3996e}\label{PCPProcess_8h_a503130b437732aca449d20b20eb3996e}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT}{PROCESS\_FLAG\_LINUX\_CTXT}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+C\+T\+XT~0x00004000}
+
+\mbox{\Hypertarget{PCPProcess_8h_a5b99c69962636b98e6bcec78478b3570}\label{PCPProcess_8h_a5b99c69962636b98e6bcec78478b3570}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM}{PROCESS\_FLAG\_LINUX\_OOM}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+OM~0x00001000}
+
+\mbox{\Hypertarget{PCPProcess_8h_a470ce57ad6c8b5190099ba84bf33984e}\label{PCPProcess_8h_a470ce57ad6c8b5190099ba84bf33984e}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR}{PROCESS\_FLAG\_LINUX\_SECATTR}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+E\+C\+A\+T\+TR~0x00008000}
+
+\mbox{\Hypertarget{PCPProcess_8h_aa8e215d36999a35ac1468e17f50df79d}\label{PCPProcess_8h_aa8e215d36999a35ac1468e17f50df79d}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS}{PROCESS\_FLAG\_LINUX\_SMAPS}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+L\+I\+N\+U\+X\+\_\+\+S\+M\+A\+PS~0x00002000}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{PCPProcess_8h_a1fb5306618d353d9d7f0522798c94154}\label{PCPProcess_8h_a1fb5306618d353d9d7f0522798c94154}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!P\+C\+P\+Process@{P\+C\+P\+Process}}
+\index{P\+C\+P\+Process@{P\+C\+P\+Process}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Process}{PCPProcess}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structPCPProcess__}{P\+C\+P\+Process\+\_\+}  \hyperlink{PCPProcess_8h_a1fb5306618d353d9d7f0522798c94154}{P\+C\+P\+Process}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{PCPProcess_8h_aee6bf4d85403f06f7669ed564db1c1e7}\label{PCPProcess_8h_aee6bf4d85403f06f7669ed564db1c1e7}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!P\+C\+P\+Process\+\_\+new@{P\+C\+P\+Process\+\_\+new}}
+\index{P\+C\+P\+Process\+\_\+new@{P\+C\+P\+Process\+\_\+new}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Process\+\_\+new()}{PCPProcess\_new()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ P\+C\+P\+Process\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPProcess_8h_a6c66e15496a064f92b8c7e31183c16c3}\label{PCPProcess_8h_a6c66e15496a064f92b8c7e31183c16c3}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!Process\+\_\+delete@{Process\+\_\+delete}}
+\index{Process\+\_\+delete@{Process\+\_\+delete}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{Process\+\_\+delete()}{Process\_delete()}}
+{\footnotesize\ttfamily void Process\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPProcess_8h_a17ba705c42721407f7e0cfd66b65c31f}\label{PCPProcess_8h_a17ba705c42721407f7e0cfd66b65c31f}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!Process\+\_\+is\+Thread@{Process\+\_\+is\+Thread}}
+\index{Process\+\_\+is\+Thread@{Process\+\_\+is\+Thread}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{Process\+\_\+is\+Thread()}{Process\_isThread()}}
+{\footnotesize\ttfamily bool Process\+\_\+is\+Thread (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{this }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{PCPProcess_8h_afda370678b6ec56e6809c6a19e72fa48}\label{PCPProcess_8h_afda370678b6ec56e6809c6a19e72fa48}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!P\+C\+P\+Process\+\_\+class@{P\+C\+P\+Process\+\_\+class}}
+\index{P\+C\+P\+Process\+\_\+class@{P\+C\+P\+Process\+\_\+class}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Process\+\_\+class}{PCPProcess\_class}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} P\+C\+P\+Process\+\_\+class}
+
+\mbox{\Hypertarget{PCPProcess_8h_ad5f8090378cbc673e2ae0825d0342743}\label{PCPProcess_8h_ad5f8090378cbc673e2ae0825d0342743}} 
+\index{P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}!Process\+\_\+fields@{Process\+\_\+fields}}
+\index{Process\+\_\+fields@{Process\+\_\+fields}!P\+C\+P\+Process.\+h@{P\+C\+P\+Process.\+h}}
+\subsubsection{\texorpdfstring{Process\+\_\+fields}{Process\_fields}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} Process\+\_\+fields\mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}}
+

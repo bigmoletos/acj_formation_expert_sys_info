@@ -1,0 +1,92 @@
+\hypertarget{IncSet_8c}{}\section{linux/download/htop-\/3.3.0/\+Inc\+Set.c File Reference}
+\label{IncSet_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Inc\+Set.\+c@{linux/download/htop-\/3.\+3.\+0/\+Inc\+Set.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Inc\+Set.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}List\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Inc\+Set.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{IncSet_8c_a4fbe821505b8deef79f605c31f6e37b4}{Inc\+Set\+\_\+reset} (\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$this, \hyperlink{IncSet_8h_aaf564895c76079e4c1188afc75deec1f}{Inc\+Type} type)
+\item 
+void \hyperlink{IncSet_8c_a329f4d00dc1ef598796c2d1f1e2ef9f7}{Inc\+Set\+\_\+set\+Filter} (\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$this, const char $\ast$filter)
+\item 
+\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$ \hyperlink{IncSet_8c_aeb35916fa26c618e2128c1c8b932005b}{Inc\+Set\+\_\+new} (\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$bar)
+\item 
+void \hyperlink{IncSet_8c_aa05eea1d74c8d47b48c5ee9b01c0df3c}{Inc\+Set\+\_\+delete} (\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$this)
+\item 
+void \hyperlink{IncSet_8c_ac554ad7c92cf9ce81760c21d2f765c1d}{Inc\+Set\+\_\+activate} (\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$this, \hyperlink{IncSet_8h_aaf564895c76079e4c1188afc75deec1f}{Inc\+Type} type, \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$panel)
+\item 
+bool \hyperlink{IncSet_8c_afa54884632ee785c52cc9e79fcc3a7bf}{Inc\+Set\+\_\+handle\+Key} (\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$this, int ch, \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$panel, \hyperlink{IncSet_8h_a5afcf959e1457f35d0b775da169165b2}{Inc\+Mode\+\_\+\+Get\+Panel\+Value} get\+Panel\+Value, \hyperlink{Vector_8h_a8297b82ce917cd21838596b7e3a7faa8}{Vector} $\ast$lines)
+\item 
+const char $\ast$ \hyperlink{IncSet_8c_a985d7baecd96f9ee1ffcf3f65ec7db5e}{Inc\+Set\+\_\+get\+List\+Item\+Value} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$panel, int \hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i})
+\item 
+void \hyperlink{IncSet_8c_aebc951ae874b3f8bcac7f51f306c43cb}{Inc\+Set\+\_\+draw\+Bar} (const \hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$this, int attr)
+\item 
+int \hyperlink{IncSet_8c_ada68a7a8678ebdb0ae926c160e120e97}{Inc\+Set\+\_\+synthesize\+Event} (\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$this, int \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{IncSet_8c_ac554ad7c92cf9ce81760c21d2f765c1d}\label{IncSet_8c_ac554ad7c92cf9ce81760c21d2f765c1d}} 
+\index{Inc\+Set.\+c@{Inc\+Set.\+c}!Inc\+Set\+\_\+activate@{Inc\+Set\+\_\+activate}}
+\index{Inc\+Set\+\_\+activate@{Inc\+Set\+\_\+activate}!Inc\+Set.\+c@{Inc\+Set.\+c}}
+\subsubsection{\texorpdfstring{Inc\+Set\+\_\+activate()}{IncSet\_activate()}}
+{\footnotesize\ttfamily void Inc\+Set\+\_\+activate (\begin{DoxyParamCaption}\item[{\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$}]{this,  }\item[{\hyperlink{IncSet_8h_aaf564895c76079e4c1188afc75deec1f}{Inc\+Type}}]{type,  }\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{panel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IncSet_8c_aa05eea1d74c8d47b48c5ee9b01c0df3c}\label{IncSet_8c_aa05eea1d74c8d47b48c5ee9b01c0df3c}} 
+\index{Inc\+Set.\+c@{Inc\+Set.\+c}!Inc\+Set\+\_\+delete@{Inc\+Set\+\_\+delete}}
+\index{Inc\+Set\+\_\+delete@{Inc\+Set\+\_\+delete}!Inc\+Set.\+c@{Inc\+Set.\+c}}
+\subsubsection{\texorpdfstring{Inc\+Set\+\_\+delete()}{IncSet\_delete()}}
+{\footnotesize\ttfamily void Inc\+Set\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IncSet_8c_aebc951ae874b3f8bcac7f51f306c43cb}\label{IncSet_8c_aebc951ae874b3f8bcac7f51f306c43cb}} 
+\index{Inc\+Set.\+c@{Inc\+Set.\+c}!Inc\+Set\+\_\+draw\+Bar@{Inc\+Set\+\_\+draw\+Bar}}
+\index{Inc\+Set\+\_\+draw\+Bar@{Inc\+Set\+\_\+draw\+Bar}!Inc\+Set.\+c@{Inc\+Set.\+c}}
+\subsubsection{\texorpdfstring{Inc\+Set\+\_\+draw\+Bar()}{IncSet\_drawBar()}}
+{\footnotesize\ttfamily void Inc\+Set\+\_\+draw\+Bar (\begin{DoxyParamCaption}\item[{const \hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$}]{this,  }\item[{int}]{attr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IncSet_8c_a985d7baecd96f9ee1ffcf3f65ec7db5e}\label{IncSet_8c_a985d7baecd96f9ee1ffcf3f65ec7db5e}} 
+\index{Inc\+Set.\+c@{Inc\+Set.\+c}!Inc\+Set\+\_\+get\+List\+Item\+Value@{Inc\+Set\+\_\+get\+List\+Item\+Value}}
+\index{Inc\+Set\+\_\+get\+List\+Item\+Value@{Inc\+Set\+\_\+get\+List\+Item\+Value}!Inc\+Set.\+c@{Inc\+Set.\+c}}
+\subsubsection{\texorpdfstring{Inc\+Set\+\_\+get\+List\+Item\+Value()}{IncSet\_getListItemValue()}}
+{\footnotesize\ttfamily const char$\ast$ Inc\+Set\+\_\+get\+List\+Item\+Value (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{panel,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IncSet_8c_afa54884632ee785c52cc9e79fcc3a7bf}\label{IncSet_8c_afa54884632ee785c52cc9e79fcc3a7bf}} 
+\index{Inc\+Set.\+c@{Inc\+Set.\+c}!Inc\+Set\+\_\+handle\+Key@{Inc\+Set\+\_\+handle\+Key}}
+\index{Inc\+Set\+\_\+handle\+Key@{Inc\+Set\+\_\+handle\+Key}!Inc\+Set.\+c@{Inc\+Set.\+c}}
+\subsubsection{\texorpdfstring{Inc\+Set\+\_\+handle\+Key()}{IncSet\_handleKey()}}
+{\footnotesize\ttfamily bool Inc\+Set\+\_\+handle\+Key (\begin{DoxyParamCaption}\item[{\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$}]{this,  }\item[{int}]{ch,  }\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{panel,  }\item[{\hyperlink{IncSet_8h_a5afcf959e1457f35d0b775da169165b2}{Inc\+Mode\+\_\+\+Get\+Panel\+Value}}]{get\+Panel\+Value,  }\item[{\hyperlink{Vector_8h_a8297b82ce917cd21838596b7e3a7faa8}{Vector} $\ast$}]{lines }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IncSet_8c_aeb35916fa26c618e2128c1c8b932005b}\label{IncSet_8c_aeb35916fa26c618e2128c1c8b932005b}} 
+\index{Inc\+Set.\+c@{Inc\+Set.\+c}!Inc\+Set\+\_\+new@{Inc\+Set\+\_\+new}}
+\index{Inc\+Set\+\_\+new@{Inc\+Set\+\_\+new}!Inc\+Set.\+c@{Inc\+Set.\+c}}
+\subsubsection{\texorpdfstring{Inc\+Set\+\_\+new()}{IncSet\_new()}}
+{\footnotesize\ttfamily \hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set}$\ast$ Inc\+Set\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$}]{bar }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IncSet_8c_a4fbe821505b8deef79f605c31f6e37b4}\label{IncSet_8c_a4fbe821505b8deef79f605c31f6e37b4}} 
+\index{Inc\+Set.\+c@{Inc\+Set.\+c}!Inc\+Set\+\_\+reset@{Inc\+Set\+\_\+reset}}
+\index{Inc\+Set\+\_\+reset@{Inc\+Set\+\_\+reset}!Inc\+Set.\+c@{Inc\+Set.\+c}}
+\subsubsection{\texorpdfstring{Inc\+Set\+\_\+reset()}{IncSet\_reset()}}
+{\footnotesize\ttfamily void Inc\+Set\+\_\+reset (\begin{DoxyParamCaption}\item[{\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$}]{this,  }\item[{\hyperlink{IncSet_8h_aaf564895c76079e4c1188afc75deec1f}{Inc\+Type}}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IncSet_8c_a329f4d00dc1ef598796c2d1f1e2ef9f7}\label{IncSet_8c_a329f4d00dc1ef598796c2d1f1e2ef9f7}} 
+\index{Inc\+Set.\+c@{Inc\+Set.\+c}!Inc\+Set\+\_\+set\+Filter@{Inc\+Set\+\_\+set\+Filter}}
+\index{Inc\+Set\+\_\+set\+Filter@{Inc\+Set\+\_\+set\+Filter}!Inc\+Set.\+c@{Inc\+Set.\+c}}
+\subsubsection{\texorpdfstring{Inc\+Set\+\_\+set\+Filter()}{IncSet\_setFilter()}}
+{\footnotesize\ttfamily void Inc\+Set\+\_\+set\+Filter (\begin{DoxyParamCaption}\item[{\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$}]{this,  }\item[{const char $\ast$}]{filter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{IncSet_8c_ada68a7a8678ebdb0ae926c160e120e97}\label{IncSet_8c_ada68a7a8678ebdb0ae926c160e120e97}} 
+\index{Inc\+Set.\+c@{Inc\+Set.\+c}!Inc\+Set\+\_\+synthesize\+Event@{Inc\+Set\+\_\+synthesize\+Event}}
+\index{Inc\+Set\+\_\+synthesize\+Event@{Inc\+Set\+\_\+synthesize\+Event}!Inc\+Set.\+c@{Inc\+Set.\+c}}
+\subsubsection{\texorpdfstring{Inc\+Set\+\_\+synthesize\+Event()}{IncSet\_synthesizeEvent()}}
+{\footnotesize\ttfamily int Inc\+Set\+\_\+synthesize\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{IncSet_8h_a5a093913f0cffb0939e9000ae05e6604}{Inc\+Set} $\ast$}]{this,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
