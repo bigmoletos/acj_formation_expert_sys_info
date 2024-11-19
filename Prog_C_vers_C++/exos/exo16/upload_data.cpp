@@ -4,6 +4,7 @@
 #include "header.hpp"
 
 // Fonction pour charger des données à partir d'un fichier dans un tableau
+
 void charger_donnees_fichier(const std::string &nom_fichier, std::vector<int> &tableau)
 {
     std::ifstream fichier(nom_fichier);
