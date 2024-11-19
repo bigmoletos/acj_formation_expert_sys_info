@@ -156,6 +156,9 @@ int main()
     cout << "=====Créez une lambda qui capture `factor` par **valeur** et retourne le produit d’un entier donné avec `factor`======" << endl;
     auto produitByFactor = [=](const int x) -> int
     { return x * factor; };
+    //  autre ecriture possible
+    auto produitByFactor2 = [factor](const int x) -> int
+    { return x * factor; };
 
     // 3. Modifiez la valeur de `factor` après la déclaration de la lambda et vérifiez si la valeur utilisée par la lambda change.
     cout << "===odifiez la valeur de `factor` après la déclaration de la lambda et \nvérifiez si la valeur utilisée par la lambda change=====" << endl;
@@ -175,6 +178,9 @@ int main()
     // 2. Créez une lambda qui capture `factor` par **référence** et retourne le produit d’un entier donné avec `factor`.
     cout << "====Créez une lambda qui capture `factor` par **référence** et \nretourne le produit d’un entier donné avec `factor`.====" << endl;
     auto produitByFactorRef = [&](const int x) -> int
+    { return x * factor2; };
+    //  autre ecriture possible
+    auto produitByFactorRef2 = [&factor2](const int x) -> int
     { return x * factor2; };
 
     // Appel de la lambda avec différents entiers
