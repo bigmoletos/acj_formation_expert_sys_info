@@ -1,0 +1,11 @@
+@startuml
+(*) --> "Chargement des données"
+--> "Prétraitement des données"
+--> "Entraînement du modèle"
+if "Évaluation réussie ?" then
+    --> "Interprétation des résultats"
+else
+    --> "Réentraînement"
+endif
+--> (*)
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+actor Utilisateur
+Utilisateur -> DataLoader : load_data("data.csv")
+DataLoader -> Model : train(data)
+Model -> Model : predict(data)
+Model -> Evaluator : evaluate(predictions, labels)
+@enduml
+
+![image.png](attachment:image.png)
