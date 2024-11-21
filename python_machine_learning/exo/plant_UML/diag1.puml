@@ -7,4 +7,5 @@ class CompteBancaire {
     +retirer(montant: float)
     +afficher_solde()
 }
+
 @enduml
