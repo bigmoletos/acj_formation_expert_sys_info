@@ -1,5 +1,6 @@
 @startuml test
-skinparam backgroundColor #00BFFF
+' skinparam backgroundColor #00BFFF
+skinparam backgroundColor #D3D3D3
 skinparam fontColor #000080
 skinparam database {
     BackgroundColor #00FFFF
