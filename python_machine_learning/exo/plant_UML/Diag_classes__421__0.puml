@@ -1,0 +1,22 @@
+@startuml
+class DataLoader {
+    + load_data(file_path: str): DataFrame
+    + preprocess(data: DataFrame): DataFrame
+}
+
+class Model {
+    + train(data: DataFrame)
+    + predict(data: DataFrame): list
+}
+
+
+class LinearRegression extends Model 
+class RandomForest extends Model
+
+class Evaluator {
+    + evaluate(predictions: list, labels: list): dict
+}
+
+DataLoader --> Model : utilise
+Model --> Evaluator : utilise pour évaluation
+@enduml
