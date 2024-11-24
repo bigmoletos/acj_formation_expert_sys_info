@@ -1,9 +1,9 @@
+language:python_machine_learning/projets/projets2/make_structure_dossier_projet.sh
 #!/bin/bash
 
 ##
 # @file make_structure_dossier_projet.sh
 # @brief Script de création de la structure du projet Temperature
-#
 # @details Crée l'arborescence complète du projet avec tous les fichiers nécessaires
 # Vérifie l'existence des fichiers/dossiers avant création
 ##
@@ -14,6 +14,43 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
+
+# Variables pour les chemins
+APP_DIR="app"
+TEMPLATES_DIR="$APP_DIR/templates"
+STATIC_DIR="$APP_DIR/static"
+CSS_DIR="$STATIC_DIR/css"
+JS_DIR="$STATIC_DIR/js"
+DOCS_DIR="docs"
+LOGS_DIR="logs"
+TESTS_DIR="tests"
+
+# Fichiers à créer
+FILES=(
+    "$APP_DIR/__init__.py"
+    "$APP_DIR/routes.py"
+    "$APP_DIR/models.py"
+    "$APP_DIR/forms.py"
+    "$APP_DIR/logging_config.py"
+    "$TEMPLATES_DIR/index.html"
+    "$TEMPLATES_DIR/weather.html"
+    "$CSS_DIR/style.css"
+    "$JS_DIR/main.js"
+    ".env"
+    # ".env.example"
+    ".gitignore"
+    "Dockerfile"
+    "docker-compose.yml"
+    "requirements.txt"
+    "Makefile"
+    "Doxyfile"
+    "README.md"
+    "ci-cd.yml"
+    "$TESTS_DIR/__init__.py"
+    "$TESTS_DIR/test_routes.py"
+    "$TESTS_DIR/test_models.py"
+    "$TESTS_DIR/conftest.py"
+)
 
 # Fonction d'aide
 show_help() {
@@ -107,47 +144,19 @@ if ! $AUTO_YES; then
 fi
 
 # Création de la structure principale
-create_dir "app"
-create_dir "app/templates"
-create_dir "app/static"
-create_dir "app/static/css"
-create_dir "app/static/js"
-create_dir "docs"
-create_dir "logs"
-create_dir "tests"
+create_dir "$APP_DIR"
+create_dir "$TEMPLATES_DIR"
+create_dir "$STATIC_DIR"
+create_dir "$CSS_DIR"
+create_dir "$JS_DIR"
+create_dir "$DOCS_DIR"
+create_dir "$LOGS_DIR"
+create_dir "$TESTS_DIR"
 
-# Création des fichiers Python dans app/
-create_file "app/__init__.py"
-create_file "app/routes.py"
-create_file "app/models.py"
-create_file "app/forms.py"
-create_file "app/logging_config.py"
-
-# Création des templates
-create_file "app/templates/index.html"
-create_file "app/templates/weather.html"
-
-# Création des fichiers statiques
-create_file "app/static/css/style.css"
-create_file "app/static/js/main.js"
-
-# Création des fichiers de configuration
-create_file ".env"
-create_file ".env.example"
-create_file ".gitignore"
-create_file "Dockerfile"
-create_file "docker-compose.yml"
-create_file "requirements.txt"
-create_file "Makefile"
-create_file "Doxyfile"
-create_file "README.md"
-create_file "ci-cd.yml"
-
-# Création des fichiers de test
-create_file "tests/__init__.py"
-create_file "tests/test_routes.py"
-create_file "tests/test_models.py"
-create_file "tests/conftest.py"
+# Création des fichiers
+for file in "${FILES[@]}"; do
+    create_file "$file"
+done
 
 echo -e "\n${GREEN}Structure du projet créée avec succès !${NC}"
 
