@@ -10,13 +10,10 @@ PIP := $(PYTHON) -m pip
 FLASK := $(PYTHON) -m flask
 PYTEST := $(PYTHON) -m pytest
 DOXYGEN := doxygen
-
-# Commenté car géré par setup_venv.sh
-# VENV_DIR := venv
-# VENV_BIN := $(VENV_DIR)/bin
-# VENV_PYTHON := $(VENV_BIN)/python3
-# VENV_PIP := $(VENV_PYTHON) -m pip
-# ACTIVATE_VENV := . $(VENV_DIR)/bin/activate
+VENV_DIR := venv
+VENV_BIN := $(VENV_DIR)/bin
+VENV_PYTHON := $(VENV_BIN)/python3
+VENV_PIP := $(VENV_PYTHON) -m pip
 
 # Couleurs pour les messages
 GREEN := \033[0;32m
@@ -53,13 +50,13 @@ help:
 	@echo -e "  PYTHON=$(GREEN)$(PYTHON)$(NC)"
 	@echo -e "  VENV_DIR=$(GREEN)$(VENV_DIR)$(NC)"
 
-# Commenté car géré par setup_venv.sh
-# check-venv:
-#   @if [ ! -d "$(VENV_DIR)" ]; then \
-#       echo -e "$(RED)Environnement virtuel non trouvé.$(NC)"; \
-#       echo -e "$(YELLOW)Création de l'environnement virtuel...$(NC)"; \
-#       make venv; \
-#   fi
+# Vérifie l'existence de l'environnement virtuel
+check-venv:
+	@if [ ! -d "$(VENV_DIR)" ]; then \
+		echo -e "$(RED)Environnement virtuel non trouvé.$(NC)"; \
+		echo -e "$(YELLOW)Création de l'environnement virtuel...$(NC)"; \
+		make venv; \
+	fi
 
 # Vérifie les dépendances système
 check-deps:
@@ -73,29 +70,29 @@ ifndef DOXYGEN_OK
 	$(error $(RED)Doxygen n'est pas installé. Installez-le avec: sudo apt-get install doxygen$(NC))
 endif
 
-# Commenté car géré par setup_venv.sh
-# venv: check-deps
-#   @echo -e "$(BLUE)Création de l'environnement virtuel...$(NC)"
-#   @test -d $(VENV_DIR) || $(PYTHON) -m venv $(VENV_DIR)
-#   @echo -e "$(GREEN)Environnement virtuel créé dans $(VENV_DIR)$(NC)"
+# Crée l'environnement virtuel
+venv: check-deps
+	@echo -e "$(BLUE)Création de l'environnement virtuel...$(NC)"
+	@test -d $(VENV_DIR) || $(PYTHON) -m venv $(VENV_DIR)
+	@echo -e "$(GREEN)Environnement virtuel créé dans $(VENV_DIR)$(NC)"
 
-# Commenté car géré par setup_venv.sh
-# install: check-venv
-#   @echo -e "$(BLUE)Installation des dépendances...$(NC)"
-#   @$(ACTIVATE_VENV) && $(VENV_PIP) install --upgrade pip
-#   @$(ACTIVATE_VENV) && $(VENV_PIP) install -r requirements.txt
-#   @echo -e "$(GREEN)Dépendances installées avec succès$(NC)"
+# Installation des dépendances
+install: check-venv
+	@echo -e "$(BLUE)Installation des dépendances...$(NC)"
+	$(VENV_PIP) install --upgrade pip
+	$(VENV_PIP) install -r requirements.txt
+	@echo -e "$(GREEN)Dépendances installées avec succès$(NC)"
 
 # Lance les tests
 test: check-venv
 	@echo -e "$(BLUE)Lancement des tests...$(NC)"
-	@$(ACTIVATE_VENV) && $(PYTEST) tests/ -v
+	@. $(VENV_BIN)/activate && $(PYTEST) tests/ -v
 	@echo -e "$(GREEN)Tests terminés$(NC)"
 
 # Lance l'application
 run: check-venv
 	@echo -e "$(BLUE)Lancement de l'application...$(NC)"
-	@$(ACTIVATE_VENV) && $(FLASK) run
+	@. $(VENV_BIN)/activate && $(FLASK) run
 
 # Génère la documentation
 docs: check-doxygen
@@ -134,9 +131,3 @@ status: check-venv
 		echo -e "Git: $(GREEN)$(shell git --version)$(NC)"; \
 		echo -e "Branch: $(GREEN)$(shell git branch --show-current)$(NC)"; \
 	fi
-
-# Ajout d'une nouvelle cible pour activer l'environnement virtuel
-activate: check-venv
-	@echo -e "$(BLUE)Activation de l'environnement virtuel...$(NC)"
-	@echo -e "$(YELLOW)Pour activer l'environnement, exécutez:$(NC)"
-	@echo -e "$(GREEN)source $(VENV_DIR)/bin/activate$(NC)"
