@@ -1,0 +1,61 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      db:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: temperature_db
+          MYSQL_USER: user
+          MYSQL_PASSWORD: password
+          MYSQL_ROOT_PASSWORD: root_password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost"
+          --health-interval=30s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          # Ajoutez ici vos tests unitaires
+          echo "Aucun test à exécuter pour le moment."
+
+      - name: Build Docker image
+        run: |
+          docker build -t projet_temperature .
+
+      - name: Run Docker container
+        run: |
+          docker run -d -p 5000:5000 projet_temperature
+
+      - name: Deploy
+        run: |
+          echo "Déploiement de l'application..."
+          # Ajoutez ici vos étapes de déploiement
