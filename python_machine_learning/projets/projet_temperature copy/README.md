@@ -5,7 +5,6 @@ Application web Flask permettant de consulter la température actuelle de n'impo
 
 ## Structure du Projet
 
-```bash
 projet_temperature/
 ├── app/
 │ ├── init.py # Initialisation de l'application Flask
@@ -28,7 +27,6 @@ projet_temperature/
 ├── Makefile # Commandes make
 ├── Doxyfile # Configuration Doxygen
 └── ci-cd.yml # Configuration CI/CD GitHub Actions
-```
 
 ## Fonctionnalités
 
