@@ -9,28 +9,56 @@
 import logging
 import os
 from logging.handlers import RotatingFileHandler
-from datetime import datetime
-from dotenv import load_dotenv
+from pathlib import Path
 
-# Charger les variables d'environnement depuis le fichier .env
-load_dotenv()
+# Définition des niveaux de log valides
+VALID_LOG_LEVELS = {
+    'DEBUG': logging.DEBUG,
+    'INFO': logging.INFO,
+    'WARNING': logging.WARNING,
+    'ERROR': logging.ERROR,
+    'CRITICAL': logging.CRITICAL
+}
 
 
-##
-# @brief Configure le système de logging
-#
-# @param log_to_file Si True, crée également un fichier de log
-# @param log_level Niveau de log (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-# @param log_dir Répertoire où stocker les fichiers de log
-# @return Logger configuré
-##
-def setup_logging(log_to_file=False, log_level=logging.INFO, log_dir='logs'):
+def get_valid_log_level(level_str):
+    """
+    Convertit une chaîne de niveau de log en niveau logging valide
+
+    Args:
+        level_str (str): Niveau de log en string ('DEBUG', 'INFO', etc.)
+
+    Returns:
+        int: Niveau de log logging correspondant
+    """
+    # Convertir en majuscules et nettoyer la chaîne
+    level_str = str(level_str).upper().strip()
+
+    # Retourner le niveau correspondant ou DEBUG par défaut
+    return VALID_LOG_LEVELS.get(level_str, logging.DEBUG)
+
+
+def setup_logging(log_to_file=False, log_level='INFO', log_dir='logs'):
+    """
+    Configure le système de logging
+
+    Args:
+        log_to_file (bool): Si True, écrit les logs dans un fichier
+        log_level (str): Niveau de log ('DEBUG', 'INFO', etc.)
+        log_dir (str): Répertoire pour les fichiers de log
+
+    Returns:
+        logging.Logger: Logger configuré
+    """
     try:
-        # Création du logger principal
-        logger = logging.getLogger('temperature_app')
-        logger.setLevel(log_level)
+        # Création du logger
+        logger = logging.getLogger('app')
 
-        # Format des logs
+        # Conversion et validation du niveau de log
+        validated_level = get_valid_log_level(log_level)
+        logger.setLevel(validated_level)
+
+        # Format du log
         formatter = logging.Formatter(
             '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
@@ -39,46 +67,45 @@ def setup_logging(log_to_file=False, log_level=logging.INFO, log_dir='logs'):
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
 
-        # Configuration du logging vers un fichier si demandé
+        # Configuration du logging dans un fichier si demandé
         if log_to_file:
-            try:
-                # Création du répertoire de logs s'il n'existe pas
-                if not os.path.exists(log_dir):
-                    os.makedirs(log_dir)
+            # Création du répertoire de logs si nécessaire
+            log_path = Path(log_dir)
+            log_path.mkdir(exist_ok=True)
 
-                # Nom du fichier de log avec la date
-                log_file = os.path.join(
-                    log_dir,
-                    f'temperature_app_{datetime.now().strftime("%Y%m%d")}.log')
-
-                # Handler pour le fichier avec rotation
-                file_handler = RotatingFileHandler(
-                    log_file,
-                    maxBytes=1024 * 1024,  # 1 Mo
-                    backupCount=5)
-                file_handler.setFormatter(formatter)
-                logger.addHandler(file_handler)
-
-                logger.info(f"Logging configuré avec fichier: {log_file}")
-            except Exception as e:
-                logger.error(
-                    f"Erreur lors de la création du fichier de log: {str(e)}")
-                raise
+            # Configuration du handler de fichier
+            file_handler = RotatingFileHandler(
+                log_path / 'app.log',
+                maxBytes=1024 * 1024,  # 1 MB
+                backupCount=5)
+            file_handler.setFormatter(formatter)
+            logger.addHandler(file_handler)
 
         return logger
 
     except Exception as e:
-        print(f"Erreur fatale lors de la configuration du logging: {str(e)}")
-        raise
+        # Fallback logger en cas d'erreur
+        fallback_logger = logging.getLogger('fallback')
+        fallback_logger.setLevel(logging.DEBUG)
+        console_handler = logging.StreamHandler()
+        fallback_logger.addHandler(console_handler)
+        fallback_logger.error(
+            f"Erreur lors de la configuration du logging: {str(e)}")
+        return fallback_logger
 
 
-# Utiliser les variables d'environnement pour configurer le logger
+# Logger par défaut
 def get_logger():
-    log_to_file = os.getenv('LOG_TO_FILE', 'False').lower() == 'true'
-    log_level = os.getenv('LOG_LEVEL', 'INFO').upper()
-    log_level = logging.getLevelName(log_level)
-    return setup_logging(log_to_file=log_to_file, log_level=log_level)
+    """
+    Retourne le logger configuré avec les paramètres par défaut
 
+    Returns:
+        logging.Logger: Logger configuré
+    """
+    log_to_file = os.environ.get('LOG_TO_FILE', 'False').lower() == 'true'
+    log_level = os.environ.get('LOG_LEVEL', 'INFO')
+
+    return setup_logging(log_to_file=log_to_file, log_level=log_level)
 
 logger = get_logger()
 
