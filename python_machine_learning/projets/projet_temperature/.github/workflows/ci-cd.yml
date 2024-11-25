@@ -11,6 +11,7 @@ env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_USERNAME: ${{ github.actor }}
   DOCKER_PASSWORD: ${{ github.token }}
+  LOG_LEVEL: DEBUG
 
 jobs:
   test:
