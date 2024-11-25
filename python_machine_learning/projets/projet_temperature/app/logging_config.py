@@ -10,6 +10,10 @@ import logging
 import os
 from logging.handlers import RotatingFileHandler
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Charger les variables d'environnement depuis le fichier .env
+load_dotenv()
 
 
 ##
@@ -66,6 +70,17 @@ def setup_logging(log_to_file=False, log_level=logging.INFO, log_dir='logs'):
     except Exception as e:
         print(f"Erreur fatale lors de la configuration du logging: {str(e)}")
         raise
+
+
+# Utiliser les variables d'environnement pour configurer le logger
+def get_logger():
+    log_to_file = os.getenv('LOG_TO_FILE', 'False').lower() == 'true'
+    log_level = os.getenv('LOG_LEVEL', 'INFO').upper()
+    log_level = logging.getLevelName(log_level)
+    return setup_logging(log_to_file=log_to_file, log_level=log_level)
+
+
+logger = get_logger()
 
 
 ##
