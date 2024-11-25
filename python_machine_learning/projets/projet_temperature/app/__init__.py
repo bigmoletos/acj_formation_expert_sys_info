@@ -36,14 +36,17 @@ try:
         OPENWEATHER_API_KEY=os.environ.get('API_KEY_OPENWEATHER'))
 
     # Configuration de la base de données
-    database_url = os.environ.get('DATABASE_URL')
-    if not database_url:
-        database_url = f"mysql+pymysql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@{os.environ.get('DB_HOST', 'localhost')}:{os.environ.get('DB_PORT', '3306')}/{os.environ.get('DB_NAME')}"
-
-    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
-
-    logger.info("Configuration de l'application chargée avec succès")
-    logger.debug(f"URL de la base de données : {database_url}")
+    if os.environ.get('FLASK_ENV') == 'testing':
+        # Utiliser SQLite pour les tests
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+        logger.info("Utilisation de SQLite en mémoire pour les tests")
+    else:
+        # Configuration normale pour MySQL
+        database_url = os.environ.get('DATABASE_URL')
+        if not database_url:
+            database_url = f"mysql+pymysql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@{os.environ.get('DB_HOST', 'localhost')}:{os.environ.get('DB_PORT', '3306')}/{os.environ.get('DB_NAME')}"
+        app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+        logger.info(f"Utilisation de MySQL avec l'URL: {database_url}")
 
     # Initialisation des extensions
     db = SQLAlchemy(app)
