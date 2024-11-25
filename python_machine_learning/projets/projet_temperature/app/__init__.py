@@ -30,10 +30,17 @@ try:
     # Configuration
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your_secret_key')
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-        'DATABASE_URL', 'sqlite:///app.db')  # SQLite par défaut
+        'DATABASE_URL',
+        f"mysql+pymysql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@{os.environ.get('DB_HOST')}:{os.environ.get('DB_PORT')}/{os.environ.get('DB_NAME')}"
+    )
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['OPENWEATHER_API_KEY'] = os.environ.get('API_KEY_OPENWEATHER')
     logger.debug(f"Clé API chargée: {app.config['OPENWEATHER_API_KEY']}")
+
+    # Configuration du logging
+    app.config['LOG_LEVEL'] = os.environ.get('LOG_LEVEL', 'DEBUG')
+    app.config['LOG_FILE_PATH'] = os.environ.get('LOG_FILE_PATH',
+                                                 '/var/log/app.log')
 
     # Initialisation des extensions
     db = SQLAlchemy(app)

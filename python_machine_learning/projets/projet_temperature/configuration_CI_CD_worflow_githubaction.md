@@ -73,11 +73,24 @@ Il est possible de tester des GitHub Actions localement avec un outil comme [**a
 
 1. Installez `act` en suivant les instructions de leur documentation.
 
+```bash
+choco install act-cli
+
+```
+
 2. Utilisez la commande suivante pour tester un workflow localement :
 
-   ```bash
-   act
-   ```
+```bash
+
+act --version
+# lancer act
+act
+# lancer act avec push
+act push
+# possibilité aussi de spécifier une image Docker de plus grande capacité
+act -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:full-latest
+
+```
 
    Cette commande exécutera les workflows dans un environnement simulé. Cela permet de repérer des erreurs avant même de pousser sur GitHub.
 
@@ -121,6 +134,7 @@ Ce fichier effectue les tâches suivantes :
 5. **Exécute les tests unitaires** avec `pytest`.
 
 ### Conclusion
+
 En résumé :
 - Placez votre fichier `ci-cd.yml` dans `.github/workflows`.
 - Poussez le fichier sur GitHub pour qu'il soit automatiquement pris en charge.
