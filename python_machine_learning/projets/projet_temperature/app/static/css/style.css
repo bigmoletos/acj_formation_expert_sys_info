@@ -80,3 +80,33 @@
 .btn-secondary:hover {
     background-color: #5a6268;
 }
+
+.custom-marker {
+    background: none;
+    border: none;
+}
+
+.marker-content {
+    position: relative;
+    text-align: center;
+}
+
+.temperature-flag {
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.city-name {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #333;
+    text-shadow: 1px 1px 1px white;
+}
+
+#map {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
