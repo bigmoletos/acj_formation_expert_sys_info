@@ -42,14 +42,27 @@ jobs:
 
       - name: Run tests
         env:
-          FLASK_ENV: testing
-          DATABASE_URL: sqlite:///:memory:
-          SECRET_KEY: test_key
-          API_KEY_OPENWEATHER: test_key
-          LOG_TO_FILE: 'False'
-          LOG_LEVEL: DEBUG
+          FLASK_ENV: "testing"
+          FLASK_APP: "app"
+          DATABASE_URL: "sqlite:///:memory:"
+          SECRET_KEY: "test_key"
+          API_KEY_OPENWEATHER: "test_key"
+          LOG_TO_FILE: "False"
+          LOG_LEVEL: "DEBUG"
+          TESTING: "True"
         run: |
-          cp .env.testing .env
+          if [ -f .env.testing ]; then
+            cp .env.testing .env
+          else
+            echo "Creating .env file for testing"
+            echo "FLASK_ENV=testing" > .env
+            echo "DATABASE_URL=sqlite:///:memory:" >> .env
+            echo "SECRET_KEY=test_key" >> .env
+            echo "API_KEY_OPENWEATHER=test_key" >> .env
+            echo "LOG_TO_FILE=False" >> .env
+            echo "LOG_LEVEL=DEBUG" >> .env
+            echo "TESTING=True" >> .env
+          fi
           pytest tests/ -v --cov=app --cov-report=xml
 
   build-and-push:
