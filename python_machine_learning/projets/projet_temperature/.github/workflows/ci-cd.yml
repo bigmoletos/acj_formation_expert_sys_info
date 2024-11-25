@@ -42,13 +42,12 @@ jobs:
 
       - name: Run tests
         env:
-          FLASK_APP: ${{ env.FLASK_APP }}
-          FLASK_ENV: ${{ env.FLASK_ENV }}
-          SECRET_KEY: ${{ env.SECRET_KEY }}
-          DATABASE_URL: ${{ env.DATABASE_URL }}
-          API_KEY_OPENWEATHER: ${{ env.API_KEY_OPENWEATHER }}
-          LOG_TO_FILE: ${{ env.LOG_TO_FILE }}
-          LOG_LEVEL: ${{ env.LOG_LEVEL }}
+          FLASK_APP: app
+          FLASK_ENV: testing
+          SECRET_KEY: test_key
+          API_KEY_OPENWEATHER: test_key
+          LOG_TO_FILE: 'False'
+          LOG_LEVEL: DEBUG
         run: |
           pytest tests/ -v --cov=app --cov-report=xml
 
