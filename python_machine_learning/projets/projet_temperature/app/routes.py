@@ -87,11 +87,6 @@ def weather():
             )
             return render_template('weather.html')
 
-        # Notez que '13000' est un code postal, pas un nom de ville
-        # Pour la recherche par code postal, utilisez un format différent
-        if city.isdigit():
-            city = f"FR-{city}"  # Format pour les codes postaux français
-
         try:
             response = requests.get(
                 'http://api.openweathermap.org/data/2.5/weather',
@@ -99,7 +94,7 @@ def weather():
                     'q': city,
                     'appid': api_key,
                     'units': 'metric',
-                    'lang': 'fr'  # Pour avoir les réponses en français
+                    'lang': 'fr'
                 })
 
             if response.status_code == 401:
@@ -114,6 +109,10 @@ def weather():
             temperature = data['main']['temp']
             description = data['weather'][0]['description']
             ville = data['name']
+            coordinates = {
+                'lat': data['coord']['lat'],
+                'lon': data['coord']['lon']
+            }
 
             logger.info(
                 f"Données météo récupérées pour {ville}: {temperature}°C")
@@ -121,7 +120,8 @@ def weather():
             return render_template('weather.html',
                                    temperature=temperature,
                                    city=ville,
-                                   description=description)
+                                   description=description,
+                                   coordinates=coordinates)
 
         except requests.RequestException as e:
             logger.error(f"Erreur API météo pour {city}: {str(e)}")
