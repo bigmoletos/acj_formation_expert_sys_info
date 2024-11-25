@@ -9,6 +9,7 @@ def client():
     app.config['TESTING'] = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
     app.config['WTF_CSRF_ENABLED'] = False
+    app.config['OPENWEATHER_API_KEY'] = 'test_api_key'
 
     with app.test_client() as client:
         with app.app_context():
@@ -32,6 +33,7 @@ def auth_client(client, test_user):
         db.session.add(test_user)
         db.session.commit()
 
+        # Connexion
         client.post('/login',
                     data={
                         'username': 'testuser',
@@ -40,3 +42,34 @@ def auth_client(client, test_user):
                     follow_redirects=True)
 
         return client
+
+
+@pytest.fixture
+def mock_weather_api(monkeypatch):
+    """Fixture pour mocker l'API météo."""
+
+    class MockResponse:
+
+        def __init__(self, data, status_code=200):
+            self.data = data
+            self.status_code = status_code
+
+        def json(self):
+            return self.data
+
+    def mock_get(*args, **kwargs):
+        return MockResponse({
+            'main': {
+                'temp': 20.5
+            },
+            'name': 'Paris',
+            'weather': [{
+                'description': 'ciel dégagé'
+            }],
+            'coord': {
+                'lat': 48.8566,
+                'lon': 2.3522
+            }
+        })
+
+    monkeypatch.setattr('requests.get', mock_get)
