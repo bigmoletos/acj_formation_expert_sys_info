@@ -1,9 +1,17 @@
-FROM python:3.12
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV FLASK_APP=app
+ENV FLASK_ENV=production
 
 WORKDIR /app
 
-# Installation de Doxygen
-RUN apt-get update && apt-get install -y doxygen graphviz
+RUN apt-get update && apt-get install -y \
+    gcc \
+    doxygen \
+    graphviz \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
 
@@ -11,7 +19,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Génération de la documentation (optionnel)
-RUN doxygen Doxyfile || true
+RUN mkdir -p docs && \
+    doxygen Doxyfile || echo "Documentation generation completed with warnings"
 
-CMD ["flask", "run", "--host=0.0.0.0"]
+EXPOSE 5000
+
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]

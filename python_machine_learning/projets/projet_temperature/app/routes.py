@@ -11,7 +11,7 @@
 # - requests pour les appels API OpenWeatherMap
 ##
 
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, jsonify, send_from_directory
 from flask_login import login_user, logout_user, login_required, current_user
 from app import app, db, logger
 from app.models import User
@@ -154,3 +154,72 @@ def logout():
     except Exception as e:
         log_exception(logger, e, "Erreur lors de la déconnexion")
         return redirect(url_for('login'))
+
+
+##
+# @brief Route API pour obtenir la température d'une ville
+# @details Récupère les données météorologiques via l'API OpenWeatherMap
+#
+# @param city Nom de la ville (via URL parameter)
+# @return JSON avec les données météo
+##
+@app.route('/api/weather/<city>', methods=['GET'])
+def weather_api(city):
+    """
+    API endpoint pour obtenir la température d'une ville
+
+    @param city: Nom de la ville
+    @return: JSON avec la température et les informations météo
+    """
+    try:
+        api_key = app.config.get('OPENWEATHER_API_KEY')
+        if not api_key:
+            return jsonify({'error': 'API key not configured'}), 500
+
+        response = requests.get(
+            'http://api.openweathermap.org/data/2.5/weather',
+            params={
+                'q': city,
+                'appid': api_key,
+                'units': 'metric',
+                'lang': 'fr'
+            })
+
+        if response.status_code == 401:
+            return jsonify({'error': 'Invalid API key'}), 401
+
+        response.raise_for_status()
+        data = response.json()
+
+        return jsonify({
+            'city': data['name'],
+            'temperature': data['main']['temp'],
+            'description': data['weather'][0]['description'],
+            'coordinates': {
+                'lat': data['coord']['lat'],
+                'lon': data['coord']['lon']
+            }
+        })
+
+    except requests.RequestException as e:
+        return jsonify({'error':
+                        f'Error fetching weather data: {str(e)}'}), 500
+
+
+##
+# @brief Route pour servir la documentation générée par Doxygen
+# @details Récupère le fichier demandé dans la documentation et le renvoie
+#
+# @param path Chemin du fichier demandé dans la documentation
+# @return Fichier de documentation demandé
+##
+@app.route('/docs/')
+@app.route('/docs/<path:path>')
+def serve_docs(path='index.html'):
+    """
+    Sert la documentation générée par Doxygen
+
+    @param path: Chemin du fichier demandé dans la documentation
+    @return: Fichier de documentation demandé
+    """
+    return send_from_directory('docs/html', path)
