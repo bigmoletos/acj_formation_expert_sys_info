@@ -12,6 +12,7 @@
 ##
 
 from flask import render_template, request, redirect, url_for, flash
+from flask_login import login_user, logout_user, login_required, current_user
 from app import app, db, logger
 from app.models import User
 from app.forms import LoginForm
@@ -25,21 +26,42 @@ import requests
 #
 # @return Template HTML rendu avec le formulaire
 ##
-@app.route('/', methods=['GET', 'POST'])
-@log_function_call(logger)
-def index():
+@app.route('/login', methods=['GET', 'POST'])
+def login():
     try:
+        if current_user.is_authenticated:
+            return redirect(url_for('weather'))
+
         form = LoginForm()
         if form.validate_on_submit():
-            logger.info(
-                f"Tentative de connexion pour l'utilisateur: {form.username.data}"
-            )
-            return redirect(url_for('weather'))
+            user = User.query.filter_by(username=form.username.data).first()
+            if user and user.check_password(form.password.data):
+                login_user(user)
+                logger.info(f"Utilisateur connecté: {user.username}")
+                return redirect(url_for('weather'))
+            else:
+                flash('Nom d\'utilisateur ou mot de passe incorrect')
+                logger.warning(
+                    f"Tentative de connexion échouée pour: {form.username.data}"
+                )
+
         return render_template('index.html', form=form)
     except Exception as e:
-        log_exception(logger, e, "Erreur dans la route index")
+        log_exception(logger, e, "Erreur dans la route login")
         flash("Une erreur est survenue. Veuillez réessayer.")
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
+
+
+##
+# @brief Route de la page d'accueil
+# @details Gère l'affichage du formulaire de connexion et son traitement
+#
+# @return Template HTML rendu avec le formulaire
+##
+@app.route('/')
+@app.route('/index')
+def index():
+    return redirect(url_for('login'))
 
 
 ##
@@ -49,38 +71,86 @@ def index():
 # @param city Nom de la ville (via query parameter)
 # @return Template HTML avec les données météo ou redirection
 ##
-@app.route('/weather', methods=['GET'])
-@log_function_call(logger)
+@app.route('/weather')
+@login_required
 def weather():
     try:
         city = request.args.get('city')
         if not city:
-            logger.warning("Tentative d'accès à /weather sans paramètre city")
-            return redirect(url_for('index'))
+            return render_template('weather.html')
+
+        api_key = app.config.get('OPENWEATHER_API_KEY')
+        if not api_key:
+            logger.error("Clé API OpenWeather non configurée")
+            flash(
+                "Erreur de configuration du service météo. Contactez l'administrateur."
+            )
+            return render_template('weather.html')
+
+        # Notez que '13000' est un code postal, pas un nom de ville
+        # Pour la recherche par code postal, utilisez un format différent
+        if city.isdigit():
+            city = f"FR-{city}"  # Format pour les codes postaux français
 
         try:
             response = requests.get(
-                f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid=YOUR_API_KEY&units=metric'
-            )
-            response.raise_for_status()
+                'http://api.openweathermap.org/data/2.5/weather',
+                params={
+                    'q': city,
+                    'appid': api_key,
+                    'units': 'metric',
+                    'lang': 'fr'  # Pour avoir les réponses en français
+                })
 
+            if response.status_code == 401:
+                logger.error("Clé API OpenWeather invalide")
+                flash("Erreur d'authentification avec le service météo")
+                return render_template('weather.html')
+
+            response.raise_for_status()
             data = response.json()
+
+            # Extraction des données
             temperature = data['main']['temp']
+            description = data['weather'][0]['description']
+            ville = data['name']
+
             logger.info(
-                f"Données météo récupérées pour {city}: {temperature}°C")
+                f"Données météo récupérées pour {ville}: {temperature}°C")
 
             return render_template('weather.html',
                                    temperature=temperature,
-                                   city=city)
+                                   city=ville,
+                                   description=description)
 
         except requests.RequestException as e:
             logger.error(f"Erreur API météo pour {city}: {str(e)}")
             flash(
-                "Impossible de récupérer les données météo. Veuillez réessayer."
+                "Impossible de récupérer les données météo. Veuillez réessayer avec un nom de ville valide."
             )
-            return redirect(url_for('index'))
+            return render_template('weather.html')
 
     except Exception as e:
         log_exception(logger, e, "Erreur dans la route weather")
         flash("Une erreur est survenue. Veuillez réessayer.")
-        return redirect(url_for('index'))
+        return render_template('weather.html')
+
+
+##
+# @brief Route pour déconnecter l'utilisateur
+# @details Déconnecte l'utilisateur actuellement connecté
+#
+# @return Redirection vers la page d'accueil
+##
+@app.route('/logout')
+@login_required
+def logout():
+    try:
+        username = current_user.username
+        logout_user()
+        logger.info(f"Utilisateur déconnecté: {username}")
+        flash('Vous avez été déconnecté')
+        return redirect(url_for('login'))
+    except Exception as e:
+        log_exception(logger, e, "Erreur lors de la déconnexion")
+        return redirect(url_for('login'))
