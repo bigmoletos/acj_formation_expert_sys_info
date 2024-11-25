@@ -27,20 +27,23 @@ try:
     # Initialisation de l'application
     app = Flask(__name__)
 
-    # Configuration
-    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your_secret_key')
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-        'DATABASE_URL',
-        f"mysql+pymysql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@{os.environ.get('DB_HOST')}:{os.environ.get('DB_PORT')}/{os.environ.get('DB_NAME')}"
-    )
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['OPENWEATHER_API_KEY'] = os.environ.get('API_KEY_OPENWEATHER')
-    logger.debug(f"Clé API chargée: {app.config['OPENWEATHER_API_KEY']}")
+    # Configuration de base
+    app.config.update(
+        SECRET_KEY=os.environ.get('SECRET_KEY', 'your_secret_key'),
+        SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        LOG_LEVEL=os.environ.get('LOG_LEVEL', 'DEBUG'),
+        LOG_FILE_PATH=os.environ.get('LOG_FILE_PATH', '/var/log/app.log'),
+        OPENWEATHER_API_KEY=os.environ.get('API_KEY_OPENWEATHER'))
 
-    # Configuration du logging
-    app.config['LOG_LEVEL'] = os.environ.get('LOG_LEVEL', 'DEBUG')
-    app.config['LOG_FILE_PATH'] = os.environ.get('LOG_FILE_PATH',
-                                                 '/var/log/app.log')
+    # Configuration de la base de données
+    database_url = os.environ.get('DATABASE_URL')
+    if not database_url:
+        database_url = f"mysql+pymysql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@{os.environ.get('DB_HOST', 'localhost')}:{os.environ.get('DB_PORT', '3306')}/{os.environ.get('DB_NAME')}"
+
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+
+    logger.info("Configuration de l'application chargée avec succès")
+    logger.debug(f"URL de la base de données : {database_url}")
 
     # Initialisation des extensions
     db = SQLAlchemy(app)
