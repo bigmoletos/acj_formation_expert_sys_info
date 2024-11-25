@@ -42,13 +42,14 @@ jobs:
 
       - name: Run tests
         env:
-          FLASK_APP: app
           FLASK_ENV: testing
+          DATABASE_URL: sqlite:///:memory:
           SECRET_KEY: test_key
           API_KEY_OPENWEATHER: test_key
           LOG_TO_FILE: 'False'
           LOG_LEVEL: DEBUG
         run: |
+          cp .env.testing .env
           pytest tests/ -v --cov=app --cov-report=xml
 
   build-and-push:
