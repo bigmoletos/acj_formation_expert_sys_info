@@ -35,16 +35,16 @@ try:
                       TESTING=Config.TESTING)
 
     # Configuration de la base de données
-    if FLASK_ENV == 'testing' or os.environ.get('DATABASE_URL',
-                                                '').startswith('sqlite'):
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-            'DATABASE_URL', 'sqlite:///:memory:')
-        logger.info(
-            f"Utilisation de SQLite: {app.config['SQLALCHEMY_DATABASE_URI']}")
+    if FLASK_ENV == 'testing' or Config.TESTING:
+        # Force SQLite pour les tests
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+        logger.info("Mode test : Utilisation de SQLite en mémoire")
     else:
+        # Configuration normale pour l'environnement de développement/production
         app.config['SQLALCHEMY_DATABASE_URI'] = Config.get_database_url()
         logger.info(
-            f"Utilisation de MySQL: {app.config['SQLALCHEMY_DATABASE_URI']}")
+            f"Mode normal : Utilisation de la base de données configurée : {Config.get_database_url()}"
+        )
 
     # Initialisation des extensions
     db = SQLAlchemy(app)
@@ -56,10 +56,9 @@ try:
     from app import routes, models
 
     # Création des tables si nécessaire
-    if not app.config['TESTING']:
-        with app.app_context():
-            db.create_all()
-            logger.info("Base de données initialisée avec succès")
+    with app.app_context():
+        db.create_all()
+        logger.info("Base de données initialisée avec succès")
 
     if __name__ == '__main__':
         app.run(host='0.0.0.0', port=5000, debug=Config.DEBUG)
