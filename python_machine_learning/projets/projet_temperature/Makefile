@@ -46,7 +46,7 @@ test:
 
 run:
 	@echo "$(BLUE)Lancement de l'application...$(NC)"
-	$(FLASK) run
+	$(FLASK) run --host=127.0.0.1 --port=5001
 
 clean:
 	@echo "$(BLUE)Nettoyage...$(NC)"
