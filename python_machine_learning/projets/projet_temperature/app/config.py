@@ -6,49 +6,51 @@ from pathlib import Path
 # Chargement du fichier .env approprié
 def load_environment():
     """Charge le fichier d'environnement approprié"""
-    env_testing = Path('.env.testing')
-    env_default = Path('.env')
+    env = os.environ.get('FLASK_ENV', 'development')
 
-    if os.environ.get('FLASK_ENV') == 'testing' and env_testing.exists():
-        load_dotenv(env_testing)
-        return 'testing'
+    if env == 'testing':
+        env_file = Path('.env.testing')
     else:
-        load_dotenv(env_default)
-        return 'default'
+        env_file = Path('.env')
+
+    if env_file.exists():
+        load_dotenv(env_file, override=True)
+        return env
+    else:
+        raise FileNotFoundError(f"Fichier {env_file} non trouvé")
 
 
 # Chargement de l'environnement
-CURRENT_ENV = load_environment()
+try:
+    CURRENT_ENV = load_environment()
+except Exception as e:
+    print(f"Erreur lors du chargement de l'environnement: {e}")
+    CURRENT_ENV = 'development'
 
 
 class Config:
     """Configuration de l'application"""
 
     # Environnement
-    FLASK_ENV = os.environ.get('FLASK_ENV', 'development')
+    FLASK_ENV = os.getenv('FLASK_ENV', 'development')
     TESTING = FLASK_ENV == 'testing'
-    FLASK_APP = os.environ.get('FLASK_APP', 'app')
-    DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
-    BRANCH = os.environ.get('BRANCH', 'dev2')
+    DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
+
+    # Serveur
+    HOST = os.getenv('HOST', '127.0.0.1')
+    PORT = int(os.getenv('PORT', 5001))
 
     # Base de données
     if TESTING:
         SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
     else:
-        # Configuration MySQL
-        DB_HOST = os.environ.get('DB_HOST', 'localhost')
-        DB_PORT = os.environ.get('DB_PORT', '5432')
-        DB_USER = os.environ.get('DB_USER', 'username')
-        DB_PASSWORD = os.environ.get('DB_PASSWORD', 'password')
-        DB_ROOT_PASSWORD = os.environ.get('DB_ROOT_PASSWORD', '1234')
-        DB_NAME = os.environ.get('DB_NAME', 'temperature_db')
+        DB_USER = os.getenv('DB_USER')
+        DB_PASSWORD = os.getenv('DB_PASSWORD')
+        DB_HOST = os.getenv('DB_HOST', 'localhost')
+        DB_PORT = os.getenv('DB_PORT', '3306')
+        DB_NAME = os.getenv('DB_NAME')
 
-        # Utilisateur Admin DB
-        DB_USER_ADMIN = os.environ.get('DB_USER_ADMIN', 'admin')
-        DB_PASSWORD_ADMIN = os.environ.get('DB_PASSWORD_ADMIN', 'password')
-
-        # Utiliser DATABASE_URL s'il est défini, sinon construire l'URL MySQL
-        SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL') or \
             f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
     # Configuration SQLAlchemy
