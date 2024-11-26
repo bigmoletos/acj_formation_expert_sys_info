@@ -39,17 +39,7 @@ def get_valid_log_level(level_str):
 
 
 def setup_logging(log_to_file=False, log_level='INFO', log_dir='logs'):
-    """
-    Configure le système de logging
-
-    Args:
-        log_to_file (bool): Si True, écrit les logs dans un fichier
-        log_level (str): Niveau de log ('DEBUG', 'INFO', etc.)
-        log_dir (str): Répertoire pour les fichiers de log
-
-    Returns:
-        logging.Logger: Logger configuré
-    """
+    """Configure le système de logging"""
     try:
         # Création du logger
         logger = logging.getLogger('app')
@@ -69,17 +59,28 @@ def setup_logging(log_to_file=False, log_level='INFO', log_dir='logs'):
 
         # Configuration du logging dans un fichier si demandé
         if log_to_file:
-            # Création du répertoire de logs si nécessaire
-            log_path = Path(log_dir)
-            log_path.mkdir(exist_ok=True)
+            try:
+                # Utilisation de Path pour gérer les chemins de manière cross-platform
+                log_path = Path(log_dir)
+                if not log_path.is_absolute():
+                    # Si le chemin n'est pas absolu, créer dans le dossier du projet
+                    log_path = Path.cwd() / log_dir
 
-            # Configuration du handler de fichier
-            file_handler = RotatingFileHandler(
-                log_path / 'app.log',
-                maxBytes=1024 * 1024,  # 1 MB
-                backupCount=5)
-            file_handler.setFormatter(formatter)
-            logger.addHandler(file_handler)
+                # Création du répertoire de logs
+                log_path.mkdir(parents=True, exist_ok=True)
+
+                # Configuration du handler de fichier
+                file_handler = RotatingFileHandler(
+                    log_path / 'app.log',
+                    maxBytes=1024 * 1024,  # 1 MB
+                    backupCount=5)
+                file_handler.setFormatter(formatter)
+                logger.addHandler(file_handler)
+                logger.info(f"Logging configuré dans le dossier: {log_path}")
+            except Exception as e:
+                logger.warning(
+                    f"Impossible de configurer le logging fichier: {str(e)}")
+                logger.warning("Continuité avec logging console uniquement")
 
         return logger
 
