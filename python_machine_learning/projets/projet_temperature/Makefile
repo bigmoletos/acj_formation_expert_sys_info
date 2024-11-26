@@ -46,7 +46,7 @@ test:
 
 run:
 	@echo "$(BLUE)Lancement de l'application...$(NC)"
-	$(FLASK) run --host=127.0.0.1 --port=5001
+	$(PYTHON) -m flask run --host=localhost
 
 clean:
 	@echo "$(BLUE)Nettoyage...$(NC)"
