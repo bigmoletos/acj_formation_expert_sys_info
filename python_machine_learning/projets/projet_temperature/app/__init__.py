@@ -9,6 +9,8 @@ from flask_login import LoginManager
 from app.logging_config import setup_logging
 from app.config import Config
 import os
+import socket
+import sys
 
 # Configuration du logging
 logger = setup_logging(log_to_file=Config.LOG_TO_FILE,
@@ -25,6 +27,7 @@ try:
 
     # Chargement de la configuration
     app.config.from_object(Config)
+
     # Configuration de base
     app.config.update(SECRET_KEY=Config.SECRET_KEY,
                       SQLALCHEMY_TRACK_MODIFICATIONS=False,
@@ -35,18 +38,13 @@ try:
 
     # Configuration de la base de données
     if FLASK_ENV == 'testing' or Config.TESTING:
-        # Force SQLite pour les tests
         app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
         logger.info("Mode test : Utilisation de SQLite en mémoire")
     else:
-        # Configuration normale pour l'environnement de développement/production
         app.config['SQLALCHEMY_DATABASE_URI'] = Config.get_database_url()
         logger.info(
             f"Mode normal : Utilisation de la base de données configurée : {Config.get_database_url()}"
         )
-    # Définition du port et de l'hôte
-    port = app.config.get('PORT', 5001)
-    host = app.config.get('HOST', '127.0.0.1')
 
     # Initialisation des extensions
     db = SQLAlchemy(app)
@@ -62,17 +60,40 @@ try:
         db.create_all()
         logger.info("Base de données initialisée avec succès")
 
-    if __name__ == '__main__':
+    def run_app():
+        """Fonction pour démarrer l'application avec gestion des erreurs"""
         try:
-            app.run(host=host, port=port, debug=app.config['DEBUG'])
-        except OSError as e:
-            logger.error(f"Erreur lors du démarrage du serveur: {str(e)}")
-            # Essayer un autre port
+            # Essayer d'abord le port par défaut
+            port = int(os.environ.get('PORT', 5001))
+            app.run(host='localhost',
+                    port=port,
+                    debug=app.config.get('DEBUG', False))
+        except socket.error as e:
+            logger.warning(f"Impossible d'utiliser le port {port}: {e}")
             try:
-                app.run(host=host, port=port + 1, debug=app.config['DEBUG'])
-            except Exception as e:
-                logger.critical(f"Impossible de démarrer le serveur: {str(e)}")
-                raise
+                # Essayer un port alternatif
+                alt_port = 8080
+                logger.info(f"Tentative avec le port alternatif {alt_port}")
+                app.run(host='localhost',
+                        port=alt_port,
+                        debug=app.config.get('DEBUG', False))
+            except socket.error as e2:
+                logger.error(
+                    f"Impossible d'utiliser le port alternatif {alt_port}: {e2}"
+                )
+                try:
+                    # Dernier essai avec un port élevé
+                    high_port = 49152  # Port dynamique/privé
+                    logger.info(f"Dernière tentative avec le port {high_port}")
+                    app.run(host='localhost',
+                            port=high_port,
+                            debug=app.config.get('DEBUG', False))
+                except Exception as e3:
+                    logger.critical(f"Impossible de démarrer le serveur: {e3}")
+                    sys.exit(1)
+
+    if __name__ == '__main__':
+        run_app()
 
 except Exception as e:
     logger.critical(

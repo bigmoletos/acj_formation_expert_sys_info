@@ -8,6 +8,12 @@ def load_environment():
     """Charge le fichier d'environnement approprié"""
     env = os.environ.get('FLASK_ENV', 'development')
 
+    # Charger d'abord le fichier .env par défaut
+    default_env = Path('.env')
+    if default_env.exists():
+        load_dotenv(default_env)
+
+    # Si en mode test, surcharger avec .env.testing
     if env == 'testing':
         env_file = Path('.env.testing')
     else:
