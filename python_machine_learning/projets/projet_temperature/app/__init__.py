@@ -25,7 +25,6 @@ try:
 
     # Chargement de la configuration
     app.config.from_object(Config)
-
     # Configuration de base
     app.config.update(SECRET_KEY=Config.SECRET_KEY,
                       SQLALCHEMY_TRACK_MODIFICATIONS=False,
@@ -45,6 +44,9 @@ try:
         logger.info(
             f"Mode normal : Utilisation de la base de données configurée : {Config.get_database_url()}"
         )
+    # Définition du port et de l'hôte
+    port = app.config.get('PORT', 5001)
+    host = app.config.get('HOST', '127.0.0.1')
 
     # Initialisation des extensions
     db = SQLAlchemy(app)
@@ -62,14 +64,12 @@ try:
 
     if __name__ == '__main__':
         try:
-            # Utiliser un port différent ou vérifier si le port est disponible
-            port = int(os.environ.get('PORT', 5000))
-            app.run(host='127.0.0.1', port=port, debug=Config.DEBUG)
+            app.run(host=host, port=port, debug=app.config['DEBUG'])
         except OSError as e:
             logger.error(f"Erreur lors du démarrage du serveur: {str(e)}")
             # Essayer un autre port
             try:
-                app.run(host='127.0.0.1', port=5001, debug=Config.DEBUG)
+                app.run(host=host, port=port + 1, debug=app.config['DEBUG'])
             except Exception as e:
                 logger.critical(f"Impossible de démarrer le serveur: {str(e)}")
                 raise
