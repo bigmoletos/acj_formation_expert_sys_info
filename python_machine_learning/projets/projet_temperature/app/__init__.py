@@ -61,7 +61,18 @@ try:
         logger.info("Base de données initialisée avec succès")
 
     if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=5000, debug=Config.DEBUG)
+        try:
+            # Utiliser un port différent ou vérifier si le port est disponible
+            port = int(os.environ.get('PORT', 5000))
+            app.run(host='127.0.0.1', port=port, debug=Config.DEBUG)
+        except OSError as e:
+            logger.error(f"Erreur lors du démarrage du serveur: {str(e)}")
+            # Essayer un autre port
+            try:
+                app.run(host='127.0.0.1', port=5001, debug=Config.DEBUG)
+            except Exception as e:
+                logger.critical(f"Impossible de démarrer le serveur: {str(e)}")
+                raise
 
 except Exception as e:
     logger.critical(
