@@ -7,34 +7,35 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from app.logging_config import setup_logging
+from app.config import Config
 import os
-from dotenv import load_dotenv
-
-# Chargement des variables d'environnement
-load_dotenv()
 
 # Configuration du logging
-logger = setup_logging(log_to_file=os.environ.get('LOG_TO_FILE',
-                                                  'False').lower() == 'true',
-                       log_level=os.environ.get('LOG_LEVEL', 'INFO'),
-                       log_dir=os.environ.get('LOG_DIR', 'logs'))
-
-# Initialisation de l'application
-app = Flask(__name__)
+logger = setup_logging(log_to_file=Config.LOG_TO_FILE,
+                       log_level=Config.LOG_LEVEL,
+                       log_dir=os.path.dirname(Config.LOG_FILE_PATH))
 
 try:
+    # Initialisation de l'application
+    app = Flask(__name__)
+
     # Déterminer l'environnement
     FLASK_ENV = os.environ.get('FLASK_ENV', 'development')
     logger.info(f"Démarrage de l'application en mode: {FLASK_ENV}")
 
+    # Chargement de la configuration
+    app.config.from_object(Config)
+
+    # Validation de la configuration
+    Config.validate_config()
+
     # Configuration de base
-    app.config.update(
-        SECRET_KEY=os.environ.get('SECRET_KEY', 'your_secret_key'),
-        SQLALCHEMY_TRACK_MODIFICATIONS=False,
-        LOG_LEVEL=os.environ.get('LOG_LEVEL', 'DEBUG'),
-        LOG_FILE_PATH=os.environ.get('LOG_FILE_PATH', '/var/log/app.log'),
-        OPENWEATHER_API_KEY=os.environ.get('API_KEY_OPENWEATHER'),
-        TESTING=(FLASK_ENV == 'testing'))
+    app.config.update(SECRET_KEY=Config.SECRET_KEY,
+                      SQLALCHEMY_TRACK_MODIFICATIONS=False,
+                      LOG_LEVEL=Config.LOG_LEVEL,
+                      LOG_FILE_PATH=Config.LOG_FILE_PATH,
+                      OPENWEATHER_API_KEY=Config.API_KEY_OPENWEATHER,
+                      TESTING=Config.TESTING)
 
     # Configuration de la base de données selon l'environnement
     if FLASK_ENV == 'testing' or os.environ.get('DATABASE_URL',
@@ -47,11 +48,11 @@ try:
     else:
         # Configuration MySQL pour les autres environnements
         db_params = {
-            'user': os.environ.get('DB_USER', 'username'),
-            'password': os.environ.get('DB_PASSWORD', 'password'),
-            'host': os.environ.get('DB_HOST', 'localhost'),
-            'port': os.environ.get('DB_PORT', '3306'),
-            'database': os.environ.get('DB_NAME', 'temperature_db')
+            'user': Config.DB_USER,
+            'password': Config.DB_PASSWORD,
+            'host': Config.DB_HOST,
+            'port': Config.DB_PORT,
+            'database': Config.DB_NAME
         }
         app.config['SQLALCHEMY_DATABASE_URI'] = (
             f"mysql+pymysql://{db_params['user']}:{db_params['password']}"
