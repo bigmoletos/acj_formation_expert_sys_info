@@ -95,6 +95,9 @@ algorithmie\listeWord.csv
 *.targz
 *.bz2
 
+
+data
+
 docker\images\exo_python\calculatorcling.tar.bz2
 cling.tar.bz2cling.tar.bz2
 
@@ -102,3 +105,4 @@ prog_C_vers_C++\librairies\librairie_dynamique\MyFisrtDll\.vs
 
 # Ne pas ignorer le Dockerfile
 !Dockerfile
+
