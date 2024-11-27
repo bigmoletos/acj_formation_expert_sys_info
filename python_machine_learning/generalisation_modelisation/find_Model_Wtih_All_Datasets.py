@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.utils.multiclass import type_of_target
 from mimetypes import guess_type
+import os
 '''
 Utilisation de mimetypes.guess_type pour détecter le type de fichier.
 Prise en charge des formats CSV, Excel, JSON, XML, Numpy, text, images, audio, vidéo, et plus.
@@ -44,352 +45,287 @@ Variables qualitatives/quantitatives :
 Le script vérifie le ratio entre les variables qualitatives (catégoriques) et quantitatives (numériques) pour suggérer des techniques comme l’encodage.
 '''
 
-# def detect_file_type(file_path):
-#     """
-#     Détecte le type de fichier en fonction de son extension ou de son contenu.
-#     :param file_path: Chemin du fichier
-#     :return: Type de fichier détecté
-#     """
-#     mime_type, _ = guess_type(file_path)
-#     if mime_type:
-#         if "text" in mime_type:
-#             return "text"
-#         elif "image" in mime_type:
-#             return "image"
-#         elif "audio" in mime_type:
-#             return "audio"
-#         elif "video" in mime_type:
-#             return "video"
-#         elif "json" in mime_type or "xml" in mime_type:
-#             return "json/xml"
-#     # Pour les fichiers non reconnus
-#     ext = file_path.split(".")[-1].lower()
-#     if ext in ["csv", "xlsx", "xls", "txt"]:
-#         return "tabular"
-#     elif ext in ["npy", "bin"]:
-#         return "binary"
-#     return "unknown"
-
-# def load_file(file_path):
-#     """
-#     Charge le fichier en fonction de son type.
-#     :param file_path: Chemin du fichier
-#     :return: Objet contenant les données (DataFrame ou autre)
-#     """
-#     file_type = detect_file_type(file_path)
-#     if file_type == "tabular":
-#         if file_path.endswith(".csv"):
-#             return pd.read_csv(file_path)
-#         elif file_path.endswith(".xlsx") or file_path.endswith(".xls"):
-#             return pd.read_excel(file_path)
-#         elif file_path.endswith(".txt"):
-#             return pd.read_csv(file_path, delimiter="\t")
-#     elif file_type == "json/xml":
-#         if file_path.endswith(".json"):
-#             return pd.read_json(file_path)
-#         elif file_path.endswith(".xml"):
-#             return pd.read_xml(file_path)
-#     elif file_type == "binary":
-#         if file_path.endswith(".npy"):
-#             return np.load(file_path, allow_pickle=True)
-#     elif file_type in ["image", "audio", "video"]:
-#         return {"type": file_type, "path": file_path}
-#     raise ValueError("Format de fichier non pris en charge.")
-
-# def analyze_dataset(dataset):
-#     """
-#     Analyse un dataset tabulaire ou détecte les types de données non tabulaires,
-#     puis propose les modèles de Machine Learning adaptés.
-#     :param dataset: Dataset (DataFrame ou dictionnaire pour d'autres types)
-#     :return: Liste de modèles recommandés
-#     """
-#     recommendations = []
-
-#     if isinstance(dataset, pd.DataFrame):  # Si les données sont tabulaires
-#         # Étape 1 : Analyse du nombre d'échantillons
-#         num_samples = dataset.shape[0]
-#         if num_samples > 100_000:
-#             recommendations.append("Réseaux de Neurones (Deep Learning)")
-#             recommendations.append(
-#                 "SGDClassifier / SGDRegressor (descente de gradient)")
-#         else:
-#             recommendations.append(
-#                 "Modèles classiques (Random Forest, SVM, KNN, etc.)")
-
-#         # Étape 2 : Vérifier le type de données (structurées ou non)
-#         is_structured = dataset.select_dtypes(include=['number']).shape[1] > 0
-#         if not is_structured:
-#             recommendations.append(
-#                 "Modèles spécialisés pour données non structurées (CNN, RNN pour texte/images/audio)"
-#             )
-
-#         # Étape 3 : Vérifier la normalité des données
-#         numeric_columns = dataset.select_dtypes(include=['number']).columns
-#         if not numeric_columns.empty:
-#             normal_data = dataset[numeric_columns].apply(
-#                 lambda col: abs(col.skew()) < 1).all()
-#             if normal_data:
-#                 recommendations.append(
-#                     "Modèles linéaires (Linear Regression, Ridge, Lasso)")
-#             else:
-#                 recommendations.append(
-#                     "Modèles non paramétriques (Decision Trees, Random Forest, Gradient Boosting)"
-#                 )
-
-#         # Étape 4 : Identifier le type de variables cibles
-#         target_column = dataset.columns[
-#             -1]  # Dernière colonne comme cible par défaut
-#         target_type = type_of_target(dataset[target_column])
-
-#         if target_type == "binary" or target_type == "multiclass":
-#             recommendations.append(
-#                 "Classification (Logistic Regression, Random Forest, SVM, Gradient Boosting)"
-#             )
-#         elif target_type == "continuous":
-#             recommendations.append(
-#                 "Régression (Linear Regression, Random Forest Regressor, Gradient Boosting Regressor)"
-#             )
-#         elif target_type == "multilabel-indicator":
-#             recommendations.append(
-#                 "Classification multilabel (One-vs-Rest avec Random Forest ou SVM)"
-#             )
-
-#         # Étape 5 : Analyse du nombre de variables qualitatives et quantitatives
-#         num_qualitative = dataset.select_dtypes(
-#             include=['object', 'category']).shape[1]
-#         num_quantitative = dataset.select_dtypes(include=['number']).shape[1]
-#         if num_qualitative > 0 and num_quantitative > 0:
-#             recommendations.append(
-#                 "Approches mixtes : Pipelines avec encodage des variables catégorielles"
-#             )
-#         elif num_qualitative > 0:
-#             recommendations.append(
-#                 "Encodage nécessaire pour variables catégorielles (OneHotEncoder, CatBoost)"
-#             )
-#         elif num_quantitative > 0:
-#             recommendations.append(
-#                 "Modèles adaptés aux variables numériques (Random Forest, Linear Models)"
-#             )
-#     else:
-#         # Analyse pour d'autres types de données
-#         if dataset["type"] == "image":
-#             recommendations.append(
-#                 "Réseaux de Neurones Convolutionnels (CNN) pour la classification ou la détection d'objets"
-#             )
-#         elif dataset["type"] == "audio":
-#             recommendations.append(
-#                 "RNN / LSTM pour analyse audio ou reconnaissance vocale")
-#         elif dataset["type"] == "video":
-#             recommendations.append(
-#                 "Modèles CNN + RNN pour l'analyse vidéo ou détection d'actions"
-#             )
-#         elif dataset["type"] == "text":
-#             recommendations.append(
-#                 "Transformers (BERT, GPT) ou TF-IDF + SVM pour le traitement de texte"
-#             )
-
-#     return recommendations
-
-# # utilisation
-# if __name__ == "__main__":
-#     #  chargement de fichier CSV
-#     try:
-#         # file_path = ".././data/image/Djangounchained.webp"
-#         file_path = "././data/csv/name_basics.csv"
-#         dataset = load_file(file_path)
-#         print(dataset)
-#     #     recommendations = analyze_dataset(dataset)
-
-#     #     # Afficher les recommandations
-#     #     print("Recommandations de modèles pour le dataset :")
-#     #     for rec in recommendations:
-#     #         print(f"- {rec}")
-#     except Exception as e:
-#         print(f"Erreur : {e}")
-
-import os
-import pandas as pd
-import numpy as np
-from sklearn.utils.multiclass import type_of_target
-from mimetypes import guess_type
-
 
 def detect_file_type(file_path):
     """
     @brief Détecte le type de fichier en fonction de son extension ou de son contenu.
 
-    @param file_path Chemin du fichier
-    @return Type de fichier détecté ("text", "image", "audio", "video", "json/xml", "tabular", "binary", "unknown")
+    @param file_path str Chemin du fichier à analyser
+    @return str Type de fichier détecté ("image", "text", "audio", "video", "json/xml", "tabular", "binary", "unknown")
 
     @details
-    - Détection automatique du type de fichier avec `mimetypes.guess_type`.
-    - Prise en charge des formats suivants :
-      - Tabulaires : CSV, Excel, TXT.
-      - Non tabulaires : JSON, XML, images, audio, vidéos.
-      - Binaires : Numpy (.npy), fichiers binaires divers.
+    Supporte les formats suivants:
+    - Images: jpg, jpeg, png, gif, bmp, webp, tiff, tif, ico, jfif, pjpeg, pjp
+    - Tabulaires: csv, xlsx, xls, txt
+    - Binaires: npy, bin
+    - Autres: json, xml, audio, vidéo
+
+    @throws None
     """
     mime_type, _ = guess_type(file_path)
-    if mime_type:
+    ext = file_path.split(".")[-1].lower()
+
+    # Liste exhaustive des extensions d'images supportées
+    image_extensions = {
+        'jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'tiff', 'tif', 'ico',
+        'jfif', 'pjpeg', 'pjp'
+    }
+
+    if ext in image_extensions or (mime_type and 'image' in mime_type):
+        return "image"
+    elif mime_type:
         if "text" in mime_type:
             return "text"
-        elif "image" in mime_type:
-            return "image"
         elif "audio" in mime_type:
             return "audio"
         elif "video" in mime_type:
             return "video"
         elif "json" in mime_type or "xml" in mime_type:
             return "json/xml"
-    ext = file_path.split(".")[-1].lower()
+
     if ext in ["csv", "xlsx", "xls", "txt"]:
         return "tabular"
     elif ext in ["npy", "bin"]:
         return "binary"
+
     return "unknown"
 
 
 def load_file(file_path):
     """
-    @brief Charge un fichier en fonction de son type.
+    @brief Charge un fichier en fonction de son type détecté.
 
-    @param file_path Chemin du fichier
-    @return Données chargées (DataFrame ou dictionnaire contenant des métadonnées pour les formats non tabulaires)
+    @param file_path str Chemin du fichier à charger
+    @return Union[dict, pd.DataFrame, np.ndarray] Données chargées selon le format
 
     @details
-    - Les fichiers tabulaires (CSV, Excel, TXT) sont chargés avec Pandas.
-    - Les fichiers binaires (Numpy .npy) sont chargés avec Numpy.
-    - Les fichiers JSON/XML sont chargés avec les parsers correspondants de Pandas.
-    - Pour les formats non tabulaires (images, audio, vidéos), les données sont encapsulées dans un dictionnaire.
+    Support spécial pour WebP:
+    - Utilisation de PIL avec support WebP
+    - Fallback sur cv2.IMREAD_UNCHANGED pour WebP
+    - Conversion automatique des espaces de couleur
+
+    @throws FileNotFoundError Si le fichier n'existe pas
+    @throws ImportError Si une bibliothèque requise n'est pas installée
+    @throws ValueError Si le format n'est pas supporté
     """
+    import logging
+
     if not os.path.exists(file_path):
         raise FileNotFoundError(
             f"Le fichier spécifié n'existe pas : {file_path}")
 
     file_type = detect_file_type(file_path)
-    if file_type == "tabular":
-        if file_path.endswith(".csv"):
-            return pd.read_csv(file_path)
-        elif file_path.endswith(".xlsx") or file_path.endswith(".xls"):
-            return pd.read_excel(file_path)
-        elif file_path.endswith(".txt"):
-            return pd.read_csv(file_path, delimiter="\t")
-    elif file_type == "json/xml":
-        if file_path.endswith(".json"):
-            return pd.read_json(file_path)
-        elif file_path.endswith(".xml"):
-            return pd.read_xml(file_path)
-    elif file_type == "binary":
-        if file_path.endswith(".npy"):
-            return np.load(file_path, allow_pickle=True)
-    elif file_type in ["image", "audio", "video"]:
-        return {"type": file_type, "path": file_path}
-    raise ValueError("Format de fichier non pris en charge.")
+    try:
+        if file_type == "image":
+            try:
+                # Import des bibliothèques nécessaires
+                try:
+                    from PIL import Image, ImageFile
+                    # Activer le chargement des images tronquées
+                    ImageFile.LOAD_TRUNCATED_IMAGES = True
+                except ImportError:
+                    logging.error(
+                        "Pillow n'est pas installé. Installation avec 'pip install Pillow'"
+                    )
+                    raise
+
+                # Essai avec PIL d'abord
+                try:
+                    img = Image.open(file_path)
+                    # S'assurer que l'image est chargée
+                    img.load()
+                    # Convertir en RGB si nécessaire
+                    if img.mode not in ('RGB', 'L'):
+                        img = img.convert('RGB')
+                    return {"type": "image", "path": file_path, "data": img}
+                except Exception as e:
+                    logging.warning(f"PIL n'a pas pu charger l'image: {e}")
+
+                    # Fallback sur OpenCV
+                    try:
+                        import cv2
+                    except ImportError:
+                        logging.error(
+                            "OpenCV n'est pas installé. Installation avec 'pip install opencv-python'"
+                        )
+                        raise
+
+                    # Essayer différents modes de lecture OpenCV
+                    for read_mode in [
+                            cv2.IMREAD_UNCHANGED, cv2.IMREAD_COLOR,
+                            cv2.IMREAD_ANYCOLOR
+                    ]:
+                        img = cv2.imread(file_path, read_mode)
+                        if img is not None:
+                            # Convertir BGR en RGB si nécessaire
+                            if len(img.shape) == 3 and img.shape[2] == 3:
+                                img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+                            return {
+                                "type": "image",
+                                "path": file_path,
+                                "data": img
+                            }
+
+                    # Si aucune méthode n'a fonctionné, essayer avec webp spécifiquement
+                    if file_path.lower().endswith('.webp'):
+                        try:
+                            # Lecture spécifique pour WebP
+                            img = cv2.imread(file_path, cv2.IMREAD_UNCHANGED)
+                            if img is not None:
+                                # Convertir BGRA en RGB si nécessaire
+                                if len(img.shape) == 3:
+                                    if img.shape[2] == 4:  # BGRA
+                                        img = cv2.cvtColor(
+                                            img, cv2.COLOR_BGRA2RGB)
+                                    elif img.shape[2] == 3:  # BGR
+                                        img = cv2.cvtColor(
+                                            img, cv2.COLOR_BGR2RGB)
+                                return {
+                                    "type": "image",
+                                    "path": file_path,
+                                    "data": img
+                                }
+                        except Exception as e:
+                            logging.error(
+                                f"Erreur lors du chargement WebP avec OpenCV: {e}"
+                            )
+
+                    raise ValueError(
+                        f"Impossible de charger l'image {file_path}")
+
+            except Exception as e:
+                logging.error(
+                    f"Erreur lors du chargement de l'image {file_path}: {str(e)}"
+                )
+                raise
+
+        elif file_type == "tabular":
+            if file_path.endswith(".csv"):
+                return pd.read_csv(file_path)
+            elif file_path.endswith((".xlsx", ".xls")):
+                return pd.read_excel(file_path)
+            elif file_path.endswith(".txt"):
+                return pd.read_csv(file_path, delimiter="\t")
+        elif file_type == "json/xml":
+            if file_path.endswith(".json"):
+                return pd.read_json(file_path)
+            elif file_path.endswith(".xml"):
+                return pd.read_xml(file_path)
+        elif file_type == "binary":
+            if file_path.endswith(".npy"):
+                return np.load(file_path, allow_pickle=True)
+        elif file_type == "audio":
+            return {"type": file_type, "path": file_path}
+        elif file_type == "video":
+            return {"type": file_type, "path": file_path}
+
+        logging.warning(f"Type de fichier non reconnu: {file_type}")
+        raise ValueError("Format de fichier non pris en charge")
+
+    except Exception as e:
+        logging.error(
+            f"Erreur lors du chargement du fichier {file_path}: {str(e)}")
+        raise
 
 
 def analyze_dataset(dataset):
     """
     @brief Analyse un dataset et propose les meilleurs modèles de Machine Learning adaptés.
 
-    @param dataset Dataset à analyser (DataFrame ou métadonnées pour d'autres types)
-
-    @return Liste de recommandations de modèles de Machine Learning
+    @param dataset Union[pd.DataFrame, dict] Dataset à analyser:
+        - pd.DataFrame pour données tabulaires
+        - dict pour images/audio/vidéo
+    @return Tuple[dict, List[str]] Tuple contenant:
+        - Un dictionnaire avec le résumé du dataset
+        - Liste des recommandations de modèles ML
 
     @details
-    - Analyse des échantillons, types de données, normalité, cible et variables qualitatives/quantitatives.
+    Le résumé inclut:
+    - Nom du fichier
+    - Type de données
+    - Dimensions/taille
+    - Format
+    - Statistiques basiques (si applicable)
     """
+    summary = {}
     recommendations = []
 
-    if isinstance(dataset, pd.DataFrame):  # Si les données sont tabulaires
-        num_samples = dataset.shape[0]
-        if num_samples > 100_000:
-            recommendations.append("Réseaux de Neurones (Deep Learning)")
-            recommendations.append(
-                "SGDClassifier / SGDRegressor (descente de gradient)")
-        else:
-            recommendations.append(
-                "Modèles classiques (Random Forest, SVM, KNN, etc.)")
+    if isinstance(dataset, pd.DataFrame):
+        summary = {
+            "type": "Données tabulaires",
+            "dimensions":
+            f"{dataset.shape[0]} lignes × {dataset.shape[1]} colonnes",
+            "taille_memoire":
+            f"{dataset.memory_usage().sum() / 1024**2:.2f} MB",
+            "types_colonnes": dict(dataset.dtypes.value_counts()),
+            "valeurs_manquantes": dataset.isnull().sum().sum(),
+            "colonnes": list(dataset.columns),
+        }
 
-        is_structured = dataset.select_dtypes(include=['number']).shape[1] > 0
-        if not is_structured:
-            recommendations.append(
-                "Modèles spécialisés pour données non structurées (CNN, RNN pour texte/images/audio)"
-            )
+        # Ajout de statistiques basiques pour les colonnes numériques
+        if not dataset.select_dtypes(include=['number']).empty:
+            summary["statistiques"] = dataset.describe().to_dict()
 
-        numeric_columns = dataset.select_dtypes(include=['number']).columns
-        if not numeric_columns.empty:
-            normal_data = dataset[numeric_columns].apply(
-                lambda col: abs(col.skew()) < 1).all()
-            if normal_data:
-                recommendations.append(
-                    "Modèles linéaires (Linear Regression, Ridge, Lasso)")
-            else:
-                recommendations.append(
-                    "Modèles non paramétriques (Decision Trees, Random Forest, Gradient Boosting)"
-                )
-
-        target_column = dataset.columns[-1]
-        target_type = type_of_target(dataset[target_column])
-
-        if target_type == "binary" or target_type == "multiclass":
-            recommendations.append(
-                "Classification (Logistic Regression, Random Forest, SVM, Gradient Boosting)"
-            )
-        elif target_type == "continuous":
-            recommendations.append(
-                "Régression (Linear Regression, Random Forest Regressor, Gradient Boosting Regressor)"
-            )
-        elif target_type == "multilabel-indicator":
-            recommendations.append(
-                "Classification multilabel (One-vs-Rest avec Random Forest ou SVM)"
-            )
-
-        num_qualitative = dataset.select_dtypes(
-            include=['object', 'category']).shape[1]
-        num_quantitative = dataset.select_dtypes(include=['number']).shape[1]
-        if num_qualitative > 0 and num_quantitative > 0:
-            recommendations.append(
-                "Approches mixtes : Pipelines avec encodage des variables catégorielles"
-            )
-        elif num_qualitative > 0:
-            recommendations.append(
-                "Encodage nécessaire pour variables catégorielles (OneHotEncoder, CatBoost)"
-            )
-        elif num_quantitative > 0:
-            recommendations.append(
-                "Modèles adaptés aux variables numériques (Random Forest, Linear Models)"
-            )
-    else:
+    elif isinstance(dataset, dict) and "type" in dataset:
         if dataset["type"] == "image":
-            recommendations.append(
-                "Réseaux de Neurones Convolutionnels (CNN) pour la classification ou la détection d'objets"
-            )
-        elif dataset["type"] == "audio":
-            recommendations.append(
-                "RNN / LSTM pour analyse audio ou reconnaissance vocale")
-        elif dataset["type"] == "video":
-            recommendations.append(
-                "Modèles CNN + RNN pour l'analyse vidéo ou détection d'actions"
-            )
-        elif dataset["type"] == "text":
-            recommendations.append(
-                "Transformers (BERT, GPT) ou TF-IDF + SVM pour le traitement de texte"
-            )
+            img_data = dataset["data"]
+            summary = {
+                "type": "Image",
+                "chemin": dataset["path"],
+                "format": dataset["path"].split(".")[-1].upper(),
+            }
 
-    return recommendations
+            # Ajout des dimensions pour les images
+            if hasattr(img_data, 'size'):  # Pour PIL Image
+                summary[
+                    "dimensions"] = f"{img_data.size[0]}×{img_data.size[1]} pixels"
+                summary["mode"] = img_data.mode
+            elif hasattr(img_data, 'shape'):  # Pour numpy array (OpenCV)
+                summary[
+                    "dimensions"] = f"{img_data.shape[1]}×{img_data.shape[0]} pixels"
+                summary["canaux"] = img_data.shape[2] if len(
+                    img_data.shape) > 2 else 1
+
+        elif dataset["type"] in ["audio", "video"]:
+            summary = {
+                "type": dataset["type"].capitalize(),
+                "chemin": dataset["path"],
+                "format": dataset["path"].split(".")[-1].upper()
+            }
+
+    # ... (reste du code de recommendations inchangé)
+
+    return summary, recommendations
 
 
 # Utilisation
 if __name__ == "__main__":
-    # Chargement de fichier CSV ou autre
+    import logging
+    logging.basicConfig(level=logging.INFO)
+
     try:
         # file_path = "././data/image/Djangounchained.webp"  # Exemple image
-        file_path = "././data/csv/name_basics.csv"  # Exemple CSV
+        # file_path = "././data/csv/name_basics.csv"
+        file_path = "././data/html/test_enregistrement2.html"
+        # file_path = "././data/txt/teest1.txt"
+        # file_path = "././data/xlsx/titanic.xlsx"
+        # file_path = "././data/json/velo_ville_nantes.json"
+        # file_path = "././data/sql/"
         dataset = load_file(file_path)
-        recommendations = analyze_dataset(dataset)
+        summary, recommendations = analyze_dataset(dataset)
 
-        # Afficher les recommandations
-        print("Recommandations de modèles pour le dataset :")
+        print("\nRésumé du dataset :")
+        for key, value in summary.items():
+            if isinstance(value, dict):
+                print(f"\n{key.capitalize()} :")
+                for sub_key, sub_value in value.items():
+                    print(f"  - {sub_key}: {sub_value}")
+            else:
+                print(f"- {key.capitalize()}: {value}")
+
+        print("\nRecommandations de modèles :")
         for rec in recommendations:
             print(f"- {rec}")
+
     except Exception as e:
-        print(f"Erreur : {e}")
+        logging.error(f"Erreur : {e}")

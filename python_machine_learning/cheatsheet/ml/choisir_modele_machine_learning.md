@@ -114,4 +114,4 @@ Ce cheatsheet vous aide à choisir un modèle de machine learning en fonction :
 
 ---
 
-Happy Modeling! 🎯
+
