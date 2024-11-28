@@ -65,7 +65,7 @@ def detect_file_type(file_path):
     mime_type, _ = guess_type(file_path)
     ext = file_path.split(".")[-1].lower()
 
-    # Liste exhaustive des extensions d'images supportées
+    # Liste  des extensions d'images supportées
     image_extensions = {
         'jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'tiff', 'tif', 'ico',
         'jfif', 'pjpeg', 'pjp'
@@ -489,11 +489,13 @@ if __name__ == "__main__":
 
     # Liste des fichiers à tester
     test_files = [
-        "././data/image/Djangounchained.webp",  # Image WebP
-        "././data/csv/pokemon.csv",  # CSV
-        "././data/txt/teest1.txt",  # Texte
-        "././data/xlsx/titanic.xlsx",  # Excel
-        "././data/json/velo_ville_nantes.json",  # JSON
+        # "././data/image/Djangounchained.webp",  # Image WebP
+        # "././data/image/Djangounchained.webp",  # Image WebP
+        "././data/csv/nba_2017_2018.csv",  # CSV
+        # "././data/csv/pokemon.csv",  # CSV
+        # "././data/txt/teest1.txt",  # Texte
+        # "././data/xlsx/titanic.xlsx",  # Excel
+        # "././data/json/velo_ville_nantes.json",  # JSON
         # "././data/sql/"                      # SQL (à implémenter)
     ]
 

@@ -40,7 +40,7 @@ try:
     df = pd.DataFrame(data, columns=columns)
 
     # Sauvegarder le DataFrame dans un fichier CSV
-    csv_file = "..//data//csv//dataset_kaggle.csv"
+    csv_file = ".//data//csv//dataset_kaggle.csv"
     # csv_file = "dataset_kaggle.csv"
     df.to_csv(csv_file, index=False)
 
