@@ -115,3 +115,10 @@ Ce cheatsheet vous aide à choisir un modèle de machine learning en fonction :
 ---
 
 
+https://scikit-learn.org/stable/machine_learning_map.html
+
+https://www.youtube.com/watch?v=4mqKmTbAnHY
+
+https://seaborn.pydata.org/examples/index.html
+
+https://seaborn.pydata.org/examples/index.html
