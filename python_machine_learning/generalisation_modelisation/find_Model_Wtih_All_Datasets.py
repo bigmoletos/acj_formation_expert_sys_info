@@ -497,6 +497,9 @@ if __name__ == "__main__":
         # "././data/sql/"                      # SQL (à implémenter)
     ]
 
+    # Création d'une liste pour stocker les résultats
+    results = []
+
     for file_path in test_files:
         try:
             print(f"\n{'='*50}")
@@ -506,6 +509,7 @@ if __name__ == "__main__":
             dataset = load_file(file_path)
             summary, recommendations = analyze_dataset(dataset)
 
+            # Affichage des résultats
             print("\nRésumé du dataset :")
             for key, value in summary.items():
                 if isinstance(value, dict):
@@ -519,6 +523,39 @@ if __name__ == "__main__":
             for rec in recommendations:
                 print(f"- {rec}")
 
+            # Ajout des résultats à la liste
+            results.append({
+                "fichier":
+                file_path,
+                "resume":
+                summary,
+                "recommendations":
+                recommendations,
+                "date_analyse":
+                pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
+            })
+
         except Exception as e:
             logging.error(f"Erreur avec {file_path} : {e}")
-            continue  # Continue avec le fichier suivant en cas d'erreur
+            # Ajout de l'erreur dans les résultats
+            results.append({
+                "fichier":
+                file_path,
+                "erreur":
+                str(e),
+                "date_analyse":
+                pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
+            })
+            continue
+
+    # Création du DataFrame
+    df_results = pd.DataFrame(results)
+
+    # Sauvegarde en JSON avec formatage lisible
+    output_file = "././data/json/resultat_analyse_dataset.json"
+    df_results.to_json(output_file,
+                       orient='records',
+                       force_ascii=False,
+                       indent=4)
+
+    logging.info(f"Résultats sauvegardés dans {output_file}")
