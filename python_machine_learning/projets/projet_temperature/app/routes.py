@@ -19,9 +19,20 @@ def index():
 
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
+    if current_user.is_authenticated:
         return redirect(url_for('main.weather'))
-    return render_template('index.html')
+
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            return render_template('index.html', form=form)
+
+        login_user(user)
+        return redirect(url_for('main.weather'))
+
+    return render_template('index.html', form=form)
 
 
 @bp.route('/register', methods=['GET', 'POST'])
