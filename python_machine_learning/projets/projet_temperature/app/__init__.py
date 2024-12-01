@@ -4,6 +4,7 @@ from flask_login import LoginManager
 from app.logging_config import setup_logging
 import os
 from dotenv import load_dotenv
+from flask_migrate import Migrate
 
 # Chargement des variables d'environnement
 load_dotenv()
@@ -16,6 +17,7 @@ logger = setup_logging(log_to_file=os.environ.get('LOG_TO_FILE',
 
 # Initialisation des extensions
 db = SQLAlchemy()
+migrate = Migrate()
 login_manager = LoginManager()
 
 
@@ -45,6 +47,7 @@ def create_app(config_name=None):
 
     # Initialisation des extensions avec l'application
     db.init_app(app)
+    migrate.init_app(app, db)
     login_manager.init_app(app)
     login_manager.login_view = 'main.login'
     login_manager.login_message = "Veuillez vous connecter pour accéder à cette page."
@@ -54,9 +57,12 @@ def create_app(config_name=None):
         from app.routes import bp
         app.register_blueprint(bp)
 
-        # Création des tables
-        db.create_all()
-        logger.info("Base de données initialisée avec succès")
+        # Vérifier si les tables existent déjà
+        from sqlalchemy import inspect
+        inspector = inspect(db.engine)
+        if not inspector.has_table("user"):
+            db.create_all()
+            logger.info("Tables créées avec succès")
 
     return app
 

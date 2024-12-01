@@ -115,3 +115,5 @@ prog_C_vers_C++/librairies/librairie_dynamique/MyFisrtDll/MyFisrtDll/x64/Debug/M
 base_connaissances/shell/minikube-linux-amd64
 minikube-linux-amd64
 MyFisrtDll.pch
+
+python_machine_learning\projets\projet_temperature\.env.testing
