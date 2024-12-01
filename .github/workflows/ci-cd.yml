@@ -2,15 +2,21 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ dev2, master ]
+    branches: [ main, master,dev, dev2 ,fix/bug-github-action]
   pull_request:
-    branches: [ dev2, master ]
+    branches: [ main, master,dev, dev2 ,fix/bug-github-action]
 
 env:
   DOCKER_IMAGE: temperature-app
-  DOCKER_REGISTRY: ghcr.io
+  DOCKER_REGISTRY: ghdev, cr.io
   DOCKER_USERNAME: ${{ github.actor }}
   DOCKER_PASSWORD: ${{ github.token }}
+  FLASK_ENV: testing
+  DATABASE_URL: "sqlite:///:memory:"
+  SECRET_KEY: test_secret_key
+  API_KEY_OPENWEATHER: test_api_key
+  LOG_TO_FILE: "False"
+  LOG_LEVEL: DEBUG
 
 jobs:
   test:
@@ -23,15 +29,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Load env file
-        run: |
-          echo "Loading environment variables from .env file"
-          export $(cat .env | xargs)
-
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.12'
+
+      - name: Copy testing environment
+        run: |
+          cp .env.testing .env
+          cat .env
 
       - name: Install dependencies
         run: |
@@ -41,13 +47,13 @@ jobs:
 
       - name: Run tests
         env:
-          FLASK_APP: ${{ env.FLASK_APP }}
-          FLASK_ENV: ${{ env.FLASK_ENV }}
-          SECRET_KEY: ${{ env.SECRET_KEY }}
-          DATABASE_URL: ${{ env.DATABASE_URL }}
-          API_KEY_OPENWEATHER: ${{ env.API_KEY_OPENWEATHER }}
-          LOG_TO_FILE: ${{ env.LOG_TO_FILE }}
-          LOG_LEVEL: ${{ env.LOG_LEVEL }}
+          FLASK_APP: app
+          FLASK_ENV: testing
+          DATABASE_URL: "sqlite:///:memory:"
+          SECRET_KEY: test_secret_key
+          API_KEY_OPENWEATHER: test_api_key
+          LOG_TO_FILE: "False"
+          LOG_LEVEL: DEBUG
         run: |
           pytest tests/ -v --cov=app --cov-report=xml
 
@@ -62,10 +68,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Load env file
+      - name: Copy testing environment
         run: |
-          echo "Loading environment variables from .env file"
-          export $(cat .env | xargs)
+          cp .env.testing .env
+          cat .env
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -103,10 +109,10 @@ jobs:
         working-directory: python_machine_learning/projets/projet_temperature
 
     steps:
-      - name: Load env file
+      - name: Copy testing environment
         run: |
-          echo "Loading environment variables from .env file"
-          export $(cat .env | xargs)
+          cp .env.testing .env
+          cat .env
 
       - name: Deploy to production
         env:
@@ -124,5 +130,3 @@ jobs:
         run: |
           echo "Vérification de la structure du projet..."
           ls -la
-          echo "Vérification du contenu du dossier projet_temperature..."
-          ls -la python_machine_learning/projets/projet_temperature/
