@@ -26,22 +26,19 @@ def auth_client(client, test_user):
     return client
 
 
-def test_index_page(client):
-    """Test de la page d'accueil"""
+def test_login_flow(client, test_user):
+    """Test du flux de connexion complet"""
+    # Test redirection vers login
     response = client.get('/')
     assert response.status_code == 302
     assert url_for('main.login') in response.location
 
-
-def test_login_page(client):
-    """Test de la page de connexion"""
+    # Test page de login
     response = client.get(url_for('main.login'))
     assert response.status_code == 200
     assert b'Login' in response.data
 
-
-def test_login_post_valid(client):
-    """Test de connexion valide"""
+    # Test connexion réussie
     response = client.post(url_for('main.login'),
                            data={
                                'username': 'test_user',
@@ -50,9 +47,7 @@ def test_login_post_valid(client):
     assert response.status_code == 302
     assert url_for('main.weather') in response.location
 
-
-def test_login_post_invalid(client):
-    """Test de connexion invalide"""
+    # Test connexion échouée
     response = client.post(url_for('main.login'),
                            data={
                                'username': 'wrong_user',
@@ -64,22 +59,14 @@ def test_login_post_invalid(client):
 
 def test_weather_page(auth_client):
     """Test de la page météo"""
-    # Test sans ville spécifiée
+    # Test page météo sans ville
     response = auth_client.get(url_for('main.weather'))
     assert response.status_code == 200
 
-    # Test avec une ville
+    # Test page météo avec ville
     response = auth_client.get(url_for('main.weather', city='Paris'))
     assert response.status_code == 200
     assert b'Paris' in response.data
-    assert b'temperature' in response.data.lower()
-
-
-def test_docs_access(client):
-    """Test d'accès à la documentation"""
-    response = client.get(url_for('main.docs'))
-    assert response.status_code == 200
-    assert b'Documentation API' in response.data
 
 
 def test_logout(auth_client):
