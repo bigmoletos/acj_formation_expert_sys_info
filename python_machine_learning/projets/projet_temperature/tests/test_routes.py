@@ -41,7 +41,7 @@ def test_invalid_login(client):
 @pytest.mark.parametrize(('username', 'password', 'message'), (
     ('', '', b'This field is required'),
     ('test', '', b'This field is required'),
-    ('test', 'short', b'Field must be at least 6 characters long'),
+    ('test', 'short', b'Password must be at least 6 characters'),
 ))
 def test_register_validate_input(client, username, password, message):
     """Test la validation des entrées lors de l'inscription"""
@@ -118,6 +118,7 @@ def test_user(app):
 def test_user_model(app, test_user):
     """Test les méthodes du modèle User"""
     with app.app_context():
+        # Récupérer une nouvelle instance de l'utilisateur depuis la base
         user = User.query.get(test_user.id)
         assert user.check_password('test_password2')
         assert not user.check_password('wrong_password')
