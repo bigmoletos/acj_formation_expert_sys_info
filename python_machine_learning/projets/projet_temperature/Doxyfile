@@ -23,6 +23,15 @@ GENERATE_HTML         = YES
 GENERATE_LATEX        = NO
 HTML_OUTPUT          = html
 HTML_FILE_EXTENSION  = .html
+HTML_HEADER         =
+HTML_FOOTER         =
+HTML_STYLESHEET     =
+HTML_EXTRA_STYLESHEET =
+HTML_EXTRA_FILES    =
+HTML_COLORSTYLE     = LIGHT
+GENERATE_TREEVIEW    = YES
+SEARCHENGINE         = YES
+GENERATE_LATEX       = NO
 
 # Configuration de l'extraction
 EXTRACT_ALL          = YES

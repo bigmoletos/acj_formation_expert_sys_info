@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash, send_from_directory, current_app
 from flask_login import login_user, logout_user, login_required, current_user
 from app import db
 from app.models import User, CitySearch
@@ -160,15 +160,16 @@ def delete_user(user_id):
     return redirect(url_for('main.admin'))
 
 
-@bp.route('/docs')
+@bp.route('/docs/')
+@bp.route('/docs/<path:path>')
 @login_required
-def docs():
-    """Affiche la documentation générée par Doxygen"""
-    # Vérifier si la documentation existe
-    documentation_exists = os.path.exists('app/templates/docs/html/index.html')
-
-    return render_template('docs.html',
-                           documentation_exists=documentation_exists)
+def docs(path='index.html'):
+    """Sert la documentation Doxygen"""
+    docs_dir = os.path.join(current_app.root_path, 'templates', 'docs', 'html')
+    if not os.path.exists(docs_dir):
+        flash("La documentation n'est pas encore générée.")
+        return redirect(url_for('main.weather'))
+    return send_from_directory(docs_dir, path)
 
 
 @bp.route('/docs/generate', methods=['GET'])

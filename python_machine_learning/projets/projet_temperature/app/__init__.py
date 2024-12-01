@@ -31,7 +31,11 @@ def load_user(user_id):
 
 
 def create_app(config_name=None):
-    app = Flask(__name__)
+    app = Flask(
+        __name__,
+        static_folder=
+        'templates/docs/html',  # Permettre l'accès aux fichiers statiques de la doc
+        static_url_path='/docs/static')
 
     # S'assurer que le dossier instance existe
     instance_path = Path(app.instance_path)

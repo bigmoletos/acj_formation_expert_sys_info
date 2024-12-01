@@ -1,6 +1,7 @@
 import os
 import subprocess
 import logging
+from flask import current_app
 
 logger = logging.getLogger(__name__)
 
@@ -12,7 +13,8 @@ def generate_documentation():
         subprocess.run(['doxygen', '--version'], check=True)
 
         # Créer le dossier de documentation s'il n'existe pas
-        os.makedirs('app/templates/docs', exist_ok=True)
+        docs_dir = os.path.join(current_app.root_path, 'templates', 'docs')
+        os.makedirs(docs_dir, exist_ok=True)
 
         # Générer la documentation
         result = subprocess.run(['doxygen', 'Doxyfile'],
