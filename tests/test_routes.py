@@ -84,7 +84,13 @@ def test_weather_api(mock_get, auth_client):
     response = auth_client.get(url_for('main.weather', city='Paris'))
     assert response.status_code == 200
     assert b'temperature' in response.data.lower()
-    assert b'city' in response.data.lower()
+    assert b'Paris' in response.data  # Vérifier le nom de la ville
+
+    # Test avec une ville invalide
+    mock_get.return_value.status_code = 404
+    response = auth_client.get(url_for('main.weather', city='InvalidCity'))
+    assert response.status_code == 200  # Devrait toujours retourner 200 en mode test
+    assert b'error' in response.data.lower()
 
     # Test sans ville spécifiée
     response = auth_client.get(url_for('main.weather'))

@@ -117,12 +117,13 @@ jobs:
         working-directory: python_machine_learning/projets/projet_temperature
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Copy testing environment
         run: |
           cp .env.testing .env
           cat .env
-      - name: Checkout code
-        uses: actions/checkout@v2
 
       - name: Deploy to production
         env:
