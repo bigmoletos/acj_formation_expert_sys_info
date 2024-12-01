@@ -106,3 +106,5 @@ prog_C_vers_C++\librairies\librairie_dynamique\MyFisrtDll\.vs
 # Ne pas ignorer le Dockerfile
 !Dockerfile
 
+minikube-linux-amd64
+MyFisrtDll.pch
