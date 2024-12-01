@@ -50,7 +50,7 @@ def create_app(config_name=None):
     migrate.init_app(app, db)
     login_manager.init_app(app)
     login_manager.login_view = 'main.login'
-    login_manager.login_message = "Veuillez vous connecter pour accéder à cette page."
+    login_manager.login_message = "Please log in to access this page"
 
     with app.app_context():
         # Import et enregistrement des routes

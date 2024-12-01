@@ -16,12 +16,12 @@ def app():
         'SQLALCHEMY_DATABASE_URI': f'sqlite:///{db_path}',
         'WTF_CSRF_ENABLED': False,
         'SECRET_KEY': 'test_secret_key',
-        'API_KEY_OPENWEATHER': 'test_api_key'
+        'API_KEY_OPENWEATHER': 'test_api_key',
+        'LOGIN_DISABLED': False
     })
 
     # Création du contexte d'application
     with app.app_context():
-        # Création des tables
         db.create_all()
 
         # Création d'un utilisateur de test
@@ -33,6 +33,9 @@ def app():
     yield app
 
     # Nettoyage
+    with app.app_context():
+        db.session.remove()
+        db.drop_all()
     os.close(db_fd)
     os.unlink(db_path)
 
