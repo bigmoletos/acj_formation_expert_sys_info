@@ -27,9 +27,12 @@ def load_user(id):
 # @var password Mot de passe hashé de l'utilisateur
 ##
 class User(UserMixin, db.Model):
+    """Modèle représentant un utilisateur dans l'application"""
+    __tablename__ = 'user'
+
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, nullable=False)
-    password_hash = db.Column(db.String(128))
+    password_hash = db.Column(db.String(128), nullable=False)
     searches = db.relationship('CitySearch', backref='user', lazy='dynamic')
 
     ##
