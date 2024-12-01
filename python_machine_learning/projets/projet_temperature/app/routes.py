@@ -119,4 +119,6 @@ def weather():
 
 @bp.route('/logout')
 def logout():
+    logout_user()
+    flash('Vous avez été déconnecté.')
     return redirect(url_for('main.login'))

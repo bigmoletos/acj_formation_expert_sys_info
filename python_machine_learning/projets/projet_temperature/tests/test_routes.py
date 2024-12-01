@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import patch
 from app.models import User
+from app import db
 
 
 def test_index_redirect(client):
@@ -82,8 +83,12 @@ def test_weather_authenticated(mock_get, client, auth):
 
 def test_weather_unauthenticated(client):
     """Test que la route weather nécessite une authentification"""
-    response = client.get('/weather?city=Paris', follow_redirects=True)
+    # Essayer d'accéder à la page météo sans être connecté
+    response = client.get('/weather', follow_redirects=True)
     assert b'Please log in to access this page' in response.data
+
+    # Vérifier qu'on est bien sur la page de login
+    assert b'<h1>Login</h1>' in response.data
 
 
 def test_logout(client, auth):
@@ -92,6 +97,9 @@ def test_logout(client, auth):
     response = auth.logout()
     assert response.status_code == 200
     assert b'Login' in response.data
+
+    response = client.get('/weather', follow_redirects=True)
+    assert b'Please log in to access this page' in response.data
 
 
 @pytest.fixture
@@ -105,7 +113,8 @@ def test_user(app):
         return user
 
 
-def test_user_model(test_user):
+def test_user_model(app, test_user):
     """Test les méthodes du modèle User"""
-    assert test_user.check_password('test_password2')
-    assert not test_user.check_password('wrong_password')
+    with app.app_context():
+        assert test_user.check_password('test_password2')
+        assert not test_user.check_password('wrong_password')
