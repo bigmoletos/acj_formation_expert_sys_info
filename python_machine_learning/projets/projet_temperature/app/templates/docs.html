@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Application Météo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Documentation API</h1>
+        <section>
+            <h2>Route /weather</h2>
+            <p>Endpoint pour obtenir la météo d'une ville</p>
+            <h3>Paramètres</h3>
+            <ul>
+                <li><code>city</code> : Nom de la ville (obligatoire)</li>
+            </ul>
+            <h3>Exemple</h3>
+            <pre><code>GET {{ url_for('main.weather', city='Paris') }}</code></pre>
+        </section>
+        <div class="nav-links">
+            <a href="{{ url_for('main.weather') }}" class="btn btn-secondary">Retour à la météo</a>
+        </div>
+    </div>
+</body>
+</html>

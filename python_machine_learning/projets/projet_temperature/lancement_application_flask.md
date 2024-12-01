@@ -8,6 +8,8 @@ python -m venv venv
 # Activation
 # Windows :
 venv\Scripts\activate
+# ou
+.\venv\Scripts\activate
 # Linux/Mac :
 source venv/bin/activate
 ```
