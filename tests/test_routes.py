@@ -17,15 +17,16 @@ def test_user(app):
 
 
 @pytest.fixture
-def auth_client(client, test_user):
+def auth_client(client, test_user, app):
     """Fixture pour créer un client authentifié."""
-    with client.session_transaction() as session:
-        client.post(url_for('main.login'),
+    with app.test_request_context():
+        login_url = url_for('main.login')
+        client.post(login_url,
                     data={
                         'username': 'test_user',
                         'password': 'test_password'
                     })
-    return client
+        return client
 
 
 def test_index_page(client):

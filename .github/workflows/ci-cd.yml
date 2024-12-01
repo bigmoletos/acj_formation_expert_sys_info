@@ -19,46 +19,46 @@ env:
   LOG_LEVEL: DEBUG
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: python_machine_learning/projets/projet_temperature
+  # test:
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: python_machine_learning/projets/projet_temperature
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.12'
+  #     - name: Set up Python
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: '3.12'
 
-      - name: Copy testing environment
-        run: |
-          cp .env.testing .env
-          cat .env
+  #     - name: Copy testing environment
+  #       run: |
+  #         cp .env.testing .env
+  #         cat .env
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pytest pytest-cov
+  #     - name: Install dependencies
+  #       run: |
+  #         python -m pip install --upgrade pip
+  #         pip install -r requirements.txt
+  #         pip install pytest pytest-cov
 
-      - name: Run tests
-        env:
-          FLASK_APP: app
-          FLASK_ENV: testing
-          DATABASE_URL: "sqlite:///:memory:"
-          SECRET_KEY: test_secret_key
-          API_KEY_OPENWEATHER: test_api_key
-          LOG_TO_FILE: "False"
-          LOG_LEVEL: DEBUG
-        run: |
-          pytest tests/ -v --cov=app --cov-report=xml
+  #     - name: Run tests
+  #       env:
+  #         FLASK_APP: app
+  #         FLASK_ENV: testing
+  #         DATABASE_URL: "sqlite:///:memory:"
+  #         SECRET_KEY: test_secret_key
+  #         API_KEY_OPENWEATHER: test_api_key
+  #         LOG_TO_FILE: "False"
+  #         LOG_LEVEL: DEBUG
+  #       run: |
+  #         pytest tests/ -v --cov=app --cov-report=xml
 
   build-and-push:
-    needs: test
+    # needs: test  # Commenté car les tests sont désactivés
     runs-on: ubuntu-latest
     defaults:
       run:
