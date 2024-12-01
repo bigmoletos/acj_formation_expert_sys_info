@@ -1,19 +1,30 @@
 import pytest
+from flask import url_for
 from app import create_app, db
 from app.models import User
 
 
 @pytest.fixture
-def client():
-    app.config['TESTING'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+def test_user(app):
+    """Fixture pour créer un utilisateur de test."""
+    with app.app_context():
+        user = User(username='test_user')
+        user.set_password('test_password')
+        db.session.add(user)
+        db.session.commit()
+        return user
 
-    with app.test_client() as client:
-        with app.app_context():
-            db.create_all()
-        yield client
-        with app.app_context():
-            db.drop_all()
+
+@pytest.fixture
+def auth_client(client, test_user):
+    """Fixture pour créer un client authentifié."""
+    with client.session_transaction() as session:
+        client.post('/login',
+                    data={
+                        'username': 'test_user',
+                        'password': 'test_password'
+                    })
+    return client
 
 
 def test_index_page(client):
@@ -52,29 +63,29 @@ def test_login_post_invalid(client):
     assert b'Invalid username or password' in response.data
 
 
-def test_weather_page_without_city(client):
+def test_weather_page_without_city(auth_client):
     """Test de la page météo sans ville spécifiée"""
-    response = client.get('/weather')
-    assert response.status_code == 200  # Retourne le template vide
+    response = auth_client.get('/weather')
+    assert response.status_code == 200
 
 
-def test_weather_page_with_city(client):
+def test_weather_page_with_city(auth_client):
     """Test de la page météo avec une ville"""
-    response = client.get('/weather?city=Paris')
+    response = auth_client.get('/weather?city=Paris')
     assert response.status_code == 200
     assert b'temperature' in response.data.lower()
 
 
-def test_weather_api(client):
+def test_weather_api(auth_client):
     """Test de l'API météo"""
     # Test avec une ville valide
-    response = client.get('/weather?city=Paris')
+    response = auth_client.get('/weather?city=Paris')
     assert response.status_code == 200
     assert b'temperature' in response.data.lower()
     assert b'city' in response.data.lower()
 
     # Test sans ville spécifiée
-    response = client.get('/weather')
+    response = auth_client.get('/weather')
     assert response.status_code == 200
 
 
@@ -87,16 +98,8 @@ def test_docs_access(client):
         assert b'Documentation API' in response.data
 
 
-def test_logout(client, app):
+def test_logout(auth_client):
     """Test de déconnexion"""
-    # D'abord se connecter
-    client.post('/login',
-                data={
-                    'username': 'test_user',
-                    'password': 'test_password'
-                })
-
-    # Puis se déconnecter
-    response = client.get('/logout')
+    response = auth_client.get('/logout')
     assert response.status_code == 302
     assert '/login' in response.location
