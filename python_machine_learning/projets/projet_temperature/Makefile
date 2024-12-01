@@ -62,7 +62,7 @@ clean:
 docs:
 	@echo "$(BLUE)Génération de la documentation...$(NC)"
 	doxygen Doxyfile
-	@echo "$(GREEN)Documentation générée$(NC)"
+	@echo "$(GREEN)Documentation générée dans app/templates/docs/html/$(NC)"
 
 venv:
 	@echo "$(BLUE)Création de l'environnement virtuel...$(NC)"

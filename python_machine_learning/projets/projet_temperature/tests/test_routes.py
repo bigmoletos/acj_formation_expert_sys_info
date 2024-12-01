@@ -134,3 +134,29 @@ def test_user_model(app, test_user):
         assert user is not None
         assert user.check_password('test_password2')
         assert not user.check_password('wrong_password')
+
+
+def test_docs_access(client, auth):
+    """Test l'accès à la documentation"""
+    # Sans authentification
+    response = client.get('/docs', follow_redirects=True)
+    assert b'Please log in to access this page' in response.data
+
+    # Avec authentification
+    auth.login()
+    response = client.get('/docs')
+    assert response.status_code in (200, 302
+                                    )  # 200 si docs générées, 302 si non
+
+
+def test_docs_generation(client, auth):
+    """Test la génération de la documentation"""
+    auth.login()
+
+    # Test de la page docs sans documentation
+    response = client.get('/docs')
+    assert b'Documentation non disponible' in response.data
+
+    # Test de la génération
+    response = client.get('/docs/generate', follow_redirects=True)
+    assert b'Documentation' in response.data

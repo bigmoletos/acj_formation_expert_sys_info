@@ -5,6 +5,9 @@ from app.logging_config import setup_logging
 import os
 from dotenv import load_dotenv
 from flask_migrate import Migrate
+import click
+from flask.cli import with_appcontext
+from pathlib import Path
 
 # Chargement des variables d'environnement
 load_dotenv()
@@ -30,6 +33,10 @@ def load_user(user_id):
 def create_app(config_name=None):
     app = Flask(__name__)
 
+    # S'assurer que le dossier instance existe
+    instance_path = Path(app.instance_path)
+    instance_path.mkdir(parents=True, exist_ok=True)
+
     # Configuration de base
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your_secret_key')
 
@@ -37,10 +44,8 @@ def create_app(config_name=None):
     if os.environ.get('FLASK_ENV') == 'testing':
         app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
     else:
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
-
-    if not app.config['SQLALCHEMY_DATABASE_URI']:
-        raise ValueError("DATABASE_URL n'est pas configuré")
+        db_path = instance_path / 'app.db'
+        app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['OPENWEATHER_API_KEY'] = os.environ.get('API_KEY_OPENWEATHER')
@@ -51,6 +56,16 @@ def create_app(config_name=None):
     login_manager.init_app(app)
     login_manager.login_view = 'main.login'
     login_manager.login_message = "Please log in to access this page"
+
+    # Ajout de la commande generate-docs
+    @app.cli.command('generate-docs')
+    def generate_docs_command():
+        """Génère la documentation avec Doxygen."""
+        from app.generate_docs import generate_documentation
+        if generate_documentation():
+            click.echo('Documentation générée avec succès.')
+        else:
+            click.echo('Erreur lors de la génération de la documentation.')
 
     with app.app_context():
         # Import et enregistrement des routes
