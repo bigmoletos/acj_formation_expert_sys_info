@@ -1,0 +1,71 @@
+\hypertarget{PCPDynamicScreen_8c}{}\section{linux/download/htop-\/3.3.0/pcp/\+P\+C\+P\+Dynamic\+Screen.c File Reference}
+\label{PCPDynamicScreen_8c}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Dynamic\+Screen.\+c@{linux/download/htop-\/3.\+3.\+0/pcp/\+P\+C\+P\+Dynamic\+Screen.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Dynamic\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$pcp/pmapi.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Available\+Columns\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+In\+Dom\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Dynamic\+Column.\+h\char`\"{}}\newline
+Include dependency graph for P\+C\+P\+Dynamic\+Screen.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{PCPDynamicScreen_8c_a267aea5778065effde480a6b2a3e09a8}{P\+C\+P\+Dynamic\+Screens\+\_\+init} (\hyperlink{PCPDynamicScreen_8h_ac4af3d2340e57aa7f277ba32fb31d668}{P\+C\+P\+Dynamic\+Screens} $\ast$screens, \hyperlink{PCPDynamicColumn_8h_a340cb3857a739ded09f30922e07f9a93}{P\+C\+P\+Dynamic\+Columns} $\ast$\hyperlink{HeaderLayout_8h_a9bf6c19eefefcddca5f152099add491c}{columns})
+\item 
+void \hyperlink{PCPDynamicScreen_8c_ab4b720f67ecbdba2ba87a14c26fbec4e}{P\+C\+P\+Dynamic\+Screens\+\_\+done} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$table)
+\item 
+void \hyperlink{PCPDynamicScreen_8c_a6ca6d1c2976c4357552e25a316edc9d2}{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Tables} (\hyperlink{PCPDynamicScreen_8h_ac4af3d2340e57aa7f277ba32fb31d668}{P\+C\+P\+Dynamic\+Screens} $\ast$screens, \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host)
+\item 
+void \hyperlink{PCPDynamicScreen_8c_acb70ba982b9bad09858c0dbc5bd5a523}{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Screens} (\hyperlink{PCPDynamicScreen_8h_ac4af3d2340e57aa7f277ba32fb31d668}{P\+C\+P\+Dynamic\+Screens} $\ast$screens, \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings)
+\item 
+void \hyperlink{PCPDynamicScreen_8c_afc90dd52e115300d76cf2b19deeee0b4}{P\+C\+P\+Dynamic\+Screen\+\_\+add\+Dynamic\+Screen} (\hyperlink{PCPDynamicScreen_8h_ac4af3d2340e57aa7f277ba32fb31d668}{P\+C\+P\+Dynamic\+Screens} $\ast$screens, \hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$ss)
+\item 
+void \hyperlink{PCPDynamicScreen_8c_a59af7de24be5b26f4eb93bcb4cba0393}{P\+C\+P\+Dynamic\+Screens\+\_\+add\+Available\+Columns} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$available\+Columns, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$screens, const char $\ast$screen)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{PCPDynamicScreen_8c_afc90dd52e115300d76cf2b19deeee0b4}\label{PCPDynamicScreen_8c_afc90dd52e115300d76cf2b19deeee0b4}} 
+\index{P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}!P\+C\+P\+Dynamic\+Screen\+\_\+add\+Dynamic\+Screen@{P\+C\+P\+Dynamic\+Screen\+\_\+add\+Dynamic\+Screen}}
+\index{P\+C\+P\+Dynamic\+Screen\+\_\+add\+Dynamic\+Screen@{P\+C\+P\+Dynamic\+Screen\+\_\+add\+Dynamic\+Screen}!P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Screen\+\_\+add\+Dynamic\+Screen()}{PCPDynamicScreen\_addDynamicScreen()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Screen\+\_\+add\+Dynamic\+Screen (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicScreen_8h_ac4af3d2340e57aa7f277ba32fb31d668}{P\+C\+P\+Dynamic\+Screens} $\ast$}]{screens,  }\item[{\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$}]{ss }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicScreen_8c_acb70ba982b9bad09858c0dbc5bd5a523}\label{PCPDynamicScreen_8c_acb70ba982b9bad09858c0dbc5bd5a523}} 
+\index{P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}!P\+C\+P\+Dynamic\+Screen\+\_\+append\+Screens@{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Screens}}
+\index{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Screens@{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Screens}!P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Screens()}{PCPDynamicScreen\_appendScreens()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Screen\+\_\+append\+Screens (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicScreen_8h_ac4af3d2340e57aa7f277ba32fb31d668}{P\+C\+P\+Dynamic\+Screens} $\ast$}]{screens,  }\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicScreen_8c_a6ca6d1c2976c4357552e25a316edc9d2}\label{PCPDynamicScreen_8c_a6ca6d1c2976c4357552e25a316edc9d2}} 
+\index{P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}!P\+C\+P\+Dynamic\+Screen\+\_\+append\+Tables@{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Tables}}
+\index{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Tables@{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Tables}!P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Screen\+\_\+append\+Tables()}{PCPDynamicScreen\_appendTables()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Screen\+\_\+append\+Tables (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicScreen_8h_ac4af3d2340e57aa7f277ba32fb31d668}{P\+C\+P\+Dynamic\+Screens} $\ast$}]{screens,  }\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicScreen_8c_a59af7de24be5b26f4eb93bcb4cba0393}\label{PCPDynamicScreen_8c_a59af7de24be5b26f4eb93bcb4cba0393}} 
+\index{P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}!P\+C\+P\+Dynamic\+Screens\+\_\+add\+Available\+Columns@{P\+C\+P\+Dynamic\+Screens\+\_\+add\+Available\+Columns}}
+\index{P\+C\+P\+Dynamic\+Screens\+\_\+add\+Available\+Columns@{P\+C\+P\+Dynamic\+Screens\+\_\+add\+Available\+Columns}!P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Screens\+\_\+add\+Available\+Columns()}{PCPDynamicScreens\_addAvailableColumns()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Screens\+\_\+add\+Available\+Columns (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{available\+Columns,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{screens,  }\item[{const char $\ast$}]{screen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicScreen_8c_ab4b720f67ecbdba2ba87a14c26fbec4e}\label{PCPDynamicScreen_8c_ab4b720f67ecbdba2ba87a14c26fbec4e}} 
+\index{P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}!P\+C\+P\+Dynamic\+Screens\+\_\+done@{P\+C\+P\+Dynamic\+Screens\+\_\+done}}
+\index{P\+C\+P\+Dynamic\+Screens\+\_\+done@{P\+C\+P\+Dynamic\+Screens\+\_\+done}!P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Screens\+\_\+done()}{PCPDynamicScreens\_done()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Screens\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PCPDynamicScreen_8c_a267aea5778065effde480a6b2a3e09a8}\label{PCPDynamicScreen_8c_a267aea5778065effde480a6b2a3e09a8}} 
+\index{P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}!P\+C\+P\+Dynamic\+Screens\+\_\+init@{P\+C\+P\+Dynamic\+Screens\+\_\+init}}
+\index{P\+C\+P\+Dynamic\+Screens\+\_\+init@{P\+C\+P\+Dynamic\+Screens\+\_\+init}!P\+C\+P\+Dynamic\+Screen.\+c@{P\+C\+P\+Dynamic\+Screen.\+c}}
+\subsubsection{\texorpdfstring{P\+C\+P\+Dynamic\+Screens\+\_\+init()}{PCPDynamicScreens\_init()}}
+{\footnotesize\ttfamily void P\+C\+P\+Dynamic\+Screens\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{PCPDynamicScreen_8h_ac4af3d2340e57aa7f277ba32fb31d668}{P\+C\+P\+Dynamic\+Screens} $\ast$}]{screens,  }\item[{\hyperlink{PCPDynamicColumn_8h_a340cb3857a739ded09f30922e07f9a93}{P\+C\+P\+Dynamic\+Columns} $\ast$}]{columns }\end{DoxyParamCaption})}
+

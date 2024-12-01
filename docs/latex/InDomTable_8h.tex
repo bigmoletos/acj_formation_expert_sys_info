@@ -1,0 +1,81 @@
+\hypertarget{InDomTable_8h}{}\section{linux/download/htop-\/3.3.0/pcp/\+In\+Dom\+Table.h File Reference}
+\label{InDomTable_8h}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+In\+Dom\+Table.\+h@{linux/download/htop-\/3.\+3.\+0/pcp/\+In\+Dom\+Table.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Table.\+h\char`\"{}}\newline
+Include dependency graph for In\+Dom\+Table.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structInDomTable__}{In\+Dom\+Table\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structInDomTable__}{In\+Dom\+Table\+\_\+} \hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table} $\ast$ \hyperlink{InDomTable_8h_ab13be7ab17a96f65b3be33baff317420}{In\+Dom\+Table\+\_\+new} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, pm\+In\+Dom indom, int metric\+Key)
+\item 
+void \hyperlink{InDomTable_8h_a48d8828e38ecf2c706e75d87ca3e86ee}{In\+Dom\+Table\+\_\+done} (\hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table} $\ast$this)
+\item 
+\hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field} \hyperlink{InDomTable_8h_abcd8ae04512ddee90aff3ed4b2fa57c9}{Row\+Field\+\_\+key\+At} (const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings, int at)
+\item 
+void \hyperlink{InDomTable_8h_ab80971a18de829988f296cb6050716c7}{In\+Dom\+Table\+\_\+scan} (\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$super)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} \hyperlink{InDomTable_8h_a03e4f6b090193dab505b5993adc122a7}{In\+Dom\+Table\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}\label{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}} 
+\index{In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}!In\+Dom\+Table@{In\+Dom\+Table}}
+\index{In\+Dom\+Table@{In\+Dom\+Table}!In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}}
+\subsubsection{\texorpdfstring{In\+Dom\+Table}{InDomTable}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structInDomTable__}{In\+Dom\+Table\+\_\+}  \hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{InDomTable_8h_a48d8828e38ecf2c706e75d87ca3e86ee}\label{InDomTable_8h_a48d8828e38ecf2c706e75d87ca3e86ee}} 
+\index{In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}!In\+Dom\+Table\+\_\+done@{In\+Dom\+Table\+\_\+done}}
+\index{In\+Dom\+Table\+\_\+done@{In\+Dom\+Table\+\_\+done}!In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}}
+\subsubsection{\texorpdfstring{In\+Dom\+Table\+\_\+done()}{InDomTable\_done()}}
+{\footnotesize\ttfamily void In\+Dom\+Table\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{InDomTable_8h_ab13be7ab17a96f65b3be33baff317420}\label{InDomTable_8h_ab13be7ab17a96f65b3be33baff317420}} 
+\index{In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}!In\+Dom\+Table\+\_\+new@{In\+Dom\+Table\+\_\+new}}
+\index{In\+Dom\+Table\+\_\+new@{In\+Dom\+Table\+\_\+new}!In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}}
+\subsubsection{\texorpdfstring{In\+Dom\+Table\+\_\+new()}{InDomTable\_new()}}
+{\footnotesize\ttfamily \hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table}$\ast$ In\+Dom\+Table\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{pm\+In\+Dom}]{indom,  }\item[{int}]{metric\+Key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{InDomTable_8h_ab80971a18de829988f296cb6050716c7}\label{InDomTable_8h_ab80971a18de829988f296cb6050716c7}} 
+\index{In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}!In\+Dom\+Table\+\_\+scan@{In\+Dom\+Table\+\_\+scan}}
+\index{In\+Dom\+Table\+\_\+scan@{In\+Dom\+Table\+\_\+scan}!In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}}
+\subsubsection{\texorpdfstring{In\+Dom\+Table\+\_\+scan()}{InDomTable\_scan()}}
+{\footnotesize\ttfamily void In\+Dom\+Table\+\_\+scan (\begin{DoxyParamCaption}\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{super }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{InDomTable_8h_abcd8ae04512ddee90aff3ed4b2fa57c9}\label{InDomTable_8h_abcd8ae04512ddee90aff3ed4b2fa57c9}} 
+\index{In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}!Row\+Field\+\_\+key\+At@{Row\+Field\+\_\+key\+At}}
+\index{Row\+Field\+\_\+key\+At@{Row\+Field\+\_\+key\+At}!In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}}
+\subsubsection{\texorpdfstring{Row\+Field\+\_\+key\+At()}{RowField\_keyAt()}}
+{\footnotesize\ttfamily \hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field} Row\+Field\+\_\+key\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings,  }\item[{int}]{at }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{InDomTable_8h_a03e4f6b090193dab505b5993adc122a7}\label{InDomTable_8h_a03e4f6b090193dab505b5993adc122a7}} 
+\index{In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}!In\+Dom\+Table\+\_\+class@{In\+Dom\+Table\+\_\+class}}
+\index{In\+Dom\+Table\+\_\+class@{In\+Dom\+Table\+\_\+class}!In\+Dom\+Table.\+h@{In\+Dom\+Table.\+h}}
+\subsubsection{\texorpdfstring{In\+Dom\+Table\+\_\+class}{InDomTable\_class}}
+{\footnotesize\ttfamily const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} In\+Dom\+Table\+\_\+class}
+

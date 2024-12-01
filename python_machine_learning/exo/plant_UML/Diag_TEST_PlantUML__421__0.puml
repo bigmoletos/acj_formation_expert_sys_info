@@ -1,0 +1,10 @@
+@startuml
+class CompteBancaire {
+    +titulaire : str
+    -__solde : float
+    +__init__(titulaire: str, solde: float = 0)
+    +deposer(montant: float)
+    +retirer(montant: float)
+    +afficher_solde()
+}
+@enduml

@@ -1,0 +1,50 @@
+\subsection*{Partie 1 \+: Création des Classes}
+
+\subsubsection*{Classe \hyperlink{classCVehicule}{C\+Vehicule} \+:}
+
+
+\begin{DoxyItemize}
+\item Créer une classe {\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}} avec une méthode {\ttfamily afficher()}.
+\end{DoxyItemize}
+
+\subsubsection*{Classes \hyperlink{classCMoto}{C\+Moto} et \hyperlink{classCVoiture}{C\+Voiture} \+:}
+
+
+\begin{DoxyItemize}
+\item Créer des classes {\ttfamily \hyperlink{classCMoto}{C\+Moto}} et {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}} qui héritent de {\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}}.
+\item Redéfinir la méthode {\ttfamily afficher()} dans ces classes.
+\end{DoxyItemize}
+
+\subsection*{Partie 2 \+: Test dans le Main}
+
+Dans la fonction {\ttfamily main} \+:
+
+
+\begin{DoxyItemize}
+\item Créer un objet de chaque classe ({\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}}, {\ttfamily \hyperlink{classCMoto}{C\+Moto}}, {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}}).
+\item Appeler la méthode {\ttfamily afficher()} pour chacun.
+\end{DoxyItemize}
+
+\subsection*{Partie 3 \+: Tableau de \hyperlink{classCVehicule}{C\+Vehicule}}
+
+
+\begin{DoxyItemize}
+\item Créer un tableau de {\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}}.
+\item Insérer les instances de {\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}}, {\ttfamily \hyperlink{classCMoto}{C\+Moto}}, et {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}} dans ce tableau.
+\item Parcourir le tableau et appeler {\ttfamily afficher()} pour chaque objet.
+\end{DoxyItemize}
+
+\subsubsection*{Question \+: Que se passe-\/t-\/il lors de l\textquotesingle{}appel de {\ttfamily afficher()} ?}
+
+\subsection*{Partie 4 \+: Gestion de la Mémoire et Destructeurs}
+
+
+\begin{DoxyItemize}
+\item Définir un constructeur et un destructeur dans chaque classe et afficher un message lors de la création et de la destruction.
+\item Créer un tableau de pointeurs {\ttfamily C\+Vehicule$\ast$}.
+\item Insérer des instances de {\ttfamily \hyperlink{classCVehicule}{C\+Vehicule}}, {\ttfamily \hyperlink{classCMoto}{C\+Moto}}, et {\ttfamily \hyperlink{classCVoiture}{C\+Voiture}}.
+\item Parcourir le tableau et appeler {\ttfamily afficher()} pour chaque objet.
+\item Détruire ces instances avec {\ttfamily delete}.
+\end{DoxyItemize}
+
+\subsubsection*{Question \+: Que se passe-\/t-\/il lors de la destruction des objets ?}

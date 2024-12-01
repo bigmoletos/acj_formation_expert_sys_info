@@ -1,0 +1,14 @@
+digraph "programmation_C/fonctions/insertion_fonctions/prototypes.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="programmation_C/fonctions\l/insertion_fonctions/prototypes.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="programmation_C/fonctions\l/insertion_fonctions/exo10\l-tp10_inversion-de-variables\l-exercice.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$exo10-tp10__inversion-de-variables-exercice_8c.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="programmation_C/fonctions\l/insertion_fonctions/fonction\l_affichage.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$insertion__fonctions_2fonction__affichage_8c.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="programmation_C/fonctions\l/insertion_fonctions/fonction\l_controle_saisi_entier.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$insertion__fonctions_2fonction__controle__saisi__entier_8c.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="programmation_C/fonctions\l/insertion_fonctions/fonction\l_sortie_oui_non.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$insertion__fonctions_2fonction__sortie__oui__non_8c.html"];
+}

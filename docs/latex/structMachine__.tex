@@ -1,0 +1,213 @@
+\hypertarget{structMachine__}{}\section{Machine\+\_\+ Struct Reference}
+\label{structMachine__}\index{Machine\+\_\+@{Machine\+\_\+}}
+
+
+{\ttfamily \#include $<$Machine.\+h$>$}
+
+
+
+Collaboration diagram for Machine\+\_\+\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSettings__}{Settings\+\_\+} $\ast$ \hyperlink{structMachine___a2a1696949a2e3af5b1a5a48baa5704ce}{settings}
+\item 
+struct timeval \hyperlink{structMachine___a39a6fb546ded538c86890737de23128b}{realtime}
+\item 
+uint64\+\_\+t \hyperlink{structMachine___ad170ee7353420eadbab452472555d6de}{realtime\+Ms}
+\item 
+uint64\+\_\+t \hyperlink{structMachine___aecba871335bdaf92c256f64937ae605d}{monotonic\+Ms}
+\item 
+int64\+\_\+t \hyperlink{structMachine___ad341c18951a973f17011ea699df1b580}{iterations\+Remaining}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structMachine___a2c07a41b406022756e37ec53ea674900}{total\+Mem}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structMachine___a4ea930fbf9a49f8db13597a7af6d7320}{used\+Mem}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structMachine___a7a2b5e5d2f9cb00188c99e78fa50de61}{buffers\+Mem}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structMachine___a0aeb16026c3e3c4745bddaa0f2ef8f03}{cached\+Mem}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structMachine___aae0c722e7da966963e4cf0a01c173987}{shared\+Mem}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structMachine___ad48aa4e8bb17977becfae0348dd0c1ca}{available\+Mem}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structMachine___ac5c410ad1faf68a90c4acb4200919dda}{total\+Swap}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structMachine___a68798d7c133548a9a28718f2e51d4cd8}{used\+Swap}
+\item 
+\hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} \hyperlink{structMachine___a9e5f09ea01656c4d0087acf6cedd6254}{cached\+Swap}
+\item 
+unsigned int \hyperlink{structMachine___aa46a5b354570258b24f5750fe61602ff}{active\+C\+P\+Us}
+\item 
+unsigned int \hyperlink{structMachine___a4fd6a11ebb6b2f21b64ea4ef86915ebc}{existing\+C\+P\+Us}
+\item 
+\hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table} $\ast$ \hyperlink{structMachine___af77e01ddf7e141ce1182ec9786163403}{users\+Table}
+\item 
+uid\+\_\+t \hyperlink{structMachine___a19ed6002f674cad46e95264c544ab96d}{htop\+User\+Id}
+\item 
+uid\+\_\+t \hyperlink{structMachine___ab7a40f7095392320890d5bb91152ba01}{max\+User\+Id}
+\item 
+uid\+\_\+t \hyperlink{structMachine___a045036b9cd773bfb4134415ee50c299f}{user\+Id}
+\item 
+size\+\_\+t \hyperlink{structMachine___a5565ee68245054da75f3973f9b9bd893}{table\+Count}
+\item 
+\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$$\ast$ \hyperlink{structMachine___a9e398a39c53fcd70e819ff7130cf3fa4}{tables}
+\item 
+\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$ \hyperlink{structMachine___a03fc72fc00d68bd24128c056c70346b2}{active\+Table}
+\item 
+\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$ \hyperlink{structMachine___a3a78d52d27d494a067d74b0dcc8e56f2}{process\+Table}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structMachine___aa46a5b354570258b24f5750fe61602ff}\label{structMachine___aa46a5b354570258b24f5750fe61602ff}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!active\+C\+P\+Us@{active\+C\+P\+Us}}
+\index{active\+C\+P\+Us@{active\+C\+P\+Us}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{active\+C\+P\+Us}{activeCPUs}}
+{\footnotesize\ttfamily unsigned int Machine\+\_\+\+::active\+C\+P\+Us}
+
+\mbox{\Hypertarget{structMachine___a03fc72fc00d68bd24128c056c70346b2}\label{structMachine___a03fc72fc00d68bd24128c056c70346b2}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!active\+Table@{active\+Table}}
+\index{active\+Table@{active\+Table}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{active\+Table}{activeTable}}
+{\footnotesize\ttfamily \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table}$\ast$ Machine\+\_\+\+::active\+Table}
+
+\mbox{\Hypertarget{structMachine___ad48aa4e8bb17977becfae0348dd0c1ca}\label{structMachine___ad48aa4e8bb17977becfae0348dd0c1ca}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!available\+Mem@{available\+Mem}}
+\index{available\+Mem@{available\+Mem}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{available\+Mem}{availableMem}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Machine\+\_\+\+::available\+Mem}
+
+\mbox{\Hypertarget{structMachine___a7a2b5e5d2f9cb00188c99e78fa50de61}\label{structMachine___a7a2b5e5d2f9cb00188c99e78fa50de61}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!buffers\+Mem@{buffers\+Mem}}
+\index{buffers\+Mem@{buffers\+Mem}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{buffers\+Mem}{buffersMem}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Machine\+\_\+\+::buffers\+Mem}
+
+\mbox{\Hypertarget{structMachine___a0aeb16026c3e3c4745bddaa0f2ef8f03}\label{structMachine___a0aeb16026c3e3c4745bddaa0f2ef8f03}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!cached\+Mem@{cached\+Mem}}
+\index{cached\+Mem@{cached\+Mem}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{cached\+Mem}{cachedMem}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Machine\+\_\+\+::cached\+Mem}
+
+\mbox{\Hypertarget{structMachine___a9e5f09ea01656c4d0087acf6cedd6254}\label{structMachine___a9e5f09ea01656c4d0087acf6cedd6254}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!cached\+Swap@{cached\+Swap}}
+\index{cached\+Swap@{cached\+Swap}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{cached\+Swap}{cachedSwap}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Machine\+\_\+\+::cached\+Swap}
+
+\mbox{\Hypertarget{structMachine___a4fd6a11ebb6b2f21b64ea4ef86915ebc}\label{structMachine___a4fd6a11ebb6b2f21b64ea4ef86915ebc}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!existing\+C\+P\+Us@{existing\+C\+P\+Us}}
+\index{existing\+C\+P\+Us@{existing\+C\+P\+Us}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{existing\+C\+P\+Us}{existingCPUs}}
+{\footnotesize\ttfamily unsigned int Machine\+\_\+\+::existing\+C\+P\+Us}
+
+\mbox{\Hypertarget{structMachine___a19ed6002f674cad46e95264c544ab96d}\label{structMachine___a19ed6002f674cad46e95264c544ab96d}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!htop\+User\+Id@{htop\+User\+Id}}
+\index{htop\+User\+Id@{htop\+User\+Id}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{htop\+User\+Id}{htopUserId}}
+{\footnotesize\ttfamily uid\+\_\+t Machine\+\_\+\+::htop\+User\+Id}
+
+\mbox{\Hypertarget{structMachine___ad341c18951a973f17011ea699df1b580}\label{structMachine___ad341c18951a973f17011ea699df1b580}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!iterations\+Remaining@{iterations\+Remaining}}
+\index{iterations\+Remaining@{iterations\+Remaining}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{iterations\+Remaining}{iterationsRemaining}}
+{\footnotesize\ttfamily int64\+\_\+t Machine\+\_\+\+::iterations\+Remaining}
+
+\mbox{\Hypertarget{structMachine___ab7a40f7095392320890d5bb91152ba01}\label{structMachine___ab7a40f7095392320890d5bb91152ba01}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!max\+User\+Id@{max\+User\+Id}}
+\index{max\+User\+Id@{max\+User\+Id}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{max\+User\+Id}{maxUserId}}
+{\footnotesize\ttfamily uid\+\_\+t Machine\+\_\+\+::max\+User\+Id}
+
+\mbox{\Hypertarget{structMachine___aecba871335bdaf92c256f64937ae605d}\label{structMachine___aecba871335bdaf92c256f64937ae605d}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!monotonic\+Ms@{monotonic\+Ms}}
+\index{monotonic\+Ms@{monotonic\+Ms}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{monotonic\+Ms}{monotonicMs}}
+{\footnotesize\ttfamily uint64\+\_\+t Machine\+\_\+\+::monotonic\+Ms}
+
+\mbox{\Hypertarget{structMachine___a3a78d52d27d494a067d74b0dcc8e56f2}\label{structMachine___a3a78d52d27d494a067d74b0dcc8e56f2}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!process\+Table@{process\+Table}}
+\index{process\+Table@{process\+Table}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{process\+Table}{processTable}}
+{\footnotesize\ttfamily \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table}$\ast$ Machine\+\_\+\+::process\+Table}
+
+\mbox{\Hypertarget{structMachine___a39a6fb546ded538c86890737de23128b}\label{structMachine___a39a6fb546ded538c86890737de23128b}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!realtime@{realtime}}
+\index{realtime@{realtime}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{realtime}{realtime}}
+{\footnotesize\ttfamily struct timeval Machine\+\_\+\+::realtime}
+
+\mbox{\Hypertarget{structMachine___ad170ee7353420eadbab452472555d6de}\label{structMachine___ad170ee7353420eadbab452472555d6de}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!realtime\+Ms@{realtime\+Ms}}
+\index{realtime\+Ms@{realtime\+Ms}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{realtime\+Ms}{realtimeMs}}
+{\footnotesize\ttfamily uint64\+\_\+t Machine\+\_\+\+::realtime\+Ms}
+
+\mbox{\Hypertarget{structMachine___a2a1696949a2e3af5b1a5a48baa5704ce}\label{structMachine___a2a1696949a2e3af5b1a5a48baa5704ce}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!settings@{settings}}
+\index{settings@{settings}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{settings}{settings}}
+{\footnotesize\ttfamily struct \hyperlink{structSettings__}{Settings\+\_\+}$\ast$ Machine\+\_\+\+::settings}
+
+\mbox{\Hypertarget{structMachine___aae0c722e7da966963e4cf0a01c173987}\label{structMachine___aae0c722e7da966963e4cf0a01c173987}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!shared\+Mem@{shared\+Mem}}
+\index{shared\+Mem@{shared\+Mem}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{shared\+Mem}{sharedMem}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Machine\+\_\+\+::shared\+Mem}
+
+\mbox{\Hypertarget{structMachine___a5565ee68245054da75f3973f9b9bd893}\label{structMachine___a5565ee68245054da75f3973f9b9bd893}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!table\+Count@{table\+Count}}
+\index{table\+Count@{table\+Count}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{table\+Count}{tableCount}}
+{\footnotesize\ttfamily size\+\_\+t Machine\+\_\+\+::table\+Count}
+
+\mbox{\Hypertarget{structMachine___a9e398a39c53fcd70e819ff7130cf3fa4}\label{structMachine___a9e398a39c53fcd70e819ff7130cf3fa4}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!tables@{tables}}
+\index{tables@{tables}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{tables}{tables}}
+{\footnotesize\ttfamily \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table}$\ast$$\ast$ Machine\+\_\+\+::tables}
+
+\mbox{\Hypertarget{structMachine___a2c07a41b406022756e37ec53ea674900}\label{structMachine___a2c07a41b406022756e37ec53ea674900}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!total\+Mem@{total\+Mem}}
+\index{total\+Mem@{total\+Mem}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{total\+Mem}{totalMem}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Machine\+\_\+\+::total\+Mem}
+
+\mbox{\Hypertarget{structMachine___ac5c410ad1faf68a90c4acb4200919dda}\label{structMachine___ac5c410ad1faf68a90c4acb4200919dda}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!total\+Swap@{total\+Swap}}
+\index{total\+Swap@{total\+Swap}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{total\+Swap}{totalSwap}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Machine\+\_\+\+::total\+Swap}
+
+\mbox{\Hypertarget{structMachine___a4ea930fbf9a49f8db13597a7af6d7320}\label{structMachine___a4ea930fbf9a49f8db13597a7af6d7320}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!used\+Mem@{used\+Mem}}
+\index{used\+Mem@{used\+Mem}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{used\+Mem}{usedMem}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Machine\+\_\+\+::used\+Mem}
+
+\mbox{\Hypertarget{structMachine___a68798d7c133548a9a28718f2e51d4cd8}\label{structMachine___a68798d7c133548a9a28718f2e51d4cd8}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!used\+Swap@{used\+Swap}}
+\index{used\+Swap@{used\+Swap}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{used\+Swap}{usedSwap}}
+{\footnotesize\ttfamily \hyperlink{Machine_8h_ac8c2c5995f64727051f4034a810e5b07}{memory\+\_\+t} Machine\+\_\+\+::used\+Swap}
+
+\mbox{\Hypertarget{structMachine___a045036b9cd773bfb4134415ee50c299f}\label{structMachine___a045036b9cd773bfb4134415ee50c299f}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!user\+Id@{user\+Id}}
+\index{user\+Id@{user\+Id}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{user\+Id}{userId}}
+{\footnotesize\ttfamily uid\+\_\+t Machine\+\_\+\+::user\+Id}
+
+\mbox{\Hypertarget{structMachine___af77e01ddf7e141ce1182ec9786163403}\label{structMachine___af77e01ddf7e141ce1182ec9786163403}} 
+\index{Machine\+\_\+@{Machine\+\_\+}!users\+Table@{users\+Table}}
+\index{users\+Table@{users\+Table}!Machine\+\_\+@{Machine\+\_\+}}
+\subsubsection{\texorpdfstring{users\+Table}{usersTable}}
+{\footnotesize\ttfamily \hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table}$\ast$ Machine\+\_\+\+::users\+Table}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+linux/download/htop-\/3.\+3.\+0/\hyperlink{Machine_8h}{Machine.\+h}\end{DoxyCompactItemize}

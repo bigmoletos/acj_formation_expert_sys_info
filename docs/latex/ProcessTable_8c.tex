@@ -1,0 +1,68 @@
+\hypertarget{ProcessTable_8c}{}\section{linux/download/htop-\/3.3.0/\+Process\+Table.c File Reference}
+\label{ProcessTable_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Process\+Table.\+c@{linux/download/htop-\/3.\+3.\+0/\+Process\+Table.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+Include dependency graph for Process\+Table.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ProcessTable_8c_aa06d5429e73d297a9a3de3b849aad504}{Process\+Table\+\_\+init} (\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$this, const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$klass, \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$pid\+Match\+List)
+\item 
+void \hyperlink{ProcessTable_8c_a483bf2b3ef444b54052451e3a5ffa49b}{Process\+Table\+\_\+done} (\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$this)
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{ProcessTable_8c_a7f2f0c9a07bee0ffc359b90ea5c448c6}{Process\+Table\+\_\+get\+Process} (\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$this, pid\+\_\+t pid, bool $\ast$pre\+Existing, \hyperlink{Process_8h_a45668264163f09efb4be9b6d17cf65ba}{Process\+\_\+\+New} constructor)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} \hyperlink{ProcessTable_8c_ace0ee6d312ee3765446ba69fc3f02894}{Process\+Table\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ProcessTable_8c_a483bf2b3ef444b54052451e3a5ffa49b}\label{ProcessTable_8c_a483bf2b3ef444b54052451e3a5ffa49b}} 
+\index{Process\+Table.\+c@{Process\+Table.\+c}!Process\+Table\+\_\+done@{Process\+Table\+\_\+done}}
+\index{Process\+Table\+\_\+done@{Process\+Table\+\_\+done}!Process\+Table.\+c@{Process\+Table.\+c}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+done()}{ProcessTable\_done()}}
+{\footnotesize\ttfamily void Process\+Table\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ProcessTable_8c_a7f2f0c9a07bee0ffc359b90ea5c448c6}\label{ProcessTable_8c_a7f2f0c9a07bee0ffc359b90ea5c448c6}} 
+\index{Process\+Table.\+c@{Process\+Table.\+c}!Process\+Table\+\_\+get\+Process@{Process\+Table\+\_\+get\+Process}}
+\index{Process\+Table\+\_\+get\+Process@{Process\+Table\+\_\+get\+Process}!Process\+Table.\+c@{Process\+Table.\+c}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+get\+Process()}{ProcessTable\_getProcess()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ Process\+Table\+\_\+get\+Process (\begin{DoxyParamCaption}\item[{\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$}]{this,  }\item[{pid\+\_\+t}]{pid,  }\item[{bool $\ast$}]{pre\+Existing,  }\item[{\hyperlink{Process_8h_a45668264163f09efb4be9b6d17cf65ba}{Process\+\_\+\+New}}]{constructor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ProcessTable_8c_aa06d5429e73d297a9a3de3b849aad504}\label{ProcessTable_8c_aa06d5429e73d297a9a3de3b849aad504}} 
+\index{Process\+Table.\+c@{Process\+Table.\+c}!Process\+Table\+\_\+init@{Process\+Table\+\_\+init}}
+\index{Process\+Table\+\_\+init@{Process\+Table\+\_\+init}!Process\+Table.\+c@{Process\+Table.\+c}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+init()}{ProcessTable\_init()}}
+{\footnotesize\ttfamily void Process\+Table\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$}]{this,  }\item[{const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$}]{klass,  }\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{pid\+Match\+List }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ProcessTable_8c_ace0ee6d312ee3765446ba69fc3f02894}\label{ProcessTable_8c_ace0ee6d312ee3765446ba69fc3f02894}} 
+\index{Process\+Table.\+c@{Process\+Table.\+c}!Process\+Table\+\_\+class@{Process\+Table\+\_\+class}}
+\index{Process\+Table\+\_\+class@{Process\+Table\+\_\+class}!Process\+Table.\+c@{Process\+Table.\+c}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+class}{ProcessTable\_class}}
+{\footnotesize\ttfamily const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} Process\+Table\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structTable__}{Table}),
+      .delete = \hyperlink{DarwinProcessTable_8c_ab291bfda630da85c5662a634f11e0826}{ProcessTable\_delete},
+   \},
+   .prepare = ProcessTable\_prepareEntries,
+   .iterate = ProcessTable\_iterateEntries,
+   .cleanup = ProcessTable\_cleanupEntries,
+\}
+\end{DoxyCode}

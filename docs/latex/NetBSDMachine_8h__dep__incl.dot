@@ -1,0 +1,12 @@
+digraph "linux/download/htop-3.3.0/netbsd/NetBSDMachine.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node38 [label="linux/download/htop\l-3.3.0/netbsd/NetBSDMachine.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node38 -> Node39 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node39 [label="linux/download/htop\l-3.3.0/netbsd/NetBSDMachine.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$NetBSDMachine_8c.html"];
+  Node38 -> Node40 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node40 [label="linux/download/htop\l-3.3.0/netbsd/NetBSDProcess\lTable.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$NetBSDProcessTable_8c.html"];
+  Node38 -> Node41 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node41 [label="linux/download/htop\l-3.3.0/netbsd/Platform.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$netbsd_2Platform_8c.html"];
+}

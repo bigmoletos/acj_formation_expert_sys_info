@@ -1,0 +1,116 @@
+\hypertarget{Hashtable_8h}{}\section{linux/download/htop-\/3.3.0/\+Hashtable.h File Reference}
+\label{Hashtable_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Hashtable.\+h@{linux/download/htop-\/3.\+3.\+0/\+Hashtable.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for Hashtable.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{Hashtable_8h_a9bc4e6a8f21d9da6eeee861680d791b1}{Hashtable\+\_\+\+Pair\+Function}) (\hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t} \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key}, void $\ast$value, void $\ast$userdata)
+\item 
+typedef struct \hyperlink{structHashtable__}{Hashtable\+\_\+} \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{Hashtable_8h_a02095d0996a98000040d7ad6fb3fa3a5}{Hashtable\+\_\+count} (const \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$this)
+\item 
+\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$ \hyperlink{Hashtable_8h_af163d5e9727c5513d95b652097f5f51b}{Hashtable\+\_\+new} (size\+\_\+t size, bool owner)
+\item 
+void \hyperlink{Hashtable_8h_a6e8ff2634e34d84e8a2b7504661bfcea}{Hashtable\+\_\+delete} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$this)
+\item 
+void \hyperlink{Hashtable_8h_a0a441537b465568637d2cdccc22dbe2d}{Hashtable\+\_\+clear} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$this)
+\item 
+void \hyperlink{Hashtable_8h_ae5965af895c2d8e1f454858924840a73}{Hashtable\+\_\+set\+Size} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$this, size\+\_\+t size)
+\item 
+void \hyperlink{Hashtable_8h_abbb5e80db142c305a885a1a8f6e26893}{Hashtable\+\_\+put} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$this, \hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t} \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key}, void $\ast$value)
+\item 
+void $\ast$ \hyperlink{Hashtable_8h_a1928664cff506d199a2a749f4b3d8e65}{Hashtable\+\_\+remove} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$this, \hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t} \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+void $\ast$ \hyperlink{Hashtable_8h_ac2b85dbc930c58536d51ef0c50702e7c}{Hashtable\+\_\+get} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$this, \hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t} \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+void \hyperlink{Hashtable_8h_a890e54425f81e8960875c84458a1d486}{Hashtable\+\_\+foreach} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$this, \hyperlink{Hashtable_8h_a9bc4e6a8f21d9da6eeee861680d791b1}{Hashtable\+\_\+\+Pair\+Function} f, void $\ast$user\+Data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}\label{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable@{Hashtable}}
+\index{Hashtable@{Hashtable}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable}{Hashtable}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structHashtable__}{Hashtable\+\_\+} \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}}
+
+\mbox{\Hypertarget{Hashtable_8h_a9bc4e6a8f21d9da6eeee861680d791b1}\label{Hashtable_8h_a9bc4e6a8f21d9da6eeee861680d791b1}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+\+Pair\+Function@{Hashtable\+\_\+\+Pair\+Function}}
+\index{Hashtable\+\_\+\+Pair\+Function@{Hashtable\+\_\+\+Pair\+Function}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+\+Pair\+Function}{Hashtable\_PairFunction}}
+{\footnotesize\ttfamily typedef void($\ast$ Hashtable\+\_\+\+Pair\+Function) (\hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t} \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key}, void $\ast$value, void $\ast$userdata)}
+
+\mbox{\Hypertarget{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}\label{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!ht\+\_\+key\+\_\+t@{ht\+\_\+key\+\_\+t}}
+\index{ht\+\_\+key\+\_\+t@{ht\+\_\+key\+\_\+t}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{ht\+\_\+key\+\_\+t}{ht\_key\_t}}
+{\footnotesize\ttfamily typedef unsigned int \hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Hashtable_8h_a0a441537b465568637d2cdccc22dbe2d}\label{Hashtable_8h_a0a441537b465568637d2cdccc22dbe2d}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+clear@{Hashtable\+\_\+clear}}
+\index{Hashtable\+\_\+clear@{Hashtable\+\_\+clear}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+clear()}{Hashtable\_clear()}}
+{\footnotesize\ttfamily void Hashtable\+\_\+clear (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Hashtable_8h_a02095d0996a98000040d7ad6fb3fa3a5}\label{Hashtable_8h_a02095d0996a98000040d7ad6fb3fa3a5}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+count@{Hashtable\+\_\+count}}
+\index{Hashtable\+\_\+count@{Hashtable\+\_\+count}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+count()}{Hashtable\_count()}}
+{\footnotesize\ttfamily size\+\_\+t Hashtable\+\_\+count (\begin{DoxyParamCaption}\item[{const \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Hashtable_8h_a6e8ff2634e34d84e8a2b7504661bfcea}\label{Hashtable_8h_a6e8ff2634e34d84e8a2b7504661bfcea}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+delete@{Hashtable\+\_\+delete}}
+\index{Hashtable\+\_\+delete@{Hashtable\+\_\+delete}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+delete()}{Hashtable\_delete()}}
+{\footnotesize\ttfamily void Hashtable\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Hashtable_8h_a890e54425f81e8960875c84458a1d486}\label{Hashtable_8h_a890e54425f81e8960875c84458a1d486}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+foreach@{Hashtable\+\_\+foreach}}
+\index{Hashtable\+\_\+foreach@{Hashtable\+\_\+foreach}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+foreach()}{Hashtable\_foreach()}}
+{\footnotesize\ttfamily void Hashtable\+\_\+foreach (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{this,  }\item[{\hyperlink{Hashtable_8h_a9bc4e6a8f21d9da6eeee861680d791b1}{Hashtable\+\_\+\+Pair\+Function}}]{f,  }\item[{void $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Hashtable_8h_ac2b85dbc930c58536d51ef0c50702e7c}\label{Hashtable_8h_ac2b85dbc930c58536d51ef0c50702e7c}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+get@{Hashtable\+\_\+get}}
+\index{Hashtable\+\_\+get@{Hashtable\+\_\+get}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+get()}{Hashtable\_get()}}
+{\footnotesize\ttfamily void$\ast$ Hashtable\+\_\+get (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{this,  }\item[{\hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t}}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Hashtable_8h_af163d5e9727c5513d95b652097f5f51b}\label{Hashtable_8h_af163d5e9727c5513d95b652097f5f51b}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+new@{Hashtable\+\_\+new}}
+\index{Hashtable\+\_\+new@{Hashtable\+\_\+new}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+new()}{Hashtable\_new()}}
+{\footnotesize\ttfamily \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}$\ast$ Hashtable\+\_\+new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{bool}]{owner }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Hashtable_8h_abbb5e80db142c305a885a1a8f6e26893}\label{Hashtable_8h_abbb5e80db142c305a885a1a8f6e26893}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+put@{Hashtable\+\_\+put}}
+\index{Hashtable\+\_\+put@{Hashtable\+\_\+put}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+put()}{Hashtable\_put()}}
+{\footnotesize\ttfamily void Hashtable\+\_\+put (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{this,  }\item[{\hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t}}]{key,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Hashtable_8h_a1928664cff506d199a2a749f4b3d8e65}\label{Hashtable_8h_a1928664cff506d199a2a749f4b3d8e65}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+remove@{Hashtable\+\_\+remove}}
+\index{Hashtable\+\_\+remove@{Hashtable\+\_\+remove}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+remove()}{Hashtable\_remove()}}
+{\footnotesize\ttfamily void$\ast$ Hashtable\+\_\+remove (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{this,  }\item[{\hyperlink{Hashtable_8h_ac88d0518f664d4d4d74b5a1aa3453de3}{ht\+\_\+key\+\_\+t}}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Hashtable_8h_ae5965af895c2d8e1f454858924840a73}\label{Hashtable_8h_ae5965af895c2d8e1f454858924840a73}} 
+\index{Hashtable.\+h@{Hashtable.\+h}!Hashtable\+\_\+set\+Size@{Hashtable\+\_\+set\+Size}}
+\index{Hashtable\+\_\+set\+Size@{Hashtable\+\_\+set\+Size}!Hashtable.\+h@{Hashtable.\+h}}
+\subsubsection{\texorpdfstring{Hashtable\+\_\+set\+Size()}{Hashtable\_setSize()}}
+{\footnotesize\ttfamily void Hashtable\+\_\+set\+Size (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{this,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+

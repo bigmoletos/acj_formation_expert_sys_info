@@ -1,0 +1,82 @@
+\hypertarget{constructionTableau_8cpp}{}\section{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo16/construction\+Tableau.cpp File Reference}
+\label{constructionTableau_8cpp}\index{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo16/construction\+Tableau.\+cpp@{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo16/construction\+Tableau.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include \char`\"{}random\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}header.\+hpp\char`\"{}}\newline
+Include dependency graph for construction\+Tableau.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{constructionTableau_8cpp_abdbec553bbe57aef94239359bc4c2346}{generer\+\_\+valeurs\+\_\+aleatoires} (std\+::vector$<$ int $>$ \&tableau, int \hyperlink{exo6-2__tp6__2__tableaux__et__adresses__exercices1_8c_a29bf3fc0ffe4e72e45f0c84ab4f8cd1e}{taille}=100)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de generer\+\_\+valeurs\+\_\+aleatoires\mbox{]} \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{constructionTableau_8cpp_a312353960bdb608ac1e9df11215580d4}{trouver\+\_\+indices} (const std\+::vector$<$ int $>$ \&tableau, int valeur\+\_\+recherchee)
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de trouver\+\_\+indices\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{constructionTableau_8cpp_abdbec553bbe57aef94239359bc4c2346}\label{constructionTableau_8cpp_abdbec553bbe57aef94239359bc4c2346}} 
+\index{construction\+Tableau.\+cpp@{construction\+Tableau.\+cpp}!generer\+\_\+valeurs\+\_\+aleatoires@{generer\+\_\+valeurs\+\_\+aleatoires}}
+\index{generer\+\_\+valeurs\+\_\+aleatoires@{generer\+\_\+valeurs\+\_\+aleatoires}!construction\+Tableau.\+cpp@{construction\+Tableau.\+cpp}}
+\subsubsection{\texorpdfstring{generer\+\_\+valeurs\+\_\+aleatoires()}{generer\_valeurs\_aleatoires()}}
+{\footnotesize\ttfamily void generer\+\_\+valeurs\+\_\+aleatoires (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{tableau,  }\item[{int}]{taille = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de generer\+\_\+valeurs\+\_\+aleatoires\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&tableau} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em 100} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de generateur\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em int$>$(std\+::time(0))} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::mt19937 \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de distribution\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em 0} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em 90} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::uniform\+\_\+int\+\_\+distribution$<$int$>$ \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{\Hypertarget{constructionTableau_8cpp_a312353960bdb608ac1e9df11215580d4}\label{constructionTableau_8cpp_a312353960bdb608ac1e9df11215580d4}} 
+\index{construction\+Tableau.\+cpp@{construction\+Tableau.\+cpp}!trouver\+\_\+indices@{trouver\+\_\+indices}}
+\index{trouver\+\_\+indices@{trouver\+\_\+indices}!construction\+Tableau.\+cpp@{construction\+Tableau.\+cpp}}
+\subsubsection{\texorpdfstring{trouver\+\_\+indices()}{trouver\_indices()}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ trouver\+\_\+indices (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{tableau,  }\item[{int}]{valeur\+\_\+recherchee }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de trouver\+\_\+indices\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&tableau} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+{\em valeur\+\_\+recherchee} & \mbox{[}Description du paramètre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}

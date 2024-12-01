@@ -1,0 +1,68 @@
+\hypertarget{MetersPanel_8c}{}\section{linux/download/htop-\/3.3.0/\+Meters\+Panel.c File Reference}
+\label{MetersPanel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Meters\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Meters\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meters\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}List\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+Include dependency graph for Meters\+Panel.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{MetersPanel_8c_aa17cb6e5ffd20dc3483b003a8736bddb}{Meters\+Panel\+\_\+cleanup} (void)
+\item 
+void \hyperlink{MetersPanel_8c_ac7c7b3fb819714c3c0767cf6bfa5b016}{Meters\+Panel\+\_\+set\+Moving} (\hyperlink{MetersPanel_8h_ac168f5e3e3c144e958020ce7b0ed33a3}{Meters\+Panel} $\ast$this, bool moving)
+\item 
+\hyperlink{MetersPanel_8h_ac168f5e3e3c144e958020ce7b0ed33a3}{Meters\+Panel} $\ast$ \hyperlink{MetersPanel_8c_a7afbd08a9cf94e67b7a70da2885c5b09}{Meters\+Panel\+\_\+new} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings, const char $\ast$header, \hyperlink{Vector_8h_a8297b82ce917cd21838596b7e3a7faa8}{Vector} $\ast$meters, \hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$scr)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{MetersPanel_8c_aa4ad76a465826adde75e6a304cde6abe}{Meters\+Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{MetersPanel_8c_aa17cb6e5ffd20dc3483b003a8736bddb}\label{MetersPanel_8c_aa17cb6e5ffd20dc3483b003a8736bddb}} 
+\index{Meters\+Panel.\+c@{Meters\+Panel.\+c}!Meters\+Panel\+\_\+cleanup@{Meters\+Panel\+\_\+cleanup}}
+\index{Meters\+Panel\+\_\+cleanup@{Meters\+Panel\+\_\+cleanup}!Meters\+Panel.\+c@{Meters\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Meters\+Panel\+\_\+cleanup()}{MetersPanel\_cleanup()}}
+{\footnotesize\ttfamily void Meters\+Panel\+\_\+cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MetersPanel_8c_a7afbd08a9cf94e67b7a70da2885c5b09}\label{MetersPanel_8c_a7afbd08a9cf94e67b7a70da2885c5b09}} 
+\index{Meters\+Panel.\+c@{Meters\+Panel.\+c}!Meters\+Panel\+\_\+new@{Meters\+Panel\+\_\+new}}
+\index{Meters\+Panel\+\_\+new@{Meters\+Panel\+\_\+new}!Meters\+Panel.\+c@{Meters\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Meters\+Panel\+\_\+new()}{MetersPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{MetersPanel_8h_ac168f5e3e3c144e958020ce7b0ed33a3}{Meters\+Panel}$\ast$ Meters\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings,  }\item[{const char $\ast$}]{header,  }\item[{\hyperlink{Vector_8h_a8297b82ce917cd21838596b7e3a7faa8}{Vector} $\ast$}]{meters,  }\item[{\hyperlink{ScreenManager_8h_a798c9c69dc8024a4c6829982bf94dddd}{Screen\+Manager} $\ast$}]{scr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MetersPanel_8c_ac7c7b3fb819714c3c0767cf6bfa5b016}\label{MetersPanel_8c_ac7c7b3fb819714c3c0767cf6bfa5b016}} 
+\index{Meters\+Panel.\+c@{Meters\+Panel.\+c}!Meters\+Panel\+\_\+set\+Moving@{Meters\+Panel\+\_\+set\+Moving}}
+\index{Meters\+Panel\+\_\+set\+Moving@{Meters\+Panel\+\_\+set\+Moving}!Meters\+Panel.\+c@{Meters\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Meters\+Panel\+\_\+set\+Moving()}{MetersPanel\_setMoving()}}
+{\footnotesize\ttfamily void Meters\+Panel\+\_\+set\+Moving (\begin{DoxyParamCaption}\item[{\hyperlink{MetersPanel_8h_ac168f5e3e3c144e958020ce7b0ed33a3}{Meters\+Panel} $\ast$}]{this,  }\item[{bool}]{moving }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{MetersPanel_8c_aa4ad76a465826adde75e6a304cde6abe}\label{MetersPanel_8c_aa4ad76a465826adde75e6a304cde6abe}} 
+\index{Meters\+Panel.\+c@{Meters\+Panel.\+c}!Meters\+Panel\+\_\+class@{Meters\+Panel\+\_\+class}}
+\index{Meters\+Panel\+\_\+class@{Meters\+Panel\+\_\+class}!Meters\+Panel.\+c@{Meters\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Meters\+Panel\+\_\+class}{MetersPanel\_class}}
+{\footnotesize\ttfamily const \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Meters\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = MetersPanel\_delete
+   \},
+   .eventHandler = MetersPanel\_eventHandler
+\}
+\end{DoxyCode}

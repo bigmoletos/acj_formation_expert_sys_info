@@ -1,0 +1,109 @@
+\hypertarget{exo16_2chrono_8cpp}{}\section{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo16/chrono.cpp File Reference}
+\label{exo16_2chrono_8cpp}\index{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo16/chrono.\+cpp@{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/exo16/chrono.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}header.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for chrono.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{exo16_2chrono_8cpp_a5477b8e42371a0ce314642c589f869d2}{chrono\+\_\+start} (std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \&t1)
+\begin{DoxyCompactList}\small\item\em Démarre un chronomètre en enregistrant le point de départ. \end{DoxyCompactList}\item 
+void \hyperlink{exo16_2chrono_8cpp_ae682c0df3455f44f957c20889172a6d7}{chrono\+\_\+end} (std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point t1, const string \&message)
+\begin{DoxyCompactList}\small\item\em Affiche le temps écoulé depuis le point de départ. \end{DoxyCompactList}\item 
+int \hyperlink{exo16_2chrono_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}Description de main\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{exo16_2chrono_8cpp_ae682c0df3455f44f957c20889172a6d7}\label{exo16_2chrono_8cpp_ae682c0df3455f44f957c20889172a6d7}} 
+\index{exo16/chrono.\+cpp@{exo16/chrono.\+cpp}!chrono\+\_\+end@{chrono\+\_\+end}}
+\index{chrono\+\_\+end@{chrono\+\_\+end}!exo16/chrono.\+cpp@{exo16/chrono.\+cpp}}
+\subsubsection{\texorpdfstring{chrono\+\_\+end()}{chrono\_end()}}
+{\footnotesize\ttfamily void chrono\+\_\+end (\begin{DoxyParamCaption}\item[{std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point}]{t1,  }\item[{const string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Affiche le temps écoulé depuis le point de départ. 
+
+\mbox{[}Description de chrono\+\_\+end\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t1} & Point de départ du chronomètre. \\
+\hline
+{\em message} & Message à afficher avec le temps écoulé. \mbox{[}Description de chrono\+\_\+end\mbox{]}\\
+\hline
+{\em t1} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+{\em \&message} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em t1} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+{\em \&message} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo16_2chrono_8cpp_a5477b8e42371a0ce314642c589f869d2}\label{exo16_2chrono_8cpp_a5477b8e42371a0ce314642c589f869d2}} 
+\index{exo16/chrono.\+cpp@{exo16/chrono.\+cpp}!chrono\+\_\+start@{chrono\+\_\+start}}
+\index{chrono\+\_\+start@{chrono\+\_\+start}!exo16/chrono.\+cpp@{exo16/chrono.\+cpp}}
+\subsubsection{\texorpdfstring{chrono\+\_\+start()}{chrono\_start()}}
+{\footnotesize\ttfamily void chrono\+\_\+start (\begin{DoxyParamCaption}\item[{std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \&}]{t1 }\end{DoxyParamCaption})}
+
+
+
+Démarre un chronomètre en enregistrant le point de départ. 
+
+\mbox{[}Description de chrono\+\_\+start\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t1} & Référence vers le point de départ du chronomètre. \mbox{[}Description de chrono\+\_\+start\mbox{]}\\
+\hline
+{\em \&t1} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em \&t1} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{exo16_2chrono_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{exo16_2chrono_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{exo16/chrono.\+cpp@{exo16/chrono.\+cpp}!main@{main}}
+\index{main@{main}!exo16/chrono.\+cpp@{exo16/chrono.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}Description de main\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Aucun} & \mbox{[}Cette fonction n\textquotesingle{}a pas de param�tres\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}

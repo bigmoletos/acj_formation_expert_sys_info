@@ -1,0 +1,58 @@
+\hypertarget{ZfsArcMeter_8c}{}\section{linux/download/htop-\/3.3.0/zfs/\+Zfs\+Arc\+Meter.c File Reference}
+\label{ZfsArcMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/zfs/\+Zfs\+Arc\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/zfs/\+Zfs\+Arc\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}zfs/\+Zfs\+Arc\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}zfs/\+Zfs\+Arc\+Stats.\+h\char`\"{}}\newline
+Include dependency graph for Zfs\+Arc\+Meter.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ZfsArcMeter_8c_a7e59a9b6dca8c2a7ddae27551f9beb23}{Zfs\+Arc\+Meter\+\_\+read\+Stats} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this, const \hyperlink{ZfsArcStats_8h_a2adeccbbba50329f61d34f355e5faddc}{Zfs\+Arc\+Stats} $\ast$stats)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{ZfsArcMeter_8c_a7c0e9fae0b1c58d7fe6b07d8d56b8111}{Zfs\+Arc\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ZfsArcMeter_8c_a7e59a9b6dca8c2a7ddae27551f9beb23}\label{ZfsArcMeter_8c_a7e59a9b6dca8c2a7ddae27551f9beb23}} 
+\index{Zfs\+Arc\+Meter.\+c@{Zfs\+Arc\+Meter.\+c}!Zfs\+Arc\+Meter\+\_\+read\+Stats@{Zfs\+Arc\+Meter\+\_\+read\+Stats}}
+\index{Zfs\+Arc\+Meter\+\_\+read\+Stats@{Zfs\+Arc\+Meter\+\_\+read\+Stats}!Zfs\+Arc\+Meter.\+c@{Zfs\+Arc\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Zfs\+Arc\+Meter\+\_\+read\+Stats()}{ZfsArcMeter\_readStats()}}
+{\footnotesize\ttfamily void Zfs\+Arc\+Meter\+\_\+read\+Stats (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this,  }\item[{const \hyperlink{ZfsArcStats_8h_a2adeccbbba50329f61d34f355e5faddc}{Zfs\+Arc\+Stats} $\ast$}]{stats }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ZfsArcMeter_8c_a7c0e9fae0b1c58d7fe6b07d8d56b8111}\label{ZfsArcMeter_8c_a7c0e9fae0b1c58d7fe6b07d8d56b8111}} 
+\index{Zfs\+Arc\+Meter.\+c@{Zfs\+Arc\+Meter.\+c}!Zfs\+Arc\+Meter\+\_\+class@{Zfs\+Arc\+Meter\+\_\+class}}
+\index{Zfs\+Arc\+Meter\+\_\+class@{Zfs\+Arc\+Meter\+\_\+class}!Zfs\+Arc\+Meter.\+c@{Zfs\+Arc\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Zfs\+Arc\+Meter\+\_\+class}{ZfsArcMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Zfs\+Arc\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = ZfsArcMeter\_display,
+   \},
+   .updateValues = ZfsArcMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 6,
+   .total = 100.0,
+   .attributes = ZfsArcMeter\_attributes,
+   .name = \textcolor{stringliteral}{"ZFSARC"},
+   .uiName = \textcolor{stringliteral}{"ZFS ARC"},
+   .caption = \textcolor{stringliteral}{"ARC: "}
+\}
+\end{DoxyCode}

@@ -1,0 +1,70 @@
+\hypertarget{fonctions__specialized_8c}{}\section{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts/fonctions\+\_\+specialized.c File Reference}
+\label{fonctions__specialized_8c}\index{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts/fonctions\+\_\+specialized.\+c@{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts/fonctions\+\_\+specialized.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}proto.\+h\char`\"{}}\newline
+Include dependency graph for fonctions\+\_\+specialized.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{fonctions__specialized_8c_a5288c254878c2f8b3c6d8ac35168baca}{saisir\+\_\+contact} (char $\ast$tab, size\+\_\+t taille\+\_\+chaine)
+\item 
+char $\ast$ \hyperlink{fonctions__specialized_8c_aafc6851c97662ea2229e3ed861be860d}{saisir\+\_\+numero\+\_\+tel} (char $\ast$tel, size\+\_\+t taille\+\_\+chaine)
+\item 
+void \hyperlink{fonctions__specialized_8c_abb8122386a946f06be33b40e5add44f9}{affichage\+\_\+liste\+\_\+contact} (char tab\mbox{[}$\,$\mbox{]}\mbox{[}\hyperlink{version__struct__fichier_2proto_8h_a967232a261ff7f17c1010e6fc27270a0}{T\+A\+I\+L\+L\+E\+\_\+\+N\+OM}\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{fonctions__specialized_8c_a650e6b4b92e0a2911454a812fb24fa7b}{affichage\+\_\+liste\+\_\+telephone} (char tab\mbox{[}$\,$\mbox{]}\mbox{[}\hyperlink{version__struct__fichier_2proto_8h_a06314783d85805a92d1da346eb4bc1d4}{T\+A\+I\+L\+L\+E\+\_\+\+T\+EL}\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{fonctions__specialized_8c_a1bfe6a29d08766a2530101d7150f4bec}{suppression\+\_\+contact} (char contact\mbox{[}$\,$\mbox{]}\mbox{[}\hyperlink{version__struct__fichier_2proto_8h_a967232a261ff7f17c1010e6fc27270a0}{T\+A\+I\+L\+L\+E\+\_\+\+N\+OM}\mbox{]}, char tel\mbox{[}$\,$\mbox{]}\mbox{[}\hyperlink{version__struct__fichier_2proto_8h_a06314783d85805a92d1da346eb4bc1d4}{T\+A\+I\+L\+L\+E\+\_\+\+T\+EL}\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau}, int numero\+\_\+contact)
+\item 
+void \hyperlink{fonctions__specialized_8c_a51ae69583b1f76532ae99b81891e11e2}{afficher\+\_\+menu} (void)
+\item 
+int \hyperlink{fonctions__specialized_8c_aa6ceaf1296381708f9c74b1a59520407}{rechercher\+\_\+contact} (char contacts\mbox{[}$\,$\mbox{]}\mbox{[}20\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau}, const char $\ast$nom)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fonctions__specialized_8c_abb8122386a946f06be33b40e5add44f9}\label{fonctions__specialized_8c_abb8122386a946f06be33b40e5add44f9}} 
+\index{fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}!affichage\+\_\+liste\+\_\+contact@{affichage\+\_\+liste\+\_\+contact}}
+\index{affichage\+\_\+liste\+\_\+contact@{affichage\+\_\+liste\+\_\+contact}!fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{affichage\+\_\+liste\+\_\+contact()}{affichage\_liste\_contact()}}
+{\footnotesize\ttfamily void affichage\+\_\+liste\+\_\+contact (\begin{DoxyParamCaption}\item[{char}]{tab\mbox{[}$\,$\mbox{]}\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+N\+O\+M\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fonctions__specialized_8c_a650e6b4b92e0a2911454a812fb24fa7b}\label{fonctions__specialized_8c_a650e6b4b92e0a2911454a812fb24fa7b}} 
+\index{fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}!affichage\+\_\+liste\+\_\+telephone@{affichage\+\_\+liste\+\_\+telephone}}
+\index{affichage\+\_\+liste\+\_\+telephone@{affichage\+\_\+liste\+\_\+telephone}!fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{affichage\+\_\+liste\+\_\+telephone()}{affichage\_liste\_telephone()}}
+{\footnotesize\ttfamily void affichage\+\_\+liste\+\_\+telephone (\begin{DoxyParamCaption}\item[{char}]{tab\mbox{[}$\,$\mbox{]}\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+T\+E\+L\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fonctions__specialized_8c_a51ae69583b1f76532ae99b81891e11e2}\label{fonctions__specialized_8c_a51ae69583b1f76532ae99b81891e11e2}} 
+\index{fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}!afficher\+\_\+menu@{afficher\+\_\+menu}}
+\index{afficher\+\_\+menu@{afficher\+\_\+menu}!fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{afficher\+\_\+menu()}{afficher\_menu()}}
+{\footnotesize\ttfamily void afficher\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fonctions__specialized_8c_aa6ceaf1296381708f9c74b1a59520407}\label{fonctions__specialized_8c_aa6ceaf1296381708f9c74b1a59520407}} 
+\index{fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}!rechercher\+\_\+contact@{rechercher\+\_\+contact}}
+\index{rechercher\+\_\+contact@{rechercher\+\_\+contact}!fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{rechercher\+\_\+contact()}{rechercher\_contact()}}
+{\footnotesize\ttfamily int rechercher\+\_\+contact (\begin{DoxyParamCaption}\item[{char}]{contacts\mbox{[}$\,$\mbox{]}\mbox{[}20\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau,  }\item[{const char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fonctions__specialized_8c_a5288c254878c2f8b3c6d8ac35168baca}\label{fonctions__specialized_8c_a5288c254878c2f8b3c6d8ac35168baca}} 
+\index{fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}!saisir\+\_\+contact@{saisir\+\_\+contact}}
+\index{saisir\+\_\+contact@{saisir\+\_\+contact}!fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{saisir\+\_\+contact()}{saisir\_contact()}}
+{\footnotesize\ttfamily char$\ast$ saisir\+\_\+contact (\begin{DoxyParamCaption}\item[{char $\ast$}]{tab,  }\item[{size\+\_\+t}]{taille\+\_\+chaine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fonctions__specialized_8c_aafc6851c97662ea2229e3ed861be860d}\label{fonctions__specialized_8c_aafc6851c97662ea2229e3ed861be860d}} 
+\index{fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}!saisir\+\_\+numero\+\_\+tel@{saisir\+\_\+numero\+\_\+tel}}
+\index{saisir\+\_\+numero\+\_\+tel@{saisir\+\_\+numero\+\_\+tel}!fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{saisir\+\_\+numero\+\_\+tel()}{saisir\_numero\_tel()}}
+{\footnotesize\ttfamily char$\ast$ saisir\+\_\+numero\+\_\+tel (\begin{DoxyParamCaption}\item[{char $\ast$}]{tel,  }\item[{size\+\_\+t}]{taille\+\_\+chaine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fonctions__specialized_8c_a1bfe6a29d08766a2530101d7150f4bec}\label{fonctions__specialized_8c_a1bfe6a29d08766a2530101d7150f4bec}} 
+\index{fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}!suppression\+\_\+contact@{suppression\+\_\+contact}}
+\index{suppression\+\_\+contact@{suppression\+\_\+contact}!fonctions\+\_\+specialized.\+c@{fonctions\+\_\+specialized.\+c}}
+\subsubsection{\texorpdfstring{suppression\+\_\+contact()}{suppression\_contact()}}
+{\footnotesize\ttfamily void suppression\+\_\+contact (\begin{DoxyParamCaption}\item[{char}]{contact\mbox{[}$\,$\mbox{]}\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+N\+O\+M\mbox{]},  }\item[{char}]{tel\mbox{[}$\,$\mbox{]}\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+T\+E\+L\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau,  }\item[{int}]{numero\+\_\+contact }\end{DoxyParamCaption})}
+

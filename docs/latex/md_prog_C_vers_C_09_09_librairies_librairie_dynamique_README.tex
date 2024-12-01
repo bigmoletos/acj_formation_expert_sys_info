@@ -1,0 +1,95 @@
+\subsection*{Preparation}
+
+1 -\/ Avec visual Code generer un projet de librairie dynamique et créer les fichiers \+:
+
+
+\begin{DoxyItemize}
+\item exported\+\_\+function.\+h
+\item \hyperlink{exported__function_8cpp}{exported\+\_\+function.\+cpp}
+\end{DoxyItemize}
+
+2 -\/ Generer le build
+
+3 -\/ Creer un projet et dans le main.\+cpp faire include de la librairie créée precedement dans notre cas\+: \#include\char`\"{}exported\+\_\+function.\+h\char`\"{}
+
+\subsection*{Compilation de la D\+LL Avec G\+CC ou Clang}
+
+On va generer une bibliotheque d\textquotesingle{}importation lib\+My\+First\+Dll.\+a
+
+
+\begin{DoxyCode}
+# Sous windows il faut parfois utiliser le -DBUILD\_DLL
+g++ -DBUILD\_DLL -shared -o MyFirstDll.dll exported\_function.cpp -Wl,--out-implib,libMyFirstDll.a
+\end{DoxyCode}
+
+
+\subsubsection*{Explications}
+
+
+\begin{DoxyItemize}
+\item -\/\+D\+B\+U\+I\+L\+D\+\_\+\+D\+LL \+: Définit le préprocesseur B\+U\+I\+L\+D\+\_\+\+D\+LL pour signaler que nous compilons une D\+LL.
+\item -\/shared \+: Indique au compilateur de créer une bibliothèque dynamique.
+\item -\/\+Wl,--out-\/implib,lib\+My\+First\+Dll.\+a \+: Génère une bibliothèque d\textquotesingle{}importation compatible avec G\+CC (lib\+My\+First\+Dll.\+a).
+\end{DoxyItemize}
+
+\subsection*{Compilation du projet Avec G\+CC ou Clang}
+
+Liez la bibliothèque avec l\textquotesingle{}option -\/L pour le répertoire et -\/l pour la bibliothèque
+
+
+\begin{DoxyCode}
+g++ main.cpp -IMyFirstDll -LMyFirstDll/x64/Debug -lMyFirstDll -o prog.exe
+\end{DoxyCode}
+
+
+\subsubsection*{Explications}
+
+
+\begin{DoxyItemize}
+\item -\/\+I\+My\+First\+Dll \+: Indique que main.\+cpp doit chercher les fichiers d\textquotesingle{}en-\/tête dans le répertoire actuel (.).
+\item -\/\+L\+My\+First\+Dll/x64/\+Debug \+: Spécifie où se trouve le fichier My\+First\+Dll.\+lib ou son équivalent.
+\item -\/l\+My\+First\+Dll \+: Indique le nom de la bibliothèque (sans préfixe lib et sans extension .lib).
+\end{DoxyItemize}
+
+prog.\+exe \+: Nom du fichier exécutable généré
+
+!! A\+T\+T\+E\+N\+T\+I\+ON IL N\textquotesingle{}Y A P\+AS D\textquotesingle{}E\+S\+P\+A\+CE E\+N\+T\+RE LE -\/L ou le -\/I et le path
+
+\subsection*{Structure finale des fichiers}
+
+librairies/ librairie\+\_\+dynamique/ main.\+cpp exported\+\_\+function.\+h My\+First\+Dll.\+dll lib\+My\+First\+Dll.\+a \# Bibliothèque d\textquotesingle{}importation générée par G\+CC
+
+\section*{Debug}
+
+le linker de Min\+GW, avec l\textquotesingle{}option -\/l\+My\+First\+Dll, attend une bibliothèque d\textquotesingle{}importation au format compatible G\+CC et utilisant la convention de nommage lib\+My\+First\+Dll.\+a, et non My\+Fisrt\+Dll.\+lib
+
+
+\begin{DoxyCode}
+mv MyFisrtDll.lib libMyFirstDll.a
+\end{DoxyCode}
+
+
+\subsection*{Étape 2 \+: Recompilez avec Min\+GW}
+
+Utilisez la commande suivante pour compiler votre projet client \+:
+
+
+\begin{DoxyCode}
+x86\_64-w64-mingw32-g++ main.cpp -o prog.exe -I. -L. -lMyFirstDll
+\end{DoxyCode}
+
+
+\subsection*{Étape 3 \+: Vérifiez les fichiers nécessaires}
+
+lib\+My\+First\+Dll.\+a \+: Le fichier de bibliothèque doit maintenant être correctement renommé. My\+First\+Dll.\+dll \+: Ce fichier doit être dans le même répertoire que l\textquotesingle{}exécutable prog.\+exe lors de l\textquotesingle{}exécution. exported\+\_\+function.\+h \+: Fichier d\textquotesingle{}en-\/tête utilisé dans main.\+cpp.
+
+\subsection*{Résultat attendu}
+
+L\textquotesingle{}exécution de prog.\+exe devrait afficher le message suivant dans le terminal \+:
+
+
+\begin{DoxyCode}
+Appel de la fonction exportée depuis la DLL...
+Message depuis la DLL dynamique !
+\end{DoxyCode}
+ 

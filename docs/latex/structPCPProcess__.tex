@@ -1,0 +1,373 @@
+\hypertarget{structPCPProcess__}{}\section{P\+C\+P\+Process\+\_\+ Struct Reference}
+\label{structPCPProcess__}\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+
+
+{\ttfamily \#include $<$P\+C\+P\+Process.\+h$>$}
+
+
+
+Collaboration diagram for P\+C\+P\+Process\+\_\+\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} \hyperlink{structPCPProcess___a972af1f4a96d6ac602c960bc8f09e9cb}{super}
+\item 
+unsigned int \hyperlink{structPCPProcess___ab2767b4c059c0e65c1ad7cdd1f43d2fb}{offset}
+\item 
+unsigned long int \hyperlink{structPCPProcess___a7a1b655d442c7eaea6477d35b2e3cfa5}{cminflt}
+\item 
+unsigned long int \hyperlink{structPCPProcess___a802f4755904374259f12ca659fad1fa6}{cmajflt}
+\item 
+unsigned long long int \hyperlink{structPCPProcess___ad1ea83bfdd17df3e7caa7300fe6f9d11}{utime}
+\item 
+unsigned long long int \hyperlink{structPCPProcess___a634ed7e86e8d4ced27c10eeb50f8463b}{stime}
+\item 
+unsigned long long int \hyperlink{structPCPProcess___ab616ec78a2bfc07e27f30701736018d8}{cutime}
+\item 
+unsigned long long int \hyperlink{structPCPProcess___acb3a4500661949f928bc7f5985c264b7}{cstime}
+\item 
+long \hyperlink{structPCPProcess___a0d13250398101b859ffa2d55406e031a}{m\+\_\+share}
+\item 
+long \hyperlink{structPCPProcess___afb5837e39fe053096eaf9abcd6f5bce0}{m\+\_\+priv}
+\item 
+long \hyperlink{structPCPProcess___ae23ff82054622d3f090ee092cc773d2b}{m\+\_\+pss}
+\item 
+long \hyperlink{structPCPProcess___abd1babdef0e9dc00cba878aa4ac87446}{m\+\_\+swap}
+\item 
+long \hyperlink{structPCPProcess___aa2d15a352fd6e7ae254509a011a25d2b}{m\+\_\+psswp}
+\item 
+long \hyperlink{structPCPProcess___ab798e9a0daa55ad43f1ddef191554924}{m\+\_\+trs}
+\item 
+long \hyperlink{structPCPProcess___a4806e221fe5856e935b180e4af2b9fc4}{m\+\_\+drs}
+\item 
+long \hyperlink{structPCPProcess___ace51f54605eefbc3d2a2aace73da132a}{m\+\_\+lrs}
+\item 
+long \hyperlink{structPCPProcess___a29667914381c0ec27d9a571d2598bd3b}{m\+\_\+dt}
+\item 
+unsigned long long \hyperlink{structPCPProcess___a7c4015f104e74c2caa221a2dcb76a579}{io\+\_\+rchar}
+\item 
+unsigned long long \hyperlink{structPCPProcess___ab65cc013d8bffb08d3763b764db727f9}{io\+\_\+wchar}
+\item 
+unsigned long long \hyperlink{structPCPProcess___ad4e0717c61b18f68a017cbf71433ff1a}{io\+\_\+syscr}
+\item 
+unsigned long long \hyperlink{structPCPProcess___a7c3fb04559e6d57da0df59f0353e1023}{io\+\_\+syscw}
+\item 
+unsigned long long \hyperlink{structPCPProcess___ae54a4036a10d57137e327a2733c5a39c}{io\+\_\+read\+\_\+bytes}
+\item 
+unsigned long long \hyperlink{structPCPProcess___aa5e915870e8f5036226f9d5c83fa8b32}{io\+\_\+write\+\_\+bytes}
+\item 
+unsigned long long \hyperlink{structPCPProcess___a9cc2e5536a6a500ea22c23bf341971b1}{io\+\_\+cancelled\+\_\+write\+\_\+bytes}
+\item 
+unsigned long long \hyperlink{structPCPProcess___a850ee23b4de2ad6960b15b9e0b3f5958}{io\+\_\+last\+\_\+scan\+\_\+time}
+\item 
+double \hyperlink{structPCPProcess___a4eb69435274820496bc8662b5a322262}{io\+\_\+rate\+\_\+read\+\_\+bps}
+\item 
+double \hyperlink{structPCPProcess___aceeb20592ae87171e24ada6c9bded0db}{io\+\_\+rate\+\_\+write\+\_\+bps}
+\item 
+char $\ast$ \hyperlink{structPCPProcess___a16a2d5c56a96045ffb30781646655c25}{cgroup}
+\item 
+char $\ast$ \hyperlink{structPCPProcess___aa6408a9294fb83de51136892fd706f9a}{cgroup\+\_\+short}
+\item 
+char $\ast$ \hyperlink{structPCPProcess___a61afd86f63443086e3680855a1b57cc8}{container\+\_\+short}
+\item 
+long int \hyperlink{structPCPProcess___a6577ca9e89f6097c32f4b43317d0ac93}{autogroup\+\_\+id}
+\item 
+int \hyperlink{structPCPProcess___a5a24116726a9a30ef14e6269db6dc7d5}{autogroup\+\_\+nice}
+\item 
+unsigned int \hyperlink{structPCPProcess___a4419acafcd5ae8b6f8b1c2d51463f51b}{oom}
+\item 
+unsigned long long int \hyperlink{structPCPProcess___a41014d15bb1b9fd41f22d81c186c17cf}{delay\+\_\+read\+\_\+time}
+\item 
+unsigned long long \hyperlink{structPCPProcess___aeaa612461ff4a013024fe65d5aa1e3b1}{cpu\+\_\+delay\+\_\+total}
+\item 
+unsigned long long \hyperlink{structPCPProcess___a221dac787718a536e9335c4019720d07}{blkio\+\_\+delay\+\_\+total}
+\item 
+unsigned long long \hyperlink{structPCPProcess___abebe6970e739d4ccacde3ef09315706f}{swapin\+\_\+delay\+\_\+total}
+\item 
+float \hyperlink{structPCPProcess___ae6f8fb1907d53206cdbb43e79b58e1a3}{cpu\+\_\+delay\+\_\+percent}
+\item 
+float \hyperlink{structPCPProcess___a06ff42e6906a3849259d9810eb5492ec}{blkio\+\_\+delay\+\_\+percent}
+\item 
+float \hyperlink{structPCPProcess___a1f2cbe836704194c9555511a1a07ba22}{swapin\+\_\+delay\+\_\+percent}
+\item 
+unsigned long \hyperlink{structPCPProcess___ace40f9e97d2802a545800da72f7dac45}{ctxt\+\_\+total}
+\item 
+unsigned long \hyperlink{structPCPProcess___a1c00b4fdacb89284555210edb7ea73b4}{ctxt\+\_\+diff}
+\item 
+char $\ast$ \hyperlink{structPCPProcess___a7da58a550cd96714773294fb5f06b83c}{secattr}
+\item 
+unsigned long long int \hyperlink{structPCPProcess___a322d911c8189bae7c6b832ffd0b93032}{last\+\_\+mlrs\+\_\+calctime}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structPCPProcess___a6577ca9e89f6097c32f4b43317d0ac93}\label{structPCPProcess___a6577ca9e89f6097c32f4b43317d0ac93}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!autogroup\+\_\+id@{autogroup\+\_\+id}}
+\index{autogroup\+\_\+id@{autogroup\+\_\+id}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{autogroup\+\_\+id}{autogroup\_id}}
+{\footnotesize\ttfamily long int P\+C\+P\+Process\+\_\+\+::autogroup\+\_\+id}
+
+\mbox{\Hypertarget{structPCPProcess___a5a24116726a9a30ef14e6269db6dc7d5}\label{structPCPProcess___a5a24116726a9a30ef14e6269db6dc7d5}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!autogroup\+\_\+nice@{autogroup\+\_\+nice}}
+\index{autogroup\+\_\+nice@{autogroup\+\_\+nice}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{autogroup\+\_\+nice}{autogroup\_nice}}
+{\footnotesize\ttfamily int P\+C\+P\+Process\+\_\+\+::autogroup\+\_\+nice}
+
+\mbox{\Hypertarget{structPCPProcess___a06ff42e6906a3849259d9810eb5492ec}\label{structPCPProcess___a06ff42e6906a3849259d9810eb5492ec}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!blkio\+\_\+delay\+\_\+percent@{blkio\+\_\+delay\+\_\+percent}}
+\index{blkio\+\_\+delay\+\_\+percent@{blkio\+\_\+delay\+\_\+percent}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{blkio\+\_\+delay\+\_\+percent}{blkio\_delay\_percent}}
+{\footnotesize\ttfamily float P\+C\+P\+Process\+\_\+\+::blkio\+\_\+delay\+\_\+percent}
+
+\mbox{\Hypertarget{structPCPProcess___a221dac787718a536e9335c4019720d07}\label{structPCPProcess___a221dac787718a536e9335c4019720d07}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!blkio\+\_\+delay\+\_\+total@{blkio\+\_\+delay\+\_\+total}}
+\index{blkio\+\_\+delay\+\_\+total@{blkio\+\_\+delay\+\_\+total}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{blkio\+\_\+delay\+\_\+total}{blkio\_delay\_total}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::blkio\+\_\+delay\+\_\+total}
+
+\mbox{\Hypertarget{structPCPProcess___a16a2d5c56a96045ffb30781646655c25}\label{structPCPProcess___a16a2d5c56a96045ffb30781646655c25}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!cgroup@{cgroup}}
+\index{cgroup@{cgroup}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cgroup}{cgroup}}
+{\footnotesize\ttfamily char$\ast$ P\+C\+P\+Process\+\_\+\+::cgroup}
+
+\mbox{\Hypertarget{structPCPProcess___aa6408a9294fb83de51136892fd706f9a}\label{structPCPProcess___aa6408a9294fb83de51136892fd706f9a}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!cgroup\+\_\+short@{cgroup\+\_\+short}}
+\index{cgroup\+\_\+short@{cgroup\+\_\+short}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cgroup\+\_\+short}{cgroup\_short}}
+{\footnotesize\ttfamily char$\ast$ P\+C\+P\+Process\+\_\+\+::cgroup\+\_\+short}
+
+\mbox{\Hypertarget{structPCPProcess___a802f4755904374259f12ca659fad1fa6}\label{structPCPProcess___a802f4755904374259f12ca659fad1fa6}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!cmajflt@{cmajflt}}
+\index{cmajflt@{cmajflt}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cmajflt}{cmajflt}}
+{\footnotesize\ttfamily unsigned long int P\+C\+P\+Process\+\_\+\+::cmajflt}
+
+\mbox{\Hypertarget{structPCPProcess___a7a1b655d442c7eaea6477d35b2e3cfa5}\label{structPCPProcess___a7a1b655d442c7eaea6477d35b2e3cfa5}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!cminflt@{cminflt}}
+\index{cminflt@{cminflt}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cminflt}{cminflt}}
+{\footnotesize\ttfamily unsigned long int P\+C\+P\+Process\+\_\+\+::cminflt}
+
+\mbox{\Hypertarget{structPCPProcess___a61afd86f63443086e3680855a1b57cc8}\label{structPCPProcess___a61afd86f63443086e3680855a1b57cc8}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!container\+\_\+short@{container\+\_\+short}}
+\index{container\+\_\+short@{container\+\_\+short}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{container\+\_\+short}{container\_short}}
+{\footnotesize\ttfamily char$\ast$ P\+C\+P\+Process\+\_\+\+::container\+\_\+short}
+
+\mbox{\Hypertarget{structPCPProcess___ae6f8fb1907d53206cdbb43e79b58e1a3}\label{structPCPProcess___ae6f8fb1907d53206cdbb43e79b58e1a3}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!cpu\+\_\+delay\+\_\+percent@{cpu\+\_\+delay\+\_\+percent}}
+\index{cpu\+\_\+delay\+\_\+percent@{cpu\+\_\+delay\+\_\+percent}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cpu\+\_\+delay\+\_\+percent}{cpu\_delay\_percent}}
+{\footnotesize\ttfamily float P\+C\+P\+Process\+\_\+\+::cpu\+\_\+delay\+\_\+percent}
+
+\mbox{\Hypertarget{structPCPProcess___aeaa612461ff4a013024fe65d5aa1e3b1}\label{structPCPProcess___aeaa612461ff4a013024fe65d5aa1e3b1}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!cpu\+\_\+delay\+\_\+total@{cpu\+\_\+delay\+\_\+total}}
+\index{cpu\+\_\+delay\+\_\+total@{cpu\+\_\+delay\+\_\+total}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cpu\+\_\+delay\+\_\+total}{cpu\_delay\_total}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::cpu\+\_\+delay\+\_\+total}
+
+\mbox{\Hypertarget{structPCPProcess___acb3a4500661949f928bc7f5985c264b7}\label{structPCPProcess___acb3a4500661949f928bc7f5985c264b7}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!cstime@{cstime}}
+\index{cstime@{cstime}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cstime}{cstime}}
+{\footnotesize\ttfamily unsigned long long int P\+C\+P\+Process\+\_\+\+::cstime}
+
+\mbox{\Hypertarget{structPCPProcess___a1c00b4fdacb89284555210edb7ea73b4}\label{structPCPProcess___a1c00b4fdacb89284555210edb7ea73b4}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!ctxt\+\_\+diff@{ctxt\+\_\+diff}}
+\index{ctxt\+\_\+diff@{ctxt\+\_\+diff}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{ctxt\+\_\+diff}{ctxt\_diff}}
+{\footnotesize\ttfamily unsigned long P\+C\+P\+Process\+\_\+\+::ctxt\+\_\+diff}
+
+\mbox{\Hypertarget{structPCPProcess___ace40f9e97d2802a545800da72f7dac45}\label{structPCPProcess___ace40f9e97d2802a545800da72f7dac45}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!ctxt\+\_\+total@{ctxt\+\_\+total}}
+\index{ctxt\+\_\+total@{ctxt\+\_\+total}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{ctxt\+\_\+total}{ctxt\_total}}
+{\footnotesize\ttfamily unsigned long P\+C\+P\+Process\+\_\+\+::ctxt\+\_\+total}
+
+\mbox{\Hypertarget{structPCPProcess___ab616ec78a2bfc07e27f30701736018d8}\label{structPCPProcess___ab616ec78a2bfc07e27f30701736018d8}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!cutime@{cutime}}
+\index{cutime@{cutime}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cutime}{cutime}}
+{\footnotesize\ttfamily unsigned long long int P\+C\+P\+Process\+\_\+\+::cutime}
+
+\mbox{\Hypertarget{structPCPProcess___a41014d15bb1b9fd41f22d81c186c17cf}\label{structPCPProcess___a41014d15bb1b9fd41f22d81c186c17cf}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!delay\+\_\+read\+\_\+time@{delay\+\_\+read\+\_\+time}}
+\index{delay\+\_\+read\+\_\+time@{delay\+\_\+read\+\_\+time}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{delay\+\_\+read\+\_\+time}{delay\_read\_time}}
+{\footnotesize\ttfamily unsigned long long int P\+C\+P\+Process\+\_\+\+::delay\+\_\+read\+\_\+time}
+
+\mbox{\Hypertarget{structPCPProcess___a9cc2e5536a6a500ea22c23bf341971b1}\label{structPCPProcess___a9cc2e5536a6a500ea22c23bf341971b1}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+cancelled\+\_\+write\+\_\+bytes@{io\+\_\+cancelled\+\_\+write\+\_\+bytes}}
+\index{io\+\_\+cancelled\+\_\+write\+\_\+bytes@{io\+\_\+cancelled\+\_\+write\+\_\+bytes}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+cancelled\+\_\+write\+\_\+bytes}{io\_cancelled\_write\_bytes}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::io\+\_\+cancelled\+\_\+write\+\_\+bytes}
+
+\mbox{\Hypertarget{structPCPProcess___a850ee23b4de2ad6960b15b9e0b3f5958}\label{structPCPProcess___a850ee23b4de2ad6960b15b9e0b3f5958}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+last\+\_\+scan\+\_\+time@{io\+\_\+last\+\_\+scan\+\_\+time}}
+\index{io\+\_\+last\+\_\+scan\+\_\+time@{io\+\_\+last\+\_\+scan\+\_\+time}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+last\+\_\+scan\+\_\+time}{io\_last\_scan\_time}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::io\+\_\+last\+\_\+scan\+\_\+time}
+
+\mbox{\Hypertarget{structPCPProcess___a4eb69435274820496bc8662b5a322262}\label{structPCPProcess___a4eb69435274820496bc8662b5a322262}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+rate\+\_\+read\+\_\+bps@{io\+\_\+rate\+\_\+read\+\_\+bps}}
+\index{io\+\_\+rate\+\_\+read\+\_\+bps@{io\+\_\+rate\+\_\+read\+\_\+bps}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+rate\+\_\+read\+\_\+bps}{io\_rate\_read\_bps}}
+{\footnotesize\ttfamily double P\+C\+P\+Process\+\_\+\+::io\+\_\+rate\+\_\+read\+\_\+bps}
+
+\mbox{\Hypertarget{structPCPProcess___aceeb20592ae87171e24ada6c9bded0db}\label{structPCPProcess___aceeb20592ae87171e24ada6c9bded0db}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+rate\+\_\+write\+\_\+bps@{io\+\_\+rate\+\_\+write\+\_\+bps}}
+\index{io\+\_\+rate\+\_\+write\+\_\+bps@{io\+\_\+rate\+\_\+write\+\_\+bps}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+rate\+\_\+write\+\_\+bps}{io\_rate\_write\_bps}}
+{\footnotesize\ttfamily double P\+C\+P\+Process\+\_\+\+::io\+\_\+rate\+\_\+write\+\_\+bps}
+
+\mbox{\Hypertarget{structPCPProcess___a7c4015f104e74c2caa221a2dcb76a579}\label{structPCPProcess___a7c4015f104e74c2caa221a2dcb76a579}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+rchar@{io\+\_\+rchar}}
+\index{io\+\_\+rchar@{io\+\_\+rchar}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+rchar}{io\_rchar}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::io\+\_\+rchar}
+
+\mbox{\Hypertarget{structPCPProcess___ae54a4036a10d57137e327a2733c5a39c}\label{structPCPProcess___ae54a4036a10d57137e327a2733c5a39c}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+read\+\_\+bytes@{io\+\_\+read\+\_\+bytes}}
+\index{io\+\_\+read\+\_\+bytes@{io\+\_\+read\+\_\+bytes}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+read\+\_\+bytes}{io\_read\_bytes}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::io\+\_\+read\+\_\+bytes}
+
+\mbox{\Hypertarget{structPCPProcess___ad4e0717c61b18f68a017cbf71433ff1a}\label{structPCPProcess___ad4e0717c61b18f68a017cbf71433ff1a}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+syscr@{io\+\_\+syscr}}
+\index{io\+\_\+syscr@{io\+\_\+syscr}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+syscr}{io\_syscr}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::io\+\_\+syscr}
+
+\mbox{\Hypertarget{structPCPProcess___a7c3fb04559e6d57da0df59f0353e1023}\label{structPCPProcess___a7c3fb04559e6d57da0df59f0353e1023}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+syscw@{io\+\_\+syscw}}
+\index{io\+\_\+syscw@{io\+\_\+syscw}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+syscw}{io\_syscw}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::io\+\_\+syscw}
+
+\mbox{\Hypertarget{structPCPProcess___ab65cc013d8bffb08d3763b764db727f9}\label{structPCPProcess___ab65cc013d8bffb08d3763b764db727f9}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+wchar@{io\+\_\+wchar}}
+\index{io\+\_\+wchar@{io\+\_\+wchar}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+wchar}{io\_wchar}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::io\+\_\+wchar}
+
+\mbox{\Hypertarget{structPCPProcess___aa5e915870e8f5036226f9d5c83fa8b32}\label{structPCPProcess___aa5e915870e8f5036226f9d5c83fa8b32}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!io\+\_\+write\+\_\+bytes@{io\+\_\+write\+\_\+bytes}}
+\index{io\+\_\+write\+\_\+bytes@{io\+\_\+write\+\_\+bytes}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+write\+\_\+bytes}{io\_write\_bytes}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::io\+\_\+write\+\_\+bytes}
+
+\mbox{\Hypertarget{structPCPProcess___a322d911c8189bae7c6b832ffd0b93032}\label{structPCPProcess___a322d911c8189bae7c6b832ffd0b93032}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!last\+\_\+mlrs\+\_\+calctime@{last\+\_\+mlrs\+\_\+calctime}}
+\index{last\+\_\+mlrs\+\_\+calctime@{last\+\_\+mlrs\+\_\+calctime}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{last\+\_\+mlrs\+\_\+calctime}{last\_mlrs\_calctime}}
+{\footnotesize\ttfamily unsigned long long int P\+C\+P\+Process\+\_\+\+::last\+\_\+mlrs\+\_\+calctime}
+
+\mbox{\Hypertarget{structPCPProcess___a4806e221fe5856e935b180e4af2b9fc4}\label{structPCPProcess___a4806e221fe5856e935b180e4af2b9fc4}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!m\+\_\+drs@{m\+\_\+drs}}
+\index{m\+\_\+drs@{m\+\_\+drs}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+drs}{m\_drs}}
+{\footnotesize\ttfamily long P\+C\+P\+Process\+\_\+\+::m\+\_\+drs}
+
+\mbox{\Hypertarget{structPCPProcess___a29667914381c0ec27d9a571d2598bd3b}\label{structPCPProcess___a29667914381c0ec27d9a571d2598bd3b}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!m\+\_\+dt@{m\+\_\+dt}}
+\index{m\+\_\+dt@{m\+\_\+dt}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+dt}{m\_dt}}
+{\footnotesize\ttfamily long P\+C\+P\+Process\+\_\+\+::m\+\_\+dt}
+
+\mbox{\Hypertarget{structPCPProcess___ace51f54605eefbc3d2a2aace73da132a}\label{structPCPProcess___ace51f54605eefbc3d2a2aace73da132a}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!m\+\_\+lrs@{m\+\_\+lrs}}
+\index{m\+\_\+lrs@{m\+\_\+lrs}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+lrs}{m\_lrs}}
+{\footnotesize\ttfamily long P\+C\+P\+Process\+\_\+\+::m\+\_\+lrs}
+
+\mbox{\Hypertarget{structPCPProcess___afb5837e39fe053096eaf9abcd6f5bce0}\label{structPCPProcess___afb5837e39fe053096eaf9abcd6f5bce0}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!m\+\_\+priv@{m\+\_\+priv}}
+\index{m\+\_\+priv@{m\+\_\+priv}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+priv}{m\_priv}}
+{\footnotesize\ttfamily long P\+C\+P\+Process\+\_\+\+::m\+\_\+priv}
+
+\mbox{\Hypertarget{structPCPProcess___ae23ff82054622d3f090ee092cc773d2b}\label{structPCPProcess___ae23ff82054622d3f090ee092cc773d2b}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!m\+\_\+pss@{m\+\_\+pss}}
+\index{m\+\_\+pss@{m\+\_\+pss}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+pss}{m\_pss}}
+{\footnotesize\ttfamily long P\+C\+P\+Process\+\_\+\+::m\+\_\+pss}
+
+\mbox{\Hypertarget{structPCPProcess___aa2d15a352fd6e7ae254509a011a25d2b}\label{structPCPProcess___aa2d15a352fd6e7ae254509a011a25d2b}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!m\+\_\+psswp@{m\+\_\+psswp}}
+\index{m\+\_\+psswp@{m\+\_\+psswp}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+psswp}{m\_psswp}}
+{\footnotesize\ttfamily long P\+C\+P\+Process\+\_\+\+::m\+\_\+psswp}
+
+\mbox{\Hypertarget{structPCPProcess___a0d13250398101b859ffa2d55406e031a}\label{structPCPProcess___a0d13250398101b859ffa2d55406e031a}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!m\+\_\+share@{m\+\_\+share}}
+\index{m\+\_\+share@{m\+\_\+share}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+share}{m\_share}}
+{\footnotesize\ttfamily long P\+C\+P\+Process\+\_\+\+::m\+\_\+share}
+
+\mbox{\Hypertarget{structPCPProcess___abd1babdef0e9dc00cba878aa4ac87446}\label{structPCPProcess___abd1babdef0e9dc00cba878aa4ac87446}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!m\+\_\+swap@{m\+\_\+swap}}
+\index{m\+\_\+swap@{m\+\_\+swap}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+swap}{m\_swap}}
+{\footnotesize\ttfamily long P\+C\+P\+Process\+\_\+\+::m\+\_\+swap}
+
+\mbox{\Hypertarget{structPCPProcess___ab798e9a0daa55ad43f1ddef191554924}\label{structPCPProcess___ab798e9a0daa55ad43f1ddef191554924}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!m\+\_\+trs@{m\+\_\+trs}}
+\index{m\+\_\+trs@{m\+\_\+trs}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+trs}{m\_trs}}
+{\footnotesize\ttfamily long P\+C\+P\+Process\+\_\+\+::m\+\_\+trs}
+
+\mbox{\Hypertarget{structPCPProcess___ab2767b4c059c0e65c1ad7cdd1f43d2fb}\label{structPCPProcess___ab2767b4c059c0e65c1ad7cdd1f43d2fb}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!offset@{offset}}
+\index{offset@{offset}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily unsigned int P\+C\+P\+Process\+\_\+\+::offset}
+
+\mbox{\Hypertarget{structPCPProcess___a4419acafcd5ae8b6f8b1c2d51463f51b}\label{structPCPProcess___a4419acafcd5ae8b6f8b1c2d51463f51b}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!oom@{oom}}
+\index{oom@{oom}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{oom}{oom}}
+{\footnotesize\ttfamily unsigned int P\+C\+P\+Process\+\_\+\+::oom}
+
+\mbox{\Hypertarget{structPCPProcess___a7da58a550cd96714773294fb5f06b83c}\label{structPCPProcess___a7da58a550cd96714773294fb5f06b83c}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!secattr@{secattr}}
+\index{secattr@{secattr}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{secattr}{secattr}}
+{\footnotesize\ttfamily char$\ast$ P\+C\+P\+Process\+\_\+\+::secattr}
+
+\mbox{\Hypertarget{structPCPProcess___a634ed7e86e8d4ced27c10eeb50f8463b}\label{structPCPProcess___a634ed7e86e8d4ced27c10eeb50f8463b}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!stime@{stime}}
+\index{stime@{stime}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{stime}{stime}}
+{\footnotesize\ttfamily unsigned long long int P\+C\+P\+Process\+\_\+\+::stime}
+
+\mbox{\Hypertarget{structPCPProcess___a972af1f4a96d6ac602c960bc8f09e9cb}\label{structPCPProcess___a972af1f4a96d6ac602c960bc8f09e9cb}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!super@{super}}
+\index{super@{super}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{super}{super}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} P\+C\+P\+Process\+\_\+\+::super}
+
+\mbox{\Hypertarget{structPCPProcess___a1f2cbe836704194c9555511a1a07ba22}\label{structPCPProcess___a1f2cbe836704194c9555511a1a07ba22}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!swapin\+\_\+delay\+\_\+percent@{swapin\+\_\+delay\+\_\+percent}}
+\index{swapin\+\_\+delay\+\_\+percent@{swapin\+\_\+delay\+\_\+percent}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{swapin\+\_\+delay\+\_\+percent}{swapin\_delay\_percent}}
+{\footnotesize\ttfamily float P\+C\+P\+Process\+\_\+\+::swapin\+\_\+delay\+\_\+percent}
+
+\mbox{\Hypertarget{structPCPProcess___abebe6970e739d4ccacde3ef09315706f}\label{structPCPProcess___abebe6970e739d4ccacde3ef09315706f}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!swapin\+\_\+delay\+\_\+total@{swapin\+\_\+delay\+\_\+total}}
+\index{swapin\+\_\+delay\+\_\+total@{swapin\+\_\+delay\+\_\+total}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{swapin\+\_\+delay\+\_\+total}{swapin\_delay\_total}}
+{\footnotesize\ttfamily unsigned long long P\+C\+P\+Process\+\_\+\+::swapin\+\_\+delay\+\_\+total}
+
+\mbox{\Hypertarget{structPCPProcess___ad1ea83bfdd17df3e7caa7300fe6f9d11}\label{structPCPProcess___ad1ea83bfdd17df3e7caa7300fe6f9d11}} 
+\index{P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}!utime@{utime}}
+\index{utime@{utime}!P\+C\+P\+Process\+\_\+@{P\+C\+P\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{utime}{utime}}
+{\footnotesize\ttfamily unsigned long long int P\+C\+P\+Process\+\_\+\+::utime}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+linux/download/htop-\/3.\+3.\+0/pcp/\hyperlink{PCPProcess_8h}{P\+C\+P\+Process.\+h}\end{DoxyCompactItemize}

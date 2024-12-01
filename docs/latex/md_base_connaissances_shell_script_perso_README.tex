@@ -1,0 +1,152 @@
+Ce répertoire contient des scripts automatisés pour l\textquotesingle{}installation de Kubernetes sur des machines Ubuntu, avec une configuration master-\/worker.
+
+\subsection*{Structure du Projet}
+
+
+\begin{DoxyCode}
+C:\(\backslash\)AJC\_formation\(\backslash\)docker\(\backslash\)kubernetes\(\backslash\)script\_perso\(\backslash\)
+├── README.md
+├── install\_k8s\_master.sh
+└── install\_k8s\_worker.sh
+\end{DoxyCode}
+
+
+\subsection*{Prérequis}
+
+
+\begin{DoxyItemize}
+\item Ubuntu Server (recommandé \+: 20.\+04 L\+TS ou plus récent)
+\item Minimum 2 GB R\+AM par machine
+\item Minimum 2 C\+PU par machine
+\item Connexion réseau entre les machines
+\item Droits sudo
+\item Ports ouverts \+:
+\begin{DoxyItemize}
+\item Master \+: 6443, 2379-\/2380, 10250, 10251, 10252
+\item Worker \+: 10250, 30000-\/32767
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Installation}
+
+
+\begin{DoxyEnumerate}
+\item Cloner ou copier les scripts sur les machines respectives \+: 
+\begin{DoxyCode}
+git clone <url\_repo> /tmp/k8s-scripts
+cd /tmp/k8s-scripts
+chmod +x install\_k8s\_*.sh
+\end{DoxyCode}
+
+\item Sur le nœud master \+: 
+\begin{DoxyCode}
+sudo ./install\_k8s\_master.sh
+# ou en mode automatique
+sudo ./install\_k8s\_master.sh -y
+\end{DoxyCode}
+
+\item Noter les informations de jointure fournies à la fin de l\textquotesingle{}installation du master
+\item Sur chaque nœud worker \+: 
+\begin{DoxyCode}
+sudo ./install\_k8s\_worker.sh <numero\_worker>
+# ou en mode automatique avec les informations du master
+sudo ./install\_k8s\_worker.sh -y <numero\_worker> <ip\_master> <token> <hash>
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\subsection*{Options des Scripts}
+
+\#\#\# Script Master (install\+\_\+k8s\+\_\+master.\+sh) 
+\begin{DoxyCode}
+Options:
+    -h, --help      Affiche l'aide
+    -y, --yes       Mode automatique (pas de demande de confirmation)
+\end{DoxyCode}
+
+
+\#\#\# Script Worker (install\+\_\+k8s\+\_\+worker.\+sh) 
+\begin{DoxyCode}
+Options:
+    -h, --help      Affiche l'aide
+    -y, --yes       Mode automatique
+Arguments:
+    worker\_number   Numéro du worker (obligatoire)
+    master\_ip       IP du master (optionnel en mode interactif)
+    token          Token de jointure (optionnel en mode interactif)
+    discovery\_hash  Hash de découverte (optionnel en mode interactif)
+\end{DoxyCode}
+
+
+\subsection*{Logs et Résumé}
+
+Les scripts génèrent deux fichiers \+:
+\begin{DoxyItemize}
+\item {\ttfamily k8s\+\_\+install.\+log} \+: Journal détaillé de l\textquotesingle{}installation
+\item {\ttfamily k8s\+\_\+summary.\+md} \+: Résumé des actions effectuées
+\end{DoxyItemize}
+
+\subsection*{Vérification de l\textquotesingle{}Installation}
+
+Sur le nœud master, vérifiez l\textquotesingle{}état du cluster \+: 
+\begin{DoxyCode}
+kubectl get nodes
+kubectl get pods --all-namespaces
+\end{DoxyCode}
+
+
+\subsection*{Dépannage}
+
+Si l\textquotesingle{}installation échoue \+:
+
+
+\begin{DoxyEnumerate}
+\item Vérifiez les logs \+: 
+\begin{DoxyCode}
+cat k8s\_install.log
+\end{DoxyCode}
+
+\item Reset Kubernetes si nécessaire \+: 
+\begin{DoxyCode}
+sudo kubeadm reset
+sudo systemctl stop kubelet
+sudo systemctl disable kubelet
+sudo rm -rf /etc/kubernetes/
+\end{DoxyCode}
+
+\item Vérifiez les ports \+: 
+\begin{DoxyCode}
+sudo netstat -tulpn | grep -E '6443|2379|2380|10250|10251|10252'
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\subsection*{Documentation Supplémentaire}
+
+Pour plus d\textquotesingle{}informations, consultez \+:
+\begin{DoxyItemize}
+\item \href{https://kubernetes.io/docs/home/}{\tt Documentation Kubernetes}
+\item \href{https://kubernetes.io/docs/setup/}{\tt Guide d\textquotesingle{}installation Kubernetes}
+\item Les fichiers dans {\ttfamily C\+:\textbackslash{}A\+J\+C\+\_\+formation\textbackslash{}docker\textbackslash{}kubernetes\textbackslash{}} pour des informations spécifiques à votre environnement
+\end{DoxyItemize}
+
+\subsection*{Contribution}
+
+Pour contribuer à l\textquotesingle{}amélioration de ces scripts \+:
+\begin{DoxyEnumerate}
+\item Forkez le projet
+\item Créez une branche pour votre fonctionnalité
+\item Soumettez une pull request
+\end{DoxyEnumerate}
+
+\subsection*{Licence}
+
+Ces scripts sont fournis \char`\"{}tels quels\char`\"{}, sans garantie d\textquotesingle{}aucune sorte.
+
+\subsection*{Auteur}
+
+\mbox{[}Votre nom\mbox{]}
+
+\subsection*{Dernière mise à jour}
+
+\mbox{[}Date de la dernière mise à jour\mbox{]} 

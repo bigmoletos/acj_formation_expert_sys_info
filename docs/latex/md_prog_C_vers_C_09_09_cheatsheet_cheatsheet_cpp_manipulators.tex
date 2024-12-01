@@ -1,0 +1,35 @@
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Manipulateur }&\textbf{ Description }&\textbf{ Exemple  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Manipulateur }&\textbf{ Description }&\textbf{ Exemple  }\\\cline{1-3}
+\endhead
+boolalpha &Affiche les valeurs booléennes comme \char`\"{}true\char`\"{} et \char`\"{}false\char`\"{} au lieu de \char`\"{}1\char`\"{} et \char`\"{}0\char`\"{}. &cout $<$$<$ boolalpha $<$$<$ false; \\\cline{1-3}
+dec &Représente les entiers sous forme de chiffres décimaux. &cout $<$$<$ dec $<$$<$ 12; \\\cline{1-3}
+endl &Affiche un caractère de nouvelle ligne. Il vide également le tampon de sortie, ce qui le rend moins efficace que l\textquotesingle{}impression avec ~\newline
+. &cout $<$$<$ \char`\"{}\+Ligne 1\char`\"{} $<$$<$ endl $<$$<$ \char`\"{}\+Ligne 2\char`\"{}; \\\cline{1-3}
+ends &Affiche le caractère de fin de chaîne utilisé pour terminer les chaînes de style C. Principalement utilisé lors de l\textquotesingle{}écriture dans des fichiers. &cout $<$$<$ \char`\"{}\+Hello World!\char`\"{} $<$$<$ ends; \\\cline{1-3}
+fixed &Représente les nombres flottants avec un nombre fixe de décimales. Le nombre de décimales peut être établi avec le manipulateur setprecision(). &cout $<$$<$ fixed $<$$<$ 19.\+99; \\\cline{1-3}
+hex &Représente les entiers sous forme de chiffres hexadécimaux. &cout $<$$<$ hex $<$$<$ 12; \\\cline{1-3}
+internal &Si une largeur est spécifiée (à l\textquotesingle{}aide du manipulateur setw()), les nombres auront leur signe aligné à gauche tandis que la valeur sera alignée à droite. &cout $<$$<$ setw(10) $<$$<$ internal $<$$<$ -\/12345; \\\cline{1-3}
+left &Si une largeur est spécifiée (à l\textquotesingle{}aide du manipulateur setw()), aligne la sortie à gauche. &cout $<$$<$ setw(10) $<$$<$ left $<$$<$ \char`\"{}\+Bonjour\char`\"{}; \\\cline{1-3}
+noboolalpha &Utilisé pour réinitialiser la modification effectuée par le manipulateur boolalpha. &cout $<$$<$ noboolalpha $<$$<$ false; \\\cline{1-3}
+noshowbase &Utilisé pour réinitialiser la modification effectuée par le manipulateur showbase. &cout $<$$<$ hex $<$$<$ noshowbase $<$$<$ 12; \\\cline{1-3}
+noshowpoint &Utilisé pour réinitialiser la modification effectuée par le manipulateur showpoint. &cout $<$$<$ noshowpoint $<$$<$ 12345.\+0; \\\cline{1-3}
+noshowpos &Utilisé pour réinitialiser la modification effectuée par le manipulateur showpos. &cout $<$$<$ noshowpos $<$$<$ 12; \\\cline{1-3}
+nouppercase &Utilisé pour réinitialiser la modification effectuée par le manipulateur uppercase. &cout $<$$<$ hex $<$$<$ nouppercase $<$$<$ 12; \\\cline{1-3}
+oct &Représente les entiers sous forme de chiffres octaux. &cout $<$$<$ oct $<$$<$ 12; \\\cline{1-3}
+right &Si une largeur est spécifiée (à l\textquotesingle{}aide du manipulateur setw()), aligne la sortie à droite. &cout $<$$<$ setw(10) $<$$<$ right $<$$<$ \char`\"{}\+Bonjour\char`\"{}; \\\cline{1-3}
+fixed &Représente les nombres flottants en notation scientifique. Le nombre de décimales peut être établi avec le manipulateur setprecision(). &cout $<$$<$ fixed $<$$<$ 19.\+99; \\\cline{1-3}
+setfill() &Choisit un caractère à utiliser comme remplissage. Nécessite la bibliothèque $<$iomanip$>$. &cout $<$$<$ setfill(\textquotesingle{}.\textquotesingle{}) $<$$<$ setw(10) $<$$<$ 19.\+99; \\\cline{1-3}
+setprecision() &Choisit la précision des nombres flottants. Si les manipulateurs fixed ou scientific sont utilisés, il spécifie le nombre de décimales, sinon il spécifie le nombre de chiffres significatifs. Nécessite la bibliothèque $<$iomanip$>$. &cout $<$$<$ setprecision(4) $<$$<$ 12.\+3456; \\\cline{1-3}
+setw() &Spécifie le nombre minimum de caractères que la prochaine sortie doit occuper. Si la sortie n\textquotesingle{}est pas suffisamment large, un remplissage est ajouté. Nécessite la bibliothèque $<$iomanip$>$. &cout $<$$<$ setw(10) $<$$<$ \char`\"{}\+Bonjour\char`\"{}; \\\cline{1-3}
+showbase &Lorsque les entiers sont représentés en hexadécimal ou en octal, préfixe les nombres avec \char`\"{}0x\char`\"{} ou \char`\"{}0\char`\"{} pour indiquer leur base. &cout $<$$<$ hex $<$$<$ showbase $<$$<$ 12; \\\cline{1-3}
+showpoint &Affiche toujours le point décimal pour les nombres flottants même s\textquotesingle{}il n\textquotesingle{}est pas nécessaire. &cout $<$$<$ showpoint $<$$<$ 12345.\+0; \\\cline{1-3}
+showpos &Affiche toujours un signe + à côté des nombres positifs. &cout $<$$<$ showpos $<$$<$ 12; \\\cline{1-3}
+uppercase &Représente les chiffres hexadécimaux et la notation scientifique \char`\"{}e\char`\"{} en majuscules. &cout $<$$<$ uppercase $<$$<$ hex $<$$<$ 12; \\\cline{1-3}
+\end{longtabu}

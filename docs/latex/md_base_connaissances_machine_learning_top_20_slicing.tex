@@ -1,0 +1,39 @@
+{\bfseries Num\+Py} \+: {\bfseries Création d\textquotesingle{}un tableau} \+: {\ttfamily a = np.\+array(\mbox{[}1,2,3\mbox{]})}
+
+{\bfseries Création d\textquotesingle{}un tableau à deux dimensions} \+: {\ttfamily b = np.\+array(\mbox{[}(1.\+5,2,3), (4,5,6)\mbox{]}, dtype = float)}
+
+{\bfseries Création d\textquotesingle{}un tableau à trois dimensions} \+: {\ttfamily c = np.\+array(\mbox{[}\mbox{[}(1.\+5,2,3), (4,5,6)\mbox{]},\mbox{[}(3,2,1), (4,5,6)\mbox{]}\mbox{]}, dtype = float)}
+
+{\bfseries Sélection d\textquotesingle{}un élément} \+: {\ttfamily a\mbox{[}2\mbox{]}}
+
+{\bfseries Sélection d\textquotesingle{}un élément dans un tableau à deux dimensions} \+: {\ttfamily b\mbox{[}1,2\mbox{]}}
+
+{\bfseries Slicing d\textquotesingle{}un tableau} \+: {\ttfamily a\mbox{[}0\+:2\mbox{]}}
+
+{\bfseries Slicing d\textquotesingle{}un tableau à deux dimensions (lignes)} \+: {\ttfamily b\mbox{[}0\+:2\mbox{]}}
+
+{\bfseries Slicing d\textquotesingle{}un tableau à deux dimensions (colonnes)} \+: {\ttfamily b\mbox{[}\+:,0\+:2\mbox{]}}
+
+{\bfseries Pandas} \+: {\bfseries Création d\textquotesingle{}une série} \+: `s = pd.\+Series(\mbox{[}1, 2, 3\mbox{]}, index=\mbox{[}\textquotesingle{}a\textquotesingle{}, \textquotesingle{}b\textquotesingle{}, \textquotesingle{}c\textquotesingle{}\mbox{]})`
+
+{\bfseries Création d\textquotesingle{}un Data\+Frame} \+: `df = pd.\+Data\+Frame(\{\textquotesingle{}A\textquotesingle{}\+: \mbox{[}1, 2, 3\mbox{]}, \textquotesingle{}B\textquotesingle{}\+: \mbox{[}4, 5, 6\mbox{]}\})`
+
+{\bfseries Sélection d\textquotesingle{}une colonne} \+: `df\mbox{[}\textquotesingle{}A\textquotesingle{}\mbox{]}`
+
+{\bfseries Sélection de plusieurs colonnes} \+: `df\mbox{[}\mbox{[}\textquotesingle{}A\textquotesingle{}, \textquotesingle{}B\textquotesingle{}\mbox{]}\mbox{]}`
+
+{\bfseries Sélection d\textquotesingle{}une ligne par son indice} \+: {\ttfamily df.\+loc\mbox{[}0\mbox{]}}
+
+{\bfseries Sélection de plusieurs lignes par leurs indices} \+: {\ttfamily df.\+loc\mbox{[}\mbox{[}0, 1, 2\mbox{]}\mbox{]}}
+
+{\bfseries Sélection d\textquotesingle{}une ligne par sa position} \+: {\ttfamily df.\+iloc\mbox{[}0\mbox{]}}
+
+{\bfseries Sélection de plusieurs lignes par leurs positions} \+: {\ttfamily df.\+iloc\mbox{[}\mbox{[}0, 1, 2\mbox{]}\mbox{]}}
+
+{\bfseries Slicing d\textquotesingle{}un Data\+Frame (lignes)} \+: {\ttfamily df\mbox{[}0\+:2\mbox{]}}
+
+{\bfseries Slicing d\textquotesingle{}un Data\+Frame (colonnes)} \+: {\ttfamily df.\+iloc\mbox{[}\+:,0\+:2\mbox{]}}
+
+{\bfseries Sélection de lignes basée sur une condition} \+: `df\mbox{[}df\mbox{[}\textquotesingle{}A\textquotesingle{}\mbox{]} $>$ 1\mbox{]}`
+
+{\bfseries Sélection de lignes basée sur plusieurs conditions} \+: `df\mbox{[}(df\mbox{[}\textquotesingle{}A\textquotesingle{}\mbox{]} $>$ 1) \& (df\mbox{[}\textquotesingle{}B\textquotesingle{}\mbox{]} $<$ 5)\mbox{]}` 

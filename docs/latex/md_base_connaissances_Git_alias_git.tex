@@ -1,0 +1,13 @@
+git config --global alias.\+ckt checkout git config --global alias.\+ts status git config --global alias.\+br branch git config --global alias.\+mg merge git config --global alias.\+pl pull git config --global alias.\+ps push git config --global alias.\+gtm !f() \{ git commit -\/a -\/m \char`\"{}\$1\char`\"{}; \}; f git config --global alias.\+pr !f() \{ gh pr create --title \char`\"{}\$1\char`\"{} --body \char`\"{}\$2\char`\"{}; \}; f
+
+\subsection*{pour avoir la liste des alias}
+
+git config --get-\/regexp $^\wedge$alias git config --global --get-\/regexp $^\wedge$alias
+
+\subsection*{modifier un alias Git}
+
+git config --global alias.\+co votre\+\_\+nouvelle\+\_\+commande
+
+\subsection*{supprimer un alias, vous pouvez utiliser la commande suivante \+:}
+
+git config --global --unset alias.\+votre\+\_\+alias 

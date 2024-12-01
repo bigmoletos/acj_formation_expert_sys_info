@@ -1,0 +1,124 @@
+\hypertarget{ScreenTabsPanel_8c}{}\section{linux/download/htop-\/3.3.0/\+Screen\+Tabs\+Panel.c File Reference}
+\label{ScreenTabsPanel_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Screen\+Tabs\+Panel.\+c@{linux/download/htop-\/3.\+3.\+0/\+Screen\+Tabs\+Panel.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Screen\+Tabs\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Screen\+Tabs\+Panel.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ScreenTabsPanel_8h_a44285dfe9333e019e8c8f5ea93b13083}{Screen\+Tabs\+Panel} $\ast$ \hyperlink{ScreenTabsPanel_8c_a1f27f0480a58158ae8cf4e67df74d011}{Screen\+Tabs\+Panel\+\_\+new} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings)
+\item 
+\hyperlink{ScreenTabsPanel_8h_ad377f5121e699bf3918aca91b3d51388}{Screen\+Name\+List\+Item} $\ast$ \hyperlink{ScreenTabsPanel_8c_acff9bf29158e90918ef6c092c82bef29}{Screen\+Name\+List\+Item\+\_\+new} (const char $\ast$value, \hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$ss)
+\item 
+\hyperlink{ScreenTabsPanel_8h_a84aa43c201d271221a4cf53cd978fc6a}{Screen\+Names\+Panel} $\ast$ \hyperlink{ScreenTabsPanel_8c_adb4d97a4ab6ae325fc129b74f6f5da2b}{Screen\+Names\+Panel\+\_\+new} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} \hyperlink{ScreenTabsPanel_8c_a218dccc564ed3604f90afd7f171a9bc5}{Screen\+Tab\+List\+Item\+\_\+class}
+\item 
+\hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{ScreenTabsPanel_8c_ad5057257b552f70fd7d836a547bee03a}{Screen\+Tabs\+Panel\+\_\+class}
+\item 
+\hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} \hyperlink{ScreenTabsPanel_8c_a4582c51ca7a25d05c3452d2e028d4ee1}{Screen\+Name\+List\+Item\+\_\+class}
+\item 
+\hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} \hyperlink{ScreenTabsPanel_8c_a5e63b5a3b2dfb12a11dad8790921d21b}{Screen\+Names\+Panel\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ScreenTabsPanel_8c_acff9bf29158e90918ef6c092c82bef29}\label{ScreenTabsPanel_8c_acff9bf29158e90918ef6c092c82bef29}} 
+\index{Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}!Screen\+Name\+List\+Item\+\_\+new@{Screen\+Name\+List\+Item\+\_\+new}}
+\index{Screen\+Name\+List\+Item\+\_\+new@{Screen\+Name\+List\+Item\+\_\+new}!Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Screen\+Name\+List\+Item\+\_\+new()}{ScreenNameListItem\_new()}}
+{\footnotesize\ttfamily \hyperlink{ScreenTabsPanel_8h_ad377f5121e699bf3918aca91b3d51388}{Screen\+Name\+List\+Item}$\ast$ Screen\+Name\+List\+Item\+\_\+new (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value,  }\item[{\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$}]{ss }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ScreenTabsPanel_8c_adb4d97a4ab6ae325fc129b74f6f5da2b}\label{ScreenTabsPanel_8c_adb4d97a4ab6ae325fc129b74f6f5da2b}} 
+\index{Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}!Screen\+Names\+Panel\+\_\+new@{Screen\+Names\+Panel\+\_\+new}}
+\index{Screen\+Names\+Panel\+\_\+new@{Screen\+Names\+Panel\+\_\+new}!Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Screen\+Names\+Panel\+\_\+new()}{ScreenNamesPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{ScreenTabsPanel_8h_a84aa43c201d271221a4cf53cd978fc6a}{Screen\+Names\+Panel}$\ast$ Screen\+Names\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ScreenTabsPanel_8c_a1f27f0480a58158ae8cf4e67df74d011}\label{ScreenTabsPanel_8c_a1f27f0480a58158ae8cf4e67df74d011}} 
+\index{Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}!Screen\+Tabs\+Panel\+\_\+new@{Screen\+Tabs\+Panel\+\_\+new}}
+\index{Screen\+Tabs\+Panel\+\_\+new@{Screen\+Tabs\+Panel\+\_\+new}!Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Screen\+Tabs\+Panel\+\_\+new()}{ScreenTabsPanel\_new()}}
+{\footnotesize\ttfamily \hyperlink{ScreenTabsPanel_8h_a44285dfe9333e019e8c8f5ea93b13083}{Screen\+Tabs\+Panel}$\ast$ Screen\+Tabs\+Panel\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ScreenTabsPanel_8c_a4582c51ca7a25d05c3452d2e028d4ee1}\label{ScreenTabsPanel_8c_a4582c51ca7a25d05c3452d2e028d4ee1}} 
+\index{Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}!Screen\+Name\+List\+Item\+\_\+class@{Screen\+Name\+List\+Item\+\_\+class}}
+\index{Screen\+Name\+List\+Item\+\_\+class@{Screen\+Name\+List\+Item\+\_\+class}!Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Screen\+Name\+List\+Item\+\_\+class}{ScreenNameListItem\_class}}
+{\footnotesize\ttfamily \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} Screen\+Name\+List\+Item\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structListItem__}{ListItem}),
+   .display = \hyperlink{ListItem_8c_aa4490e10fd323af0cd79e9f60b3e0dd0}{ListItem\_display},
+   .delete = \hyperlink{ListItem_8c_a1ee719a7c785aac4cba010a8d7a9ae33}{ListItem\_delete},
+   .compare = \hyperlink{ListItem_8c_aa2e7d2d659a511f46c45230c99f8b38b}{ListItem\_compare}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{ScreenTabsPanel_8c_a5e63b5a3b2dfb12a11dad8790921d21b}\label{ScreenTabsPanel_8c_a5e63b5a3b2dfb12a11dad8790921d21b}} 
+\index{Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}!Screen\+Names\+Panel\+\_\+class@{Screen\+Names\+Panel\+\_\+class}}
+\index{Screen\+Names\+Panel\+\_\+class@{Screen\+Names\+Panel\+\_\+class}!Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Screen\+Names\+Panel\+\_\+class}{ScreenNamesPanel\_class}}
+{\footnotesize\ttfamily \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Screen\+Names\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = ScreenNamesPanel\_delete
+   \},
+   .eventHandler = ScreenNamesPanel\_eventHandler
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{ScreenTabsPanel_8c_a218dccc564ed3604f90afd7f171a9bc5}\label{ScreenTabsPanel_8c_a218dccc564ed3604f90afd7f171a9bc5}} 
+\index{Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}!Screen\+Tab\+List\+Item\+\_\+class@{Screen\+Tab\+List\+Item\+\_\+class}}
+\index{Screen\+Tab\+List\+Item\+\_\+class@{Screen\+Tab\+List\+Item\+\_\+class}!Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Screen\+Tab\+List\+Item\+\_\+class}{ScreenTabListItem\_class}}
+{\footnotesize\ttfamily \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} Screen\+Tab\+List\+Item\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structListItem__}{ListItem}),
+   .display = \hyperlink{ListItem_8c_aa4490e10fd323af0cd79e9f60b3e0dd0}{ListItem\_display},
+   .delete = \hyperlink{ListItem_8c_a1ee719a7c785aac4cba010a8d7a9ae33}{ListItem\_delete},
+   .compare = \hyperlink{ListItem_8c_aa2e7d2d659a511f46c45230c99f8b38b}{ListItem\_compare}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{ScreenTabsPanel_8c_ad5057257b552f70fd7d836a547bee03a}\label{ScreenTabsPanel_8c_ad5057257b552f70fd7d836a547bee03a}} 
+\index{Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}!Screen\+Tabs\+Panel\+\_\+class@{Screen\+Tabs\+Panel\+\_\+class}}
+\index{Screen\+Tabs\+Panel\+\_\+class@{Screen\+Tabs\+Panel\+\_\+class}!Screen\+Tabs\+Panel.\+c@{Screen\+Tabs\+Panel.\+c}}
+\subsubsection{\texorpdfstring{Screen\+Tabs\+Panel\+\_\+class}{ScreenTabsPanel\_class}}
+{\footnotesize\ttfamily \hyperlink{Panel_8h_a9d86c985f44bc717869de54ce1da734e}{Panel\+Class} Screen\+Tabs\+Panel\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structPanel__}{Panel}),
+      .delete = ScreenTabsPanel\_delete,
+   \},
+   .eventHandler = ScreenTabsPanel\_eventHandler
+\}
+\end{DoxyCode}

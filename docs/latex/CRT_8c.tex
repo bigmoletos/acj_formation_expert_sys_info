@@ -1,0 +1,277 @@
+\hypertarget{CRT_8c}{}\section{linux/download/htop-\/3.3.0/\+C\+RT.c File Reference}
+\label{CRT_8c}\index{linux/download/htop-\/3.\+3.\+0/\+C\+R\+T.\+c@{linux/download/htop-\/3.\+3.\+0/\+C\+R\+T.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$langinfo.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Command\+Line.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Term.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for C\+R\+T.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{CRT_8c_aa7938ea8be3987212f831819b8c2b986}{Color\+Index}(\hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i},  \hyperlink{exo21_8cpp_a37d972ae0b47b9099e30983131d31916}{j})~((7-\/(\hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i}))$\ast$8+(\hyperlink{exo21_8cpp_a37d972ae0b47b9099e30983131d31916}{j}))
+\item 
+\#define \hyperlink{CRT_8c_a162d331bd94d293c9f3fa61ca12ef190}{Color\+Pair}(\hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i},  \hyperlink{exo21_8cpp_a37d972ae0b47b9099e30983131d31916}{j})~C\+O\+L\+O\+R\+\_\+\+P\+A\+IR(\hyperlink{CRT_8c_aa7938ea8be3987212f831819b8c2b986}{Color\+Index}(\hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i},\hyperlink{exo21_8cpp_a37d972ae0b47b9099e30983131d31916}{j}))
+\item 
+\#define \hyperlink{CRT_8c_a68eb1f80b4df2818e5a0774106748141}{Black}~C\+O\+L\+O\+R\+\_\+\+B\+L\+A\+CK
+\item 
+\#define \hyperlink{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}{Red}~C\+O\+L\+O\+R\+\_\+\+R\+ED
+\item 
+\#define \hyperlink{CRT_8c_aa429cd977709122166b6e31fa10903d1}{Green}~C\+O\+L\+O\+R\+\_\+\+G\+R\+E\+EN
+\item 
+\#define \hyperlink{CRT_8c_a239cc4651865ee2ac90ac5c1e6d2d8b5}{Yellow}~C\+O\+L\+O\+R\+\_\+\+Y\+E\+L\+L\+OW
+\item 
+\#define \hyperlink{CRT_8c_a6208a194d702872fdbe1d3c7d7a7c879}{Blue}~C\+O\+L\+O\+R\+\_\+\+B\+L\+UE
+\item 
+\#define \hyperlink{CRT_8c_a90a970475f83830549da69776a666834}{Magenta}~C\+O\+L\+O\+R\+\_\+\+M\+A\+G\+E\+N\+TA
+\item 
+\#define \hyperlink{CRT_8c_a82a8a689788551a1b4e4552e5ddeae40}{Cyan}~C\+O\+L\+O\+R\+\_\+\+C\+Y\+AN
+\item 
+\#define \hyperlink{CRT_8c_a298a3b7c7f2ea427a7cd21cdc9a4f054}{White}~C\+O\+L\+O\+R\+\_\+\+W\+H\+I\+TE
+\item 
+\#define \hyperlink{CRT_8c_a3d580ab8a70ccac0cbe7959b27b741ee}{Color\+Pair\+Gray\+Black}~\hyperlink{CRT_8c_a162d331bd94d293c9f3fa61ca12ef190}{Color\+Pair}(\hyperlink{CRT_8c_a90a970475f83830549da69776a666834}{Magenta},\hyperlink{CRT_8c_a90a970475f83830549da69776a666834}{Magenta})
+\item 
+\#define \hyperlink{CRT_8c_a46c32a65b7f29d76e1c7e16f4ac4e934}{Color\+Index\+Gray\+Black}~\hyperlink{CRT_8c_aa7938ea8be3987212f831819b8c2b986}{Color\+Index}(\hyperlink{CRT_8c_a90a970475f83830549da69776a666834}{Magenta},\hyperlink{CRT_8c_a90a970475f83830549da69776a666834}{Magenta})
+\item 
+\#define \hyperlink{CRT_8c_add25a3d9c74a058dd87f1b4b67fedb76}{Color\+Pair\+White\+Default}~\hyperlink{CRT_8c_a162d331bd94d293c9f3fa61ca12ef190}{Color\+Pair}(\hyperlink{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}{Red}, \hyperlink{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}{Red})
+\item 
+\#define \hyperlink{CRT_8c_a50aa449455b4400067965d58cbe23142}{Color\+Index\+White\+Default}~\hyperlink{CRT_8c_aa7938ea8be3987212f831819b8c2b986}{Color\+Index}(\hyperlink{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}{Red}, \hyperlink{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}{Red})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{CRT_8c_a0c650571754c6ae709939f84d64dd83b}{C\+R\+T\+\_\+debug\+\_\+impl} (const char $\ast$file, size\+\_\+t lineno, const char $\ast$func, const char $\ast$fmt,...)
+\item 
+void \hyperlink{CRT_8c_a21f2ebc6ebabef02829d3c10b9c86231}{C\+R\+T\+\_\+reset\+Signal\+Handlers} (void)
+\item 
+void \hyperlink{CRT_8c_a1d67e3eaa08b166cb7a1da5058dec6df}{C\+R\+T\+\_\+init} (const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings, bool allow\+Unicode, bool retain\+Screen\+On\+Exit)
+\item 
+void \hyperlink{CRT_8c_acf6b66093671832ba910b482582b82c7}{C\+R\+T\+\_\+done} (void)
+\item 
+void \hyperlink{CRT_8c_a64f00343561acc28fe440747cb1d4193}{C\+R\+T\+\_\+fatal\+Error} (const char $\ast$note)
+\item 
+int \hyperlink{CRT_8c_a900138a2adad769952c7050d2576d4c4}{C\+R\+T\+\_\+read\+Key} (void)
+\item 
+void \hyperlink{CRT_8c_ae91bb52c50ccca28b964180f2b2f6286}{C\+R\+T\+\_\+disable\+Delay} (void)
+\item 
+void \hyperlink{CRT_8c_a23b902855f6da41d3bc653cb97bfc3f5}{C\+R\+T\+\_\+enable\+Delay} (void)
+\item 
+void \hyperlink{CRT_8c_ade62e650b507647f35466a414827cea0}{C\+R\+T\+\_\+set\+Colors} (int color\+Scheme)
+\item 
+void \hyperlink{CRT_8c_a7d9b5dcfe7fc5330cf9c6bc59641bc41}{C\+R\+T\+\_\+handle\+S\+I\+G\+S\+E\+GV} (int signal)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$const  $\ast$ \hyperlink{CRT_8c_aa6abdcbeba282cae11553d099a31d80b}{C\+R\+T\+\_\+tree\+Str} = C\+R\+T\+\_\+tree\+Str\+Ascii
+\item 
+const char $\ast$ \hyperlink{CRT_8c_a63da289831b8bd2c3ce84dcfcd08cf5b}{C\+R\+T\+\_\+degree\+Sign}
+\item 
+const int $\ast$ \hyperlink{CRT_8c_a86bf3fcbd1afe6367e2cd70958076109}{C\+R\+T\+\_\+colors}
+\item 
+int \hyperlink{CRT_8c_a713748c923f8e7531a68475f9b9a3a98}{C\+R\+T\+\_\+scroll\+H\+Amount} = 5
+\item 
+int \hyperlink{CRT_8c_a33609030b82ec274c44bc8def2c9dddd}{C\+R\+T\+\_\+scroll\+Wheel\+V\+Amount} = 10
+\item 
+\hyperlink{CRT_8h_a630e4fa458114d80bd09ef7898823ed0}{Color\+Scheme} \hyperlink{CRT_8c_ae05d224e010f589e86b64e6b879d743f}{C\+R\+T\+\_\+color\+Scheme} = \hyperlink{CRT_8h_a17bc13ccd1e05cf84b7d3c0d4f78fc56a5e5775ec860bf81e03b6ffccc3cc77c6}{C\+O\+L\+O\+R\+S\+C\+H\+E\+M\+E\+\_\+\+D\+E\+F\+A\+U\+LT}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{CRT_8c_a68eb1f80b4df2818e5a0774106748141}\label{CRT_8c_a68eb1f80b4df2818e5a0774106748141}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Black@{Black}}
+\index{Black@{Black}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Black}{Black}}
+{\footnotesize\ttfamily \#define Black~C\+O\+L\+O\+R\+\_\+\+B\+L\+A\+CK}
+
+\mbox{\Hypertarget{CRT_8c_a6208a194d702872fdbe1d3c7d7a7c879}\label{CRT_8c_a6208a194d702872fdbe1d3c7d7a7c879}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Blue@{Blue}}
+\index{Blue@{Blue}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Blue}{Blue}}
+{\footnotesize\ttfamily \#define Blue~C\+O\+L\+O\+R\+\_\+\+B\+L\+UE}
+
+\mbox{\Hypertarget{CRT_8c_aa7938ea8be3987212f831819b8c2b986}\label{CRT_8c_aa7938ea8be3987212f831819b8c2b986}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Color\+Index@{Color\+Index}}
+\index{Color\+Index@{Color\+Index}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Color\+Index}{ColorIndex}}
+{\footnotesize\ttfamily \#define Color\+Index(\begin{DoxyParamCaption}\item[{}]{\hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i},  }\item[{}]{\hyperlink{exo21_8cpp_a37d972ae0b47b9099e30983131d31916}{j} }\end{DoxyParamCaption})~((7-\/(\hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i}))$\ast$8+(\hyperlink{exo21_8cpp_a37d972ae0b47b9099e30983131d31916}{j}))}
+
+\mbox{\Hypertarget{CRT_8c_a46c32a65b7f29d76e1c7e16f4ac4e934}\label{CRT_8c_a46c32a65b7f29d76e1c7e16f4ac4e934}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Color\+Index\+Gray\+Black@{Color\+Index\+Gray\+Black}}
+\index{Color\+Index\+Gray\+Black@{Color\+Index\+Gray\+Black}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Color\+Index\+Gray\+Black}{ColorIndexGrayBlack}}
+{\footnotesize\ttfamily \#define Color\+Index\+Gray\+Black~\hyperlink{CRT_8c_aa7938ea8be3987212f831819b8c2b986}{Color\+Index}(\hyperlink{CRT_8c_a90a970475f83830549da69776a666834}{Magenta},\hyperlink{CRT_8c_a90a970475f83830549da69776a666834}{Magenta})}
+
+\mbox{\Hypertarget{CRT_8c_a50aa449455b4400067965d58cbe23142}\label{CRT_8c_a50aa449455b4400067965d58cbe23142}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Color\+Index\+White\+Default@{Color\+Index\+White\+Default}}
+\index{Color\+Index\+White\+Default@{Color\+Index\+White\+Default}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Color\+Index\+White\+Default}{ColorIndexWhiteDefault}}
+{\footnotesize\ttfamily \#define Color\+Index\+White\+Default~\hyperlink{CRT_8c_aa7938ea8be3987212f831819b8c2b986}{Color\+Index}(\hyperlink{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}{Red}, \hyperlink{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}{Red})}
+
+\mbox{\Hypertarget{CRT_8c_a162d331bd94d293c9f3fa61ca12ef190}\label{CRT_8c_a162d331bd94d293c9f3fa61ca12ef190}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Color\+Pair@{Color\+Pair}}
+\index{Color\+Pair@{Color\+Pair}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Color\+Pair}{ColorPair}}
+{\footnotesize\ttfamily \#define Color\+Pair(\begin{DoxyParamCaption}\item[{}]{\hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i},  }\item[{}]{\hyperlink{exo21_8cpp_a37d972ae0b47b9099e30983131d31916}{j} }\end{DoxyParamCaption})~C\+O\+L\+O\+R\+\_\+\+P\+A\+IR(\hyperlink{CRT_8c_aa7938ea8be3987212f831819b8c2b986}{Color\+Index}(\hyperlink{exo21_8cpp_acb559820d9ca11295b4500f179ef6392}{i},\hyperlink{exo21_8cpp_a37d972ae0b47b9099e30983131d31916}{j}))}
+
+\mbox{\Hypertarget{CRT_8c_a3d580ab8a70ccac0cbe7959b27b741ee}\label{CRT_8c_a3d580ab8a70ccac0cbe7959b27b741ee}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Color\+Pair\+Gray\+Black@{Color\+Pair\+Gray\+Black}}
+\index{Color\+Pair\+Gray\+Black@{Color\+Pair\+Gray\+Black}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Color\+Pair\+Gray\+Black}{ColorPairGrayBlack}}
+{\footnotesize\ttfamily \#define Color\+Pair\+Gray\+Black~\hyperlink{CRT_8c_a162d331bd94d293c9f3fa61ca12ef190}{Color\+Pair}(\hyperlink{CRT_8c_a90a970475f83830549da69776a666834}{Magenta},\hyperlink{CRT_8c_a90a970475f83830549da69776a666834}{Magenta})}
+
+\mbox{\Hypertarget{CRT_8c_add25a3d9c74a058dd87f1b4b67fedb76}\label{CRT_8c_add25a3d9c74a058dd87f1b4b67fedb76}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Color\+Pair\+White\+Default@{Color\+Pair\+White\+Default}}
+\index{Color\+Pair\+White\+Default@{Color\+Pair\+White\+Default}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Color\+Pair\+White\+Default}{ColorPairWhiteDefault}}
+{\footnotesize\ttfamily \#define Color\+Pair\+White\+Default~\hyperlink{CRT_8c_a162d331bd94d293c9f3fa61ca12ef190}{Color\+Pair}(\hyperlink{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}{Red}, \hyperlink{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}{Red})}
+
+\mbox{\Hypertarget{CRT_8c_a82a8a689788551a1b4e4552e5ddeae40}\label{CRT_8c_a82a8a689788551a1b4e4552e5ddeae40}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Cyan@{Cyan}}
+\index{Cyan@{Cyan}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Cyan}{Cyan}}
+{\footnotesize\ttfamily \#define Cyan~C\+O\+L\+O\+R\+\_\+\+C\+Y\+AN}
+
+\mbox{\Hypertarget{CRT_8c_aa429cd977709122166b6e31fa10903d1}\label{CRT_8c_aa429cd977709122166b6e31fa10903d1}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Green@{Green}}
+\index{Green@{Green}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Green}{Green}}
+{\footnotesize\ttfamily \#define Green~C\+O\+L\+O\+R\+\_\+\+G\+R\+E\+EN}
+
+\mbox{\Hypertarget{CRT_8c_a90a970475f83830549da69776a666834}\label{CRT_8c_a90a970475f83830549da69776a666834}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Magenta@{Magenta}}
+\index{Magenta@{Magenta}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Magenta}{Magenta}}
+{\footnotesize\ttfamily \#define Magenta~C\+O\+L\+O\+R\+\_\+\+M\+A\+G\+E\+N\+TA}
+
+\mbox{\Hypertarget{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}\label{CRT_8c_ae8e246fd7335d7e27ab04150cbc418ba}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Red@{Red}}
+\index{Red@{Red}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Red}{Red}}
+{\footnotesize\ttfamily \#define Red~C\+O\+L\+O\+R\+\_\+\+R\+ED}
+
+\mbox{\Hypertarget{CRT_8c_a298a3b7c7f2ea427a7cd21cdc9a4f054}\label{CRT_8c_a298a3b7c7f2ea427a7cd21cdc9a4f054}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!White@{White}}
+\index{White@{White}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{White}{White}}
+{\footnotesize\ttfamily \#define White~C\+O\+L\+O\+R\+\_\+\+W\+H\+I\+TE}
+
+\mbox{\Hypertarget{CRT_8c_a239cc4651865ee2ac90ac5c1e6d2d8b5}\label{CRT_8c_a239cc4651865ee2ac90ac5c1e6d2d8b5}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!Yellow@{Yellow}}
+\index{Yellow@{Yellow}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{Yellow}{Yellow}}
+{\footnotesize\ttfamily \#define Yellow~C\+O\+L\+O\+R\+\_\+\+Y\+E\+L\+L\+OW}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{CRT_8c_a0c650571754c6ae709939f84d64dd83b}\label{CRT_8c_a0c650571754c6ae709939f84d64dd83b}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+debug\+\_\+impl@{C\+R\+T\+\_\+debug\+\_\+impl}}
+\index{C\+R\+T\+\_\+debug\+\_\+impl@{C\+R\+T\+\_\+debug\+\_\+impl}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+debug\+\_\+impl()}{CRT\_debug\_impl()}}
+{\footnotesize\ttfamily void C\+R\+T\+\_\+debug\+\_\+impl (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file,  }\item[{size\+\_\+t}]{lineno,  }\item[{const char $\ast$}]{func,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CRT_8c_ae91bb52c50ccca28b964180f2b2f6286}\label{CRT_8c_ae91bb52c50ccca28b964180f2b2f6286}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+disable\+Delay@{C\+R\+T\+\_\+disable\+Delay}}
+\index{C\+R\+T\+\_\+disable\+Delay@{C\+R\+T\+\_\+disable\+Delay}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+disable\+Delay()}{CRT\_disableDelay()}}
+{\footnotesize\ttfamily void C\+R\+T\+\_\+disable\+Delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CRT_8c_acf6b66093671832ba910b482582b82c7}\label{CRT_8c_acf6b66093671832ba910b482582b82c7}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+done@{C\+R\+T\+\_\+done}}
+\index{C\+R\+T\+\_\+done@{C\+R\+T\+\_\+done}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+done()}{CRT\_done()}}
+{\footnotesize\ttfamily void C\+R\+T\+\_\+done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CRT_8c_a23b902855f6da41d3bc653cb97bfc3f5}\label{CRT_8c_a23b902855f6da41d3bc653cb97bfc3f5}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+enable\+Delay@{C\+R\+T\+\_\+enable\+Delay}}
+\index{C\+R\+T\+\_\+enable\+Delay@{C\+R\+T\+\_\+enable\+Delay}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+enable\+Delay()}{CRT\_enableDelay()}}
+{\footnotesize\ttfamily void C\+R\+T\+\_\+enable\+Delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CRT_8c_a64f00343561acc28fe440747cb1d4193}\label{CRT_8c_a64f00343561acc28fe440747cb1d4193}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+fatal\+Error@{C\+R\+T\+\_\+fatal\+Error}}
+\index{C\+R\+T\+\_\+fatal\+Error@{C\+R\+T\+\_\+fatal\+Error}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+fatal\+Error()}{CRT\_fatalError()}}
+{\footnotesize\ttfamily void C\+R\+T\+\_\+fatal\+Error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{note }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CRT_8c_a7d9b5dcfe7fc5330cf9c6bc59641bc41}\label{CRT_8c_a7d9b5dcfe7fc5330cf9c6bc59641bc41}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+handle\+S\+I\+G\+S\+E\+GV@{C\+R\+T\+\_\+handle\+S\+I\+G\+S\+E\+GV}}
+\index{C\+R\+T\+\_\+handle\+S\+I\+G\+S\+E\+GV@{C\+R\+T\+\_\+handle\+S\+I\+G\+S\+E\+GV}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+handle\+S\+I\+G\+S\+E\+G\+V()}{CRT\_handleSIGSEGV()}}
+{\footnotesize\ttfamily void C\+R\+T\+\_\+handle\+S\+I\+G\+S\+E\+GV (\begin{DoxyParamCaption}\item[{int}]{signal }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CRT_8c_a1d67e3eaa08b166cb7a1da5058dec6df}\label{CRT_8c_a1d67e3eaa08b166cb7a1da5058dec6df}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+init@{C\+R\+T\+\_\+init}}
+\index{C\+R\+T\+\_\+init@{C\+R\+T\+\_\+init}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+init()}{CRT\_init()}}
+{\footnotesize\ttfamily void C\+R\+T\+\_\+init (\begin{DoxyParamCaption}\item[{const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings,  }\item[{bool}]{allow\+Unicode,  }\item[{bool}]{retain\+Screen\+On\+Exit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CRT_8c_a900138a2adad769952c7050d2576d4c4}\label{CRT_8c_a900138a2adad769952c7050d2576d4c4}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+read\+Key@{C\+R\+T\+\_\+read\+Key}}
+\index{C\+R\+T\+\_\+read\+Key@{C\+R\+T\+\_\+read\+Key}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+read\+Key()}{CRT\_readKey()}}
+{\footnotesize\ttfamily int C\+R\+T\+\_\+read\+Key (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CRT_8c_a21f2ebc6ebabef02829d3c10b9c86231}\label{CRT_8c_a21f2ebc6ebabef02829d3c10b9c86231}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+reset\+Signal\+Handlers@{C\+R\+T\+\_\+reset\+Signal\+Handlers}}
+\index{C\+R\+T\+\_\+reset\+Signal\+Handlers@{C\+R\+T\+\_\+reset\+Signal\+Handlers}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+reset\+Signal\+Handlers()}{CRT\_resetSignalHandlers()}}
+{\footnotesize\ttfamily void C\+R\+T\+\_\+reset\+Signal\+Handlers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CRT_8c_ade62e650b507647f35466a414827cea0}\label{CRT_8c_ade62e650b507647f35466a414827cea0}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+set\+Colors@{C\+R\+T\+\_\+set\+Colors}}
+\index{C\+R\+T\+\_\+set\+Colors@{C\+R\+T\+\_\+set\+Colors}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+set\+Colors()}{CRT\_setColors()}}
+{\footnotesize\ttfamily void C\+R\+T\+\_\+set\+Colors (\begin{DoxyParamCaption}\item[{int}]{color\+Scheme }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{CRT_8c_a86bf3fcbd1afe6367e2cd70958076109}\label{CRT_8c_a86bf3fcbd1afe6367e2cd70958076109}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+colors@{C\+R\+T\+\_\+colors}}
+\index{C\+R\+T\+\_\+colors@{C\+R\+T\+\_\+colors}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+colors}{CRT\_colors}}
+{\footnotesize\ttfamily const int$\ast$ C\+R\+T\+\_\+colors}
+
+\mbox{\Hypertarget{CRT_8c_ae05d224e010f589e86b64e6b879d743f}\label{CRT_8c_ae05d224e010f589e86b64e6b879d743f}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+color\+Scheme@{C\+R\+T\+\_\+color\+Scheme}}
+\index{C\+R\+T\+\_\+color\+Scheme@{C\+R\+T\+\_\+color\+Scheme}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+color\+Scheme}{CRT\_colorScheme}}
+{\footnotesize\ttfamily \hyperlink{CRT_8h_a630e4fa458114d80bd09ef7898823ed0}{Color\+Scheme} C\+R\+T\+\_\+color\+Scheme = \hyperlink{CRT_8h_a17bc13ccd1e05cf84b7d3c0d4f78fc56a5e5775ec860bf81e03b6ffccc3cc77c6}{C\+O\+L\+O\+R\+S\+C\+H\+E\+M\+E\+\_\+\+D\+E\+F\+A\+U\+LT}}
+
+\mbox{\Hypertarget{CRT_8c_a63da289831b8bd2c3ce84dcfcd08cf5b}\label{CRT_8c_a63da289831b8bd2c3ce84dcfcd08cf5b}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+degree\+Sign@{C\+R\+T\+\_\+degree\+Sign}}
+\index{C\+R\+T\+\_\+degree\+Sign@{C\+R\+T\+\_\+degree\+Sign}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+degree\+Sign}{CRT\_degreeSign}}
+{\footnotesize\ttfamily const char$\ast$ C\+R\+T\+\_\+degree\+Sign}
+
+\mbox{\Hypertarget{CRT_8c_a713748c923f8e7531a68475f9b9a3a98}\label{CRT_8c_a713748c923f8e7531a68475f9b9a3a98}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+scroll\+H\+Amount@{C\+R\+T\+\_\+scroll\+H\+Amount}}
+\index{C\+R\+T\+\_\+scroll\+H\+Amount@{C\+R\+T\+\_\+scroll\+H\+Amount}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+scroll\+H\+Amount}{CRT\_scrollHAmount}}
+{\footnotesize\ttfamily int C\+R\+T\+\_\+scroll\+H\+Amount = 5}
+
+\mbox{\Hypertarget{CRT_8c_a33609030b82ec274c44bc8def2c9dddd}\label{CRT_8c_a33609030b82ec274c44bc8def2c9dddd}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+scroll\+Wheel\+V\+Amount@{C\+R\+T\+\_\+scroll\+Wheel\+V\+Amount}}
+\index{C\+R\+T\+\_\+scroll\+Wheel\+V\+Amount@{C\+R\+T\+\_\+scroll\+Wheel\+V\+Amount}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+scroll\+Wheel\+V\+Amount}{CRT\_scrollWheelVAmount}}
+{\footnotesize\ttfamily int C\+R\+T\+\_\+scroll\+Wheel\+V\+Amount = 10}
+
+\mbox{\Hypertarget{CRT_8c_aa6abdcbeba282cae11553d099a31d80b}\label{CRT_8c_aa6abdcbeba282cae11553d099a31d80b}} 
+\index{C\+R\+T.\+c@{C\+R\+T.\+c}!C\+R\+T\+\_\+tree\+Str@{C\+R\+T\+\_\+tree\+Str}}
+\index{C\+R\+T\+\_\+tree\+Str@{C\+R\+T\+\_\+tree\+Str}!C\+R\+T.\+c@{C\+R\+T.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+T\+\_\+tree\+Str}{CRT\_treeStr}}
+{\footnotesize\ttfamily const char$\ast$ const$\ast$ C\+R\+T\+\_\+tree\+Str = C\+R\+T\+\_\+tree\+Str\+Ascii}
+

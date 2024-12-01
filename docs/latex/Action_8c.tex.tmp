@@ -1,0 +1,148 @@
+\hypertarget{Action_8c}{}\section{linux/download/htop-\/3.3.0/\+Action.c File Reference}
+\label{Action_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Action.\+c@{linux/download/htop-\/3.\+3.\+0/\+Action.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Action.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$pwd.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Categories\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Command\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Column.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Env\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Inc\+Set.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Info\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}List\+Item.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Main\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Open\+Files\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process\+Locks\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row\+Field.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scheduling.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Screen\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Signals\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Trace\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Users\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Action.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Action_8c_a008aab389f36bd735561bdc707f6f351}{addbartext}(attr,  prefix,  text)
+\item 
+\#define \hyperlink{Action_8c_a79002dd3fa58a22bf821c36a709bb760}{addattrstatestr}(attr,  state,  desc)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$ \hyperlink{Action_8c_a12202eaefc93d7849f975de8fc982b89}{Action\+\_\+pick\+From\+Vector} (\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$st, \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$list, int \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, bool follow)
+\item 
+bool \hyperlink{Action_8c_ac5df1d224f9cb3f2b64861f2bb555cdc}{Action\+\_\+set\+User\+Only} (const char $\ast$user\+Name, uid\+\_\+t $\ast$user\+Id)
+\item 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} \hyperlink{Action_8c_addd87df00b3cd87fd68e9a81704dddf3}{Action\+\_\+set\+Sort\+Key} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings, \hyperlink{Process_8h_a23f514dba817798419bae559ca58078b}{Process\+Field} sort\+Key)
+\item 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} \hyperlink{Action_8c_a3bc682b9f6545d1c1412e4495743281e}{Action\+\_\+set\+Screen\+Tab} (\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$st, int \hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+\hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} \hyperlink{Action_8c_a461a2f28a55b8c409868dbd429d71c52}{Action\+\_\+follow} (\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$st)
+\item 
+void \hyperlink{Action_8c_a9c182fd6d36a33baf1b83212caf11f07}{Action\+\_\+set\+Bindings} (\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$keys)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Action_8c_a79002dd3fa58a22bf821c36a709bb760}\label{Action_8c_a79002dd3fa58a22bf821c36a709bb760}} 
+\index{Action.\+c@{Action.\+c}!addattrstatestr@{addattrstatestr}}
+\index{addattrstatestr@{addattrstatestr}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{addattrstatestr}{addattrstatestr}}
+{\footnotesize\ttfamily \#define addattrstatestr(\begin{DoxyParamCaption}\item[{}]{attr,  }\item[{}]{state,  }\item[{}]{desc }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                 \(\backslash\)
+      addattrstr(attr, state);                          \(\backslash\)
+      addattrstr(\hyperlink{CRT_8c_a86bf3fcbd1afe6367e2cd70958076109}{CRT\_colors}[\hyperlink{CRT_8h_a3966d1f2a814605f9a44f285a0205fb3a893c6b76f1c0df789783a2d1405d7dba}{DEFAULT\_COLOR}], \textcolor{stringliteral}{": "} desc); \(\backslash\)
+   \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\mbox{\Hypertarget{Action_8c_a008aab389f36bd735561bdc707f6f351}\label{Action_8c_a008aab389f36bd735561bdc707f6f351}} 
+\index{Action.\+c@{Action.\+c}!addbartext@{addbartext}}
+\index{addbartext@{addbartext}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{addbartext}{addbartext}}
+{\footnotesize\ttfamily \#define addbartext(\begin{DoxyParamCaption}\item[{}]{attr,  }\item[{}]{prefix,  }\item[{}]{text }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                              \(\backslash\)
+      addattrstr(\hyperlink{CRT_8c_a86bf3fcbd1afe6367e2cd70958076109}{CRT\_colors}[\hyperlink{CRT_8h_a3966d1f2a814605f9a44f285a0205fb3a893c6b76f1c0df789783a2d1405d7dba}{DEFAULT\_COLOR}], prefix); \(\backslash\)
+      addattrstr(attr, \hyperlink{namespaceocr__python_a1e093f59d752308f76c3c540793c2c7b}{text});                        \(\backslash\)
+   \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Action_8c_a461a2f28a55b8c409868dbd429d71c52}\label{Action_8c_a461a2f28a55b8c409868dbd429d71c52}} 
+\index{Action.\+c@{Action.\+c}!Action\+\_\+follow@{Action\+\_\+follow}}
+\index{Action\+\_\+follow@{Action\+\_\+follow}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{Action\+\_\+follow()}{Action\_follow()}}
+{\footnotesize\ttfamily \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} Action\+\_\+follow (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$}]{st }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8c_a12202eaefc93d7849f975de8fc982b89}\label{Action_8c_a12202eaefc93d7849f975de8fc982b89}} 
+\index{Action.\+c@{Action.\+c}!Action\+\_\+pick\+From\+Vector@{Action\+\_\+pick\+From\+Vector}}
+\index{Action\+\_\+pick\+From\+Vector@{Action\+\_\+pick\+From\+Vector}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{Action\+\_\+pick\+From\+Vector()}{Action\_pickFromVector()}}
+{\footnotesize\ttfamily \hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object}$\ast$ Action\+\_\+pick\+From\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$}]{st,  }\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{list,  }\item[{int}]{x,  }\item[{bool}]{follow }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8c_a9c182fd6d36a33baf1b83212caf11f07}\label{Action_8c_a9c182fd6d36a33baf1b83212caf11f07}} 
+\index{Action.\+c@{Action.\+c}!Action\+\_\+set\+Bindings@{Action\+\_\+set\+Bindings}}
+\index{Action\+\_\+set\+Bindings@{Action\+\_\+set\+Bindings}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{Action\+\_\+set\+Bindings()}{Action\_setBindings()}}
+{\footnotesize\ttfamily void Action\+\_\+set\+Bindings (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$}]{keys }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8c_a3bc682b9f6545d1c1412e4495743281e}\label{Action_8c_a3bc682b9f6545d1c1412e4495743281e}} 
+\index{Action.\+c@{Action.\+c}!Action\+\_\+set\+Screen\+Tab@{Action\+\_\+set\+Screen\+Tab}}
+\index{Action\+\_\+set\+Screen\+Tab@{Action\+\_\+set\+Screen\+Tab}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{Action\+\_\+set\+Screen\+Tab()}{Action\_setScreenTab()}}
+{\footnotesize\ttfamily \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} Action\+\_\+set\+Screen\+Tab (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1e6e0d01a9f6c24cd65838caadbf73b2}{State} $\ast$}]{st,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8c_addd87df00b3cd87fd68e9a81704dddf3}\label{Action_8c_addd87df00b3cd87fd68e9a81704dddf3}} 
+\index{Action.\+c@{Action.\+c}!Action\+\_\+set\+Sort\+Key@{Action\+\_\+set\+Sort\+Key}}
+\index{Action\+\_\+set\+Sort\+Key@{Action\+\_\+set\+Sort\+Key}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{Action\+\_\+set\+Sort\+Key()}{Action\_setSortKey()}}
+{\footnotesize\ttfamily \hyperlink{Action_8h_a5e4f36af69ac47b1c52317ab11518c09}{Htop\+\_\+\+Reaction} Action\+\_\+set\+Sort\+Key (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings,  }\item[{\hyperlink{Process_8h_a23f514dba817798419bae559ca58078b}{Process\+Field}}]{sort\+Key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Action_8c_ac5df1d224f9cb3f2b64861f2bb555cdc}\label{Action_8c_ac5df1d224f9cb3f2b64861f2bb555cdc}} 
+\index{Action.\+c@{Action.\+c}!Action\+\_\+set\+User\+Only@{Action\+\_\+set\+User\+Only}}
+\index{Action\+\_\+set\+User\+Only@{Action\+\_\+set\+User\+Only}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{Action\+\_\+set\+User\+Only()}{Action\_setUserOnly()}}
+{\footnotesize\ttfamily bool Action\+\_\+set\+User\+Only (\begin{DoxyParamCaption}\item[{const char $\ast$}]{user\+Name,  }\item[{uid\+\_\+t $\ast$}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Action_8c_a06f5554b3a8ec20bbdc7739474bd76a3}\label{Action_8c_a06f5554b3a8ec20bbdc7739474bd76a3}} 
+\index{Action.\+c@{Action.\+c}!info@{info}}
+\index{info@{info}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily const char$\ast$ info}
+
+\mbox{\Hypertarget{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}\label{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}} 
+\index{Action.\+c@{Action.\+c}!key@{key}}
+\index{key@{key}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily const char$\ast$ key}
+
+\mbox{\Hypertarget{Action_8c_a4b7d495d4c2712c37ba63bebb394052e}\label{Action_8c_a4b7d495d4c2712c37ba63bebb394052e}} 
+\index{Action.\+c@{Action.\+c}!ro\+Inactive@{ro\+Inactive}}
+\index{ro\+Inactive@{ro\+Inactive}!Action.\+c@{Action.\+c}}
+\subsubsection{\texorpdfstring{ro\+Inactive}{roInactive}}
+{\footnotesize\ttfamily bool ro\+Inactive}
+

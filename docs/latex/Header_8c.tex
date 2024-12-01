@@ -1,0 +1,108 @@
+\hypertarget{Header_8c}{}\section{linux/download/htop-\/3.3.0/\+Header.c File Reference}
+\label{Header_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Header.\+c@{linux/download/htop-\/3.\+3.\+0/\+Header.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+P\+U\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Header.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$ \hyperlink{Header_8c_a6b6de6db73a35db6cffc67f9e36dcdad}{Header\+\_\+new} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, \hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout} h\+Layout)
+\item 
+void \hyperlink{Header_8c_aa6c5ee017dcbc2559b8043d13c6ce4ee}{Header\+\_\+delete} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+void \hyperlink{Header_8c_a9918e7a64f023cbafbe9e52e7073c4f7}{Header\+\_\+set\+Layout} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this, \hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout} h\+Layout)
+\item 
+void \hyperlink{Header_8c_aa7bb04ad3231663bc2e520425c8eb97c}{Header\+\_\+populate\+From\+Settings} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+void \hyperlink{Header_8c_ad8efc1073dcde3741fb1465237a7de8a}{Header\+\_\+write\+Back\+To\+Settings} (const \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$ \hyperlink{Header_8c_abef22ccfc18d4b931db18a618498d4cf}{Header\+\_\+add\+Meter\+By\+Class} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this, const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} $\ast$type, unsigned int param, unsigned int column)
+\item 
+void \hyperlink{Header_8c_a16dfc5a81555ed5b24fa76ca9dd382dd}{Header\+\_\+reinit} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+void \hyperlink{Header_8c_a8fdc16efdbdf77c599e2286925876790}{Header\+\_\+draw} (const \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+void \hyperlink{Header_8c_a920f6f5b28ea524edde6e59c51ef5632}{Header\+\_\+update\+Data} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\item 
+int \hyperlink{Header_8c_a617d51c6adc388c29bdbb1f5c8499d38}{Header\+\_\+calculate\+Height} (\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Header_8c_abef22ccfc18d4b931db18a618498d4cf}\label{Header_8c_abef22ccfc18d4b931db18a618498d4cf}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+add\+Meter\+By\+Class@{Header\+\_\+add\+Meter\+By\+Class}}
+\index{Header\+\_\+add\+Meter\+By\+Class@{Header\+\_\+add\+Meter\+By\+Class}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+add\+Meter\+By\+Class()}{Header\_addMeterByClass()}}
+{\footnotesize\ttfamily \hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter}$\ast$ Header\+\_\+add\+Meter\+By\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this,  }\item[{const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} $\ast$}]{type,  }\item[{unsigned int}]{param,  }\item[{unsigned int}]{column }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Header_8c_a617d51c6adc388c29bdbb1f5c8499d38}\label{Header_8c_a617d51c6adc388c29bdbb1f5c8499d38}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+calculate\+Height@{Header\+\_\+calculate\+Height}}
+\index{Header\+\_\+calculate\+Height@{Header\+\_\+calculate\+Height}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+calculate\+Height()}{Header\_calculateHeight()}}
+{\footnotesize\ttfamily int Header\+\_\+calculate\+Height (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Header_8c_aa6c5ee017dcbc2559b8043d13c6ce4ee}\label{Header_8c_aa6c5ee017dcbc2559b8043d13c6ce4ee}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+delete@{Header\+\_\+delete}}
+\index{Header\+\_\+delete@{Header\+\_\+delete}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+delete()}{Header\_delete()}}
+{\footnotesize\ttfamily void Header\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Header_8c_a8fdc16efdbdf77c599e2286925876790}\label{Header_8c_a8fdc16efdbdf77c599e2286925876790}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+draw@{Header\+\_\+draw}}
+\index{Header\+\_\+draw@{Header\+\_\+draw}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+draw()}{Header\_draw()}}
+{\footnotesize\ttfamily void Header\+\_\+draw (\begin{DoxyParamCaption}\item[{const \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Header_8c_a6b6de6db73a35db6cffc67f9e36dcdad}\label{Header_8c_a6b6de6db73a35db6cffc67f9e36dcdad}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+new@{Header\+\_\+new}}
+\index{Header\+\_\+new@{Header\+\_\+new}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+new()}{Header\_new()}}
+{\footnotesize\ttfamily \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header}$\ast$ Header\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{\hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout}}]{h\+Layout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Header_8c_aa7bb04ad3231663bc2e520425c8eb97c}\label{Header_8c_aa7bb04ad3231663bc2e520425c8eb97c}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+populate\+From\+Settings@{Header\+\_\+populate\+From\+Settings}}
+\index{Header\+\_\+populate\+From\+Settings@{Header\+\_\+populate\+From\+Settings}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+populate\+From\+Settings()}{Header\_populateFromSettings()}}
+{\footnotesize\ttfamily void Header\+\_\+populate\+From\+Settings (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Header_8c_a16dfc5a81555ed5b24fa76ca9dd382dd}\label{Header_8c_a16dfc5a81555ed5b24fa76ca9dd382dd}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+reinit@{Header\+\_\+reinit}}
+\index{Header\+\_\+reinit@{Header\+\_\+reinit}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+reinit()}{Header\_reinit()}}
+{\footnotesize\ttfamily void Header\+\_\+reinit (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Header_8c_a9918e7a64f023cbafbe9e52e7073c4f7}\label{Header_8c_a9918e7a64f023cbafbe9e52e7073c4f7}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+set\+Layout@{Header\+\_\+set\+Layout}}
+\index{Header\+\_\+set\+Layout@{Header\+\_\+set\+Layout}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+set\+Layout()}{Header\_setLayout()}}
+{\footnotesize\ttfamily void Header\+\_\+set\+Layout (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this,  }\item[{\hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout}}]{h\+Layout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Header_8c_a920f6f5b28ea524edde6e59c51ef5632}\label{Header_8c_a920f6f5b28ea524edde6e59c51ef5632}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+update\+Data@{Header\+\_\+update\+Data}}
+\index{Header\+\_\+update\+Data@{Header\+\_\+update\+Data}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+update\+Data()}{Header\_updateData()}}
+{\footnotesize\ttfamily void Header\+\_\+update\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Header_8c_ad8efc1073dcde3741fb1465237a7de8a}\label{Header_8c_ad8efc1073dcde3741fb1465237a7de8a}} 
+\index{Header.\+c@{Header.\+c}!Header\+\_\+write\+Back\+To\+Settings@{Header\+\_\+write\+Back\+To\+Settings}}
+\index{Header\+\_\+write\+Back\+To\+Settings@{Header\+\_\+write\+Back\+To\+Settings}!Header.\+c@{Header.\+c}}
+\subsubsection{\texorpdfstring{Header\+\_\+write\+Back\+To\+Settings()}{Header\_writeBackToSettings()}}
+{\footnotesize\ttfamily void Header\+\_\+write\+Back\+To\+Settings (\begin{DoxyParamCaption}\item[{const \hyperlink{linux_2download_2htop-3_83_80_2Header_8h_a7f4dfcf80c34406946a7bda3d88d5e36}{Header} $\ast$}]{this }\end{DoxyParamCaption})}
+

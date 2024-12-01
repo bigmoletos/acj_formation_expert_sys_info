@@ -1,0 +1,94 @@
+\hypertarget{DynamicMeter_8c}{}\section{linux/download/htop-\/3.3.0/\+Dynamic\+Meter.c File Reference}
+\label{DynamicMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Dynamic\+Meter.\+c\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDynamicIterator}{Dynamic\+Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$ \hyperlink{DynamicMeter_8c_a253e8af287dafa5a4a3e2419c166fb87}{Dynamic\+Meters\+\_\+new} (void)
+\item 
+void \hyperlink{DynamicMeter_8c_aeca75654e99cfe888e3d93eadcde9182}{Dynamic\+Meters\+\_\+delete} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics)
+\item 
+bool \hyperlink{DynamicMeter_8c_a0d7df9973c48ac12b4ae94895bc9a678}{Dynamic\+Meter\+\_\+search} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics, const char $\ast$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name}, unsigned int $\ast$\hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+const char $\ast$ \hyperlink{DynamicMeter_8c_aa288327a9a0752c25e867084d9692a06}{Dynamic\+Meter\+\_\+lookup} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics, unsigned int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{DynamicMeter_8c_ae64275dcbd7563544c6416ea3c1f56a0}{Dynamic\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DynamicMeter_8c_aa288327a9a0752c25e867084d9692a06}\label{DynamicMeter_8c_aa288327a9a0752c25e867084d9692a06}} 
+\index{Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}!Dynamic\+Meter\+\_\+lookup@{Dynamic\+Meter\+\_\+lookup}}
+\index{Dynamic\+Meter\+\_\+lookup@{Dynamic\+Meter\+\_\+lookup}!Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Meter\+\_\+lookup()}{DynamicMeter\_lookup()}}
+{\footnotesize\ttfamily const char$\ast$ Dynamic\+Meter\+\_\+lookup (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics,  }\item[{unsigned int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicMeter_8c_a0d7df9973c48ac12b4ae94895bc9a678}\label{DynamicMeter_8c_a0d7df9973c48ac12b4ae94895bc9a678}} 
+\index{Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}!Dynamic\+Meter\+\_\+search@{Dynamic\+Meter\+\_\+search}}
+\index{Dynamic\+Meter\+\_\+search@{Dynamic\+Meter\+\_\+search}!Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Meter\+\_\+search()}{DynamicMeter\_search()}}
+{\footnotesize\ttfamily bool Dynamic\+Meter\+\_\+search (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics,  }\item[{const char $\ast$}]{name,  }\item[{unsigned int $\ast$}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicMeter_8c_aeca75654e99cfe888e3d93eadcde9182}\label{DynamicMeter_8c_aeca75654e99cfe888e3d93eadcde9182}} 
+\index{Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}!Dynamic\+Meters\+\_\+delete@{Dynamic\+Meters\+\_\+delete}}
+\index{Dynamic\+Meters\+\_\+delete@{Dynamic\+Meters\+\_\+delete}!Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Meters\+\_\+delete()}{DynamicMeters\_delete()}}
+{\footnotesize\ttfamily void Dynamic\+Meters\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicMeter_8c_a253e8af287dafa5a4a3e2419c166fb87}\label{DynamicMeter_8c_a253e8af287dafa5a4a3e2419c166fb87}} 
+\index{Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}!Dynamic\+Meters\+\_\+new@{Dynamic\+Meters\+\_\+new}}
+\index{Dynamic\+Meters\+\_\+new@{Dynamic\+Meters\+\_\+new}!Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Meters\+\_\+new()}{DynamicMeters\_new()}}
+{\footnotesize\ttfamily \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}$\ast$ Dynamic\+Meters\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{DynamicMeter_8c_ae64275dcbd7563544c6416ea3c1f56a0}\label{DynamicMeter_8c_ae64275dcbd7563544c6416ea3c1f56a0}} 
+\index{Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}!Dynamic\+Meter\+\_\+class@{Dynamic\+Meter\+\_\+class}}
+\index{Dynamic\+Meter\+\_\+class@{Dynamic\+Meter\+\_\+class}!Dynamic\+Meter.\+c@{Dynamic\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Meter\+\_\+class}{DynamicMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Dynamic\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete},
+      .display = DynamicMeter\_display
+   \},
+   .init = DynamicMeter\_init,
+   .updateValues = DynamicMeter\_updateValues,
+   .getCaption = DynamicMeter\_getCaption,
+   .getUiName = DynamicMeter\_getUiName,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 0,
+   .total = 100.0,
+   .attributes = DynamicMeter\_attributes,
+   .name = \textcolor{stringliteral}{"Dynamic"},
+   .uiName = \textcolor{stringliteral}{"Dynamic"},
+   .caption = \textcolor{stringliteral}{""},
+\}
+\end{DoxyCode}

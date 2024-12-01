@@ -1,0 +1,170 @@
+\hypertarget{Settings_8h}{}\section{linux/download/htop-\/3.3.0/\+Settings.h File Reference}
+\label{Settings_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Settings.\+h@{linux/download/htop-\/3.\+3.\+0/\+Settings.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Header\+Layout.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row\+Field.\+h\char`\"{}}\newline
+Include dependency graph for Settings.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structScreenDefaults}{Screen\+Defaults}
+\item 
+struct \hyperlink{structMeterColumnSetting}{Meter\+Column\+Setting}
+\item 
+struct \hyperlink{structScreenSettings__}{Screen\+Settings\+\_\+}
+\item 
+struct \hyperlink{structSettings__}{Settings\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Settings_8h_a3a22cd54ef97b948bcce8b681c7ef95f}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+L\+AY}~15
+\item 
+\#define \hyperlink{Settings_8h_a693eacedebf409272d82a6229ff596aa}{C\+O\+N\+F\+I\+G\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+I\+N\+\_\+\+V\+E\+R\+S\+I\+ON}~3
+\item 
+\#define \hyperlink{Settings_8h_a6587d06893b7df3fb336f75f2f0fd599}{Settings\+\_\+cpu\+Id}(settings,  cpu)~((settings)-\/$>$count\+C\+P\+Us\+From\+One ? (cpu)+1 \+: (cpu))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structScreenSettings__}{Screen\+Settings\+\_\+} \hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings}
+\item 
+typedef struct \hyperlink{structSettings__}{Settings\+\_\+} \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Settings_8h_a7518a8e247e6df68b7e5a805a2a07106}{Settings\+\_\+delete} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$this)
+\item 
+int \hyperlink{Settings_8h_aa182046a2efcc939cde3d7df5997ce22}{Settings\+\_\+write} (const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$this, bool on\+Crash)
+\item 
+\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$ \hyperlink{Settings_8h_af27b50013aa20be4dc897f5bf824da7e}{Settings\+\_\+new} (unsigned int initial\+Cpu\+Count, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamic\+Meters, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamic\+Columns, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamic\+Screens)
+\item 
+\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$ \hyperlink{Settings_8h_a7346c9cbb4c6a4255213fa5a9d9acffc}{Settings\+\_\+new\+Screen} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$this, const \hyperlink{structScreenDefaults}{Screen\+Defaults} $\ast$defaults)
+\item 
+\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$ \hyperlink{Settings_8h_a23e8e82ace3bc006b466cbb872e140d9}{Settings\+\_\+new\+Dynamic\+Screen} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$this, const char $\ast$tab, const struct \hyperlink{structDynamicScreen__}{Dynamic\+Screen\+\_\+} $\ast$screen, struct \hyperlink{structTable__}{Table\+\_\+} $\ast$table)
+\item 
+void \hyperlink{Settings_8h_a5c3cf9cbf5fb66452f4fd6156631bed8}{Screen\+Settings\+\_\+delete} (\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$this)
+\item 
+void \hyperlink{Settings_8h_a3e8c6ab27d2b13e3ab7c9419ea3b9419}{Screen\+Settings\+\_\+invert\+Sort\+Order} (\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$this)
+\item 
+void \hyperlink{Settings_8h_a4666dd6eb5fb85613190ee4dedd5ff6c}{Screen\+Settings\+\_\+set\+Sort\+Key} (\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$this, \hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field} sort\+Key)
+\item 
+void \hyperlink{Settings_8h_a4138e9be6c09e3c68496610cc869eb68}{Settings\+\_\+enable\+Readonly} (void)
+\item 
+bool \hyperlink{Settings_8h_a72bcce5977d2ec8d4368d8b2456160a7}{Settings\+\_\+is\+Readonly} (void)
+\item 
+void \hyperlink{Settings_8h_ae80008259c103a8858bc84b849dc9237}{Settings\+\_\+set\+Header\+Layout} (\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$this, \hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout} h\+Layout)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Settings_8h_a693eacedebf409272d82a6229ff596aa}\label{Settings_8h_a693eacedebf409272d82a6229ff596aa}} 
+\index{Settings.\+h@{Settings.\+h}!C\+O\+N\+F\+I\+G\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+I\+N\+\_\+\+V\+E\+R\+S\+I\+ON@{C\+O\+N\+F\+I\+G\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+I\+N\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{C\+O\+N\+F\+I\+G\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+I\+N\+\_\+\+V\+E\+R\+S\+I\+ON@{C\+O\+N\+F\+I\+G\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+I\+N\+\_\+\+V\+E\+R\+S\+I\+ON}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{C\+O\+N\+F\+I\+G\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+I\+N\+\_\+\+V\+E\+R\+S\+I\+ON}{CONFIG\_READER\_MIN\_VERSION}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+I\+N\+\_\+\+V\+E\+R\+S\+I\+ON~3}
+
+\mbox{\Hypertarget{Settings_8h_a3a22cd54ef97b948bcce8b681c7ef95f}\label{Settings_8h_a3a22cd54ef97b948bcce8b681c7ef95f}} 
+\index{Settings.\+h@{Settings.\+h}!D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+L\+AY@{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+L\+AY}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+L\+AY@{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+L\+AY}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+L\+AY}{DEFAULT\_DELAY}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+L\+AY~15}
+
+\mbox{\Hypertarget{Settings_8h_a6587d06893b7df3fb336f75f2f0fd599}\label{Settings_8h_a6587d06893b7df3fb336f75f2f0fd599}} 
+\index{Settings.\+h@{Settings.\+h}!Settings\+\_\+cpu\+Id@{Settings\+\_\+cpu\+Id}}
+\index{Settings\+\_\+cpu\+Id@{Settings\+\_\+cpu\+Id}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings\+\_\+cpu\+Id}{Settings\_cpuId}}
+{\footnotesize\ttfamily \#define Settings\+\_\+cpu\+Id(\begin{DoxyParamCaption}\item[{}]{settings,  }\item[{}]{cpu }\end{DoxyParamCaption})~((settings)-\/$>$count\+C\+P\+Us\+From\+One ? (cpu)+1 \+: (cpu))}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}\label{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}} 
+\index{Settings.\+h@{Settings.\+h}!Screen\+Settings@{Screen\+Settings}}
+\index{Screen\+Settings@{Screen\+Settings}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Settings}{ScreenSettings}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structScreenSettings__}{Screen\+Settings\+\_\+}  \hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings}}
+
+\mbox{\Hypertarget{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}\label{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}} 
+\index{Settings.\+h@{Settings.\+h}!Settings@{Settings}}
+\index{Settings@{Settings}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings}{Settings}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structSettings__}{Settings\+\_\+}  \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Settings_8h_a5c3cf9cbf5fb66452f4fd6156631bed8}\label{Settings_8h_a5c3cf9cbf5fb66452f4fd6156631bed8}} 
+\index{Settings.\+h@{Settings.\+h}!Screen\+Settings\+\_\+delete@{Screen\+Settings\+\_\+delete}}
+\index{Screen\+Settings\+\_\+delete@{Screen\+Settings\+\_\+delete}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Settings\+\_\+delete()}{ScreenSettings\_delete()}}
+{\footnotesize\ttfamily void Screen\+Settings\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_a3e8c6ab27d2b13e3ab7c9419ea3b9419}\label{Settings_8h_a3e8c6ab27d2b13e3ab7c9419ea3b9419}} 
+\index{Settings.\+h@{Settings.\+h}!Screen\+Settings\+\_\+invert\+Sort\+Order@{Screen\+Settings\+\_\+invert\+Sort\+Order}}
+\index{Screen\+Settings\+\_\+invert\+Sort\+Order@{Screen\+Settings\+\_\+invert\+Sort\+Order}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Settings\+\_\+invert\+Sort\+Order()}{ScreenSettings\_invertSortOrder()}}
+{\footnotesize\ttfamily void Screen\+Settings\+\_\+invert\+Sort\+Order (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_a4666dd6eb5fb85613190ee4dedd5ff6c}\label{Settings_8h_a4666dd6eb5fb85613190ee4dedd5ff6c}} 
+\index{Settings.\+h@{Settings.\+h}!Screen\+Settings\+\_\+set\+Sort\+Key@{Screen\+Settings\+\_\+set\+Sort\+Key}}
+\index{Screen\+Settings\+\_\+set\+Sort\+Key@{Screen\+Settings\+\_\+set\+Sort\+Key}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Screen\+Settings\+\_\+set\+Sort\+Key()}{ScreenSettings\_setSortKey()}}
+{\footnotesize\ttfamily void Screen\+Settings\+\_\+set\+Sort\+Key (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings} $\ast$}]{this,  }\item[{\hyperlink{RowField_8h_a7a6f9b44bcdc803955266dc3e8fe58cb}{Row\+Field}}]{sort\+Key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_a7518a8e247e6df68b7e5a805a2a07106}\label{Settings_8h_a7518a8e247e6df68b7e5a805a2a07106}} 
+\index{Settings.\+h@{Settings.\+h}!Settings\+\_\+delete@{Settings\+\_\+delete}}
+\index{Settings\+\_\+delete@{Settings\+\_\+delete}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings\+\_\+delete()}{Settings\_delete()}}
+{\footnotesize\ttfamily void Settings\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_a4138e9be6c09e3c68496610cc869eb68}\label{Settings_8h_a4138e9be6c09e3c68496610cc869eb68}} 
+\index{Settings.\+h@{Settings.\+h}!Settings\+\_\+enable\+Readonly@{Settings\+\_\+enable\+Readonly}}
+\index{Settings\+\_\+enable\+Readonly@{Settings\+\_\+enable\+Readonly}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings\+\_\+enable\+Readonly()}{Settings\_enableReadonly()}}
+{\footnotesize\ttfamily void Settings\+\_\+enable\+Readonly (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_a72bcce5977d2ec8d4368d8b2456160a7}\label{Settings_8h_a72bcce5977d2ec8d4368d8b2456160a7}} 
+\index{Settings.\+h@{Settings.\+h}!Settings\+\_\+is\+Readonly@{Settings\+\_\+is\+Readonly}}
+\index{Settings\+\_\+is\+Readonly@{Settings\+\_\+is\+Readonly}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings\+\_\+is\+Readonly()}{Settings\_isReadonly()}}
+{\footnotesize\ttfamily bool Settings\+\_\+is\+Readonly (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_af27b50013aa20be4dc897f5bf824da7e}\label{Settings_8h_af27b50013aa20be4dc897f5bf824da7e}} 
+\index{Settings.\+h@{Settings.\+h}!Settings\+\_\+new@{Settings\+\_\+new}}
+\index{Settings\+\_\+new@{Settings\+\_\+new}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings\+\_\+new()}{Settings\_new()}}
+{\footnotesize\ttfamily \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings}$\ast$ Settings\+\_\+new (\begin{DoxyParamCaption}\item[{unsigned int}]{initial\+Cpu\+Count,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamic\+Meters,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamic\+Columns,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamic\+Screens }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_a23e8e82ace3bc006b466cbb872e140d9}\label{Settings_8h_a23e8e82ace3bc006b466cbb872e140d9}} 
+\index{Settings.\+h@{Settings.\+h}!Settings\+\_\+new\+Dynamic\+Screen@{Settings\+\_\+new\+Dynamic\+Screen}}
+\index{Settings\+\_\+new\+Dynamic\+Screen@{Settings\+\_\+new\+Dynamic\+Screen}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings\+\_\+new\+Dynamic\+Screen()}{Settings\_newDynamicScreen()}}
+{\footnotesize\ttfamily \hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings}$\ast$ Settings\+\_\+new\+Dynamic\+Screen (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{this,  }\item[{const char $\ast$}]{tab,  }\item[{const struct \hyperlink{structDynamicScreen__}{Dynamic\+Screen\+\_\+} $\ast$}]{screen,  }\item[{struct \hyperlink{structTable__}{Table\+\_\+} $\ast$}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_a7346c9cbb4c6a4255213fa5a9d9acffc}\label{Settings_8h_a7346c9cbb4c6a4255213fa5a9d9acffc}} 
+\index{Settings.\+h@{Settings.\+h}!Settings\+\_\+new\+Screen@{Settings\+\_\+new\+Screen}}
+\index{Settings\+\_\+new\+Screen@{Settings\+\_\+new\+Screen}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings\+\_\+new\+Screen()}{Settings\_newScreen()}}
+{\footnotesize\ttfamily \hyperlink{Settings_8h_a86d3dc963e563d775d50b8cc2b77afb8}{Screen\+Settings}$\ast$ Settings\+\_\+new\+Screen (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{this,  }\item[{const \hyperlink{structScreenDefaults}{Screen\+Defaults} $\ast$}]{defaults }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_ae80008259c103a8858bc84b849dc9237}\label{Settings_8h_ae80008259c103a8858bc84b849dc9237}} 
+\index{Settings.\+h@{Settings.\+h}!Settings\+\_\+set\+Header\+Layout@{Settings\+\_\+set\+Header\+Layout}}
+\index{Settings\+\_\+set\+Header\+Layout@{Settings\+\_\+set\+Header\+Layout}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings\+\_\+set\+Header\+Layout()}{Settings\_setHeaderLayout()}}
+{\footnotesize\ttfamily void Settings\+\_\+set\+Header\+Layout (\begin{DoxyParamCaption}\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{this,  }\item[{\hyperlink{HeaderLayout_8h_afc9cb7b84041249bac419260f679b6a9}{Header\+Layout}}]{h\+Layout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Settings_8h_aa182046a2efcc939cde3d7df5997ce22}\label{Settings_8h_aa182046a2efcc939cde3d7df5997ce22}} 
+\index{Settings.\+h@{Settings.\+h}!Settings\+\_\+write@{Settings\+\_\+write}}
+\index{Settings\+\_\+write@{Settings\+\_\+write}!Settings.\+h@{Settings.\+h}}
+\subsubsection{\texorpdfstring{Settings\+\_\+write()}{Settings\_write()}}
+{\footnotesize\ttfamily int Settings\+\_\+write (\begin{DoxyParamCaption}\item[{const \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{this,  }\item[{bool}]{on\+Crash }\end{DoxyParamCaption})}
+

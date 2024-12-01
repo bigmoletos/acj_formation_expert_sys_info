@@ -1,0 +1,157 @@
+
+\begin{DoxyCode}
+\{python.exe\}
+
+#  installer Streamlit
+```pip install streamli
+\end{DoxyCode}
+
+
+\# Installer virtualenv 
+\begin{DoxyCode}
+# Premier script Streamlit
+## Créez un fichier, par exemple app.py, puis ajoutez
+```bash
+import streamlit as st
+st.title('Mon premier app Streamlit')
+st.write('Bienvenue dans cette application.')
+\end{DoxyCode}
+
+
+\# Créer un environnement virtuel 
+\begin{DoxyCode}
+# Activer l'environnement virtuel
+```.\(\backslash\)streamlit\_env\(\backslash\)Scripts\(\backslash\)activat
+\end{DoxyCode}
+
+
+\# Installer les packages 
+\begin{DoxyCode}
+# Enregistrer les packages installés dans un fichier requirements.txt
+```pip freeze > requirements.tx
+\end{DoxyCode}
+
+
+\# Installer les packages à partir du fichier requirements.\+txt 
+\begin{DoxyCode}
+# lancer le fichier app.py depuis le terminal !
+```streamlit run app.p
+\end{DoxyCode}
+ \section*{pour arreter l\textquotesingle{}environnement virtuel}
+
+deactivate
+
+\# si besoin de désinstaller des prog 
+\begin{DoxyCode}
+#  les templates par défaut doivent se trouver dans le repertoire à la racine de app.py dans un dossier
+       templates
+/my\_streamlit\_app
+|-- /templates
+|-- /static
+|   |-- /images
+|   |-- /css
+|-- app.py
+
+# sur le navigateur ou http://localhost:8501/
+
+
+# TEMPLATE
+## Affichage de données
+Texte simple :
+```bash
+st.text('Affiche du texte simple.')
+\end{DoxyCode}
+ \#\# Markdown \+: 
+\begin{DoxyCode}
+st.markdown('**Markdown** \_supporté\_.')
+\end{DoxyCode}
+ \#\# Messages d\textquotesingle{}alerte \+: 
+\begin{DoxyCode}
+st.success('Succès!')
+st.info('Information.')
+st.warning('Attention.')
+st.error('Erreur.')
+\end{DoxyCode}
+ \#\# Latex \+: 
+\begin{DoxyCode}
+st.latex(r''' e^\{i\(\backslash\)pi\} + 1 = 0 ''')
+\end{DoxyCode}
+ \section*{Widgets}
+
+\#\# Bouton \+: 
+\begin{DoxyCode}
+if st.button('Dis Bonjour'):
+    st.write('Bonjour!')
+\end{DoxyCode}
+ \#\# Case à cocher \+: 
+\begin{DoxyCode}
+if st.checkbox('Afficher/Cachez'):
+    st.text('Affiché!')
+\end{DoxyCode}
+ \#\# Sélecteur \+: 
+\begin{DoxyCode}
+option = st.selectbox('Choisissez un numéro:', [1, 2, 3])
+st.write(f'Vous avez sélectionné: \{option\}')
+\end{DoxyCode}
+ \#\# Curseur \+: 
+\begin{DoxyCode}
+age = st.slider('Quel est votre âge?', 0, 130, 25)
+st.write(f"J'ai \{age\} ans")
+\end{DoxyCode}
+ \section*{Affichage de données complexes}
+
+\#\# Data\+Frames \+: 
+\begin{DoxyCode}
+import pandas as pd
+
+df = pd.DataFrame(\{'col1': [1, 2, 3], 'col2': [4, 5, 6]\})
+st.dataframe(df)
+\end{DoxyCode}
+ \#\# Graphiques \+: 
+\begin{DoxyCode}
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, ax = plt.subplots()
+ax.hist(np.random.randn(1000), bins=30)
+st.pyplot(fig)
+\end{DoxyCode}
+ \section*{Mise en cache}
+
+\subsection*{Utilisez le décorateur .cache pour mettre en cache le résultat d\textquotesingle{}une fonction coûteuse \+:}
+
+
+\begin{DoxyCode}
+import time
+
+@st.cache
+def fonction\_coûteuse(param):
+    # Simulation d'une fonction coûteuse
+    time.sleep(5)
+    return param * 10
+
+resultat = fonction\_coûteuse(5)
+st.write(resultat)
+\end{DoxyCode}
+ \section*{Disposition}
+
+\#\# Colonnes \+: 
+\begin{DoxyCode}
+col1, col2 = st.columns(2)
+
+with col1:
+    st.header('Colonne 1')
+    st.write('Quelque chose ici')
+
+with col2:
+    st.header('Colonne 2')
+    st.write('Quelque chose là')
+\end{DoxyCode}
+ \subsection*{Expander \+:}
+
+
+\begin{DoxyCode}
+with st.expander("Voir détails"):
+    st.write("Des détails cachés ici.")
+\end{DoxyCode}
+ 

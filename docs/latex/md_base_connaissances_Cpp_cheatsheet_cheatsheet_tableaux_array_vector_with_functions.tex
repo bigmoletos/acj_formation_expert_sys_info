@@ -1,0 +1,29 @@
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Type }&\textbf{ Fonction/\+Commande }&\textbf{ Exemple }&\textbf{ Description  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Type }&\textbf{ Fonction/\+Commande }&\textbf{ Exemple }&\textbf{ Description  }\\\cline{1-4}
+\endhead
+Tableau classique (C-\/style) &Déclaration &int arr\mbox{[}5\mbox{]}; &Déclare un tableau classique avec une taille fixe de 5 éléments. \\\cline{1-4}
+Tableau classique (C-\/style) &Accès aux éléments &arr\mbox{[}2\mbox{]}; &Accède à l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+Tableau classique (C-\/style) &Lecture (boucle) &for (int i = 0; i $<$ 5; ++i) \{ cout $<$$<$ arr\mbox{[}i\mbox{]}; \} &Utilise une boucle pour lire tous les éléments du tableau. \\\cline{1-4}
+Tableau classique (C-\/style) &Trier &Pas possible sans une implémentation manuelle &Impossible de trier directement un tableau classique sans implémenter votre propre fonction de tri. \\\cline{1-4}
+Tableau classique (C-\/style) &Insertion (fixe) &Impossible, taille fixe &Impossible d\textquotesingle{}insérer un élément dans un tableau classique car sa taille est fixe. \\\cline{1-4}
+Tableau classique (C-\/style) &Suppression (fixe) &Impossible, taille fixe &Impossible de supprimer un élément dans un tableau classique car sa taille est fixe. \\\cline{1-4}
+std\+::array &Déclaration &std\+::array$<$int, 5$>$ arr; &Déclare un std\+::array avec une taille fixe de 5 éléments. \\\cline{1-4}
+std\+::array &Accès aux éléments &arr\mbox{[}2\mbox{]}; &Accède à l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::array &Lecture (boucle) &for (int i = 0; i $<$ arr.\+size(); ++i) \{ cout $<$$<$ arr\mbox{[}i\mbox{]}; \} &Utilise une boucle pour lire tous les éléments du std\+::array. \\\cline{1-4}
+std\+::array &Trier &std\+::sort(arr.\+begin(), arr.\+end()); &Tri du std\+::array à l\textquotesingle{}aide de std\+::sort. \\\cline{1-4}
+std\+::array &Insertion (taille fixe) &Impossible, taille fixe &Insertion impossible dans std\+::array, car la taille est fixe. \\\cline{1-4}
+std\+::array &Suppression (taille fixe) &Impossible, taille fixe &Suppression impossible dans std\+::array, car la taille est fixe. \\\cline{1-4}
+std\+::vector &Déclaration &std\+::vector$<$int$>$ vec; &Déclare un std\+::vector dynamique. \\\cline{1-4}
+std\+::vector &Accès aux éléments &vec\mbox{[}2\mbox{]}; &Accède à l\textquotesingle{}élément à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::vector &Lecture (boucle) &for (int i = 0; i $<$ vec.\+size(); ++i) \{ cout $<$$<$ vec\mbox{[}i\mbox{]}; \} &Utilise une boucle pour lire tous les éléments du std\+::vector. \\\cline{1-4}
+std\+::vector &Trier &std\+::sort(vec.\+begin(), vec.\+end()); &Tri du std\+::vector à l\textquotesingle{}aide de std\+::sort. \\\cline{1-4}
+std\+::vector &Insertion &vec.\+insert(vec.\+begin() + 2, 10); &Insère un élément dans le std\+::vector à l\textquotesingle{}indice 2. \\\cline{1-4}
+std\+::vector &Suppression &vec.\+erase(vec.\+begin() + 2); &Supprime l\textquotesingle{}élément à l\textquotesingle{}indice 2 du std\+::vector. \\\cline{1-4}
+\end{longtabu}

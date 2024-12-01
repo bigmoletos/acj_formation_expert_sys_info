@@ -1,0 +1,98 @@
+\hypertarget{exos_2tp__history__cpp_2src_2main_8cpp}{}\section{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/tp\+\_\+history\+\_\+cpp/src/main.cpp File Reference}
+\label{exos_2tp__history__cpp_2src_2main_8cpp}\index{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/tp\+\_\+history\+\_\+cpp/src/main.\+cpp@{prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/tp\+\_\+history\+\_\+cpp/src/main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \char`\"{}menu.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chrono.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}charge\+\_\+fichier\+\_\+txt.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nombre\+\_\+occurence.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tableau\+\_\+depuis\+\_\+fichier.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fichier\+\_\+historique.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logger.\+hpp\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{exos_2tp__history__cpp_2src_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em Fonction principale du programme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{exos_2tp__history__cpp_2src_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{exos_2tp__history__cpp_2src_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{exos/tp\+\_\+history\+\_\+cpp/src/main.\+cpp@{exos/tp\+\_\+history\+\_\+cpp/src/main.\+cpp}!main@{main}}
+\index{main@{main}!exos/tp\+\_\+history\+\_\+cpp/src/main.\+cpp@{exos/tp\+\_\+history\+\_\+cpp/src/main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction principale du programme. 
+
+Cette fonction \+:
+\begin{DoxyEnumerate}
+\item Initialise des variables pour le chargement de fichiers et les messages de menu.
+\item Démarre le chronométrage pour mesurer le temps d\textquotesingle{}exécution.
+\item Crée un objet \hyperlink{classLogger}{Logger} pour gérer les messages d\textquotesingle{}affichage.
+\item Charge un fichier d\textquotesingle{}historique de commandes shell.
+\item Affiche un menu interactif permettant à l\textquotesingle{}utilisateur de sélectionner une option.
+\item Exécute des actions selon le choix de l\textquotesingle{}utilisateur (par ex., calcul d\textquotesingle{}occurrences, affichage de commandes).
+\item Affiche le temps d\textquotesingle{}exécution.
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+0 en cas de succès, 1 si le chargement initial du fichier échoue. \mbox{[}Description de main\mbox{]}
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em Aucun} & \mbox{[}Cette fonction n\textquotesingle{}a pas de param�tres\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int \mbox{[}Description du retour\mbox{]} 
+\end{DoxyReturn}
+\mbox{[}Description de chargeur\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em chemin\+Fichier} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classChargeFichierTxt}{Charge\+Fichier\+Txt} \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de chargeur2\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em chemin\+Fichier\+C\+Ommandes\+Usuelles} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classChargeFichierTxt}{Charge\+Fichier\+Txt} \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de nombre\+Occur\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em chargeur.\+get\+Lignes()} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classNombreOccurrence}{Nombre\+Occurrence} \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}
+\mbox{[}Description de menu\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em options\+Menu\+Messages} & \mbox{[}Description du param�tre\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classMenu}{Menu} \mbox{[}Description du retour\mbox{]}
+\end{DoxyReturn}

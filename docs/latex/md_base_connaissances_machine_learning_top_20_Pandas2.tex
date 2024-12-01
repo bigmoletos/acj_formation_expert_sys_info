@@ -1,0 +1,27 @@
+Un Data\+Frame de la bibliothèque pandas a de nombreuses méthodes et attributs que vous pouvez utiliser. Voici quelques-\/uns des plus couramment utilisés \+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Attributs} \+:
+\begin{DoxyItemize}
+\item {\ttfamily df.\+shape} \+: Renvoie un tuple représentant la dimensionnalité du Data\+Frame.
+\item {\ttfamily df.\+columns} \+: Renvoie les noms des colonnes du Data\+Frame.
+\item {\ttfamily df.\+index} \+: Renvoie l\textquotesingle{}index du Data\+Frame.
+\item {\ttfamily df.\+dtypes} \+: Renvoie les types de données de chaque colonne.
+\item {\ttfamily df.\+values} \+: Renvoie une représentation Numpy du Data\+Frame.
+\end{DoxyItemize}
+\item {\bfseries Méthodes} \+:
+\begin{DoxyItemize}
+\item {\ttfamily df.\+head(n)} \+: Renvoie les {\ttfamily n} premières lignes du Data\+Frame.
+\item {\ttfamily df.\+tail(n)} \+: Renvoie les {\ttfamily n} dernières lignes du Data\+Frame.
+\item {\ttfamily df.\+describe()} \+: Génère des statistiques descriptives.
+\item {\ttfamily df.\+info()} \+: Imprime un résumé concis du Data\+Frame.
+\item {\ttfamily df.\+mean()}, {\ttfamily df.\+median()}, {\ttfamily df.\+min()}, {\ttfamily df.\+max()} \+: Calculent respectivement la moyenne, la médiane, le minimum et le maximum.
+\item {\ttfamily df.\+apply(func)} \+: Applique une fonction le long d\textquotesingle{}un axe du Data\+Frame.
+\item {\ttfamily df.\+groupby(key)} \+: Regroupe le Data\+Frame en utilisant une mappage sur les labels.
+\item {\ttfamily df.\+join(other)} \+: Joint deux Data\+Frames en utilisant leurs index.
+\item {\ttfamily df.\+merge(other)} \+: Fusionne Data\+Frame ou nommé Series objects avec une base de données de style join.
+\item {\ttfamily df.\+pivot()} \+: Renvoie un Data\+Frame redimensionné organisé par les valeurs d\textquotesingle{}index/columnes données.
+\item {\ttfamily df.\+drop(columns)} \+: Supprime les colonnes spécifiées du Data\+Frame. 
+\end{DoxyItemize}
+\end{DoxyItemize}

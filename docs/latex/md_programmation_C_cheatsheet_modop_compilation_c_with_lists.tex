@@ -1,0 +1,204 @@
+\subsection*{Formats d\textquotesingle{}impression en C}
+
+Voici une liste des principaux formats d\textquotesingle{}impression utilisés en C avec leur correspondance \+:
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Format }&\textbf{ Conversion en }&\textbf{ Écriture  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Format }&\textbf{ Conversion en }&\textbf{ Écriture  }\\\cline{1-3}
+\endhead
+d &int &Décimale signée \\\cline{1-3}
+ld &long int &Décimale signée \\\cline{1-3}
+u &unsigned int &Décimale non signée \\\cline{1-3}
+lu &unsigned long int &Décimale non signée \\\cline{1-3}
+o &unsigned int &Octale non signée \\\cline{1-3}
+lo &unsigned long int &Octale non signée \\\cline{1-3}
+x &unsigned int &Hexadécimale non signée \\\cline{1-3}
+lx &unsigned long int &Hexadécimale non signée \\\cline{1-3}
+f &float &Décimale virgule fixe \\\cline{1-3}
+lf &double &Décimale virgule fixe \\\cline{1-3}
+e &double &Décimale notation exponentielle \\\cline{1-3}
+le &long double &Décimale notation exponentielle \\\cline{1-3}
+g &double &Représentation la plus courte \\\cline{1-3}
+lg &long double &Représentation la plus courte \\\cline{1-3}
+c &char &Caractère \\\cline{1-3}
+s &char$\ast$ &Chaîne de caractères \\\cline{1-3}
+\end{longtabu}
+\section*{Spécifications des types et tailles en C}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Format }&\textbf{ Conversion en }&\textbf{ Écriture }&\textbf{ Taille (octets) }&\textbf{ Valeur min }&\textbf{ Valeur max  }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Format }&\textbf{ Conversion en }&\textbf{ Écriture }&\textbf{ Taille (octets) }&\textbf{ Valeur min }&\textbf{ Valeur max  }\\\cline{1-6}
+\endhead
+d &int &Décimale signée &2 ou 4 &-\/32,768 (2 octets) / -\/2,147,483,648 (4 octets) &32,767 (2 octets) / 2,147,483,647 (4 octets) \\\cline{1-6}
+ld &long int &Décimale signée &4 ou 8 &-\/2,147,483,648 (4 octets) / -\/9,223,372,036,854,775,808 (8 octets) &2,147,483,647 (4 octets) / 9,223,372,036,854,775,807 (8 octets) \\\cline{1-6}
+u &unsigned int &Décimale non signée &2 ou 4 &0 &65,535 (2 octets) / 4,294,967,295 (4 octets) \\\cline{1-6}
+lu &unsigned long int &Décimale non signée &4 ou 8 &0 &4,294,967,295 (4 octets) / 18,446,744,073,709,551,615 (8 octets) \\\cline{1-6}
+o &unsigned int &Octale non signée &2 ou 4 &0 &65,535 (2 octets) / 4,294,967,295 (4 octets) \\\cline{1-6}
+lo &unsigned long int &Octale non signée &4 ou 8 &0 &4,294,967,295 (4 octets) / 18,446,744,073,709,551,615 (8 octets) \\\cline{1-6}
+x &unsigned int &Hexadécimale non signée &2 ou 4 &0 &65,535 (2 octets) / 4,294,967,295 (4 octets) \\\cline{1-6}
+lx &unsigned long int &Hexadécimale non signée &4 ou 8 &0 &4,294,967,295 (4 octets) / 18,446,744,073,709,551,615 (8 octets) \\\cline{1-6}
+f &float &Décimale virgule fixe &4 &$\sim$ -\/3.\+4E+38 &$\sim$ 3.\+4E+38 \\\cline{1-6}
+lf &double &Décimale virgule fixe &8 &$\sim$ -\/1.\+7E+308 &$\sim$ 1.\+7E+308 \\\cline{1-6}
+e &double &Décimale notation exponentielle &8 &$\sim$ -\/1.\+7E+308 &$\sim$ 1.\+7E+308 \\\cline{1-6}
+le &long double &Décimale notation exponentielle &8, 12, ou 16 &$\sim$ -\/1.\+1E+4932 &$\sim$ 1.\+1E+4932 \\\cline{1-6}
+g &double &Représentation la plus courte &8 &$\sim$ -\/1.\+7E+308 &$\sim$ 1.\+7E+308 \\\cline{1-6}
+lg &long double &Représentation la plus courte &8, 12, ou 16 &$\sim$ -\/1.\+1E+4932 &$\sim$ 1.\+1E+4932 \\\cline{1-6}
+c &char &Caractère &1 &-\/128 &127 \\\cline{1-6}
+s &char$\ast$ &Chaîne de caractères &dépend de la chaîne &N/A &N/A \\\cline{1-6}
+\end{longtabu}
+\subsection*{Spécifications des types et tailles en C}
+
+
+\begin{DoxyItemize}
+\item {\bfseries unsigned int} \+:
+\begin{DoxyItemize}
+\item Taille \+: 2 / 4 octets
+\item Valeur minimale \+: 0
+\item Valeur maximale \+: 65535 / 4294967295
+\item Format d\textquotesingle{}affichage \+: {\ttfamily u}
+\end{DoxyItemize}
+\item {\bfseries signed int} \+:
+\begin{DoxyItemize}
+\item Taille \+: 2 / 4 octets
+\item Valeur minimale \+: -\/32768 / -\/2147483648
+\item Valeur maximale \+: 32767 / 2147483647
+\item Format d\textquotesingle{}affichage \+: {\ttfamily d}
+\end{DoxyItemize}
+\item {\bfseries int} \+:
+\begin{DoxyItemize}
+\item Taille \+: 2 / 4 octets
+\item Valeur minimale \+: -\/32768 / -\/2147483648
+\item Valeur maximale \+: 32767 / 2147483647
+\item Format d\textquotesingle{}affichage \+: {\ttfamily d}
+\end{DoxyItemize}
+\item {\bfseries unsigned char} \+:
+\begin{DoxyItemize}
+\item Taille \+: 1 octet
+\item Valeur minimale \+: 0
+\item Valeur maximale \+: 255
+\item Format d\textquotesingle{}affichage \+: {\ttfamily c}
+\end{DoxyItemize}
+\item {\bfseries signed char} \+:
+\begin{DoxyItemize}
+\item Taille \+: 1 octet
+\item Valeur minimale \+: -\/128
+\item Valeur maximale \+: 127
+\item Format d\textquotesingle{}affichage \+: {\ttfamily c}
+\end{DoxyItemize}
+\item {\bfseries float} \+:
+\begin{DoxyItemize}
+\item Taille \+: 4 octets
+\item Valeur minimale \+: -\/3.\+4e38
+\item Valeur maximale \+: 3.\+4e38
+\item Format d\textquotesingle{}affichage \+: {\ttfamily f}
+\end{DoxyItemize}
+\item {\bfseries double} \+:
+\begin{DoxyItemize}
+\item Taille \+: 8 octets
+\item Valeur minimale \+: -\/1.\+7e308
+\item Valeur maximale \+: 1.\+7e308
+\item Format d\textquotesingle{}affichage \+: {\ttfamily f}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Caractères d\textquotesingle{}échappement en C}
+
+Voici une liste des caractères d\textquotesingle{}échappement fréquemment utilisés en C pour la manipulation des chaînes et sorties formatées \+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \textbackslash{}n} \+: Nouvelle ligne
+\item {\ttfamily \textbackslash{}r} \+: Retour chariot
+\item {\ttfamily \textbackslash{}t} \+: Tabulation horizontale
+\item {\ttfamily \textbackslash{}f} \+: Saut de page
+\item {\ttfamily \textbackslash{}v} \+: Tabulation verticale
+\item {\ttfamily \textbackslash{}a} \+: Signal d\textquotesingle{}alerte
+\item {\ttfamily \textbackslash{}b} \+: Retour arrière
+\end{DoxyItemize}
+
+\subsection*{Règles de nommage des variables}
+
+Voici les règles à suivre pour nommer des variables en C \+:
+
+
+\begin{DoxyItemize}
+\item Pas de nombre en début de nom
+\item Pas de caractères spéciaux à l\textquotesingle{}exception de {\ttfamily \+\_\+}
+\item Pas de mots réservés en C (comme des types de variable)
+\item Pas d\textquotesingle{}accent ({\ttfamily à}, {\ttfamily é}, etc.)
+\item Pas d\textquotesingle{}espaces
+\item Utiliser des noms explicites pour la lisibilité
+\item Utiliser les minuscules avec des {\ttfamily \+\_\+} pour séparer les mots
+\end{DoxyItemize}
+
+\subsection*{Constantes mathématiques -\/ Liste des expressions et valeurs}
+
+
+\begin{DoxyItemize}
+\item {\bfseries M\+\_\+E} \+: e
+\begin{DoxyItemize}
+\item Valeur \+: 2.\+71828182845904523536
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+\+L\+O\+G2E} \+: log2(e)
+\begin{DoxyItemize}
+\item Valeur \+: 1.\+44269504088896340736
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+\+L\+O\+G10E} \+: log10(e)
+\begin{DoxyItemize}
+\item Valeur \+: 0.\+434294481903251827651
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+\+L\+N2} \+: ln(2)
+\begin{DoxyItemize}
+\item Valeur \+: 0.\+693147180559945309417
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+\+L\+N10} \+: ln(10)
+\begin{DoxyItemize}
+\item Valeur \+: 2.\+30258509299404568402
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+\+PI} \+: pi
+\begin{DoxyItemize}
+\item Valeur \+: 3.\+14159265358979323846
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+\+P\+I\+\_\+2} \+: pi/2
+\begin{DoxyItemize}
+\item Valeur \+: 1.\+57079632679489661923
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+\+P\+I\+\_\+4} \+: pi/4
+\begin{DoxyItemize}
+\item Valeur \+: 0.\+785398163397448309616
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+1\+\_\+\+PI} \+: 1/pi
+\begin{DoxyItemize}
+\item Valeur \+: 0.\+318309886183790671538
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+2\+\_\+\+PI} \+: 2/pi
+\begin{DoxyItemize}
+\item Valeur \+: 0.\+636619772367581343076
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+2\+\_\+\+S\+Q\+R\+T\+PI} \+: 2/sqrt(pi)
+\begin{DoxyItemize}
+\item Valeur \+: 1.\+12837916709551257390
+\end{DoxyItemize}
+\item {\bfseries M\+\_\+\+S\+Q\+R\+T2} \+: sqrt(2)
+\begin{DoxyItemize}
+\item Valeur \+: 1.\+41421356237309504880 \char`\"{}\char`\"{}"
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\section*{Save the content to a .md file}
+
+file\+\_\+path\+\_\+math\+\_\+constants = \char`\"{}/mnt/data/math\+\_\+constants\+\_\+list.\+md\char`\"{} with open(file\+\_\+path\+\_\+math\+\_\+constants, \char`\"{}w\char`\"{}) as file\+: file.\+write(md\+\_\+content)
+
+file\+\_\+path\+\_\+math\+\_\+constants 

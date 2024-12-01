@@ -1,0 +1,11 @@
+digraph "linux/download/htop-3.3.0/unsupported" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b932c5e19070f08215315961f36cd8a5 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="htop-3.3.0" fontname="Helvetica", fontsize="10", URL="dir_b932c5e19070f08215315961f36cd8a5.html"]
+  dir_5e9d30067b9938ec3a9d4d552c45ba54 [shape=box, label="unsupported", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_5e9d30067b9938ec3a9d4d552c45ba54.html"];
+  }
+  dir_9d543c6ce8c2289cd55a6f73485c93f1 [shape=box label="generic" URL="dir_9d543c6ce8c2289cd55a6f73485c93f1.html"];
+  dir_5e9d30067b9938ec3a9d4d552c45ba54->dir_9d543c6ce8c2289cd55a6f73485c93f1 [headlabel="1", labeldistance=1.5 headhref="dir_000022_000023.html"];
+}

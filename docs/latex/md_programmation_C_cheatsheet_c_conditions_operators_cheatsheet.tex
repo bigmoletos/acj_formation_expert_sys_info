@@ -1,0 +1,194 @@
+\subsection*{Conditions en C}
+
+Les instructions conditionnelles permettent de contrôler le flux d\textquotesingle{}exécution d\textquotesingle{}un programme en fonction de certaines conditions.
+
+\subsubsection*{Syntaxe de base \+:}
+
+\paragraph*{1. {\ttfamily if}}
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (condition) \{
+    \textcolor{comment}{// code exécuté si la condition est vraie}
+\}
+\end{DoxyCode}
+
+
+\paragraph*{2. {\ttfamily if-\/else}}
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (condition) \{
+    \textcolor{comment}{// code exécuté si la condition est vraie}
+\} \textcolor{keywordflow}{else} \{
+    \textcolor{comment}{// code exécuté si la condition est fausse}
+\}
+\end{DoxyCode}
+
+
+\paragraph*{3. {\ttfamily else if}}
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (condition1) \{
+    \textcolor{comment}{// code exécuté si condition1 est vraie}
+\} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (condition2) \{
+    \textcolor{comment}{// code exécuté si condition2 est vraie}
+\} \textcolor{keywordflow}{else} \{
+    \textcolor{comment}{// code exécuté si aucune condition n'est vraie}
+\}
+\end{DoxyCode}
+
+
+\paragraph*{4. {\ttfamily switch-\/case}}
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{switch} (variable) \{
+    \textcolor{keywordflow}{case} valeur1:
+        \textcolor{comment}{// code si variable == valeur1}
+        \textcolor{keywordflow}{break};
+    \textcolor{keywordflow}{case} valeur2:
+        \textcolor{comment}{// code si variable == valeur2}
+        \textcolor{keywordflow}{break};
+    \textcolor{keywordflow}{default}:
+        \textcolor{comment}{// code si aucune des valeurs n'est trouvée}
+        \textcolor{keywordflow}{break};
+\}
+\end{DoxyCode}
+
+
+\subsection*{Opérateurs en C}
+
+\subsubsection*{1. Opérateurs arithmétiques}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily +} \+: Addition
+\item {\ttfamily -\/} \+: Soustraction
+\item {\ttfamily $\ast$} \+: Multiplication
+\item {\ttfamily /} \+: Division
+\item {\ttfamily \%} \+: Modulo (reste de la division entière)
+\end{DoxyItemize}
+
+Exemple \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} a = 5, b = 2;
+\textcolor{keywordtype}{int} somme = a + b;     \textcolor{comment}{// somme = 7}
+\textcolor{keywordtype}{int} produit = a * b;   \textcolor{comment}{// produit = 10}
+\textcolor{keywordtype}{int} division = a / b;  \textcolor{comment}{// division = 2 (division entière)}
+\textcolor{keywordtype}{int} reste = a % b;     \textcolor{comment}{// reste = 1}
+\end{DoxyCode}
+
+
+\subsubsection*{2. Opérateurs de comparaison}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily ==} \+: Égal à
+\item {\ttfamily !=} \+: Différent de
+\item {\ttfamily $>$} \+: Supérieur à
+\item {\ttfamily $<$} \+: Inférieur à
+\item {\ttfamily $>$=} \+: Supérieur ou égal à
+\item {\ttfamily $<$=} \+: Inférieur ou égal à
+\end{DoxyItemize}
+
+Exemple \+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (a == b) \{
+    \textcolor{comment}{// code exécuté si a est égal à b}
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{3. Opérateurs logiques}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \&\&} \+: ET logique (vrai si les deux conditions sont vraies)
+\item {\ttfamily $\vert$$\vert$} \+: OU logique (vrai si au moins une condition est vraie)
+\item {\ttfamily !} \+: N\+ON logique (inverse de la condition)
+\end{DoxyItemize}
+
+Exemple \+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (a > 0 && b < 10) \{
+    \textcolor{comment}{// code exécuté si a est supérieur à 0 ET b est inférieur à 10}
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{4. Opérateurs d\textquotesingle{}incrémentation et de décrémentation}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily ++} \+: Incrémentation (ajoute 1 à la valeur)
+\item {\ttfamily -\/-\/} \+: Décrémentation (soustrait 1 à la valeur)
+\end{DoxyItemize}
+
+Exemple \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} x = 5;
+x++;  \textcolor{comment}{// x vaut maintenant 6}
+x--;  \textcolor{comment}{// x vaut maintenant 5}
+\end{DoxyCode}
+
+
+\subsubsection*{5. Opérateurs d\textquotesingle{}affectation}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily =} \+: Affectation
+\item {\ttfamily +=} \+: Ajout puis affectation
+\item {\ttfamily -\/=} \+: Soustraction puis affectation
+\item {\ttfamily $\ast$=} \+: Multiplication puis affectation
+\item {\ttfamily /=} \+: Division puis affectation
+\item {\ttfamily \%=} \+: Modulo puis affectation
+\end{DoxyItemize}
+
+Exemple \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} x = 10;
+x += 5;   \textcolor{comment}{// x vaut maintenant 15}
+x *= 2;   \textcolor{comment}{// x vaut maintenant 30}
+\end{DoxyCode}
+
+
+\subsubsection*{6. Opérateurs bit à bit (bitwise)}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \&} \+: ET bit à bit
+\item {\ttfamily $\vert$} \+: OU bit à bit
+\item {\ttfamily $^\wedge$} \+: X\+OR (OU exclusif) bit à bit
+\item {\ttfamily $\sim$} \+: N\+ON bit à bit
+\item {\ttfamily $<$$<$} \+: Décalage à gauche
+\item {\ttfamily $>$$>$} \+: Décalage à droite
+\end{DoxyItemize}
+
+Exemple \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} x = 5;  \textcolor{comment}{// binaire : 0101}
+\textcolor{keywordtype}{int} y = 3;  \textcolor{comment}{// binaire : 0011}
+
+\textcolor{keywordtype}{int} z = x & \hyperlink{addition_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y};  \textcolor{comment}{// z = 1  (binaire : 0001)}
+\textcolor{keywordtype}{int} w = x | \hyperlink{addition_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y};  \textcolor{comment}{// w = 7  (binaire : 0111)}
+\end{DoxyCode}
+
+
+\subsubsection*{7. Opérateurs ternaires}
+
+L\textquotesingle{}opérateur ternaire est une forme raccourcie de la structure {\ttfamily if-\/else}.
+
+Syntaxe \+: 
+\begin{DoxyCode}
+condition ? expression1 : expression2;
+\end{DoxyCode}
+
+
+Exemple \+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} a = 10, b = 20;
+\textcolor{keywordtype}{int} max = (a > b) ? a : b;  \textcolor{comment}{// max vaut 20}
+\end{DoxyCode}
+ 

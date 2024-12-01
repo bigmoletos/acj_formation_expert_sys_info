@@ -1,0 +1,175 @@
+\hypertarget{InfoScreen_8h}{}\section{linux/download/htop-\/3.3.0/\+Info\+Screen.h File Reference}
+\label{InfoScreen_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Info\+Screen.\+h@{linux/download/htop-\/3.\+3.\+0/\+Info\+Screen.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Inc\+Set.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+Include dependency graph for Info\+Screen.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structInfoScreen__}{Info\+Screen\+\_\+}
+\item 
+struct \hyperlink{structInfoScreenClass__}{Info\+Screen\+Class\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}{As\+\_\+\+Info\+Screen}(this\+\_\+)~((const \hyperlink{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}{Info\+Screen\+Class}$\ast$)(((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+))-\/$>$super.\+klass))
+\item 
+\#define \hyperlink{InfoScreen_8h_ad3a08aaf6479836f6660e135738fc0bd}{Info\+Screen\+\_\+scan}(this\+\_\+)~\hyperlink{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}{As\+\_\+\+Info\+Screen}(this\+\_\+)-\/$>$scan((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+))
+\item 
+\#define \hyperlink{InfoScreen_8h_a4a830127d8f30629b90fba7dbeb421cf}{Info\+Screen\+\_\+draw}(this\+\_\+)~\hyperlink{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}{As\+\_\+\+Info\+Screen}(this\+\_\+)-\/$>$draw((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+))
+\item 
+\#define \hyperlink{InfoScreen_8h_a5e980c58a0f2ff16e8d1d6a5b0fabe7b}{Info\+Screen\+\_\+on\+Err}(this\+\_\+)~\hyperlink{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}{As\+\_\+\+Info\+Screen}(this\+\_\+)-\/$>$on\+Err((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+))
+\item 
+\#define \hyperlink{InfoScreen_8h_a36291d3df3c8532241ca27b2f0ff0221}{Info\+Screen\+\_\+on\+Key}(this\+\_\+,  ch\+\_\+)~\hyperlink{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}{As\+\_\+\+Info\+Screen}(this\+\_\+)-\/$>$on\+Key((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+), ch\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structInfoScreen__}{Info\+Screen\+\_\+} \hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}
+\item 
+typedef void($\ast$ \hyperlink{InfoScreen_8h_a3e85dee971a09c2c150bd817fe83a089}{Info\+Screen\+\_\+\+Scan}) (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$)
+\item 
+typedef void($\ast$ \hyperlink{InfoScreen_8h_accf93b2ccd83275c2609187498d28474}{Info\+Screen\+\_\+\+Draw}) (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$)
+\item 
+typedef void($\ast$ \hyperlink{InfoScreen_8h_a11622325cc1cdfa5afe9beaf7c7d67bb}{Info\+Screen\+\_\+\+On\+Err}) (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$)
+\item 
+typedef bool($\ast$ \hyperlink{InfoScreen_8h_a4e1c3f0fd1b989598119d0b28d49e804}{Info\+Screen\+\_\+\+On\+Key}) (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$, int)
+\item 
+typedef struct \hyperlink{structInfoScreenClass__}{Info\+Screen\+Class\+\_\+} \hyperlink{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}{Info\+Screen\+Class}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$ \hyperlink{InfoScreen_8h_a637d111c00245eaa630e889d3678657b}{Info\+Screen\+\_\+init} (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$this, const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$process, \hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$bar, int height, const char $\ast$panel\+Header)
+\item 
+\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$ \hyperlink{InfoScreen_8h_a7a5edc5c709d396b967b6232e9910ed4}{Info\+Screen\+\_\+done} (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$this)
+\item 
+void \hyperlink{InfoScreen_8h_aa49b292377ba10f0f7f18687b065b609}{Info\+Screen\+\_\+draw\+Titled} (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$this, const char $\ast$fmt,...)
+\item 
+void \hyperlink{InfoScreen_8h_acbed49cdc6d54dd5c8a1bb9408cb9ceb}{Info\+Screen\+\_\+add\+Line} (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$this, const char $\ast$line)
+\item 
+void \hyperlink{InfoScreen_8h_a2317851a31a4b793ea26117b5e8dda08}{Info\+Screen\+\_\+append\+Line} (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$this, const char $\ast$line)
+\item 
+void \hyperlink{InfoScreen_8h_a8396b9bdc1d54243ce25abfb9cbff108}{Info\+Screen\+\_\+run} (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}\label{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!As\+\_\+\+Info\+Screen@{As\+\_\+\+Info\+Screen}}
+\index{As\+\_\+\+Info\+Screen@{As\+\_\+\+Info\+Screen}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{As\+\_\+\+Info\+Screen}{As\_InfoScreen}}
+{\footnotesize\ttfamily \#define As\+\_\+\+Info\+Screen(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~((const \hyperlink{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}{Info\+Screen\+Class}$\ast$)(((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+))-\/$>$super.\+klass))}
+
+\mbox{\Hypertarget{InfoScreen_8h_a4a830127d8f30629b90fba7dbeb421cf}\label{InfoScreen_8h_a4a830127d8f30629b90fba7dbeb421cf}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+draw@{Info\+Screen\+\_\+draw}}
+\index{Info\+Screen\+\_\+draw@{Info\+Screen\+\_\+draw}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+draw}{InfoScreen\_draw}}
+{\footnotesize\ttfamily \#define Info\+Screen\+\_\+draw(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}{As\+\_\+\+Info\+Screen}(this\+\_\+)-\/$>$draw((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+))}
+
+\mbox{\Hypertarget{InfoScreen_8h_a5e980c58a0f2ff16e8d1d6a5b0fabe7b}\label{InfoScreen_8h_a5e980c58a0f2ff16e8d1d6a5b0fabe7b}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+on\+Err@{Info\+Screen\+\_\+on\+Err}}
+\index{Info\+Screen\+\_\+on\+Err@{Info\+Screen\+\_\+on\+Err}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+on\+Err}{InfoScreen\_onErr}}
+{\footnotesize\ttfamily \#define Info\+Screen\+\_\+on\+Err(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}{As\+\_\+\+Info\+Screen}(this\+\_\+)-\/$>$on\+Err((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+))}
+
+\mbox{\Hypertarget{InfoScreen_8h_a36291d3df3c8532241ca27b2f0ff0221}\label{InfoScreen_8h_a36291d3df3c8532241ca27b2f0ff0221}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+on\+Key@{Info\+Screen\+\_\+on\+Key}}
+\index{Info\+Screen\+\_\+on\+Key@{Info\+Screen\+\_\+on\+Key}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+on\+Key}{InfoScreen\_onKey}}
+{\footnotesize\ttfamily \#define Info\+Screen\+\_\+on\+Key(\begin{DoxyParamCaption}\item[{}]{this\+\_\+,  }\item[{}]{ch\+\_\+ }\end{DoxyParamCaption})~\hyperlink{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}{As\+\_\+\+Info\+Screen}(this\+\_\+)-\/$>$on\+Key((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+), ch\+\_\+)}
+
+\mbox{\Hypertarget{InfoScreen_8h_ad3a08aaf6479836f6660e135738fc0bd}\label{InfoScreen_8h_ad3a08aaf6479836f6660e135738fc0bd}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+scan@{Info\+Screen\+\_\+scan}}
+\index{Info\+Screen\+\_\+scan@{Info\+Screen\+\_\+scan}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+scan}{InfoScreen\_scan}}
+{\footnotesize\ttfamily \#define Info\+Screen\+\_\+scan(\begin{DoxyParamCaption}\item[{}]{this\+\_\+ }\end{DoxyParamCaption})~\hyperlink{InfoScreen_8h_a56bd790f9c399b69f1bdf9338f3f9703}{As\+\_\+\+Info\+Screen}(this\+\_\+)-\/$>$scan((\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$)(this\+\_\+))}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}\label{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen@{Info\+Screen}}
+\index{Info\+Screen@{Info\+Screen}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen}{InfoScreen}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structInfoScreen__}{Info\+Screen\+\_\+}  \hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}}
+
+\mbox{\Hypertarget{InfoScreen_8h_accf93b2ccd83275c2609187498d28474}\label{InfoScreen_8h_accf93b2ccd83275c2609187498d28474}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+\+Draw@{Info\+Screen\+\_\+\+Draw}}
+\index{Info\+Screen\+\_\+\+Draw@{Info\+Screen\+\_\+\+Draw}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+\+Draw}{InfoScreen\_Draw}}
+{\footnotesize\ttfamily typedef void($\ast$ Info\+Screen\+\_\+\+Draw) (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$)}
+
+\mbox{\Hypertarget{InfoScreen_8h_a11622325cc1cdfa5afe9beaf7c7d67bb}\label{InfoScreen_8h_a11622325cc1cdfa5afe9beaf7c7d67bb}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+\+On\+Err@{Info\+Screen\+\_\+\+On\+Err}}
+\index{Info\+Screen\+\_\+\+On\+Err@{Info\+Screen\+\_\+\+On\+Err}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+\+On\+Err}{InfoScreen\_OnErr}}
+{\footnotesize\ttfamily typedef void($\ast$ Info\+Screen\+\_\+\+On\+Err) (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$)}
+
+\mbox{\Hypertarget{InfoScreen_8h_a4e1c3f0fd1b989598119d0b28d49e804}\label{InfoScreen_8h_a4e1c3f0fd1b989598119d0b28d49e804}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+\+On\+Key@{Info\+Screen\+\_\+\+On\+Key}}
+\index{Info\+Screen\+\_\+\+On\+Key@{Info\+Screen\+\_\+\+On\+Key}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+\+On\+Key}{InfoScreen\_OnKey}}
+{\footnotesize\ttfamily typedef bool($\ast$ Info\+Screen\+\_\+\+On\+Key) (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$, int)}
+
+\mbox{\Hypertarget{InfoScreen_8h_a3e85dee971a09c2c150bd817fe83a089}\label{InfoScreen_8h_a3e85dee971a09c2c150bd817fe83a089}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+\+Scan@{Info\+Screen\+\_\+\+Scan}}
+\index{Info\+Screen\+\_\+\+Scan@{Info\+Screen\+\_\+\+Scan}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+\+Scan}{InfoScreen\_Scan}}
+{\footnotesize\ttfamily typedef void($\ast$ Info\+Screen\+\_\+\+Scan) (\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$)}
+
+\mbox{\Hypertarget{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}\label{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+Class@{Info\+Screen\+Class}}
+\index{Info\+Screen\+Class@{Info\+Screen\+Class}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+Class}{InfoScreenClass}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structInfoScreenClass__}{Info\+Screen\+Class\+\_\+}  \hyperlink{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}{Info\+Screen\+Class}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{InfoScreen_8h_acbed49cdc6d54dd5c8a1bb9408cb9ceb}\label{InfoScreen_8h_acbed49cdc6d54dd5c8a1bb9408cb9ceb}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+add\+Line@{Info\+Screen\+\_\+add\+Line}}
+\index{Info\+Screen\+\_\+add\+Line@{Info\+Screen\+\_\+add\+Line}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+add\+Line()}{InfoScreen\_addLine()}}
+{\footnotesize\ttfamily void Info\+Screen\+\_\+add\+Line (\begin{DoxyParamCaption}\item[{\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$}]{this,  }\item[{const char $\ast$}]{line }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{InfoScreen_8h_a2317851a31a4b793ea26117b5e8dda08}\label{InfoScreen_8h_a2317851a31a4b793ea26117b5e8dda08}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+append\+Line@{Info\+Screen\+\_\+append\+Line}}
+\index{Info\+Screen\+\_\+append\+Line@{Info\+Screen\+\_\+append\+Line}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+append\+Line()}{InfoScreen\_appendLine()}}
+{\footnotesize\ttfamily void Info\+Screen\+\_\+append\+Line (\begin{DoxyParamCaption}\item[{\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$}]{this,  }\item[{const char $\ast$}]{line }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{InfoScreen_8h_a7a5edc5c709d396b967b6232e9910ed4}\label{InfoScreen_8h_a7a5edc5c709d396b967b6232e9910ed4}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+done@{Info\+Screen\+\_\+done}}
+\index{Info\+Screen\+\_\+done@{Info\+Screen\+\_\+done}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+done()}{InfoScreen\_done()}}
+{\footnotesize\ttfamily \hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$ Info\+Screen\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{InfoScreen_8h_aa49b292377ba10f0f7f18687b065b609}\label{InfoScreen_8h_aa49b292377ba10f0f7f18687b065b609}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+draw\+Titled@{Info\+Screen\+\_\+draw\+Titled}}
+\index{Info\+Screen\+\_\+draw\+Titled@{Info\+Screen\+\_\+draw\+Titled}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+draw\+Titled()}{InfoScreen\_drawTitled()}}
+{\footnotesize\ttfamily void Info\+Screen\+\_\+draw\+Titled (\begin{DoxyParamCaption}\item[{\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$}]{this,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{InfoScreen_8h_a637d111c00245eaa630e889d3678657b}\label{InfoScreen_8h_a637d111c00245eaa630e889d3678657b}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+init@{Info\+Screen\+\_\+init}}
+\index{Info\+Screen\+\_\+init@{Info\+Screen\+\_\+init}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+init()}{InfoScreen\_init()}}
+{\footnotesize\ttfamily \hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen}$\ast$ Info\+Screen\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$}]{this,  }\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{process,  }\item[{\hyperlink{FunctionBar_8h_acbf21c40af2139c165bafd8061c2ceda}{Function\+Bar} $\ast$}]{bar,  }\item[{int}]{height,  }\item[{const char $\ast$}]{panel\+Header }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{InfoScreen_8h_a8396b9bdc1d54243ce25abfb9cbff108}\label{InfoScreen_8h_a8396b9bdc1d54243ce25abfb9cbff108}} 
+\index{Info\+Screen.\+h@{Info\+Screen.\+h}!Info\+Screen\+\_\+run@{Info\+Screen\+\_\+run}}
+\index{Info\+Screen\+\_\+run@{Info\+Screen\+\_\+run}!Info\+Screen.\+h@{Info\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Info\+Screen\+\_\+run()}{InfoScreen\_run()}}
+{\footnotesize\ttfamily void Info\+Screen\+\_\+run (\begin{DoxyParamCaption}\item[{\hyperlink{InfoScreen_8h_a97139d799c65bdbb53b127e2717369c8}{Info\+Screen} $\ast$}]{this }\end{DoxyParamCaption})}
+

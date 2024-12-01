@@ -1,0 +1,48 @@
+@startuml test
+' skinparam backgroundColor #00BFFF
+skinparam backgroundColor #D3D3D3
+skinparam fontColor #000080
+skinparam database {
+    BackgroundColor #00FFFF
+    BorderColor #DD00DD
+}
+skinparam participant {
+    BackgroundColor #008A00
+    BorderColor #000080
+    FontColor #00FFFF
+}
+skinparam actor {
+    BackgroundColor #00FFFF
+    BorderColor #000080
+}
+skinparam ArrowColor #00FF00
+skinparam sequenceMessageAlign center
+
+title Système de Proxy Inverse (Reverse Proxy)
+
+actor user
+participant Nginx
+participant node.js
+database MariaDb
+
+user -> Nginx : requête http
+Nginx -> user : réponse http
+
+skinparam ArrowColor #006400
+user -> Nginx : requête asynchrone
+Nginx -> node.js : requête http
+node.js -> MariaDb : requête SQL
+MariaDb -> node.js : réponse SQL
+node.js -> Nginx : réponse http
+Nginx -> user : réponse asynchrone
+skinparam ArrowColor #FF00FF
+user -> Nginx : requête asynchrone
+Nginx -> node.js : requête http
+node.js -> MariaDb : requête SQL
+MariaDb -> node.js : erreur SQL
+node.js -> Nginx : 500 Internal Server Error
+Nginx -> user : réponse asynchrone
+
+
+@enduml
+

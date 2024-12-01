@@ -1,0 +1,61 @@
+\hypertarget{ProcessLocksScreen_8c}{}\section{linux/download/htop-\/3.3.0/\+Process\+Locks\+Screen.c File Reference}
+\label{ProcessLocksScreen_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Process\+Locks\+Screen.\+c@{linux/download/htop-\/3.\+3.\+0/\+Process\+Locks\+Screen.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process\+Locks\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Process\+Locks\+Screen.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ProcessLocksScreen_8h_a3a9e6efd85409984c8f59541330e6318}{Process\+Locks\+Screen} $\ast$ \hyperlink{ProcessLocksScreen_8c_a987fc5881fa7984a4c9c2720a0b63554}{Process\+Locks\+Screen\+\_\+new} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$process)
+\item 
+void \hyperlink{ProcessLocksScreen_8c_a5e2c5961c6a4fa78fcd7ab7ac1eb6b4a}{Process\+Locks\+Screen\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}{Info\+Screen\+Class} \hyperlink{ProcessLocksScreen_8c_abb06e11c5f2e4e6d6b013c17dbd9fc53}{Process\+Locks\+Screen\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ProcessLocksScreen_8c_a5e2c5961c6a4fa78fcd7ab7ac1eb6b4a}\label{ProcessLocksScreen_8c_a5e2c5961c6a4fa78fcd7ab7ac1eb6b4a}} 
+\index{Process\+Locks\+Screen.\+c@{Process\+Locks\+Screen.\+c}!Process\+Locks\+Screen\+\_\+delete@{Process\+Locks\+Screen\+\_\+delete}}
+\index{Process\+Locks\+Screen\+\_\+delete@{Process\+Locks\+Screen\+\_\+delete}!Process\+Locks\+Screen.\+c@{Process\+Locks\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Process\+Locks\+Screen\+\_\+delete()}{ProcessLocksScreen\_delete()}}
+{\footnotesize\ttfamily void Process\+Locks\+Screen\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ProcessLocksScreen_8c_a987fc5881fa7984a4c9c2720a0b63554}\label{ProcessLocksScreen_8c_a987fc5881fa7984a4c9c2720a0b63554}} 
+\index{Process\+Locks\+Screen.\+c@{Process\+Locks\+Screen.\+c}!Process\+Locks\+Screen\+\_\+new@{Process\+Locks\+Screen\+\_\+new}}
+\index{Process\+Locks\+Screen\+\_\+new@{Process\+Locks\+Screen\+\_\+new}!Process\+Locks\+Screen.\+c@{Process\+Locks\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Process\+Locks\+Screen\+\_\+new()}{ProcessLocksScreen\_new()}}
+{\footnotesize\ttfamily \hyperlink{ProcessLocksScreen_8h_a3a9e6efd85409984c8f59541330e6318}{Process\+Locks\+Screen}$\ast$ Process\+Locks\+Screen\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ProcessLocksScreen_8c_abb06e11c5f2e4e6d6b013c17dbd9fc53}\label{ProcessLocksScreen_8c_abb06e11c5f2e4e6d6b013c17dbd9fc53}} 
+\index{Process\+Locks\+Screen.\+c@{Process\+Locks\+Screen.\+c}!Process\+Locks\+Screen\+\_\+class@{Process\+Locks\+Screen\+\_\+class}}
+\index{Process\+Locks\+Screen\+\_\+class@{Process\+Locks\+Screen\+\_\+class}!Process\+Locks\+Screen.\+c@{Process\+Locks\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Process\+Locks\+Screen\+\_\+class}{ProcessLocksScreen\_class}}
+{\footnotesize\ttfamily const \hyperlink{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}{Info\+Screen\+Class} Process\+Locks\+Screen\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structObject__}{Object}),
+      .delete = \hyperlink{ProcessLocksScreen_8c_a5e2c5961c6a4fa78fcd7ab7ac1eb6b4a}{ProcessLocksScreen\_delete}
+   \},
+   .scan = ProcessLocksScreen\_scan,
+   .draw = ProcessLocksScreen\_draw
+\}
+\end{DoxyCode}

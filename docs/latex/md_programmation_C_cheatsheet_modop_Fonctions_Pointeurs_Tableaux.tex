@@ -1,0 +1,229 @@
+\subsection*{Fonctions en C}
+
+\#\#\# Définition de base d\textquotesingle{}une fonction 
+\begin{DoxyCode}
+type\_retour nom\_fonction(type\_param1 param1, type\_param2 param2, ...) \{
+    \textcolor{comment}{// Corps de la fonction}
+    \textcolor{keywordflow}{return} valeur;
+\}
+\end{DoxyCode}
+
+
+\#\#\# Exemple de fonction simple 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <stdio.h>}
+
+\textcolor{keywordtype}{int} \hyperlink{addition_8c_a96ef02dfc17a66a9a1863bc21404d971}{addition}(\textcolor{keywordtype}{int} a, \textcolor{keywordtype}{int} b) \{
+    \textcolor{keywordflow}{return} a + b;
+\}
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    \textcolor{keywordtype}{int} \hyperlink{exo5__tp5__conditions_8c_a8afc85cb27005e2bd7dfc73222b85a46}{resultat} = \hyperlink{addition_8c_a96ef02dfc17a66a9a1863bc21404d971}{addition}(5, 3);
+    printf(\textcolor{stringliteral}{"Résultat: %d\(\backslash\)n"}, resultat);
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{Passer des paramètres par valeur}
+
+
+\begin{DoxyItemize}
+\item Les paramètres passés par valeur créent une {\bfseries copie} de la valeur d\textquotesingle{}origine.
+\item Les modifications à l\textquotesingle{}intérieur de la fonction n\textquotesingle{}affectent pas les variables d\textquotesingle{}origine.
+\end{DoxyItemize}
+
+\subsubsection*{Passer des paramètres par référence (avec des pointeurs)}
+
+
+\begin{DoxyItemize}
+\item Passer un pointeur permet de modifier la valeur d\textquotesingle{}origine à l\textquotesingle{}extérieur de la fonction.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} incrementer(\textcolor{keywordtype}{int} *valeur) \{
+    (*valeur)++;
+\}
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    \textcolor{keywordtype}{int} x = 10;
+    incrementer(&x);  \textcolor{comment}{// Modifie directement x}
+    printf(\textcolor{stringliteral}{"Nouvelle valeur de x: %d\(\backslash\)n"}, x);  \textcolor{comment}{// x = 11}
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+\subsection*{Pointeurs en C}
+
+\subsubsection*{Définition d\textquotesingle{}un pointeur}
+
+
+\begin{DoxyItemize}
+\item Un pointeur stocke l\textquotesingle{}adresse mémoire d\textquotesingle{}une variable.
+\end{DoxyItemize}
+
+```c int $\ast$ptr; int valeur = 10; ptr =  // ptr contient l\textquotesingle{}adresse de {\ttfamily valeur} 
+\begin{DoxyCode}
+### Déréférencement d'un pointeur
+- Utiliser `*` pour accéder à la valeur pointée par un pointeur.
+
+```c
+int x = 5;
+int *p = &x;
+
+printf("Valeur de x via le pointeur: %d\(\backslash\)n", *p);  // Affiche 5
+\end{DoxyCode}
+
+
+\subsubsection*{Pointeurs et tableaux}
+
+
+\begin{DoxyItemize}
+\item Le nom d\textquotesingle{}un tableau est un pointeur vers le premier élément du tableau.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} tableau[5] = \{1, 2, 3, 4, 5\};
+\textcolor{keywordtype}{int} *p = tableau;  \textcolor{comment}{// Équivaut à &tableau[0]}
+
+printf(\textcolor{stringliteral}{"Premier élément: %d\(\backslash\)n"}, *p);  \textcolor{comment}{// Affiche 1}
+\end{DoxyCode}
+
+
+\subsubsection*{Pointeurs et chaînes de caractères}
+
+
+\begin{DoxyItemize}
+\item Les chaînes de caractères sont des tableaux de {\ttfamily char}, donc on peut utiliser des pointeurs pour parcourir une chaîne.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} *str = \textcolor{stringliteral}{"Hello"};
+\textcolor{keywordflow}{while} (*str != \textcolor{charliteral}{'\(\backslash\)0'}) \{
+    printf(\textcolor{stringliteral}{"%c"}, *str);
+    str++;
+\}
+\end{DoxyCode}
+
+
+\subsection*{Tableaux en C}
+
+\subsubsection*{Déclaration d\textquotesingle{}un tableau}
+
+
+\begin{DoxyItemize}
+\item Un tableau est une collection de variables du même type, stockées en mémoire de manière contiguë.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} tableau[5];  \textcolor{comment}{// Tableau de 5 entiers}
+\end{DoxyCode}
+
+
+\#\#\# Initialisation d\textquotesingle{}un tableau 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} tableau[5] = \{1, 2, 3, 4, 5\};  \textcolor{comment}{// Tableau initialisé}
+\end{DoxyCode}
+
+
+\#\#\# Parcourir un tableau avec une boucle 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} tableau[5] = \{1, 2, 3, 4, 5\};
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \hyperlink{allocation__dynamique__memoire_8c_acb559820d9ca11295b4500f179ef6392}{i} = 0; \hyperlink{allocation__dynamique__memoire_8c_acb559820d9ca11295b4500f179ef6392}{i} < 5; \hyperlink{allocation__dynamique__memoire_8c_acb559820d9ca11295b4500f179ef6392}{i}++) \{
+    printf(\textcolor{stringliteral}{"%d\(\backslash\)n"}, tableau[\hyperlink{allocation__dynamique__memoire_8c_acb559820d9ca11295b4500f179ef6392}{i}]);
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{Passer un tableau à une fonction}
+
+
+\begin{DoxyItemize}
+\item En réalité, on passe un {\bfseries pointeur} vers le premier élément du tableau.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} afficher\_tableau(\textcolor{keywordtype}{int} arr[], \textcolor{keywordtype}{int} taille) \{
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \hyperlink{allocation__dynamique__memoire_8c_acb559820d9ca11295b4500f179ef6392}{i} = 0; \hyperlink{allocation__dynamique__memoire_8c_acb559820d9ca11295b4500f179ef6392}{i} < \hyperlink{exo6-1__tp6__1__affichage__de__tableaux__exercices_8c_a29bf3fc0ffe4e72e45f0c84ab4f8cd1e}{taille}; \hyperlink{allocation__dynamique__memoire_8c_acb559820d9ca11295b4500f179ef6392}{i}++) \{
+        printf(\textcolor{stringliteral}{"%d "}, arr[\hyperlink{allocation__dynamique__memoire_8c_acb559820d9ca11295b4500f179ef6392}{i}]);
+    \}
+    printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+\}
+
+\textcolor{keywordtype}{int} \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}() \{
+    \textcolor{keywordtype}{int} tableau[5] = \{1, 2, 3, 4, 5\};
+    afficher\_tableau(tableau, 5);
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+\subsection*{Résumé des opérateurs de pointeurs et tableaux}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Opérateur }&\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Opérateur }&\textbf{ Description  }\\\cline{1-2}
+\endhead
+{\ttfamily $\ast$} &Déréférencement d\textquotesingle{}un pointeur (accès à la valeur pointée) \\\cline{1-2}
+{\ttfamily \&} &Obtention de l\textquotesingle{}adresse d\textquotesingle{}une variable \\\cline{1-2}
+{\ttfamily \mbox{[}\mbox{]}} &Accès à un élément de tableau \\\cline{1-2}
+\end{longtabu}
+pointeur \+: variable contenant l\textquotesingle{}adresse d\textquotesingle{}une autre variable
+
+\subsection*{\mbox{[}variables\mbox{]}}
+
+
+\begin{DoxyItemize}
+\item $\ast$$\ast$\+\_\+mavariable$\ast$$\ast$ \+: valeur de la variable
+\item $\ast$$\ast$\+\_\+\&mavariable$\ast$$\ast$ \+: adresse de la variable
+\end{DoxyItemize}
+
+\subsection*{\mbox{[}pointeur\mbox{]}}
+
+
+\begin{DoxyItemize}
+\item {\bfseries monpointeur} \+: adresse de la variable pointé
+\item $\ast$$\ast$\+\_\+$\ast$monpointeur\+\_\+$\ast$$\ast$ \+: valeur de variable pointé
+\item $\ast$$\ast$\+\_\+\&monpointeur\+\_\+$\ast$$\ast$ \+: adresse du pointeur
+\end{DoxyItemize}
+
+\subsection*{\mbox{[}déclaration et init d\textquotesingle{}un pointeur\mbox{]}}
+
+
+\begin{DoxyItemize}
+\item $\ast$$\ast$\+\_\+$\ast$monpointeur$\ast$$\ast$ = N\+U\+LL ou
+\item $\ast$$\ast$\+\_\+$\ast$monpointeur$\ast$$\ast$ = \&variable
+\end{DoxyItemize}
+
+\subsection*{Exemples d\textquotesingle{}erreurs fréquentes}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Ne pas initialiser un pointeur} \+: Utiliser un pointeur non initialisé peut causer des erreurs.
+\item {\bfseries Déréférencement de pointeur N\+U\+LL} \+: Tenter d\textquotesingle{}accéder à un pointeur N\+U\+LL peut provoquer une erreur d\textquotesingle{}exécution.
+\item {\bfseries Dépassement de tableau} \+: Accéder à un indice en dehors de la taille du tableau est dangereux et peut causer des erreurs.
+\end{DoxyItemize}
+
+\subsection*{acces par pointeur avec $\ast$tableau car les elements d\textquotesingle{}un tableau sont des pointeurs donc des cases memoires}
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// [acces] tableau}
+tableau[\hyperlink{addition_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}] \textcolor{comment}{//: element indice X}
+tableau \textcolor{comment}{//: adresse du tableau}
+*tableau \textcolor{comment}{//: premier element du tableau}
+*(tableau + \hyperlink{namespaceex__pipeline__with__param_a7de98dcd71f72619064ad930ed9ecf2e}{X}) \textcolor{comment}{//: element d indice X}
+\end{DoxyCode}
+ 

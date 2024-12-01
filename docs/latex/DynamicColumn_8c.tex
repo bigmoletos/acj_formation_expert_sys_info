@@ -1,0 +1,78 @@
+\hypertarget{DynamicColumn_8c}{}\section{linux/download/htop-\/3.3.0/\+Dynamic\+Column.c File Reference}
+\label{DynamicColumn_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Column.\+c@{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Column.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Column.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Rich\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Dynamic\+Column.\+c\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDynamicIterator}{Dynamic\+Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$ \hyperlink{DynamicColumn_8c_a30827a6ff8a73822e8e7b2b14c7e2531}{Dynamic\+Columns\+\_\+new} (void)
+\item 
+void \hyperlink{DynamicColumn_8c_a349f468f57f48a76d001d8f921dbda67}{Dynamic\+Columns\+\_\+delete} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics)
+\item 
+const char $\ast$ \hyperlink{DynamicColumn_8c_a4087fc7fb73fdf3665c1d40ef3aeb6a7}{Dynamic\+Column\+\_\+name} (unsigned int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+void \hyperlink{DynamicColumn_8c_a767ff545f3223e8c21ff8a4990351331}{Dynamic\+Column\+\_\+done} (\hyperlink{DynamicColumn_8h_ae58b8180abf67f1af86ba3d6976de501}{Dynamic\+Column} $\ast$this)
+\item 
+const \hyperlink{DynamicColumn_8h_ae58b8180abf67f1af86ba3d6976de501}{Dynamic\+Column} $\ast$ \hyperlink{DynamicColumn_8c_a8d3a17f73f67deff324dede8def54f76}{Dynamic\+Column\+\_\+search} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics, const char $\ast$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name}, unsigned int $\ast$\hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+const \hyperlink{DynamicColumn_8h_ae58b8180abf67f1af86ba3d6976de501}{Dynamic\+Column} $\ast$ \hyperlink{DynamicColumn_8c_a3e5b45451288d54f1d034268c0c60342}{Dynamic\+Column\+\_\+lookup} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics, unsigned int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+bool \hyperlink{DynamicColumn_8c_ab67e6b90417a5582988bd311e98acd16}{Dynamic\+Column\+\_\+write\+Field} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$proc, \hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$str, unsigned int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DynamicColumn_8c_a767ff545f3223e8c21ff8a4990351331}\label{DynamicColumn_8c_a767ff545f3223e8c21ff8a4990351331}} 
+\index{Dynamic\+Column.\+c@{Dynamic\+Column.\+c}!Dynamic\+Column\+\_\+done@{Dynamic\+Column\+\_\+done}}
+\index{Dynamic\+Column\+\_\+done@{Dynamic\+Column\+\_\+done}!Dynamic\+Column.\+c@{Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Column\+\_\+done()}{DynamicColumn\_done()}}
+{\footnotesize\ttfamily void Dynamic\+Column\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{DynamicColumn_8h_ae58b8180abf67f1af86ba3d6976de501}{Dynamic\+Column} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicColumn_8c_a3e5b45451288d54f1d034268c0c60342}\label{DynamicColumn_8c_a3e5b45451288d54f1d034268c0c60342}} 
+\index{Dynamic\+Column.\+c@{Dynamic\+Column.\+c}!Dynamic\+Column\+\_\+lookup@{Dynamic\+Column\+\_\+lookup}}
+\index{Dynamic\+Column\+\_\+lookup@{Dynamic\+Column\+\_\+lookup}!Dynamic\+Column.\+c@{Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Column\+\_\+lookup()}{DynamicColumn\_lookup()}}
+{\footnotesize\ttfamily const \hyperlink{DynamicColumn_8h_ae58b8180abf67f1af86ba3d6976de501}{Dynamic\+Column}$\ast$ Dynamic\+Column\+\_\+lookup (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics,  }\item[{unsigned int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicColumn_8c_a4087fc7fb73fdf3665c1d40ef3aeb6a7}\label{DynamicColumn_8c_a4087fc7fb73fdf3665c1d40ef3aeb6a7}} 
+\index{Dynamic\+Column.\+c@{Dynamic\+Column.\+c}!Dynamic\+Column\+\_\+name@{Dynamic\+Column\+\_\+name}}
+\index{Dynamic\+Column\+\_\+name@{Dynamic\+Column\+\_\+name}!Dynamic\+Column.\+c@{Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Column\+\_\+name()}{DynamicColumn\_name()}}
+{\footnotesize\ttfamily const char$\ast$ Dynamic\+Column\+\_\+name (\begin{DoxyParamCaption}\item[{unsigned int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicColumn_8c_a8d3a17f73f67deff324dede8def54f76}\label{DynamicColumn_8c_a8d3a17f73f67deff324dede8def54f76}} 
+\index{Dynamic\+Column.\+c@{Dynamic\+Column.\+c}!Dynamic\+Column\+\_\+search@{Dynamic\+Column\+\_\+search}}
+\index{Dynamic\+Column\+\_\+search@{Dynamic\+Column\+\_\+search}!Dynamic\+Column.\+c@{Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Column\+\_\+search()}{DynamicColumn\_search()}}
+{\footnotesize\ttfamily const \hyperlink{DynamicColumn_8h_ae58b8180abf67f1af86ba3d6976de501}{Dynamic\+Column}$\ast$ Dynamic\+Column\+\_\+search (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics,  }\item[{const char $\ast$}]{name,  }\item[{unsigned int $\ast$}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicColumn_8c_ab67e6b90417a5582988bd311e98acd16}\label{DynamicColumn_8c_ab67e6b90417a5582988bd311e98acd16}} 
+\index{Dynamic\+Column.\+c@{Dynamic\+Column.\+c}!Dynamic\+Column\+\_\+write\+Field@{Dynamic\+Column\+\_\+write\+Field}}
+\index{Dynamic\+Column\+\_\+write\+Field@{Dynamic\+Column\+\_\+write\+Field}!Dynamic\+Column.\+c@{Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Column\+\_\+write\+Field()}{DynamicColumn\_writeField()}}
+{\footnotesize\ttfamily bool Dynamic\+Column\+\_\+write\+Field (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{proc,  }\item[{\hyperlink{RichString_8h_a39ea40ab434af42226db49eec1187e6a}{Rich\+String} $\ast$}]{str,  }\item[{unsigned int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicColumn_8c_a349f468f57f48a76d001d8f921dbda67}\label{DynamicColumn_8c_a349f468f57f48a76d001d8f921dbda67}} 
+\index{Dynamic\+Column.\+c@{Dynamic\+Column.\+c}!Dynamic\+Columns\+\_\+delete@{Dynamic\+Columns\+\_\+delete}}
+\index{Dynamic\+Columns\+\_\+delete@{Dynamic\+Columns\+\_\+delete}!Dynamic\+Column.\+c@{Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Columns\+\_\+delete()}{DynamicColumns\_delete()}}
+{\footnotesize\ttfamily void Dynamic\+Columns\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicColumn_8c_a30827a6ff8a73822e8e7b2b14c7e2531}\label{DynamicColumn_8c_a30827a6ff8a73822e8e7b2b14c7e2531}} 
+\index{Dynamic\+Column.\+c@{Dynamic\+Column.\+c}!Dynamic\+Columns\+\_\+new@{Dynamic\+Columns\+\_\+new}}
+\index{Dynamic\+Columns\+\_\+new@{Dynamic\+Columns\+\_\+new}!Dynamic\+Column.\+c@{Dynamic\+Column.\+c}}
+\subsubsection{\texorpdfstring{Dynamic\+Columns\+\_\+new()}{DynamicColumns\_new()}}
+{\footnotesize\ttfamily \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}$\ast$ Dynamic\+Columns\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

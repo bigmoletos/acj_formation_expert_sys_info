@@ -1,0 +1,82 @@
+\hypertarget{DynamicScreen_8h}{}\section{linux/download/htop-\/3.3.0/\+Dynamic\+Screen.h File Reference}
+\label{DynamicScreen_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Screen.\+h@{linux/download/htop-\/3.\+3.\+0/\+Dynamic\+Screen.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Panel.\+h\char`\"{}}\newline
+Include dependency graph for Dynamic\+Screen.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDynamicScreen__}{Dynamic\+Screen\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structDynamicScreen__}{Dynamic\+Screen\+\_\+} \hyperlink{DynamicScreen_8h_a9b10b5a0b32fbb6fe6af7f0571ae6b25}{Dynamic\+Screen}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$ \hyperlink{DynamicScreen_8h_aca6b8e5955f3a5667bd5ead2814235d1}{Dynamic\+Screens\+\_\+new} (void)
+\item 
+void \hyperlink{DynamicScreen_8h_a74ca97f82facdb397f5f26da1a0c485b}{Dynamic\+Screens\+\_\+delete} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$dynamics)
+\item 
+void \hyperlink{DynamicScreen_8h_afad85ce66bc484dbf93dd00c36eb568c}{Dynamic\+Screen\+\_\+done} (\hyperlink{DynamicScreen_8h_a9b10b5a0b32fbb6fe6af7f0571ae6b25}{Dynamic\+Screen} $\ast$this)
+\item 
+void \hyperlink{DynamicScreen_8h_a28ac0abd90d48247f9d05f859ae9d8a7}{Dynamic\+Screens\+\_\+add\+Available\+Columns} (\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$available\+Columns, char $\ast$screen)
+\item 
+const char $\ast$ \hyperlink{DynamicScreen_8h_a51d6b7dcfd94505a267ee83afacdbbb8}{Dynamic\+Screen\+\_\+lookup} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$screens, unsigned int \hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\item 
+bool \hyperlink{DynamicScreen_8h_a511ae27d22a44b84c43730a7dddc07f6}{Dynamic\+Screen\+\_\+search} (\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$screens, const char $\ast$\hyperlink{NetBSDMachine_8c_a8f8f80d37794cde9472343e4487ba3eb}{name}, unsigned int $\ast$\hyperlink{Action_8c_acd3d88da3c0e0313c3645ff34f62f542}{key})
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{DynamicScreen_8h_a9b10b5a0b32fbb6fe6af7f0571ae6b25}\label{DynamicScreen_8h_a9b10b5a0b32fbb6fe6af7f0571ae6b25}} 
+\index{Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}!Dynamic\+Screen@{Dynamic\+Screen}}
+\index{Dynamic\+Screen@{Dynamic\+Screen}!Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Screen}{DynamicScreen}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structDynamicScreen__}{Dynamic\+Screen\+\_\+}  \hyperlink{DynamicScreen_8h_a9b10b5a0b32fbb6fe6af7f0571ae6b25}{Dynamic\+Screen}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DynamicScreen_8h_afad85ce66bc484dbf93dd00c36eb568c}\label{DynamicScreen_8h_afad85ce66bc484dbf93dd00c36eb568c}} 
+\index{Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}!Dynamic\+Screen\+\_\+done@{Dynamic\+Screen\+\_\+done}}
+\index{Dynamic\+Screen\+\_\+done@{Dynamic\+Screen\+\_\+done}!Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Screen\+\_\+done()}{DynamicScreen\_done()}}
+{\footnotesize\ttfamily void Dynamic\+Screen\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{DynamicScreen_8h_a9b10b5a0b32fbb6fe6af7f0571ae6b25}{Dynamic\+Screen} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicScreen_8h_a51d6b7dcfd94505a267ee83afacdbbb8}\label{DynamicScreen_8h_a51d6b7dcfd94505a267ee83afacdbbb8}} 
+\index{Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}!Dynamic\+Screen\+\_\+lookup@{Dynamic\+Screen\+\_\+lookup}}
+\index{Dynamic\+Screen\+\_\+lookup@{Dynamic\+Screen\+\_\+lookup}!Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Screen\+\_\+lookup()}{DynamicScreen\_lookup()}}
+{\footnotesize\ttfamily const char$\ast$ Dynamic\+Screen\+\_\+lookup (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{screens,  }\item[{unsigned int}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicScreen_8h_a511ae27d22a44b84c43730a7dddc07f6}\label{DynamicScreen_8h_a511ae27d22a44b84c43730a7dddc07f6}} 
+\index{Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}!Dynamic\+Screen\+\_\+search@{Dynamic\+Screen\+\_\+search}}
+\index{Dynamic\+Screen\+\_\+search@{Dynamic\+Screen\+\_\+search}!Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Screen\+\_\+search()}{DynamicScreen\_search()}}
+{\footnotesize\ttfamily bool Dynamic\+Screen\+\_\+search (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{screens,  }\item[{const char $\ast$}]{name,  }\item[{unsigned int $\ast$}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicScreen_8h_a28ac0abd90d48247f9d05f859ae9d8a7}\label{DynamicScreen_8h_a28ac0abd90d48247f9d05f859ae9d8a7}} 
+\index{Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}!Dynamic\+Screens\+\_\+add\+Available\+Columns@{Dynamic\+Screens\+\_\+add\+Available\+Columns}}
+\index{Dynamic\+Screens\+\_\+add\+Available\+Columns@{Dynamic\+Screens\+\_\+add\+Available\+Columns}!Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Screens\+\_\+add\+Available\+Columns()}{DynamicScreens\_addAvailableColumns()}}
+{\footnotesize\ttfamily void Dynamic\+Screens\+\_\+add\+Available\+Columns (\begin{DoxyParamCaption}\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{available\+Columns,  }\item[{char $\ast$}]{screen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicScreen_8h_a74ca97f82facdb397f5f26da1a0c485b}\label{DynamicScreen_8h_a74ca97f82facdb397f5f26da1a0c485b}} 
+\index{Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}!Dynamic\+Screens\+\_\+delete@{Dynamic\+Screens\+\_\+delete}}
+\index{Dynamic\+Screens\+\_\+delete@{Dynamic\+Screens\+\_\+delete}!Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Screens\+\_\+delete()}{DynamicScreens\_delete()}}
+{\footnotesize\ttfamily void Dynamic\+Screens\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{dynamics }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DynamicScreen_8h_aca6b8e5955f3a5667bd5ead2814235d1}\label{DynamicScreen_8h_aca6b8e5955f3a5667bd5ead2814235d1}} 
+\index{Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}!Dynamic\+Screens\+\_\+new@{Dynamic\+Screens\+\_\+new}}
+\index{Dynamic\+Screens\+\_\+new@{Dynamic\+Screens\+\_\+new}!Dynamic\+Screen.\+h@{Dynamic\+Screen.\+h}}
+\subsubsection{\texorpdfstring{Dynamic\+Screens\+\_\+new()}{DynamicScreens\_new()}}
+{\footnotesize\ttfamily \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable}$\ast$ Dynamic\+Screens\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

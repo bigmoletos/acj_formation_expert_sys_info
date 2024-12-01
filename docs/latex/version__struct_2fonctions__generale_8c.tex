@@ -1,0 +1,94 @@
+\hypertarget{version__struct_2fonctions__generale_8c}{}\section{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct/fonctions\+\_\+generale.c File Reference}
+\label{version__struct_2fonctions__generale_8c}\index{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct/fonctions\+\_\+generale.\+c@{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}proto.\+h\char`\"{}}\newline
+Include dependency graph for fonctions\+\_\+generale.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{version__struct_2fonctions__generale_8c_ada2523305090c75d05f7aa085b130a7c}{demander\+\_\+quitter} ()
+\item 
+int \hyperlink{version__struct_2fonctions__generale_8c_ac427f59e6a217bdb552c711aa496b695}{saisir\+\_\+entier} (int ma\+\_\+valeur)
+\item 
+int \hyperlink{version__struct_2fonctions__generale_8c_a8a47bbd81351e777113ca75eff3576f6}{saisir\+\_\+char} ()
+\item 
+void \hyperlink{version__struct_2fonctions__generale_8c_a6a4e8f86fcdca2532fbc213198e2971e}{affichage\+\_\+tableau} (int $\ast$tab, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{version__struct_2fonctions__generale_8c_a56b4cc5932e407c9d3d35fff6610dde2}{copie\+\_\+tableau} (int $\ast$tab1, int $\ast$tab2, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{version__struct_2fonctions__generale_8c_af774b3375ed42d7dc79c7cb47b13080e}{double\+\_\+valeur\+\_\+tableau} (int $\ast$tab, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{version__struct_2fonctions__generale_8c_ad182f1f4219ecb5f01bd29282af8b867}{convertir\+\_\+en\+\_\+majuscules} (char tableau\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{version__struct_2fonctions__generale_8c_aa5820070a45162efddb73126655a4c1a}{convertir\+\_\+en\+\_\+minuscules} (char tableau\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{version__struct_2fonctions__generale_8c_ae1fb8d77943f5cd3bb662f58c5e04362}{compter\+\_\+majuscule} (const char tableau\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{version__struct_2fonctions__generale_8c_a42f7df7d25bf8f964e247d6f36fa3a37}{compter\+\_\+minuscule} (const char tableau\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_a6a4e8f86fcdca2532fbc213198e2971e}\label{version__struct_2fonctions__generale_8c_a6a4e8f86fcdca2532fbc213198e2971e}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!affichage\+\_\+tableau@{affichage\+\_\+tableau}}
+\index{affichage\+\_\+tableau@{affichage\+\_\+tableau}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{affichage\+\_\+tableau()}{affichage\_tableau()}}
+{\footnotesize\ttfamily void affichage\+\_\+tableau (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_ae1fb8d77943f5cd3bb662f58c5e04362}\label{version__struct_2fonctions__generale_8c_ae1fb8d77943f5cd3bb662f58c5e04362}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!compter\+\_\+majuscule@{compter\+\_\+majuscule}}
+\index{compter\+\_\+majuscule@{compter\+\_\+majuscule}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{compter\+\_\+majuscule()}{compter\_majuscule()}}
+{\footnotesize\ttfamily int compter\+\_\+majuscule (\begin{DoxyParamCaption}\item[{const char}]{tableau\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_a42f7df7d25bf8f964e247d6f36fa3a37}\label{version__struct_2fonctions__generale_8c_a42f7df7d25bf8f964e247d6f36fa3a37}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!compter\+\_\+minuscule@{compter\+\_\+minuscule}}
+\index{compter\+\_\+minuscule@{compter\+\_\+minuscule}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{compter\+\_\+minuscule()}{compter\_minuscule()}}
+{\footnotesize\ttfamily int compter\+\_\+minuscule (\begin{DoxyParamCaption}\item[{const char}]{tableau\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_ad182f1f4219ecb5f01bd29282af8b867}\label{version__struct_2fonctions__generale_8c_ad182f1f4219ecb5f01bd29282af8b867}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!convertir\+\_\+en\+\_\+majuscules@{convertir\+\_\+en\+\_\+majuscules}}
+\index{convertir\+\_\+en\+\_\+majuscules@{convertir\+\_\+en\+\_\+majuscules}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{convertir\+\_\+en\+\_\+majuscules()}{convertir\_en\_majuscules()}}
+{\footnotesize\ttfamily void convertir\+\_\+en\+\_\+majuscules (\begin{DoxyParamCaption}\item[{char}]{tableau\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_aa5820070a45162efddb73126655a4c1a}\label{version__struct_2fonctions__generale_8c_aa5820070a45162efddb73126655a4c1a}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!convertir\+\_\+en\+\_\+minuscules@{convertir\+\_\+en\+\_\+minuscules}}
+\index{convertir\+\_\+en\+\_\+minuscules@{convertir\+\_\+en\+\_\+minuscules}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{convertir\+\_\+en\+\_\+minuscules()}{convertir\_en\_minuscules()}}
+{\footnotesize\ttfamily void convertir\+\_\+en\+\_\+minuscules (\begin{DoxyParamCaption}\item[{char}]{tableau\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_a56b4cc5932e407c9d3d35fff6610dde2}\label{version__struct_2fonctions__generale_8c_a56b4cc5932e407c9d3d35fff6610dde2}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!copie\+\_\+tableau@{copie\+\_\+tableau}}
+\index{copie\+\_\+tableau@{copie\+\_\+tableau}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{copie\+\_\+tableau()}{copie\_tableau()}}
+{\footnotesize\ttfamily void copie\+\_\+tableau (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab1,  }\item[{int $\ast$}]{tab2,  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_ada2523305090c75d05f7aa085b130a7c}\label{version__struct_2fonctions__generale_8c_ada2523305090c75d05f7aa085b130a7c}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!demander\+\_\+quitter@{demander\+\_\+quitter}}
+\index{demander\+\_\+quitter@{demander\+\_\+quitter}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{demander\+\_\+quitter()}{demander\_quitter()}}
+{\footnotesize\ttfamily char demander\+\_\+quitter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_af774b3375ed42d7dc79c7cb47b13080e}\label{version__struct_2fonctions__generale_8c_af774b3375ed42d7dc79c7cb47b13080e}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!double\+\_\+valeur\+\_\+tableau@{double\+\_\+valeur\+\_\+tableau}}
+\index{double\+\_\+valeur\+\_\+tableau@{double\+\_\+valeur\+\_\+tableau}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{double\+\_\+valeur\+\_\+tableau()}{double\_valeur\_tableau()}}
+{\footnotesize\ttfamily void double\+\_\+valeur\+\_\+tableau (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_a8a47bbd81351e777113ca75eff3576f6}\label{version__struct_2fonctions__generale_8c_a8a47bbd81351e777113ca75eff3576f6}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!saisir\+\_\+char@{saisir\+\_\+char}}
+\index{saisir\+\_\+char@{saisir\+\_\+char}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{saisir\+\_\+char()}{saisir\_char()}}
+{\footnotesize\ttfamily int saisir\+\_\+char (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2fonctions__generale_8c_ac427f59e6a217bdb552c711aa496b695}\label{version__struct_2fonctions__generale_8c_ac427f59e6a217bdb552c711aa496b695}} 
+\index{version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}!saisir\+\_\+entier@{saisir\+\_\+entier}}
+\index{saisir\+\_\+entier@{saisir\+\_\+entier}!version\+\_\+struct/fonctions\+\_\+generale.\+c@{version\+\_\+struct/fonctions\+\_\+generale.\+c}}
+\subsubsection{\texorpdfstring{saisir\+\_\+entier()}{saisir\_entier()}}
+{\footnotesize\ttfamily int saisir\+\_\+entier (\begin{DoxyParamCaption}\item[{int}]{ma\+\_\+valeur }\end{DoxyParamCaption})}
+

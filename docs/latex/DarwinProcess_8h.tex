@@ -1,0 +1,110 @@
+\hypertarget{DarwinProcess_8h}{}\section{linux/download/htop-\/3.3.0/darwin/\+Darwin\+Process.h File Reference}
+\label{DarwinProcess_8h}\index{linux/download/htop-\/3.\+3.\+0/darwin/\+Darwin\+Process.\+h@{linux/download/htop-\/3.\+3.\+0/darwin/\+Darwin\+Process.\+h}}
+{\ttfamily \#include $<$sys/sysctl.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}darwin/\+Darwin\+Process\+Table.\+h\char`\"{}}\newline
+Include dependency graph for Darwin\+Process.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDarwinProcess__}{Darwin\+Process\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{DarwinProcess_8h_a3c977fb6211edb89a06a87553695b17d}{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+T\+TY}~0x00000100
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structDarwinProcess__}{Darwin\+Process\+\_\+} \hyperlink{DarwinProcess_8h_afa2bba1591dc34dfc1ee91eb7b945d7a}{Darwin\+Process}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{DarwinProcess_8h_a875687633bf0d7fd45dfefa97b440163}{Darwin\+Process\+\_\+new} (const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$settings)
+\item 
+void \hyperlink{DarwinProcess_8h_a6c66e15496a064f92b8c7e31183c16c3}{Process\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+void \hyperlink{DarwinProcess_8h_ab835ec470dc07f518b794c4035e691ab}{Darwin\+Process\+\_\+set\+From\+K\+Info\+Proc} (\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$proc, const struct kinfo\+\_\+proc $\ast$ps, bool exists)
+\item 
+void \hyperlink{DarwinProcess_8h_aa59a72ec8254a3de83b4bc38ae5c609a}{Darwin\+Process\+\_\+set\+From\+Libproc\+Pidinfo} (\hyperlink{DarwinProcess_8h_afa2bba1591dc34dfc1ee91eb7b945d7a}{Darwin\+Process} $\ast$proc, \hyperlink{DarwinProcessTable_8h_a34bf15346deda5f5a32e335025f47738}{Darwin\+Process\+Table} $\ast$dpt, double time\+Interval\+NS)
+\item 
+void \hyperlink{DarwinProcess_8h_adcd9871982af36516380e67a26fdab6f}{Darwin\+Process\+\_\+scan\+Threads} (\hyperlink{DarwinProcess_8h_afa2bba1591dc34dfc1ee91eb7b945d7a}{Darwin\+Process} $\ast$dp)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} \hyperlink{DarwinProcess_8h_a720cb4210d490ad87af0b0ddd2de7437}{Darwin\+Process\+\_\+class}
+\item 
+const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} \hyperlink{DarwinProcess_8h_ad5f8090378cbc673e2ae0825d0342743}{Process\+\_\+fields} \mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{DarwinProcess_8h_a3c977fb6211edb89a06a87553695b17d}\label{DarwinProcess_8h_a3c977fb6211edb89a06a87553695b17d}} 
+\index{Darwin\+Process.\+h@{Darwin\+Process.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+T\+TY@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+T\+TY}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+T\+TY@{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+T\+TY}!Darwin\+Process.\+h@{Darwin\+Process.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+T\+TY}{PROCESS\_FLAG\_TTY}}
+{\footnotesize\ttfamily \#define P\+R\+O\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+T\+TY~0x00000100}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{DarwinProcess_8h_afa2bba1591dc34dfc1ee91eb7b945d7a}\label{DarwinProcess_8h_afa2bba1591dc34dfc1ee91eb7b945d7a}} 
+\index{Darwin\+Process.\+h@{Darwin\+Process.\+h}!Darwin\+Process@{Darwin\+Process}}
+\index{Darwin\+Process@{Darwin\+Process}!Darwin\+Process.\+h@{Darwin\+Process.\+h}}
+\subsubsection{\texorpdfstring{Darwin\+Process}{DarwinProcess}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structDarwinProcess__}{Darwin\+Process\+\_\+}  \hyperlink{DarwinProcess_8h_afa2bba1591dc34dfc1ee91eb7b945d7a}{Darwin\+Process}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DarwinProcess_8h_a875687633bf0d7fd45dfefa97b440163}\label{DarwinProcess_8h_a875687633bf0d7fd45dfefa97b440163}} 
+\index{Darwin\+Process.\+h@{Darwin\+Process.\+h}!Darwin\+Process\+\_\+new@{Darwin\+Process\+\_\+new}}
+\index{Darwin\+Process\+\_\+new@{Darwin\+Process\+\_\+new}!Darwin\+Process.\+h@{Darwin\+Process.\+h}}
+\subsubsection{\texorpdfstring{Darwin\+Process\+\_\+new()}{DarwinProcess\_new()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ Darwin\+Process\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DarwinProcess_8h_adcd9871982af36516380e67a26fdab6f}\label{DarwinProcess_8h_adcd9871982af36516380e67a26fdab6f}} 
+\index{Darwin\+Process.\+h@{Darwin\+Process.\+h}!Darwin\+Process\+\_\+scan\+Threads@{Darwin\+Process\+\_\+scan\+Threads}}
+\index{Darwin\+Process\+\_\+scan\+Threads@{Darwin\+Process\+\_\+scan\+Threads}!Darwin\+Process.\+h@{Darwin\+Process.\+h}}
+\subsubsection{\texorpdfstring{Darwin\+Process\+\_\+scan\+Threads()}{DarwinProcess\_scanThreads()}}
+{\footnotesize\ttfamily void Darwin\+Process\+\_\+scan\+Threads (\begin{DoxyParamCaption}\item[{\hyperlink{DarwinProcess_8h_afa2bba1591dc34dfc1ee91eb7b945d7a}{Darwin\+Process} $\ast$}]{dp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DarwinProcess_8h_ab835ec470dc07f518b794c4035e691ab}\label{DarwinProcess_8h_ab835ec470dc07f518b794c4035e691ab}} 
+\index{Darwin\+Process.\+h@{Darwin\+Process.\+h}!Darwin\+Process\+\_\+set\+From\+K\+Info\+Proc@{Darwin\+Process\+\_\+set\+From\+K\+Info\+Proc}}
+\index{Darwin\+Process\+\_\+set\+From\+K\+Info\+Proc@{Darwin\+Process\+\_\+set\+From\+K\+Info\+Proc}!Darwin\+Process.\+h@{Darwin\+Process.\+h}}
+\subsubsection{\texorpdfstring{Darwin\+Process\+\_\+set\+From\+K\+Info\+Proc()}{DarwinProcess\_setFromKInfoProc()}}
+{\footnotesize\ttfamily void Darwin\+Process\+\_\+set\+From\+K\+Info\+Proc (\begin{DoxyParamCaption}\item[{\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{proc,  }\item[{const struct kinfo\+\_\+proc $\ast$}]{ps,  }\item[{bool}]{exists }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DarwinProcess_8h_aa59a72ec8254a3de83b4bc38ae5c609a}\label{DarwinProcess_8h_aa59a72ec8254a3de83b4bc38ae5c609a}} 
+\index{Darwin\+Process.\+h@{Darwin\+Process.\+h}!Darwin\+Process\+\_\+set\+From\+Libproc\+Pidinfo@{Darwin\+Process\+\_\+set\+From\+Libproc\+Pidinfo}}
+\index{Darwin\+Process\+\_\+set\+From\+Libproc\+Pidinfo@{Darwin\+Process\+\_\+set\+From\+Libproc\+Pidinfo}!Darwin\+Process.\+h@{Darwin\+Process.\+h}}
+\subsubsection{\texorpdfstring{Darwin\+Process\+\_\+set\+From\+Libproc\+Pidinfo()}{DarwinProcess\_setFromLibprocPidinfo()}}
+{\footnotesize\ttfamily void Darwin\+Process\+\_\+set\+From\+Libproc\+Pidinfo (\begin{DoxyParamCaption}\item[{\hyperlink{DarwinProcess_8h_afa2bba1591dc34dfc1ee91eb7b945d7a}{Darwin\+Process} $\ast$}]{proc,  }\item[{\hyperlink{DarwinProcessTable_8h_a34bf15346deda5f5a32e335025f47738}{Darwin\+Process\+Table} $\ast$}]{dpt,  }\item[{double}]{time\+Interval\+NS }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DarwinProcess_8h_a6c66e15496a064f92b8c7e31183c16c3}\label{DarwinProcess_8h_a6c66e15496a064f92b8c7e31183c16c3}} 
+\index{Darwin\+Process.\+h@{Darwin\+Process.\+h}!Process\+\_\+delete@{Process\+\_\+delete}}
+\index{Process\+\_\+delete@{Process\+\_\+delete}!Darwin\+Process.\+h@{Darwin\+Process.\+h}}
+\subsubsection{\texorpdfstring{Process\+\_\+delete()}{Process\_delete()}}
+{\footnotesize\ttfamily void Process\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{DarwinProcess_8h_a720cb4210d490ad87af0b0ddd2de7437}\label{DarwinProcess_8h_a720cb4210d490ad87af0b0ddd2de7437}} 
+\index{Darwin\+Process.\+h@{Darwin\+Process.\+h}!Darwin\+Process\+\_\+class@{Darwin\+Process\+\_\+class}}
+\index{Darwin\+Process\+\_\+class@{Darwin\+Process\+\_\+class}!Darwin\+Process.\+h@{Darwin\+Process.\+h}}
+\subsubsection{\texorpdfstring{Darwin\+Process\+\_\+class}{DarwinProcess\_class}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a5141f921eeeef5beb79f9562ec2d45bf}{Process\+Class} Darwin\+Process\+\_\+class}
+
+\mbox{\Hypertarget{DarwinProcess_8h_ad5f8090378cbc673e2ae0825d0342743}\label{DarwinProcess_8h_ad5f8090378cbc673e2ae0825d0342743}} 
+\index{Darwin\+Process.\+h@{Darwin\+Process.\+h}!Process\+\_\+fields@{Process\+\_\+fields}}
+\index{Process\+\_\+fields@{Process\+\_\+fields}!Darwin\+Process.\+h@{Darwin\+Process.\+h}}
+\subsubsection{\texorpdfstring{Process\+\_\+fields}{Process\_fields}}
+{\footnotesize\ttfamily const \hyperlink{Process_8h_a63fec2aaa615801056b9bb4209b64001}{Process\+Field\+Data} Process\+\_\+fields\mbox{[}\hyperlink{Process_8h_ad19a2c8282ce0c7a1199d39ae1689489}{L\+A\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+F\+I\+E\+LD}\mbox{]}}
+

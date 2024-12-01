@@ -1,0 +1,78 @@
+\hypertarget{TraceScreen_8c}{}\section{linux/download/htop-\/3.3.0/\+Trace\+Screen.c File Reference}
+\label{TraceScreen_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Trace\+Screen.\+c@{linux/download/htop-\/3.\+3.\+0/\+Trace\+Screen.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Trace\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/select.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Function\+Bar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Provide\+Curses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Trace\+Screen.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{TraceScreen_8h_aaea769e0d8202ed05bbe0a59d63d22d0}{Trace\+Screen} $\ast$ \hyperlink{TraceScreen_8c_adeb053dade739852c85f983d10f4902d}{Trace\+Screen\+\_\+new} (const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$process)
+\item 
+void \hyperlink{TraceScreen_8c_a5888c0fdcb7641f6b97c4c2973bf58aa}{Trace\+Screen\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+bool \hyperlink{TraceScreen_8c_a6b9aa3890c9181f4d801c89c39eade79}{Trace\+Screen\+\_\+fork\+Tracer} (\hyperlink{TraceScreen_8h_aaea769e0d8202ed05bbe0a59d63d22d0}{Trace\+Screen} $\ast$this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}{Info\+Screen\+Class} \hyperlink{TraceScreen_8c_a4c6b37b6d43b307651928fe8e8199b28}{Trace\+Screen\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{TraceScreen_8c_a5888c0fdcb7641f6b97c4c2973bf58aa}\label{TraceScreen_8c_a5888c0fdcb7641f6b97c4c2973bf58aa}} 
+\index{Trace\+Screen.\+c@{Trace\+Screen.\+c}!Trace\+Screen\+\_\+delete@{Trace\+Screen\+\_\+delete}}
+\index{Trace\+Screen\+\_\+delete@{Trace\+Screen\+\_\+delete}!Trace\+Screen.\+c@{Trace\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Trace\+Screen\+\_\+delete()}{TraceScreen\_delete()}}
+{\footnotesize\ttfamily void Trace\+Screen\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TraceScreen_8c_a6b9aa3890c9181f4d801c89c39eade79}\label{TraceScreen_8c_a6b9aa3890c9181f4d801c89c39eade79}} 
+\index{Trace\+Screen.\+c@{Trace\+Screen.\+c}!Trace\+Screen\+\_\+fork\+Tracer@{Trace\+Screen\+\_\+fork\+Tracer}}
+\index{Trace\+Screen\+\_\+fork\+Tracer@{Trace\+Screen\+\_\+fork\+Tracer}!Trace\+Screen.\+c@{Trace\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Trace\+Screen\+\_\+fork\+Tracer()}{TraceScreen\_forkTracer()}}
+{\footnotesize\ttfamily bool Trace\+Screen\+\_\+fork\+Tracer (\begin{DoxyParamCaption}\item[{\hyperlink{TraceScreen_8h_aaea769e0d8202ed05bbe0a59d63d22d0}{Trace\+Screen} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TraceScreen_8c_adeb053dade739852c85f983d10f4902d}\label{TraceScreen_8c_adeb053dade739852c85f983d10f4902d}} 
+\index{Trace\+Screen.\+c@{Trace\+Screen.\+c}!Trace\+Screen\+\_\+new@{Trace\+Screen\+\_\+new}}
+\index{Trace\+Screen\+\_\+new@{Trace\+Screen\+\_\+new}!Trace\+Screen.\+c@{Trace\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Trace\+Screen\+\_\+new()}{TraceScreen\_new()}}
+{\footnotesize\ttfamily \hyperlink{TraceScreen_8h_aaea769e0d8202ed05bbe0a59d63d22d0}{Trace\+Screen}$\ast$ Trace\+Screen\+\_\+new (\begin{DoxyParamCaption}\item[{const \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{TraceScreen_8c_a4c6b37b6d43b307651928fe8e8199b28}\label{TraceScreen_8c_a4c6b37b6d43b307651928fe8e8199b28}} 
+\index{Trace\+Screen.\+c@{Trace\+Screen.\+c}!Trace\+Screen\+\_\+class@{Trace\+Screen\+\_\+class}}
+\index{Trace\+Screen\+\_\+class@{Trace\+Screen\+\_\+class}!Trace\+Screen.\+c@{Trace\+Screen.\+c}}
+\subsubsection{\texorpdfstring{Trace\+Screen\+\_\+class}{TraceScreen\_class}}
+{\footnotesize\ttfamily const \hyperlink{InfoScreen_8h_a425f2be7f8305d474556b0eca816c26a}{Info\+Screen\+Class} Trace\+Screen\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structObject__}{Object}),
+      .delete = \hyperlink{TraceScreen_8c_a5888c0fdcb7641f6b97c4c2973bf58aa}{TraceScreen\_delete}
+   \},
+   .draw = TraceScreen\_draw,
+   .onErr = TraceScreen\_updateTrace,
+   .onKey = TraceScreen\_onKey,
+\}
+\end{DoxyCode}

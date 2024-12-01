@@ -1,0 +1,142 @@
+\hypertarget{classMenu}{}\section{Menu Class Reference}
+\label{classMenu}\index{Menu@{Menu}}
+
+
+Classe qui gère l\textquotesingle{}affichage du menu et les interactions utilisateur.  
+
+
+
+
+{\ttfamily \#include $<$menu.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMenu_a08614e9db9f4da4c6bcd37887d3df51a}{Menu} (const std\+::vector$<$ std\+::string $>$ \&options\+Messages)
+\begin{DoxyCompactList}\small\item\em Constructeur qui initialise les options du menu. \end{DoxyCompactList}\item 
+void \hyperlink{classMenu_a27c166b79b757c245c6183ee8dd5cf2a}{afficher\+Menu} () const
+\begin{DoxyCompactList}\small\item\em Affiche les options du menu en vert, avec les numéros en rouge. \end{DoxyCompactList}\item 
+int \hyperlink{classMenu_a7a46776577f8cba63999b1bbe85576ed}{obtenir\+Choix} () const
+\begin{DoxyCompactList}\small\item\em Récupère et valide le choix de l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
+void \hyperlink{classMenu_a16172e4478222f6843e25bb522052c36}{afficher\+Message\+Choix} (int choix) const
+\begin{DoxyCompactList}\small\item\em Affiche un message confirmant l\textquotesingle{}option choisie par l\textquotesingle{}utilisateur en vert. \end{DoxyCompactList}\item 
+\hyperlink{classMenu_a08614e9db9f4da4c6bcd37887d3df51a}{Menu} (const std\+::vector$<$ std\+::string $>$ \&options\+Messages)
+\item 
+void \hyperlink{classMenu_a27c166b79b757c245c6183ee8dd5cf2a}{afficher\+Menu} () const
+\item 
+int \hyperlink{classMenu_a7a46776577f8cba63999b1bbe85576ed}{obtenir\+Choix} () const
+\item 
+void \hyperlink{classMenu_a16172e4478222f6843e25bb522052c36}{afficher\+Message\+Choix} (int choix) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe qui gère l\textquotesingle{}affichage du menu et les interactions utilisateur. 
+
+La classe {\ttfamily \hyperlink{classMenu}{Menu}} permet d\textquotesingle{}afficher un menu avec des options, de récupérer le choix de l\textquotesingle{}utilisateur, et d\textquotesingle{}afficher des messages en fonction du choix effectué.
+
+depuis le main il faut donner un tablea par exemple\+: int \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}\{ std\+::vector$<$std\+::string$>$ options\+Menu\+Messages\{ \char`\"{}\+Creer le fichier historique des commandes shell\char`\"{}, \char`\"{}\+Lecture du fichier des commandes shell usuelles\char`\"{}, \char`\"{}\+Affichage du nombre d\textquotesingle{}occurrences des commandes shell\char`\"{}, \char`\"{}\+Prise en compte des commandes sudo\char`\"{}, \char`\"{}\+Inverser la casse des caractères\char`\"{}, \char`\"{}\+Traitement sans affichage console\char`\"{}, \char`\"{}\+Mise à jour du fichier des commandes shell\char`\"{}, \char`\"{}\+Sortir du programme\char`\"{}\};
+
+Affichage et gestion du menu \hyperlink{classMenu}{Menu} menu(options\+Menu\+Messages); menu.\+afficher\+Menu(); menu\+\_\+choix = menu.\+obtenir\+Choix(); menu.\+afficher\+Message\+Choix(menu\+\_\+choix); \}
+
+La classe {\ttfamily \hyperlink{classMenu}{Menu}} permet d\textquotesingle{}afficher un menu avec des options, de récupérer le choix de l\textquotesingle{}utilisateur, et d\textquotesingle{}afficher des messages en fonction du choix effectué.
+
+depuis le main il faut donner un tablea par exemple\+: int \hyperlink{htop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}\{ std\+::vector$<$std\+::string$>$ options\+Menu\+Messages\{ \char`\"{}\+Creer le fichier historique des commandes shell\char`\"{}, \char`\"{}\+Lecture du fichier des commandes shell usuelles\char`\"{}, \char`\"{}\+Affichage du nombre d\textquotesingle{}occurrences des commandes shell\char`\"{}, \char`\"{}\+Prise en compte des commandes sudo\char`\"{}, \char`\"{}\+Inverser la casse des caractères\char`\"{}, \char`\"{}\+Traitement sans affichage console\char`\"{}, \char`\"{}\+Mise à jour du fichier des commandes shell\char`\"{}, \char`\"{}\+Sortir du programme\char`\"{}\};
+
+Affichage et gestion du menu \begin{DoxyVerb}Menu menu(optionsMenuMessages);
+menu.afficherMenu();
+menu_choix = menu.obtenirChoix();
+menu.afficherMessageChoix(menu_choix);\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMenu_a08614e9db9f4da4c6bcd37887d3df51a}\label{classMenu_a08614e9db9f4da4c6bcd37887d3df51a}} 
+\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{Menu()}{Menu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Menu\+::\+Menu (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{options\+Messages }\end{DoxyParamCaption})}
+
+
+
+Constructeur qui initialise les options du menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em options\+Messages} & Un vecteur de chaînes de caractères contenant les messages des options. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a08614e9db9f4da4c6bcd37887d3df51a}\label{classMenu_a08614e9db9f4da4c6bcd37887d3df51a}} 
+\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{Menu()}{Menu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Menu\+::\+Menu (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{options\+Messages }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMenu_a27c166b79b757c245c6183ee8dd5cf2a}\label{classMenu_a27c166b79b757c245c6183ee8dd5cf2a}} 
+\index{Menu@{Menu}!afficher\+Menu@{afficher\+Menu}}
+\index{afficher\+Menu@{afficher\+Menu}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{afficher\+Menu()}{afficherMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::afficher\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Affiche les options du menu en vert, avec les numéros en rouge. 
+
+Cette méthode utilise {\ttfamily printf} et des codes A\+N\+SI pour afficher le texte coloré. Les numéros des options sont en rouge et les descriptions en vert. \mbox{\Hypertarget{classMenu_a27c166b79b757c245c6183ee8dd5cf2a}\label{classMenu_a27c166b79b757c245c6183ee8dd5cf2a}} 
+\index{Menu@{Menu}!afficher\+Menu@{afficher\+Menu}}
+\index{afficher\+Menu@{afficher\+Menu}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{afficher\+Menu()}{afficherMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+::afficher\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMenu_a16172e4478222f6843e25bb522052c36}\label{classMenu_a16172e4478222f6843e25bb522052c36}} 
+\index{Menu@{Menu}!afficher\+Message\+Choix@{afficher\+Message\+Choix}}
+\index{afficher\+Message\+Choix@{afficher\+Message\+Choix}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{afficher\+Message\+Choix()}{afficherMessageChoix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::afficher\+Message\+Choix (\begin{DoxyParamCaption}\item[{int}]{choix }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMenu_a16172e4478222f6843e25bb522052c36}\label{classMenu_a16172e4478222f6843e25bb522052c36}} 
+\index{Menu@{Menu}!afficher\+Message\+Choix@{afficher\+Message\+Choix}}
+\index{afficher\+Message\+Choix@{afficher\+Message\+Choix}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{afficher\+Message\+Choix()}{afficherMessageChoix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+::afficher\+Message\+Choix (\begin{DoxyParamCaption}\item[{int}]{choix }\end{DoxyParamCaption}) const}
+
+
+
+Affiche un message confirmant l\textquotesingle{}option choisie par l\textquotesingle{}utilisateur en vert. 
+
+Cette méthode affiche un message personnalisé en fonction du choix de l\textquotesingle{}utilisateur. Si le choix est invalide, un message d\textquotesingle{}erreur en rouge est affiché.
+
+
+\begin{DoxyParams}{Parameters}
+{\em choix} & L\textquotesingle{}entier représentant le choix de l\textquotesingle{}utilisateur. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a7a46776577f8cba63999b1bbe85576ed}\label{classMenu_a7a46776577f8cba63999b1bbe85576ed}} 
+\index{Menu@{Menu}!obtenir\+Choix@{obtenir\+Choix}}
+\index{obtenir\+Choix@{obtenir\+Choix}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{obtenir\+Choix()}{obtenirChoix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Menu\+::obtenir\+Choix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Récupère et valide le choix de l\textquotesingle{}utilisateur. 
+
+Cette méthode affiche une invite de saisie et vérifie que l\textquotesingle{}utilisateur entre un entier valide correspondant à une option du menu. En cas d\textquotesingle{}erreur, un message d\textquotesingle{}erreur en rouge est affiché et l\textquotesingle{}utilisateur est invité à réessayer.
+
+\begin{DoxyReturn}{Returns}
+Un entier représentant le choix de l\textquotesingle{}utilisateur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMenu_a7a46776577f8cba63999b1bbe85576ed}\label{classMenu_a7a46776577f8cba63999b1bbe85576ed}} 
+\index{Menu@{Menu}!obtenir\+Choix@{obtenir\+Choix}}
+\index{obtenir\+Choix@{obtenir\+Choix}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{obtenir\+Choix()}{obtenirChoix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Menu\+::obtenir\+Choix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/tp\+\_\+history\+\_\+cpp/include/\hyperlink{include_2menu_8hpp}{menu.\+hpp}\item 
+prog\+\_\+\+C\+\_\+vers\+\_\+\+C++/exos/tp\+\_\+history\+\_\+cpp/src/\hyperlink{src_2menu_8cpp}{menu.\+cpp}\end{DoxyCompactItemize}

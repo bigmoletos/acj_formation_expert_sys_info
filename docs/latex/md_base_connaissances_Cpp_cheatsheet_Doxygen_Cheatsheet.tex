@@ -1,0 +1,67 @@
+\subsection*{1. Installer Doxygen}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Linux} \+: {\ttfamily sudo apt install doxygen}
+\item {\bfseries Mac} \+: {\ttfamily brew install doxygen}
+\item {\bfseries Windows} \+: Télécharger depuis \href{https://www.doxygen.nl/}{\tt https\+://www.\+doxygen.\+nl/}
+\end{DoxyItemize}
+
+\subsection*{2. Générer le fichier de configuration}
+
+
+\begin{DoxyItemize}
+\item Commande \+: {\ttfamily doxygen -\/g}
+\item Crée un fichier {\ttfamily Doxyfile} par défaut dans le dossier courant.
+\end{DoxyItemize}
+
+\subsection*{3. Configurer le fichier {\ttfamily Doxyfile}}
+
+
+\begin{DoxyItemize}
+\item Ouvrez {\ttfamily Doxyfile} et modifiez les paramètres suivants \+:
+\begin{DoxyItemize}
+\item {\bfseries Nom du projet} \+: {\ttfamily P\+R\+O\+J\+E\+C\+T\+\_\+\+N\+A\+ME = \char`\"{}\+Nom du projet\char`\"{}}
+\item {\bfseries Répertoire de sortie} \+: {\ttfamily O\+U\+T\+P\+U\+T\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY = ./docs}
+\item {\bfseries Fichiers analysés} \+: {\ttfamily F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+R\+NS = $\ast$.cpp $\ast$.h}
+\item {\bfseries Graphviz} \+: Si Graphviz est installé, activez les diagrammes avec {\ttfamily H\+A\+V\+E\+\_\+\+D\+OT = Y\+ES}.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{4. Générer la documentation}
+
+
+\begin{DoxyItemize}
+\item Commande \+: {\ttfamily doxygen Doxyfile}
+\item Lancez cette commande depuis le dossier contenant {\ttfamily Doxyfile}.
+\end{DoxyItemize}
+
+\subsection*{5. Visualiser la documentation}
+
+
+\begin{DoxyItemize}
+\item {\bfseries H\+T\+ML} \+: Ouvrez {\ttfamily docs/html/index.\+html} dans un navigateur.
+\item {\bfseries La\+TeX} \+: Compilez {\ttfamily docs/latex/refman.\+tex} en P\+DF avec {\ttfamily pdflatex} \+: 
+\begin{DoxyCode}
+pdflatex refman.tex
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{6. Résoudre les problèmes avec Graphviz}
+
+
+\begin{DoxyItemize}
+\item Si Doxygen affiche des erreurs liées à {\ttfamily dot} \+:
+\begin{DoxyItemize}
+\item Installez Graphviz \+:
+\begin{DoxyItemize}
+\item {\bfseries Linux} \+: {\ttfamily sudo apt install graphviz}
+\item {\bfseries Mac} \+: {\ttfamily brew install graphviz}
+\item {\bfseries Windows} \+: Téléchargez depuis \href{https://graphviz.org/download/}{\tt https\+://graphviz.\+org/download/} et ajoutez-\/le au {\ttfamily P\+A\+TH}.
+\end{DoxyItemize}
+\item Vérifiez l\textquotesingle{}installation avec \+: {\ttfamily dot -\/V} 
+
+ 
+\end{DoxyItemize}
+\end{DoxyItemize}

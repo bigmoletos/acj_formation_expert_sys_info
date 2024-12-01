@@ -1,0 +1,58 @@
+\hypertarget{Machine_8c}{}\section{linux/download/htop-\/3.3.0/\+Machine.c File Reference}
+\label{Machine_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Machine.\+c@{linux/download/htop-\/3.\+3.\+0/\+Machine.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Row.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+Include dependency graph for Machine.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Machine_8c_aedc4f60375ee28d6c75fdf9aa1e11c25}{Machine\+\_\+init} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$this, \hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table} $\ast$users\+Table, uid\+\_\+t user\+Id)
+\item 
+void \hyperlink{Machine_8c_a4461cc0d9c9df36d40875754501f4b71}{Machine\+\_\+done} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$this)
+\item 
+void \hyperlink{Machine_8c_a94f9a67b29e651c59ea09e8662f4a50c}{Machine\+\_\+populate\+Tables\+From\+Settings} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$this, \hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$settings, \hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$process\+Table)
+\item 
+void \hyperlink{Machine_8c_a68a694ca8bbcc58c97d2028acdf19c62}{Machine\+\_\+set\+Tables\+Panel} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$this, \hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$panel)
+\item 
+void \hyperlink{Machine_8c_abdcf224fb7693d41e23f324ada61c35e}{Machine\+\_\+scan\+Tables} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Machine_8c_a4461cc0d9c9df36d40875754501f4b71}\label{Machine_8c_a4461cc0d9c9df36d40875754501f4b71}} 
+\index{Machine.\+c@{Machine.\+c}!Machine\+\_\+done@{Machine\+\_\+done}}
+\index{Machine\+\_\+done@{Machine\+\_\+done}!Machine.\+c@{Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+done()}{Machine\_done()}}
+{\footnotesize\ttfamily void Machine\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Machine_8c_aedc4f60375ee28d6c75fdf9aa1e11c25}\label{Machine_8c_aedc4f60375ee28d6c75fdf9aa1e11c25}} 
+\index{Machine.\+c@{Machine.\+c}!Machine\+\_\+init@{Machine\+\_\+init}}
+\index{Machine\+\_\+init@{Machine\+\_\+init}!Machine.\+c@{Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+init()}{Machine\_init()}}
+{\footnotesize\ttfamily void Machine\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{this,  }\item[{\hyperlink{UsersTable_8h_a6fba6179e89888312f235179e5a04de6}{Users\+Table} $\ast$}]{users\+Table,  }\item[{uid\+\_\+t}]{user\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Machine_8c_a94f9a67b29e651c59ea09e8662f4a50c}\label{Machine_8c_a94f9a67b29e651c59ea09e8662f4a50c}} 
+\index{Machine.\+c@{Machine.\+c}!Machine\+\_\+populate\+Tables\+From\+Settings@{Machine\+\_\+populate\+Tables\+From\+Settings}}
+\index{Machine\+\_\+populate\+Tables\+From\+Settings@{Machine\+\_\+populate\+Tables\+From\+Settings}!Machine.\+c@{Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+populate\+Tables\+From\+Settings()}{Machine\_populateTablesFromSettings()}}
+{\footnotesize\ttfamily void Machine\+\_\+populate\+Tables\+From\+Settings (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{this,  }\item[{\hyperlink{Settings_8h_ad97e5960b63f21c02bf5e0e43c0ef002}{Settings} $\ast$}]{settings,  }\item[{\hyperlink{Table_8h_a799795dd983fdfee2e48cc52cdceb05d}{Table} $\ast$}]{process\+Table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Machine_8c_abdcf224fb7693d41e23f324ada61c35e}\label{Machine_8c_abdcf224fb7693d41e23f324ada61c35e}} 
+\index{Machine.\+c@{Machine.\+c}!Machine\+\_\+scan\+Tables@{Machine\+\_\+scan\+Tables}}
+\index{Machine\+\_\+scan\+Tables@{Machine\+\_\+scan\+Tables}!Machine.\+c@{Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+scan\+Tables()}{Machine\_scanTables()}}
+{\footnotesize\ttfamily void Machine\+\_\+scan\+Tables (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Machine_8c_a68a694ca8bbcc58c97d2028acdf19c62}\label{Machine_8c_a68a694ca8bbcc58c97d2028acdf19c62}} 
+\index{Machine.\+c@{Machine.\+c}!Machine\+\_\+set\+Tables\+Panel@{Machine\+\_\+set\+Tables\+Panel}}
+\index{Machine\+\_\+set\+Tables\+Panel@{Machine\+\_\+set\+Tables\+Panel}!Machine.\+c@{Machine.\+c}}
+\subsubsection{\texorpdfstring{Machine\+\_\+set\+Tables\+Panel()}{Machine\_setTablesPanel()}}
+{\footnotesize\ttfamily void Machine\+\_\+set\+Tables\+Panel (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{this,  }\item[{\hyperlink{Panel_8h_a034d4c16521db412dc7a1e8536d16fae}{Panel} $\ast$}]{panel }\end{DoxyParamCaption})}
+

@@ -1,0 +1,14 @@
+digraph "MaskItem_"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="MaskItem_",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" children" ];
+  Node2 [label="Vector_",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structVector__.html"];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" type" ];
+  Node3 [label="ObjectClass_",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structObjectClass__.html"];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" array" ];
+  Node4 [label="Object_",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structObject__.html"];
+  Node3 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" klass" ];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" super" ];
+}

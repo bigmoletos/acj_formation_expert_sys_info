@@ -1,0 +1,215 @@
+\hypertarget{XUtils_8c}{}\section{linux/download/htop-\/3.3.0/\+X\+Utils.c File Reference}
+\label{XUtils_8c}\index{linux/download/htop-\/3.\+3.\+0/\+X\+Utils.\+c@{linux/download/htop-\/3.\+3.\+0/\+X\+Utils.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+Include dependency graph for X\+Utils.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{XUtils_8c_aa28b3d6ce02d1db9728f6f7325077b5a}{fail} (void)
+\item 
+void $\ast$ \hyperlink{XUtils_8c_a03cad6f5800dce2995a0e182871799cb}{x\+Malloc} (size\+\_\+t size)
+\item 
+void $\ast$ \hyperlink{XUtils_8c_a9587162e3734411bc6b87c06e94e587c}{x\+Malloc\+Array} (size\+\_\+t nmemb, size\+\_\+t size)
+\item 
+void $\ast$ \hyperlink{XUtils_8c_a600132c7930e3918ce3d0d25ddf585c7}{x\+Calloc} (size\+\_\+t nmemb, size\+\_\+t size)
+\item 
+void $\ast$ \hyperlink{XUtils_8c_a445a306fcecf40ec89f4c2a3abb80598}{x\+Realloc} (void $\ast$ptr, size\+\_\+t size)
+\item 
+void $\ast$ \hyperlink{XUtils_8c_a1e158085774b03bfa59ee806e9b1f94c}{x\+Realloc\+Array} (void $\ast$ptr, size\+\_\+t nmemb, size\+\_\+t size)
+\item 
+void $\ast$ \hyperlink{XUtils_8c_a0ae45c59680a6d70fc3d90a7a72ec1b9}{x\+Realloc\+Array\+Zero} (void $\ast$ptr, size\+\_\+t prevmemb, size\+\_\+t newmemb, size\+\_\+t size)
+\item 
+bool \hyperlink{XUtils_8c_ad76e96746026206be16d221b3ddb185b}{String\+\_\+contains\+\_\+i} (const char $\ast$s1, const char $\ast$s2, bool multi)
+\item 
+char $\ast$ \hyperlink{XUtils_8c_affba714738ff91e7c594631e9e6b163d}{String\+\_\+cat} (const char $\ast$s1, const char $\ast$s2)
+\item 
+char $\ast$ \hyperlink{XUtils_8c_ac4d6d71ec8c3c1dd8859648ac03511cd}{String\+\_\+trim} (const char $\ast$in)
+\item 
+char $\ast$$\ast$ \hyperlink{XUtils_8c_ae13e5be5171db5afc30d5bfe3402eed9}{String\+\_\+split} (const char $\ast$s, char sep, size\+\_\+t $\ast$\hyperlink{exo21_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n})
+\item 
+void \hyperlink{XUtils_8c_ac9f1f85516a278ed7a6314e0ecb22db3}{String\+\_\+free\+Array} (char $\ast$$\ast$s)
+\item 
+char $\ast$ \hyperlink{XUtils_8c_a43cea1040bd4507b6298aa618a298df7}{String\+\_\+read\+Line} (F\+I\+LE $\ast$fd)
+\item 
+size\+\_\+t \hyperlink{XUtils_8c_ade9c936de165f794f3c5fadc7e401ca8}{String\+\_\+safe\+Strncpy} (char $\ast$restrict dest, const char $\ast$restrict src, size\+\_\+t size)
+\item 
+int \hyperlink{XUtils_8c_a58e4927c6e91ec5804c97ce9c34939b0}{x\+Asprintf} (char $\ast$$\ast$strp, const char $\ast$fmt,...)
+\item 
+int \hyperlink{XUtils_8c_a9a4ec5db1d24cbf77cc355b5669e8c23}{x\+Snprintf} (char $\ast$buf, size\+\_\+t len, const char $\ast$fmt,...)
+\item 
+char $\ast$ \hyperlink{XUtils_8c_a2883edf8b07657c7379a4b5a9c4c43b9}{x\+Strdup} (const char $\ast$str)
+\item 
+void \hyperlink{XUtils_8c_a4b6a76dea9c56bd94746526fb920628e}{free\+\_\+and\+\_\+x\+Strdup} (char $\ast$$\ast$ptr, const char $\ast$str)
+\item 
+char $\ast$ \hyperlink{XUtils_8c_ab5264233f6781af653210e2edf08b4ab}{x\+Strndup} (const char $\ast$str, size\+\_\+t len)
+\item 
+ssize\+\_\+t \hyperlink{XUtils_8c_a43a0c6a8c0c9a7ae5a03ed4dece0c461}{x\+Readfile} (const char $\ast$pathname, void $\ast$buffer, size\+\_\+t count)
+\item 
+ssize\+\_\+t \hyperlink{XUtils_8c_a964982064082875683f9b1d387ad4ae3}{x\+Readfileat} (\hyperlink{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}{openat\+\_\+arg\+\_\+t} dirfd, const char $\ast$pathname, void $\ast$buffer, size\+\_\+t count)
+\item 
+ssize\+\_\+t \hyperlink{XUtils_8c_a597560727a77f0ad670756709e64b35c}{full\+\_\+write} (int fd, const void $\ast$buf, size\+\_\+t count)
+\item 
+int \hyperlink{XUtils_8c_ab12bb3a242cb3cd318b40763e7700650}{compare\+Real\+Numbers} (double a, double b)
+\item 
+double \hyperlink{XUtils_8c_a6d551ccbe6b0b4fe11c397c6e7232c91}{sum\+Positive\+Values} (const double $\ast$array, size\+\_\+t count)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{XUtils_8c_ab12bb3a242cb3cd318b40763e7700650}\label{XUtils_8c_ab12bb3a242cb3cd318b40763e7700650}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!compare\+Real\+Numbers@{compare\+Real\+Numbers}}
+\index{compare\+Real\+Numbers@{compare\+Real\+Numbers}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{compare\+Real\+Numbers()}{compareRealNumbers()}}
+{\footnotesize\ttfamily int compare\+Real\+Numbers (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_aa28b3d6ce02d1db9728f6f7325077b5a}\label{XUtils_8c_aa28b3d6ce02d1db9728f6f7325077b5a}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!fail@{fail}}
+\index{fail@{fail}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{fail()}{fail()}}
+{\footnotesize\ttfamily void fail (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a4b6a76dea9c56bd94746526fb920628e}\label{XUtils_8c_a4b6a76dea9c56bd94746526fb920628e}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!free\+\_\+and\+\_\+x\+Strdup@{free\+\_\+and\+\_\+x\+Strdup}}
+\index{free\+\_\+and\+\_\+x\+Strdup@{free\+\_\+and\+\_\+x\+Strdup}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{free\+\_\+and\+\_\+x\+Strdup()}{free\_and\_xStrdup()}}
+{\footnotesize\ttfamily void free\+\_\+and\+\_\+x\+Strdup (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{ptr,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a597560727a77f0ad670756709e64b35c}\label{XUtils_8c_a597560727a77f0ad670756709e64b35c}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!full\+\_\+write@{full\+\_\+write}}
+\index{full\+\_\+write@{full\+\_\+write}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{full\+\_\+write()}{full\_write()}}
+{\footnotesize\ttfamily ssize\+\_\+t full\+\_\+write (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_affba714738ff91e7c594631e9e6b163d}\label{XUtils_8c_affba714738ff91e7c594631e9e6b163d}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!String\+\_\+cat@{String\+\_\+cat}}
+\index{String\+\_\+cat@{String\+\_\+cat}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+cat()}{String\_cat()}}
+{\footnotesize\ttfamily char$\ast$ String\+\_\+cat (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s1,  }\item[{const char $\ast$}]{s2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_ad76e96746026206be16d221b3ddb185b}\label{XUtils_8c_ad76e96746026206be16d221b3ddb185b}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!String\+\_\+contains\+\_\+i@{String\+\_\+contains\+\_\+i}}
+\index{String\+\_\+contains\+\_\+i@{String\+\_\+contains\+\_\+i}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+contains\+\_\+i()}{String\_contains\_i()}}
+{\footnotesize\ttfamily bool String\+\_\+contains\+\_\+i (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s1,  }\item[{const char $\ast$}]{s2,  }\item[{bool}]{multi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{XUtils_8c_ac9f1f85516a278ed7a6314e0ecb22db3}\label{XUtils_8c_ac9f1f85516a278ed7a6314e0ecb22db3}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!String\+\_\+free\+Array@{String\+\_\+free\+Array}}
+\index{String\+\_\+free\+Array@{String\+\_\+free\+Array}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+free\+Array()}{String\_freeArray()}}
+{\footnotesize\ttfamily void String\+\_\+free\+Array (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a43cea1040bd4507b6298aa618a298df7}\label{XUtils_8c_a43cea1040bd4507b6298aa618a298df7}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!String\+\_\+read\+Line@{String\+\_\+read\+Line}}
+\index{String\+\_\+read\+Line@{String\+\_\+read\+Line}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+read\+Line()}{String\_readLine()}}
+{\footnotesize\ttfamily char$\ast$ String\+\_\+read\+Line (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_ade9c936de165f794f3c5fadc7e401ca8}\label{XUtils_8c_ade9c936de165f794f3c5fadc7e401ca8}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!String\+\_\+safe\+Strncpy@{String\+\_\+safe\+Strncpy}}
+\index{String\+\_\+safe\+Strncpy@{String\+\_\+safe\+Strncpy}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+safe\+Strncpy()}{String\_safeStrncpy()}}
+{\footnotesize\ttfamily size\+\_\+t String\+\_\+safe\+Strncpy (\begin{DoxyParamCaption}\item[{char $\ast$restrict}]{dest,  }\item[{const char $\ast$restrict}]{src,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_ae13e5be5171db5afc30d5bfe3402eed9}\label{XUtils_8c_ae13e5be5171db5afc30d5bfe3402eed9}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!String\+\_\+split@{String\+\_\+split}}
+\index{String\+\_\+split@{String\+\_\+split}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+split()}{String\_split()}}
+{\footnotesize\ttfamily char$\ast$$\ast$ String\+\_\+split (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{char}]{sep,  }\item[{size\+\_\+t $\ast$}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_ac4d6d71ec8c3c1dd8859648ac03511cd}\label{XUtils_8c_ac4d6d71ec8c3c1dd8859648ac03511cd}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!String\+\_\+trim@{String\+\_\+trim}}
+\index{String\+\_\+trim@{String\+\_\+trim}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+trim()}{String\_trim()}}
+{\footnotesize\ttfamily char$\ast$ String\+\_\+trim (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a6d551ccbe6b0b4fe11c397c6e7232c91}\label{XUtils_8c_a6d551ccbe6b0b4fe11c397c6e7232c91}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!sum\+Positive\+Values@{sum\+Positive\+Values}}
+\index{sum\+Positive\+Values@{sum\+Positive\+Values}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{sum\+Positive\+Values()}{sumPositiveValues()}}
+{\footnotesize\ttfamily double sum\+Positive\+Values (\begin{DoxyParamCaption}\item[{const double $\ast$}]{array,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a58e4927c6e91ec5804c97ce9c34939b0}\label{XUtils_8c_a58e4927c6e91ec5804c97ce9c34939b0}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Asprintf@{x\+Asprintf}}
+\index{x\+Asprintf@{x\+Asprintf}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Asprintf()}{xAsprintf()}}
+{\footnotesize\ttfamily int x\+Asprintf (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{strp,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a600132c7930e3918ce3d0d25ddf585c7}\label{XUtils_8c_a600132c7930e3918ce3d0d25ddf585c7}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Calloc@{x\+Calloc}}
+\index{x\+Calloc@{x\+Calloc}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Calloc()}{xCalloc()}}
+{\footnotesize\ttfamily void$\ast$ x\+Calloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nmemb,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a03cad6f5800dce2995a0e182871799cb}\label{XUtils_8c_a03cad6f5800dce2995a0e182871799cb}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Malloc@{x\+Malloc}}
+\index{x\+Malloc@{x\+Malloc}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Malloc()}{xMalloc()}}
+{\footnotesize\ttfamily void$\ast$ x\+Malloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a9587162e3734411bc6b87c06e94e587c}\label{XUtils_8c_a9587162e3734411bc6b87c06e94e587c}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Malloc\+Array@{x\+Malloc\+Array}}
+\index{x\+Malloc\+Array@{x\+Malloc\+Array}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Malloc\+Array()}{xMallocArray()}}
+{\footnotesize\ttfamily void$\ast$ x\+Malloc\+Array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nmemb,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a43a0c6a8c0c9a7ae5a03ed4dece0c461}\label{XUtils_8c_a43a0c6a8c0c9a7ae5a03ed4dece0c461}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Readfile@{x\+Readfile}}
+\index{x\+Readfile@{x\+Readfile}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Readfile()}{xReadfile()}}
+{\footnotesize\ttfamily ssize\+\_\+t x\+Readfile (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pathname,  }\item[{void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a964982064082875683f9b1d387ad4ae3}\label{XUtils_8c_a964982064082875683f9b1d387ad4ae3}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Readfileat@{x\+Readfileat}}
+\index{x\+Readfileat@{x\+Readfileat}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Readfileat()}{xReadfileat()}}
+{\footnotesize\ttfamily ssize\+\_\+t x\+Readfileat (\begin{DoxyParamCaption}\item[{\hyperlink{Compat_8h_ad4399962e9e33fd19355b9e81aa60697}{openat\+\_\+arg\+\_\+t}}]{dirfd,  }\item[{const char $\ast$}]{pathname,  }\item[{void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a445a306fcecf40ec89f4c2a3abb80598}\label{XUtils_8c_a445a306fcecf40ec89f4c2a3abb80598}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Realloc@{x\+Realloc}}
+\index{x\+Realloc@{x\+Realloc}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Realloc()}{xRealloc()}}
+{\footnotesize\ttfamily void$\ast$ x\+Realloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a1e158085774b03bfa59ee806e9b1f94c}\label{XUtils_8c_a1e158085774b03bfa59ee806e9b1f94c}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Realloc\+Array@{x\+Realloc\+Array}}
+\index{x\+Realloc\+Array@{x\+Realloc\+Array}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Realloc\+Array()}{xReallocArray()}}
+{\footnotesize\ttfamily void$\ast$ x\+Realloc\+Array (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{size\+\_\+t}]{nmemb,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a0ae45c59680a6d70fc3d90a7a72ec1b9}\label{XUtils_8c_a0ae45c59680a6d70fc3d90a7a72ec1b9}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Realloc\+Array\+Zero@{x\+Realloc\+Array\+Zero}}
+\index{x\+Realloc\+Array\+Zero@{x\+Realloc\+Array\+Zero}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Realloc\+Array\+Zero()}{xReallocArrayZero()}}
+{\footnotesize\ttfamily void$\ast$ x\+Realloc\+Array\+Zero (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{size\+\_\+t}]{prevmemb,  }\item[{size\+\_\+t}]{newmemb,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a9a4ec5db1d24cbf77cc355b5669e8c23}\label{XUtils_8c_a9a4ec5db1d24cbf77cc355b5669e8c23}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Snprintf@{x\+Snprintf}}
+\index{x\+Snprintf@{x\+Snprintf}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Snprintf()}{xSnprintf()}}
+{\footnotesize\ttfamily int x\+Snprintf (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{size\+\_\+t}]{len,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_a2883edf8b07657c7379a4b5a9c4c43b9}\label{XUtils_8c_a2883edf8b07657c7379a4b5a9c4c43b9}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Strdup@{x\+Strdup}}
+\index{x\+Strdup@{x\+Strdup}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Strdup()}{xStrdup()}}
+{\footnotesize\ttfamily char$\ast$ x\+Strdup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{XUtils_8c_ab5264233f6781af653210e2edf08b4ab}\label{XUtils_8c_ab5264233f6781af653210e2edf08b4ab}} 
+\index{X\+Utils.\+c@{X\+Utils.\+c}!x\+Strndup@{x\+Strndup}}
+\index{x\+Strndup@{x\+Strndup}!X\+Utils.\+c@{X\+Utils.\+c}}
+\subsubsection{\texorpdfstring{x\+Strndup()}{xStrndup()}}
+{\footnotesize\ttfamily char$\ast$ x\+Strndup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+

@@ -1,0 +1,42 @@
+\hypertarget{DateMeter_8c}{}\section{linux/download/htop-\/3.3.0/\+Date\+Meter.c File Reference}
+\label{DateMeter_8c}\index{linux/download/htop-\/3.\+3.\+0/\+Date\+Meter.\+c@{linux/download/htop-\/3.\+3.\+0/\+Date\+Meter.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Date\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+Include dependency graph for Date\+Meter.\+c\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} \hyperlink{DateMeter_8c_a014b41668cb5294a4aa3416e4921736a}{Date\+Meter\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{DateMeter_8c_a014b41668cb5294a4aa3416e4921736a}\label{DateMeter_8c_a014b41668cb5294a4aa3416e4921736a}} 
+\index{Date\+Meter.\+c@{Date\+Meter.\+c}!Date\+Meter\+\_\+class@{Date\+Meter\+\_\+class}}
+\index{Date\+Meter\+\_\+class@{Date\+Meter\+\_\+class}!Date\+Meter.\+c@{Date\+Meter.\+c}}
+\subsubsection{\texorpdfstring{Date\+Meter\+\_\+class}{DateMeter\_class}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} Date\+Meter\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structMeter__}{Meter}),
+      .delete = \hyperlink{Meter_8c_afa360c5902fd03f204c2a7d05571be6d}{Meter\_delete}
+   \},
+   .updateValues = DateMeter\_updateValues,
+   .defaultMode = \hyperlink{Meter_8h_ab5ba256cdade130395aa470c0f22c83aa0156c8d93d0ddcd5f2d0d3e346aa49e0}{TEXT\_METERMODE},
+   .maxItems = 1,
+   .total = 365,
+   .attributes = DateMeter\_attributes,
+   .name = \textcolor{stringliteral}{"Date"},
+   .uiName = \textcolor{stringliteral}{"Date"},
+   .caption = \textcolor{stringliteral}{"Date: "},
+\}
+\end{DoxyCode}

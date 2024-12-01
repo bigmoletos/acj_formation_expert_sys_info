@@ -1,0 +1,68 @@
+\hypertarget{InDomTable_8c}{}\section{linux/download/htop-\/3.3.0/pcp/\+In\+Dom\+Table.c File Reference}
+\label{InDomTable_8c}\index{linux/download/htop-\/3.\+3.\+0/pcp/\+In\+Dom\+Table.\+c@{linux/download/htop-\/3.\+3.\+0/pcp/\+In\+Dom\+Table.\+c}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+In\+Dom\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dynamic\+Column.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+Instance.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+Metric.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pcp/\+P\+C\+P\+Dynamic\+Column.\+h\char`\"{}}\newline
+Include dependency graph for In\+Dom\+Table.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table} $\ast$ \hyperlink{InDomTable_8c_ab13be7ab17a96f65b3be33baff317420}{In\+Dom\+Table\+\_\+new} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, pm\+In\+Dom indom, int metric\+Key)
+\item 
+void \hyperlink{InDomTable_8c_a48d8828e38ecf2c706e75d87ca3e86ee}{In\+Dom\+Table\+\_\+done} (\hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table} $\ast$this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} \hyperlink{InDomTable_8c_a03e4f6b090193dab505b5993adc122a7}{In\+Dom\+Table\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{InDomTable_8c_a48d8828e38ecf2c706e75d87ca3e86ee}\label{InDomTable_8c_a48d8828e38ecf2c706e75d87ca3e86ee}} 
+\index{In\+Dom\+Table.\+c@{In\+Dom\+Table.\+c}!In\+Dom\+Table\+\_\+done@{In\+Dom\+Table\+\_\+done}}
+\index{In\+Dom\+Table\+\_\+done@{In\+Dom\+Table\+\_\+done}!In\+Dom\+Table.\+c@{In\+Dom\+Table.\+c}}
+\subsubsection{\texorpdfstring{In\+Dom\+Table\+\_\+done()}{InDomTable\_done()}}
+{\footnotesize\ttfamily void In\+Dom\+Table\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{InDomTable_8c_ab13be7ab17a96f65b3be33baff317420}\label{InDomTable_8c_ab13be7ab17a96f65b3be33baff317420}} 
+\index{In\+Dom\+Table.\+c@{In\+Dom\+Table.\+c}!In\+Dom\+Table\+\_\+new@{In\+Dom\+Table\+\_\+new}}
+\index{In\+Dom\+Table\+\_\+new@{In\+Dom\+Table\+\_\+new}!In\+Dom\+Table.\+c@{In\+Dom\+Table.\+c}}
+\subsubsection{\texorpdfstring{In\+Dom\+Table\+\_\+new()}{InDomTable\_new()}}
+{\footnotesize\ttfamily \hyperlink{InDomTable_8h_abc0c774401cbba7a87785ea548e02d68}{In\+Dom\+Table}$\ast$ In\+Dom\+Table\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{pm\+In\+Dom}]{indom,  }\item[{int}]{metric\+Key }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{InDomTable_8c_a03e4f6b090193dab505b5993adc122a7}\label{InDomTable_8c_a03e4f6b090193dab505b5993adc122a7}} 
+\index{In\+Dom\+Table.\+c@{In\+Dom\+Table.\+c}!In\+Dom\+Table\+\_\+class@{In\+Dom\+Table\+\_\+class}}
+\index{In\+Dom\+Table\+\_\+class@{In\+Dom\+Table\+\_\+class}!In\+Dom\+Table.\+c@{In\+Dom\+Table.\+c}}
+\subsubsection{\texorpdfstring{In\+Dom\+Table\+\_\+class}{InDomTable\_class}}
+{\footnotesize\ttfamily const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} In\+Dom\+Table\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   .super = \{
+      .extends = \hyperlink{Object_8h_a1899d476fe1045e267789fef340acddd}{Class}(\hyperlink{structTable__}{Table}),
+      .delete = InDomTable\_delete,
+   \},
+   .prepare = \hyperlink{Table_8c_ab0797fb9ad2355db6c4a50d2817ad81c}{Table\_prepareEntries},
+   .iterate = InDomTable\_iterateEntries,
+   .cleanup = \hyperlink{Table_8c_a3478ee6f34adb3062f15156caaa676ef}{Table\_cleanupEntries},
+\}
+\end{DoxyCode}

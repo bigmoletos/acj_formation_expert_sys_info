@@ -1,0 +1,176 @@
+\hypertarget{version__struct_2proto_8h}{}\section{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct/proto.h File Reference}
+\label{version__struct_2proto_8h}\index{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct/proto.\+h@{programmation\+\_\+\+C/projets/gestionnaire\+\_\+contacts\+\_\+version\+\_\+struct/proto.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for proto.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structContact}{Contact}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{version__struct_2proto_8h_ae66296c41d15c7ebaea059bddc93434b}{H\+E\+A\+D\+E\+R\+\_\+H}
+\item 
+\#define \hyperlink{version__struct_2proto_8h_a967232a261ff7f17c1010e6fc27270a0}{T\+A\+I\+L\+L\+E\+\_\+\+N\+OM}~20
+\item 
+\#define \hyperlink{version__struct_2proto_8h_a06314783d85805a92d1da346eb4bc1d4}{T\+A\+I\+L\+L\+E\+\_\+\+T\+EL}~11
+\item 
+\#define \hyperlink{version__struct_2proto_8h_a1ed4cf8dc529d41f3707d3c6b9783156}{N\+B\+R\+E\+\_\+\+C\+O\+N\+T\+A\+CT}~5
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{version__struct_2proto_8h_a83f6016bc23f9a29f11011ae7a4eaa3f}{demander\+\_\+quitter} (void)
+\item 
+int \hyperlink{version__struct_2proto_8h_ac427f59e6a217bdb552c711aa496b695}{saisir\+\_\+entier} (int ma\+\_\+valeur)
+\item 
+int \hyperlink{version__struct_2proto_8h_ab3334dbc67ac3fe5cd3b773c702fe418}{saisir\+\_\+char} (void)
+\item 
+void \hyperlink{version__struct_2proto_8h_a6a4e8f86fcdca2532fbc213198e2971e}{affichage\+\_\+tableau} (int $\ast$tab, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{version__struct_2proto_8h_a56b4cc5932e407c9d3d35fff6610dde2}{copie\+\_\+tableau} (int $\ast$tab1, int $\ast$tab2, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{version__struct_2proto_8h_af774b3375ed42d7dc79c7cb47b13080e}{double\+\_\+valeur\+\_\+tableau} (int $\ast$tab, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{version__struct_2proto_8h_ad182f1f4219ecb5f01bd29282af8b867}{convertir\+\_\+en\+\_\+majuscules} (char tableau\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{version__struct_2proto_8h_aa5820070a45162efddb73126655a4c1a}{convertir\+\_\+en\+\_\+minuscules} (char tableau\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{version__struct_2proto_8h_ae1fb8d77943f5cd3bb662f58c5e04362}{compter\+\_\+majuscule} (const char tableau\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{version__struct_2proto_8h_a42f7df7d25bf8f964e247d6f36fa3a37}{compter\+\_\+minuscule} (const char tableau\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{version__struct_2proto_8h_a074e4770d5e9a3f22ae8ae752fccca31}{saisir\+\_\+repertoire} (\hyperlink{structContact}{Contact} $\ast$c)
+\item 
+void \hyperlink{version__struct_2proto_8h_a74574d450a7e1b456d07fc92143914d4}{affichage\+\_\+repertoire} (\hyperlink{structContact}{Contact} contacts\mbox{[}$\,$\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau})
+\item 
+void \hyperlink{version__struct_2proto_8h_a609fc419889fddf83f84e12248abe0c2}{suppression\+\_\+repertoire} (\hyperlink{structContact}{Contact} contacts\mbox{[}$\,$\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau}, int numero\+\_\+contact)
+\item 
+int \hyperlink{version__struct_2proto_8h_a5d5b82eee21fc8475fd9a6cb07ac2dbc}{rechercher\+\_\+repertoire} (\hyperlink{structContact}{Contact} contacts\mbox{[}$\,$\mbox{]}, size\+\_\+t \hyperlink{fonction__affichage_8c_a09748fb1f2fd38d0fd97b52bc8fb1684}{taille\+\_\+tableau}, const char $\ast$nom)
+\item 
+void \hyperlink{version__struct_2proto_8h_a51ae69583b1f76532ae99b81891e11e2}{afficher\+\_\+menu} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{version__struct_2proto_8h_ae66296c41d15c7ebaea059bddc93434b}\label{version__struct_2proto_8h_ae66296c41d15c7ebaea059bddc93434b}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!H\+E\+A\+D\+E\+R\+\_\+H@{H\+E\+A\+D\+E\+R\+\_\+H}}
+\index{H\+E\+A\+D\+E\+R\+\_\+H@{H\+E\+A\+D\+E\+R\+\_\+H}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{H\+E\+A\+D\+E\+R\+\_\+H}{HEADER\_H}}
+{\footnotesize\ttfamily \#define H\+E\+A\+D\+E\+R\+\_\+H}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a1ed4cf8dc529d41f3707d3c6b9783156}\label{version__struct_2proto_8h_a1ed4cf8dc529d41f3707d3c6b9783156}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!N\+B\+R\+E\+\_\+\+C\+O\+N\+T\+A\+CT@{N\+B\+R\+E\+\_\+\+C\+O\+N\+T\+A\+CT}}
+\index{N\+B\+R\+E\+\_\+\+C\+O\+N\+T\+A\+CT@{N\+B\+R\+E\+\_\+\+C\+O\+N\+T\+A\+CT}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{N\+B\+R\+E\+\_\+\+C\+O\+N\+T\+A\+CT}{NBRE\_CONTACT}}
+{\footnotesize\ttfamily \#define N\+B\+R\+E\+\_\+\+C\+O\+N\+T\+A\+CT~5}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a967232a261ff7f17c1010e6fc27270a0}\label{version__struct_2proto_8h_a967232a261ff7f17c1010e6fc27270a0}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!T\+A\+I\+L\+L\+E\+\_\+\+N\+OM@{T\+A\+I\+L\+L\+E\+\_\+\+N\+OM}}
+\index{T\+A\+I\+L\+L\+E\+\_\+\+N\+OM@{T\+A\+I\+L\+L\+E\+\_\+\+N\+OM}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{T\+A\+I\+L\+L\+E\+\_\+\+N\+OM}{TAILLE\_NOM}}
+{\footnotesize\ttfamily \#define T\+A\+I\+L\+L\+E\+\_\+\+N\+OM~20}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a06314783d85805a92d1da346eb4bc1d4}\label{version__struct_2proto_8h_a06314783d85805a92d1da346eb4bc1d4}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!T\+A\+I\+L\+L\+E\+\_\+\+T\+EL@{T\+A\+I\+L\+L\+E\+\_\+\+T\+EL}}
+\index{T\+A\+I\+L\+L\+E\+\_\+\+T\+EL@{T\+A\+I\+L\+L\+E\+\_\+\+T\+EL}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{T\+A\+I\+L\+L\+E\+\_\+\+T\+EL}{TAILLE\_TEL}}
+{\footnotesize\ttfamily \#define T\+A\+I\+L\+L\+E\+\_\+\+T\+EL~11}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{version__struct_2proto_8h_a74574d450a7e1b456d07fc92143914d4}\label{version__struct_2proto_8h_a74574d450a7e1b456d07fc92143914d4}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!affichage\+\_\+repertoire@{affichage\+\_\+repertoire}}
+\index{affichage\+\_\+repertoire@{affichage\+\_\+repertoire}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{affichage\+\_\+repertoire()}{affichage\_repertoire()}}
+{\footnotesize\ttfamily void affichage\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{contacts\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a6a4e8f86fcdca2532fbc213198e2971e}\label{version__struct_2proto_8h_a6a4e8f86fcdca2532fbc213198e2971e}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!affichage\+\_\+tableau@{affichage\+\_\+tableau}}
+\index{affichage\+\_\+tableau@{affichage\+\_\+tableau}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{affichage\+\_\+tableau()}{affichage\_tableau()}}
+{\footnotesize\ttfamily void affichage\+\_\+tableau (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a51ae69583b1f76532ae99b81891e11e2}\label{version__struct_2proto_8h_a51ae69583b1f76532ae99b81891e11e2}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!afficher\+\_\+menu@{afficher\+\_\+menu}}
+\index{afficher\+\_\+menu@{afficher\+\_\+menu}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{afficher\+\_\+menu()}{afficher\_menu()}}
+{\footnotesize\ttfamily void afficher\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_ae1fb8d77943f5cd3bb662f58c5e04362}\label{version__struct_2proto_8h_ae1fb8d77943f5cd3bb662f58c5e04362}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!compter\+\_\+majuscule@{compter\+\_\+majuscule}}
+\index{compter\+\_\+majuscule@{compter\+\_\+majuscule}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{compter\+\_\+majuscule()}{compter\_majuscule()}}
+{\footnotesize\ttfamily int compter\+\_\+majuscule (\begin{DoxyParamCaption}\item[{const char}]{tableau\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a42f7df7d25bf8f964e247d6f36fa3a37}\label{version__struct_2proto_8h_a42f7df7d25bf8f964e247d6f36fa3a37}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!compter\+\_\+minuscule@{compter\+\_\+minuscule}}
+\index{compter\+\_\+minuscule@{compter\+\_\+minuscule}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{compter\+\_\+minuscule()}{compter\_minuscule()}}
+{\footnotesize\ttfamily int compter\+\_\+minuscule (\begin{DoxyParamCaption}\item[{const char}]{tableau\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_ad182f1f4219ecb5f01bd29282af8b867}\label{version__struct_2proto_8h_ad182f1f4219ecb5f01bd29282af8b867}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!convertir\+\_\+en\+\_\+majuscules@{convertir\+\_\+en\+\_\+majuscules}}
+\index{convertir\+\_\+en\+\_\+majuscules@{convertir\+\_\+en\+\_\+majuscules}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{convertir\+\_\+en\+\_\+majuscules()}{convertir\_en\_majuscules()}}
+{\footnotesize\ttfamily void convertir\+\_\+en\+\_\+majuscules (\begin{DoxyParamCaption}\item[{char}]{tableau\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_aa5820070a45162efddb73126655a4c1a}\label{version__struct_2proto_8h_aa5820070a45162efddb73126655a4c1a}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!convertir\+\_\+en\+\_\+minuscules@{convertir\+\_\+en\+\_\+minuscules}}
+\index{convertir\+\_\+en\+\_\+minuscules@{convertir\+\_\+en\+\_\+minuscules}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{convertir\+\_\+en\+\_\+minuscules()}{convertir\_en\_minuscules()}}
+{\footnotesize\ttfamily void convertir\+\_\+en\+\_\+minuscules (\begin{DoxyParamCaption}\item[{char}]{tableau\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a56b4cc5932e407c9d3d35fff6610dde2}\label{version__struct_2proto_8h_a56b4cc5932e407c9d3d35fff6610dde2}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!copie\+\_\+tableau@{copie\+\_\+tableau}}
+\index{copie\+\_\+tableau@{copie\+\_\+tableau}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{copie\+\_\+tableau()}{copie\_tableau()}}
+{\footnotesize\ttfamily void copie\+\_\+tableau (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab1,  }\item[{int $\ast$}]{tab2,  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a83f6016bc23f9a29f11011ae7a4eaa3f}\label{version__struct_2proto_8h_a83f6016bc23f9a29f11011ae7a4eaa3f}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!demander\+\_\+quitter@{demander\+\_\+quitter}}
+\index{demander\+\_\+quitter@{demander\+\_\+quitter}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{demander\+\_\+quitter()}{demander\_quitter()}}
+{\footnotesize\ttfamily char demander\+\_\+quitter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_af774b3375ed42d7dc79c7cb47b13080e}\label{version__struct_2proto_8h_af774b3375ed42d7dc79c7cb47b13080e}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!double\+\_\+valeur\+\_\+tableau@{double\+\_\+valeur\+\_\+tableau}}
+\index{double\+\_\+valeur\+\_\+tableau@{double\+\_\+valeur\+\_\+tableau}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{double\+\_\+valeur\+\_\+tableau()}{double\_valeur\_tableau()}}
+{\footnotesize\ttfamily void double\+\_\+valeur\+\_\+tableau (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{size\+\_\+t}]{taille\+\_\+tableau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a5d5b82eee21fc8475fd9a6cb07ac2dbc}\label{version__struct_2proto_8h_a5d5b82eee21fc8475fd9a6cb07ac2dbc}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!rechercher\+\_\+repertoire@{rechercher\+\_\+repertoire}}
+\index{rechercher\+\_\+repertoire@{rechercher\+\_\+repertoire}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{rechercher\+\_\+repertoire()}{rechercher\_repertoire()}}
+{\footnotesize\ttfamily int rechercher\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{contacts\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau,  }\item[{const char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_ab3334dbc67ac3fe5cd3b773c702fe418}\label{version__struct_2proto_8h_ab3334dbc67ac3fe5cd3b773c702fe418}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!saisir\+\_\+char@{saisir\+\_\+char}}
+\index{saisir\+\_\+char@{saisir\+\_\+char}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{saisir\+\_\+char()}{saisir\_char()}}
+{\footnotesize\ttfamily int saisir\+\_\+char (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_ac427f59e6a217bdb552c711aa496b695}\label{version__struct_2proto_8h_ac427f59e6a217bdb552c711aa496b695}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!saisir\+\_\+entier@{saisir\+\_\+entier}}
+\index{saisir\+\_\+entier@{saisir\+\_\+entier}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{saisir\+\_\+entier()}{saisir\_entier()}}
+{\footnotesize\ttfamily int saisir\+\_\+entier (\begin{DoxyParamCaption}\item[{int}]{ma\+\_\+valeur }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a074e4770d5e9a3f22ae8ae752fccca31}\label{version__struct_2proto_8h_a074e4770d5e9a3f22ae8ae752fccca31}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!saisir\+\_\+repertoire@{saisir\+\_\+repertoire}}
+\index{saisir\+\_\+repertoire@{saisir\+\_\+repertoire}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{saisir\+\_\+repertoire()}{saisir\_repertoire()}}
+{\footnotesize\ttfamily void saisir\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact} $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{version__struct_2proto_8h_a609fc419889fddf83f84e12248abe0c2}\label{version__struct_2proto_8h_a609fc419889fddf83f84e12248abe0c2}} 
+\index{version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}!suppression\+\_\+repertoire@{suppression\+\_\+repertoire}}
+\index{suppression\+\_\+repertoire@{suppression\+\_\+repertoire}!version\+\_\+struct/proto.\+h@{version\+\_\+struct/proto.\+h}}
+\subsubsection{\texorpdfstring{suppression\+\_\+repertoire()}{suppression\_repertoire()}}
+{\footnotesize\ttfamily void suppression\+\_\+repertoire (\begin{DoxyParamCaption}\item[{\hyperlink{structContact}{Contact}}]{contacts\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{taille\+\_\+tableau,  }\item[{int}]{numero\+\_\+contact }\end{DoxyParamCaption})}
+

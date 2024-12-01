@@ -1,0 +1,100 @@
+\hypertarget{ProcessTable_8h}{}\section{linux/download/htop-\/3.3.0/\+Process\+Table.h File Reference}
+\label{ProcessTable_8h}\index{linux/download/htop-\/3.\+3.\+0/\+Process\+Table.\+h@{linux/download/htop-\/3.\+3.\+0/\+Process\+Table.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Table.\+h\char`\"{}}\newline
+Include dependency graph for Process\+Table.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structProcessTable__}{Process\+Table\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structProcessTable__}{Process\+Table\+\_\+} \hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$ \hyperlink{ProcessTable_8h_a684b79c58f23a33ed9f8b2eb7cc8817b}{Process\+Table\+\_\+new} (\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$pid\+Match\+List)
+\item 
+void \hyperlink{ProcessTable_8h_ab291bfda630da85c5662a634f11e0826}{Process\+Table\+\_\+delete} (\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$cast)
+\item 
+void \hyperlink{ProcessTable_8h_a43c7cefe63718fc39e83c58d8d6e9618}{Process\+Table\+\_\+go\+Through\+Entries} (\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$this)
+\item 
+void \hyperlink{ProcessTable_8h_aa06d5429e73d297a9a3de3b849aad504}{Process\+Table\+\_\+init} (\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$this, const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$klass, \hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$host, \hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$pid\+Match\+List)
+\item 
+void \hyperlink{ProcessTable_8h_a483bf2b3ef444b54052451e3a5ffa49b}{Process\+Table\+\_\+done} (\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$this)
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} $\ast$ \hyperlink{ProcessTable_8h_a7f2f0c9a07bee0ffc359b90ea5c448c6}{Process\+Table\+\_\+get\+Process} (\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$this, pid\+\_\+t pid, bool $\ast$pre\+Existing, \hyperlink{Process_8h_a45668264163f09efb4be9b6d17cf65ba}{Process\+\_\+\+New} constructor)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} \hyperlink{ProcessTable_8h_ace0ee6d312ee3765446ba69fc3f02894}{Process\+Table\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}\label{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}} 
+\index{Process\+Table.\+h@{Process\+Table.\+h}!Process\+Table@{Process\+Table}}
+\index{Process\+Table@{Process\+Table}!Process\+Table.\+h@{Process\+Table.\+h}}
+\subsubsection{\texorpdfstring{Process\+Table}{ProcessTable}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structProcessTable__}{Process\+Table\+\_\+}  \hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ProcessTable_8h_ab291bfda630da85c5662a634f11e0826}\label{ProcessTable_8h_ab291bfda630da85c5662a634f11e0826}} 
+\index{Process\+Table.\+h@{Process\+Table.\+h}!Process\+Table\+\_\+delete@{Process\+Table\+\_\+delete}}
+\index{Process\+Table\+\_\+delete@{Process\+Table\+\_\+delete}!Process\+Table.\+h@{Process\+Table.\+h}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+delete()}{ProcessTable\_delete()}}
+{\footnotesize\ttfamily void Process\+Table\+\_\+delete (\begin{DoxyParamCaption}\item[{\hyperlink{Object_8h_a32b67ad7134cd31b5ec5ed9c6a2d3978}{Object} $\ast$}]{cast }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ProcessTable_8h_a483bf2b3ef444b54052451e3a5ffa49b}\label{ProcessTable_8h_a483bf2b3ef444b54052451e3a5ffa49b}} 
+\index{Process\+Table.\+h@{Process\+Table.\+h}!Process\+Table\+\_\+done@{Process\+Table\+\_\+done}}
+\index{Process\+Table\+\_\+done@{Process\+Table\+\_\+done}!Process\+Table.\+h@{Process\+Table.\+h}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+done()}{ProcessTable\_done()}}
+{\footnotesize\ttfamily void Process\+Table\+\_\+done (\begin{DoxyParamCaption}\item[{\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ProcessTable_8h_a7f2f0c9a07bee0ffc359b90ea5c448c6}\label{ProcessTable_8h_a7f2f0c9a07bee0ffc359b90ea5c448c6}} 
+\index{Process\+Table.\+h@{Process\+Table.\+h}!Process\+Table\+\_\+get\+Process@{Process\+Table\+\_\+get\+Process}}
+\index{Process\+Table\+\_\+get\+Process@{Process\+Table\+\_\+get\+Process}!Process\+Table.\+h@{Process\+Table.\+h}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+get\+Process()}{ProcessTable\_getProcess()}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process}$\ast$ Process\+Table\+\_\+get\+Process (\begin{DoxyParamCaption}\item[{\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$}]{this,  }\item[{pid\+\_\+t}]{pid,  }\item[{bool $\ast$}]{pre\+Existing,  }\item[{\hyperlink{Process_8h_a45668264163f09efb4be9b6d17cf65ba}{Process\+\_\+\+New}}]{constructor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ProcessTable_8h_a43c7cefe63718fc39e83c58d8d6e9618}\label{ProcessTable_8h_a43c7cefe63718fc39e83c58d8d6e9618}} 
+\index{Process\+Table.\+h@{Process\+Table.\+h}!Process\+Table\+\_\+go\+Through\+Entries@{Process\+Table\+\_\+go\+Through\+Entries}}
+\index{Process\+Table\+\_\+go\+Through\+Entries@{Process\+Table\+\_\+go\+Through\+Entries}!Process\+Table.\+h@{Process\+Table.\+h}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+go\+Through\+Entries()}{ProcessTable\_goThroughEntries()}}
+{\footnotesize\ttfamily void Process\+Table\+\_\+go\+Through\+Entries (\begin{DoxyParamCaption}\item[{\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ProcessTable_8h_aa06d5429e73d297a9a3de3b849aad504}\label{ProcessTable_8h_aa06d5429e73d297a9a3de3b849aad504}} 
+\index{Process\+Table.\+h@{Process\+Table.\+h}!Process\+Table\+\_\+init@{Process\+Table\+\_\+init}}
+\index{Process\+Table\+\_\+init@{Process\+Table\+\_\+init}!Process\+Table.\+h@{Process\+Table.\+h}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+init()}{ProcessTable\_init()}}
+{\footnotesize\ttfamily void Process\+Table\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table} $\ast$}]{this,  }\item[{const \hyperlink{Object_8h_a6feb151c3b8f61fae503dfbcdc3d6a54}{Object\+Class} $\ast$}]{klass,  }\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{pid\+Match\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ProcessTable_8h_a684b79c58f23a33ed9f8b2eb7cc8817b}\label{ProcessTable_8h_a684b79c58f23a33ed9f8b2eb7cc8817b}} 
+\index{Process\+Table.\+h@{Process\+Table.\+h}!Process\+Table\+\_\+new@{Process\+Table\+\_\+new}}
+\index{Process\+Table\+\_\+new@{Process\+Table\+\_\+new}!Process\+Table.\+h@{Process\+Table.\+h}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+new()}{ProcessTable\_new()}}
+{\footnotesize\ttfamily \hyperlink{ProcessTable_8h_a54ec62da6f9d80d4d06e3845a2597a80}{Process\+Table}$\ast$ Process\+Table\+\_\+new (\begin{DoxyParamCaption}\item[{\hyperlink{Machine_8h_aa3706f95e4706b9d02979efcabb1341d}{Machine} $\ast$}]{host,  }\item[{\hyperlink{Hashtable_8h_af67f943dab16c5d7d465c18053edf47f}{Hashtable} $\ast$}]{pid\+Match\+List }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ProcessTable_8h_ace0ee6d312ee3765446ba69fc3f02894}\label{ProcessTable_8h_ace0ee6d312ee3765446ba69fc3f02894}} 
+\index{Process\+Table.\+h@{Process\+Table.\+h}!Process\+Table\+\_\+class@{Process\+Table\+\_\+class}}
+\index{Process\+Table\+\_\+class@{Process\+Table\+\_\+class}!Process\+Table.\+h@{Process\+Table.\+h}}
+\subsubsection{\texorpdfstring{Process\+Table\+\_\+class}{ProcessTable\_class}}
+{\footnotesize\ttfamily const \hyperlink{Table_8h_aadb7c52b14edf1a3128ef39e10099137}{Table\+Class} Process\+Table\+\_\+class}
+

@@ -1,0 +1,210 @@
+\hypertarget{dragonflybsd_2Platform_8h}{}\section{linux/download/htop-\/3.3.0/dragonflybsd/\+Platform.h File Reference}
+\label{dragonflybsd_2Platform_8h}\index{linux/download/htop-\/3.\+3.\+0/dragonflybsd/\+Platform.\+h@{linux/download/htop-\/3.\+3.\+0/dragonflybsd/\+Platform.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Action.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Battery\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Disk\+I\+O\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hashtable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Network\+I\+O\+Meter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Process\+Locks\+Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Signals\+Panel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Command\+Line.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}generic/gettime.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}generic/hostname.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}generic/uname.\+h\char`\"{}}\newline
+Include dependency graph for Platform.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dragonflybsd_2Platform_8h_a838e3e0d518304dbf6031715177bacd3}{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{dragonflybsd_2Platform_8h_ab628d7aa0caa3b1eb5e26674c88198af}{Platform\+\_\+init} (void)
+\item 
+void \hyperlink{dragonflybsd_2Platform_8h_a1a3335195f8f8c51ded9f4f7cca5f9b3}{Platform\+\_\+done} (void)
+\item 
+void \hyperlink{dragonflybsd_2Platform_8h_a5230ac6fa902c21dff3d759e16ffc507}{Platform\+\_\+set\+Bindings} (\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$keys)
+\item 
+int \hyperlink{dragonflybsd_2Platform_8h_a97f7a52fbcd5425538172ebacde34d1e}{Platform\+\_\+get\+Uptime} (void)
+\item 
+void \hyperlink{dragonflybsd_2Platform_8h_ae3d00dcf3ef2bf49e31b5f306dad489a}{Platform\+\_\+get\+Load\+Average} (double $\ast$one, double $\ast$five, double $\ast$fifteen)
+\item 
+pid\+\_\+t \hyperlink{dragonflybsd_2Platform_8h_a12112c85f5275f728399258ce36cee9b}{Platform\+\_\+get\+Max\+Pid} (void)
+\item 
+double \hyperlink{dragonflybsd_2Platform_8h_abf455eec676e7143b641576a4dc4afd4}{Platform\+\_\+set\+C\+P\+U\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this, unsigned int cpu)
+\item 
+void \hyperlink{dragonflybsd_2Platform_8h_a20620332d27f20b0b91359e6d2e54465}{Platform\+\_\+set\+Memory\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+void \hyperlink{dragonflybsd_2Platform_8h_a41cdc0177a4d4de7001bc0a1730907f6}{Platform\+\_\+set\+Swap\+Values} (\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$this)
+\item 
+char $\ast$ \hyperlink{dragonflybsd_2Platform_8h_a47695afc57e2cc9e73d0e1da8774a7ce}{Platform\+\_\+get\+Process\+Env} (pid\+\_\+t pid)
+\item 
+\hyperlink{ProcessLocksScreen_8h_a436e614a94f3276e08b861d0b362fd0f}{File\+Locks\+\_\+\+Process\+Data} $\ast$ \hyperlink{dragonflybsd_2Platform_8h_a4ac35b98c6a0c9e8be21aaf25bbf7aa9}{Platform\+\_\+get\+Process\+Locks} (pid\+\_\+t pid)
+\item 
+void \hyperlink{dragonflybsd_2Platform_8h_a891ef12b78125e19558da1b8ebbca064}{Platform\+\_\+get\+File\+Descriptors} (double $\ast$used, double $\ast$\hyperlink{exo19_8cpp_ae3ed8abbe6617cfbdd14a9390b10f310}{max})
+\item 
+bool \hyperlink{dragonflybsd_2Platform_8h_a3d55aab86e32d4dc49fcb41553af0fd2}{Platform\+\_\+get\+Disk\+IO} (\hyperlink{DiskIOMeter_8h_a6a9b8bac094ea16a6620d7a7352e67fb}{Disk\+I\+O\+Data} $\ast$data)
+\item 
+bool \hyperlink{dragonflybsd_2Platform_8h_a8c88551540575ff88951cf8ea62d46e6}{Platform\+\_\+get\+Network\+IO} (\hyperlink{NetworkIOMeter_8h_a6b4f2a3fb060646a7cc8516ee94d91c5}{Network\+I\+O\+Data} $\ast$data)
+\item 
+void \hyperlink{dragonflybsd_2Platform_8h_a09298032f192aafe117b87d9801ca6a2}{Platform\+\_\+get\+Battery} (double $\ast$percent, \hyperlink{BatteryMeter_8h_a277e9376f4d3a078c2ee41ca700bca81}{A\+C\+Presence} $\ast$is\+On\+AC)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structScreenDefaults}{Screen\+Defaults} \hyperlink{dragonflybsd_2Platform_8h_aff369bc0cdcf4070a58fd50b342b84cb}{Platform\+\_\+default\+Screens} \mbox{[}$\,$\mbox{]}
+\item 
+const unsigned int \hyperlink{dragonflybsd_2Platform_8h_ac8f39efe7b8276cb8796316fd5c2583f}{Platform\+\_\+number\+Of\+Default\+Screens}
+\item 
+const \hyperlink{SignalsPanel_8h_aacc61a14392728a9696f0560309c1177}{Signal\+Item} \hyperlink{dragonflybsd_2Platform_8h_ad6019115f7aacb2d94f395d5e8754638}{Platform\+\_\+signals} \mbox{[}$\,$\mbox{]}
+\item 
+const unsigned int \hyperlink{dragonflybsd_2Platform_8h_aa7affae43f72bb563034790830aecb51}{Platform\+\_\+number\+Of\+Signals}
+\item 
+const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class} $\ast$const \hyperlink{dragonflybsd_2Platform_8h_a3935ec99eeceab0fe9582c92eeec4baa}{Platform\+\_\+meter\+Types} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a838e3e0d518304dbf6031715177bacd3}\label{dragonflybsd_2Platform_8h_a838e3e0d518304dbf6031715177bacd3}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}}
+\index{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS@{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}{PLATFORM\_LONG\_OPTIONS}}
+{\footnotesize\ttfamily \#define P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+N\+G\+\_\+\+O\+P\+T\+I\+O\+NS}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a1a3335195f8f8c51ded9f4f7cca5f9b3}\label{dragonflybsd_2Platform_8h_a1a3335195f8f8c51ded9f4f7cca5f9b3}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+done@{Platform\+\_\+done}}
+\index{Platform\+\_\+done@{Platform\+\_\+done}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+done()}{Platform\_done()}}
+{\footnotesize\ttfamily void Platform\+\_\+done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a09298032f192aafe117b87d9801ca6a2}\label{dragonflybsd_2Platform_8h_a09298032f192aafe117b87d9801ca6a2}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+get\+Battery@{Platform\+\_\+get\+Battery}}
+\index{Platform\+\_\+get\+Battery@{Platform\+\_\+get\+Battery}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Battery()}{Platform\_getBattery()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Battery (\begin{DoxyParamCaption}\item[{double $\ast$}]{percent,  }\item[{\hyperlink{BatteryMeter_8h_a277e9376f4d3a078c2ee41ca700bca81}{A\+C\+Presence} $\ast$}]{is\+On\+AC }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a3d55aab86e32d4dc49fcb41553af0fd2}\label{dragonflybsd_2Platform_8h_a3d55aab86e32d4dc49fcb41553af0fd2}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+get\+Disk\+IO@{Platform\+\_\+get\+Disk\+IO}}
+\index{Platform\+\_\+get\+Disk\+IO@{Platform\+\_\+get\+Disk\+IO}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Disk\+I\+O()}{Platform\_getDiskIO()}}
+{\footnotesize\ttfamily bool Platform\+\_\+get\+Disk\+IO (\begin{DoxyParamCaption}\item[{\hyperlink{DiskIOMeter_8h_a6a9b8bac094ea16a6620d7a7352e67fb}{Disk\+I\+O\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a891ef12b78125e19558da1b8ebbca064}\label{dragonflybsd_2Platform_8h_a891ef12b78125e19558da1b8ebbca064}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+get\+File\+Descriptors@{Platform\+\_\+get\+File\+Descriptors}}
+\index{Platform\+\_\+get\+File\+Descriptors@{Platform\+\_\+get\+File\+Descriptors}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+File\+Descriptors()}{Platform\_getFileDescriptors()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+File\+Descriptors (\begin{DoxyParamCaption}\item[{double $\ast$}]{used,  }\item[{double $\ast$}]{max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_ae3d00dcf3ef2bf49e31b5f306dad489a}\label{dragonflybsd_2Platform_8h_ae3d00dcf3ef2bf49e31b5f306dad489a}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+get\+Load\+Average@{Platform\+\_\+get\+Load\+Average}}
+\index{Platform\+\_\+get\+Load\+Average@{Platform\+\_\+get\+Load\+Average}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Load\+Average()}{Platform\_getLoadAverage()}}
+{\footnotesize\ttfamily void Platform\+\_\+get\+Load\+Average (\begin{DoxyParamCaption}\item[{double $\ast$}]{one,  }\item[{double $\ast$}]{five,  }\item[{double $\ast$}]{fifteen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a12112c85f5275f728399258ce36cee9b}\label{dragonflybsd_2Platform_8h_a12112c85f5275f728399258ce36cee9b}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+get\+Max\+Pid@{Platform\+\_\+get\+Max\+Pid}}
+\index{Platform\+\_\+get\+Max\+Pid@{Platform\+\_\+get\+Max\+Pid}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Max\+Pid()}{Platform\_getMaxPid()}}
+{\footnotesize\ttfamily pid\+\_\+t Platform\+\_\+get\+Max\+Pid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a8c88551540575ff88951cf8ea62d46e6}\label{dragonflybsd_2Platform_8h_a8c88551540575ff88951cf8ea62d46e6}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+get\+Network\+IO@{Platform\+\_\+get\+Network\+IO}}
+\index{Platform\+\_\+get\+Network\+IO@{Platform\+\_\+get\+Network\+IO}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Network\+I\+O()}{Platform\_getNetworkIO()}}
+{\footnotesize\ttfamily bool Platform\+\_\+get\+Network\+IO (\begin{DoxyParamCaption}\item[{\hyperlink{NetworkIOMeter_8h_a6b4f2a3fb060646a7cc8516ee94d91c5}{Network\+I\+O\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a47695afc57e2cc9e73d0e1da8774a7ce}\label{dragonflybsd_2Platform_8h_a47695afc57e2cc9e73d0e1da8774a7ce}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+get\+Process\+Env@{Platform\+\_\+get\+Process\+Env}}
+\index{Platform\+\_\+get\+Process\+Env@{Platform\+\_\+get\+Process\+Env}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Process\+Env()}{Platform\_getProcessEnv()}}
+{\footnotesize\ttfamily char$\ast$ Platform\+\_\+get\+Process\+Env (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a4ac35b98c6a0c9e8be21aaf25bbf7aa9}\label{dragonflybsd_2Platform_8h_a4ac35b98c6a0c9e8be21aaf25bbf7aa9}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+get\+Process\+Locks@{Platform\+\_\+get\+Process\+Locks}}
+\index{Platform\+\_\+get\+Process\+Locks@{Platform\+\_\+get\+Process\+Locks}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Process\+Locks()}{Platform\_getProcessLocks()}}
+{\footnotesize\ttfamily \hyperlink{ProcessLocksScreen_8h_a436e614a94f3276e08b861d0b362fd0f}{File\+Locks\+\_\+\+Process\+Data}$\ast$ Platform\+\_\+get\+Process\+Locks (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a97f7a52fbcd5425538172ebacde34d1e}\label{dragonflybsd_2Platform_8h_a97f7a52fbcd5425538172ebacde34d1e}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+get\+Uptime@{Platform\+\_\+get\+Uptime}}
+\index{Platform\+\_\+get\+Uptime@{Platform\+\_\+get\+Uptime}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+get\+Uptime()}{Platform\_getUptime()}}
+{\footnotesize\ttfamily int Platform\+\_\+get\+Uptime (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_ab628d7aa0caa3b1eb5e26674c88198af}\label{dragonflybsd_2Platform_8h_ab628d7aa0caa3b1eb5e26674c88198af}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+init@{Platform\+\_\+init}}
+\index{Platform\+\_\+init@{Platform\+\_\+init}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+init()}{Platform\_init()}}
+{\footnotesize\ttfamily bool Platform\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a5230ac6fa902c21dff3d759e16ffc507}\label{dragonflybsd_2Platform_8h_a5230ac6fa902c21dff3d759e16ffc507}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+set\+Bindings@{Platform\+\_\+set\+Bindings}}
+\index{Platform\+\_\+set\+Bindings@{Platform\+\_\+set\+Bindings}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Bindings()}{Platform\_setBindings()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Bindings (\begin{DoxyParamCaption}\item[{\hyperlink{Action_8h_a1c7ea0d086ed493d839ab29d71b3d434}{Htop\+\_\+\+Action} $\ast$}]{keys }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_abf455eec676e7143b641576a4dc4afd4}\label{dragonflybsd_2Platform_8h_abf455eec676e7143b641576a4dc4afd4}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+set\+C\+P\+U\+Values@{Platform\+\_\+set\+C\+P\+U\+Values}}
+\index{Platform\+\_\+set\+C\+P\+U\+Values@{Platform\+\_\+set\+C\+P\+U\+Values}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+C\+P\+U\+Values()}{Platform\_setCPUValues()}}
+{\footnotesize\ttfamily double Platform\+\_\+set\+C\+P\+U\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this,  }\item[{unsigned int}]{cpu }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a20620332d27f20b0b91359e6d2e54465}\label{dragonflybsd_2Platform_8h_a20620332d27f20b0b91359e6d2e54465}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+set\+Memory\+Values@{Platform\+\_\+set\+Memory\+Values}}
+\index{Platform\+\_\+set\+Memory\+Values@{Platform\+\_\+set\+Memory\+Values}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Memory\+Values()}{Platform\_setMemoryValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Memory\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a41cdc0177a4d4de7001bc0a1730907f6}\label{dragonflybsd_2Platform_8h_a41cdc0177a4d4de7001bc0a1730907f6}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+set\+Swap\+Values@{Platform\+\_\+set\+Swap\+Values}}
+\index{Platform\+\_\+set\+Swap\+Values@{Platform\+\_\+set\+Swap\+Values}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+set\+Swap\+Values()}{Platform\_setSwapValues()}}
+{\footnotesize\ttfamily void Platform\+\_\+set\+Swap\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{Meter_8h_a36b2163502d1e0b7025c80f102390da2}{Meter} $\ast$}]{this }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_aff369bc0cdcf4070a58fd50b342b84cb}\label{dragonflybsd_2Platform_8h_aff369bc0cdcf4070a58fd50b342b84cb}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+default\+Screens@{Platform\+\_\+default\+Screens}}
+\index{Platform\+\_\+default\+Screens@{Platform\+\_\+default\+Screens}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+default\+Screens}{Platform\_defaultScreens}}
+{\footnotesize\ttfamily const \hyperlink{structScreenDefaults}{Screen\+Defaults} Platform\+\_\+default\+Screens\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_a3935ec99eeceab0fe9582c92eeec4baa}\label{dragonflybsd_2Platform_8h_a3935ec99eeceab0fe9582c92eeec4baa}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+meter\+Types@{Platform\+\_\+meter\+Types}}
+\index{Platform\+\_\+meter\+Types@{Platform\+\_\+meter\+Types}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+meter\+Types}{Platform\_meterTypes}}
+{\footnotesize\ttfamily const \hyperlink{Meter_8h_a9113495eaa83bb6bcecf9632bcbe5cf3}{Meter\+Class}$\ast$ const Platform\+\_\+meter\+Types\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_ac8f39efe7b8276cb8796316fd5c2583f}\label{dragonflybsd_2Platform_8h_ac8f39efe7b8276cb8796316fd5c2583f}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+number\+Of\+Default\+Screens@{Platform\+\_\+number\+Of\+Default\+Screens}}
+\index{Platform\+\_\+number\+Of\+Default\+Screens@{Platform\+\_\+number\+Of\+Default\+Screens}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+number\+Of\+Default\+Screens}{Platform\_numberOfDefaultScreens}}
+{\footnotesize\ttfamily const unsigned int Platform\+\_\+number\+Of\+Default\+Screens}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_aa7affae43f72bb563034790830aecb51}\label{dragonflybsd_2Platform_8h_aa7affae43f72bb563034790830aecb51}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+number\+Of\+Signals@{Platform\+\_\+number\+Of\+Signals}}
+\index{Platform\+\_\+number\+Of\+Signals@{Platform\+\_\+number\+Of\+Signals}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+number\+Of\+Signals}{Platform\_numberOfSignals}}
+{\footnotesize\ttfamily const unsigned int Platform\+\_\+number\+Of\+Signals}
+
+\mbox{\Hypertarget{dragonflybsd_2Platform_8h_ad6019115f7aacb2d94f395d5e8754638}\label{dragonflybsd_2Platform_8h_ad6019115f7aacb2d94f395d5e8754638}} 
+\index{dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}!Platform\+\_\+signals@{Platform\+\_\+signals}}
+\index{Platform\+\_\+signals@{Platform\+\_\+signals}!dragonflybsd/\+Platform.\+h@{dragonflybsd/\+Platform.\+h}}
+\subsubsection{\texorpdfstring{Platform\+\_\+signals}{Platform\_signals}}
+{\footnotesize\ttfamily const \hyperlink{SignalsPanel_8h_aacc61a14392728a9696f0560309c1177}{Signal\+Item} Platform\+\_\+signals\mbox{[}$\,$\mbox{]}}
+

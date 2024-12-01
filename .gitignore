@@ -94,27 +94,12 @@ algorithmie\listeWord.csv
 *.json
 *.targz
 *.bz2
+*.env.*
+
+
+data
 
 docker\images\exo_python\calculatorcling.tar.bz2
 cling.tar.bz2cling.tar.bz2
 
 prog_C_vers_C++\librairies\librairie_dynamique\MyFisrtDll\.vs
-
-
-docker\images\exo_python\calculatorcling.tar.bz2
-cling.tar.bz2cling.tar.bz2
-
-prog_C_vers_C++\librairies\librairie_dynamique\MyFisrtDll\.vs
-
-# Ne pas ignorer le Dockerfile
-!Dockerfile
-
-data/*
-
-*.env.testing
-*/minikube-linux-amd64
-*/MyFisrtDll.pch
-prog_C_vers_C++/librairies/librairie_dynamique/MyFisrtDll/MyFisrtDll/x64/Debug/MyFisrtDll.pch
-base_connaissances/shell/minikube-linux-amd64
-minikube-linux-amd64
-MyFisrtDll.pch

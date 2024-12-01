@@ -1,0 +1,317 @@
+\hypertarget{structLinuxProcess__}{}\section{Linux\+Process\+\_\+ Struct Reference}
+\label{structLinuxProcess__}\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+
+
+{\ttfamily \#include $<$Linux\+Process.\+h$>$}
+
+
+
+Collaboration diagram for Linux\+Process\+\_\+\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} \hyperlink{structLinuxProcess___a18bbf5ea6ea250f752bf4cfb901b92da}{super}
+\item 
+\hyperlink{IOPriority_8h_a7f26835a9d854333f7dc5d7321922975}{I\+O\+Priority} \hyperlink{structLinuxProcess___a141ffbf6e27674a3424166fb363be304}{io\+Priority}
+\item 
+unsigned long int \hyperlink{structLinuxProcess___a8e009d8dae2a05aa09377b6eb853b558}{cminflt}
+\item 
+unsigned long int \hyperlink{structLinuxProcess___afa355baa02ad206e1873aa152bd1b264}{cmajflt}
+\item 
+unsigned long long int \hyperlink{structLinuxProcess___a75516dac31570653ea0101b4a631d7d5}{utime}
+\item 
+unsigned long long int \hyperlink{structLinuxProcess___ac843f0feb06dd81345d7e261216b20db}{stime}
+\item 
+unsigned long long int \hyperlink{structLinuxProcess___a2b5d50520c2a7a9643bbc1ad4b282316}{cutime}
+\item 
+unsigned long long int \hyperlink{structLinuxProcess___a4f84bb96a6aa2689cc0e92703dcfc6c4}{cstime}
+\item 
+long \hyperlink{structLinuxProcess___a350eb74f2652dbc5271dd4b6b9dbdfc8}{m\+\_\+share}
+\item 
+long \hyperlink{structLinuxProcess___ae3a219a917d99f416bb4137f4aca3f5d}{m\+\_\+priv}
+\item 
+long \hyperlink{structLinuxProcess___a40f46e2563e28053af64d98f718579f2}{m\+\_\+pss}
+\item 
+long \hyperlink{structLinuxProcess___aae2a3525379b98baa1b1de6ec04016b8}{m\+\_\+swap}
+\item 
+long \hyperlink{structLinuxProcess___a03d09465f675a748900a8c6cdfacb08d}{m\+\_\+psswp}
+\item 
+long \hyperlink{structLinuxProcess___a3de56bc172fd3cdc30e60dd26a5803eb}{m\+\_\+trs}
+\item 
+long \hyperlink{structLinuxProcess___a9c6429f299e97c1691140b619072da39}{m\+\_\+drs}
+\item 
+long \hyperlink{structLinuxProcess___af426ccba3b0ad0275911ae33949d6478}{m\+\_\+lrs}
+\item 
+unsigned long int \hyperlink{structLinuxProcess___ac99d7f7e7a5189206f78729966ff1021}{flags}
+\item 
+unsigned long long \hyperlink{structLinuxProcess___af4e0f8eeeef431f47bf474beca48a5df}{io\+\_\+rchar}
+\item 
+unsigned long long \hyperlink{structLinuxProcess___a47c13bfe130d9f02fd4875e528adc57e}{io\+\_\+wchar}
+\item 
+unsigned long long \hyperlink{structLinuxProcess___a2e3044ffc7ce5fdb5a44775fdc580677}{io\+\_\+syscr}
+\item 
+unsigned long long \hyperlink{structLinuxProcess___a85002566fe0063f8fa2a7739d72d04f9}{io\+\_\+syscw}
+\item 
+unsigned long long \hyperlink{structLinuxProcess___afc0b3bc77d88397c477b47689406c332}{io\+\_\+read\+\_\+bytes}
+\item 
+unsigned long long \hyperlink{structLinuxProcess___aaebf3e127e873e20c8dcdfb7efa9e86f}{io\+\_\+write\+\_\+bytes}
+\item 
+unsigned long long \hyperlink{structLinuxProcess___a816c9a55e8208c3d582856491d9c5dda}{io\+\_\+cancelled\+\_\+write\+\_\+bytes}
+\item 
+unsigned long long \hyperlink{structLinuxProcess___a1162ad1614e1489051d2958b1a719479}{io\+\_\+last\+\_\+scan\+\_\+time\+\_\+ms}
+\item 
+double \hyperlink{structLinuxProcess___a05327bea198e7ce0b4b68a4cc5d69439}{io\+\_\+rate\+\_\+read\+\_\+bps}
+\item 
+double \hyperlink{structLinuxProcess___a8ba933ae93c24d98980ce95780411535}{io\+\_\+rate\+\_\+write\+\_\+bps}
+\item 
+char $\ast$ \hyperlink{structLinuxProcess___a7e33ec84943481b5ceb54ac9a53c3593}{cgroup}
+\item 
+char $\ast$ \hyperlink{structLinuxProcess___af4568df3c642193a1c501eccc055d9f3}{cgroup\+\_\+short}
+\item 
+char $\ast$ \hyperlink{structLinuxProcess___ad757344fbc8224be47269eea94693624}{container\+\_\+short}
+\item 
+unsigned int \hyperlink{structLinuxProcess___ac878657f2e7afac87448dfe39ca98815}{oom}
+\item 
+unsigned long \hyperlink{structLinuxProcess___a2e2394831c95d9170f4caa2b06821c86}{ctxt\+\_\+total}
+\item 
+unsigned long \hyperlink{structLinuxProcess___a1955a84febd02d179b8ba1bd2305a868}{ctxt\+\_\+diff}
+\item 
+char $\ast$ \hyperlink{structLinuxProcess___a720ed365fe67e8ba682fe58f085dd4dc}{secattr}
+\item 
+unsigned long long int \hyperlink{structLinuxProcess___a34976167e61397ba174427aca9f44b08}{last\+\_\+mlrs\+\_\+calctime}
+\item 
+long int \hyperlink{structLinuxProcess___ad5dc5ded6efd7a21cc206740bc1ba6e1}{autogroup\+\_\+id}
+\item 
+int \hyperlink{structLinuxProcess___a4563f6fb7eddbdd45c503e77b312804c}{autogroup\+\_\+nice}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structLinuxProcess___ad5dc5ded6efd7a21cc206740bc1ba6e1}\label{structLinuxProcess___ad5dc5ded6efd7a21cc206740bc1ba6e1}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!autogroup\+\_\+id@{autogroup\+\_\+id}}
+\index{autogroup\+\_\+id@{autogroup\+\_\+id}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{autogroup\+\_\+id}{autogroup\_id}}
+{\footnotesize\ttfamily long int Linux\+Process\+\_\+\+::autogroup\+\_\+id}
+
+\mbox{\Hypertarget{structLinuxProcess___a4563f6fb7eddbdd45c503e77b312804c}\label{structLinuxProcess___a4563f6fb7eddbdd45c503e77b312804c}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!autogroup\+\_\+nice@{autogroup\+\_\+nice}}
+\index{autogroup\+\_\+nice@{autogroup\+\_\+nice}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{autogroup\+\_\+nice}{autogroup\_nice}}
+{\footnotesize\ttfamily int Linux\+Process\+\_\+\+::autogroup\+\_\+nice}
+
+\mbox{\Hypertarget{structLinuxProcess___a7e33ec84943481b5ceb54ac9a53c3593}\label{structLinuxProcess___a7e33ec84943481b5ceb54ac9a53c3593}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!cgroup@{cgroup}}
+\index{cgroup@{cgroup}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cgroup}{cgroup}}
+{\footnotesize\ttfamily char$\ast$ Linux\+Process\+\_\+\+::cgroup}
+
+\mbox{\Hypertarget{structLinuxProcess___af4568df3c642193a1c501eccc055d9f3}\label{structLinuxProcess___af4568df3c642193a1c501eccc055d9f3}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!cgroup\+\_\+short@{cgroup\+\_\+short}}
+\index{cgroup\+\_\+short@{cgroup\+\_\+short}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cgroup\+\_\+short}{cgroup\_short}}
+{\footnotesize\ttfamily char$\ast$ Linux\+Process\+\_\+\+::cgroup\+\_\+short}
+
+\mbox{\Hypertarget{structLinuxProcess___afa355baa02ad206e1873aa152bd1b264}\label{structLinuxProcess___afa355baa02ad206e1873aa152bd1b264}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!cmajflt@{cmajflt}}
+\index{cmajflt@{cmajflt}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cmajflt}{cmajflt}}
+{\footnotesize\ttfamily unsigned long int Linux\+Process\+\_\+\+::cmajflt}
+
+\mbox{\Hypertarget{structLinuxProcess___a8e009d8dae2a05aa09377b6eb853b558}\label{structLinuxProcess___a8e009d8dae2a05aa09377b6eb853b558}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!cminflt@{cminflt}}
+\index{cminflt@{cminflt}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cminflt}{cminflt}}
+{\footnotesize\ttfamily unsigned long int Linux\+Process\+\_\+\+::cminflt}
+
+\mbox{\Hypertarget{structLinuxProcess___ad757344fbc8224be47269eea94693624}\label{structLinuxProcess___ad757344fbc8224be47269eea94693624}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!container\+\_\+short@{container\+\_\+short}}
+\index{container\+\_\+short@{container\+\_\+short}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{container\+\_\+short}{container\_short}}
+{\footnotesize\ttfamily char$\ast$ Linux\+Process\+\_\+\+::container\+\_\+short}
+
+\mbox{\Hypertarget{structLinuxProcess___a4f84bb96a6aa2689cc0e92703dcfc6c4}\label{structLinuxProcess___a4f84bb96a6aa2689cc0e92703dcfc6c4}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!cstime@{cstime}}
+\index{cstime@{cstime}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cstime}{cstime}}
+{\footnotesize\ttfamily unsigned long long int Linux\+Process\+\_\+\+::cstime}
+
+\mbox{\Hypertarget{structLinuxProcess___a1955a84febd02d179b8ba1bd2305a868}\label{structLinuxProcess___a1955a84febd02d179b8ba1bd2305a868}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!ctxt\+\_\+diff@{ctxt\+\_\+diff}}
+\index{ctxt\+\_\+diff@{ctxt\+\_\+diff}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{ctxt\+\_\+diff}{ctxt\_diff}}
+{\footnotesize\ttfamily unsigned long Linux\+Process\+\_\+\+::ctxt\+\_\+diff}
+
+\mbox{\Hypertarget{structLinuxProcess___a2e2394831c95d9170f4caa2b06821c86}\label{structLinuxProcess___a2e2394831c95d9170f4caa2b06821c86}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!ctxt\+\_\+total@{ctxt\+\_\+total}}
+\index{ctxt\+\_\+total@{ctxt\+\_\+total}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{ctxt\+\_\+total}{ctxt\_total}}
+{\footnotesize\ttfamily unsigned long Linux\+Process\+\_\+\+::ctxt\+\_\+total}
+
+\mbox{\Hypertarget{structLinuxProcess___a2b5d50520c2a7a9643bbc1ad4b282316}\label{structLinuxProcess___a2b5d50520c2a7a9643bbc1ad4b282316}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!cutime@{cutime}}
+\index{cutime@{cutime}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{cutime}{cutime}}
+{\footnotesize\ttfamily unsigned long long int Linux\+Process\+\_\+\+::cutime}
+
+\mbox{\Hypertarget{structLinuxProcess___ac99d7f7e7a5189206f78729966ff1021}\label{structLinuxProcess___ac99d7f7e7a5189206f78729966ff1021}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!flags@{flags}}
+\index{flags@{flags}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily unsigned long int Linux\+Process\+\_\+\+::flags}
+
+\mbox{\Hypertarget{structLinuxProcess___a816c9a55e8208c3d582856491d9c5dda}\label{structLinuxProcess___a816c9a55e8208c3d582856491d9c5dda}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+cancelled\+\_\+write\+\_\+bytes@{io\+\_\+cancelled\+\_\+write\+\_\+bytes}}
+\index{io\+\_\+cancelled\+\_\+write\+\_\+bytes@{io\+\_\+cancelled\+\_\+write\+\_\+bytes}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+cancelled\+\_\+write\+\_\+bytes}{io\_cancelled\_write\_bytes}}
+{\footnotesize\ttfamily unsigned long long Linux\+Process\+\_\+\+::io\+\_\+cancelled\+\_\+write\+\_\+bytes}
+
+\mbox{\Hypertarget{structLinuxProcess___a1162ad1614e1489051d2958b1a719479}\label{structLinuxProcess___a1162ad1614e1489051d2958b1a719479}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+last\+\_\+scan\+\_\+time\+\_\+ms@{io\+\_\+last\+\_\+scan\+\_\+time\+\_\+ms}}
+\index{io\+\_\+last\+\_\+scan\+\_\+time\+\_\+ms@{io\+\_\+last\+\_\+scan\+\_\+time\+\_\+ms}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+last\+\_\+scan\+\_\+time\+\_\+ms}{io\_last\_scan\_time\_ms}}
+{\footnotesize\ttfamily unsigned long long Linux\+Process\+\_\+\+::io\+\_\+last\+\_\+scan\+\_\+time\+\_\+ms}
+
+\mbox{\Hypertarget{structLinuxProcess___a05327bea198e7ce0b4b68a4cc5d69439}\label{structLinuxProcess___a05327bea198e7ce0b4b68a4cc5d69439}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+rate\+\_\+read\+\_\+bps@{io\+\_\+rate\+\_\+read\+\_\+bps}}
+\index{io\+\_\+rate\+\_\+read\+\_\+bps@{io\+\_\+rate\+\_\+read\+\_\+bps}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+rate\+\_\+read\+\_\+bps}{io\_rate\_read\_bps}}
+{\footnotesize\ttfamily double Linux\+Process\+\_\+\+::io\+\_\+rate\+\_\+read\+\_\+bps}
+
+\mbox{\Hypertarget{structLinuxProcess___a8ba933ae93c24d98980ce95780411535}\label{structLinuxProcess___a8ba933ae93c24d98980ce95780411535}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+rate\+\_\+write\+\_\+bps@{io\+\_\+rate\+\_\+write\+\_\+bps}}
+\index{io\+\_\+rate\+\_\+write\+\_\+bps@{io\+\_\+rate\+\_\+write\+\_\+bps}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+rate\+\_\+write\+\_\+bps}{io\_rate\_write\_bps}}
+{\footnotesize\ttfamily double Linux\+Process\+\_\+\+::io\+\_\+rate\+\_\+write\+\_\+bps}
+
+\mbox{\Hypertarget{structLinuxProcess___af4e0f8eeeef431f47bf474beca48a5df}\label{structLinuxProcess___af4e0f8eeeef431f47bf474beca48a5df}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+rchar@{io\+\_\+rchar}}
+\index{io\+\_\+rchar@{io\+\_\+rchar}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+rchar}{io\_rchar}}
+{\footnotesize\ttfamily unsigned long long Linux\+Process\+\_\+\+::io\+\_\+rchar}
+
+\mbox{\Hypertarget{structLinuxProcess___afc0b3bc77d88397c477b47689406c332}\label{structLinuxProcess___afc0b3bc77d88397c477b47689406c332}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+read\+\_\+bytes@{io\+\_\+read\+\_\+bytes}}
+\index{io\+\_\+read\+\_\+bytes@{io\+\_\+read\+\_\+bytes}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+read\+\_\+bytes}{io\_read\_bytes}}
+{\footnotesize\ttfamily unsigned long long Linux\+Process\+\_\+\+::io\+\_\+read\+\_\+bytes}
+
+\mbox{\Hypertarget{structLinuxProcess___a2e3044ffc7ce5fdb5a44775fdc580677}\label{structLinuxProcess___a2e3044ffc7ce5fdb5a44775fdc580677}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+syscr@{io\+\_\+syscr}}
+\index{io\+\_\+syscr@{io\+\_\+syscr}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+syscr}{io\_syscr}}
+{\footnotesize\ttfamily unsigned long long Linux\+Process\+\_\+\+::io\+\_\+syscr}
+
+\mbox{\Hypertarget{structLinuxProcess___a85002566fe0063f8fa2a7739d72d04f9}\label{structLinuxProcess___a85002566fe0063f8fa2a7739d72d04f9}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+syscw@{io\+\_\+syscw}}
+\index{io\+\_\+syscw@{io\+\_\+syscw}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+syscw}{io\_syscw}}
+{\footnotesize\ttfamily unsigned long long Linux\+Process\+\_\+\+::io\+\_\+syscw}
+
+\mbox{\Hypertarget{structLinuxProcess___a47c13bfe130d9f02fd4875e528adc57e}\label{structLinuxProcess___a47c13bfe130d9f02fd4875e528adc57e}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+wchar@{io\+\_\+wchar}}
+\index{io\+\_\+wchar@{io\+\_\+wchar}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+wchar}{io\_wchar}}
+{\footnotesize\ttfamily unsigned long long Linux\+Process\+\_\+\+::io\+\_\+wchar}
+
+\mbox{\Hypertarget{structLinuxProcess___aaebf3e127e873e20c8dcdfb7efa9e86f}\label{structLinuxProcess___aaebf3e127e873e20c8dcdfb7efa9e86f}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+\_\+write\+\_\+bytes@{io\+\_\+write\+\_\+bytes}}
+\index{io\+\_\+write\+\_\+bytes@{io\+\_\+write\+\_\+bytes}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+\_\+write\+\_\+bytes}{io\_write\_bytes}}
+{\footnotesize\ttfamily unsigned long long Linux\+Process\+\_\+\+::io\+\_\+write\+\_\+bytes}
+
+\mbox{\Hypertarget{structLinuxProcess___a141ffbf6e27674a3424166fb363be304}\label{structLinuxProcess___a141ffbf6e27674a3424166fb363be304}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!io\+Priority@{io\+Priority}}
+\index{io\+Priority@{io\+Priority}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{io\+Priority}{ioPriority}}
+{\footnotesize\ttfamily \hyperlink{IOPriority_8h_a7f26835a9d854333f7dc5d7321922975}{I\+O\+Priority} Linux\+Process\+\_\+\+::io\+Priority}
+
+\mbox{\Hypertarget{structLinuxProcess___a34976167e61397ba174427aca9f44b08}\label{structLinuxProcess___a34976167e61397ba174427aca9f44b08}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!last\+\_\+mlrs\+\_\+calctime@{last\+\_\+mlrs\+\_\+calctime}}
+\index{last\+\_\+mlrs\+\_\+calctime@{last\+\_\+mlrs\+\_\+calctime}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{last\+\_\+mlrs\+\_\+calctime}{last\_mlrs\_calctime}}
+{\footnotesize\ttfamily unsigned long long int Linux\+Process\+\_\+\+::last\+\_\+mlrs\+\_\+calctime}
+
+\mbox{\Hypertarget{structLinuxProcess___a9c6429f299e97c1691140b619072da39}\label{structLinuxProcess___a9c6429f299e97c1691140b619072da39}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!m\+\_\+drs@{m\+\_\+drs}}
+\index{m\+\_\+drs@{m\+\_\+drs}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+drs}{m\_drs}}
+{\footnotesize\ttfamily long Linux\+Process\+\_\+\+::m\+\_\+drs}
+
+\mbox{\Hypertarget{structLinuxProcess___af426ccba3b0ad0275911ae33949d6478}\label{structLinuxProcess___af426ccba3b0ad0275911ae33949d6478}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!m\+\_\+lrs@{m\+\_\+lrs}}
+\index{m\+\_\+lrs@{m\+\_\+lrs}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+lrs}{m\_lrs}}
+{\footnotesize\ttfamily long Linux\+Process\+\_\+\+::m\+\_\+lrs}
+
+\mbox{\Hypertarget{structLinuxProcess___ae3a219a917d99f416bb4137f4aca3f5d}\label{structLinuxProcess___ae3a219a917d99f416bb4137f4aca3f5d}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!m\+\_\+priv@{m\+\_\+priv}}
+\index{m\+\_\+priv@{m\+\_\+priv}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+priv}{m\_priv}}
+{\footnotesize\ttfamily long Linux\+Process\+\_\+\+::m\+\_\+priv}
+
+\mbox{\Hypertarget{structLinuxProcess___a40f46e2563e28053af64d98f718579f2}\label{structLinuxProcess___a40f46e2563e28053af64d98f718579f2}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!m\+\_\+pss@{m\+\_\+pss}}
+\index{m\+\_\+pss@{m\+\_\+pss}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+pss}{m\_pss}}
+{\footnotesize\ttfamily long Linux\+Process\+\_\+\+::m\+\_\+pss}
+
+\mbox{\Hypertarget{structLinuxProcess___a03d09465f675a748900a8c6cdfacb08d}\label{structLinuxProcess___a03d09465f675a748900a8c6cdfacb08d}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!m\+\_\+psswp@{m\+\_\+psswp}}
+\index{m\+\_\+psswp@{m\+\_\+psswp}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+psswp}{m\_psswp}}
+{\footnotesize\ttfamily long Linux\+Process\+\_\+\+::m\+\_\+psswp}
+
+\mbox{\Hypertarget{structLinuxProcess___a350eb74f2652dbc5271dd4b6b9dbdfc8}\label{structLinuxProcess___a350eb74f2652dbc5271dd4b6b9dbdfc8}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!m\+\_\+share@{m\+\_\+share}}
+\index{m\+\_\+share@{m\+\_\+share}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+share}{m\_share}}
+{\footnotesize\ttfamily long Linux\+Process\+\_\+\+::m\+\_\+share}
+
+\mbox{\Hypertarget{structLinuxProcess___aae2a3525379b98baa1b1de6ec04016b8}\label{structLinuxProcess___aae2a3525379b98baa1b1de6ec04016b8}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!m\+\_\+swap@{m\+\_\+swap}}
+\index{m\+\_\+swap@{m\+\_\+swap}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+swap}{m\_swap}}
+{\footnotesize\ttfamily long Linux\+Process\+\_\+\+::m\+\_\+swap}
+
+\mbox{\Hypertarget{structLinuxProcess___a3de56bc172fd3cdc30e60dd26a5803eb}\label{structLinuxProcess___a3de56bc172fd3cdc30e60dd26a5803eb}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!m\+\_\+trs@{m\+\_\+trs}}
+\index{m\+\_\+trs@{m\+\_\+trs}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{m\+\_\+trs}{m\_trs}}
+{\footnotesize\ttfamily long Linux\+Process\+\_\+\+::m\+\_\+trs}
+
+\mbox{\Hypertarget{structLinuxProcess___ac878657f2e7afac87448dfe39ca98815}\label{structLinuxProcess___ac878657f2e7afac87448dfe39ca98815}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!oom@{oom}}
+\index{oom@{oom}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{oom}{oom}}
+{\footnotesize\ttfamily unsigned int Linux\+Process\+\_\+\+::oom}
+
+\mbox{\Hypertarget{structLinuxProcess___a720ed365fe67e8ba682fe58f085dd4dc}\label{structLinuxProcess___a720ed365fe67e8ba682fe58f085dd4dc}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!secattr@{secattr}}
+\index{secattr@{secattr}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{secattr}{secattr}}
+{\footnotesize\ttfamily char$\ast$ Linux\+Process\+\_\+\+::secattr}
+
+\mbox{\Hypertarget{structLinuxProcess___ac843f0feb06dd81345d7e261216b20db}\label{structLinuxProcess___ac843f0feb06dd81345d7e261216b20db}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!stime@{stime}}
+\index{stime@{stime}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{stime}{stime}}
+{\footnotesize\ttfamily unsigned long long int Linux\+Process\+\_\+\+::stime}
+
+\mbox{\Hypertarget{structLinuxProcess___a18bbf5ea6ea250f752bf4cfb901b92da}\label{structLinuxProcess___a18bbf5ea6ea250f752bf4cfb901b92da}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!super@{super}}
+\index{super@{super}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{super}{super}}
+{\footnotesize\ttfamily \hyperlink{Process_8h_a20673e8fa40981a168bf0e196c4cef3b}{Process} Linux\+Process\+\_\+\+::super}
+
+\mbox{\Hypertarget{structLinuxProcess___a75516dac31570653ea0101b4a631d7d5}\label{structLinuxProcess___a75516dac31570653ea0101b4a631d7d5}} 
+\index{Linux\+Process\+\_\+@{Linux\+Process\+\_\+}!utime@{utime}}
+\index{utime@{utime}!Linux\+Process\+\_\+@{Linux\+Process\+\_\+}}
+\subsubsection{\texorpdfstring{utime}{utime}}
+{\footnotesize\ttfamily unsigned long long int Linux\+Process\+\_\+\+::utime}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+linux/download/htop-\/3.\+3.\+0/linux/\hyperlink{LinuxProcess_8h}{Linux\+Process.\+h}\end{DoxyCompactItemize}

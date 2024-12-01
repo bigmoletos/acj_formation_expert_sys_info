@@ -1,0 +1,91 @@
+Voici le texte transformé en format Markdown \+:
+
+\section*{The Data Scientist\textquotesingle{}s Python Toolbox -\/ Cheatsheet}
+
+\subsection*{1. Data Manipulation and Analysis}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Pandas}\+: Core library for data manipulation and analysis.
+\begin{DoxyItemize}
+\item {\ttfamily pd.\+read\+\_\+csv()}\+: Read data from a C\+SV file into a Data\+Frame.
+\item {\ttfamily pd.\+read\+\_\+excel()}\+: Read data from an Excel file into a Data\+Frame.
+\item {\ttfamily df.\+head()}\+: View the first few rows of the Data\+Frame.
+\item {\ttfamily df.\+describe()}\+: Get a summary of statistics.
+\item {\ttfamily df.\+info()}\+: Get concise summary of the Data\+Frame.
+\item `df\mbox{[}\textquotesingle{}column\textquotesingle{}\mbox{]}.value\+\_\+counts(){\ttfamily \+: Count unique values in a column. -\/}df.\+groupby(){\ttfamily \+: Group data using a mapper or by a series of columns. -\/}df.\+pivot\+\_\+table(){\ttfamily \+: Create a spreadsheet-\/style pivot table. -\/}df.\+merge(){\ttfamily \+: Merge Data\+Frame objects. -\/}df.\+to\+\_\+csv(){\ttfamily \+: Write Data\+Frame to a comma-\/separated values (csv) file. -\/}pd.\+Data\+Frame(){\ttfamily \+: Create a Data\+Frame from various data sources. -\/}df.\+filter(){\ttfamily \+: Subset the data. -\/}df.\+sort\+\_\+values(){\ttfamily \+: Sort data by a column. -\/}df.\+groupby().agg(){\ttfamily \+: Aggregation after grouping. -\/}df.\+join(){\ttfamily ,}df.\+merge(){\ttfamily \+: Join/\+Merge operations. -\/}df.\+plot(){\ttfamily \+: Basic plotting. -\/}df.\+apply(){\ttfamily \+: Apply functions. -\/}df.\+to\+\_\+sql(){\ttfamily ,}df.\+read\+\_\+sql(){\ttfamily \+: Interaction with S\+QL databases. -\/}df.\+to\+\_\+datetime(){\ttfamily \+: Convert a column to Date\+Time. -\/}pd.\+get\+\_\+dummies(df)`\+: Convert categorical variable into dummy/indicator variables.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{2. Numerical Operations}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Num\+Py}\+: Fundamental package for numerical computations.
+\begin{DoxyItemize}
+\item {\ttfamily np.\+array()}\+: Create an array.
+\item {\ttfamily np.\+reshape()}\+: Change array shape.
+\item {\ttfamily np.\+concatenate()}\+: Concatenate arrays.
+\item {\ttfamily np.\+where()}\+: Return elements chosen from x or y depending on condition.
+\item {\ttfamily np.\+linalg.\+inv()}\+: Compute the multiplicative inverse of a matrix.
+\item {\ttfamily np.\+linalg.\+eig()}\+: Compute the eigenvalues and right eigenvectors of a square array.
+\item {\ttfamily np.\+arange()}\+: Return evenly spaced values within a given interval.
+\item {\ttfamily np.\+zeros()}, {\ttfamily np.\+ones()}\+: Create arrays of zeros or ones.
+\item {\ttfamily np.\+linspace()}\+: Create evenly spaced numbers over a specified interval.
+\item {\ttfamily np.\+random.\+rand()}, {\ttfamily np.\+random.\+randn()}\+: Create arrays of random values.
+\item {\ttfamily np.\+dot()}\+: Dot product of two arrays.
+\item {\ttfamily np.\+sqrt()}, {\ttfamily np.\+log()}, {\ttfamily np.\+exp()}\+: Square root, logarithm, exponentiation.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{3. Data Visualization}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Matplotlib}\+: Basic plotting library.
+\begin{DoxyItemize}
+\item {\ttfamily plt.\+plot()}\+: Plot y versus x as lines and/or markers.
+\item {\ttfamily plt.\+scatter()}\+: Make a scatter plot of x vs y.
+\item {\ttfamily plt.\+hist()}\+: Plot a histogram.
+\item {\ttfamily plt.\+bar()}\+: Make a bar plot.
+\item {\ttfamily plt.\+xlabel()}, {\ttfamily plt.\+ylabel()}\+: Set the labels for x and y axes.
+\item {\ttfamily plt.\+title()}\+: Set a title for the axes.
+\item {\ttfamily plt.\+legend()}\+: Place a legend on the axes.
+\item {\ttfamily plt.\+figure()}\+: Create a new figure.
+\item {\ttfamily plt.\+subplot()}\+: Add a subplot to the current figure.
+\item {\ttfamily plt.\+xscale()}, {\ttfamily plt.\+yscale()}\+: Set the scaling of the x-\/axis or y-\/axis.
+\item {\ttfamily plt.\+xlim()}, {\ttfamily plt.\+ylim()}\+: Get or set the x/y limits of the current axes.
+\item {\ttfamily plt.\+colorbar()}\+: Add a colorbar to a plot.
+\item {\ttfamily plt.\+errorbar()}\+: Plot y versus x as lines and/or markers with attached errorbars.
+\end{DoxyItemize}
+\item {\bfseries Seaborn}\+: Statistical data visualization based on Matplotlib.
+\begin{DoxyItemize}
+\item {\ttfamily sns.\+set()}\+: Set aesthetic parameters in one step.
+\item {\ttfamily sns.\+pairplot()}\+: Plot pairwise relationships in a dataset.
+\item {\ttfamily sns.\+distplot()}\+: Flexibly plot a univariate distribution of observations.
+\item {\ttfamily sns.\+boxplot()}\+: Draw a box plot to show distributions with respect to categories.
+\item {\ttfamily sns.\+heatmap()}\+: Heatmap representation of data.
+\item {\ttfamily sns.\+lmplot()}\+: Plot data and regression model fits.
+\item {\ttfamily sns.\+clustermap()}\+: Clustered heatmap.
+\item {\ttfamily sns.\+jointplot()}\+: Draw a plot of two variables with bivariate and univariate graphs.
+\item {\ttfamily sns.\+swarmplot()}\+: Draw a categorical scatterplot with non-\/overlapping points.
+\item {\ttfamily sns.\+countplot()}\+: Show the counts of observations in each categorical bin using bars.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{4. Statistical Analysis}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Sci\+Py}\+: Library for scientific computing.
+\begin{DoxyItemize}
+\item {\ttfamily stats.\+ttest\+\_\+ind()}\+: Calculate the T-\/test for the means of two independent samples of scores.
+\item {\ttfamily stats.\+pearsonr()}\+: Pearson correlation coefficient and p-\/value for testing non-\/correlation.
+\item {\ttfamily stats.\+norm()}\+: Normal continuous random variable.
+\item {\ttfamily scipy.\+integrate.\+quad()}\+: General purpose integration.
+\item {\ttfamily scipy.\+optimize.\+minimize()}\+: Minimization of scalar functions of one or more variables.
+\item {\ttfamily scipy.\+signal.\+convolve()}\+: Convolve two N-\/dimensional arrays.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+J’espère que cela vous aide ! N’hésitez pas à me faire savoir si vous avez d’autres questions. 😊 
