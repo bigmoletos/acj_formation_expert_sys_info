@@ -64,6 +64,20 @@
             </div>
         {% endif %}
 
+        {% if searches %}
+            <div class="search-history">
+                <h3>Historique des recherches</h3>
+                <ul>
+                    {% for search in searches %}
+                        <li>
+                            {{ search.city_name }} - {{ search.temperature }}°C
+                            <small>({{ search.search_date.strftime('%d/%m/%Y %H:%M') }})</small>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
         <div class="nav-links">
             <a href="{{ url_for('main.logout') }}" class="btn btn-secondary">Déconnexion</a>
         </div>
