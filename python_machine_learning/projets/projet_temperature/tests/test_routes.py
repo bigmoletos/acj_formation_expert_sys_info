@@ -22,7 +22,8 @@ def test_valid_login(client, auth):
     """Test qu'un login valide fonctionne"""
     response = auth.login()
     assert response.status_code == 200
-    assert b'Weather' in response.data
+    assert b'<h1>' in response.data
+    assert b'search-form' in response.data
 
 
 def test_invalid_login(client):
@@ -38,16 +39,17 @@ def test_invalid_login(client):
 
 
 @pytest.mark.parametrize(('username', 'password', 'message'), (
-    ('', '', b'Username is required.'),
-    ('test', '', b'Password is required.'),
-    ('test', 'short', b'Password must be at least 6 characters.'),
+    ('', '', b'This field is required'),
+    ('test', '', b'This field is required'),
+    ('test', 'short', b'Field must be at least 6 characters long'),
 ))
 def test_register_validate_input(client, username, password, message):
     """Test la validation des entrées lors de l'inscription"""
     response = client.post('/register',
                            data={
                                'username': username,
-                               'password': password
+                               'password': password,
+                               'password2': password
                            })
     assert message in response.data
 
@@ -116,5 +118,6 @@ def test_user(app):
 def test_user_model(app, test_user):
     """Test les méthodes du modèle User"""
     with app.app_context():
-        assert test_user.check_password('test_password2')
-        assert not test_user.check_password('wrong_password')
+        user = User.query.get(test_user.id)
+        assert user.check_password('test_password2')
+        assert not user.check_password('wrong_password')
