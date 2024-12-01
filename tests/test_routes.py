@@ -48,13 +48,13 @@ def test_weather_api(client):
     """Test de l'API météo"""
     # Test avec une ville valide
     response = client.get('/weather?city=Paris')
-    assert response.status_code == 200  # En mode test, devrait toujours réussir
+    assert response.status_code == 200
     assert b'temperature' in response.data.lower()
     assert b'city' in response.data.lower()
 
     # Test sans ville spécifiée
     response = client.get('/weather')
-    assert response.status_code == 200  # Devrait retourner le template
+    assert response.status_code == 200
 
 
 def test_docs_access(client):

@@ -1,5 +1,6 @@
 import pytest
 from app import create_app, db
+from app.models import User
 
 
 @pytest.fixture
@@ -13,13 +14,24 @@ def app():
         'SECRET_KEY': 'test_key'
     })
 
+    # S'assurer que les routes sont enregistrées
+    with app.app_context():
+        db.create_all()
+        # Créer un utilisateur de test si nécessaire
+        if not User.query.filter_by(username='test_user').first():
+            user = User(username='test_user')
+            user.set_password('test_password')
+            db.session.add(user)
+            db.session.commit()
+
     return app
 
 
 @pytest.fixture
 def client(app):
-    with app.test_client() as client:
-        with app.app_context():
-            db.create_all()
-            yield client
-            db.drop_all()
+    return app.test_client()
+
+
+@pytest.fixture
+def runner(app):
+    return app.test_cli_runner()
