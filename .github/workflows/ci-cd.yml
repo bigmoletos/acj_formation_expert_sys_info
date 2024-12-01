@@ -58,7 +58,6 @@ jobs:
   #         pytest tests/ -v --cov=app --cov-report=xml
 
   build-and-push:
-    # needs: test  # Commenté car les tests sont désactivés
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -84,7 +83,7 @@ jobs:
           password: ${{ env.DOCKER_PASSWORD }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: python_machine_learning/projets/projet_temperature
           file: python_machine_learning/projets/projet_temperature/Dockerfile
@@ -93,13 +92,15 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository_owner }}/${{ env.DOCKER_IMAGE }}:latest
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository_owner }}/${{ env.DOCKER_IMAGE }}:${{ github.sha }}
           build-args: |
-            FLASK_APP=${{ env.FLASK_APP }}
+            FLASK_APP=app
             FLASK_ENV=${{ env.FLASK_ENV }}
             SECRET_KEY=${{ env.SECRET_KEY }}
             DATABASE_URL=${{ env.DATABASE_URL }}
             API_KEY_OPENWEATHER=${{ env.API_KEY_OPENWEATHER }}
             LOG_TO_FILE=${{ env.LOG_TO_FILE }}
             LOG_LEVEL=${{ env.LOG_LEVEL }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
   deploy:
     needs: build-and-push
