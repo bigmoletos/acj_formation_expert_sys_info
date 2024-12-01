@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
+from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, current_app
 from flask_login import login_user, logout_user, login_required, current_user
 from app import db, logger
 from app.models import User
@@ -14,6 +14,20 @@ print("Routes chargées!")  # Debug print
 @bp.route('/')
 def index():
     return redirect(url_for('main.login'))
+
+
+@bp.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('main.weather'))
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user and user.check_password(form.password.data):
+            login_user(user)
+            return redirect(url_for('main.weather'))
+        flash('Invalid username or password')
+    return render_template('index.html', form=form)
 
 
 @bp.route('/weather')

@@ -8,7 +8,8 @@ def app():
     app.config.update({
         'TESTING': True,
         'SQLALCHEMY_DATABASE_URI': 'sqlite:///:memory:',
-        'WTF_CSRF_ENABLED': False
+        'WTF_CSRF_ENABLED': False,
+        'OPENWEATHER_API_KEY': 'test_key'
     })
 
     return app
