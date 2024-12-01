@@ -6,6 +6,8 @@ from app.forms import LoginForm, RegistrationForm
 import requests
 from flask import current_app
 import logging
+from app.generate_docs import generate_documentation
+import os
 
 bp = Blueprint('main', __name__)
 
@@ -156,3 +158,28 @@ def delete_user(user_id):
         flash('Utilisateur supprimé avec succès!')
 
     return redirect(url_for('main.admin'))
+
+
+@bp.route('/docs')
+@login_required
+def docs():
+    """Affiche la documentation générée par Doxygen"""
+    # Vérifier si la documentation existe
+    documentation_exists = os.path.exists('app/templates/docs/html/index.html')
+
+    return render_template('docs.html',
+                           documentation_exists=documentation_exists)
+
+
+@bp.route('/docs/generate', methods=['GET'])
+@login_required
+def generate_docs():
+    """Génère la documentation avec Doxygen"""
+    if generate_documentation():
+        flash('Documentation générée avec succès!')
+    else:
+        flash(
+            'Erreur lors de la génération de la documentation. Vérifiez les logs.'
+        )
+
+    return redirect(url_for('main.docs'))

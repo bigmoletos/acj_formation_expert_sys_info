@@ -3,25 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation - Application Météo</title>
+    <title>Documentation - Weather App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Styles spécifiques pour la documentation */
+        .docs-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .docs-content {
+            padding: 20px;
+        }
+
+        .docs-content h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .docs-content p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Style pour le cas où la documentation n'est pas générée */
+        .docs-placeholder {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .docs-placeholder h2 {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .docs-placeholder p {
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .generate-docs-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .generate-docs-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Documentation API</h1>
-        <section>
-            <h2>Route /weather</h2>
-            <p>Endpoint pour obtenir la météo d'une ville</p>
-            <h3>Paramètres</h3>
-            <ul>
-                <li><code>city</code> : Nom de la ville (obligatoire)</li>
-            </ul>
-            <h3>Exemple</h3>
-            <pre><code>GET {{ url_for('main.weather', city='Paris') }}</code></pre>
-        </section>
-        <div class="nav-links">
-            <a href="{{ url_for('main.weather') }}" class="btn btn-secondary">Retour à la météo</a>
+    {% include 'navbar.html' %}
+
+    <div class="docs-container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-info">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="docs-content">
+            {% if documentation_exists %}
+                <!-- Le contenu de la documentation Doxygen sera injecté ici -->
+                {% include 'docs/html/index.html' %}
+            {% else %}
+                <div class="docs-placeholder">
+                    <h2>Documentation non disponible</h2>
+                    <p>La documentation n'a pas encore été générée.</p>
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('main.generate_docs') }}" class="generate-docs-btn">
+                            Générer la documentation
+                        </a>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
     </div>
+
+    <script>
+        // Script pour gérer les liens de la documentation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ajuster les liens relatifs de la documentation Doxygen
+            const links = document.querySelectorAll('.docs-content a');
+            links.forEach(link => {
+                if (link.href.startsWith(window.location.origin + '/docs/')) {
+                    link.href = link.href.replace('/docs/', '/');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
