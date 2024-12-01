@@ -10,13 +10,17 @@ env:
   DOCKER_IMAGE: temperature-app
   DOCKER_REGISTRY: ghcr.io
   DOCKER_USERNAME: ${{ github.actor }}
-  DOCKER_PASSWORD: ${{ github.token }}
+  DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
   FLASK_ENV: testing
   DATABASE_URL: "sqlite:///:memory:"
   SECRET_KEY: test_secret_key
   API_KEY_OPENWEATHER: test_api_key
   LOG_TO_FILE: "False"
   LOG_LEVEL: DEBUG
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
   # test:
@@ -59,6 +63,9 @@ jobs:
 
   build-and-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     defaults:
       run:
         working-directory: python_machine_learning/projets/projet_temperature
@@ -79,8 +86,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ env.DOCKER_USERNAME }}
-          password: ${{ env.DOCKER_PASSWORD }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
