@@ -29,7 +29,7 @@ class RegistrationForm(FlaskForm):
     username = StringField(
         'Username',
         validators=[
-            DataRequired(message="Username is required"),
+            DataRequired(message="This field is required"),
             Length(min=4,
                    max=64,
                    message="Username must be between 4 and 64 characters")
@@ -37,15 +37,15 @@ class RegistrationForm(FlaskForm):
     password = PasswordField(
         'Password',
         validators=[
-            DataRequired(message="Password is required"),
+            DataRequired(message="This field is required"),
             Length(min=6, message="Password must be at least 6 characters")
         ])
-    password2 = PasswordField('Repeat Password',
-                              validators=[
-                                  DataRequired(),
-                                  EqualTo('password',
-                                          message='Passwords must match')
-                              ])
+    password2 = PasswordField(
+        'Repeat Password',
+        validators=[
+            DataRequired(message="This field is required"),
+            EqualTo('password', message='Passwords must match')
+        ])
     submit = SubmitField('Register')
 
     def validate_username(self, username):
