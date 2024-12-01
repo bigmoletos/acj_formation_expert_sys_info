@@ -34,3 +34,22 @@ def test_weather_page_with_city(client):
     response = client.get('/weather?city=Paris')
     assert response.status_code == 200
     assert b'temperature' in response.data.lower()
+
+
+def test_weather_api(client):
+    """Test de l'API météo"""
+    # Test avec une ville valide
+    response = client.get('/weather?city=Paris')
+    assert response.status_code in [200,
+                                    404]  # 404 acceptable si ville non trouvée
+
+    # Test sans ville spécifiée
+    response = client.get('/weather')
+    assert response.status_code == 200  # Devrait retourner le template
+
+
+def test_docs_access(client):
+    """Test d'accès à la documentation"""
+    response = client.get('/docs')
+    assert response.status_code == 200
+    assert b'Documentation API' in response.data
