@@ -5,47 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Météo - Application</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
 <body>
     <div class="container">
         <h1>Météo</h1>
-
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="flash-messages">
-                    {% for message in messages %}
-                        <div class="alert">{{ message }}</div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        {% endwith %}
-
-        <form method="GET" action="{{ url_for('main.weather') }}" class="search-form">
+        <form method="GET" action="{{ url_for('main.weather') }}">
             <div class="form-group">
                 <input type="text" name="city" class="form-control"
-                       placeholder="Entrez le nom d'une ville (ex: Paris, Lyon, Marseille..)"
-                       value="{{ request.args.get('city', '') }}" required>
-                <button type="submit" class="btn btn-primary">Rechercher</button>
+                       placeholder="Entrez le nom d'une ville">
+                <button type="submit">Rechercher</button>
             </div>
         </form>
-
-        {% if error %}
-            <div class="alert">{{ error }}</div>
-        {% endif %}
-
-        {% if city and temperature is not none %}
-            <div class="weather-info">
-                <h2>Météo à {{ city }}</h2>
-                <p class="temperature">{{ temperature }}°C</p>
-                {% if description %}
-                    <p class="description">{{ description|capitalize }}</p>
-                {% endif %}
-            </div>
-        {% endif %}
-
         <div class="nav-links">
-            <a href="{{ url_for('main.logout') }}" class="btn btn-secondary">Déconnexion</a>
+            <a href="{{ url_for('main.logout') }}">Déconnexion</a>
         </div>
     </div>
 </body>
