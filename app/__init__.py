@@ -14,8 +14,12 @@ logger = setup_logging(log_to_file=os.environ.get('LOG_TO_FILE',
                        log_level=os.environ.get('LOG_LEVEL', 'INFO'),
                        log_dir=os.environ.get('LOG_DIR', 'logs'))
 
-try:
-    # Initialisation de l'application
+# Initialisation des extensions
+db = SQLAlchemy()
+login_manager = LoginManager()
+
+
+def create_app(config_name=None):
     app = Flask(__name__)
 
     # Configuration de base
@@ -33,21 +37,22 @@ try:
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['OPENWEATHER_API_KEY'] = os.environ.get('API_KEY_OPENWEATHER')
 
-    # Initialisation des extensions
-    db = SQLAlchemy(app)
-    login_manager = LoginManager(app)
+    # Initialisation des extensions avec l'application
+    db.init_app(app)
+    login_manager.init_app(app)
     login_manager.login_view = 'login'
     login_manager.login_message = "Veuillez vous connecter pour accéder à cette page."
 
-    # Import des routes après l'initialisation
-    from app import routes, models
-
-    # Création des tables si elles n'existent pas
     with app.app_context():
+        # Import des routes
+        from app import routes
+
+        # Création des tables
         db.create_all()
         logger.info("Base de données initialisée avec succès")
 
-except Exception as e:
-    logger.critical(
-        f"Erreur fatale lors de l'initialisation de l'application: {str(e)}")
-    raise
+    return app
+
+
+# Création de l'application
+app = create_app()

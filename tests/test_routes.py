@@ -43,6 +43,14 @@ def test_weather_api(client):
     assert response.status_code in [200,
                                     404]  # 404 acceptable si ville non trouvée
 
+    if response.status_code == 200:
+        data = response.get_json()
+        assert 'temperature' in data
+        assert 'city' in data
+    else:
+        data = response.get_json()
+        assert 'error' in data
+
     # Test sans ville spécifiée
     response = client.get('/weather')
     assert response.status_code == 200  # Devrait retourner le template

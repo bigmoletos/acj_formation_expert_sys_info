@@ -5,13 +5,16 @@ from app.models import User
 from app.forms import LoginForm
 import requests
 
+print("Routes chargées!")  # Debug print
+
+
+@app.route('/')
+def index():
+    return redirect(url_for('login'))
+
 
 @app.route('/weather')
 def weather():
-    """
-    Route pour obtenir la météo d'une ville
-    Accessible sans authentification pour les tests
-    """
     try:
         city = request.args.get('city')
         if not city:
@@ -33,11 +36,11 @@ def weather():
 
         if response.status_code == 200:
             data = response.json()
-            return jsonify({
-                'temperature': data['main']['temp'],
-                'description': data['weather'][0]['description'],
-                'city': data['name']
-            })
+            return render_template(
+                'weather.html',
+                temperature=data['main']['temp'],
+                description=data['weather'][0]['description'],
+                city=data['name'])
         else:
             return jsonify({'error': 'City not found'}), 404
 
@@ -48,7 +51,6 @@ def weather():
 
 @app.route('/docs')
 def docs():
-    """Route pour accéder à la documentation"""
     try:
         return render_template('docs.html')
     except Exception as e:
