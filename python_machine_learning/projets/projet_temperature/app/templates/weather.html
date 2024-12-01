@@ -5,16 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Météo - Application</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -30,17 +21,18 @@
             {% endif %}
         {% endwith %}
 
-        <form method="GET" action="{{ url_for('weather') }}" class="search-form">
+        <form method="GET" action="{{ url_for('main.weather') }}" class="search-form">
             <div class="form-group">
-                <input type="text"
-                       name="city"
-                       class="form-control"
-                       placeholder="Entrez le nom d'une ville (ex: Paris, Marseille)"
-                       value="{{ request.args.get('city', '') }}"
-                       required>
+                <input type="text" name="city" class="form-control"
+                       placeholder="Entrez le nom d'une ville"
+                       value="{{ request.args.get('city', '') }}" required>
                 <button type="submit" class="btn btn-primary">Rechercher</button>
             </div>
         </form>
+
+        {% if error %}
+            <div class="alert">{{ error }}</div>
+        {% endif %}
 
         {% if city and temperature is not none %}
             <div class="weather-info">
@@ -50,27 +42,11 @@
                     <p class="description">{{ description|capitalize }}</p>
                 {% endif %}
             </div>
-
-            <!-- Conteneur de la carte -->
-            <div id="map"></div>
-
-            <!-- Coordonnées cachées pour JavaScript -->
-            <div id="coordinates"
-                 data-lat="{{ coordinates.lat }}"
-                 data-lon="{{ coordinates.lon }}"
-                 data-temp="{{ temperature }}"
-                 data-city="{{ city }}"
-                 style="display: none;">
-            </div>
         {% endif %}
 
         <div class="nav-links">
-            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Déconnexion</a>
+            <a href="{{ url_for('main.logout') }}" class="btn btn-secondary">Déconnexion</a>
         </div>
     </div>
-
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 </body>
 </html>
