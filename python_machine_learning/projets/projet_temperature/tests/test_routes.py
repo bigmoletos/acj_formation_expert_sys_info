@@ -108,17 +108,29 @@ def test_logout(client, auth):
 def test_user(app):
     """Fixture pour créer un utilisateur de test"""
     with app.app_context():
+        # Créer une nouvelle session pour le test
+        db.session.begin()
+
+        # Supprimer l'utilisateur s'il existe déjà
+        User.query.filter_by(username='test_user2').delete()
+
+        # Créer le nouvel utilisateur
         user = User(username='test_user2')
         user.set_password('test_password2')
         db.session.add(user)
         db.session.commit()
-        return user
+
+        yield user  # Retourner l'utilisateur
+
+        # Nettoyage après le test
+        db.session.rollback()
 
 
 def test_user_model(app, test_user):
     """Test les méthodes du modèle User"""
     with app.app_context():
-        # Récupérer une nouvelle instance de l'utilisateur depuis la base
-        user = User.query.get(test_user.id)
+        # Faire une nouvelle requête pour obtenir l'utilisateur
+        user = User.query.filter_by(username='test_user2').first()
+        assert user is not None
         assert user.check_password('test_password2')
         assert not user.check_password('wrong_password')
