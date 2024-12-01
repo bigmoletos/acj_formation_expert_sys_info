@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, master,dev, dev2 ,fix/bug-github-action,fix/debug-test-action]
+    branches: [ main, master,dev, dev2 ,fix/bug-github-action,fix/debug-test-action,feature/ajout-user-actions]
   pull_request:
-    branches: [ main, master,dev, dev2 ,fix/bug-github-action,fix/debug-test-action]
+    branches: [ main, master,dev, dev2 ,fix/bug-github-action,fix/debug-test-action,feature/ajout-user-actions]
 
 env:
   DOCKER_IMAGE: temperature-app
