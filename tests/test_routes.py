@@ -33,7 +33,7 @@ def test_login_page(client):
                                'username': 'test',
                                'password': 'test'
                            })
-    assert response.status_code == 302
+    assert response.status_code == 302  # Redirection après login
 
 
 def test_weather_page(client):
