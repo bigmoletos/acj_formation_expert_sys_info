@@ -8,7 +8,7 @@ def test_home_page(client):
     assert response.status_code == 302  # Redirection vers login
 
 
-def test_login_page(client):
+def test_login(client):
     """Test simple de la page de connexion."""
     # Test GET
     response = client.get('/login')
@@ -23,7 +23,7 @@ def test_login_page(client):
     assert response.status_code == 302  # Redirection après login
 
 
-def test_weather_page(client):
+def test_weather(client):
     """Test simple de la page météo."""
     response = client.get('/weather')
     assert response.status_code == 200
