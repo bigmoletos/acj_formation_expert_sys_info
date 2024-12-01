@@ -1,26 +1,29 @@
-from flask import render_template, request, redirect, url_for, flash, jsonify
+from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
 from flask_login import login_user, logout_user, login_required, current_user
-from app import app, db, logger
+from app import db, logger
 from app.models import User
 from app.forms import LoginForm
 import requests
 
+# Création du blueprint
+bp = Blueprint('main', __name__)
+
 print("Routes chargées!")  # Debug print
 
 
-@app.route('/')
+@bp.route('/')
 def index():
-    return redirect(url_for('login'))
+    return redirect(url_for('main.login'))
 
 
-@app.route('/weather')
+@bp.route('/weather')
 def weather():
     try:
         city = request.args.get('city')
         if not city:
             return render_template('weather.html')
 
-        api_key = app.config.get('OPENWEATHER_API_KEY')
+        api_key = current_app.config.get('OPENWEATHER_API_KEY')
         if not api_key:
             logger.error("Clé API OpenWeather non configurée")
             return jsonify({'error': 'Configuration error'}), 500
@@ -49,7 +52,7 @@ def weather():
         return jsonify({'error': str(e)}), 500
 
 
-@app.route('/docs')
+@bp.route('/docs')
 def docs():
     try:
         return render_template('docs.html')

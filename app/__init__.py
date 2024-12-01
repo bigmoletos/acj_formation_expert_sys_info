@@ -40,12 +40,13 @@ def create_app(config_name=None):
     # Initialisation des extensions avec l'application
     db.init_app(app)
     login_manager.init_app(app)
-    login_manager.login_view = 'login'
+    login_manager.login_view = 'main.login'
     login_manager.login_message = "Veuillez vous connecter pour accéder à cette page."
 
     with app.app_context():
-        # Import des routes
-        from app import routes
+        # Import et enregistrement des routes
+        from app.routes import bp
+        app.register_blueprint(bp)
 
         # Création des tables
         db.create_all()

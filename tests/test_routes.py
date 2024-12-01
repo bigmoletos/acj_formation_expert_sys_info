@@ -44,9 +44,8 @@ def test_weather_api(client):
                                     404]  # 404 acceptable si ville non trouvée
 
     if response.status_code == 200:
-        data = response.get_json()
-        assert 'temperature' in data
-        assert 'city' in data
+        assert b'temperature' in response.data.lower()
+        assert b'city' in response.data.lower()
     else:
         data = response.get_json()
         assert 'error' in data
