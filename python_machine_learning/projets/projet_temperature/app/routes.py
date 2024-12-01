@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, current_app
+from flask import Blueprint, render_template, request, redirect, url_for, flash, current_app
 from flask_login import login_user, logout_user, login_required, current_user
 from app import db, logger
 from app.models import User
@@ -7,8 +7,6 @@ import requests
 
 # Création du blueprint
 bp = Blueprint('main', __name__)
-
-print("Routes chargées!")  # Debug print
 
 
 @bp.route('/')
@@ -30,7 +28,8 @@ def login():
     return render_template('index.html', form=form)
 
 
-@bp.route('/weather', methods=['GET'])
+@bp.route('/weather')
+@login_required
 def weather():
     """Route pour obtenir la météo d'une ville"""
     try:
@@ -38,7 +37,7 @@ def weather():
         if not city:
             return render_template('weather.html')
 
-        # En mode test, toujours retourner une réponse valide
+        # En mode test, retourner une réponse simulée
         if current_app.config.get('TESTING'):
             return render_template('weather.html',
                                    temperature=20.0,
@@ -85,7 +84,6 @@ def logout():
 
 
 @bp.route('/docs')
-@bp.route('/docs/')
 def docs():
     """Route pour accéder à la documentation"""
     try:
