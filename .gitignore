@@ -94,6 +94,7 @@ algorithmie\listeWord.csv
 *.json
 *.targz
 *.bz2
+*.env.*
 
 
 data
