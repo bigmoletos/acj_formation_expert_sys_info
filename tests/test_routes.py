@@ -48,15 +48,9 @@ def test_weather_api(client):
     """Test de l'API météo"""
     # Test avec une ville valide
     response = client.get('/weather?city=Paris')
-    assert response.status_code in [200,
-                                    404]  # 404 acceptable si ville non trouvée
-
-    if response.status_code == 200:
-        assert b'temperature' in response.data.lower()
-        assert b'city' in response.data.lower()
-    else:
-        data = response.get_json()
-        assert 'error' in data
+    assert response.status_code == 200  # En mode test, devrait toujours réussir
+    assert b'temperature' in response.data.lower()
+    assert b'city' in response.data.lower()
 
     # Test sans ville spécifiée
     response = client.get('/weather')
@@ -65,6 +59,8 @@ def test_weather_api(client):
 
 def test_docs_access(client):
     """Test d'accès à la documentation"""
-    response = client.get('/docs')
-    assert response.status_code == 200
-    assert b'Documentation API' in response.data
+    # Test avec et sans slash final
+    for path in ['/docs', '/docs/']:
+        response = client.get(path)
+        assert response.status_code == 200
+        assert b'Documentation API' in response.data

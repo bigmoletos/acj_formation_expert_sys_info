@@ -9,7 +9,8 @@ def app():
         'TESTING': True,
         'SQLALCHEMY_DATABASE_URI': 'sqlite:///:memory:',
         'WTF_CSRF_ENABLED': False,
-        'OPENWEATHER_API_KEY': 'test_key'
+        'OPENWEATHER_API_KEY': 'test_key',
+        'SECRET_KEY': 'test_key'
     })
 
     return app
