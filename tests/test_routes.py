@@ -81,20 +81,24 @@ def test_weather_api(mock_get, auth_client):
     mock_get.return_value.status_code = 200
 
     # Test avec une ville valide
-    response = auth_client.get(url_for('main.weather', city='Paris'))
-    assert response.status_code == 200
-    assert b'temperature' in response.data.lower()
-    assert b'Paris' in response.data  # Vérifier le nom de la ville
+    with auth_client.application.test_request_context():
+        url = url_for('main.weather', city='Paris')
+        response = auth_client.get(url)
+        assert response.status_code == 200
+        assert b'temperature' in response.data.lower()
+        assert b'Paris' in response.data
 
-    # Test avec une ville invalide
-    mock_get.return_value.status_code = 404
-    response = auth_client.get(url_for('main.weather', city='InvalidCity'))
-    assert response.status_code == 200  # Devrait toujours retourner 200 en mode test
-    assert b'error' in response.data.lower()
+        # Test avec une ville invalide
+        mock_get.return_value.status_code = 404
+        url = url_for('main.weather', city='InvalidCity')
+        response = auth_client.get(url)
+        assert response.status_code == 200  # Devrait toujours retourner 200 en mode test
+        assert b'error' in response.data.lower()
 
-    # Test sans ville spécifiée
-    response = auth_client.get(url_for('main.weather'))
-    assert response.status_code == 200
+        # Test sans ville spécifiée
+        url = url_for('main.weather')
+        response = auth_client.get(url)
+        assert response.status_code == 200
 
 
 def test_docs_access(client):
