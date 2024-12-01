@@ -1,8 +1,7 @@
 import pytest
 from flask import url_for
-from app import create_app, db
+from app import db
 from app.models import User
-from unittest.mock import patch
 
 
 @pytest.fixture
@@ -17,22 +16,20 @@ def test_user(app):
 
 
 @pytest.fixture
-def auth_client(client, test_user, app):
+def auth_client(client, test_user):
     """Fixture pour créer un client authentifié."""
-    with app.test_request_context():
-        login_url = url_for('main.login')
-        client.post(login_url,
-                    data={
-                        'username': 'test_user',
-                        'password': 'test_password'
-                    })
-        return client
+    client.post(url_for('main.login'),
+                data={
+                    'username': 'test_user',
+                    'password': 'test_password'
+                })
+    return client
 
 
 def test_index_page(client):
     """Test de la page d'accueil"""
     response = client.get('/')
-    assert response.status_code == 302  # Redirection vers login
+    assert response.status_code == 302
     assert url_for('main.login') in response.location
 
 
@@ -75,6 +72,7 @@ def test_weather_page(auth_client):
     response = auth_client.get(url_for('main.weather', city='Paris'))
     assert response.status_code == 200
     assert b'Paris' in response.data
+    assert b'temperature' in response.data.lower()
 
 
 def test_docs_access(client):
