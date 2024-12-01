@@ -1,0 +1,17 @@
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a href="{{ url_for('main.weather') }}" class="navbar-item">Weather App</a>
+    </div>
+
+    <div class="navbar-menu">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('main.weather') }}" class="navbar-item">Weather</a>
+            <a href="{{ url_for('main.admin') }}" class="navbar-item">Admin</a>
+            <a href="/docs" class="navbar-item">Documentation</a>
+            <a href="{{ url_for('main.logout') }}" class="navbar-item">Logout</a>
+        {% else %}
+            <a href="{{ url_for('main.login') }}" class="navbar-item">Login</a>
+            <a href="{{ url_for('main.register') }}" class="navbar-item">Register</a>
+        {% endif %}
+    </div>
+</nav>

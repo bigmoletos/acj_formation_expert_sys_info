@@ -122,3 +122,37 @@ def logout():
     logout_user()
     flash('Vous avez été déconnecté.')
     return redirect(url_for('main.login'))
+
+
+@bp.route('/admin', methods=['GET', 'POST'])
+@login_required
+def admin():
+    """Page d'administration"""
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Utilisateur créé avec succès!')
+        return redirect(url_for('main.admin'))
+
+    users = User.query.all()
+    return render_template('admin.html', form=form, users=users)
+
+
+@bp.route('/admin/users/<int:user_id>', methods=['POST'])
+@login_required
+def delete_user(user_id):
+    """Suppression d'un utilisateur"""
+    if request.form.get('_method') == 'DELETE':
+        user = User.query.get_or_404(user_id)
+        if user.id == current_user.id:
+            flash('Vous ne pouvez pas supprimer votre propre compte!')
+            return redirect(url_for('main.admin'))
+
+        db.session.delete(user)
+        db.session.commit()
+        flash('Utilisateur supprimé avec succès!')
+
+    return redirect(url_for('main.admin'))
