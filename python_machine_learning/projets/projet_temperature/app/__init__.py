@@ -19,6 +19,12 @@ db = SQLAlchemy()
 login_manager = LoginManager()
 
 
+@login_manager.user_loader
+def load_user(user_id):
+    from app.models import User
+    return User.query.get(int(user_id))
+
+
 def create_app(config_name=None):
     app = Flask(__name__)
 
@@ -46,7 +52,7 @@ def create_app(config_name=None):
     with app.app_context():
         # Import et enregistrement des routes
         from app.routes import bp
-        app.register_blueprint(bp, url_prefix='')
+        app.register_blueprint(bp)
 
         # Création des tables
         db.create_all()
