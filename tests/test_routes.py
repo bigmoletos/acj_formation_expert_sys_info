@@ -1,18 +1,5 @@
 import pytest
 from flask import url_for
-from app import db
-from app.models import User
-
-
-@pytest.fixture
-def test_user(app):
-    """Fixture pour créer un utilisateur de test."""
-    with app.app_context():
-        user = User(username='test_user')
-        user.set_password('test_password')
-        db.session.add(user)
-        db.session.commit()
-        return user
 
 
 def test_home_page(client):
