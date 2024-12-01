@@ -74,10 +74,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Copy testing environment
-        run: |
-          cp .env.testing .env
-          cat .env
+      # - name: Copy testing environment
+      #   run: |
+      #     cp .env.testing .env
+      #     cat .env
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -117,10 +117,12 @@ jobs:
         working-directory: python_machine_learning/projets/projet_temperature
 
     steps:
-      - name: Copy testing environment
-        run: |
-          cp .env.testing .env
-          cat .env
+      # - name: Copy testing environment
+      #   run: |
+      #     cp .env.testing .env
+      #     cat .env
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Deploy to production
         env:
