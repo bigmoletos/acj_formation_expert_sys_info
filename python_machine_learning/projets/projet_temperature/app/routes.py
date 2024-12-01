@@ -76,6 +76,14 @@ def weather():
         return render_template('weather.html', error=str(e))
 
 
+@bp.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('Vous avez été déconnecté')
+    return redirect(url_for('main.login'))
+
+
 @bp.route('/docs')
 @bp.route('/docs/')
 def docs():

@@ -46,7 +46,7 @@ def create_app(config_name=None):
     with app.app_context():
         # Import et enregistrement des routes
         from app.routes import bp
-        app.register_blueprint(bp)
+        app.register_blueprint(bp, url_prefix='')
 
         # Création des tables
         db.create_all()
