@@ -23,8 +23,8 @@ GENERATE_HTML         = YES
 GENERATE_LATEX        = NO
 HTML_OUTPUT          = html
 HTML_FILE_EXTENSION  = .html
-HTML_HEADER         =
-HTML_FOOTER         =
+HTML_HEADER         = app/templates/doxygen/header.html
+HTML_FOOTER         = app/templates/doxygen/footer.html
 HTML_STYLESHEET     =
 HTML_EXTRA_STYLESHEET =
 HTML_EXTRA_FILES    =
@@ -95,3 +95,11 @@ INTERACTIVE_SVG       = YES
 # Configuration de la recherche
 SEARCHENGINE           = YES
 SERVER_BASED_SEARCH    = NO
+
+# Ajout des styles CSS personnalisés
+HTML_EXTRA_STYLESHEET = \
+    app/static/css/style.css
+
+# Configuration des chemins
+STRIP_FROM_PATH      = app
+STRIP_FROM_INC_PATH  = app
