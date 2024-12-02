@@ -32,7 +32,11 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
+<<<<<<< HEAD
 PROJECT_NAME           = "AJC cours de C++"
+=======
+PROJECT_NAME           = "AJC Formation expert sys info - Option Data - Oct2024"
+>>>>>>> dev2
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -91,7 +95,11 @@ ALLOW_UNICODE_NAMES    = NO
 # Ukrainian and Vietnamese.
 # The default value is: English.
 
+<<<<<<< HEAD
 OUTPUT_LANGUAGE        = Francais
+=======
+OUTPUT_LANGUAGE        = English
+>>>>>>> dev2
 
 # If the BRIEF_MEMBER_DESC tag is set to YES, doxygen will include brief member
 # descriptions after the members that are listed in the file and class
@@ -790,7 +798,11 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
+<<<<<<< HEAD
 INPUT                  =
+=======
+INPUT                  = ./base_connaissances ./linux ./programmation_C ./python_machine_learning ./prog_C_vers_C++ *./*
+>>>>>>> dev2
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -864,7 +876,11 @@ FILE_PATTERNS          = *.c \
 # be searched for input files as well.
 # The default value is: NO.
 
+<<<<<<< HEAD
 RECURSIVE              = NO
+=======
+RECURSIVE              = YES
+>>>>>>> dev2
 
 # The EXCLUDE tag can be used to specify files and/or directories that should be
 # excluded from the INPUT source files. This way you can easily exclude a
@@ -873,7 +889,11 @@ RECURSIVE              = NO
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
+<<<<<<< HEAD
 EXCLUDE                =
+=======
+EXCLUDE                = base_connaissances/python/install_pip_python.py
+>>>>>>> dev2
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
@@ -889,7 +909,11 @@ EXCLUDE_SYMLINKS       = NO
 # Note that the wildcards are matched against the file with absolute path, so to
 # exclude all test directories for example use the pattern */test/*
 
+<<<<<<< HEAD
 EXCLUDE_PATTERNS       =
+=======
+EXCLUDE_PATTERNS       = */logs/* */build/* */*vscode/* */env*/*
+>>>>>>> dev2
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
 # (namespaces, classes, functions, etc.) that should be excluded from the
@@ -960,7 +984,11 @@ INPUT_FILTER           =
 # need to set EXTENSION_MAPPING for the extension otherwise the files are not
 # properly processed by doxygen.
 
+<<<<<<< HEAD
 FILTER_PATTERNS        =
+=======
+FILTER_PATTERNS        = *.h *.hpp *.py *.c *.cpp *.bat *.sh *.bash
+>>>>>>> dev2
 
 # If the FILTER_SOURCE_FILES tag is set to YES, the input filter (if set using
 # INPUT_FILTER) will also be used to filter the input files that are used for
@@ -2214,7 +2242,11 @@ HIDE_UNDOC_RELATIONS   = YES
 # set to NO
 # The default value is: YES.
 
+<<<<<<< HEAD
 HAVE_DOT               = NOT
+=======
+HAVE_DOT               = YES
+>>>>>>> dev2
 
 # The DOT_NUM_THREADS specifies the number of dot invocations doxygen is allowed
 # to run in parallel. When set to 0 doxygen will base this on the number of

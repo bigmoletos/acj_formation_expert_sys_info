@@ -36,6 +36,12 @@
  *
  * @return 0 en cas de succÃ¨s, 1 si le chargement initial du fichier Ã©choue.
  */
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     //----------LOGGER-------------
@@ -91,7 +97,19 @@ int main()
 
     //----------CHARGEMENT FICHIER--------------
     // Chargement du fichier d'historique de commandes
+/**
+ * @brief [Description de chargeur]
+ *
+ * @param cheminFichier [Description du paramètre]
+ * @return ChargeFichierTxt [Description du retour]
+ */
     ChargeFichierTxt chargeur(cheminFichier);
+/**
+ * @brief [Description de chargeur2]
+ *
+ * @param cheminFichierCOmmandesUsuelles [Description du paramètre]
+ * @return ChargeFichierTxt [Description du retour]
+ */
     ChargeFichierTxt chargeur2(cheminFichierCOmmandesUsuelles);
 
     // Si le chargement du fichier Ã©choue, affiche un message d'erreur et quitte le programme
@@ -103,10 +121,22 @@ int main()
 
     //----------OCCURRENCES--------------
     // Initialisation de l'objet NombreOccurrence pour calculer les occurrences de commandes
+/**
+ * @brief [Description de nombreOccur]
+ *
+ * @param chargeur.getLignes() [Description du paramètre]
+ * @return NombreOccurrence [Description du retour]
+ */
     NombreOccurrence nombreOccur(chargeur.getLignes());
 
     //-------MENU-------------
     // Affichage et gestion du menu interactif
+/**
+ * @brief [Description de menu]
+ *
+ * @param optionsMenuMessages [Description du paramètre]
+ * @return Menu [Description du retour]
+ */
     Menu menu(optionsMenuMessages);
     menu.afficherMenu();
     menu_choix = menu.obtenirChoix();

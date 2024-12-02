@@ -8,9 +8,28 @@
 using namespace std;
 
 // Fonction pour copier le fichier sans le modifier
+/**
+ * @brief [Description de copyFile]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void copyFile(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -29,9 +48,28 @@ void copyFile(const string &inputFile, const string &outputFile)
 }
 
 // Fonction pour mettre tout le texte en majuscules
+/**
+ * @brief [Description de toUpperCase]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void toUpperCase(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -51,9 +89,28 @@ void toUpperCase(const string &inputFile, const string &outputFile)
 }
 
 // Fonction pour mettre tout le texte en minuscules
+/**
+ * @brief [Description de toLowerCase]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void toLowerCase(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -73,9 +130,28 @@ void toLowerCase(const string &inputFile, const string &outputFile)
 }
 
 // Fonction pour capitaliser les premiÃ¨res lettres des mots
+/**
+ * @brief [Description de capitalize]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void capitalize(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -107,9 +183,28 @@ void capitalize(const string &inputFile, const string &outputFile)
 }
 
 // Fonction pour inverser la casse des caractÃ¨res
+/**
+ * @brief [Description de swapCase]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void swapCase(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -139,9 +234,28 @@ void swapCase(const string &inputFile, const string &outputFile)
 }
 
 // Fonction pour justifier le texte Ã  droite
+/**
+ * @brief [Description de justifyRight]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void justifyRight(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -160,9 +274,28 @@ void justifyRight(const string &inputFile, const string &outputFile)
 }
 
 // Fonction pour justifier le texte Ã  gauche
+/**
+ * @brief [Description de justifyLeft]
+ *
+ * @param &inputFile [Description du paramètre]
+ * @param &outputFile [Description du paramètre]
+ * @return void [Description du retour]
+ */
 void justifyLeft(const string &inputFile, const string &outputFile)
 {
+/**
+ * @brief [Description de inFile]
+ *
+ * @param inputFile [Description du paramètre]
+ * @return ifstream [Description du retour]
+ */
     ifstream inFile(inputFile);
+/**
+ * @brief [Description de outFile]
+ *
+ * @param outputFile [Description du paramètre]
+ * @return ofstream [Description du retour]
+ */
     ofstream outFile(outputFile);
 
     if (inFile && outFile)
@@ -180,6 +313,12 @@ void justifyLeft(const string &inputFile, const string &outputFile)
     }
 }
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     string inputFile = "input.txt"; // Nom du fichier d'entrÃ©e

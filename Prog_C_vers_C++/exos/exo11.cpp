@@ -2,6 +2,12 @@
 #include <cstdlib> // Pour utiliser exit()
 using namespace std;
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main() {
     const float pi = 3.141592;
     float small_radius = -1, big_radius = -1, areaBig = -1, areaSmall = -1, area = -1;

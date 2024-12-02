@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Weather App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="{{ url_for('main.index') }}" class="navbar-item">Weather App</a>
+        </div>
+        <div class="navbar-menu">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('main.weather') }}" class="navbar-item">Weather</a>
+                <a href="{{ url_for('main.admin') }}" class="navbar-item">Admin</a>
+                <a href="{{ url_for('main.docs') }}" class="navbar-item">Documentation</a>
+                <a href="{{ url_for('main.logout') }}" class="navbar-item">Logout</a>
+            {% else %}
+                <a href="{{ url_for('main.login') }}" class="navbar-item">Login</a>
+                <a href="{{ url_for('main.register') }}" class="navbar-item">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Weather App - {% block footer %}2024{% endblock %}</p>
+        </div>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

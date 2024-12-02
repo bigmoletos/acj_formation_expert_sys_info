@@ -13,6 +13,12 @@ using namespace std;
  * - std::vector : tableau dynamique, peut changer de taille, fourni par la bibliothÃ¨que standard.
  */
 
+/**
+ * @brief [Description de main]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return int [Description du retour]
+ */
 int main()
 {
     // 1. Tableau classique (tableau statique en C++)

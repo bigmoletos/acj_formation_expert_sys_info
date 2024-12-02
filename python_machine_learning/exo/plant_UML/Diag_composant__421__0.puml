@@ -1,0 +1,16 @@
+@startuml
+component "Data Module" {
+    [pandas]
+    [numpy]
+}
+component "Model Module" {
+    [scikit-learn]
+    [TensorFlow]
+}
+component "Evaluation Module" {
+    [scikit-learn.metrics]
+}
+
+"Data Module" --> "Model Module" : fournit les données
+"Model Module" --> "Evaluation Module" : fournit les prédictions
+@enduml

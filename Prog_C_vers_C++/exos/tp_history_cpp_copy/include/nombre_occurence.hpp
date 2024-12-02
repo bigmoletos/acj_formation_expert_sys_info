@@ -1,0 +1,46 @@
+#ifndef __OCCURRENCE__
+#define __OCCURRENCE__
+
+#include <string>
+#include <vector>
+#include <unordered_map>
+
+class NombreOccurrence
+{
+public:
+    // Constructeur qui initialise les lignes du fichier
+    NombreOccurrence(const std::vector<std::string> &lignes);
+
+    // MÃ©thode pour calculer les occurrences des commandes
+/**
+ * @brief [Description de calculerOccurrences]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return void [Description du retour]
+ */
+/**
+ * @brief [Description de calculerOccurrences]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return void [Description du retour]
+ */
+/**
+ * @brief [Description de calculerOccurrences]
+ *
+ * @param Aucun [Cette fonction n'a pas de paramètres]
+ * @return void [Description du retour]
+ */
+    void calculerOccurrences();
+
+    // MÃ©thode pour afficher les commandes et leur nombre d'occurrences, triÃ©es par ordre dÃ©croissant
+    void afficherOccurrences() const;
+
+    // MÃ©thode pour obtenir la liste des commandes qui commencent par "sudo"
+    std::vector<std::string> getCommandesAvecSudo() const;
+
+private:
+    std::vector<std::string> lignesFichier;           // Contient les lignes du fichier
+    std::unordered_map<std::string, int> occurrences; // Map pour stocker les occurrences des commandes
+};
+
+#endif // __OCCURRENCE__

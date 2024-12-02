@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: temperature-app
+    ports:
+      - "${PORT:-5001}:5000"
+    environment:
+      - FLASK_APP=app
+      - FLASK_ENV=${FLASK_ENV:-development}
+      - SECRET_KEY=${SECRET_KEY}
+      - API_KEY_OPENWEATHER=${API_KEY_OPENWEATHER}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - LOG_FILE_PATH=${LOG_FILE_PATH}
+      - PORT=${PORT:-5001}
+      - HOST=${HOST:-127.0.0.1}
+    volumes:
+      - ./docs:/app/docs
+      - ${LOG_FILE_PATH:-./logs}:/var/log
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: temperature-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./docs:/usr/share/nginx/html/docs   # Montage de la documentation
+      - ./app/static:/usr/share/nginx/html/static
+    depends_on:
+      - web
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8.0
+    container_name: temperature-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    ports:
+      - "${DB_PORT}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+  adminer:
+    image: adminer
+    container_name: temperature-adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+
+volumes:
+  mysql-data:
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,32 @@
+@startuml
+actor "Utilisateur" as User
+
+package "Entrée" {
+    User --> (Fichier CSV)
+}
+
+package "Préparation des données" {
+    (Chargement des données) --> (Nettoyage des données)
+    (Nettoyage des données) --> (Transformation des données)
+}
+
+package "Modèle LSTM" {
+    (Construction du modèle) --> (Entraînement du modèle)
+    (Entraînement du modèle) --> (Sauvegarde du modèle)
+}
+
+package "Prédictions" {
+    (Chargement du modèle) --> (Prédictions)
+    (Prédictions) --> (Résultats prévisionnels)
+}
+
+package "Visualisation" {
+    (Résultats prévisionnels) --> (Graphiques/rapports)
+}
+
+(Fichier CSV) --> (Chargement des données)
+(Transformation des données) --> (Construction du modèle)
+(Transformation des données) --> (Entraînement du modèle)
+(Chargement des données) --> (Chargement du modèle)
+
+@enduml

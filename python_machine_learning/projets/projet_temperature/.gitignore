@@ -1,0 +1,125 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environnement virtuel
+venv/
+ENV/
+env/
+.env
+
+# Documentation Doxygen
+docs/
+html/
+latex/
+
+# Logs
+logs/
+*.log
+log/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Tests
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Base de données
+*.db
+*.sqlite3
+*.sqlite
+
+# Fichiers de configuration sensibles
+config.ini
+secrets.json
+*.pem
+*.key
+
+# Fichiers temporaires
+tmp/
+temp/
+.temp/
+*.tmp
+
+# Fichiers de cache
+.cache/
+.mypy_cache/
+
+# Fichiers de build
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Fichiers spécifiques au projet
+temperature_app_*.log
+YOUR_API_KEY
+api_keys.json
+
+# Dépendances
+node_modules/
+bower_components/
+
+# Fichiers de migration Flask
+migrations/
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*~
+
+*.env.testing
+minikube-linux-amd64
+MyFisrtDll.pch
+data
+
+docker\images\exo_python\calculatorcling.tar.bz2
+cling.tar.bz2cling.tar.bz2
+
+prog_C_vers_C++\librairies\librairie_dynamique\MyFisrtDll\.vs
+
+# Ne pas ignorer le Dockerfile
+!Dockerfile
+
+
+*.env.testing
+*/minikube-linux-amd64
+*/MyFisrtDll.pch

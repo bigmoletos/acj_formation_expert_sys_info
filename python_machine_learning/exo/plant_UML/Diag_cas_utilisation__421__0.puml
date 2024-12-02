@@ -1,0 +1,7 @@
+@startuml
+actor Utilisateur
+Utilisateur --> (Charger les données)
+Utilisateur --> (Former le modèle)
+Utilisateur --> (Évaluer le modèle)
+Utilisateur --> (Obtenir des prédictions)
+@enduml

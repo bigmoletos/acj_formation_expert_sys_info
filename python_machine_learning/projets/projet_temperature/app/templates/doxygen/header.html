@@ -1,0 +1,35 @@
+<!-- HTML header for doxygen -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>$title</title>
+    <!-- Doxygen CSS -->
+    <link href="$relpath^tabs.css" rel="stylesheet" type="text/css"/>
+    <link href="$relpath^$stylesheet" rel="stylesheet" type="text/css" />
+    $extrastylesheet
+    <!-- Application CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Doxygen Scripts -->
+    <script type="text/javascript" src="$relpath^jquery.js"></script>
+    <script type="text/javascript" src="$relpath^dynsections.js"></script>
+    $treeview
+    $search
+    $mathjax
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="/weather" class="navbar-item">Weather App</a>
+        </div>
+
+        <div class="navbar-menu">
+            <a href="/weather" class="navbar-item">Weather</a>
+            <a href="/admin" class="navbar-item">Admin</a>
+            <a href="/docs" class="navbar-item">Documentation</a>
+            <a href="/logout" class="navbar-item">Logout</a>
+        </div>
+    </nav>
+    <div class="docs-wrapper">
+        <div id="top">

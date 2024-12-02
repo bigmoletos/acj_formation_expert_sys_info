@@ -2,6 +2,12 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief [Description de main]
+ *
+ * @param void [Description du paramètre]
+ * @return int [Description du retour]
+ */
 int main(void)
 {
     const int array_size(11); // DÃ©claration de la taille du tableau

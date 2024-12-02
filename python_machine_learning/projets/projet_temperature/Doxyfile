@@ -1,0 +1,105 @@
+# Configuration Doxygen mise à jour
+PROJECT_NAME           = "Weather App"
+PROJECT_NUMBER        = "1.0"
+PROJECT_BRIEF         = "Application Flask de météo"
+OUTPUT_DIRECTORY      = app/templates/docs
+
+# Configuration de la langue
+OUTPUT_LANGUAGE       = French
+MARKDOWN_SUPPORT      = YES
+
+# Configuration des fichiers sources
+INPUT                 = app/
+FILE_PATTERNS         = *.py *.html *.css *.js
+RECURSIVE             = YES
+EXCLUDE_PATTERNS      = */tests/* \
+                       */.git/* \
+                       */venv/* \
+                       */migrations/* \
+                       */instance/*
+
+# Configuration de la sortie
+GENERATE_HTML         = YES
+GENERATE_LATEX        = NO
+HTML_OUTPUT          = html
+HTML_FILE_EXTENSION  = .html
+HTML_HEADER         = app/templates/doxygen/header.html
+HTML_FOOTER         = app/templates/doxygen/footer.html
+HTML_STYLESHEET     =
+HTML_EXTRA_STYLESHEET =
+HTML_EXTRA_FILES    =
+HTML_COLORSTYLE     = LIGHT
+GENERATE_TREEVIEW    = YES
+SEARCHENGINE         = YES
+GENERATE_LATEX       = NO
+
+# Configuration de l'extraction
+EXTRACT_ALL          = YES
+EXTRACT_PRIVATE      = YES
+EXTRACT_PACKAGE      = YES
+EXTRACT_STATIC       = YES
+EXTRACT_LOCAL_CLASSES = YES
+
+# Configuration des graphiques
+HAVE_DOT             = YES
+CLASS_DIAGRAMS       = YES
+HIDE_UNDOC_RELATIONS = NO
+CLASS_GRAPH          = YES
+COLLABORATION_GRAPH  = YES
+UML_LOOK            = YES
+UML_LIMIT_NUM_FIELDS = 50
+
+# Configuration spécifique Python
+OPTIMIZE_OUTPUT_JAVA  = YES
+BUILTIN_STL_SUPPORT  = NO
+
+# Configuration des avertissements
+QUIET               = NO
+WARNINGS            = YES
+WARN_IF_UNDOCUMENTED = YES
+WARN_IF_DOC_ERROR   = YES
+WARN_NO_PARAMDOC    = YES
+
+# Configuration de la sortie
+GENERATE_TREEVIEW    = YES
+DISABLE_INDEX        = NO
+FULL_SIDEBAR         = NO
+HTML_DYNAMIC_SECTIONS = NO
+
+# Configuration des alias
+ALIASES += "route=\par Route:\n"
+ALIASES += "endpoint=\par Endpoint:\n"
+ALIASES += "methods=\par Methods:\n"
+
+# Configuration du style
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+
+# Configuration des sources
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES
+
+# Configuration des graphiques de dépendances
+CALL_GRAPH            = YES
+CALLER_GRAPH          = YES
+GRAPHICAL_HIERARCHY   = YES
+DIRECTORY_GRAPH       = YES
+DOT_IMAGE_FORMAT      = SVG
+INTERACTIVE_SVG       = YES
+
+# Configuration de la recherche
+SEARCHENGINE           = YES
+SERVER_BASED_SEARCH    = NO
+
+# Ajout des styles CSS personnalisés
+HTML_EXTRA_STYLESHEET = \
+    app/static/css/style.css
+
+# Configuration des chemins
+STRIP_FROM_PATH      = app
+STRIP_FROM_INC_PATH  = app
