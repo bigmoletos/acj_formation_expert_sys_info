@@ -160,3 +160,18 @@ def test_docs_generation(client, auth):
     # Test de la génération
     response = client.get('/docs/generate', follow_redirects=True)
     assert b'Documentation' in response.data
+
+
+def test_docs_route_without_auth(client):
+    """Test access to docs route without authentication"""
+    response = client.get('/docs')
+    assert response.status_code == 302  # Redirection vers login
+    assert '/login' in response.headers['Location']
+
+
+def test_docs_route_with_auth(client, auth):
+    """Test access to docs route with authentication"""
+    auth.login()  # Se connecter d'abord
+    response = client.get('/docs')
+    assert response.status_code == 200
+    assert b'Documentation' in response.data

@@ -115,6 +115,7 @@ def admin():
     return render_template('admin.html', users=users, form=form)
 
 
+@main.route('/docs')
 @main.route('/docs/')
 @login_required
 def docs():
