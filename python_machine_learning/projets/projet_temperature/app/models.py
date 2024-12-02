@@ -6,10 +6,10 @@
 # notamment le modèle User pour la gestion des utilisateurs
 ##
 
-from app import db, login_manager
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from datetime import datetime
+from app.extensions import db, login_manager
 
 
 @login_manager.user_loader
@@ -32,7 +32,8 @@ class User(UserMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, nullable=False)
-    password_hash = db.Column(db.String(128), nullable=False)
+    password_hash = db.Column(db.String(128))
+    is_admin = db.Column(db.Boolean, default=False)
     searches = db.relationship('CitySearch', backref='user', lazy='dynamic')
 
     ##
@@ -53,7 +54,7 @@ class User(UserMixin, db.Model):
 
 class CitySearch(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    city_name = db.Column(db.String(100), nullable=False)
+    city_name = db.Column(db.String(64))
     temperature = db.Column(db.Float)
     search_date = db.Column(db.DateTime, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
