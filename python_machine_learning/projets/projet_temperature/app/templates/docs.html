@@ -4,31 +4,48 @@
 
 {% block content %}
 <div class="docs-container">
-    <h1>Documentation</h1>
-    <div class="docs-content">
-        {% include 'doxygen/header.html' %}
-        <div class="main-content">
-            <!-- Contenu principal de la documentation -->
-            <h2>Documentation de l'application</h2>
-            <p>Bienvenue dans la documentation de Weather App.</p>
+    <h1>Documentation de l'API</h1>
 
-            <!-- Vous pouvez ajouter ici d'autres sections de documentation -->
-            <section>
-                <h3>API Routes</h3>
-                <!-- Documentation des routes -->
-            </section>
+    <div class="docs-section">
+        <h2>Introduction</h2>
+        <p>Bienvenue dans la documentation de l'API Weather App. Cette application permet de :</p>
+        <ul>
+            <li>Consulter la météo en temps réel</li>
+            <li>Gérer les utilisateurs</li>
+            <li>Sauvegarder les recherches favorites</li>
+        </ul>
+    </div>
 
-            <section>
-                <h3>Modèles de données</h3>
-                <!-- Documentation des modèles -->
-            </section>
+    <div class="docs-section">
+        <h2>Points d'accès API</h2>
 
-            <section>
-                <h3>Configuration</h3>
-                <!-- Documentation de la configuration -->
-            </section>
+        <div class="endpoint">
+            <h3>GET /weather</h3>
+            <p>Récupère les données météorologiques pour une ville donnée</p>
+            <h4>Paramètres</h4>
+            <ul>
+                <li><code>city</code> - Nom de la ville (requis)</li>
+            </ul>
         </div>
-        {% include 'doxygen/footer.html' %}
+
+        <div class="endpoint">
+            <h3>POST /search/save</h3>
+            <p>Sauvegarde une recherche dans les favoris</p>
+            <h4>Corps de la requête</h4>
+            <ul>
+                <li><code>city</code> - Nom de la ville</li>
+                <li><code>user_id</code> - ID de l'utilisateur</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="docs-section">
+        <h2>Authentification</h2>
+        <p>L'API utilise l'authentification par token JWT. Pour obtenir un token :</p>
+        <ol>
+            <li>Connectez-vous via /login</li>
+            <li>Utilisez le token reçu dans le header Authorization</li>
+        </ol>
     </div>
 </div>
 {% endblock %}
@@ -48,24 +65,6 @@
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         min-height: 600px;
-    }
-
-    .main-content {
-        margin: 2rem 0;
-    }
-
-    .main-content h2 {
-        color: #333;
-        margin-bottom: 1rem;
-    }
-
-    .main-content section {
-        margin: 2rem 0;
-    }
-
-    .main-content h3 {
-        color: #444;
-        margin-bottom: 0.5rem;
     }
 </style>
 {% endblock %}

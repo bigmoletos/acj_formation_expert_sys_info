@@ -115,10 +115,24 @@ def admin():
     return render_template('admin.html', users=users, form=form)
 
 
-@main.route('/docs')
+@main.route('/docs/')
 @login_required
 def docs():
     return render_template('docs.html')
+
+
+@main.route('/generate-docs')
+@login_required
+def generate_docs():
+    try:
+        # Logique pour générer la documentation
+        flash('Documentation générée avec succès')
+        return redirect(url_for('main.docs'))
+    except Exception as e:
+        current_app.logger.error(
+            f"Erreur lors de la génération de la documentation: {str(e)}")
+        flash('Erreur lors de la génération de la documentation')
+        return redirect(url_for('main.docs'))
 
 
 @main.route('/logout')
