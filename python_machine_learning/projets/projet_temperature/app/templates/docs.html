@@ -1,27 +1,70 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation - Application Météo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Documentation API</h1>
-        <section>
-            <h2>Route /weather</h2>
-            <p>Endpoint pour obtenir la météo d'une ville</p>
-            <h3>Paramètres</h3>
+{% extends "base.html" %}
+
+{% block title %}Documentation - Weather App{% endblock %}
+
+{% block content %}
+<div class="docs-container">
+    <h1>Documentation de l'API</h1>
+
+    <div class="docs-section">
+        <h2>Introduction</h2>
+        <p>Bienvenue dans la documentation de l'API Weather App. Cette application permet de :</p>
+        <ul>
+            <li>Consulter la météo en temps réel</li>
+            <li>Gérer les utilisateurs</li>
+            <li>Sauvegarder les recherches favorites</li>
+        </ul>
+    </div>
+
+    <div class="docs-section">
+        <h2>Points d'accès API</h2>
+
+        <div class="endpoint">
+            <h3>GET /weather</h3>
+            <p>Récupère les données météorologiques pour une ville donnée</p>
+            <h4>Paramètres</h4>
             <ul>
-                <li><code>city</code> : Nom de la ville (obligatoire)</li>
+                <li><code>city</code> - Nom de la ville (requis)</li>
             </ul>
-            <h3>Exemple</h3>
-            <pre><code>GET {{ url_for('main.weather', city='Paris') }}</code></pre>
-        </section>
-        <div class="nav-links">
-            <a href="{{ url_for('main.weather') }}" class="btn btn-secondary">Retour à la météo</a>
+        </div>
+
+        <div class="endpoint">
+            <h3>POST /search/save</h3>
+            <p>Sauvegarde une recherche dans les favoris</p>
+            <h4>Corps de la requête</h4>
+            <ul>
+                <li><code>city</code> - Nom de la ville</li>
+                <li><code>user_id</code> - ID de l'utilisateur</li>
+            </ul>
         </div>
     </div>
-</body>
-</html>
+
+    <div class="docs-section">
+        <h2>Authentification</h2>
+        <p>L'API utilise l'authentification par token JWT. Pour obtenir un token :</p>
+        <ol>
+            <li>Connectez-vous via /login</li>
+            <li>Utilisez le token reçu dans le header Authorization</li>
+        </ol>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>
+    .docs-container {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .docs-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        min-height: 600px;
+    }
+</style>
+{% endblock %}

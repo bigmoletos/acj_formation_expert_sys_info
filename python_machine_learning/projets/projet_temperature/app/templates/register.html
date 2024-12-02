@@ -1,20 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}Login - Weather App{% endblock %}
+{% block title %}Inscription - Weather App{% endblock %}
 
 {% block content %}
-<div class="login-container">
-    <h1>Login</h1>
-
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-danger">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-
-    <form method="POST" action="{{ url_for('main.login') }}">
+    <h1>Inscription</h1>
+    <form method="POST" action="{{ url_for('main.register') }}">
         {{ form.hidden_tag() }}
         <div class="form-group">
             {{ form.username.label }}
@@ -31,11 +21,17 @@
             {% endfor %}
         </div>
         <div class="form-group">
+            {{ form.password2.label }}
+            {{ form.password2(class="form-control") }}
+            {% for error in form.password2.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="form-group">
             {{ form.submit(class="btn btn-primary") }}
         </div>
     </form>
     <div class="nav-links">
-        <a href="{{ url_for('main.register') }}">Créer un compte</a>
+        <a href="{{ url_for('main.login') }}">Déjà inscrit ? Connectez-vous</a>
     </div>
-</div>
 {% endblock %}

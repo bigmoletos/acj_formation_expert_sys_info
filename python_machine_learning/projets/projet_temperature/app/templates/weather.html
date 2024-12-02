@@ -1,76 +1,99 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Météo - Application</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+{% extends "base.html" %}
+
+{% block title %}Météo - Weather App{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
     <style>
         #map {
             height: 400px;
             width: 100%;
             margin: 20px 0;
-            border-radius: 5px;
+            border-radius: 8px;
+            z-index: 1;
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Météo</h1>
+{% endblock %}
 
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="flash-messages">
-                    {% for message in messages %}
-                        <div class="alert">{{ message }}</div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        {% endwith %}
+{% block content %}
+<div class="weather-container">
+    <h1>Météo</h1>
 
-        <form method="GET" action="{{ url_for('main.weather') }}" class="search-form">
-            <div class="form-group">
-                <input type="text" name="city" class="form-control"
-                       placeholder="Entrez le nom d'une ville (ex: Paris, Lyon, Marseille..)"
-                       value="{{ request.args.get('city', '') }}" required>
-                <button type="submit" class="btn btn-primary">Rechercher</button>
-            </div>
-        </form>
-
-        {% if error %}
-            <div class="alert">{{ error }}</div>
-        {% endif %}
-
-        {% if city and temperature is not none %}
-            <div class="weather-info">
-                <h2>Météo à {{ city }}</h2>
-                <p class="temperature">{{ temperature }}°C</p>
-                {% if description %}
-                    <p class="description">{{ description|capitalize }}</p>
-                {% endif %}
-            </div>
-
-            <!-- Conteneur de la carte -->
-            <div id="map"></div>
-
-            <!-- Coordonnées cachées pour JavaScript -->
-            <div id="coordinates"
-                 data-lat="{{ coordinates.lat }}"
-                 data-lon="{{ coordinates.lon }}"
-                 data-temp="{{ temperature }}"
-                 data-city="{{ city }}"
-                 style="display: none;">
-            </div>
-        {% endif %}
-
-        <div class="nav-links">
-            <a href="{{ url_for('main.logout') }}" class="btn btn-secondary">Déconnexion</a>
+    <form method="GET" action="{{ url_for('main.weather') }}" class="search-form">
+        <div class="form-group">
+            <input type="text" name="city" class="form-control"
+                   placeholder="Entrez le nom d'une ville (ex: Paris, Lyon, Marseille..)"
+                   value="{{ request.args.get('city', '') }}" required>
+            <button type="submit" class="btn btn-primary">Rechercher</button>
         </div>
-    </div>
+    </form>
 
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
-</body>
-</html>
+    {% if error %}
+        <div class="alert">{{ error }}</div>
+    {% endif %}
+
+    {% if city and temperature is not none %}
+        <div class="weather-info">
+            <h2>Météo à {{ city }}</h2>
+            <p class="temperature">{{ temperature }}°C</p>
+            {% if description %}
+                <p class="description">{{ description|capitalize }}</p>
+            {% endif %}
+        </div>
+
+        <div id="map"></div>
+
+        <div id="coordinates"
+             data-lat="{{ coordinates.lat }}"
+             data-lon="{{ coordinates.lon }}"
+             data-temp="{{ temperature }}"
+             data-city="{{ city }}"
+             style="display: none;">
+        </div>
+    {% endif %}
+
+    {% if searches %}
+        <div class="search-history">
+            <h3>Historique des recherches</h3>
+            <ul>
+                {% for search in searches %}
+                    <li>
+                        {{ search.city_name }} - {{ search.temperature }}°C
+                        <small>({{ search.search_date.strftime('%d/%m/%Y %H:%M') }})</small>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const coordsElement = document.getElementById('coordinates');
+            if (coordsElement) {
+                const lat = parseFloat(coordsElement.dataset.lat);
+                const lon = parseFloat(coordsElement.dataset.lon);
+                const temp = parseFloat(coordsElement.dataset.temp);
+                const city = coordsElement.dataset.city;
+
+                const map = L.map('map').setView([lat, lon], 13);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+
+                L.marker([lat, lon])
+                    .addTo(map)
+                    .bindPopup(`${city}: ${temp}°C`)
+                    .openPopup();
+            }
+        });
+    </script>
+{% endblock %}

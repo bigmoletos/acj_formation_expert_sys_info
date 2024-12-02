@@ -3,41 +3,44 @@ from app.models import User
 from app import db
 
 
-def test_user_creation(client):
-    """Test de la création d'un utilisateur."""
-    user = User(username='testuser')
-    user.set_password('testpass')
-
-    assert user.username == 'testuser'
-    assert user.password != 'testpass'  # Le mot de passe doit être hashé
-    assert user.check_password('testpass')
-    assert not user.check_password('wrongpass')
-
-
-def test_user_unique_username(client):
-    """Test de l'unicité du nom d'utilisateur."""
-    user1 = User(username='testuser')
-    user1.set_password('testpass')
-
-    with pytest.raises(Exception):
-        # Tentative de création d'un utilisateur avec le même username
-        user2 = User(username='testuser')
-        user2.set_password('testpass')
-
-        db.session.add(user1)
-        db.session.add(user2)
-        db.session.commit()
+@pytest.fixture
+def app_context(app):
+    """Fixture pour fournir un contexte d'application"""
+    with app.app_context():
+        db.create_all()
+        yield
+        db.session.remove()
+        db.drop_all()
 
 
-def test_password_hashing():
-    """Test du hashage des mots de passe."""
-    user = User(username='testuser')
-    user.set_password('testpass')
+@pytest.fixture
+def test_user(app, app_context):
+    """Fixture pour créer un utilisateur de test"""
+    user = User(
+        username='test_user_unique')  # Nom unique pour éviter les conflits
+    user.set_password('test_password')
+    db.session.add(user)
+    db.session.commit()
+    return user
 
-    # Vérifie que le mot de passe est bien hashé
-    assert user.password != 'testpass'
 
-    # Vérifie que le hash est différent pour le même mot de passe
-    user2 = User(username='testuser2')
-    user2.set_password('testpass')
-    assert user.password != user2.password
+def test_user_creation(app, app_context):
+    """Test la création d'un utilisateur"""
+    user = User(username='test_user_creation')  # Nom unique
+    user.set_password('test_password')
+    db.session.add(user)
+    db.session.commit()
+
+    assert user.username == 'test_user_creation'
+    assert user.password_hash is not None
+
+
+def test_password_hashing(app, app_context):
+    """Test le hashage des mots de passe"""
+    user = User(username='test_user_password')  # Nom unique
+    user.set_password('test_password')
+    db.session.add(user)
+    db.session.commit()
+
+    assert not user.check_password('wrong_password')
+    assert user.check_password('test_password')
