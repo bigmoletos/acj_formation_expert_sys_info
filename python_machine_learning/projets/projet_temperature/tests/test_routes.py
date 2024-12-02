@@ -145,22 +145,17 @@ def test_docs_access(client, auth):
     # Avec authentification
     auth.login()
     response = client.get('/docs')
-    assert response.status_code in (200, 302
-                                    )  # 200 si docs générées, 302 si non
-
-
-def test_docs_generation(client, auth):
-    """Test la génération de la documentation"""
-    auth.login()
-
-    # Test de la page docs
-    response = client.get('/docs')
     assert response.status_code == 200
     assert b'Documentation de l\'API' in response.data
 
-    # Test de la génération
-    response = client.get('/docs/generate', follow_redirects=True)
+
+def test_docs_generation(client, auth):
+    """Test l'accès à la documentation générée"""
+    auth.login()
+    response = client.get('/docs')
+    assert response.status_code == 200
     assert b'Documentation de l\'API' in response.data
+    assert b'Points d\'acc\xc3\xa8s API' in response.data
 
 
 def test_docs_route_without_auth(client):
@@ -175,4 +170,4 @@ def test_docs_route_with_auth(client, auth):
     auth.login()  # Se connecter d'abord
     response = client.get('/docs')
     assert response.status_code == 200
-    assert b'Documentation' in response.data
+    assert b'Documentation de l\'API' in response.data
