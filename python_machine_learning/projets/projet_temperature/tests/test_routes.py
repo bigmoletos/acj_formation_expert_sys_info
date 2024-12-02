@@ -153,13 +153,14 @@ def test_docs_generation(client, auth):
     """Test la génération de la documentation"""
     auth.login()
 
-    # Test de la page docs sans documentation
+    # Test de la page docs
     response = client.get('/docs')
-    assert b'Documentation non disponible' in response.data
+    assert response.status_code == 200
+    assert b'Documentation de l\'API' in response.data
 
     # Test de la génération
     response = client.get('/docs/generate', follow_redirects=True)
-    assert b'Documentation' in response.data
+    assert b'Documentation de l\'API' in response.data
 
 
 def test_docs_route_without_auth(client):
