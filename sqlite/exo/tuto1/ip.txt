@@ -1,1 +1,7 @@
 135.125.14.100
+
+
+  scp -i ~/.ssh/opom -P 22 /path/to/local/test.db ubuntu@135.125.14.100:/home/ubuntu/
+
+scp -i ~/.ssh/opom -P 22 /mnt/c/AJC_formation/sqlite/exo/test.db ubuntu@135.125.14.100:/home/ubuntu/
+scp -i ~/.ssh/opom -P 22 /mnt/c/AJC_formation/sqlite/exo/ ubuntu@135.125.14.100:/home/ubuntu/test.db
