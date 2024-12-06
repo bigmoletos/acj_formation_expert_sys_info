@@ -4,13 +4,16 @@ import requests
 import logging
 import time
 from collections.abc import Generator  # Utilisé pour vérifier les générateurs
+from dotenv import load_dotenv
+
+load_dotenv()  # Charge les variables depuis .env
 
 # Configuration du logger
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Définir la variable d'environnement
-os.environ["REPLICATE_API_TOKEN"] = "REMOVED_SECRET"
+# os.environ["REPLICATE_API_TOKEN"] = "REMOVED_SECRET"
 
 
 def attendre_completion(prediction):
