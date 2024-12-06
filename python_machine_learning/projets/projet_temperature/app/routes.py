@@ -3,8 +3,10 @@ from flask_login import login_user, logout_user, login_required, current_user
 from app.extensions import db
 from app.models import User, CitySearch
 from app.forms import LoginForm, RegistrationForm
+from bs4 import BeautifulSoup
 import logging
 import requests
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -119,7 +121,112 @@ def admin():
 @main.route('/docs/')
 @login_required
 def docs():
-    return render_template('docs.html')
+    """Affiche la documentation générée dans une iframe"""
+    try:
+        # Chemin absolu vers le fichier index.html de Doxygen
+        docs_path = os.path.join(current_app.root_path, 'templates',
+                                 'docs/html/index.html')
+
+        # Chemin absolu vers le fichier index.html généré par Doxygen
+        docs_url = url_for('static', filename='docs/html/index.html')
+
+        # Retourne la page avec une iframe pointant vers le fichier généré
+        return render_template('docs.html', docs_url=docs_url)
+    except Exception as e:
+        logger.error(f"Erreur lors de l'accès à la documentation: {str(e)}")
+        flash(
+            "Une erreur est survenue lors du chargement de la documentation.")
+        return render_template('docs.html', docs_url=None)
+
+
+# @main.route('/docs')
+# @main.route('/docs/')
+# @login_required
+# def docs():
+#     """Affiche la documentation générée ou un fallback par défaut"""
+#     try:
+#         # Chemin absolu vers le fichier index.html de Doxygen
+#         docs_path = os.path.join(current_app.root_path, 'templates',
+#                                  'docs/html/index.html')
+
+#         # Vérifier la présence du fichier
+#         if os.path.exists(docs_path):
+#             with open(docs_path, 'r', encoding='utf-8') as f:
+#                 doxygen_content = f.read()
+#             return render_template('docs.html',
+#                                    doxygen_content=doxygen_content)
+#         else:
+#             logger.warning("Fichier index.html de Doxygen introuvable.")
+#             flash(
+#                 "La documentation générée est indisponible. Une version de secours est affichée."
+#             )
+#             return render_template('docs.html', doxygen_content=None)
+#     except Exception as e:
+#         logger.error(
+#             f"Erreur lors du chargement de la documentation : {str(e)}")
+#         flash(
+#             "Une erreur est survenue lors du chargement de la documentation.")
+#         return render_template('docs.html', doxygen_content=None)
+
+# @main.route('/docs')
+# @main.route('/docs/')
+# @login_required
+# def docs():
+#     """Affiche la documentation générée avec les headers et footers"""
+#     try:
+#         # Chemin absolu vers le fichier index.html généré par Doxygen
+#         docs_path = os.path.join(current_app.root_path, 'templates',
+#                                  'docs/html/index.html')
+
+#         # Vérifier l'existence du fichier
+#         if not os.path.exists(docs_path):
+#             flash("La documentation n'est pas encore générée.")
+#             return render_template(
+#                 'docs.html',
+#                 doxygen_content=
+#                 "<p>Aucune documentation disponible. Veuillez la générer.</p>")
+
+#         # Lire le contenu de la documentation générée
+#         with open(docs_path, 'r', encoding='utf-8') as f:
+#             doxygen_content = f.read()
+
+#         # Retourner le contenu dans le layout principal
+#         return render_template('docs.html', doxygen_content=doxygen_content)
+
+#     except Exception as e:
+#         logger.error(f"Erreur lors de l'accès à la documentation: {str(e)}")
+#         flash(
+#             "Une erreur est survenue lors du chargement de la documentation.")
+#         return render_template(
+#             'docs.html',
+#             doxygen_content=
+#             "<p>Erreur lors du chargement de la documentation.</p>")
+
+# @main.route('/docs')
+# @main.route('/docs/')
+# @login_required
+# def docs():
+#     """Affiche la documentation générée dans le layout global"""
+#     try:
+#         # Chemin absolu vers le fichier index.html généré par Doxygen
+#         docs_path = os.path.join(current_app.root_path, 'templates',
+#                                  'docs/html/index.html')
+#         with open(docs_path, 'r', encoding='utf-8') as f:
+#             doxygen_content = f.read()
+#         return render_template('docs.html', doxygen_content=doxygen_content)
+#     except FileNotFoundError:
+#         logger.error("Le fichier index.html de Doxygen est introuvable")
+#         flash("La documentation n'est pas encore générée.")
+#         return redirect(url_for('main.index'))
+#     except Exception as e:
+#         logger.error(f"Erreur lors de l'accès à la documentation: {str(e)}")
+#         flash(
+#             "Une erreur est survenue lors du chargement de la documentation.")
+#         return redirect(url_for('main.index'))
+
+# def docs():
+#     return render_template('docs.html')
+
 
 
 @main.route('/generate-docs')

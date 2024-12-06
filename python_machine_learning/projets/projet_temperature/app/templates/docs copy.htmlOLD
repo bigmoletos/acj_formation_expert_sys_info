@@ -6,11 +6,13 @@
 <div class="docs-container">
     <h1>Documentation</h1>
 
-    {% if docs_url %}
-        <iframe src="{{ docs_url }}" frameborder="0" width="100%" height="800px" style="border-radius: 8px;">
-            Votre navigateur ne supporte pas les iframes.
-        </iframe>
+    {% if doxygen_content %}
+        <!-- Contenu généré par Doxygen -->
+        <div class="docs-content">
+            {{ doxygen_content|safe }}
+        </div>
     {% else %}
+        <!-- Texte par défaut si la documentation n'est pas générée -->
         <div class="docs-section">
             <h2>Introduction</h2>
             <p>Bienvenue dans la documentation de l'API Weather App. Cette application permet de :</p>
@@ -63,19 +65,9 @@
         padding: 2rem;
         max-width: 1200px;
         margin: 0 auto;
-        width: 100%;
-        height: calc(100vh - 60px);
     }
 
-    iframe {
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-
-    .docs-section {
+    .docs-content, .docs-section {
         background: white;
         padding: 2rem;
         border-radius: 8px;

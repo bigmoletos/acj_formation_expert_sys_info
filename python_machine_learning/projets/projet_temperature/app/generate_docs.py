@@ -13,7 +13,7 @@ def generate_documentation():
         subprocess.run(['doxygen', '--version'], check=True)
 
         # Créer le dossier de documentation s'il n'existe pas
-        docs_dir = os.path.join(current_app.root_path, 'templates', 'docs')
+        docs_dir = os.path.join(current_app.root_path, 'statics', 'docs')
         os.makedirs(docs_dir, exist_ok=True)
 
         # Générer la documentation
