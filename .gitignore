@@ -119,3 +119,7 @@ MyFisrtDll.pch
 python_machine_learning\projets\projet_temperature\.env.testing
 
 *.exe
+
+**/replacements.txt
+**/*.key
+**/*.token
