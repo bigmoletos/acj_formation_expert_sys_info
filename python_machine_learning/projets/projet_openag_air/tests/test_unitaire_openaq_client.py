@@ -1,5 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
+import requests
 from openaq_client import OpenAQLocationFetcher
 
 
@@ -27,13 +28,18 @@ class TestOpenAQLocationFetcher(unittest.TestCase):
 
     @patch("openaq_client.requests.get")
     def test_fetch_location_data_http_error(self, mock_get):
+        """!
+        \brief Test la gestion des erreurs HTTP lors de la récupération des données
+        """
         # Simuler une erreur HTTP
         mock_response = MagicMock()
-        mock_response.raise_for_status.side_effect = Exception("HTTP Error")
+        mock_response.raise_for_status.side_effect = requests.exceptions.HTTPError(
+            "HTTP Error")
         mock_get.return_value = mock_response
 
         with self.assertRaises(ValueError) as context:
             self.fetcher.fetch_location_data(9999)
+        self.assertIn("HTTP", str(context.exception))
         self.assertIn("HTTP", str(context.exception))
 
     @patch("openaq_client.requests.get")

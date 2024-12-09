@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stations de mesure - {{ city }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Stations de mesure pour {{ city }}</h1>
+    <div class="locations-list">
+        {% for location in locations %}
+        <div class="location-card">
+            <h3>{{ location.name }}</h3>
+            <p>
+                <strong>ID:</strong> {{ location.id }}<br>
+                <strong>Pays:</strong> {{ location.country or 'Non spécifié' }}<br>
+                <strong>Ville:</strong> {{ location.city }}<br>
+                <strong>Coordonnées:</strong> {{ location.coordinates.latitude }}, {{ location.coordinates.longitude }}<br>
+                <strong>Adresse:</strong> {{ location.address or 'Non spécifiée' }}<br>
+                <strong>Type:</strong> {{ location.type or 'Non spécifié' }}<br>
+                <strong>Dernières mesures:</strong><br>
+                {% if location.sensors %}
+                    <table class="measurements-table">
+                        <tr>
+                            <th>Paramètre</th>
+                            <th>Valeur</th>
+                            <th>Unité</th>
+                            <th>Dernière mise à jour</th>
+                        </tr>
+                        {% for sensor in location.sensors %}
+                        <tr>
+                            <td>{{ sensor.parameter.displayName }}</td>
+                            <td>{{ sensor.lastValue if sensor.lastValue != None else 'N/A' }}</td>
+                            <td>{{ sensor.parameter.units }}</td>
+                            <td>{{ sensor.lastUpdatedUTC if sensor.lastUpdatedUTC != None else 'N/A' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <em>Aucune mesure récente disponible</em>
+                {% endif %}
+            </p>
+            <a href="{{ url_for('pollution.show_station', station_id=location.id) }}" class="btn btn-primary">Voir sur la carte</a>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{{ url_for('pollution.index') }}" class="btn btn-secondary">Nouvelle recherche</a>
+</body>
+</html>

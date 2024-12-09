@@ -4,7 +4,6 @@ import logging
 import requests
 from dotenv import load_dotenv
 from typing import Protocol, Dict, Any
-import json
 
 # Reconfigurer la sortie standard en UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -116,101 +115,11 @@ class OpenAQLocationFetcher:
             raise
 
 
-def format_location_data(data: Dict[str, Any]) -> str:
-    r"""!
-    \brief Formate les données de localisation pour l'affichage
-
-    \details Cette fonction prend les données brutes de l'API et les formate
-    dans un format lisible et structuré, incluant les informations de la station
-    et les détails des capteurs.
-
-    \param data Dictionnaire contenant les données brutes de l'API
-    \return str Chaîne formatée contenant les données structurées
-    \exception KeyError Si la structure des données est invalide
-
-    \test
-    >>> data = {
-    ...     "results": [{
-    ...         "id": 1,
-    ...         "name": "Test Station",
-    ...         "locality": "Test City",
-    ...         "coordinates": {"latitude": 0.0, "longitude": 0.0},
-    ...         "sensors": [{"id": 1, "parameter": {"displayName": "CO mass", "units": "µg/m³"}}]
-    ...     }]
-    ... }
-    >>> result = format_location_data(data)
-    >>> "Test Station" in result
-    True
-    """
-    logger.debug("Début du formatage des données de localisation")
-
-    try:
-        if not data.get('results') or not data['results'][0]:
-            logger.warning("Données de localisation vides ou invalides")
-            return "Aucune donnée disponible"
-
-        location = data['results'][0]
-        logger.debug(
-            f"Traitement des données pour la station: {location.get('name', 'Inconnue')}"
-        )
-
-        # Formatage des données des capteurs
-        sensors_data = []
-        for sensor in location['sensors']:
-            try:
-                sensor_info = {
-                    "nom": sensor['parameter']['displayName'].split()[0],
-                    "unité": sensor['parameter']['units'],
-                    "id_capteur": sensor['id']
-                }
-                sensors_data.append(sensor_info)
-                logger.debug(f"Capteur traité: {sensor_info['nom']}")
-            except KeyError as e:
-                logger.warning(
-                    f"Structure de données invalide pour le capteur: {e}")
-                continue
-
-        formatted_output = f"""
-Station de mesure:
-----------------
-ID          : {location['id']}
-Nom         : {location['name']}
-Localité    : {location['locality']}
-
-Coordonnées:
------------
-Latitude    : {location['coordinates']['latitude']}
-Longitude   : {location['coordinates']['longitude']}
-
-Capteurs:
---------
-{json.dumps(sensors_data, indent=4, ensure_ascii=False)}
-"""
-        logger.info("Formatage des données réussi")
-        return formatted_output
-
-    except KeyError as e:
-        error_msg = f"Erreur lors du formatage des données: {e}"
-        logger.error(error_msg)
-        raise KeyError(error_msg)
-    except Exception as e:
-        error_msg = f"Erreur inattendue lors du formatage: {e}"
-        logger.error(error_msg)
-        raise
-
-
 def main():
     r"""!
     \brief Fonction principale de récupération et d'affichage des données.
-
-    \details Cette fonction:
-        - Charge la clé API depuis le fichier .env
-        - Initialise le client OpenAQ
-        - Récupère et affiche les données formatées pour une station spécifique
-
-    \note La fonction utilise l'ID de station 2162726 (MARSEILLE 5 AVENUES)
+    \details Charge la clé API, récupère les données pour un ID de localisation donné et les affiche.
     """
-    logger.info("Démarrage du programme principal")
     load_dotenv()
     api_key = os.getenv("api_key")
 
@@ -218,24 +127,49 @@ def main():
         logger.error("La clé API n'a pas été trouvée dans le fichier .env.")
         return
 
+    fetcher = OpenAQLocationFetcher(api_key=api_key)
+    location_id = 2162726
+
     try:
-        logger.debug("Initialisation du fetcher OpenAQ")
-        fetcher = OpenAQLocationFetcher(api_key=api_key)
-        location_id = 2162726
-        logger.info(
-            f"Récupération des données pour la station ID: {location_id}")
-
         data = fetcher.fetch_location_data(location_id)
-        logger.info("Récupération des données réussie")
+        logger.info("Récupération des données réussie.")
+        logger.debug(f"Données finales : {data}")
 
-        formatted_data = format_location_data(data)
-        logger.debug("Données formatées avec succès")
-        print(formatted_data)
+        print("Résultats pour la localisation :")
+        print(data['results'][0])
+
+        # Récupération des informations
+        # results = data['results'][0]
+        results = data['results'][0]
+
+        # Adresse
+        station_name = results['name']
+        locality = results['locality']
+        country = results['country']['name']
+
+        # Coordonnées
+        latitude = results['coordinates']['latitude']
+        longitude = results['coordinates']['longitude']
+
+        # Types et valeurs de pollution
+        pollutants = [{
+            "parameter": sensor['parameter']['name'],
+            "unit": sensor['parameter']['units'],
+            "display_name": sensor['parameter']['displayName']
+        } for sensor in results['sensors']]
+
+        # Résumé
+        print(
+            f"Station: {station_name}, Localité: {locality}, Pays: {country}")
+        print(f"Coordonnées: {latitude}, {longitude}")
+        print("Polluants mesurés:")
+        for pollutant in pollutants:
+            print(
+                f" - {pollutant['display_name']} ({pollutant['parameter']}) en {pollutant['unit']}"
+            )
 
     except ValueError as e:
         logger.error(f"Échec de la récupération des données : {e}")
-    except Exception as e:
-        logger.error(f"Erreur inattendue : {e}")
 
 
 if __name__ == "__main__":
