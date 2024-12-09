@@ -1,4 +1,4 @@
-# Déploiement Automatisé d'une API Flask avec Jenkins sur Gitlab
+# Installation CI/CD Automatisé d'une API Flask avec Jenkins sur Gitlab
 
 ## Sommaire
 1. [Prérequis](#prérequis)
