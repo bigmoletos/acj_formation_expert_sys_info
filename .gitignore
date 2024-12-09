@@ -1,0 +1,126 @@
+# Python #
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+instance/
+.env
+.venv
+venv/
+ENV/
+env/
+venv.bak/
+staticfiles/
+media/
+
+# VSCode #
+.vscode/
+.vscode/settings.json
+
+# Jupyter Notebooks #
+.ipynb_checkpoints
+*.ipynb
+
+# Jupyter Notebook Data Files
+profile_default/
+ipython_config.py
+
+# Virtual Environment #
+.env/
+venv/
+ENV/
+env/
+venv.bak/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Installer logs
+pip-log.txt
+download/
+*.iso
+doc/
+/download/
+.config*
+copie_ecran/
+*_securised.md
+*.jpg
+*.png
+*.webp
+algorithmie\listeWord.csv
+*.ini
+*.pdf
+*.pptx
+*.json
+*.targz
+*.bz2
+*.env.*
+
+
+data
+
+docker\images\exo_python\calculatorcling.tar.bz2
+cling.tar.bz2cling.tar.bz2
+
+prog_C_vers_C++\librairies\librairie_dynamique\MyFisrtDll\.vs
+
+# Ne pas ignorer le Dockerfile
+!Dockerfile
+
+
+*.env.testing
+*/minikube-linux-amd64
+*/MyFisrtDll.pch
+prog_C_vers_C++/librairies/librairie_dynamique/MyFisrtDll/MyFisrtDll/x64/Debug/MyFisrtDll.pch
+base_connaissances/shell/minikube-linux-amd64
+minikube-linux-amd64
+MyFisrtDll.pch
+
+python_machine_learning\projets\projet_temperature\.env.testing
+
+*.exe
+
+**/replacements.txt
+**/*.key
+**/*.token
+sqlite\projet_ci_cd\gitlab
