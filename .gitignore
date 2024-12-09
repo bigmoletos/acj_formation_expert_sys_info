@@ -123,3 +123,4 @@ python_machine_learning\projets\projet_temperature\.env.testing
 **/replacements.txt
 **/*.key
 **/*.token
+sqlite\projet_ci_cd\gitlab

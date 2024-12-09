@@ -60,7 +60,8 @@ def preprocess_data(df):
         raise
 
 
-def save_dataframe(df, output_file):
+# Sauvegarder le DataFrame prétraité
+def save_dataframe_pickle(df, output_file):
     """
     Sauvegarder un DataFrame au format pickle.
 
@@ -76,12 +77,22 @@ def save_dataframe(df, output_file):
         raise
 
 
-def load_dataframe(filepath):
+
+def load_pickle(input_file):
     """
-    Charger un DataFrame sauvegardé au format pickle.
+    Charger un DataFrame depuis un fichier pickle.
+
+    :param input_file: Chemin du fichier pickle à charger
+    :return: DataFrame chargé
     """
-    with open(filepath, 'rb') as f:
-        return pickle.load(f)
+    try:
+        with open(input_file, 'rb') as f:
+            df = pickle.load(f)
+            logger.info(f"Dataset chargé avec succès depuis {input_file}.")
+        return df
+    except Exception as e:
+        logger.error(f"Erreur lors du chargement du fichier pickle : {e}")
+        raise
 
 
 def train_model(X_train, y_train):
@@ -124,7 +135,7 @@ if __name__ == "__main__":
         # Charger et préparer les données
         data = load_dataset(filepath)
         X, y = preprocess_data(data)
-        save_dataframe(
+        save_dataframe_pickle(
             X, r"C:\AJC_formation\data\csv\churn_modelling_preprocessed.pkl")
         # Diviser les données
         X_train, X_test, y_train, y_test = train_test_split(X,
