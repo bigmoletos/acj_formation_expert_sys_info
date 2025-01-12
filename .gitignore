@@ -124,3 +124,4 @@ python_machine_learning\projets\projet_temperature\.env.testing
 **/*.key
 **/*.token
 sqlite\projet_ci_cd\gitlab
+administratif/ia_emotionnelle_sylvain_affectlink.docx
